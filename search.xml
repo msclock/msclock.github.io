@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Next主题配置</title>
+    <url>/posts/3510939897/</url>
+    <content><![CDATA[<p>主要记录一下next主题的一些简单的配置，以便后面更加轻松的使用next的一些配置。</p>
+<a id="more"></a>
+
+<h2 id="下载主题"><a href="#下载主题" class="headerlink" title="下载主题"></a>下载主题</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> hexo</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="主题说明"><a href="#主题说明" class="headerlink" title="主题说明"></a>主题说明</h2><p>在项目文件中有多个<code>_config.yml</code>文件，为方便区分。</p>
+<ul>
+<li><p>hexo根目录下的<code>_config.yml</code>称为<code>站点配置文件</code>。</p>
+</li>
+<li><p>next主题文件夹下的<code>theme/next/_config.yml</code>称为主题配置文件。</p>
+</li>
+</ul>
+<h2 id="设置语言"><a href="#设置语言" class="headerlink" title="设置语言"></a>设置语言</h2><p>在<code>主题配置文件</code>中设置简体中文</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">language: zh-CN</span><br></pre></td></tr></table></figure>
+<h2 id="设置Menu"><a href="#设置Menu" class="headerlink" title="设置Menu"></a>设置Menu</h2><h3 id="新建菜单"><a href="#新建菜单" class="headerlink" title="新建菜单"></a>新建菜单</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo new page categories</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="添加type为“categories”"><a href="#添加type为“categories”" class="headerlink" title="添加type为“categories”"></a>添加type为“categories”</h3><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">文章分类</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2019</span><span class="number">-12</span><span class="number">-16</span> <span class="number">13</span><span class="string">:59:21</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">"categories"</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="为文章添加分类"><a href="#为文章添加分类" class="headerlink" title="为文章添加分类"></a>为文章添加分类</h3><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">Next主题配置</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2019</span><span class="number">-12</span><span class="number">-15</span> <span class="number">10</span><span class="string">:57:12</span></span><br><span class="line"><span class="attr">categories:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">hexo</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="更新主题"><a href="#更新主题" class="headerlink" title="更新主题"></a>更新主题</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> themes/next</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git pull</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://theme-next.org" target="_blank" rel="noopener">next官方文档</a></p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>next</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Welcome to Hexo</title>
+    <url>/posts/51646408/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using <code>Hexo</code>, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<a id="more"></a>
+
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>next</tag>
+      </tags>
+  </entry>
+</search>
