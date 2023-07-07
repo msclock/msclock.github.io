@@ -5596,6 +5596,40 @@ base64：eJwr</p>
       </tags>
   </entry>
   <entry>
+    <title>GitHub</title>
+    <url>/posts/5c9de83f/</url>
+    <content><![CDATA[<h2 id="GitHub-CI">GitHub CI</h2>
+<!-- todo -->
+<h2 id="GitHub-Action-Local">GitHub Action Local</h2>
+<p><a href="https://github.com/nektos/act">act</a> 用于本地测试 GitHub Action 管道，避免频繁推送到远程测试 CI 流程。</p>
+<p>手动安装需要各个平台安装工具</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># choco</span></span><br><span class="line">choco install act-cli</span><br><span class="line"><span class="comment"># winget</span></span><br><span class="line">winget install nektos.act</span><br><span class="line"><span class="comment"># gh release</span></span><br><span class="line">gh extension install https://github.com/nektos/gh-act</span><br></pre></td></tr></tbody></table></figure>
+<p>通过 devcontainer feature 支持 <a href="https://github.com/devcontainers-contrib/features/tree/main/src/act">act</a></p>
+<blockquote>
+<p>[!TIP]<br>
+建议在 vscode devcontainer 配置 dind 进行测试。</p>
+</blockquote>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">"features"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"ghcr.io/devcontainers-contrib/features/act:1"</span><span class="punctuation">:</span> <span class="punctuation">{</span><span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="常用命令">常用命令</h3>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 列出 actions jobs/workflows</span></span><br><span class="line">act --list</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Actions">Actions</h2>
+<h3 id="dockerhub-ghcr">dockerhub/ghcr</h3>
+<p>Sync images from dockerhub to ghcr</p>
+<figure class="highlight yml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">steps:</span></span><br><span class="line">    <span class="comment"># ...</span></span><br><span class="line">  <span class="bullet">-</span> <span class="comment"># ghcr logins for pushing image after testing</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">Login</span> <span class="string">to</span> <span class="string">GitHub</span> <span class="string">Container</span> <span class="string">Registry</span></span><br><span class="line">    <span class="attr">uses:</span> <span class="string">docker/login-action@v2</span></span><br><span class="line">    <span class="attr">with:</span></span><br><span class="line">      <span class="attr">registry:</span> <span class="string">ghcr.io</span></span><br><span class="line">      <span class="attr">username:</span> <span class="string">${{</span> <span class="string">github.repository_owner</span> <span class="string">}}</span></span><br><span class="line">      <span class="attr">password:</span> <span class="string">${{</span> <span class="string">secrets.GITHUB_TOKEN</span> <span class="string">}}</span></span><br><span class="line">  <span class="bullet">-</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">Login</span> <span class="string">to</span> <span class="string">DockerHub</span></span><br><span class="line">    <span class="attr">uses:</span> <span class="string">docker/login-action@v2</span></span><br><span class="line">    <span class="attr">with:</span></span><br><span class="line">      <span class="attr">username:</span> <span class="string">${{</span> <span class="string">secrets.DOCKER_REGISTRY_ID</span> <span class="string">}}</span></span><br><span class="line">      <span class="attr">password:</span> <span class="string">${{</span> <span class="string">secrets.DOCKER_REGISTRY_PASS</span> <span class="string">}}</span></span><br><span class="line">  <span class="bullet">-</span> <span class="comment"># copy 3rd party zookeeper image from dockerhub to ghcr</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">Push</span> <span class="string">Image</span> <span class="string">(zookeeper)</span> <span class="string">to</span> <span class="string">target</span> <span class="string">registries</span></span><br><span class="line">    <span class="attr">uses:</span> <span class="string">akhilerm/tag-push-action@v2.0.0</span></span><br><span class="line">    <span class="attr">with:</span></span><br><span class="line">      <span class="attr">src:</span> <span class="string">wurstmeister/zookeeper:latest</span></span><br><span class="line">      <span class="attr">dst:</span> <span class="string">|</span></span><br><span class="line"><span class="string">        ghcr.io/${{ github.repository_owner }}/3rdparty/zookeeper:latest</span></span><br><span class="line"><span class="string"></span>  <span class="bullet">-</span> <span class="comment"># copy 3rd party kafka image from dockerhub to ghcr</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">Push</span> <span class="string">Image</span> <span class="string">(kafka)</span> <span class="string">to</span> <span class="string">target</span> <span class="string">registries</span></span><br><span class="line">    <span class="attr">uses:</span> <span class="string">akhilerm/tag-push-action@v2.0.0</span></span><br><span class="line">    <span class="attr">with:</span></span><br><span class="line">      <span class="attr">src:</span> <span class="string">wurstmeister/kafka:latest</span></span><br><span class="line">      <span class="attr">dst:</span> <span class="string">|</span></span><br><span class="line">        <span class="string">ghcr.io/${{</span> <span class="string">github.repository_owner</span> <span class="string">}}/3rdparty/kafka:latest</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="TOKEN">TOKEN</h3>
+<p>Actions 的 TOKEN 认证有 GITHUB_TOKEN, PERSONAL_TOKEN</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>GITHUB_TOKEN: 是 GitHub 提供的一种特殊类型的令牌，用于对 GitHub API 进行身份验证和授权。它主要用于执行与 GitHub 相关的操作，例如创建和管理存储库、发布问题和拉取请求等。</p>
+</li>
+<li class="lvl-2">
+<p>PERSONAL_TOKEN: 是用户自己生成的令牌，用于对 GitHub 进行身份验证和授权。它可以用于执行与 GitHub API 相关的操作，但权限范围可能会受到限制，取决于用户在生成令牌时所选择的权限。</p>
+</li>
+</ul>
+<p>总结来说，GITHUB_TOKEN 是由 GitHub 提供的特殊令牌，用于对 GitHub API 进行身份验证和授权，而 PERSONAL_TOKEN 是用户自己生成的令牌，也用于对 GitHub 进行身份验证和授权，但权限可能会受到限制。</p>
+]]></content>
+  </entry>
+  <entry>
     <title>GitLab Expert</title>
     <url>/posts/5f127ddd/</url>
     <content><![CDATA[<h2 id="GitLab">GitLab</h2>
@@ -5788,6 +5822,65 @@ base64：eJwr</p>
       <categories>
         <category>develop</category>
       </categories>
+  </entry>
+  <entry>
+    <title>Welcome to Hexo</title>
+    <url>/posts/51646408/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using <code>Hexo</code>, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+<h2 id="Quickstart">Quickstart</h2>
+<h3 id="Create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server">Run server</h3>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h2 id="next">next</h2>
+<p>主要记录一下 next 主题的一些简单的配置，以便后面更加轻松的使用 next 的一些配置。</p>
+<!-- more -->
+<h3 id="下载主题">下载主题</h3>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cd</span> hexo</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="主题说明">主题说明</h3>
+<p>在项目文件中有多个<code>_config.yml</code> 文件，为方便区分。</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>hexo 根目录下的<code>_config.yml</code> 称为<code>站点配置文件</code>。</p>
+</li>
+<li class="lvl-2">
+<p>next 主题文件夹下的 <code>theme/next/_config.yml</code> 称为<code>主题配置文件</code>。</p>
+</li>
+</ul>
+<h3 id="设置语言">设置语言</h3>
+<p>在<code>主题配置文件</code>中设置简体中文</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">language: zh-CN</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="设置Menu">设置 Menu</h3>
+<h4 id="新建页面">新建页面</h4>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo new page categories</span></span><br></pre></td></tr></tbody></table></figure>
+<h4 id="为文章指定分类">为文章指定分类</h4>
+<figure class="highlight yml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">Next主题配置</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2019-12-15 10:57:12</span></span><br><span class="line"><span class="attr">categories:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">hexo</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="更新主题">更新主题</h3>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cd</span> themes/next</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git pull</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="参考">参考</h3>
+<p><a href="https://theme-next.org">next 官方文档</a></p>
+<h2 id="markdown-嵌入-ipynb">markdown 嵌入 ipynb</h2>
+<p>登陆 <a href="https://nbviewer.jupyter.org/">nbviewer</a> ，然后输入相应的 ipynb 文件链接，即可在线显示。也可以在本地的 jupyter 中打开。</p>
+<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"https://nbviewer.jupyter.org/github/royalosyin/Python-Practical-Application-on-Climate-Variability-Studies/blob/master/ex12-Analysis%20of%20Monthly%20GPCP%20precipitation.ipynb"</span> <span class="attr">width</span>=<span class="string">"570"</span> <span class="attr">height</span>=<span class="string">"2000"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Github-CI-CD">Github CI/CD</h2>
+<p>配置 私有仓库存储 hexo 笔记，公有仓库存储生成的 静态页面.</p>
+<figure class="highlight yml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># .github/workflows/deploy.yml</span></span><br><span class="line"><span class="comment"># Deploy to pages</span></span><br><span class="line"><span class="attr">name:</span> <span class="string">Pages</span></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="attr">workflow_dispatch:</span></span><br><span class="line">  <span class="attr">push:</span></span><br><span class="line">    <span class="attr">branches:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">master</span></span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">pages:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">permissions:</span></span><br><span class="line">      <span class="attr">contents:</span> <span class="string">write</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Checkout</span> <span class="string">repository</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/checkout@v2</span></span><br><span class="line"></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Set</span> <span class="string">up</span> <span class="string">Node.js</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/setup-node@v2</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">node-version:</span> <span class="number">18</span></span><br><span class="line"></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Cache</span> <span class="string">NPM</span> <span class="string">dependencies</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/cache@v2</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">path:</span> <span class="string">node_modules</span></span><br><span class="line">          <span class="attr">key:</span> <span class="string">${{</span> <span class="string">runner.OS</span> <span class="string">}}-npm-cache</span></span><br><span class="line">          <span class="attr">restore-keys:</span> <span class="string">|</span></span><br><span class="line"><span class="string">            ${{ runner.OS }}-npm-cache</span></span><br><span class="line"><span class="string"></span>            </span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Install</span> <span class="string">dependencies</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">npm</span> <span class="string">install</span></span><br><span class="line"></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Build</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">npm</span> <span class="string">run</span> <span class="string">build</span></span><br><span class="line"></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Deploy</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">peaceiris/actions-gh-pages@v3</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="comment"># 使用 developer settings 生成的 personal token 部署</span></span><br><span class="line">          <span class="comment"># 参考 https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-set-personal-access-token-personal_token</span></span><br><span class="line">          <span class="attr">personal_token:</span> <span class="string">${{</span> <span class="string">secrets.PERSONAL_TOKEN</span> <span class="string">}}</span></span><br><span class="line">          <span class="attr">external_repository:</span> <span class="string">msclock/msclock.github.io</span></span><br><span class="line">          <span class="attr">publish_branch:</span> <span class="string">master</span></span><br><span class="line">          <span class="attr">user_name:</span> <span class="string">'github-actions[bot]'</span></span><br><span class="line">          <span class="attr">user_email:</span> <span class="string">'github-actions[bot]@users.noreply.github.com'</span></span><br></pre></td></tr></tbody></table></figure>]]></content>
+      <categories>
+        <category>develop</category>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>next</tag>
+      </tags>
   </entry>
   <entry>
     <title>k8s</title>
@@ -8183,76 +8276,6 @@ gzip 在 ubuntu/debian 使用 -d 解压存在重定向问题，建议使用 -dc 
       </categories>
       <tags>
         <tag>flutter</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Next 主题配置</title>
-    <url>/posts/3510939897/</url>
-    <content><![CDATA[<p>主要记录一下 next 主题的一些简单的配置，以便后面更加轻松的使用 next 的一些配置。</p>
-<span id="more"></span>
-<h2 id="下载主题">下载主题</h2>
-<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cd</span> hexo</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next</span></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="主题说明">主题说明</h2>
-<p>在项目文件中有多个<code>_config.yml</code> 文件，为方便区分。</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>hexo 根目录下的<code>_config.yml</code> 称为<code>站点配置文件</code>。</p>
-</li>
-<li class="lvl-2">
-<p>next 主题文件夹下的 <code>theme/next/_config.yml</code> 称为<code>主题配置文件</code>。</p>
-</li>
-</ul>
-<h2 id="设置语言">设置语言</h2>
-<p>在<code>主题配置文件</code>中设置简体中文</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">language: zh-CN</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="设置Menu">设置 Menu</h2>
-<h3 id="新建页面">新建页面</h3>
-<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo new page categories</span></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="添加type为“categories”">添加 type 为 “categories”</h3>
-<figure class="highlight yml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">文章分类</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2019-12-16 13:59:21</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">"categories"</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="为文章Next主题配置指定分类hexo">为文章 <code>Next主题配置</code>指定分类 <code>hexo</code></h3>
-<figure class="highlight yml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">Next主题配置</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2019-12-15 10:57:12</span></span><br><span class="line"><span class="attr">categories:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">hexo</span></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="更新主题">更新主题</h2>
-<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cd</span> themes/next</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git pull</span></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="参考">参考</h2>
-<p><a href="https://theme-next.org">next 官方文档</a></p>
-]]></content>
-      <categories>
-        <category>develop</category>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>next</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Welcome to Hexo</title>
-    <url>/posts/51646408/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using <code>Hexo</code>, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<span id="more"></span>
-<h2 id="Quick-Start">Quick Start</h2>
-<h3 id="Create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server">Run server</h3>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<h2 id="md-嵌入-ipynb">md 嵌入 ipynb</h2>
-<p>登陆 <a href="https://nbviewer.jupyter.org/">nbviewer</a> ，然后输入相应的 ipynb 文件链接，即可在线显示。也可以在本地的 jupyter 中打开。</p>
-<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"https://nbviewer.jupyter.org/github/royalosyin/Python-Practical-Application-on-Climate-Variability-Studies/blob/master/ex12-Analysis%20of%20Monthly%20GPCP%20precipitation.ipynb"</span> <span class="attr">width</span>=<span class="string">"570"</span> <span class="attr">height</span>=<span class="string">"2000"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
-]]></content>
-      <categories>
-        <category>develop</category>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>next</tag>
       </tags>
   </entry>
   <entry>
