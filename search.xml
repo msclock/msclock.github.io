@@ -2344,163 +2344,6 @@ MVP (Minimum viable Product) 以最小的代价提供一个可测试交付的版
       </tags>
   </entry>
   <entry>
-    <title>dapr</title>
-    <url>/posts/4d2177b9/</url>
-    <content><![CDATA[<h2 id="Dapr">Dapr</h2>
-<blockquote>
-<p>Deploying Linux server application code was difficult because languages used for writing servers have a lot of dependencies, so Docker was created to simplify things. But getting Docker containers to run reliably across multiple servers was pretty difficult, so Kubernetes was created to simplify things. Deploying multiple services on Kubernetes was kinda complicated though, but now that Dapr has been created to simplify things, deploying our code is easy as pie.</p>
-</blockquote>
-<p><a href="https://docs.dapr.io/">dapr</a> 是一个分布式应用开发框架由微软开源。</p>
-<span id="more"></span>
-<h2 id="Getting-Started">Getting Started</h2>
-<p>vscode 配置 devcontainer 开发环境</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">"features": {</span><br><span class="line">    "ghcr.io/devcontainers/features/desktop-lite:1": {},</span><br><span class="line">    "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {},</span><br><span class="line">    "ghcr.io/devcontainers/features/python:1": {</span><br><span class="line">        "installTools":false</span><br><span class="line">    },</span><br><span class="line">    "ghcr.io/devcontainers/features/docker-in-docker:2": {</span><br><span class="line">        "dockerDashComposeVersion": "v2",</span><br><span class="line">        "moby": false</span><br><span class="line">    },</span><br><span class="line">    "ghcr.io/dapr/cli/dapr-cli:0": {}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<p>配置 desktop-lite 浏览器</p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">apt-get update &amp;&amp; <span class="built_in">export</span> DEBIAN_FRONTEND=noninteractive &amp;&amp; apt-get install -y firefox-esr</span><br></pre></td></tr></tbody></table></figure>
-<p>可将安装移动到 dockerfile 中，dockerfile 配置 dapr cli 运行 path。</p>
-<figure class="highlight dockerfile"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 需要添加预设路径，该路径可通过环境变量配置</span></span><br><span class="line"><span class="keyword">ENV</span> PATH=$PATH:/home/node/.dapr/bin</span><br></pre></td></tr></tbody></table></figure>
-<p>初始化 dapr，安装 <a href="https://docs.dapr.io/getting-started/install-dapr-cli/">dapr cli</a> 命令行工具。</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>使用 dev container 只需要在 features 中注册 <code>"ghcr.io/dapr/cli/dapr-cli:0": {}</code></p>
-</li>
-<li class="lvl-2">
-<p>使用命令行安装，使用 dapr 官方脚本 `wget -q <a href="https://raw.githubusercontent.com/dapr/cli/master/install/install.sh">https://raw.githubusercontent.com/dapr/cli/master/install/install.sh</a> -O - | /bin/bash</p>
-</li>
-</ul>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">dapr -h</span><br><span class="line">dapr --version</span><br><span class="line">dapr init</span><br><span class="line"><span class="built_in">ls</span> <span class="variable">$HOME</span>/.dapr</span><br></pre></td></tr></tbody></table></figure>
-<p>测试 API</p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 使用 app id (my-app) 启动一个 dapr app，并指定 app端口为 3500</span></span><br><span class="line">dapr run --app-id my-app --app-port 3500</span><br><span class="line"></span><br><span class="line"><span class="comment"># 存入状态， url 为 http://localhost:3500/v1.0/state/statestore</span></span><br><span class="line">curl -X POST -H <span class="string">"Content-Type: application/json"</span> -d <span class="string">'[{ "key": "name", "value": "Bruce Wayne"}]'</span> http://localhost:3500/v1.0/state/statestore</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取状态，url为 http://localhost:3500/v1.0/state/statestore/name</span></span><br><span class="line">curl http://localhost:3500/v1.0/state/statestore/name</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看redis 存储内容</span></span><br><span class="line">docker <span class="built_in">exec</span> -it dapr_redis redis_cli</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看 redis kyes 存储内容</span></span><br><span class="line">docker <span class="built_in">exec</span> -it dapr_redis redis-cli</span><br><span class="line">127.0.0.1:6379&gt; keys *</span><br><span class="line">1) <span class="string">"myapp||name"</span></span><br><span class="line">127.0.0.1:6379&gt; HGETALL <span class="string">"myapp||name"</span></span><br><span class="line">1) <span class="string">"data"</span></span><br><span class="line">2) <span class="string">"\"Bruce Wayne\""</span></span><br><span class="line">3) <span class="string">"version"</span></span><br><span class="line">4) <span class="string">"1"</span></span><br><span class="line">127.0.0.1:6379&gt; <span class="built_in">exit</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除状态</span></span><br><span class="line">curl -v -X DELETE -H <span class="string">"Content-Type: application/json"</span> http://localhost:3500/v1.0/state/statestore/name</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Quickstarts-Demos">Quickstarts Demos</h2>
-<p><a href="https://docs.dapr.io/getting-started/quickstarts/">Quickstarts</a> 主要列出了官方的示例，及应用，开始之前需要<a href="https://docs.dapr.io/getting-started/install-dapr-cli/">设置好 dapr 环境</a>。</p>
-<h2 id="Service-Invocation">Service Invocation</h2>
-<p><a href="https://docs.dapr.io/developing-applications/building-blocks/service-invocation/">Service Invocation</a> 实现使用 HTTP 或 gRPC 在两个服务之间进行同步通信。主要专注于解决：</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>服务发现。如何发现不同的服务。</p>
-</li>
-<li class="lvl-2">
-<p>标准化服务间调用 API 协议。如何确定服务间调用协议。</p>
-</li>
-<li class="lvl-2">
-<p>服务间通信安全。如何在服务间安全设置加密及访问控制。</p>
-</li>
-<li class="lvl-2">
-<p>减缓请求超时和失败处理。如何处理重试及临时错误。</p>
-</li>
-<li class="lvl-2">
-<p>实现可观测性和跟踪。如何跟踪及统计服务间通信。</p>
-</li>
-</ul>
-<p>通常使用两种协议 <a href="https://docs.dapr.io/developing-applications/building-blocks/service-invocation/howto-invoke-discover-services/">HTTP</a> 和 <a href="https://docs.dapr.io/developing-applications/building-blocks/service-invocation/howto-invoke-services-grpc/">gRPC</a> 作为通信方式。</p>
-<p>调用实现，可以有三种：</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>HTTP and gRPC：不改动原有代码，使用 dapr run 指定运行对应通信协议的服务。</p>
-<ul class="lvl-2">
-<li class="lvl-6">HTTP: <a href="https://docs.dapr.io/developing-applications/building-blocks/service-invocation/howto-invoke-discover-services/">HTTP Configuration</a></li>
-<li class="lvl-6">gRPC: <a href="https://docs.dapr.io/operations/configuration/grpc/">Configure</a> and <a href="https://docs.dapr.io/developing-applications/building-blocks/service-invocation/howto-invoke-services-grpc/">Invocation</a>。</li>
-</ul>
-</li>
-<li class="lvl-2">
-<p>Call to the dapr sidecar url API: 通过直接调用 <code>localhost:&lt;dapr-http-port&gt;/API</code> 调用。</p>
-</li>
-<li class="lvl-2">
-<p>SDK: 官方提供了对应的 <a href="https://docs.dapr.io/developing-applications/sdks/">SDK</a> 方便服务集成。为了快速测试，dapr 提供了 <a href="https://docs.dapr.io/reference/cli/dapr-invoke/">cli</a> 工具方便测试。</p>
-</li>
-</ul>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Invoke a sample method on target app with POST Verb</span></span><br><span class="line">dapr invoke --app-id target --method sample --data <span class="string">'{"key":"value"}'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Invoke a sample method on target app with GET Verb</span></span><br><span class="line">dapr invoke --app-id target --method sample --verb GET</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="State-Management">State Management</h2>
-<p><a href="https://docs.dapr.io/developing-applications/building-blocks/state-management/">State Management</a> 即，数据持久化管理。</p>
-<h2 id="Hosting-options">Hosting options</h2>
-<h3 id="Kubernetes">Kubernetes</h3>
-<p>配置 dapr 到 <a href="https://docs.dapr.io/operations/hosting/kubernetes/">k8s</a>。</p>
-<h4 id="本地部署">本地部署</h4>
-<p>安装 minikube，并初始化 dapr，<a href="https://github.com/dapr/quickstarts/blob/master/tutorials/hello-kubernetes/README.md">官方示例</a>。</p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 开启本地 minikube 集群</span></span><br><span class="line">minikube start</span><br><span class="line"><span class="comment"># 初始化 dapr, dapr init --kubernetes --wait</span></span><br><span class="line">dapr init -k</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Zipkin">Zipkin</h2>
-<p>Dapr 支持使用 Zipkin 进行分布式跟踪，您可以通过以下步骤来实现：</p>
-<ol>
-<li class="lvl-3">
-<p>安装 Zipkin</p>
-</li>
-</ol>
-<p>您可以通过以下命令安装 Zipkin：</p>
-<figure class="highlight yml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="string">docker</span> <span class="string">run</span> <span class="string">-d</span> <span class="string">-p</span> <span class="number">9411</span><span class="string">:9411</span> <span class="string">openzipkin/zipkin</span></span><br></pre></td></tr></tbody></table></figure>
-<ol start="2">
-<li class="lvl-3">
-<p>配置 Dapr</p>
-</li>
-</ol>
-<p>在 Dapr 应用程序中启用 Zipkin 跟踪，需要在 Dapr 配置文件中添加以下内容：</p>
-<figure class="highlight yml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">dapr.io/v1alpha1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Configuration</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">tracing</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">tracing:</span></span><br><span class="line">    <span class="attr">enabled:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">exporter:</span> <span class="string">zipkin</span></span><br><span class="line">    <span class="attr">zipkin:</span></span><br><span class="line">      <span class="attr">endpointAddress:</span> <span class="string">"http://localhost:9411/api/v2/spans"</span></span><br></pre></td></tr></tbody></table></figure>
-<ol start="3">
-<li class="lvl-3">
-<p>启动 Dapr 应用程序</p>
-</li>
-</ol>
-<p>在启动 Dapr 应用程序时，需要指定 Dapr 配置文件的位置。例如，如果您的 Dapr 配置文件名为 config.yaml，则可以使用以下命令启动 Dapr 应用程序：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">dapr run --app-id my-app --app-port 3500 --config config.yaml node app.js</span><br></pre></td></tr></tbody></table></figure>
-<ol start="4">
-<li class="lvl-3">
-<p>查看跟踪数据</p>
-</li>
-</ol>
-<p>在 Zipkin UI 中，您可以查看跟踪数据。您可以通过以下 URL 访问 Zipkin UI (<a href="http://localhost:9411/zipkin/">http://localhost:9411/zipkin/</a>)</p>
-]]></content>
-      <categories>
-        <category>develop</category>
-      </categories>
-      <tags>
-        <tag>分布式</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>DB 数据库实践</title>
-    <url>/posts/d5fbb003/</url>
-    <content><![CDATA[<p>本文总结了数据库基本原理及其实现。</p>
-<h1>数据库如何工作？</h1>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>数据保存的格式是什么？（在内存和磁盘上）</p>
-</li>
-<li class="lvl-2">
-<p>它什么时候从内存移动到磁盘？</p>
-</li>
-<li class="lvl-2">
-<p>为什么每个表只能有一个主键？</p>
-</li>
-<li class="lvl-2">
-<p>回滚事务如何工作？</p>
-</li>
-<li class="lvl-2">
-<p>索引是如何格式化的？</p>
-</li>
-<li class="lvl-2">
-<p>何时以及如何进行全表扫描？</p>
-</li>
-<li class="lvl-2">
-<p>准备好的语句以什么格式保存？</p>
-</li>
-</ul>
-<p>简而言之，数据库是如何工作的？</p>
-<p>为了理解，用 C 从头开始构建一个 sqlite 的克隆。</p>
-<span id="more"></span>
-<h2 id="reference">reference</h2>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://github.com/cstack/db_tutorial">https://github.com/cstack/db_tutorial</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://cstack.github.io/db_tutorial/">https://cstack.github.io/db_tutorial/</a></p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>develop</category>
-      </categories>
-  </entry>
-  <entry>
     <title>cpp 实践</title>
     <url>/posts/caeaa4a1/</url>
     <content><![CDATA[<h2 id="开发社区">开发社区</h2>
@@ -4744,6 +4587,163 @@ https://www.savemyexams.co.uk/a-level/further-maths_core-pure/edexcel/17/revisio
         <tag>doxygen</tag>
         <tag>coverage</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>dapr</title>
+    <url>/posts/4d2177b9/</url>
+    <content><![CDATA[<h2 id="Dapr">Dapr</h2>
+<blockquote>
+<p>Deploying Linux server application code was difficult because languages used for writing servers have a lot of dependencies, so Docker was created to simplify things. But getting Docker containers to run reliably across multiple servers was pretty difficult, so Kubernetes was created to simplify things. Deploying multiple services on Kubernetes was kinda complicated though, but now that Dapr has been created to simplify things, deploying our code is easy as pie.</p>
+</blockquote>
+<p><a href="https://docs.dapr.io/">dapr</a> 是一个分布式应用开发框架由微软开源。</p>
+<span id="more"></span>
+<h2 id="Getting-Started">Getting Started</h2>
+<p>vscode 配置 devcontainer 开发环境</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">"features": {</span><br><span class="line">    "ghcr.io/devcontainers/features/desktop-lite:1": {},</span><br><span class="line">    "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {},</span><br><span class="line">    "ghcr.io/devcontainers/features/python:1": {</span><br><span class="line">        "installTools":false</span><br><span class="line">    },</span><br><span class="line">    "ghcr.io/devcontainers/features/docker-in-docker:2": {</span><br><span class="line">        "dockerDashComposeVersion": "v2",</span><br><span class="line">        "moby": false</span><br><span class="line">    },</span><br><span class="line">    "ghcr.io/dapr/cli/dapr-cli:0": {}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>配置 desktop-lite 浏览器</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">apt-get update &amp;&amp; <span class="built_in">export</span> DEBIAN_FRONTEND=noninteractive &amp;&amp; apt-get install -y firefox-esr</span><br></pre></td></tr></tbody></table></figure>
+<p>可将安装移动到 dockerfile 中，dockerfile 配置 dapr cli 运行 path。</p>
+<figure class="highlight dockerfile"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 需要添加预设路径，该路径可通过环境变量配置</span></span><br><span class="line"><span class="keyword">ENV</span> PATH=$PATH:/home/node/.dapr/bin</span><br></pre></td></tr></tbody></table></figure>
+<p>初始化 dapr，安装 <a href="https://docs.dapr.io/getting-started/install-dapr-cli/">dapr cli</a> 命令行工具。</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>使用 dev container 只需要在 features 中注册 <code>"ghcr.io/dapr/cli/dapr-cli:0": {}</code></p>
+</li>
+<li class="lvl-2">
+<p>使用命令行安装，使用 dapr 官方脚本 `wget -q <a href="https://raw.githubusercontent.com/dapr/cli/master/install/install.sh">https://raw.githubusercontent.com/dapr/cli/master/install/install.sh</a> -O - | /bin/bash</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">dapr -h</span><br><span class="line">dapr --version</span><br><span class="line">dapr init</span><br><span class="line"><span class="built_in">ls</span> <span class="variable">$HOME</span>/.dapr</span><br></pre></td></tr></tbody></table></figure>
+<p>测试 API</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 使用 app id (my-app) 启动一个 dapr app，并指定 app端口为 3500</span></span><br><span class="line">dapr run --app-id my-app --app-port 3500</span><br><span class="line"></span><br><span class="line"><span class="comment"># 存入状态， url 为 http://localhost:3500/v1.0/state/statestore</span></span><br><span class="line">curl -X POST -H <span class="string">"Content-Type: application/json"</span> -d <span class="string">'[{ "key": "name", "value": "Bruce Wayne"}]'</span> http://localhost:3500/v1.0/state/statestore</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取状态，url为 http://localhost:3500/v1.0/state/statestore/name</span></span><br><span class="line">curl http://localhost:3500/v1.0/state/statestore/name</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看redis 存储内容</span></span><br><span class="line">docker <span class="built_in">exec</span> -it dapr_redis redis_cli</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看 redis kyes 存储内容</span></span><br><span class="line">docker <span class="built_in">exec</span> -it dapr_redis redis-cli</span><br><span class="line">127.0.0.1:6379&gt; keys *</span><br><span class="line">1) <span class="string">"myapp||name"</span></span><br><span class="line">127.0.0.1:6379&gt; HGETALL <span class="string">"myapp||name"</span></span><br><span class="line">1) <span class="string">"data"</span></span><br><span class="line">2) <span class="string">"\"Bruce Wayne\""</span></span><br><span class="line">3) <span class="string">"version"</span></span><br><span class="line">4) <span class="string">"1"</span></span><br><span class="line">127.0.0.1:6379&gt; <span class="built_in">exit</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除状态</span></span><br><span class="line">curl -v -X DELETE -H <span class="string">"Content-Type: application/json"</span> http://localhost:3500/v1.0/state/statestore/name</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Quickstarts-Demos">Quickstarts Demos</h2>
+<p><a href="https://docs.dapr.io/getting-started/quickstarts/">Quickstarts</a> 主要列出了官方的示例，及应用，开始之前需要<a href="https://docs.dapr.io/getting-started/install-dapr-cli/">设置好 dapr 环境</a>。</p>
+<h2 id="Service-Invocation">Service Invocation</h2>
+<p><a href="https://docs.dapr.io/developing-applications/building-blocks/service-invocation/">Service Invocation</a> 实现使用 HTTP 或 gRPC 在两个服务之间进行同步通信。主要专注于解决：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>服务发现。如何发现不同的服务。</p>
+</li>
+<li class="lvl-2">
+<p>标准化服务间调用 API 协议。如何确定服务间调用协议。</p>
+</li>
+<li class="lvl-2">
+<p>服务间通信安全。如何在服务间安全设置加密及访问控制。</p>
+</li>
+<li class="lvl-2">
+<p>减缓请求超时和失败处理。如何处理重试及临时错误。</p>
+</li>
+<li class="lvl-2">
+<p>实现可观测性和跟踪。如何跟踪及统计服务间通信。</p>
+</li>
+</ul>
+<p>通常使用两种协议 <a href="https://docs.dapr.io/developing-applications/building-blocks/service-invocation/howto-invoke-discover-services/">HTTP</a> 和 <a href="https://docs.dapr.io/developing-applications/building-blocks/service-invocation/howto-invoke-services-grpc/">gRPC</a> 作为通信方式。</p>
+<p>调用实现，可以有三种：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>HTTP and gRPC：不改动原有代码，使用 dapr run 指定运行对应通信协议的服务。</p>
+<ul class="lvl-2">
+<li class="lvl-6">HTTP: <a href="https://docs.dapr.io/developing-applications/building-blocks/service-invocation/howto-invoke-discover-services/">HTTP Configuration</a></li>
+<li class="lvl-6">gRPC: <a href="https://docs.dapr.io/operations/configuration/grpc/">Configure</a> and <a href="https://docs.dapr.io/developing-applications/building-blocks/service-invocation/howto-invoke-services-grpc/">Invocation</a>。</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>Call to the dapr sidecar url API: 通过直接调用 <code>localhost:&lt;dapr-http-port&gt;/API</code> 调用。</p>
+</li>
+<li class="lvl-2">
+<p>SDK: 官方提供了对应的 <a href="https://docs.dapr.io/developing-applications/sdks/">SDK</a> 方便服务集成。为了快速测试，dapr 提供了 <a href="https://docs.dapr.io/reference/cli/dapr-invoke/">cli</a> 工具方便测试。</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Invoke a sample method on target app with POST Verb</span></span><br><span class="line">dapr invoke --app-id target --method sample --data <span class="string">'{"key":"value"}'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Invoke a sample method on target app with GET Verb</span></span><br><span class="line">dapr invoke --app-id target --method sample --verb GET</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="State-Management">State Management</h2>
+<p><a href="https://docs.dapr.io/developing-applications/building-blocks/state-management/">State Management</a> 即，数据持久化管理。</p>
+<h2 id="Hosting-options">Hosting options</h2>
+<h3 id="Kubernetes">Kubernetes</h3>
+<p>配置 dapr 到 <a href="https://docs.dapr.io/operations/hosting/kubernetes/">k8s</a>。</p>
+<h4 id="本地部署">本地部署</h4>
+<p>安装 minikube，并初始化 dapr，<a href="https://github.com/dapr/quickstarts/blob/master/tutorials/hello-kubernetes/README.md">官方示例</a>。</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 开启本地 minikube 集群</span></span><br><span class="line">minikube start</span><br><span class="line"><span class="comment"># 初始化 dapr, dapr init --kubernetes --wait</span></span><br><span class="line">dapr init -k</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Zipkin">Zipkin</h2>
+<p>Dapr 支持使用 Zipkin 进行分布式跟踪，您可以通过以下步骤来实现：</p>
+<ol>
+<li class="lvl-3">
+<p>安装 Zipkin</p>
+</li>
+</ol>
+<p>您可以通过以下命令安装 Zipkin：</p>
+<figure class="highlight yml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="string">docker</span> <span class="string">run</span> <span class="string">-d</span> <span class="string">-p</span> <span class="number">9411</span><span class="string">:9411</span> <span class="string">openzipkin/zipkin</span></span><br></pre></td></tr></tbody></table></figure>
+<ol start="2">
+<li class="lvl-3">
+<p>配置 Dapr</p>
+</li>
+</ol>
+<p>在 Dapr 应用程序中启用 Zipkin 跟踪，需要在 Dapr 配置文件中添加以下内容：</p>
+<figure class="highlight yml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">dapr.io/v1alpha1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Configuration</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">tracing</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">tracing:</span></span><br><span class="line">    <span class="attr">enabled:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">exporter:</span> <span class="string">zipkin</span></span><br><span class="line">    <span class="attr">zipkin:</span></span><br><span class="line">      <span class="attr">endpointAddress:</span> <span class="string">"http://localhost:9411/api/v2/spans"</span></span><br></pre></td></tr></tbody></table></figure>
+<ol start="3">
+<li class="lvl-3">
+<p>启动 Dapr 应用程序</p>
+</li>
+</ol>
+<p>在启动 Dapr 应用程序时，需要指定 Dapr 配置文件的位置。例如，如果您的 Dapr 配置文件名为 config.yaml，则可以使用以下命令启动 Dapr 应用程序：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">dapr run --app-id my-app --app-port 3500 --config config.yaml node app.js</span><br></pre></td></tr></tbody></table></figure>
+<ol start="4">
+<li class="lvl-3">
+<p>查看跟踪数据</p>
+</li>
+</ol>
+<p>在 Zipkin UI 中，您可以查看跟踪数据。您可以通过以下 URL 访问 Zipkin UI (<a href="http://localhost:9411/zipkin/">http://localhost:9411/zipkin/</a>)</p>
+]]></content>
+      <categories>
+        <category>develop</category>
+      </categories>
+      <tags>
+        <tag>分布式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>DB 数据库实践</title>
+    <url>/posts/d5fbb003/</url>
+    <content><![CDATA[<p>本文总结了数据库基本原理及其实现。</p>
+<h1>数据库如何工作？</h1>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>数据保存的格式是什么？（在内存和磁盘上）</p>
+</li>
+<li class="lvl-2">
+<p>它什么时候从内存移动到磁盘？</p>
+</li>
+<li class="lvl-2">
+<p>为什么每个表只能有一个主键？</p>
+</li>
+<li class="lvl-2">
+<p>回滚事务如何工作？</p>
+</li>
+<li class="lvl-2">
+<p>索引是如何格式化的？</p>
+</li>
+<li class="lvl-2">
+<p>何时以及如何进行全表扫描？</p>
+</li>
+<li class="lvl-2">
+<p>准备好的语句以什么格式保存？</p>
+</li>
+</ul>
+<p>简而言之，数据库是如何工作的？</p>
+<p>为了理解，用 C 从头开始构建一个 sqlite 的克隆。</p>
+<span id="more"></span>
+<h2 id="reference">reference</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://github.com/cstack/db_tutorial">https://github.com/cstack/db_tutorial</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://cstack.github.io/db_tutorial/">https://cstack.github.io/db_tutorial/</a></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>develop</category>
+      </categories>
   </entry>
   <entry>
     <title>devcontainer</title>
