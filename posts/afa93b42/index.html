@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.2.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-center-circle.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"msclock.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.15.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"github-dark"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"livere","storage":true,"lazyload":false,"nav":null,"activeClass":"livere"},"stickytabs":true,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.15.1/source/js/config.min.js"></script>
+
+    <meta name="description" content="资源    资源 组织 类型     可乐 python docs  文档    Python Enhancement Proposals Index python  文档">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python">
+<meta property="og:url" content="https://msclock.github.io/posts/afa93b42/index.html">
+<meta property="og:site_name" content="Live in the present">
+<meta property="og:description" content="资源    资源 组织 类型     可乐 python docs  文档    Python Enhancement Proposals Index python  文档">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-08-11T02:13:51.000Z">
+<meta property="article:modified_time" content="2023-07-07T06:06:32.541Z">
+<meta property="article:author" content="Msclock">
+<meta property="article:tag" content="cpp,hexo,blog">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://msclock.github.io/posts/afa93b42/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://msclock.github.io/posts/afa93b42/","path":"posts/afa93b42/","title":"python"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>python | Live in the present</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Live in the present</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Msclock's Notes</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">28</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">10</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">45</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%84%E6%BA%90"><span class="nav-number">1.</span> <span class="nav-text">资源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Beginner"><span class="nav-number">2.</span> <span class="nav-text">Beginner</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode-integration"><span class="nav-number">2.1.</span> <span class="nav-text">vscode integration</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Debug"><span class="nav-number">2.1.1.</span> <span class="nav-text">Debug</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tricks"><span class="nav-number">2.2.</span> <span class="nav-text">Tricks</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#python%E4%BF%9D%E7%95%99%E4%B8%A4%E4%BD%8D%E5%B0%8F%E6%95%B0%E8%BD%AC%E4%B8%BA%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">2.2.1.</span> <span class="nav-text">python 保留两位小数转为字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WorkingDirContext"><span class="nav-number">2.2.2.</span> <span class="nav-text">WorkingDirContext</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cmd-%E7%9B%B4%E6%8E%A5%E6%89%A7%E8%A1%8C"><span class="nav-number">2.2.3.</span> <span class="nav-text">cmd 直接执行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E6%B7%BB%E5%8A%A0%E5%B1%9E%E6%80%A7%E6%88%96%E6%96%B9%E6%B3%95"><span class="nav-number">2.2.4.</span> <span class="nav-text">动态添加属性或方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B6%85%E6%97%B6%E9%80%80%E5%87%BA"><span class="nav-number">2.2.5.</span> <span class="nav-text">超时退出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E9%87%8F%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.2.6.</span> <span class="nav-text">常量实现</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CPython-%E5%BC%80%E5%8F%91"><span class="nav-number">3.</span> <span class="nav-text">CPython 开发</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">3.0.1.</span> <span class="nav-text">参考</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%83%E8%AF%95"><span class="nav-number">3.1.</span> <span class="nav-text">调试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reference"><span class="nav-number">3.2.</span> <span class="nav-text">reference</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pip"><span class="nav-number">4.</span> <span class="nav-text">pip</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pip-tool"><span class="nav-number">4.1.</span> <span class="nav-text">pip tool</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pip-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">4.2.</span> <span class="nav-text">pip 常用命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#install-pkg-with-pip"><span class="nav-number">4.3.</span> <span class="nav-text">install pkg with pip</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#cmake-skbuild-install"><span class="nav-number">4.3.1.</span> <span class="nav-text">cmake skbuild install</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#install-from-git"><span class="nav-number">4.3.2.</span> <span class="nav-text">install from git</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#reference-2"><span class="nav-number">4.3.3.</span> <span class="nav-text">reference</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pip%E6%8D%A2%E6%BA%90"><span class="nav-number">4.4.</span> <span class="nav-text">pip 换源</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#reference-3"><span class="nav-number">4.4.1.</span> <span class="nav-text">reference</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pip-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="nav-number">4.5.</span> <span class="nav-text">pip 环境配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#requirements-txt"><span class="nav-number">4.6.</span> <span class="nav-text">requirements.txt</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#reference-4"><span class="nav-number">4.6.1.</span> <span class="nav-text">reference</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pip-offline-package"><span class="nav-number">4.7.</span> <span class="nav-text">pip offline package</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dev-model"><span class="nav-number">5.</span> <span class="nav-text">dev model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#virtualenv"><span class="nav-number">6.</span> <span class="nav-text">virtualenv</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python-project"><span class="nav-number">7.</span> <span class="nav-text">python project</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#project-tmol"><span class="nav-number">7.1.</span> <span class="nav-text">project.tmol</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#build-system"><span class="nav-number">7.2.</span> <span class="nav-text">build-system</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#distutils"><span class="nav-number">7.3.</span> <span class="nav-text">distutils</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#setuptools"><span class="nav-number">7.4.</span> <span class="nav-text">setuptools</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#black"><span class="nav-number">7.5.</span> <span class="nav-text">black</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#isort"><span class="nav-number">7.6.</span> <span class="nav-text">isort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vulture"><span class="nav-number">7.7.</span> <span class="nav-text">vulture</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pylint"><span class="nav-number">7.8.</span> <span class="nav-text">pylint</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mypy"><span class="nav-number">7.9.</span> <span class="nav-text">mypy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pytest"><span class="nav-number">7.10.</span> <span class="nav-text">pytest</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Packing"><span class="nav-number">7.11.</span> <span class="nav-text">Packing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Upload-to-pypi"><span class="nav-number">7.12.</span> <span class="nav-text">Upload to pypi</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#twine"><span class="nav-number">7.12.1.</span> <span class="nav-text">twine</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9B%86%E6%88%90%E5%88%B0-GitHub"><span class="nav-number">7.12.2.</span> <span class="nav-text">集成到 GitHub</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9B%86%E6%88%90%E5%88%B0-GitLab"><span class="nav-number">7.12.3.</span> <span class="nav-text">集成到 GitLab</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docs-generator"><span class="nav-number">8.</span> <span class="nav-text">docs generator</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#sphinx"><span class="nav-number">8.1.</span> <span class="nav-text">sphinx</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Quickstart"><span class="nav-number">8.1.1.</span> <span class="nav-text">Quickstart</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#api-generation"><span class="nav-number">8.1.2.</span> <span class="nav-text">api generation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#conf-py"><span class="nav-number">8.1.3.</span> <span class="nav-text">conf.py</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Add-jupter-support"><span class="nav-number">8.1.4.</span> <span class="nav-text">Add jupter support</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#readthedocs"><span class="nav-number">8.2.</span> <span class="nav-text">readthedocs</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#scikit-build-core"><span class="nav-number">9.</span> <span class="nav-text">scikit-build-core</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Flask"><span class="nav-number">10.</span> <span class="nav-text">Flask</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Explore-Flask"><span class="nav-number">10.1.</span> <span class="nav-text">Explore Flask</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#subprocess"><span class="nav-number">11.</span> <span class="nav-text">subprocess</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#subprocess%E8%BF%90%E8%A1%8C%E5%AD%90%E8%BF%9B%E7%A8%8B"><span class="nav-number">11.1.</span> <span class="nav-text">subprocess 运行子进程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#argparse"><span class="nav-number">12.</span> <span class="nav-text">argparse</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gradio"><span class="nav-number">13.</span> <span class="nav-text">Gradio</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Quickstart-2"><span class="nav-number">13.1.</span> <span class="nav-text">Quickstart</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Share-app"><span class="nav-number">13.2.</span> <span class="nav-text">Share app</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#streamlit"><span class="nav-number">14.</span> <span class="nav-text">streamlit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fire"><span class="nav-number">15.</span> <span class="nav-text">Fire</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-function"><span class="nav-number">15.1.</span> <span class="nav-text">Using function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-class"><span class="nav-number">15.2.</span> <span class="nav-text">Using class</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-object"><span class="nav-number">15.3.</span> <span class="nav-text">Using object</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Define-subcommand"><span class="nav-number">15.4.</span> <span class="nav-text">Define subcommand</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Embedded-command"><span class="nav-number">15.5.</span> <span class="nav-text">Embedded command</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-attr-access"><span class="nav-number">15.6.</span> <span class="nav-text">Using attr access</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-command-chain"><span class="nav-number">15.7.</span> <span class="nav-text">Using command chain</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-args-and-kwargs"><span class="nav-number">15.8.</span> <span class="nav-text">Using *args and **kwargs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A1%AE%E5%AE%9A%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B"><span class="nav-number">15.9.</span> <span class="nav-text">确定参数类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#click"><span class="nav-number">16.</span> <span class="nav-text">click</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flet"><span class="nav-number">17.</span> <span class="nav-text">flet</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Msclock"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Msclock</p>
+  <div class="site-description" itemprop="description">That life is reality.</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">28</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/msclock" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;msclock" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:msclock@qq.com" title="E-Mail → mailto:msclock@qq.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/msclockg" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;msclockg" rel="noopener me" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://msclock.github.io/posts/afa93b42/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Msclock">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Live in the present">
+      <meta itemprop="description" content="That life is reality.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="python | Live in the present">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          python
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-08-11 10:13:51" itemprop="dateCreated datePublished" datetime="2022-08-11T10:13:51+08:00">2022-08-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-07-07 14:06:32" itemprop="dateModified" datetime="2023-07-07T14:06:32+08:00">2023-07-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/develop/" itemprop="url" rel="index"><span itemprop="name">develop</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>26k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>24 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="资源">资源</h2>
+<table>
+<thead>
+<tr>
+<th>资源</th>
+<th>组织</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://kelepython.readthedocs.io/zh/latest/index.html">可乐 python</a></td>
+<td>docs</td>
+<td> 文档 </td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://peps.python.org/pep-0000/">Python Enhancement Proposals Index</a></td>
+<td>python</td>
+<td> 文档</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<span id="more"></span>
+<h2 id="Beginner">Beginner</h2>
+<h3 id="vscode-integration">vscode integration</h3>
+<p>使用 vscode 集成，依赖于插件:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>python(ms.python)</p>
+</li>
+</ul>
+<h4 id="Debug">Debug</h4>
+<p>调试采用 python 插件提供的模板，常用模板基于文件 (file) 或基于模块 (module), 模板中字段说明参考插件及 vscode 预定义变量<a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/editor/variables-reference">引用文档</a>.</p>
+<p>基于文件模板样例:</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">{</span><br><span class="line">    // Use IntelliSense to learn about possible attributes.</span><br><span class="line">    // Hover to view descriptions of existing attributes.</span><br><span class="line">    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387</span><br><span class="line">    "version": "0.2.0",</span><br><span class="line">    "configurations": [</span><br><span class="line">        {</span><br><span class="line">            "name": "Python: Current File",</span><br><span class="line">            "type": "python",</span><br><span class="line">            "request": "launch",</span><br><span class="line">            "program": "${file}", // the current opened file</span><br><span class="line">            "console": "integratedTerminal",</span><br><span class="line">            "env": {},</span><br><span class="line">            "args": [],</span><br><span class="line">            "cwd": "${fileWorkspaceFolder}", // the current opened file's workspace folder</span><br><span class="line">            "justMyCode": false</span><br><span class="line">        }</span><br><span class="line">    ]</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Tricks">Tricks</h3>
+<h4 id="python保留两位小数转为字符串">python 保留两位小数转为字符串</h4>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用字符串格式化</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">float_to_str</span>(<span class="params">f: <span class="built_in">float</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="string">f"<span class="subst">{f:<span class="number">.2</span>f}</span>"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用round函数</span></span><br><span class="line">num = <span class="number">3.1415926</span></span><br><span class="line">result = <span class="built_in">round</span>(num, <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> decimal <span class="keyword">import</span> Decimal</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用Decimal类</span></span><br><span class="line">num = Decimal(<span class="string">"3.1415926"</span>)</span><br><span class="line">result = <span class="built_in">str</span>(num.quantize(Decimal(<span class="string">"0.00"</span>)))</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="WorkingDirContext">WorkingDirContext</h4>
+<p>实现保留工作目录上下文</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> __future__ <span class="keyword">import</span> annotations</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> types <span class="keyword">import</span> TracebackType</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">WorkingDirContext</span>:</span><br><span class="line">    <span class="string">"""Working directory context definition"""</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, path: <span class="built_in">str</span> | os.PathLike[<span class="built_in">str</span>]</span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">        self._prev_working_dir = os.getcwd()</span><br><span class="line">        os.chdir(path)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__enter__</span>(<span class="params">self</span>) -&gt; WorkingDirContext:</span><br><span class="line">        <span class="keyword">return</span> self</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__exit__</span>(<span class="params"></span></span><br><span class="line"><span class="params">        self,</span></span><br><span class="line"><span class="params">        exc_type: <span class="built_in">type</span>[BaseException] | <span class="literal">None</span>,</span></span><br><span class="line"><span class="params">        exc_value: BaseException | <span class="literal">None</span>,</span></span><br><span class="line"><span class="params">        traceback: TracebackType | <span class="literal">None</span>,</span></span><br><span class="line"><span class="params">    </span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">        <span class="string">"""Switch the previous directory"""</span></span><br><span class="line">        os.chdir(self._prev_working_dir)</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="cmd-直接执行">cmd 直接执行</h4>
+<p>脚本可以直接通过 python 执行，只需要指定 <code>-c</code> 参数即可。需要注意地是:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>命令将使用；隔开</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -c <span class="string">"import os;print(os.environ)"</span></span><br></pre></td></tr></tbody></table></figure>
+<h4 id="动态添加属性或方法">动态添加属性或方法</h4>
+<p>作为动态语言，<code>python</code> 能动态运行时添加动态属性和方法。在不修改源码的情况下，可以通过在运行期间，动态添加属性。参考:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/phyger/p/13639291.html">phyger 博客参考 1</a></p>
+</li>
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv17118182/">python 术语</a></p>
+</li>
+</ul>
+<h4 id="超时退出">超时退出</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>基于 signal 实现</p>
+</li>
+</ul>
+<p>python signal 负责处理内存信号处理，超时可以通过 <code>SIGALRM</code> 信号触发超时操作。</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> signal</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">TimeoutError</span>(<span class="title class_ inherited__">Exception</span>):</span><br><span class="line">    <span class="string">"""自定义超时异常"""</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, msg, frame</span>):</span><br><span class="line">        <span class="built_in">super</span>(TimeoutError, self).__init__()</span><br><span class="line">        self.msg = msg</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__str__</span>(<span class="params">self</span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">        <span class="keyword">return</span> self.msg</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">time_out</span>(<span class="params">interval: <span class="built_in">int</span>, callback=<span class="literal">None</span></span>):</span><br><span class="line">    <span class="string">"""interval秒后向进程发送SIGALRM信号，函数在规定时间执行完后关闭alarm闹钟</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">        interval (int): 超时秒数</span></span><br><span class="line"><span class="string">        callback (function, optional): 超时回调. Defaults to None.</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">decorator</span>(<span class="params">func</span>):</span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">handler</span>(<span class="params">signum, frame</span>):</span><br><span class="line">            <span class="built_in">print</span>(frame)</span><br><span class="line">            <span class="keyword">raise</span> TimeoutError(<span class="string">f"run func <span class="subst">{func.__name__}</span> timeout <span class="subst">{interval}</span>s"</span>, frame)</span><br><span class="line"></span><br><span class="line"><span class="meta">        @functools.wraps(<span class="params">func</span>)</span></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">wrapper</span>(<span class="params">*args, **kwargs</span>):</span><br><span class="line">            <span class="keyword">try</span>:</span><br><span class="line">                signal.signal(signal.SIGALRM, handler)</span><br><span class="line">                signal.alarm(interval)</span><br><span class="line">                result = func(*args, **kwargs)</span><br><span class="line">                signal.alarm(<span class="number">0</span>)</span><br><span class="line">                <span class="keyword">return</span> result</span><br><span class="line">            <span class="keyword">except</span> TimeoutError <span class="keyword">as</span> e:</span><br><span class="line">                <span class="keyword">if</span> callback:</span><br><span class="line">                    callback(e)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> decorator</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">timeout_callback</span>(<span class="params">e</span>):</span><br><span class="line">    <span class="built_in">print</span>(e.msg)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@time_out(<span class="params"><span class="number">2</span>, timeout_callback</span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">task1</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"task1 start"</span>)</span><br><span class="line">    time.sleep(<span class="number">3</span>)  <span class="comment">#! 超时</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"task1 end"</span>)  <span class="comment"># tak 1 end 不会输出</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@time_out(<span class="params"><span class="number">2</span>, timeout_callback</span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">task2</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"task2 start"</span>)</span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"task2 end"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    task1()</span><br><span class="line">    task2()</span><br></pre></td></tr></tbody></table></figure>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>基于 threading 或协程实现</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">threading_time_out</span>(<span class="params">interval, callback=<span class="literal">None</span></span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">decorator</span>(<span class="params">func</span>):</span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">wrapper</span>(<span class="params">*args, **kwargs</span>):</span><br><span class="line">            t = threading.Thread(target=func, args=args, kwargs=kwargs)</span><br><span class="line">            t.setDaemon(<span class="literal">True</span>)  <span class="comment"># 设置主线程结束后子线程立刻结束</span></span><br><span class="line">            t.start()</span><br><span class="line">            t.join(interval)  <span class="comment"># 主线程阻塞等待interval秒</span></span><br><span class="line">            <span class="keyword">if</span> t.is_alive() <span class="keyword">and</span> callback:</span><br><span class="line">                <span class="keyword">return</span> threading.Timer(<span class="number">0</span>, callback).start()  <span class="comment"># 立即执行回调函数</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> decorator</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">gevent_time_out</span>(<span class="params">interval, callback=<span class="literal">None</span></span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">decorator</span>(<span class="params">func</span>):</span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">wrapper</span>(<span class="params">*args, **kwargs</span>):</span><br><span class="line">            <span class="comment"># 该部分必选在requests之前导入</span></span><br><span class="line">            <span class="keyword">import</span> gevent</span><br><span class="line"></span><br><span class="line">            <span class="keyword">from</span> gevent <span class="keyword">import</span> monkey</span><br><span class="line"></span><br><span class="line">            monkey.patch_all()</span><br><span class="line"></span><br><span class="line">            <span class="keyword">try</span>:</span><br><span class="line">                gevent.with_timeout(interval, func, *args, **kwargs)</span><br><span class="line">            <span class="keyword">except</span> gevent.timeout.Timeout <span class="keyword">as</span> e:</span><br><span class="line">                callback() <span class="keyword">if</span> callback <span class="keyword">else</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> decorator</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="常量实现">常量实现</h4>
+<p>python 中常量定义是比较困难的，这里给出几种常用的方法。</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>覆盖 cls.<strong>setattr</strong></p>
+</li>
+</ul>
+<p>自定义 <strong>setattr</strong>, 检测加入的属性重复性，通过类修饰方式实现。</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> wraps</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">as_const</span>(<span class="params">cls</span>):</span><br><span class="line">    <span class="string">"""成为常量</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Example::</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        from constant import as_const</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        @as_const</span></span><br><span class="line"><span class="string">        class _Platform:</span></span><br><span class="line"><span class="string">            linux = "linux"</span></span><br><span class="line"><span class="string">            windows = "windows"</span></span><br><span class="line"><span class="string">            macosx = "macosx"</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        @as_const</span></span><br><span class="line"><span class="string">        class _Const:</span></span><br><span class="line"><span class="string">            plat = _Platform()</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        ct = _Const()</span></span><br><span class="line"><span class="string">        pt = _Platform()</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        print(ct.plat.linux)</span></span><br><span class="line"><span class="string">        print(pt.linux)</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">ConstError</span>(<span class="title class_ inherited__">TypeError</span>):</span><br><span class="line">        <span class="string">"""常量不可改错误定义"""</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">ConstCaseError</span>(<span class="title class_ inherited__">ConstError</span>):</span><br><span class="line">        <span class="string">"""常量大小写错误定义"""</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @wraps(<span class="params">cls</span>)</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">const_setter</span>(<span class="params">self, key, value</span>):</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> key <span class="keyword">in</span> self.__dict__.keys():</span><br><span class="line">            <span class="keyword">raise</span> ConstError(<span class="string">f"Can't change a const variable with name <span class="subst">{key}</span>"</span>)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> key.isupper():</span><br><span class="line">            <span class="keyword">raise</span> ConstCaseError(</span><br><span class="line">                <span class="string">f"Const variable must be combined with upper letters:<span class="subst">{key}</span>"</span></span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">        self.__dict__[key] = value</span><br><span class="line"></span><br><span class="line">    cls.__setattr__ = const_setter</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> cls</span><br></pre></td></tr></tbody></table></figure>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>通过 dataclass</p>
+</li>
+</ul>
+<p>dataclass 修饰实现，通过 frozen 参数固定。</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@dataclass(<span class="params">frozen=<span class="literal">True</span></span>)</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ErrorName</span>:</span><br><span class="line">    service = <span class="string">"ServiceError"</span></span><br><span class="line">    drawing = <span class="string">"DrawingError"</span></span><br><span class="line">    subblock = <span class="string">"SubBlockError"</span></span><br><span class="line">    file = <span class="string">"FileError"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(ErrorName.service)</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="CPython-开发">CPython 开发</h2>
+<p>CPython 是 Python 发行最流行的版本，以 C/C++ 为基础的开发分布版本。</p>
+<h4 id="参考">参考</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://devguide.python.org/">Python Developer’s Guide</a></p>
+</li>
+</ul>
+<h3 id="调试">调试</h3>
+<p>CPython 调试，需要 GDB 这个工具。而 GDB 需要对应 Python 的脚本的命令加载，通常在 Python3.7 后，在源码目录的 <code>Toos/gdb/*</code> 包含用 GDB 需要的脚本。</p>
+<p>按照上面的目录规则 cp 到 gdb 的 auto-load，保证调试 python3.7 进程的时候能找到。</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ls</span> /usr/share/gdb/auto-load/usr/local/bin/</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="reference">reference</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://meteorix.github.io/2019/02/13/gdbpython/">https://meteorix.github.io/2019/02/13/gdbpython/</a></p>
+</li>
+</ul>
+<h2 id="pip">pip</h2>
+<h3 id="pip-tool">pip tool</h3>
+<p>pip 工具单独安装。</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget https://bootstrap.pypa.io/get-pip.py</span><br><span class="line">python get-pip.py</span><br><span class="line"><span class="built_in">rm</span> -rf get-pip.py ~/.cache/pip</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="pip-常用命令">pip 常用命令</h3>
+<p>这节列出了常用的 pip 命令，参考:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://pip.pypa.io/en/stable/user_guide/">https://pip.pypa.io/en/stable/user_guide/</a></p>
+</li>
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://pip.pypa.io/en/stable/cli/">https://pip.pypa.io/en/stable/cli/</a></p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装包</span></span><br><span class="line">pip install yolov5-utils[==version]</span><br><span class="line"><span class="comment"># 卸载包</span></span><br><span class="line">pip uninstall yolov5-utils</span><br><span class="line"><span class="comment"># 查看包</span></span><br><span class="line">pip show yolov5-utils</span><br><span class="line"><span class="comment"># 导出环境包至 requirements.txt</span></span><br><span class="line">pip freeze &gt; requirements.txt</span><br><span class="line"><span class="comment"># 更新 pip</span></span><br><span class="line">pip install --upgrade pip</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="install-pkg-with-pip">install pkg with pip</h3>
+<h4 id="cmake-skbuild-install">cmake skbuild install</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>cmake project integration with <a target="_blank" rel="noopener" href="https://github.com/scikit-build/scikit-build">skbuild</a></p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install git+https://**.git --build-type Debug</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="install-from-git">install from git</h4>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Hash</span></span><br><span class="line">❯ pip install git+git://github.com/aladagemre/django-notification.git@2927346f4c513a217ac8ad076e494dd1adbf70e1</span><br><span class="line"></span><br><span class="line"><span class="comment"># Branch</span></span><br><span class="line">❯ pip install git+git://github.com/aladagemre/django-notification.git@cool-feature-branch</span><br><span class="line"></span><br><span class="line"><span class="comment"># Tag</span></span><br><span class="line">❯ pip install git+git://github.com/aladagemre/django-notification.git@v2.1.0</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="reference-2">reference</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://pip-cn.readthedocs.io/en/latest/reference/pip_install.html#git">pip docs 1</a></p>
+</li>
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://pip.pypa.io/en/stable/topics/vcs-support/">pip docs 2</a></p>
+</li>
+</ul>
+<h3 id="pip换源">pip 换源</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>cmd pip 全局配置</p>
+</li>
+</ul>
+<p>源生效优先级，<strong>sjtu &gt; hawei &gt; ngc.nvidia &gt; tsinghua</strong></p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pip3 config <span class="built_in">set</span> global.index-url <span class="string">"https://mirrors.huaweicloud.com/repository/pypi/simple/"</span></span><br><span class="line">pip3 config <span class="built_in">set</span> global.extra-index-url <span class="string">"https://pypi.tuna.tsinghua.edu.cn/simple/ https://pypi.ngc.nvidia.com https://mirrors.huaweicloud.com/repository/pypi/simple https://mirror.sjtu.edu.cn/pypi/web/simple"</span></span><br><span class="line">pip3 config <span class="built_in">set</span> global.timeout 20</span><br><span class="line">pip3 config <span class="built_in">set</span> global.trusted-host <span class="string">"pypi.tuna.tsinghua.edu.cn pypi.ngc.nvidia.com mirrors.huaweicloud.com mirror.sjtu.edu.cn/pypi/web/simple"</span></span><br></pre></td></tr></tbody></table></figure>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>创建文件使用软件包的安装用户，执行如下命令：</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.pip</span><br></pre></td></tr></tbody></table></figure>
+<p>如果提示目录不存在，则执行如下命令创建：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> ~/.pip</span><br><span class="line"><span class="built_in">cd</span> ~/.pip</span><br></pre></td></tr></tbody></table></figure>
+<p>编辑 pip.conf 文件。使用 vi pip.conf 命令打开 pip.conf 文件，写入如下内容：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line">#以华为源为例，请根据实际情况进行替换。</span><br><span class="line">index-url = https://mirrors.huaweicloud.com/repository/pypi/simple</span><br><span class="line">trusted-host = mirrors.huaweicloud.com</span><br><span class="line">timeout = 120</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="reference-3">reference</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/jianjiacangcang/p/15195529.html">个人博客参考 1</a></p>
+</li>
+</ul>
+<h3 id="pip-环境配置">pip 环境配置</h3>
+<p>pip 包管理器在安装 python 包时，会在本地目录创建缓存，当下次再下载相同的包时，自动读取缓存，不再从三方源下载以节省时间。</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>通过命令行配置</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip config <span class="built_in">set</span> global.cache-dir &lt;your-cache-dir&gt;</span><br></pre></td></tr></tbody></table></figure>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>通过环境变量配置</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PIP_CACHE_DIR=&lt;your-cache-dir&gt;</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="requirements-txt">requirements.txt</h3>
+<p>python 安装包可通过 requirements.txt 配置安装依赖，只需通过 pip 命令 -r 即可指定安装。</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r ./requirements.txt -r /requirements.gpu.txt</span><br></pre></td></tr></tbody></table></figure>
+<p>可通过直接在文件种配置源，灵活拆分配置依赖包。如下，配置了 gpu 的依赖包及相应的搜索源。</p>
+<figure class="highlight txt"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">--find-links https://download.pytorch.org/whl/torch_stable.html</span><br><span class="line">--extra-index-url https://pypi.ngc.nvidia.com</span><br><span class="line">nvidia-pyindex==1.0.9</span><br><span class="line">nvidia-tensorflow==1.15.5+nv22.7</span><br><span class="line">nvidia-tensorboard==1.15.0+nv21.4</span><br><span class="line">torch==1.8.0+cu111</span><br><span class="line">torchvision==0.9.0+cu111</span><br><span class="line">torchaudio==0.8.0</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="reference-4">reference</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/64180511/pip-change-directory-of-pip-cache-on-linux">https://stackoverflow.com/questions/64180511/pip-change-directory-of-pip-cache-on-linux</a></p>
+</li>
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://pip.pypa.io/en/stable/topics/configuration/#environment-variables">https://pip.pypa.io/en/stable/topics/configuration/#environment-variables</a></p>
+</li>
+</ul>
+<h3 id="pip-offline-package">pip offline package</h3>
+<p>pip 实现容器启动时加载离线包安装</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># requirements.gpu.txt</span></span><br><span class="line">--extra-index-url https://pypi.ngc.nvidia.com</span><br><span class="line">--find-links https://download.pytorch.org/whl/torch_stable.html</span><br><span class="line">nvidia-pyindex==1.0.9</span><br><span class="line">nvidia-tensorboard==1.15</span><br><span class="line">nvidia-tensorflow[horovod]==1.15.5+nv22.11</span><br><span class="line">torch==1.8.0+cu111</span><br><span class="line">torchaudio==0.8.0</span><br><span class="line">torchvision==0.9.0+cu111</span><br><span class="line"><span class="comment"># requirements.txt</span></span><br><span class="line">numpy==1.23.5</span><br><span class="line">requests==2.28.1</span><br><span class="line"><span class="comment"># ...</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight dockerfile"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># syntax=docker/dockerfile:1.2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">FROM</span> python:<span class="number">3.8</span>-bullseye as python_base</span><br><span class="line"></span><br><span class="line"><span class="comment"># config env remote source</span></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> <span class="built_in">set</span> -ex \</span></span><br><span class="line"><span class="language-bash">    <span class="comment"># add multiple pip sources</span></span></span><br><span class="line">    &amp;&amp; pip3 config set global.index-url <span class="string">"https://pypi.tuna.tsinghua.edu.cn/simple/"</span> \</span><br><span class="line">    &amp;&amp; pip3 config set global.extra-index-url <span class="string">"https://pypi.tuna.tsinghua.edu.cn/simple/ https://mirrors.cloud.tencent.com/pypi/simple"</span> \</span><br><span class="line">    &amp;&amp; pip3 config set global.timeout <span class="number">10</span> \</span><br><span class="line">    &amp;&amp; pip3 config set global.trusted-host <span class="string">"pypi.tuna.tsinghua.edu.cn mirrors.cloud.tencent.com"</span> \</span><br><span class="line">    <span class="comment"># add new apt source</span></span><br><span class="line">    &amp;&amp; cp /etc/apt/sources.list /etc/apt/sources.list.bak \</span><br><span class="line">    &amp;&amp; sed -i <span class="string">'/^# deb / d;s|http://deb.debian.org/debian|http://mirrors.tencent.com/debian|g;/^deb http/s/$/ contrib non-free/;/-updates/h;s/-updates/-backports/;$G'</span> /etc/apt/sources.list \</span><br><span class="line">    &amp;&amp; apt-get update &amp;&amp; apt-get install -y apt-transport-https ca-certificates  \</span><br><span class="line">    &amp;&amp; ln -s /lib/x86_64-linux-gnu/libtinfo.so.<span class="number">6</span> /lib/x86_64-linux-gnu/libtinfo.so.<span class="number">5</span> \</span><br><span class="line">    <span class="comment"># dumb-init is used to optimize start the service, see https://github.com/Yelp/dumb-init</span></span><br><span class="line">    &amp;&amp; pip3 install dumb-init \</span><br><span class="line">    &amp;&amp; rm -rf /var/lib/apt/lists/* /var/cache/* /var/log/* /tmp/* ~/.cache -rf</span><br><span class="line"></span><br><span class="line"><span class="keyword">ENV</span> LC_ALL C.UTF-<span class="number">8</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">ENV</span> LANG C.UTF-<span class="number">8</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">FROM</span> python_base as python_pack_pkg</span><br><span class="line"></span><br><span class="line"><span class="keyword">ENV</span> PIP_CACHE_DIR /opt/deploy/.pip_cache</span><br><span class="line"></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> ./requirements.* /opt/deploy/requirements/</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># docker buildx cache</span></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> --mount=<span class="built_in">type</span>=cache,target=/opt/deploy/.pip_cache,<span class="built_in">id</span>=pip_cache,sharing=locked \</span></span><br><span class="line"><span class="language-bash">    pip3 wheel --wheel-dir /opt/deploy/packages -r /opt/deploy/requirements/requirements.txt -r /opt/deploy/requirements/requirements.gpu.txt</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> <span class="built_in">set</span> -ex \</span></span><br><span class="line"><span class="language-bash">    <span class="comment"># prevent download pkgs online again</span></span></span><br><span class="line">    &amp;&amp; sed -i <span class="string">'/extra-index-url/,+d'</span> /opt/deploy/requirements/requirements.txt \</span><br><span class="line">    &amp;&amp; sed -i <span class="string">'/extra-index-url/,+1d'</span> /opt/deploy/requirements/requirements.gpu.txt</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">FROM</span> python_base as python_env</span><br><span class="line"></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> --from=python_pack_pkg /opt/deploy/requirements/* /opt/deploy/requirements/</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> --from=python_pack_pkg /opt/deploy/packages/* /opt/deploy/packages/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">CMD</span><span class="language-bash"> [<span class="string">"pip3"</span>, <span class="string">"install"</span>, <span class="string">"--no-index"</span>, <span class="string">"--find-links=/opt/deploy/packages"</span> ,<span class="string">"-r"</span> ,<span class="string">"/opt/deploy/requirements/requirements.txt"</span> ,<span class="string">"-r"</span>, <span class="string">"/opt/deploy/requirements/requirements.gpu.txt"</span>]</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">FROM</span> python_env as production</span><br><span class="line"></span><br><span class="line"><span class="keyword">WORKDIR</span><span class="language-bash"> /opt/deploy</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> scripts/docker/pre_start /usr/local/bin/</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> --from=python_pack_pkg /opt/deploy/requirements/* /opt/deploy/requirements/</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> --from=python_pack_pkg /opt/deploy/packages/* /opt/deploy/packages/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">ADD</span><span class="language-bash"> . /opt/deploy/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">ENTRYPOINT</span><span class="language-bash"> [<span class="string">"/usr/local/bin/dumb-init"</span>, <span class="string">"--"</span>]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">CMD</span><span class="language-bash"> [<span class="string">"bash"</span>, <span class="string">"-c"</span>,<span class="string">"pre_start &amp;&amp; exec python3 app.py"</span>]</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env bash</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># pre_start</span></span><br><span class="line"><span class="built_in">set</span> -ex</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"---------------- Env echo ----------------"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"current path: "</span><span class="string">"<span class="variable">$PWD</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"who is this: "</span><span class="string">"<span class="subst">$(whoami)</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"pip3 version: "</span><span class="string">"<span class="subst">$(pip3 --version)</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"----------- packages info ----------------"</span></span><br><span class="line"><span class="built_in">ls</span> -la /opt/deploy/packages</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"---------- requirements info -------------"</span></span><br><span class="line"><span class="built_in">cat</span> /opt/deploy/requirements/requirements.txt</span><br><span class="line"><span class="built_in">cat</span> /opt/deploy/requirements/requirements.gpu.txt</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"-------- install pre-cached pkgs ---------"</span></span><br><span class="line"><span class="comment"># install pkgs from cached path</span></span><br><span class="line">pip3 install --no-index --find-links=/opt/deploy/packages -r /opt/deploy/requirements/requirements.txt -r /opt/deploy/requirements/requirements.gpu.txt</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"---------- output active envs ------------"</span></span><br><span class="line">dynaconf -i config.settings list</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="dev-model">dev model</h2>
+<p>使用 <code>pip install -e</code> 命令可以将本地的一个 Python 包安装到系统中，同时在安装后，该包的源代码仍然可以在本地进行修改，修改后的代码会立即生效，无需重新安装。这种安装方式被称为 “开发模式”。</p>
+<p>在开发模式下，我们可以在本地修改源代码，而不需要每次修改后都重新安装包。这对于开发过程中的调试和测试非常有用。同时，我们也可以在本地使用版本控制工具来管理源代码，方便代码的维护和协作。</p>
+<p>使用命令安装包时，需要在包的根目录下包含一个 <a target="_blank" rel="noopener" href="http://setup.py">setup.py</a> 文件，该文件包含了包的元数据和依赖关系等信息。在安装时，pip 会读取该文件并根据其中的信息进行安装。</p>
+<h2 id="virtualenv">virtualenv</h2>
+<p>虚拟环境用于环境隔离，进行多环境开发或配置。</p>
+<p>安装虚拟环境配置工具 virtualenv, 参考使用教程:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://techinscribed.com/python-virtual-environment-in-vscode/">https://techinscribed.com/python-virtual-environment-in-vscode/</a></p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install virtualenv</span><br><span class="line">virtualenv --version</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="python-project">python project</h2>
+<p>python 工程表述提供了完整的标准文档，参考官方打包标准 <a target="_blank" rel="noopener" href="https://peps.python.org/pep-0621/">PEP 621</a></p>
+<p>符合官方标准 pyproject.tmol 示例如下:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://github.com/msclock/yolov5-utils/blob/main/pyproject.toml">https://github.com/msclock/yolov5-utils/blob/main/pyproject.toml</a></p>
+</li>
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://github.com/triton-inference-server/model_navigator/blob/main/pyproject.toml">https://github.com/triton-inference-server/model_navigator/blob/main/pyproject.toml</a></p>
+</li>
+</ul>
+<p>参考文档:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLR-r0edywujdxFSPtTILD8HPbEzt6MJy-">developing complete python project</a></p>
+</li>
+</ul>
+<h3 id="project-tmol">project.tmol</h3>
+<p>项目 project 配置参考 <a target="_blank" rel="noopener" href="https://packaging.python.org/en/latest/specifications/declaring-project-metadata/">declaring-project-meta</a>.</p>
+<figure class="highlight toml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[project]</span></span><br><span class="line"><span class="attr">name</span> = <span class="string">"xxx"</span></span><br><span class="line"><span class="comment"># version</span></span><br><span class="line"><span class="attr">version</span> = <span class="string">"0.0.1"</span></span><br><span class="line"><span class="attr">description</span> = <span class="string">"The description of the project xxx"</span></span><br><span class="line"><span class="attr">readme</span> = <span class="string">"README.md"</span></span><br><span class="line"><span class="attr">classifiers</span> = [</span><br><span class="line">    <span class="comment"># Development Status</span></span><br><span class="line">    <span class="string">"Development Status :: 4 - Beta"</span>,</span><br><span class="line">    <span class="string">"Development Status :: 5 - Production/Stable"</span>,</span><br><span class="line">    <span class="comment"># Framework</span></span><br><span class="line">    <span class="string">"Framework :: Django"</span>,</span><br><span class="line">    <span class="string">"Framework :: Flask"</span>,</span><br><span class="line">    <span class="comment"># License</span></span><br><span class="line">    <span class="string">"License :: OSI Approved :: GNU General Public License (GPL)"</span>,</span><br><span class="line">    <span class="string">"License :: OSI Approved :: MIT License"</span>,</span><br><span class="line">    <span class="string">"License :: OSI Approved :: Apache Software License"</span>,</span><br><span class="line">    <span class="string">"License :: OSI Approved :: BSD License"</span>,</span><br><span class="line">    <span class="comment"># Operating System</span></span><br><span class="line">    <span class="string">"Operating System :: OS Independent"</span>,</span><br><span class="line">    <span class="comment"># Intended Audience</span></span><br><span class="line">    <span class="string">"Intended Audience :: Developers"</span>,</span><br><span class="line">    <span class="string">"Intended Audience :: Education"</span>,</span><br><span class="line">    <span class="string">"Intended Audience :: Science/Research"</span>,</span><br><span class="line">    <span class="comment"># Programming Language</span></span><br><span class="line">    <span class="string">"Programming Language :: Python :: 3 :: Only"</span>,</span><br><span class="line">    <span class="string">"Programming Language :: Python :: 3.7"</span>,</span><br><span class="line">    <span class="string">"Programming Language :: Python :: 3.8"</span>,</span><br><span class="line">    <span class="string">"Programming Language :: Python :: 3.9"</span>,</span><br><span class="line">    <span class="string">"Programming Language :: Python :: 3.10"</span>,</span><br><span class="line">    <span class="string">"Programming Language :: Python :: 3.11"</span>,</span><br><span class="line">    <span class="comment"># Topic</span></span><br><span class="line">    <span class="string">"Topic :: Software Development"</span>,</span><br><span class="line">    <span class="string">"Topic :: Software Development :: Libraries"</span>,</span><br><span class="line">    <span class="string">"Topic :: Software Development :: Libraries :: Python Modules"</span>,</span><br><span class="line">    <span class="string">"Topic :: Education"</span>,</span><br><span class="line">    <span class="string">"Topic :: Scientific/Engineering"</span>,</span><br><span class="line">    <span class="string">"Topic :: Scientific/Engineering :: Artificial Intelligence"</span>,</span><br><span class="line">    <span class="string">"Topic :: Scientific/Engineering :: Image Recognition"</span>,</span><br><span class="line">]</span><br><span class="line"><span class="attr">authors</span> = []</span><br><span class="line"><span class="attr">maintainers</span> = []</span><br><span class="line"><span class="attr">keywords</span> = [</span><br><span class="line">    <span class="string">"machine-learning"</span>,</span><br><span class="line">    <span class="string">"deep-learning"</span>,</span><br><span class="line">]</span><br><span class="line"><span class="comment"># license: A SPDX license identifier</span></span><br><span class="line"><span class="attr">license</span> = { text = <span class="string">"GPL"</span> }</span><br><span class="line"><span class="attr">license</span> = { text = <span class="string">"Apache 2.0"</span> }</span><br><span class="line"><span class="attr">requires-python</span> = <span class="string">"&gt;=3.7"</span></span><br><span class="line"><span class="comment"># 项目必要的依赖</span></span><br><span class="line"><span class="attr">dependencies</span> = [</span><br><span class="line">    <span class="string">"fire"</span>,</span><br><span class="line">    <span class="string">"gitpython&gt;=3.1.30"</span>,</span><br><span class="line">    <span class="comment"># ...</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 项目可生成的脚本</span></span><br><span class="line"><span class="section">[project.scripts]</span></span><br><span class="line"><span class="comment"># xxx.python-file:entry-function 指定了脚本在xxx包python-file文件中entry-function入口函数</span></span><br><span class="line"><span class="attr">cli_name</span> = <span class="string">"xxx.python-file:entry-function"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 项目相关的链接</span></span><br><span class="line"><span class="section">[project.urls]</span></span><br><span class="line"><span class="attr">"Documentation"</span> = <span class="string">"https://github.com/msclock/xxx"</span></span><br><span class="line"><span class="attr">"Source"</span> = <span class="string">"https://github.com/msclock/xxx"</span></span><br><span class="line"><span class="attr">"Tracker"</span> = <span class="string">"https://github.com/msclock/xxx/issues"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 项目可选依赖, 可通过 pip install .[test]安装对应集合依赖</span></span><br><span class="line"><span class="section">[project.optional-dependencies]</span></span><br><span class="line"><span class="comment"># 常用的测试依赖如下</span></span><br><span class="line"><span class="attr">test</span> = [</span><br><span class="line">    <span class="string">"GitPython &gt;= 3.1.30"</span>,</span><br><span class="line">    <span class="string">"pytest &gt;= 5.2"</span>,</span><br><span class="line">    <span class="string">"pytest-mock &gt;= 3.8.2"</span>,</span><br><span class="line">    <span class="string">"pytype!=2021.11.18,!=2022.2.17"</span>,</span><br><span class="line">    <span class="string">"pre-commit &gt;= 2.20.0"</span>,</span><br><span class="line">    <span class="string">"pytest-unordered ~= 0.5"</span>,</span><br><span class="line">]</span><br><span class="line"><span class="comment"># 常用到的开发依赖如下</span></span><br><span class="line"><span class="attr">dev</span> = [</span><br><span class="line">    <span class="comment"># 可以使用分类链接的方式传递依赖组</span></span><br><span class="line">    <span class="string">"xxx[test]"</span>, <span class="comment"># 加入上面的 test 依赖</span></span><br><span class="line">    <span class="string">"black &gt;= 22.8"</span>,</span><br><span class="line">    <span class="string">"build &gt;= 0.8"</span>,</span><br><span class="line">    <span class="string">"ipython &gt;= 7.16"</span>,</span><br><span class="line">    <span class="string">"isort &gt;= 5.10"</span>,</span><br><span class="line">    <span class="string">"pdbpp &gt;= 0.10"</span>,</span><br><span class="line">    <span class="string">"pip &gt;= 21.1"</span>,</span><br><span class="line">    <span class="string">"pre-commit &gt;= 2.20.0"</span>,</span><br><span class="line">    <span class="string">"psutil ~= 5.1"</span>,</span><br><span class="line">    <span class="string">"twine &gt;= 4.0"</span>,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="build-system">build-system</h3>
+<p>使用 setuptools 后端构建系统</p>
+<figure class="highlight toml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[build-system]</span></span><br><span class="line"><span class="attr">requires</span> = [<span class="string">"setuptools&gt;=65.3.0"</span>, <span class="string">"setuptools_scm&gt;=2.0.0,&lt;3"</span>, <span class="string">"wheel&gt;=0.37.1"</span>]</span><br><span class="line"><span class="attr">build-backend</span> = <span class="string">"setuptools.build_meta"</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="distutils">distutils</h3>
+<figure class="highlight toml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置生成 wheel 打包文件命名遵循 `pkgname-version-python_tag-xxx-xxx.whl`</span></span><br><span class="line"><span class="section">[tool.distutils.bdist_wheel]</span></span><br><span class="line"><span class="attr">python_tag</span> = <span class="string">"py37.py38.py39.py310"</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="setuptools">setuptools</h3>
+<figure class="highlight toml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 需要包含的数据文件</span></span><br><span class="line"><span class="section">[tool.setuptools]</span></span><br><span class="line"><span class="attr">include-package-data</span> = <span class="literal">true</span></span><br><span class="line"><span class="attr">license-files</span> = [<span class="string">"LICENSE"</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打包使用 find 接口</span></span><br><span class="line"><span class="section">[tool.setuptools.packages.find]</span></span><br><span class="line"><span class="attr">namespaces</span> = <span class="literal">false</span></span><br><span class="line"><span class="attr">include</span> = []</span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据文件</span></span><br><span class="line"><span class="section">[tool.setuptools.package-data]</span></span><br><span class="line"><span class="comment"># xxx 为指定的包名</span></span><br><span class="line"><span class="attr">xxx</span> = [<span class="string">"**/*"</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用文件中变量动态生成版本信息</span></span><br><span class="line"><span class="section">[project]</span></span><br><span class="line"><span class="attr">dynamic</span> = [<span class="string">"version"</span>]</span><br><span class="line"></span><br><span class="line"><span class="section">[tool.setuptools.dynamic]</span></span><br><span class="line"><span class="comment"># attr 指向xxx包中__version__文件中 __version__变量</span></span><br><span class="line"><span class="attr">version</span> = { attr = <span class="string">"xxx.__version__.__version__"</span> }</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="black">black</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>black: 标准化项目格式化</p>
+</li>
+</ul>
+<figure class="highlight toml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 每行不超过 120</span></span><br><span class="line"><span class="section">[tool.black]</span></span><br><span class="line"><span class="attr">line-length</span> = <span class="number">120</span></span><br><span class="line"><span class="attr">target-version</span> = [<span class="string">'py38'</span>]</span><br><span class="line"><span class="attr">include</span> = <span class="string">'\.pyi?$'</span></span><br><span class="line"><span class="attr">exclude</span> = <span class="string">'''</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">(</span></span><br><span class="line"><span class="string">  /(</span></span><br><span class="line"><span class="string">      \.eggs         # exclude a few common directories in the</span></span><br><span class="line"><span class="string">    | \.git          # root of the project</span></span><br><span class="line"><span class="string">    | \.mypy_cache</span></span><br><span class="line"><span class="string">    | \.venv</span></span><br><span class="line"><span class="string">    | _build</span></span><br><span class="line"><span class="string">    | build</span></span><br><span class="line"><span class="string">    | dist</span></span><br><span class="line"><span class="string">  )/</span></span><br><span class="line"><span class="string">)</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="isort">isort</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>isort: 标注化项目 import 语句</p>
+</li>
+</ul>
+<figure class="highlight toml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># import导入遵循 black 工具</span></span><br><span class="line"><span class="section">[tool.isort]</span></span><br><span class="line"><span class="attr">profile</span> = <span class="string">"black"</span></span><br><span class="line"><span class="attr">line_length</span> = <span class="number">120</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="vulture">vulture</h3>
+<p>Vulture 是一个 Python 代码分析工具，用于查找未使用的代码。</p>
+<figure class="highlight toml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[tool.vulture]</span></span><br><span class="line"><span class="comment"># 排除不需要分析的文件或目录。</span></span><br><span class="line"><span class="attr">exclude</span> = []</span><br><span class="line"><span class="attr">ignore_decorators</span> = []</span><br><span class="line"><span class="attr">ignore_names</span> = []</span><br><span class="line"><span class="comment"># 生成一个白名单，其中包含已经被使用的标识符。</span></span><br><span class="line"><span class="attr">make_whitelist</span> = <span class="literal">true</span></span><br><span class="line"><span class="comment"># 设置最小置信度，即 Vulture 认为代码未使用的最低置信度。</span></span><br><span class="line"><span class="attr">min_confidence</span> = <span class="number">80</span></span><br><span class="line"><span class="comment"># 指定要分析的路径。</span></span><br><span class="line"><span class="attr">paths</span> = [<span class="string">"xxx"</span>]</span><br><span class="line"><span class="comment"># 按文件大小排序。</span></span><br><span class="line"><span class="attr">sort_by_size</span> = <span class="literal">true</span></span><br><span class="line"><span class="comment"># 是否显示详细的输出信息。</span></span><br><span class="line"><span class="attr">verbose</span> = <span class="literal">false</span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="pylint">pylint</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>pylint: 代码 lint</p>
+</li>
+</ul>
+<figure class="highlight toml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[tool.pylint]</span></span><br><span class="line"><span class="attr">py-version</span> = <span class="string">"3.7"</span> <span class="comment"># 基于 python3.7 lint</span></span><br><span class="line"><span class="attr">reports</span> = <span class="literal">true</span></span><br><span class="line"><span class="attr">persistent</span> = <span class="literal">true</span></span><br><span class="line"><span class="attr">output-format</span> = [ <span class="comment"># lint 输出格式</span></span><br><span class="line">    <span class="comment"># "json:.report.pylint.json",</span></span><br><span class="line">    <span class="string">"colorized"</span>,</span><br><span class="line">]</span><br><span class="line"><span class="attr">messages_control.disable</span> = [ <span class="comment"># lint时静默错误选项</span></span><br><span class="line">    <span class="string">"design"</span>,</span><br><span class="line">    <span class="string">"fixme"</span>,</span><br><span class="line">    <span class="string">"imports"</span>,</span><br><span class="line">    <span class="string">"line-too-long"</span>,</span><br><span class="line">    <span class="string">"imports"</span>,</span><br><span class="line">    <span class="string">"invalid-name"</span>,</span><br><span class="line">    <span class="string">"protected-access"</span>,</span><br><span class="line">    <span class="string">"missing-module-docstring"</span>,</span><br><span class="line">    <span class="string">"consider-using-f-string"</span>,</span><br><span class="line">    <span class="string">"unspecified-encoding"</span>,</span><br><span class="line">]</span><br><span class="line"><span class="attr">ignored-modules</span> = [<span class="string">"xxx"</span>] <span class="comment"># 忽视某些模块错误</span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="mypy">mypy</h3>
+<figure class="highlight toml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[tool.mypy]</span></span><br><span class="line"><span class="attr">explicit_package_bases</span> = <span class="literal">true</span></span><br><span class="line"><span class="attr">mypy_path</span> = <span class="string">"."</span></span><br><span class="line"><span class="attr">namespace_packages</span> = <span class="literal">true</span></span><br><span class="line"><span class="attr">ignore_missing_imports</span> = <span class="literal">true</span></span><br><span class="line"><span class="attr">ignore_missing_imports_per_module</span> = <span class="literal">true</span></span><br><span class="line"><span class="comment"># disallow_untyped_defs = true</span></span><br><span class="line"><span class="comment"># no_implicit_optional = true</span></span><br><span class="line"><span class="comment"># strict_optional = true</span></span><br><span class="line"><span class="comment"># warn_redundant_casts = true</span></span><br><span class="line"><span class="attr">check_untyped_defs</span> = <span class="literal">true</span></span><br><span class="line"><span class="attr">exclude</span> = <span class="string">'''(?x)(</span></span><br><span class="line"><span class="string">    directory-to-exclude</span></span><br><span class="line"><span class="string">)'''</span></span><br><span class="line"></span><br><span class="line"><span class="section">[[tool.mypy.overrides]]</span></span><br><span class="line"><span class="attr">module</span> = [<span class="string">"skbuild.*"</span>, <span class="string">"setuptools.*"</span>, <span class="string">"another-module-name.*"</span>]</span><br><span class="line"><span class="attr">ignore_missing_imports</span> = <span class="literal">true</span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="pytest">pytest</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>pytest: 单元测试集成</p>
+</li>
+</ul>
+<figure class="highlight toml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[tool.pytest.ini_options]</span></span><br><span class="line"><span class="attr">testpaths</span> = [<span class="string">"test"</span>]</span><br><span class="line"><span class="attr">python_files</span> = [<span class="string">"test_*.py"</span>, <span class="string">"*_test.py"</span>, <span class="string">"testing/python/*.py"</span>]</span><br><span class="line"><span class="attr">python_classes</span> = [<span class="string">"Test"</span>, <span class="string">"Acceptance"</span>]</span><br><span class="line"><span class="attr">python_functions</span> = [<span class="string">"test"</span>]</span><br><span class="line"><span class="attr">filterwarnings</span> = [<span class="string">"error"</span>]</span><br><span class="line"><span class="attr">xfail_strict</span> = <span class="literal">true</span></span><br><span class="line"><span class="attr">addopts</span> = [</span><br><span class="line">    <span class="string">"-ra"</span>,</span><br><span class="line">    <span class="string">"--showlocals"</span>,</span><br><span class="line">    <span class="string">"--strict-markers"</span>,</span><br><span class="line">    <span class="string">"--strict-config"</span>,</span><br><span class="line">    <span class="comment"># 导入模块时使用importlib模块</span></span><br><span class="line">    <span class="string">"--import-mode=importlib"</span></span><br><span class="line">]</span><br><span class="line"><span class="attr">minversion</span> = <span class="string">"6.0"</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Packing">Packing</h3>
+<p>配置完 pyproject.toml 后，打包可以使用以下命令:</p>
+<p>使用 build</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install build</span><br><span class="line">python -m build</span><br></pre></td></tr></tbody></table></figure>
+<p>使用 pip</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip wheel .</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Upload-to-pypi">Upload to pypi</h3>
+<p>打包完后，如果需要上传到 pypi 上，参考 <a target="_blank" rel="noopener" href="https://pypi.org/project/GitHub-Action-Python-Example/">Github-Action-Python-Example</a>.</p>
+<h4 id="twine">twine</h4>
+<p>上传工具一般选择 twine, 使用方式如下:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">pip install twine</span><br><span class="line"><span class="comment"># Packing locally</span></span><br><span class="line">python -m build</span><br><span class="line"><span class="comment"># Upload package in the generated folder dist</span></span><br><span class="line"><span class="built_in">export</span> TWINE_USERNAME=__token__</span><br><span class="line"><span class="built_in">export</span> TWINE_PASSWORD=api-key-generated-by-pypi:pypi-[key]</span><br><span class="line">twine upload --verbose --skip-existing dist/*</span><br></pre></td></tr></tbody></table></figure>
+<!--
+[key]:
+AgEIcHlwaS5vcmcCJDkzY2Q5NGE1LThhNDItNGQxOC1iNWZkLTY3MTdhYzlkNWY4OQACKlszLCI1MGI1N2RiMC0yYmYzLTRmYmUtOTU5ZC03MWIzMzNmZjBlZjYiXQAABiBzhUveD8gKckC62TdHdPPNOzAvDhhS5TG6c5DoV7VVxA -->
+<h4 id="集成到-GitHub">集成到 GitHub</h4>
+<p>使用 GitHub Python pypi upload 模板，使用示例参考:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://github.com/msclock/yolov5-utils/blob/main/.github/workflows/python-publish.yml">https://github.com/msclock/yolov5-utils/blob/main/.github/workflows/python-publish.yml</a></p>
+</li>
+</ul>
+<h4 id="集成到-GitLab">集成到 GitLab</h4>
+<p>参考 <a href="#twine">twine</a> 配置 GitLab CI 脚本即可.</p>
+<h2 id="docs-generator">docs generator</h2>
+<p>python 流行的文档生成器，包括 sphinx.</p>
+<h3 id="sphinx">sphinx</h3>
+<p><a target="_blank" rel="noopener" href="https://docs.readthedocs.io/en/stable/index.html">sphinx</a> 是一个非常流行的 python 文档生成工具.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install sphinx</span><br></pre></td></tr></tbody></table></figure>
+<p>参考文档:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://sphinx-themes.org/">sphinx-themes</a></p>
+</li>
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/264647009">zhihu 简单入门</a></p>
+</li>
+</ul>
+<h4 id="Quickstart">Quickstart</h4>
+<p>使用 sphinx-quickstart 工具快速配置</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sphinx-quickstart</span><br><span class="line"><span class="comment"># fill contents with prompt</span></span><br></pre></td></tr></tbody></table></figure>
+<h4 id="api-generation">api generation</h4>
+<blockquote>
+<p>[!NOTE]<br>
+生成完整的 api 依赖于包包含<code>__init__.py</code></p>
+</blockquote>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aphinx-apidoc -o docs path-to-packages</span><br></pre></td></tr></tbody></table></figure>
+<p>接下来将生成的 package 文档指定显示在 index 中.</p>
+<h4 id="conf-py"><a target="_blank" rel="noopener" href="http://conf.py">conf.py</a></h4>
+<h4 id="Add-jupter-support">Add jupter support</h4>
+<p><a target="_blank" rel="noopener" href="https://docs.readthedocs.io/en/stable/guides/jupyter.html">官方文档 jupyter 集成</a></p>
+<p>先配置集成 jupyter 插件 <a target="_blank" rel="noopener" href="https://myst-nb.readthedocs.io/">myst-bn</a>.</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># conf.py</span></span><br><span class="line">extensions = [</span><br><span class="line">    <span class="string">"myst_nb"</span>,</span><br><span class="line">]</span><br></pre></td></tr></tbody></table></figure>
+<p>再写好 jupyter 链接</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">maxdepth: 2</span><br><span class="line">caption: Contents:</span><br><span class="line">---</span><br><span class="line">notebooks/Example 1</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="readthedocs">readthedocs</h3>
+<p>在 Read the Docs 网站 <a target="_blank" rel="noopener" href="https://readthedocs.org/">https://readthedocs.org/</a> 注册，并绑定 GitHub 账户。点击 “Import a Project” 导入项目，输入项目名称和仓库地址，可免费在线托管项目文档。</p>
+<h2 id="scikit-build-core">scikit-build-core</h2>
+<p><a target="_blank" rel="noopener" href="https://github.com/scikit-build/scikit-build-core">scikit-build-core</a> 用于适配基于 cmake 的 python 构建工具.</p>
+<p>参考文档:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://scikit-build-core.readthedocs.io/en/latest/index.html">官方文档</a></p>
+</li>
+</ul>
+<p>参考 demo 示例:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://github.com/pybind/scikit_build_example">官方示例 scikit_build_example (with pybind11)</a></p>
+</li>
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://github.com/scikit-build/scikit-build-sample-projects">官方示例 scikit-build-sample-projects</a></p>
+</li>
+</ul>
+<h2 id="Flask">Flask</h2>
+<h3 id="Explore-Flask">Explore Flask</h3>
+<p><a target="_blank" rel="noopener" href="https://github.com/rpicard/explore-flask">Flask Practice</a> 是 github 上社区总结的最佳实践参考.</p>
+<h2 id="subprocess">subprocess</h2>
+<h3 id="subprocess运行子进程">subprocess 运行子进程</h3>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> subprocess</span><br><span class="line"></span><br><span class="line">args = [<span class="string">"python"</span>, <span class="string">"-c"</span>, <span class="string">'"print(hello)"'</span>]</span><br><span class="line">subprocess.run(args=args, capture_output=<span class="literal">True</span>).stdout.decode().strip(<span class="string">"\n"</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="argparse">argparse</h2>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># tt.py</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">parse_args</span>():</span><br><span class="line">    <span class="keyword">import</span> argparse</span><br><span class="line"></span><br><span class="line">    root_parser = argparse.ArgumentParser()</span><br><span class="line">    subs = root_parser.add_subparsers(dest=<span class="string">"action"</span>)</span><br><span class="line">    subs.required = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">    sub1_parser = subs.add_parser(<span class="string">"sub1"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># postional argument</span></span><br><span class="line">    sub1_parser.add_argument(<span class="string">"p1"</span>)</span><br><span class="line">    <span class="comment"># optional</span></span><br><span class="line">    sub1_parser.add_argument(<span class="string">"--batch_size"</span>, <span class="string">"-b"</span>, default=<span class="number">8</span>, <span class="built_in">type</span>=<span class="built_in">int</span>)</span><br><span class="line">    <span class="keyword">return</span> root_parser.parse_args()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    FLAGS = parse_args()</span><br><span class="line">    <span class="built_in">print</span>(**<span class="built_in">vars</span>(FLAGS))  <span class="comment"># print as dict</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># python tt.py</span></span><br><span class="line"><span class="comment"># usage: tt.py [-h] {sub1} ...</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># positional arguments:</span></span><br><span class="line"><span class="comment">#   {sub1}</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># optional arguments:</span></span><br><span class="line"><span class="comment">#   -h, --help  show this help message and exit</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Gradio">Gradio</h2>
+<p><a target="_blank" rel="noopener" href="https://www.gradio.app/">Gradio</a> 是一个快速构建 AI demo app 的 web 应用框架。安装 <code>pip install gradio</code>.</p>
+<p>教程参考:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://www.gradio.app/docs/">gradio docs</a></p>
+</li>
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://blog.51cto.com/u_15485092/6223566">51cto blog Gradio 入门到进阶全网最详细教程</a></p>
+</li>
+</ul>
+<h3 id="Quickstart-2">Quickstart</h3>
+<p>官方示例，完整文档<a target="_blank" rel="noopener" href="https://www.gradio.app/quickstart/">参考</a>.</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gradio <span class="keyword">as</span> gr</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">greet</span>(<span class="params">name</span>):</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Hello "</span> + name + <span class="string">"!"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">iface = gr.Interface(fn=greet, inputs=<span class="string">"text"</span>, outputs=<span class="string">"text"</span>)</span><br><span class="line">iface.test_launch()</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Share-app">Share app</h3>
+<p>共享 app <a target="_blank" rel="noopener" href="https://www.gradio.app/sharing-your-app/">参考</a></p>
+<p>以下是一个 fast api</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">from fastapi import FastAPI</span><br><span class="line">import gradio as gr</span><br><span class="line"></span><br><span class="line">CUSTOM_PATH = <span class="string">"/gradio"</span></span><br><span class="line"></span><br><span class="line">app = FastAPI()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@app.get(<span class="string">"/"</span>)</span><br><span class="line">def read_main():</span><br><span class="line">    <span class="built_in">return</span> {<span class="string">"message"</span>: <span class="string">"This is your main app"</span>}</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">io = gr.Interface(lambda x: <span class="string">"Hello, "</span> + x + <span class="string">"!"</span>, <span class="string">"textbox"</span>, <span class="string">"textbox"</span>)</span><br><span class="line">app = gr.mount_gradio_app(app, io, path=CUSTOM_PATH)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Run this from the terminal as you would normally start a FastAPI app: `uvicorn run:app`</span></span><br><span class="line"><span class="comment"># and navigate to http://localhost:8000/gradio in your browser.</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="streamlit">streamlit</h2>
+<p><a target="_blank" rel="noopener" href="https://www.gradio.app/">streamlit</a> 是一个相比于 gradio 更基础的 web app  构建框架.</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>docs: <a target="_blank" rel="noopener" href="https://docs.streamlit.io/">https://docs.streamlit.io/</a></p>
+</li>
+</ul>
+<h2 id="Fire">Fire</h2>
+<p><a target="_blank" rel="noopener" href="https://github.com/google/python-fire">Fire</a> 将转换任何 Python 模块、类、对象、函数等 (任何 Python 组件都可以工作！) 变成了 CLI。它被称为 Fire 是因为当调用 Fire () 时，它会激活命令。</p>
+<h3 id="Using-function">Using function</h3>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># hello.py</span></span><br><span class="line"><span class="keyword">import</span> fire</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">hello</span>(<span class="params">name=<span class="string">"World"</span></span>):</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Hello {name}!"</span>.<span class="built_in">format</span>(name=name)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    fire.Fire(hello)  <span class="comment"># 当不显示指定时,默认全部导出</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ python hello.py --<span class="built_in">help</span></span><br><span class="line">INFO: Showing <span class="built_in">help</span> with the <span class="built_in">command</span> <span class="string">'hello.py -- --help'</span>.</span><br><span class="line"></span><br><span class="line">NAME</span><br><span class="line">    hello.py</span><br><span class="line"></span><br><span class="line">SYNOPSIS</span><br><span class="line">    hello.py &lt;flags&gt;</span><br><span class="line"></span><br><span class="line">FLAGS</span><br><span class="line">    --name=NAME</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Using-class">Using class</h3>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> fire</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Calculator</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="string">"""A simple calculator class."""</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">double</span>(<span class="params">self, number</span>):</span><br><span class="line">        <span class="string">"""subcommand 1"""</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span> * number</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">triple</span>(<span class="params">self, number</span>):</span><br><span class="line">        <span class="string">"""subcommand 2"""</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">3</span> * number</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    fire.Fire(Calculator)</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Using-object">Using object</h3>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> fire</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Calculator</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">self, x, y</span>):</span><br><span class="line">        <span class="keyword">return</span> x + y</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">multiply</span>(<span class="params">self, x, y</span>):</span><br><span class="line">        <span class="keyword">return</span> x * y</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    calculator = Calculator()</span><br><span class="line">    fire.Fire(calculator)</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Define-subcommand">Define subcommand</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>使用函数</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> fire</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">x, y</span>):</span><br><span class="line">    <span class="keyword">return</span> x + y</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">multiply</span>(<span class="params">x, y</span>):</span><br><span class="line">    <span class="keyword">return</span> x * y</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    fire.Fire()</span><br><span class="line"><span class="comment"># 显示指定暴露方法</span></span><br><span class="line"><span class="comment"># fire.Fire({</span></span><br><span class="line"><span class="comment">#   'add': add,</span></span><br><span class="line"><span class="comment">#   'mul': multiply,</span></span><br><span class="line"><span class="comment"># })</span></span><br></pre></td></tr></tbody></table></figure>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="#using-class">使用类</a></p>
+</li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># example.py</span></span><br><span class="line"><span class="keyword">import</span> fire</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">BrokenCalculator</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, offset=<span class="number">1</span></span>):</span><br><span class="line">        <span class="string">"""构造函数中定义了参数，那么这些参数(offset)都会作为整个命令行程序的选项参数。"""</span></span><br><span class="line">        self._offset = offset</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">self, x, y</span>):</span><br><span class="line">        <span class="keyword">return</span> x + y + self._offset</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">multiply</span>(<span class="params">self, x, y</span>):</span><br><span class="line">        <span class="keyword">return</span> x * y + self._offset</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    fire.Fire(BrokenCalculator)</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ python example.py --<span class="built_in">help</span></span><br><span class="line">INFO: Showing <span class="built_in">help</span> with the <span class="built_in">command</span> <span class="string">'example.py -- --help'</span>.</span><br><span class="line"></span><br><span class="line">NAME</span><br><span class="line">    example.py</span><br><span class="line"></span><br><span class="line">SYNOPSIS</span><br><span class="line">    example.py &lt;flags&gt;</span><br><span class="line"></span><br><span class="line">FLAGS</span><br><span class="line">    --offset=OFFSET</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Embedded-command">Embedded command</h3>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">IngestionStage</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">run</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Ingesting! Nom nom nom..."</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">DigestionStage</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">run</span>(<span class="params">self, volume=<span class="number">1</span></span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="string">" "</span>.join([<span class="string">"Burp!"</span>] * volume)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">status</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Satiated."</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Pipeline</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        self.ingestion = IngestionStage()</span><br><span class="line">        self.digestion = DigestionStage()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">run</span>(<span class="params">self</span>):</span><br><span class="line">        self.ingestion.run()  <span class="comment">#</span></span><br><span class="line">        self.digestion.run()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    fire.Fire(Pipeline)</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Using-attr-access">Using attr access</h3>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> fire</span><br><span class="line"></span><br><span class="line">cities = {</span><br><span class="line">    <span class="string">"hz"</span>: (<span class="number">310000</span>, <span class="string">"杭州"</span>),</span><br><span class="line">    <span class="string">"bj"</span>: (<span class="number">100000</span>, <span class="string">"北京"</span>),</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">City</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, code</span>):</span><br><span class="line">        info = cities.get(code)</span><br><span class="line">        self.zipcode = info[<span class="number">0</span>] <span class="keyword">if</span> info <span class="keyword">else</span> <span class="literal">None</span></span><br><span class="line">        self.city = info[<span class="number">1</span>] <span class="keyword">if</span> info <span class="keyword">else</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    fire.Fire(City)</span><br></pre></td></tr></tbody></table></figure>
+<p>这里直接指定属性访问即可</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ python example.py --code bj zipcode</span><br><span class="line">100000</span><br><span class="line">$ python example.py --code hz city</span><br><span class="line">杭州</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Using-command-chain">Using command chain</h3>
+<p>实现命令链式调用，需要在实例方法中返回 self.</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> fire</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Calculator</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        self.result = <span class="number">0</span></span><br><span class="line">        self.express = <span class="string">"0"</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__str__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="string">f"<span class="subst">{self.express}</span> = <span class="subst">{self.result}</span>"</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">self, x</span>):</span><br><span class="line">        self.result += x</span><br><span class="line">        self.express = <span class="string">f"<span class="subst">{self.express}</span>+<span class="subst">{x}</span>"</span></span><br><span class="line">        <span class="keyword">return</span> self</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">sub</span>(<span class="params">self, x</span>):</span><br><span class="line">        self.result -= x</span><br><span class="line">        self.express = <span class="string">f"<span class="subst">{self.express}</span>-<span class="subst">{x}</span>"</span></span><br><span class="line">        <span class="keyword">return</span> self</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">mul</span>(<span class="params">self, x</span>):</span><br><span class="line">        self.result *= x</span><br><span class="line">        self.express = <span class="string">f"(<span class="subst">{self.express}</span>)*<span class="subst">{x}</span>"</span></span><br><span class="line">        <span class="keyword">return</span> self</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">div</span>(<span class="params">self, x</span>):</span><br><span class="line">        self.result /= x</span><br><span class="line">        self.express = <span class="string">f"(<span class="subst">{self.express}</span>)/<span class="subst">{x}</span>"</span></span><br><span class="line">        <span class="keyword">return</span> self</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    fire.Fire(Calculator)</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ python calculator.py add 1 sub 2 mul 3 div 4</span><br><span class="line">((+1-2)*3)/4 = -0.75</span><br><span class="line"></span><br><span class="line">$ python calculator.py add 1 sub 2 mul 3 div 4 add 4 sub 3 mul 2 div 1</span><br><span class="line">((((0+1-2)*3)/4+4-3)*2)/1 = 0.5</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Using-args-and-kwargs">Using *args and **kwargs</h3>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># example.py</span></span><br><span class="line"><span class="keyword">import</span> fire</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fargs</span>(<span class="params">*args</span>):</span><br><span class="line">    <span class="string">"""位置参数调用:python example.py fargs a b c"""</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">str</span>(args)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fkwargs</span>(<span class="params">**kwargs</span>):</span><br><span class="line">    <span class="string">"""选项参数调用:python example.py fargs --a a1 --b b1 --c c1"""</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">str</span>(kwargs)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    fire.Fire()</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 没有使用分隔符，upper 被作为位置参数</span></span><br><span class="line">$ python example.py fargs a b c upper</span><br><span class="line">(<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'upper'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用了分隔符，upper(内置方法) 被作为子命令</span></span><br><span class="line">$ python example.py fargs a b c - upper</span><br><span class="line">(<span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="确定参数类型">确定参数类型</h3>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># example.py</span></span><br><span class="line"><span class="keyword">import</span> fire</span><br><span class="line"></span><br><span class="line">fire.Fire(<span class="keyword">lambda</span> obj: <span class="built_in">type</span>(obj).__name__)</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">$ python example.py 10</span><br><span class="line">int</span><br><span class="line">$ python example.py 10.0</span><br><span class="line"><span class="built_in">float</span></span><br><span class="line">$ python example.py hello</span><br><span class="line">str</span><br><span class="line">$ python example.py <span class="string">'(1,2)'</span></span><br><span class="line">tuple</span><br><span class="line">$ python example.py [1,2]</span><br><span class="line">list</span><br><span class="line">$ python example.py True</span><br><span class="line">bool</span><br><span class="line">$ python example.py {name: David}</span><br><span class="line">dict</span><br><span class="line">$ python example.py <span class="string">'{"name": "David Bieber"}'</span></span><br><span class="line">dict</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="click">click</h2>
+<!-- https://zhuanlan.zhihu.com/p/90307978 -->
+<h2 id="flet">flet</h2>
+<!--  -->
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Msclock
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://msclock.github.io/posts/afa93b42/" title="python">https://msclock.github.io/posts/afa93b42/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/f4555bee/" rel="prev" title="multiprocessing">
+                  <i class="fa fa-chevron-left"></i> multiprocessing
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/b7e144d1/" rel="next" title="算法及数据结构">
+                  算法及数据结构 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC81Njg4MS8zMzM0NQ=="></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Msclock</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">301k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">4:33</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/msclock" class="github-corner" title="在 GitHub 上关注我" aria-label="在 GitHub 上关注我" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="https://cdn.jsdelivr.net/npm/ribbon.js@1.0.2/dist/ribbon.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.8/dist/medium-zoom.min.js" integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.15.1/source/js/comments.min.js"></script><script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.15.1/source/js/utils.min.js"></script><script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.15.1/source/js/motion.min.js"></script><script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.15.1/source/js/next-boot.min.js"></script><script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.15.1/source/js/pjax.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.1/dist/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.15.1/source/js/third-party/search/local-search.min.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdn.jsdelivr.net/npm/pdfobject@2.2.8/pdfobject.min.js","integrity":"sha256-tu9j5pBilBQrWSDePOOajCUdz6hWsid/lBNzK4KgEPM="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.15.1/source/js/third-party/tags/pdf.min.js"></script>
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"neutral","dark":"neutral"},"js":{"url":"https://cdn.jsdelivr.net/npm/mermaid@9.4.3/dist/mermaid.min.js","integrity":"sha256-e0o3JYsdjqKajf9eOe22FhioYSz9WofRY4dLKo3F6do="}}</script>
+  <script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.15.1/source/js/third-party/tags/mermaid.min.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.15.1/source/js/third-party/pace.min.js"></script>
+
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.3.0/dist/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://msclock.github.io/posts/afa93b42/"}</script>
+  <script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.15.1/source/js/third-party/quicklink.min.js"></script>
+<script src="https://unpkg.com/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '64px',
+  right: 'unset',
+  left: '32px',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: true,
+  label: '🌓',
+  autoMatchOsTheme: true
+}
+const darkmode = new Darkmode(options);
+window.darkmode = darkmode;
+darkmode.showWidget();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.15.1/source/js/third-party/comments/livere.min.js"></script>
+
+<script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+</html>

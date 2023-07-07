@@ -1,0 +1,536 @@
+<hr>
+<p>title: pre-commit tool<br>
+categories:</p>
+<ul class="lvl-0">
+<li class="lvl-4">develop</li>
+<li class="lvl-4">python<br>
+abbrlink: e3fe98d<br>
+date: 2022-09-17 09:36:36<br>
+tags:</li>
+</ul>
+<hr>
+<p>本文总结了 <a href="https://github.com/pre-commit/pre-commit">pre-commit</a> 用于管理和维护多语言预提交挂钩的框架的使用经验。</p>
+<h2 id="配置">配置</h2>
+<h3 id="安装">安装</h3>
+<pre><code class="language-bash"># 该工具可通过 pip 直接安装。
+pip3 install pre-commit
+# 集成到当前的项目当中
+pre-commit install
+</code></pre>
+<h3 id="配置文件">配置文件</h3>
+<p><code>pre-commit</code> 工具通过配置文件 <code>.pre-commit-config.yaml</code> 控制代码提交等操作。</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>创建文件该配置文件，放于根目录，或者使用 <code>pre-commit sample-config</code> 生成模板，相关模板字段含义参考 <a href="https://pre-commit.com/#pre-commit-configyaml---top-level">官方文档</a>。</p>
+</li>
+<li class="lvl-2">
+<p>根据需要自定义配置<a href="https://pre-commit.com/hooks.html">插件 plugin </a>，这里以配置格式化工具 <a href="https://github.com/psf/black">black</a> 工具为例。</p>
+</li>
+</ul>
+<blockquote>
+<p>[!TIP]<br>
+配置好后，可使用 black 的徽章 <a href="https://github.com/psf/black"><img src="https://img.shields.io/badge/code%20style-black-000000.svg" alt="Code style: black."></a>，表示该项目通过该工具检查。</p>
+<p>同样,也可附上，pre-commit 的徽章 <a href="https://github.com/pre-commit/pre-commit"><img src="https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&amp;logoColor=white" alt="pre-commit."></a>。</p>
+</blockquote>
+<!-- more -->
+<pre><code class="language-YAML">repos:
+  # Black, the code formatter, natively supports pre-commit
+  - repo: https://github.com/psf/black
+    rev: &quot;22.6.0&quot; # Keep in sync with blacken-docs
+    hooks:
+      - id: black
+  # Also code format the docs
+  - repo: https://github.com/asottile/blacken-docs
+    rev: &quot;v1.12.1&quot;
+    hooks:
+      - id: blacken-docs
+        additional_dependencies:
+          - black==22.6.0 # keep in sync with black hook
+</code></pre>
+<h3 id="pre-commit-常用命令">pre-commit 常用命令</h3>
+<pre><code class="language-bash"># 所有仓库代码都运行
+pre-commit run -a
+# 注册提交阶段执行钩子
+pre-commit install --hook-type commit-msg
+# 卸载相应钩子
+pre-commit uninstall --hook-type commit-msg --hook-type pre-commit
+# 卸载 pre-commit 钩子
+pre-commit uninstall
+# 执行对应配置钩子 black 格式化代码
+pre-commit run black
+</code></pre>
+<h2 id="使用">使用</h2>
+<p>这里给出实际项目中使用示例 <code>.pre-commit-config.yaml</code> ，并对某些字段附上了相应的说明。</p>
+<pre><code class="language-yml"># .pre-commit-config.yaml
+# To use:
+#
+#     pre-commit run -a
+#
+# Or:
+#
+#     pre-commit install  # (runs every time you commit in git)
+#
+# To update this file:
+#
+#     pre-commit autoupdate
+#
+# See https://github.com/pre-commit/pre-commit
+
+# (optional: default false) set to true to have pre-commit stop running hooks after the first failure
+fail_fast: false
+
+# (optional: default ^$) global file exclude pattern.
+exclude: |
+  (?x)(
+    ^(3rdParty/.*) |
+    ^.*\.drawio
+  )
+
+# (optional: default '') global file include pattern.
+files: '' # set '' as default
+
+# A list of repository mappings.
+repos:
+  # Standard hooks
+  - repo: https://github.com/pre-commit/pre-commit-hooks # the repository url to git clone from
+    # the revision or tag to clone at
+    rev: &quot;v4.3.0&quot;
+    # A list of hook mappings.
+    hooks:
+      - id: check-added-large-files # which hook from the repository to use.
+      - id: check-case-conflict
+      - id: check-docstring-first
+      - id: check-merge-conflict
+      - id: check-symlinks
+      - id: check-toml
+      - id: check-yaml
+      - id: debug-statements
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+      - id: requirements-txt-fixer
+      - id: trailing-whitespace
+
+  # Upgrade old Python syntax
+  - repo: https://github.com/asottile/pyupgrade
+    rev: &quot;v2.37.3&quot;
+    hooks:
+      - id: pyupgrade
+        # (optional) list of additional parameters to pass to the hook.
+        args: [--py37-plus]
+
+  # Nicely sort includes
+  - repo: https://github.com/PyCQA/isort
+    rev: &quot;5.10.1&quot;
+    hooks:
+      - id: isort
+
+  # Black, the code formatter, natively supports pre-commit
+  - repo: https://github.com/psf/black
+    rev: &quot;22.6.0&quot; # Keep in sync with blacken-docs
+    hooks:
+      - id: black
+
+  # Also code format the docs
+  - repo: https://github.com/asottile/blacken-docs
+    rev: &quot;v1.12.1&quot;
+    hooks:
+      - id: blacken-docs
+        # (optional) a list of dependencies that will be installed in the environment where this
+        # hook gets run. One useful application is to install plugins for hooks such as eslint.
+        additional_dependencies:
+          - black==22.6.0 # keep in sync with black hook
+
+  # Changes tabs to spaces
+  - repo: https://github.com/Lucas-C/pre-commit-hooks
+    rev: &quot;v1.3.1&quot;
+    hooks:
+      - id: remove-tabs
+
+  # Autoremoves unused imports
+  - repo: https://github.com/hadialqattan/pycln
+    rev: &quot;v2.1.1&quot;
+    hooks:
+      - id: pycln
+        # (optional) confines the hook to the commit, merge-commit, push, prepare-commit-msg,
+        # commit-msg, post-checkout, post-commit, post-merge, post-rewrite, or manual stage.
+        # See https://pre-commit.com/#confining-hooks-to-run-at-certain-stages
+        stages: [manual]
+
+  # Checking for common mistakes
+  - repo: https://github.com/pre-commit/pygrep-hooks
+    rev: &quot;v1.9.0&quot;
+    hooks:
+      - id: python-check-blanket-noqa
+      - id: python-check-blanket-type-ignore
+      - id: python-no-log-warn
+      - id: python-use-type-annotations
+
+  # Automatically remove noqa that are not used
+  - repo: https://github.com/asottile/yesqa
+    rev: &quot;v1.4.0&quot;
+    hooks:
+      - id: yesqa
+        additional_dependencies: &amp;flake8_dependencies
+          - flake8-bugbear
+          - pep8-naming
+
+  # Flake8 also supports pre-commit natively (same author)
+  - repo: https://github.com/PyCQA/flake8
+    rev: &quot;5.0.4&quot;
+    hooks:
+      - id: flake8
+        # (optional) file exclude pattern.
+        exclude: ^(docs/.*|tools/.*)$
+        additional_dependencies: *flake8_dependencies
+        args:
+          - --max-line-length=120
+          - --show-source
+          - --exclude=.git, __pycache__, build, dist, docs, tools, venv, .venv
+          - --extend-ignore=E203, E722, B950
+          - --extend-select=B9
+
+  # PyLint has native support - not always usable, but works for us
+  - repo: https://github.com/PyCQA/pylint
+    rev: &quot;v2.14.5&quot;
+    hooks:
+      - id: pylint
+
+  # CMake formatting
+  - repo: https://github.com/cheshirekow/cmake-format-precommit
+    rev: &quot;v0.6.13&quot;
+    hooks:
+      - id: cmake-format
+        additional_dependencies: [pyyaml]
+        # (optional) override the default file types to run on (AND).
+        # See https://pre-commit.com/#filtering-files-with-types
+        types: [file]
+        files: (\.cmake|CMakeLists.txt)(.in)?$
+
+  # Check static types with mypy
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: &quot;v0.971&quot;
+    hooks:
+      - id: mypy
+        args: []
+        exclude: ^(tests|docs|setup.py)/
+        additional_dependencies: [nox, rich]
+
+  # Checks the manifest for missing files (native support)
+  - repo: https://github.com/mgedmin/check-manifest
+    rev: &quot;0.48&quot;
+    hooks:
+      - id: check-manifest
+        # This is a slow hook, so only run this if --hook-stage manual is passed
+        stages: [manual]
+        additional_dependencies: [cmake, ninja]
+
+  # Check for spelling
+  - repo: https://github.com/codespell-project/codespell
+    rev: &quot;v2.2.1&quot;
+    hooks:
+      - id: codespell
+        args:
+          - --skip=&quot;3rdParty/&quot;
+          - --ignore-words-list=&quot;Transer,transer,axises,pres,seh,SEH,indexs,indexS&quot;
+          - --check-filenames
+
+  # Check for common shell mistakes
+  - repo: https://github.com/shellcheck-py/shellcheck-py
+    rev: &quot;v0.8.0.4&quot;
+    hooks:
+      - id: shellcheck
+
+  # Disallow some common capitalization mistakes
+  - repo: local
+    hooks:
+      - id: disallow-caps
+        name: Disallow improper capitalization
+        language: pygrep
+        # the entry point - the executable to run. entry can also contain arguments
+        # that will not be overridden such as entry: autopep8 -i.
+        entry: PyBind|Numpy|Cmake|CCache|PyTest
+        exclude: ^\.pre-commit-config.yaml$
+
+  # Clang format the codebase automatically
+  - repo: https://github.com/pre-commit/mirrors-clang-format
+    rev: &quot;v14.0.6&quot;
+    hooks:
+      - id: clang-format
+        # (optional: default []) list of file types to run on (OR). See Filtering files with types.
+        types_or: [c++, c, cuda]
+
+  # Commitizen is a tool designed that obeys a standard way of committing rules.
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v2.32.1
+    hooks:
+      - id: commitizen
+        # (optional: default (all stages)) confines the hook to the commit, merge-commit,
+        # push, prepare-commit-msg, commit-msg, post-checkout, post-commit, post-merge,
+        # post-rewrite, or manual stage. See Confining hooks to run at certain stages.
+        stages: [commit-msg]
+      - id: commitizen-branch
+        stages: [push]
+</code></pre>
+<p>通过以上配置，能够完整的适配我实际用的项目，在附上对应的集成CI到 gitlab 相关的脚本。需要依赖如下：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>python3</p>
+</li>
+<li class="lvl-2">
+<p>pip</p>
+<pre><code class="language-bash">pip3 install nox
+</code></pre>
+</li>
+<li class="lvl-2">
+<p>gitlab</p>
+<ul class="lvl-2">
+<li class="lvl-4">docker-executor</li>
+</ul>
+</li>
+</ul>
+<p>相关仓库根目录脚本：</p>
+<pre><code class="language-python"># noxfile.py
+&quot;&quot;&quot;This is a nox file for automating things on we're cared about this project.
+
+
+Session:
+    session can be run with -k that you want
+
+    lint: lint local codebase and open the code-quality check locally that
+        it will execute a check on codebase when having some operations on repos,
+        such as commit, merge, push, and so on.
+
+        Check code may fail because of the network.We can ignore the check with
+        the option --no-verify, for example, git commit --no-verify -m 'feat: ....'.
+
+        Usage: nox -s lint
+
+Example:
+    This gives a example to lint the codebase locally::
+
+        lint -s lint
+
+Attributes:
+    GITHUB_MIRROR (str): A github mirror can be used to expedite lint
+        session. Default to https://kgithub.com/, but an env variable will
+        be preferred.
+
+    PRE_COMMIT_HOME (str): A tool called as pre-commit use a path to cache
+        some repos from github or other binaries,it aims to help lint session.
+
+        See https://github.com/pre-commit/pre-commit.git.
+
+About nox, please see https://github.com/wntrblm/nox.git.
+&quot;&quot;&quot;
+import os
+import sys
+from subprocess import CalledProcessError, SubprocessError
+
+import nox
+
+nox.needs_version = &quot;&gt;=2022.1.7&quot;
+nox.options.sessions = [
+    &quot;lint&quot;,
+]
+
+if os.environ.get(&quot;CI&quot;, None):
+    nox.options.error_on_missing_interpreters = True
+
+
+def get_home_dir():
+    &quot;&quot;&quot;get home dir base on the corresponding platform&quot;&quot;&quot;
+    if sys.platform == &quot;win32&quot;:
+        homedir = os.environ[&quot;USERPROFILE&quot;]
+    elif sys.platform in (&quot;linux&quot;, &quot;darwin&quot;):
+        homedir = os.environ[&quot;HOME&quot;]
+    else:
+        raise RuntimeError(f&quot;Error! Not this system. {sys.platform}&quot;)
+    return homedir
+
+
+GITHUB_MIRROR = os.environ.get(
+    &quot;GITHUB_MIRROR&quot;, &quot;https://ghproxy.com/https://github.com/&quot;
+)
+PRE_COMMIT_HOME = os.environ.get(
+    &quot;PRE_COMMIT_HOME&quot;,
+    os.path.join(get_home_dir(), &quot;.cache&quot;, &quot;pre-commit&quot;),
+)
+
+
+class GitHubAddressSpeedUp:
+    &quot;&quot;&quot;
+    This is a context class that speed up github access based on nox.
+
+    Example:
+        with GitHubAddressSpeedUp(session=session) as:
+            session.run('git','branch','-a')
+    &quot;&quot;&quot;
+
+    config_prefix = (
+        &quot;git&quot;,
+        &quot;config&quot;,
+        &quot;--global&quot;,
+    )
+
+    def __init__(self, session: nox.Session) -&gt; None:
+        self.address_translate_str = f&quot;url.{GITHUB_MIRROR}.insteadOf&quot;
+        self.session = session
+
+    def __enter__(self):
+        self.config_set(&quot;--list&quot;)
+        self.config_set(
+            self.address_translate_str,
+            &quot;https://github.com/&quot;,
+        )
+        self.config_set(
+            &quot;http.sslVerify&quot;,
+            &quot;false&quot;,
+        )
+        self.config_set(
+            &quot;http.postBuffer&quot;,
+            &quot;1048576000&quot;,
+        )
+
+    def config_set(self, *set_args):
+        &quot;&quot;&quot;set git config with args&quot;&quot;&quot;
+        return self.session.run(
+            *self.config_prefix,
+            *set_args,
+            external=True,
+        )
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        if exc_type or exc_val or exc_tb:
+            self.session.log(&quot;Type: &quot;, exc_type)
+            self.session.log(&quot;Value:&quot;, exc_val)
+            self.session.log(&quot;TreacBack:&quot;, exc_tb)
+
+        self.unset_config(self.address_translate_str)
+
+    def unset_config(self, *unset_args):
+        &quot;&quot;&quot;unset git config with args&quot;&quot;&quot;
+        return self.session.run(
+            *self.config_prefix,
+            &quot;--unset&quot;,
+            *unset_args,
+            external=True,
+        )
+
+
+@nox.session(reuse_venv=True)
+def lint(session: nox.Session) -&gt; None:
+    &quot;&quot;&quot;
+    Lint the codebase.
+    &quot;&quot;&quot;
+
+    def maybe_retry(session: nox.Session):
+        import shutil
+        import time
+
+        # reset cache
+        session.log(f&quot;PRE_COMMIT_HOME:{PRE_COMMIT_HOME}&quot;)
+        if os.path.exists(PRE_COMMIT_HOME):
+            shutil.rmtree(path=PRE_COMMIT_HOME, ignore_errors=True)
+        session.log(&quot;retry this after 60s&quot;)
+        time.sleep(60)
+
+    session.install(&quot;pre-commit&quot;)
+    if not os.environ.get(&quot;CI&quot;, None):
+        session.run(&quot;pre-commit&quot;, &quot;install&quot;, &quot;--hook-type&quot;, &quot;commit-msg&quot;)
+
+    # try to install hooks from github
+    with GitHubAddressSpeedUp(session=session):
+        for _ in range(3):
+            try:
+                session.run(&quot;pre-commit&quot;, &quot;install-hooks&quot;)
+                session.log(&quot;install hooks successfully&quot;)
+                break
+            except (CalledProcessError, SubprocessError):
+                maybe_retry(session)
+            except Exception:  # pylint: disable=[W0703]
+                maybe_retry(session)
+
+    session.run(&quot;pre-commit&quot;, &quot;run&quot;, &quot;-a&quot;)
+    if os.environ.get(&quot;CI&quot;, None):
+        session.run_always(
+            &quot;pre-commit&quot;,
+            &quot;uninstall&quot;,
+            &quot;--hook-type&quot;,
+            &quot;commit-msg&quot;,
+            &quot;--hook-type&quot;,
+            &quot;pre-commit&quot;,
+        )
+</code></pre>
+<p>相关 gitlab-ci 脚本：</p>
+<pre><code class="language-yml"># .gitlab-ci.yml
+stages:
+  - link
+
+variables:
+  GIT_DEPTH: &quot;0&quot;
+  # Use fast zip archiver
+  FF_USE_FASTZIP: 1
+  # Use no compression for caches
+  CACHE_COMPRESSION_LEVEL: &quot;fastest&quot;
+  PIP_INSTALL_CMD: &gt;-
+    echo 'init pip source' &amp;&amp;
+    pip3 config set global.index-url https://mirror.sjtu.edu.cn/pypi/web/simple &amp;&amp;
+    pip3 config set global.timeout 20 &amp;&amp;
+    pip3 config set global.trusted-host mirror.sjtu.edu.cn/pypi/web/simple &amp;&amp;
+    python3 -m pip install --upgrade pip
+  GITHUB_MIRROR_ECHO: &quot;echo ${CI_GITHUB_MIRROR:-https://kgithub.com/}&quot;
+  GIT_GITHUB_PULL_SPEED_UP: &gt;-
+    export GITHUB_MIRROR=$(eval &quot;$GITHUB_MIRROR_ECHO&quot;) &amp;&amp;
+    git config --global url.&quot;$$GITHUB_MIRROR&quot;.insteadOf https://github.com/ &amp;&amp;
+    git config --global http.sslVerify false &amp;&amp;
+    git config --global http.postBuffer 1048576000
+
+image: docker:latest
+
+lint_check:
+  stage: link
+  tags:
+    - docker
+  image: python:3.8-bullseye
+  variables:
+    PRE_COMMIT_HOME: ${CI_PROJECT_DIR}/.cache/pre-commit
+    NOX_HOME: ${CI_PROJECT_DIR}/.nox
+  retry: 1
+  before_script:
+    # yamllint disable rule
+    - |
+      cat &gt;lint.sh&lt;&lt;-EOF
+      $CMD_CONTROL
+      echo GITLAB_USER_NAME: $GITLAB_USER_NAME
+      echo GITLAB_USER_EMAIL: $GITLAB_USER_EMAIL
+
+      echo 'lint...'
+      $PIP_INSTALL_CMD
+      $GIT_GITHUB_PULL_SPEED_UP
+      echo 'install the automatic tool: nox'
+      pip3 install -U nox
+      echo 'lint check...'
+      nox -k lint
+      EOF
+    # yamllint enable rule
+  script:
+    - whoami
+    - chmod u+x ./lint.sh
+    - ./lint.sh
+  cache:
+    policy: pull-push
+    key: &quot;$CI_PROJECT_PATH-lint&quot;
+    paths:
+      - ${PRE_COMMIT_HOME}
+      - ${NOX_HOME}
+  when: always
+</code></pre>
+<h2 id="reference">reference</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://pre-commit.com/">https://pre-commit.com/</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://github.com/pre-commit/pre-commit">https://github.com/pre-commit/pre-commit</a></p>
+</li>
+</ul>

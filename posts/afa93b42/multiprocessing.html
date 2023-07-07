@@ -1,0 +1,74 @@
+<hr>
+<p>title: multiprocessing<br>
+categories:</p>
+<ul class="lvl-0">
+<li class="lvl-4">develop</li>
+<li class="lvl-4">python<br>
+abbrlink: f4555bee<br>
+date: 2022-08-08 08:37:16<br>
+tags:</li>
+</ul>
+<hr>
+<p>本文主要总结<code>multiprocessing</code>的常用方法及问题解决方法。</p>
+<!-- more -->
+<h1>Queue</h1>
+<h2 id="reference">reference</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://runebook.dev/zh-CN/docs/python/library/multiprocessing?page=4#multiprocessing.Queue">参考文档 runebook</a></p>
+</li>
+</ul>
+<h1>Manager</h1>
+<p>管理器提供了一种创建可以在不同进程之间共享的数据的方法，包括通过网络在不同机器上运行的进程之间共享。管理器对象控制管理共享对象的服务器进程。其他进程可以使用代理访问共享对象。</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>multiprocessing.Manager()</p>
+</li>
+</ul>
+<p>返回一个已启动的 SyncManager 对象，该对象可用于在进程之间共享对象。返回的管理器对象对应于一个衍生的子进程，并具有创建共享对象和返回相应代理的方法。</p>
+<h2 id="SyncManager">SyncManager</h2>
+<p>BaseManager 的子类，可用于进程同步。这种类型的对象由 multiprocessing.Manager() 返回。</p>
+<h2 id="reference-2">reference</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://runebook.dev/zh-CN/docs/python/library/multiprocessing?page=7#multiprocessing.managers.SyncManager">参考文档 runebook</a></p>
+</li>
+</ul>
+<h1>疑难问题</h1>
+<h2 id="RuntimeError-Queue-objects-should-only-be-shared-between-processes-through-inheritance">RuntimeError: Queue objects should only be shared between processes through inheritance</h2>
+<p>使用 multiprocessing.Queue 通常会报以上错误。因为 multiprocessing.Queue 只能在父子进程间进行队列同步通信。对于使用进程池，需要使用 multiprocessing.Manager.Queue 创建共享的通信队列。示例:</p>
+<pre><code class="language-python">from multiprocessing import Process, Queue, Pool
+import os, time, random
+
+
+# 写数据进程执行的代码:
+def write(q, lock):
+    lock.acquire()  # 加上锁
+    for value in [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;]:
+        print(f&quot;Put {value} to queue...&quot;)
+        q.put(value)
+    lock.release()  # 释放锁
+
+
+# 读数据进程执行的代码:
+def read(q):
+    while True:
+        if not q.empty():
+            value = q.get(False)
+            print(f&quot;Get {value} from queue.&quot;)
+            time.sleep(random.random())
+        else:
+            break
+
+
+if __name__ == &quot;__main__&quot;:
+    manager = multiprocessing.Manager()
+    # 父进程创建Queue，并传给各个子进程：
+    q = manager.Queue()
+    lock = manager.Lock()  # 初始化一把锁
+    p = Pool()
+    pw = p.apply_async(write, args=(q, lock))
+    pr = p.apply_async(read, args=(q,))
+    p.close()
+    p.join()
+</code></pre>
