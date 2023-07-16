@@ -22,28 +22,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"msclock.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.15.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"github-dark"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"livere","storage":true,"lazyload":false,"nav":null,"activeClass":"livere"},"stickytabs":true,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.15.1/source/js/config.min.js"></script>
 
-    <meta name="description" content="本文注重于记录各种软件开发领域中的源，包括 Debian&#x2F;Ubuntu，Centos&#x2F;Redhat 等。">
+    <meta name="description" content="Deploy minio 部署 minio 非常灵活，以下是常用配置参数:   address: Minio API 调用的地址 + 端口，其中地址可以是 IP 或者 host   console-address: MinIO web 管理页面的地址 + 端口，其中地址同上   binary deploy 使用二进制部署 123wget -O &#x2F;usr&#x2F;local&#x2F;bin&#x2F;minio https:">
 <meta property="og:type" content="article">
-<meta property="og:title" content="各种镜像源及使用方式">
-<meta property="og:url" content="https://msclock.github.io/posts/bb9a901f/index.html">
+<meta property="og:title" content="minio 实践">
+<meta property="og:url" content="https://msclock.github.io/posts/7c5648b6/index.html">
 <meta property="og:site_name" content="Live in the present">
-<meta property="og:description" content="本文注重于记录各种软件开发领域中的源，包括 Debian&#x2F;Ubuntu，Centos&#x2F;Redhat 等。">
+<meta property="og:description" content="Deploy minio 部署 minio 非常灵活，以下是常用配置参数:   address: Minio API 调用的地址 + 端口，其中地址可以是 IP 或者 host   console-address: MinIO web 管理页面的地址 + 端口，其中地址同上   binary deploy 使用二进制部署 123wget -O &#x2F;usr&#x2F;local&#x2F;bin&#x2F;minio https:">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-08-04T04:49:53.000Z">
+<meta property="article:published_time" content="2023-07-16T10:06:48.540Z">
 <meta property="article:modified_time" content="2023-07-16T10:06:48.540Z">
 <meta property="article:author" content="Msclock">
 <meta property="article:tag" content="cpp,hexo,blog">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://msclock.github.io/posts/bb9a901f/">
+<link rel="canonical" href="https://msclock.github.io/posts/7c5648b6/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://msclock.github.io/posts/bb9a901f/","path":"posts/bb9a901f/","title":"各种镜像源及使用方式"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://msclock.github.io/posts/7c5648b6/","path":"posts/7c5648b6/","title":"minio 实践"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>各种镜像源及使用方式 | Live in the present</title>
+<title>minio 实践 | Live in the present</title>
   
 
 
@@ -143,7 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Debian-Ubuntu"><span class="nav-number">1.</span> <span class="nav-text">Debian&#x2F;Ubuntu</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-number">1.1.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Centos-Redhat"><span class="nav-number">1.2.</span> <span class="nav-text">Centos&#x2F;Redhat</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pip"><span class="nav-number">2.</span> <span class="nav-text">pip</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm"><span class="nav-number">3.</span> <span class="nav-text">npm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E7%94%A8%E6%BA%90%E4%BB%93%E5%BA%93"><span class="nav-number">4.</span> <span class="nav-text">通用源仓库</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Deploy-minio"><span class="nav-number">1.</span> <span class="nav-text">Deploy minio</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#binary-deploy"><span class="nav-number">1.1.</span> <span class="nav-text">binary deploy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#docker-deploy"><span class="nav-number">1.2.</span> <span class="nav-text">docker deploy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#docker-compose-deploy"><span class="nav-number">1.3.</span> <span class="nav-text">docker-compose deploy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tips-and-Tricks"><span class="nav-number">1.4.</span> <span class="nav-text">Tips and Tricks</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%A8docker-compose%E4%B8%AD%E5%A6%82%E4%BD%95%E5%B0%86%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8%E5%9C%B0%E5%9D%80%E6%8C%82%E8%BD%BD%E5%88%B0%E4%B8%BA%E5%8F%A6%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8%E7%9A%84volume"><span class="nav-number">1.4.1.</span> <span class="nav-text">在 docker-compose 中如何将一个容器地址挂载到为另一个容器的 volume</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mc"><span class="nav-number">2.</span> <span class="nav-text">mc</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -210,7 +210,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://msclock.github.io/posts/bb9a901f/">
+    <link itemprop="mainEntityOfPage" href="https://msclock.github.io/posts/7c5648b6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -223,12 +223,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="各种镜像源及使用方式 | Live in the present">
+      <meta itemprop="name" content="minio 实践 | Live in the present">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          各种镜像源及使用方式
+          minio 实践
         </h1>
 
         <div class="post-meta-container">
@@ -239,23 +239,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2022-08-04 12:49:53" itemprop="dateCreated datePublished" datetime="2022-08-04T12:49:53+08:00">2022-08-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-07-16 18:06:48" itemprop="dateModified" datetime="2023-07-16T18:06:48+08:00">2023-07-16</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/develop/" itemprop="url" rel="index"><span itemprop="name">develop</span></a>
-        </span>
+      <time title="创建时间：2023-07-16 18:06:48" itemprop="dateCreated datePublished" datetime="2023-07-16T18:06:48+08:00">2023-07-16</time>
     </span>
 
   
@@ -265,7 +249,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>4.2k</span>
+      <span>3.9k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -283,85 +267,47 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>本文注重于记录各种软件开发领域中的源，包括 Debian/Ubuntu，Centos/Redhat 等。</p>
-<span id="more"></span>
-<h2 id="Debian-Ubuntu">Debian/Ubuntu</h2>
+        <h2 id="Deploy-minio">Deploy minio</h2>
+<p>部署 minio 非常灵活，以下是常用配置参数:</p>
 <ul class="lvl-0">
 <li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://www.debian.org/mirror/list.zh-cn.html">全球镜像站</a></p>
+<p>address: Minio API 调用的地址 + 端口，其中地址可以是 IP 或者 host</p>
 </li>
 <li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/help/debian/">tuna.tsinghua.edu.cn</a></p>
-</li>
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://leeyr.com/105.html">博客总结</a></p>
+<p>console-address: MinIO web 管理页面的地址 + 端口，其中地址同上</p>
 </li>
 </ul>
-<h3 id="使用">使用</h3>
-<p>1．使用说明</p>
-<p>一般情况下，将 /etc/apt/sources.list 文件中 Debian 默认的软件仓库地址和安全更新仓库地址修改为国内的镜像地址即可，<a target="_blank" rel="noopener" href="http://xn--deb-eo8e44itv6a.debian.xn--orgsecurity-904s.debian.xn--orgmirrors-0x2pt12t.xxx.com">比如将 deb.debian.org 和 security.debian.org 改为 mirrors.xxx.com</a>，并使用 https 访问，可使用如下命令：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i <span class="string">"s@http://\(deb\|security\).debian.org@https://mirrors.xxx.com@g"</span> /etc/apt/sources.list</span><br></pre></td></tr></tbody></table></figure>
-<p>修改之后再运行 <code>apt update</code> 更新索引。</p>
-<p>2．国内常见镜像站点</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>阿里云镜像站</p>
-</li>
-</ul>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">deb https://mirrors.aliyun.com/debian/ bullseye main non-free contrib</span><br><span class="line">deb-src https://mirrors.aliyun.com/debian/ bullseye main non-free contrib</span><br><span class="line">deb https://mirrors.aliyun.com/debian-security/ bullseye-security main</span><br><span class="line">deb-src https://mirrors.aliyun.com/debian-security/ bullseye-security main</span><br><span class="line">deb https://mirrors.aliyun.com/debian/ bullseye-updates main non-free contrib</span><br><span class="line">deb-src https://mirrors.aliyun.com/debian/ bullseye-updates main non-free contrib</span><br><span class="line">deb https://mirrors.aliyun.com/debian/ bullseye-backports main non-free contrib</span><br><span class="line">deb-src https://mirrors.aliyun.com/debian/ bullseye-backports main non-free contrib</span><br></pre></td></tr></tbody></table></figure>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>腾讯云镜像站</p>
-</li>
-</ul>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">deb https://mirrors.tencent.com/debian/ bullseye main non-free contrib</span><br><span class="line">deb-src https://mirrors.tencent.com/debian/ bullseye main non-free contrib</span><br><span class="line">deb https://mirrors.tencent.com/debian-security/ bullseye-security main</span><br><span class="line">deb-src https://mirrors.tencent.com/debian-security/ bullseye-security main</span><br><span class="line">deb https://mirrors.tencent.com/debian/ bullseye-updates main non-free contrib</span><br><span class="line">deb-src https://mirrors.tencent.com/debian/ bullseye-updates main non-free contrib</span><br><span class="line">deb https://mirrors.tencent.com/debian/ bullseye-backports main non-free contrib</span><br><span class="line">deb-src https://mirrors.tencent.com/debian/ bullseye-backports main non-free contrib</span><br></pre></td></tr></tbody></table></figure>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>网易镜像站</p>
-</li>
-</ul>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">deb https://mirrors.163.com/debian/ bullseye main non-free contrib</span><br><span class="line">deb-src https://mirrors.163.com/debian/ bullseye main non-free contrib</span><br><span class="line">deb https://mirrors.163.com/debian-security/ bullseye-security main</span><br><span class="line">deb-src https://mirrors.163.com/debian-security/ bullseye-security main</span><br><span class="line">deb https://mirrors.163.com/debian/ bullseye-updates main non-free contrib</span><br><span class="line">deb-src https://mirrors.163.com/debian/ bullseye-updates main non-free contrib</span><br><span class="line">deb https://mirrors.163.com/debian/ bullseye-backports main non-free contrib</span><br><span class="line">deb-src https://mirrors.163.com/debian/ bullseye-backports main non-free contrib</span><br></pre></td></tr></tbody></table></figure>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>华为镜像站</p>
-</li>
-</ul>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">deb https://mirrors.huaweicloud.com/debian/ bullseye main non-free contrib</span><br><span class="line">deb-src https://mirrors.huaweicloud.com/debian/ bullseye main non-free contrib</span><br><span class="line">deb https://mirrors.huaweicloud.com/debian-security/ bullseye-security main</span><br><span class="line">deb-src https://mirrors.huaweicloud.com/debian-security/ bullseye-security main</span><br><span class="line">deb https://mirrors.huaweicloud.com/debian/ bullseye-updates main non-free contrib</span><br><span class="line">deb-src https://mirrors.huaweicloud.com/debian/ bullseye-updates main non-free contrib</span><br><span class="line">deb https://mirrors.huaweicloud.com/debian/ bullseye-backports main non-free contrib</span><br><span class="line">deb-src https://mirrors.huaweicloud.com/debian/ bullseye-backports main non-free contrib</span><br></pre></td></tr></tbody></table></figure>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>清华大学镜像站</p>
-</li>
-</ul>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye main contrib non-free</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye main contrib non-free</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-updates main contrib non-free</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-updates main contrib non-free</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-backports main contrib non-free</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-backports main contrib non-free</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian-security bullseye-security main contrib non-free</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security bullseye-security main contrib non-free</span><br></pre></td></tr></tbody></table></figure>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>中科大镜像站</p>
-</li>
-</ul>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">deb https://mirrors.ustc.edu.cn/debian/ bullseye main contrib non-free</span><br><span class="line">deb-src https://mirrors.ustc.edu.cn/debian/ bullseye main contrib non-free</span><br><span class="line"></span><br><span class="line">deb https://mirrors.ustc.edu.cn/debian/ bullseye-updates main contrib non-free</span><br><span class="line">deb-src https://mirrors.ustc.edu.cn/debian/ bullseye-updates main contrib non-free</span><br><span class="line"></span><br><span class="line">deb https://mirrors.ustc.edu.cn/debian/ bullseye-backports main contrib non-free</span><br><span class="line">deb-src https://mirrors.ustc.edu.cn/debian/ bullseye-backports main contrib non-free</span><br><span class="line"></span><br><span class="line">deb https://mirrors.ustc.edu.cn/debian-security/ bullseye-security main contrib non-free</span><br><span class="line">deb-src https://mirrors.ustc.edu.cn/debian-security/ bullseye-security main contrib non-free</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="Centos-Redhat">Centos/Redhat</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/help/centos/">tuna.tsinghua.edu.cn</a></p>
-</li>
-</ul>
-<h2 id="pip">pip</h2>
-<p>更多参考 pip 源配置<a href="python/pip%20install.md#pip%E6%8D%A2%E6%BA%90">参考</a>。</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://mirror.sjtu.edu.cn/pypi/web/simple</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="npm">npm</h2>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 切换阿里源</span></span><br><span class="line">npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="通用源仓库">通用源仓库</h2>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://developer.aliyun.com/mirror/?utm_content=g_1000303593">aliyun</a></p>
-</li>
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://mirrors.huaweicloud.com/">huawei</a></p>
-</li>
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://mirror.sjtu.edu.cn/">上海交通大学</a></p>
-</li>
-</ul>
+<h3 id="binary-deploy">binary deploy</h3>
+<p>使用二进制部署</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget -O /usr/local/bin/minio https://dl.min.io/server/minio/release/linux-amd64/minio</span><br><span class="line"><span class="built_in">chmod</span> +x /usr/local/bin/minio</span><br><span class="line">minio server /data</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="docker-deploy">docker deploy</h3>
+<p>使用 docker 命令部署</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> MINIO_ROOT_USER=minio</span><br><span class="line"><span class="built_in">export</span> MINIO_ROOT_PASSWORD=minio123</span><br><span class="line"><span class="built_in">export</span> MINIO_ADDRESS_PORT=9000</span><br><span class="line"><span class="built_in">export</span> MINIO_CONSOLE_PORT=9001</span><br><span class="line"><span class="built_in">export</span> MINIO_DOCKER_NAME=minio</span><br><span class="line"><span class="built_in">export</span> MINIO_BUCKET=bucket_name</span><br><span class="line">docker run -p <span class="variable">$MINIO_ADDRESS_PORT</span>:9000 -p <span class="variable">$MINIO_CONSOLE_PORT</span>:9001 --name <span class="variable">$MINIO_DOCKER_NAME</span> \</span><br><span class="line">    -d --restart=always \</span><br><span class="line">    -e MINIO_ROOT_USER=<span class="variable">$MINIO_ROOT_USER</span> \</span><br><span class="line">    -e MINIO_ROOT_PASSWORD=<span class="variable">$MINIO_ROOT_PASSWORD</span> \</span><br><span class="line">    -v .data:/data \</span><br><span class="line">    -v .minio:/root/.minio \</span><br><span class="line">    minio/minio server /data --address <span class="string">":9000"</span> --console-address <span class="string">":9001"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># mc 通过 link 操作使用 `容器名:内部port` 对api port访问</span></span><br><span class="line">docker run --<span class="built_in">rm</span> --<span class="built_in">link</span> <span class="variable">$MINIO_DOCKER_NAME</span> -e MINIO_BUCKET=<span class="variable">$MINIO_BUCKET</span> --entrypoint sh minio/mc -c <span class="string">"\</span></span><br><span class="line"><span class="string">  while ! nc -z minio 9000; do echo 'Wait minio to startup...' &amp;&amp; sleep 0.1; done; \</span></span><br><span class="line"><span class="string">  sleep 5 &amp;&amp; \</span></span><br><span class="line"><span class="string">  mc config host add myminio http://minio:9000 <span class="variable">$MINIO_ROOT_USER</span> <span class="variable">$MINIO_ROOT_PASSWORD</span> &amp;&amp; \</span></span><br><span class="line"><span class="string">  if ! mc ls myminio | grep --quiet <span class="variable">$MINIO_BUCKET</span>; then mc mb myminio/<span class="variable">$MINIO_BUCKET</span>; else echo 'bucket <span class="variable">$MINIO_BUCKET</span> already exists'; fi &amp;&amp; \</span></span><br><span class="line"><span class="string">  mc mb myminio/<span class="variable">$MINIO_BUCKET</span> &amp;&amp; \</span></span><br><span class="line"><span class="string">  mc policy download myminio/<span class="variable">$MINIO_BUCKET</span> \</span></span><br><span class="line"><span class="string">"</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="docker-compose-deploy">docker-compose deploy</h3>
+<p>使用 docker-compose 部署，参考如下:</p>
+<figure class="highlight yml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># docker-compose.yml</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">minio:</span></span><br><span class="line">    <span class="comment"># 该镜像默认创建匿名卷 /data 用于持久化 minio 数据</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">minio/minio:RELEASE.2023-06-02T23-17-26Z</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">${MINIO_ADDRESS_PORT:-9000}:9000</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">${MINIO_CONSOLE_PORT:-9001}:9001</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="attr">MINIO_ROOT_USER:</span> <span class="string">${MINIO_ROOT_USER:-minio}</span></span><br><span class="line">      <span class="attr">MINIO_ROOT_PASSWORD:</span> <span class="string">${MINIO_ROOT_PASSWORD:-minio123}</span></span><br><span class="line">    <span class="attr">command:</span> <span class="string">server</span> <span class="string">/data</span> <span class="string">--address</span> <span class="string">":9000"</span> <span class="string">--console-address</span> <span class="string">":9001"</span></span><br><span class="line">    <span class="attr">healthcheck:</span></span><br><span class="line">      <span class="attr">test:</span></span><br><span class="line">        [</span><br><span class="line">          <span class="string">"CMD"</span>,</span><br><span class="line">          <span class="string">"curl"</span>,</span><br><span class="line">          <span class="string">"-f"</span>,</span><br><span class="line">          <span class="comment"># 测试命令通过 localhost:external-port 访问</span></span><br><span class="line">          <span class="comment"># "http://localhost:${MINIO_ADDRESS_PORT:-9000}/minio/health/live"</span></span><br><span class="line">          <span class="comment"># 测试命令通过 service-name:internal-port 访问</span></span><br><span class="line">          <span class="string">"http://minio:9000/minio/health/live"</span></span><br><span class="line">        ]</span><br><span class="line">      <span class="attr">interval:</span> <span class="string">10s</span></span><br><span class="line">      <span class="attr">timeout:</span> <span class="string">10s</span></span><br><span class="line">      <span class="attr">retries:</span> <span class="number">3</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">create_models_buckets:</span></span><br><span class="line">    <span class="comment"># 使用 mc 工具创建桶 models</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">minio/mc:RELEASE.2023-05-30T22-41-38Z</span></span><br><span class="line">    <span class="attr">depends_on:</span></span><br><span class="line">      <span class="attr">minio:</span></span><br><span class="line">        <span class="attr">condition:</span> <span class="string">service_healthy</span></span><br><span class="line">    <span class="attr">entrypoint:</span> <span class="string">&gt;</span></span><br><span class="line"><span class="string">      bash -c 'mc config host add myminio http://minio:9000 ${MINIO_ROOT_USER:-minio} ${MINIO_ROOT_PASSWORD:-minio123};</span></span><br><span class="line"><span class="string">      if ! mc ls myminio | grep --quiet models; then </span></span><br><span class="line"><span class="string">        mc mb myminio/models; </span></span><br><span class="line"><span class="string">      else </span></span><br><span class="line"><span class="string">        echo "bucket models already exists in host myminio"; </span></span><br><span class="line"><span class="string">      fi;</span></span><br><span class="line"><span class="string">      mc anonymous set public myminio/models;</span></span><br><span class="line"><span class="string">      exit 0;'</span></span><br></pre></td></tr></tbody></table></figure>
+<p>使用环境变量配置启动端口</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MINIO_ADDRESS_PORT=9999 docker-compose up --remove-orphans -V</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Tips-and-Tricks">Tips and Tricks</h3>
+<h4 id="在docker-compose中如何将一个容器地址挂载到为另一个容器的volume">在 docker-compose 中如何将一个容器地址挂载到为另一个容器的 volume</h4>
+<p>在 Docker Compose 中，你不能直接将一个容器的地址挂载为另一个容器的卷。但是，你可以创建一个命名的卷，并将它挂载到两个容器中。这样，两个容器就可以共享这个卷中的数据。</p>
+<p>例如，你可以在 docker-compose.pro.yml 文件中添加一个新的命名卷 shared_volume，然后将它挂载到 minio 和 triton-servering 服务中：</p>
+<figure class="highlight yaml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">minio:</span></span><br><span class="line">    <span class="string">...</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">shared_volume:/shared_data</span></span><br><span class="line">      <span class="string">...</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">triton-servering:</span></span><br><span class="line">    <span class="string">...</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">shared_volume:/shared_data</span></span><br><span class="line">      <span class="string">...</span></span><br><span class="line"></span><br><span class="line"><span class="attr">volumes:</span></span><br><span class="line">  <span class="attr">shared_volume:</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="mc">mc</h2>
+<p>1，连接服务（hellominio）</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mc config host add hellominio http://minio:9001 minio minio123</span><br><span class="line"></span><br><span class="line"><span class="comment">#msg：Added `hellominio` successfully.</span></span><br></pre></td></tr></tbody></table></figure>
+<p>2，创建策略 （readwrite）</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mc admin policy add hellominio readwrite readwrite.json</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置文件如下(readwrite.json )</span></span><br><span class="line"><span class="comment"># Added policy `readwrite` successfully.</span></span><br></pre></td></tr></tbody></table></figure>
+<p>3, 创建用户 密码必须为 8 位以上 （用户名 hello 密码 hello123123）</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mc admin user add hellominio hello hello123123</span><br><span class="line"></span><br><span class="line"><span class="comment"># Added user `hello` successfully.</span></span><br></pre></td></tr></tbody></table></figure>
+<p>4，成功创建用户后， 为该用户应用策略（readwrite）。</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mc admin policy <span class="built_in">set</span> hellominio readwrite user=hello</span><br><span class="line"></span><br><span class="line"><span class="comment"># Policy readwrite is set on user `hello`</span></span><br><span class="line"><span class="comment"># 到此登录后就可以正常使用了，继续分组管理用户</span></span><br></pre></td></tr></tbody></table></figure>
+<p>5， 创建分组 (hellominiogroup)</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mc admin group add hellominio hellominiogroup hello</span><br><span class="line"></span><br><span class="line"><span class="comment"># Added members {hello} to group hellominiogroup successfully.</span></span><br></pre></td></tr></tbody></table></figure>
+<p>6, 成功创建组后，对该组应用策略。</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mc admin policy <span class="built_in">set</span> hellominio readwrite group=newgroup</span><br><span class="line"></span><br><span class="line"><span class="comment"># Policy readwrite is set on group `newgroup`</span></span><br></pre></td></tr></tbody></table></figure>
+<p>7，更改权限后 需重新导入</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mc admin policy add hellominio readwrite readwrite.json</span><br><span class="line"></span><br><span class="line"><span class="comment"># Added policy `readwrite` successfully.</span></span><br></pre></td></tr></tbody></table></figure>
 
     </div>
 
@@ -379,7 +325,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://msclock.github.io/posts/bb9a901f/" title="各种镜像源及使用方式">https://msclock.github.io/posts/bb9a901f/</a>
+      <a href="https://msclock.github.io/posts/7c5648b6/" title="minio 实践">https://msclock.github.io/posts/7c5648b6/</a>
   </li>
   <li class="post-copyright-license">
       <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -392,13 +338,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/d301637e/" rel="prev" title="Python Attach Debug">
-                  <i class="fa fa-chevron-left"></i> Python Attach Debug
+                <a href="/posts/f03ca1b6/" rel="prev" title="scoop 包管理器">
+                  <i class="fa fa-chevron-left"></i> scoop 包管理器
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/c6b360c1/" rel="next" title="git 实践">
-                  git 实践 <i class="fa fa-chevron-right"></i>
+                <a href="/posts/96bd41f/" rel="next" title="mamba 包管理器">
+                  mamba 包管理器 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -489,7 +435,7 @@
 
 
   <script src="https://cdn.jsdelivr.net/npm/quicklink@2.3.0/dist/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://msclock.github.io/posts/bb9a901f/"}</script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://msclock.github.io/posts/7c5648b6/"}</script>
   <script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.15.1/source/js/third-party/quicklink.min.js"></script>
 <script src="https://unpkg.com/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
 
