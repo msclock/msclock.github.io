@@ -22,12 +22,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"msclock.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.15.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"github-dark"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"livere","storage":true,"lazyload":false,"nav":null,"activeClass":"livere"},"stickytabs":true,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.15.1/source/js/config.min.js"></script>
 
-    <meta name="description" content="k8s 什么是 k8s   开源的容器编排工具 由 google 开发 帮助在不同的部署环境中管理容器应用  k8s 解决的问题   将传统铁板一块的应用转为微服务管理   增加容器的使用便利   高效管理成千上百的容器的能力   k8s 提供的编排功能   高可用且无关机时延   可扩展性或高性能   容灾，备份和还原">
+    <meta name="description" content="k8s 什么是 k8s   开源的容器编排工具 由 google 开发 帮助在不同的部署环境中管理容器应用  k8s 解决的问题   将传统铁板一块的应用转为微服务管理   增加容器的使用便利   高效管理成千上百的容器的能力   k8s 提供的编排功能   高可用且无关机时延   可扩展性或高性能   容灾，备份和还原   links:   https:&#x2F;&#x2F;kubernetes.io&#x2F;zh-c">
 <meta property="og:type" content="article">
 <meta property="og:title" content="k8s">
 <meta property="og:url" content="https://msclock.github.io/posts/655061ae/index.html">
 <meta property="og:site_name" content="Live in the present">
-<meta property="og:description" content="k8s 什么是 k8s   开源的容器编排工具 由 google 开发 帮助在不同的部署环境中管理容器应用  k8s 解决的问题   将传统铁板一块的应用转为微服务管理   增加容器的使用便利   高效管理成千上百的容器的能力   k8s 提供的编排功能   高可用且无关机时延   可扩展性或高性能   容灾，备份和还原">
+<meta property="og:description" content="k8s 什么是 k8s   开源的容器编排工具 由 google 开发 帮助在不同的部署环境中管理容器应用  k8s 解决的问题   将传统铁板一块的应用转为微服务管理   增加容器的使用便利   高效管理成千上百的容器的能力   k8s 提供的编排功能   高可用且无关机时延   可扩展性或高性能   容灾，备份和还原   links:   https:&#x2F;&#x2F;kubernetes.io&#x2F;zh-c">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/msclock/images/main/images/20221022/224032480.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/msclock/images/main/images/20221022/232926883.png">
@@ -54,7 +54,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/msclock/images/main/images/20230421/070100196.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/msclock/images/main/images/20230421/070244993.png">
 <meta property="article:published_time" content="2022-09-11T13:13:08.000Z">
-<meta property="article:modified_time" content="2023-07-18T11:27:20.588Z">
+<meta property="article:modified_time" content="2023-07-21T01:32:35.731Z">
 <meta property="article:author" content="Msclock">
 <meta property="article:tag" content="cpp,hexo,blog">
 <meta name="twitter:card" content="summary">
@@ -168,7 +168,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#k8s"><span class="nav-number">1.</span> <span class="nav-text">k8s</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%B6%E6%9E%84"><span class="nav-number">1.1.</span> <span class="nav-text">架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#k8s-%E4%B8%BB%E8%A6%81%E7%BB%84%E4%BB%B6"><span class="nav-number">1.2.</span> <span class="nav-text">k8s 主要组件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Node-Pod"><span class="nav-number">1.2.1.</span> <span class="nav-text">Node &amp; Pod</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Service-Ingress"><span class="nav-number">1.2.2.</span> <span class="nav-text">Service &amp; Ingress</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ConfigMap-Secret"><span class="nav-number">1.2.3.</span> <span class="nav-text">ConfigMap &amp; Secret</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Volume"><span class="nav-number">1.2.4.</span> <span class="nav-text">Volume</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Deploment-StatefulSet"><span class="nav-number">1.2.5.</span> <span class="nav-text">Deploment &amp; StatefulSet</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#k8s-%E9%85%8D%E7%BD%AE"><span class="nav-number">1.3.</span> <span class="nav-text">k8s 配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#k8s-yaml-%E5%AE%8C%E6%95%B4%E9%85%8D%E7%BD%AE"><span class="nav-number">1.4.</span> <span class="nav-text">k8s yaml 完整配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Namespace"><span class="nav-number">1.5.</span> <span class="nav-text">Namespace</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E7%94%A8-Namespace"><span class="nav-number">1.5.1.</span> <span class="nav-text">为什么用 Namespace</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%A8%E7%A9%BA%E9%97%B4%E4%B8%AD%E5%88%9B%E5%BB%BA%E7%BB%84%E4%BB%B6"><span class="nav-number">1.5.2.</span> <span class="nav-text">在空间中创建组件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ingress"><span class="nav-number">1.6.</span> <span class="nav-text">Ingress</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-Ingress"><span class="nav-number">1.6.1.</span> <span class="nav-text">配置 Ingress</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Ingress-%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95"><span class="nav-number">1.6.2.</span> <span class="nav-text">Ingress 常用配置方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HPA%E3%80%81KPA"><span class="nav-number">1.7.</span> <span class="nav-text">HPA、KPA</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%81%E4%B9%85%E5%8C%96-in-k8s"><span class="nav-number">1.8.</span> <span class="nav-text">持久化 in k8s</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%83%E5%BA%A6%E8%8A%82%E7%82%B9"><span class="nav-number">1.9.</span> <span class="nav-text">调度节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GPU"><span class="nav-number">1.10.</span> <span class="nav-text">GPU</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reference"><span class="nav-number">1.11.</span> <span class="nav-text">reference</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#minikube"><span class="nav-number">2.</span> <span class="nav-text">minikube</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">2.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="nav-number">2.2.</span> <span class="nav-text">基本使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E5%BA%94%E7%94%A8"><span class="nav-number">2.3.</span> <span class="nav-text">运行应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E5%A4%9A%E9%9B%86%E7%BE%A4%E6%A8%A1%E6%8B%9F"><span class="nav-number">2.4.</span> <span class="nav-text">本地多集群模拟</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#kind"><span class="nav-number">3.</span> <span class="nav-text">kind</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#GPU-2"><span class="nav-number">3.1.</span> <span class="nav-text">GPU</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#kubectl"><span class="nav-number">4.</span> <span class="nav-text">kubectl</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-2"><span class="nav-number">4.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8-2"><span class="nav-number">4.2.</span> <span class="nav-text">基本使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%81%E4%B9%85%E5%8C%96%E5%AD%98%E5%82%A8"><span class="nav-number">4.3.</span> <span class="nav-text">持久化存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pod-%E8%B0%83%E8%AF%95"><span class="nav-number">4.4.</span> <span class="nav-text">pod 调试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#kustomize"><span class="nav-number">5.</span> <span class="nav-text">kustomize</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-3"><span class="nav-number">5.1.</span> <span class="nav-text">安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#helm"><span class="nav-number">6.</span> <span class="nav-text">helm</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#helm-%E6%A6%82%E5%BF%B5"><span class="nav-number">6.1.</span> <span class="nav-text">helm 概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8-3"><span class="nav-number">6.2.</span> <span class="nav-text">基本使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%93%E5%8C%85"><span class="nav-number">6.3.</span> <span class="nav-text">打包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">6.4.</span> <span class="nav-text">参考</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Rancher"><span class="nav-number">7.</span> <span class="nav-text">Rancher</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-4"><span class="nav-number">7.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B0%E5%A2%9E%E8%8A%82%E7%82%B9"><span class="nav-number">7.2.</span> <span class="nav-text">新增节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#App"><span class="nav-number">7.3.</span> <span class="nav-text">App</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gpu"><span class="nav-number">7.4.</span> <span class="nav-text">gpu</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Istio-Service-Mesh"><span class="nav-number">8.</span> <span class="nav-text">Istio(Service Mesh)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Service-Mesh-%E6%BC%94%E5%8C%96"><span class="nav-number">8.1.</span> <span class="nav-text">Service Mesh 演化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Service-Mesh"><span class="nav-number">8.2.</span> <span class="nav-text">Service Mesh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#istio"><span class="nav-number">8.3.</span> <span class="nav-text">istio</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#istio-%E5%AE%9A%E4%B9%89"><span class="nav-number">8.3.1.</span> <span class="nav-text">istio 定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#istio-%E6%A0%B8%E5%BF%83%E8%B5%84%E6%BA%90-CRD"><span class="nav-number">8.3.2.</span> <span class="nav-text">istio 核心资源 CRD</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%AF%E8%A7%82%E6%B5%8B%E6%80%A7"><span class="nav-number">8.3.3.</span> <span class="nav-text">可观测性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E5%85%A8%E6%9E%B6%E6%9E%84"><span class="nav-number">8.3.4.</span> <span class="nav-text">安全架构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-5"><span class="nav-number">8.3.5.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Virtucal-Service-%E5%92%8C-Destination-Rule"><span class="nav-number">8.3.6.</span> <span class="nav-text">Virtucal Service 和 Destination Rule</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Knative"><span class="nav-number">9.</span> <span class="nav-text">Knative</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Knative-%E6%96%87%E6%A1%A3"><span class="nav-number">9.1.</span> <span class="nav-text">Knative 文档</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Traefik"><span class="nav-number">10.</span> <span class="nav-text">Traefik</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Traefik-%E7%A4%BA%E4%BE%8B"><span class="nav-number">10.1.</span> <span class="nav-text">Traefik 示例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#docker-compose-%E7%A4%BA%E4%BE%8B"><span class="nav-number">10.1.1.</span> <span class="nav-text">docker-compose 示例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#k8s-%E7%A4%BA%E4%BE%8B"><span class="nav-number">10.1.2.</span> <span class="nav-text">k8s 示例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OpenTelemetry"><span class="nav-number">11.</span> <span class="nav-text">OpenTelemetry</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#k8s"><span class="nav-number">1.</span> <span class="nav-text">k8s</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%B6%E6%9E%84"><span class="nav-number">1.2.</span> <span class="nav-text">架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#k8s-%E4%B8%BB%E8%A6%81%E7%BB%84%E4%BB%B6"><span class="nav-number">1.3.</span> <span class="nav-text">k8s 主要组件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Node-Pod"><span class="nav-number">1.3.1.</span> <span class="nav-text">Node &amp; Pod</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Service-Ingress"><span class="nav-number">1.3.2.</span> <span class="nav-text">Service &amp; Ingress</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ConfigMap-Secret"><span class="nav-number">1.3.3.</span> <span class="nav-text">ConfigMap &amp; Secret</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Volume"><span class="nav-number">1.3.4.</span> <span class="nav-text">Volume</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Deploment-StatefulSet"><span class="nav-number">1.3.5.</span> <span class="nav-text">Deploment &amp; StatefulSet</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#k8s-%E9%85%8D%E7%BD%AE"><span class="nav-number">1.4.</span> <span class="nav-text">k8s 配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#k8s-yaml-%E5%AE%8C%E6%95%B4%E9%85%8D%E7%BD%AE"><span class="nav-number">1.5.</span> <span class="nav-text">k8s yaml 完整配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Namespace"><span class="nav-number">1.6.</span> <span class="nav-text">Namespace</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E7%94%A8-Namespace"><span class="nav-number">1.6.1.</span> <span class="nav-text">为什么用 Namespace</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%A8%E7%A9%BA%E9%97%B4%E4%B8%AD%E5%88%9B%E5%BB%BA%E7%BB%84%E4%BB%B6"><span class="nav-number">1.6.2.</span> <span class="nav-text">在空间中创建组件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ingress"><span class="nav-number">1.7.</span> <span class="nav-text">Ingress</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-Ingress"><span class="nav-number">1.7.1.</span> <span class="nav-text">配置 Ingress</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Ingress-%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95"><span class="nav-number">1.7.2.</span> <span class="nav-text">Ingress 常用配置方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HPA%E3%80%81KPA"><span class="nav-number">1.8.</span> <span class="nav-text">HPA、KPA</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%81%E4%B9%85%E5%8C%96-in-k8s"><span class="nav-number">1.9.</span> <span class="nav-text">持久化 in k8s</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%83%E5%BA%A6%E8%8A%82%E7%82%B9"><span class="nav-number">1.10.</span> <span class="nav-text">调度节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GPU"><span class="nav-number">1.11.</span> <span class="nav-text">GPU</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reference"><span class="nav-number">1.12.</span> <span class="nav-text">reference</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#minikube"><span class="nav-number">2.</span> <span class="nav-text">minikube</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-2"><span class="nav-number">2.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="nav-number">2.2.</span> <span class="nav-text">基本使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E5%BA%94%E7%94%A8"><span class="nav-number">2.3.</span> <span class="nav-text">运行应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E5%A4%9A%E9%9B%86%E7%BE%A4%E6%A8%A1%E6%8B%9F"><span class="nav-number">2.4.</span> <span class="nav-text">本地多集群模拟</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#kind"><span class="nav-number">3.</span> <span class="nav-text">kind</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#GPU-2"><span class="nav-number">3.1.</span> <span class="nav-text">GPU</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#kubectl"><span class="nav-number">4.</span> <span class="nav-text">kubectl</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-3"><span class="nav-number">4.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8-2"><span class="nav-number">4.2.</span> <span class="nav-text">基本使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%81%E4%B9%85%E5%8C%96%E5%AD%98%E5%82%A8"><span class="nav-number">4.3.</span> <span class="nav-text">持久化存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pod-%E8%B0%83%E8%AF%95"><span class="nav-number">4.4.</span> <span class="nav-text">pod 调试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#kustomize"><span class="nav-number">5.</span> <span class="nav-text">kustomize</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-4"><span class="nav-number">5.1.</span> <span class="nav-text">安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#helm"><span class="nav-number">6.</span> <span class="nav-text">helm</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#helm-%E6%A6%82%E5%BF%B5"><span class="nav-number">6.1.</span> <span class="nav-text">helm 概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8-3"><span class="nav-number">6.2.</span> <span class="nav-text">基本使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%93%E5%8C%85"><span class="nav-number">6.3.</span> <span class="nav-text">打包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">6.4.</span> <span class="nav-text">参考</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rancher"><span class="nav-number">7.</span> <span class="nav-text">rancher</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-5"><span class="nav-number">7.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#App"><span class="nav-number">7.2.</span> <span class="nav-text">App</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gpu"><span class="nav-number">7.3.</span> <span class="nav-text">gpu</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rke"><span class="nav-number">8.</span> <span class="nav-text">rke</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rke2"><span class="nav-number">9.</span> <span class="nav-text">rke2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-6"><span class="nav-number">9.1.</span> <span class="nav-text">安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#k3s"><span class="nav-number">10.</span> <span class="nav-text">k3s</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-7"><span class="nav-number">10.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE"><span class="nav-number">10.2.</span> <span class="nav-text">访问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gpu-2"><span class="nav-number">10.3.</span> <span class="nav-text">gpu</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#istio"><span class="nav-number">11.</span> <span class="nav-text">istio</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Service-Mesh-%E6%BC%94%E5%8C%96"><span class="nav-number">11.1.</span> <span class="nav-text">Service Mesh 演化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Service-Mesh"><span class="nav-number">11.2.</span> <span class="nav-text">Service Mesh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#istio-2"><span class="nav-number">11.3.</span> <span class="nav-text">istio</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#istio-%E5%AE%9A%E4%B9%89"><span class="nav-number">11.3.1.</span> <span class="nav-text">istio 定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#istio-%E6%A0%B8%E5%BF%83%E8%B5%84%E6%BA%90-CRD"><span class="nav-number">11.3.2.</span> <span class="nav-text">istio 核心资源 CRD</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%AF%E8%A7%82%E6%B5%8B%E6%80%A7"><span class="nav-number">11.3.3.</span> <span class="nav-text">可观测性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E5%85%A8%E6%9E%B6%E6%9E%84"><span class="nav-number">11.3.4.</span> <span class="nav-text">安全架构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-8"><span class="nav-number">11.3.5.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Virtucal-Service-%E5%92%8C-Destination-Rule"><span class="nav-number">11.3.6.</span> <span class="nav-text">Virtucal Service 和 Destination Rule</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#knative"><span class="nav-number">12.</span> <span class="nav-text">knative</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#knative-%E6%96%87%E6%A1%A3"><span class="nav-number">12.1.</span> <span class="nav-text">knative 文档</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#traefik"><span class="nav-number">13.</span> <span class="nav-text">traefik</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#traefik-%E7%A4%BA%E4%BE%8B"><span class="nav-number">13.1.</span> <span class="nav-text">traefik 示例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#docker-compose-%E7%A4%BA%E4%BE%8B"><span class="nav-number">13.1.1.</span> <span class="nav-text">docker-compose 示例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#k8s-%E7%A4%BA%E4%BE%8B"><span class="nav-number">13.1.2.</span> <span class="nav-text">k8s 示例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#opentelemetry"><span class="nav-number">14.</span> <span class="nav-text">opentelemetry</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -271,7 +271,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-07-18 19:27:20" itemprop="dateModified" datetime="2023-07-18T19:27:20+08:00">2023-07-18</time>
+      <time title="修改时间：2023-07-21 09:32:35" itemprop="dateModified" datetime="2023-07-21T09:32:35+08:00">2023-07-21</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -290,14 +290,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>21k</span>
+      <span>29k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>19 分钟</span>
+      <span>27 分钟</span>
     </span>
 </div>
 
@@ -311,6 +311,8 @@
         <!--
 k8s:
     aliyun 入门:https://developer.aliyun.com/learning/course/51?spm=a2c6h.12873639.article-detail.124.377a3155x8UJpu&scm=20140722.ID_community@@course@@51._.ID_community@@course@@51-OR_rec-V_1-RL_community@@article@@742566
+
+https://thenewstack.io/tutorial-deploy-the-nvidia-gpu-operator-on-kubernetes-based-on-containerd-runtime/
  -->
 <h2 id="k8s">k8s</h2>
 <p>什么是 <a target="_blank" rel="noopener" href="https://kubernetes.io/zh-cn/docs/home/">k8s</a></p>
@@ -343,7 +345,58 @@ k8s:
 <p>容灾，备份和还原</p>
 </li>
 </ul>
-<span id="more"></span>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://kubernetes.io/zh-cn/docs/tutorials/kubernetes-basics/">https://kubernetes.io/zh-cn/docs/tutorials/kubernetes-basics/</a></p>
+</li>
+</ul>
+<h3 id="安装">安装</h3>
+<p>docker runtime 安装 k8s</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装docker</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># centos</span></span><br><span class="line">yum install -y yum-utils</span><br><span class="line">yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo</span><br><span class="line">yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin</span><br><span class="line"><span class="comment"># ubuntu</span></span><br><span class="line">apt-get update</span><br><span class="line">apt-get install ca-certificates curl gnupg</span><br><span class="line">install -m 0755 -d /etc/apt/keyrings</span><br><span class="line">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg</span><br><span class="line"><span class="built_in">chmod</span> a+r /etc/apt/keyrings/docker.gpg</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"deb [arch="</span>$(dpkg --print-architecture)<span class="string">" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \</span></span><br><span class="line"><span class="string">  "</span>$(. /etc/os-release &amp;&amp; <span class="built_in">echo</span> <span class="string">"<span class="variable">$VERSION_CODENAME</span>"</span>)<span class="string">" stable"</span> | <span class="built_in">tee</span> /etc/apt/sources.list.d/docker.list &gt; /dev/null</span><br><span class="line">apt update &amp;&amp; apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin</span><br><span class="line"><span class="comment"># debian</span></span><br><span class="line">apt-get update</span><br><span class="line">apt-get install ca-certificates curl gnupg</span><br><span class="line">install -m 0755 -d /etc/apt/keyrings</span><br><span class="line">curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg</span><br><span class="line"><span class="built_in">chmod</span> a+r /etc/apt/keyrings/docker.gpg</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"deb [arch="</span>$(dpkg --print-architecture)<span class="string">" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \</span></span><br><span class="line"><span class="string">  "</span>$(. /etc/os-release &amp;&amp; <span class="built_in">echo</span> <span class="string">"<span class="variable">$VERSION_CODENAME</span>"</span>)<span class="string">" stable"</span> | <span class="built_in">tee</span> /etc/apt/sources.list.d/docker.list &gt; /dev/null</span><br><span class="line">apt update &amp;&amp; apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置docker</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cat</span> &gt;&gt;/etc/docker/daemon.json&lt;&lt;<span class="string">EOF</span></span><br><span class="line"><span class="string">{</span></span><br><span class="line"><span class="string">  "default-runtime": "nvidia",</span></span><br><span class="line"><span class="string">  "exec-opts": [</span></span><br><span class="line"><span class="string">    "native.cgroupdriver=systemd"</span></span><br><span class="line"><span class="string">  ],</span></span><br><span class="line"><span class="string">  "runtimes": {</span></span><br><span class="line"><span class="string">    "nvidia": {</span></span><br><span class="line"><span class="string">      "args": [],</span></span><br><span class="line"><span class="string">      "path": "nvidia-container-runtime"</span></span><br><span class="line"><span class="string">    }</span></span><br><span class="line"><span class="string">  },</span></span><br><span class="line"><span class="string">  "builder": {</span></span><br><span class="line"><span class="string">    "gc": {</span></span><br><span class="line"><span class="string">      "defaultKeepStorage": "20GB",</span></span><br><span class="line"><span class="string">      "enabled": true</span></span><br><span class="line"><span class="string">    }</span></span><br><span class="line"><span class="string">  },</span></span><br><span class="line"><span class="string">  "experimental": true,</span></span><br><span class="line"><span class="string">  "features": {</span></span><br><span class="line"><span class="string">    "buildkit": true</span></span><br><span class="line"><span class="string">  },</span></span><br><span class="line"><span class="string">  "insecure-registries": [</span></span><br><span class="line"><span class="string">    "harbor.baijiayun.com",</span></span><br><span class="line"><span class="string">    "docker.huaguisystems.com"</span></span><br><span class="line"><span class="string">  ],</span></span><br><span class="line"><span class="string">  "registry-mirrors": [</span></span><br><span class="line"><span class="string">    "https://docker.mirrors.sjtug.sjtu.edu.cn",</span></span><br><span class="line"><span class="string">    "https://reg-mirror.qiniu.com"</span></span><br><span class="line"><span class="string">  ]</span></span><br><span class="line"><span class="string">}</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"></span><br><span class="line">systemctl restart docker</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 k8s 软件工具</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Update sysctl settings for Kubernetes networking</span></span><br><span class="line"><span class="built_in">cat</span> &gt;&gt;/etc/sysctl.d/kubernetes.conf&lt;&lt;<span class="string">EOF</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-ip6tables = 1</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-iptables = 1</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line">sysctl --system</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置k8s源并安装 </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># centos</span></span><br><span class="line"><span class="built_in">cat</span> &lt;&lt;<span class="string">EOF | sudo tee /etc/yum.repos.d/kubernetes.repo</span></span><br><span class="line"><span class="string">[kubernetes]</span></span><br><span class="line"><span class="string">name=Kubernetes</span></span><br><span class="line"><span class="string">baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64</span></span><br><span class="line"><span class="string">enabled=1</span></span><br><span class="line"><span class="string">gpgcheck=1</span></span><br><span class="line"><span class="string">repo_gpgcheck=1</span></span><br><span class="line"><span class="string">gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line">yum updatee &amp;&amp; yum install -y kubelet kubeadm kubectl</span><br><span class="line"><span class="comment"># debian/ubuntu</span></span><br><span class="line">curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"deb https://apt.kubernetes.io/ kubernetes-xenial main"</span> | <span class="built_in">tee</span> -a /etc/apt/sources.list.d/kubernetes.list</span><br><span class="line"><span class="comment"># 国内</span></span><br><span class="line">curl -s https://mirrors.aliyun.com/kubernetes/apt/doc/apt-key.gpg | sudo apt-key add -</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main"</span> | <span class="built_in">tee</span> /etc/apt/sources.list.d/kubernetes.list</span><br><span class="line"></span><br><span class="line">apt update &amp;&amp; apt install -y kubelet kubeadm kubectl</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可选:为kubelet 关闭交换优化性能</span></span><br><span class="line"></span><br><span class="line">swapoff -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># centos用于临时关闭 SELinux 安全策略</span></span><br><span class="line"></span><br><span class="line">setenforce 0</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可选:为了实现 docker 使用的 cgroup-driver 和 kubelet 使用的 cgroup 一致,根据具体情况修改kubelet 配置</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'KUBELET_EXTRA_ARGS="--cgroup-driver=systemd"'</span> | <span class="built_in">tee</span> -a /etc/default/kubelet</span><br><span class="line"></span><br><span class="line">systemctl restart kubelet</span><br></pre></td></tr></tbody></table></figure>
+<p>配置 k8s 集群</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看配置需要的k8s镜像</span></span><br><span class="line">kubeadm config images list</span><br><span class="line">kubeadm config images list | xargs docker pull</span><br><span class="line"></span><br><span class="line">kubeadm init \</span><br><span class="line">    --image-repository registry.aliyuncs.com/google_containers \</span><br><span class="line">    <span class="comment"># 根据网络配置api及service</span></span><br><span class="line">    <span class="comment"># --pod-network-cidr=10.244.0.0/16 \</span></span><br><span class="line">    <span class="comment"># --apiserver-advertise-address=10.16.8.135 \</span></span><br><span class="line">    <span class="comment"># --service-cidr=10.96.0.0/16</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用阿里云镜像源</span></span><br><span class="line">kubeadm config images pull \</span><br><span class="line">    --image-repository registry.aliyuncs.com/google_containers</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更换时区到国内</span></span><br><span class="line"><span class="built_in">ln</span> -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br><span class="line"><span class="comment">#安装ntpdate工具</span></span><br><span class="line">apt-get install ntpdate</span><br><span class="line"><span class="comment">#设置系统时间与网络时间同步</span></span><br><span class="line">ntpdate cn.pool.ntp.org</span><br><span class="line"><span class="comment">#然后将时间更新到硬件上：</span></span><br><span class="line">hwclock --systohc</span><br></pre></td></tr></tbody></table></figure>
+<p>containerd 安装 k8s</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置containerd</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 为kubelet 关闭交换优化性能</span></span><br><span class="line"></span><br><span class="line">swapoff -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># Update sysctl settings for Kubernetes networking</span></span><br><span class="line"><span class="built_in">cat</span> &gt;&gt;/etc/sysctl.d/kubernetes.conf&lt;&lt;<span class="string">EOF</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-ip6tables = 1</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-iptables = 1</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line">sysctl --system</span><br><span class="line"></span><br><span class="line">curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"deb https://apt.kubernetes.io/ kubernetes-xenial main"</span> | <span class="built_in">tee</span> -a /etc/apt/sources.list.d/kubernetes.list</span><br><span class="line"></span><br><span class="line">apt update &amp;&amp; apt install -y kubelet kubeadm kubectl</span><br><span class="line"></span><br><span class="line">containerd config default | <span class="built_in">tee</span> /etc/containerd/config.toml</span><br><span class="line">systemctl restart containerd</span><br><span class="line">systemctl status containerd</span><br><span class="line"><span class="comment"># https://www.youtube.com/watch?v=k3iexxiYPI8</span></span><br></pre></td></tr></tbody></table></figure>
+<p>参考:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/396775382?utm_id=0">0 基础搭建 gpu k8s</a></p>
+</li>
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/a2e44fe93f88">kubeadm 初始化踩坑</a></p>
+</li>
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://github.com/justmeandopensource/kubernetes">https://github.com/justmeandopensource/kubernetes</a></p>
+</li>
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://github.com/justmeandopensource/kubernetes/blob/master/docs/install-cluster-centos-7.md">https://github.com/justmeandopensource/kubernetes/blob/master/docs/install-cluster-centos-7.md</a></p>
+</li>
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://github.com/justmeandopensource/kubernetes/blob/master/docs/install-cluster-ubuntu-20.md">https://github.com/justmeandopensource/kubernetes/blob/master/docs/install-cluster-ubuntu-20.md</a></p>
+</li>
+</ul>
+<p>拆坑:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>kubelet.service failed.</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">kubelet.service - kubelet: The Kubernetes Node Agent</span><br><span class="line">   Loaded: loaded (/usr/lib/systemd/system/kubelet.service; enabled; vendor preset: disabled)</span><br><span class="line">   Active: activating (auto-restart) (Result: exit-code) since Wed 2023-07-19 11:44:14 CST; 7s ago</span><br><span class="line">     Docs: https://kubernetes.io/docs/</span><br><span class="line">  Process: 2856971 ExecStart=/usr/bin/kubelet (code=exited, status=1/FAILURE)</span><br><span class="line"> Main PID: 2856971 (code=exited, status=1/FAILURE)</span><br><span class="line">    Tasks: 0</span><br><span class="line">   Memory: 0B</span><br><span class="line">   CGroup: /system.slice/kubelet.service</span><br><span class="line"></span><br><span class="line">Jul 19 11:44:14 localhost.localdomain systemd[1]: Unit kubelet.service entered failed state.</span><br><span class="line">Jul 19 11:44:14 localhost.localdomain systemd[1]: kubelet.service failed.</span><br></pre></td></tr></tbody></table></figure>
+<p>kubelet 启动失败<br>
+kubelet 服务启动失败。你可以通过查看 kubelet 的日志来获取更多信息，使用以下命令：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">journalctl -fu kubelet</span><br><span class="line">journalctl -xe</span><br></pre></td></tr></tbody></table></figure>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>validate service connection: CRI v1 runtime API is not implemented</p>
+</li>
+</ul>
+<p>错误日志:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># containerd --version</span></span><br><span class="line">containerd containerd.io 1.6.21 3dce8eb055cbb6872793272b4f20ed16117344f8</span><br><span class="line">[root@localhost ~]<span class="comment"># docker info |grep Cgroup</span></span><br><span class="line"> Cgroup Driver: cgroupfs</span><br><span class="line">WARNING: bridge-nf-call-ip6tables is disabled</span><br><span class="line"> Cgroup Version: 1</span><br><span class="line">[root@localhost ~]<span class="comment"># cat /var/lib/kubelet/kubeadm-flags.env</span></span><br><span class="line">--container-runtime=docker</span><br><span class="line">[root@localhost ~]<span class="comment"># kubeadm init --pod-network-cidr=10.244.0.0/16</span></span><br><span class="line">[init] Using Kubernetes version: v1.27.3</span><br><span class="line">[preflight] Running pre-flight checks</span><br><span class="line">        [WARNING Swap]: swap is enabled; production deployments should <span class="built_in">disable</span> swap unless testing the NodeSwap feature gate of the kubelet</span><br><span class="line">error execution phase preflight: [preflight] Some fatal errors occurred:</span><br><span class="line">        [ERROR CRI]: container runtime is not running: output: time=<span class="string">"2023-07-19T15:29:19+08:00"</span> level=fatal msg=<span class="string">"validate service connection: CRI v1 runtime API is not implemented for endpoint \"unix:///var/run/containerd/containerd.sock\": rpc error: code = Unimplemented desc = unknown service runtime.v1.RuntimeService"</span></span><br><span class="line">, error: <span class="built_in">exit</span> status 1</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<p>解决 1: 将 containerd 配置文件 /etc/containerd/config.toml 的 disable 中 cni 项<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/602626745">注释</a>解决 2: 使用 Docker 作为其容器运行时。你可以通过编辑 /etc/default/kubelet 文件来完成这个操作。在这个文件中，你需要添加或修改以下行：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">KUBELET_EXTRA_ARGS=--container-runtime=docker</span><br></pre></td></tr></tbody></table></figure>
+<p>然后，重新启动 kubelet 服务：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart kubelet</span><br></pre></td></tr></tbody></table></figure>
 <h3 id="架构">架构</h3>
 <ul class="lvl-0">
 <li class="lvl-2">
@@ -636,7 +689,7 @@ K8s:
 </ul>
 <h2 id="minikube">minikube</h2>
 <p><a target="_blank" rel="noopener" href="https://minikube.sigs.k8s.io/docs/">minikube</a> 是一个轻量级的 <a target="_blank" rel="noopener" href="https://kubernetes.io/zh/docs/home/">Kubernetes</a> 实现，用于在本地机器上运行单节点 Kubernetes 集群。它支持多个驱动程序（Docker、containerd、cri-o、Podman 等），可以在 Linux、macOS 和 Windows 上运行。</p>
-<h3 id="安装">安装</h3>
+<h3 id="安装-2">安装</h3>
 <ul class="lvl-0">
 <li class="lvl-2">
 <p>Linux 上</p>
@@ -717,7 +770,7 @@ K8s:
 <p>Nvidia 适配 <a target="_blank" rel="noopener" href="https://docs.nvidia.com/datacenter/cloud-native/kubernetes/install-k8s.html#">k8s</a> 及 <a target="_blank" rel="noopener" href="https://github.com/NVIDIA/k8s-device-plugin">github repos</a>。</p>
 <h2 id="kubectl">kubectl</h2>
 <p>kubectl 是 Kubernetes 的命令行工具，用于管理 Kubernetes 集群，C/S 架构。</p>
-<h3 id="安装-2">安装</h3>
+<h3 id="安装-3">安装</h3>
 <ul class="lvl-0">
 <li class="lvl-2">
 <p>Linux 上</p>
@@ -781,7 +834,7 @@ K8s:
 <h2 id="kustomize">kustomize</h2>
 <p><a target="_blank" rel="noopener" href="https://github.com/kubernetes-sigs/kustomize">kustomize</a> 是一个用于 Kubernetes 部署的工具，它允许通过声明性配置来管理应用程序的部署。使用 Kustomize，可以轻松地管理多个环境（如开发、测试和生产）之间的差异，而无需为每个环境创建单独的部署文件。</p>
 <p>Kustomize 使用 Kubernetes 的原生 API 来管理部署，因此它与 Kubernetes 的其他工具（如 kubectl）非常兼容。此外，Kustomize 还支持使用变量和模板来生成部署文件，使得管理大型应用程序变得更加容易。详情文档<a target="_blank" rel="noopener" href="https://kubectl.docs.kubernetes.io/guides/">参考</a>。</p>
-<h3 id="安装-3">安装</h3>
+<h3 id="安装-4">安装</h3>
 <ul class="lvl-0">
 <li class="lvl-2">
 <p>Linux</p>
@@ -845,46 +898,31 @@ K8s:
 <p><a target="_blank" rel="noopener" href="https://www.escapelife.site/posts/eb8ef4fd.html">helm 2 from escape</a></p>
 </li>
 </ul>
-<h2 id="Rancher">Rancher</h2>
-<p>Rancher 是一个为使用容器的公司打造的容器管理平台。Rancher 使得开发者可以随处运行 Kubernetes（Run Kubernetes Everywhere），满足 IT 需求规范，赋能 DevOps 团队。</p>
-<p>Rancher 可以创建来自 Kubernetes 托管服务提供商的集群，创建节点并安装 Kubernetes，或者导入在任何地方运行的现有 Kubernetes 集群。</p>
-<p>Rancher 基于 Kubernetes 添加了新的功能，包括统一所有集群的身份验证和 RBAC，让系统管理员从一个位置控制全部集群的访问。</p>
-<p>Rancher 可以为集群和资源提供更精细的监控和告警，将日志发送到外部提供商，并通过应用商店（Application Catalog）直接集成 Helm。如果拥有外部 CI/CD 系统，可以将其与 Rancher 对接。没有的话，也可以使用 Rancher 提供的 Fleet 自动部署和升级工作负载。</p>
-<p>Rancher 是一个 全栈式 的 Kubernetes 容器管理平台，为提供在任何地方都能成功运行 Kubernetes 的工具。</p>
-<h3 id="安装-4">安装</h3>
-<!-- https://zhuanlan.zhihu.com/p/403539342 
+<h2 id="rancher">rancher</h2>
+<p>rancher 是一个 全栈式 的 Kubernetes 容器管理平台，为提供在任何地方都能成功运行 Kubernetes 的工具。</p>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://ranchermanager.docs.rancher.com/zh/">https://ranchermanager.docs.rancher.com/zh/</a></p>
+</li>
+</ul>
+<h3 id="安装-5">安装</h3>
+<!-- 
+https://zhuanlan.zhihu.com/p/403539342 
 https://zhuanlan.zhihu.com/p/495279401
 https://blog.csdn.net/burn_in_hell/article/details/122908503
 https://blog.csdn.net/burn_in_hell/article/details/122850969
+https://blog.csdn.net/u012751272/article/details/120566298
+
+https://blog.csdn.net/qq_43792385/article/details/104424848
+https://blog.csdn.net/qq_43792385/article/details/104692634
 -->
 <p>单节点通过容器安装，并访问浏览器访问 ip:443，设置 admin 密码，右下角可设置显示语言为简体中文。</p>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker&nbsp;run&nbsp;-d&nbsp;--restart=unless-stopped&nbsp;\</span><br><span class="line">    --name rancher \</span><br><span class="line">    -p&nbsp;80:80&nbsp;-p&nbsp;443:443&nbsp;\</span><br><span class="line">    --privileged \</span><br><span class="line">    rancher/rancher:v2.5.9</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="新增节点">新增节点</h3>
-<p>要将另一台机器加入到当前 Rancher 集群中，可以使用以下步骤：</p>
-<ol>
-<li class="lvl-3">
-<p>在 Rancher 控制台中，选择当前集群，然后单击 “添加节点” 按钮。</p>
-</li>
-<li class="lvl-3">
-<p>在 “添加节点” 页面中，选择 “自定义” 选项。然后复制并粘贴在要加入集群的机器上运行的命令。</p>
-</li>
-<li class="lvl-3">
-<p>在要加入集群的机器上执行该命令。该命令将启动一个代理容器，该容器将连接到 Rancher 服务器并注册节点。</p>
-</li>
-<li class="lvl-3">
-<p>在 Rancher 控制台中，可以看到新节点的状态为 “已注册”。一旦节点状态为 “就绪”，则可以将其用作工作负载的主机。</p>
-</li>
-</ol>
-<p>请注意，要将另一台机器加入到 Rancher 集群中，该机器必须满足以下要求：</p>
+<p>参考:</p>
 <ul class="lvl-0">
 <li class="lvl-2">
-<p>具有 Kubernetes 环境。</p>
-</li>
-<li class="lvl-2">
-<p>可以访问 Rancher 服务器。</p>
-</li>
-<li class="lvl-2">
-<p>具有与 Rancher 服务器相同的 Docker 版本。</p>
+<p><a target="_blank" rel="noopener" href="https://docs.rancher.cn/docs/rancher2/best-practices/use-in-china/_index">rancher 国内加速</a></p>
 </li>
 </ul>
 <h3 id="App">App</h3>
@@ -896,10 +934,92 @@ https://blog.csdn.net/burn_in_hell/article/details/122850969
 <h3 id="gpu">gpu</h3>
 <ul class="lvl-0">
 <li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u012751272/article/details/118859135">https://blog.csdn.net/u012751272/article/details/118859135</a></p>
+</li>
+<li class="lvl-2">
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u012751272/article/details/120566298">https://blog.csdn.net/u012751272/article/details/120566298</a></p>
 </li>
 </ul>
-<h2 id="Istio-Service-Mesh">Istio(Service Mesh)</h2>
+<h2 id="rke">rke</h2>
+<p>Rancher Kubernetes Engine，简称 RKE，是一个经过 CNCF 认证的 Kubernetes 安装程序。</p>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://docs.rancher.cn/docs/rke/_index">https://docs.rancher.cn/docs/rke/_index</a></p>
+</li>
+</ul>
+<h2 id="rke2">rke2</h2>
+<p><a target="_blank" rel="noopener" href="https://docs.rke2.io/zh/">rke2</a>，也被称为 RKE Government，是 Rancher 的下一代 Kubernetes 发行版</p>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://docs.rancher.cn/docs/rke2/_index/">https://docs.rancher.cn/docs/rke2/_index/</a></p>
+</li>
+</ul>
+<h3 id="安装-6">安装</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://docs.rancher.cn/docs/rke2/install/quickstart/_index">快速部署</a></p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">curl -sfL https://get.rke2.io | sh -</span><br><span class="line"><span class="comment"># 国内加速</span></span><br><span class="line">curl -sfL https://rancher-mirror.rancher.cn/rke2/install.sh | INSTALL_RKE2_MIRROR=cn sh -</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="k3s">k3s</h2>
+<p><a target="_blank" rel="noopener" href="https://docs.k3s.io/zh/">K3s</a> 是一个轻量级的 Kubernetes 发行版，它针对边缘计算、物联网等场景进行了高度优化。</p>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://docs.rancher.cn/docs/k3s/_index">https://docs.rancher.cn/docs/k3s/_index</a></p>
+</li>
+</ul>
+<h3 id="安装-7">安装</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://docs.rancher.cn/docs/k3s/quick-start/_index/">快速部署</a></p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">curl -sfL https://get.k3s.io | sh -</span><br><span class="line"><span class="comment"># 国内加速</span></span><br><span class="line">curl -sfL https://rancher-mirror.rancher.cn/k3s/k3s-install.sh | INSTALL_K3S_MIRROR=cn sh -</span><br></pre></td></tr></tbody></table></figure>
+<p>运行此安装后，详情<a target="_blank" rel="noopener" href="https://docs.rancher.cn/docs/k3s/quick-start/_index/">参考</a>：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>K3s 服务将被配置为在节点重启后或进程崩溃或被杀死时自动重启.</p>
+</li>
+<li class="lvl-2">
+<p>将安装其他实用程序，包括 kubectl、crictl、ctr、<a target="_blank" rel="noopener" href="http://k3s-killall.sh">k3s-killall.sh</a> 和 <a target="_blank" rel="noopener" href="http://k3s-uninstall.sh">k3s-uninstall.sh</a></p>
+</li>
+<li class="lvl-2">
+<p>将 kubeconfig 文件写入到 /etc/rancher/k3s/k3s.yaml，由 K3s 安装的 kubectl 将自动使用该文件.</p>
+</li>
+<li class="lvl-2">
+<p>autok3s</p>
+</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://docs.rancher.cn/docs/k3s/autok3s/_index">AutoK3s</a> 是用于简化 K3s 集群管理的轻量级工具，您可以使用 AutoK3s 在任何地方运行 K3s 服务。</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker run -itd  --name autok3s \</span><br><span class="line">  --restart=unless-stopped \</span><br><span class="line">  -p 8080:8080 \</span><br><span class="line">  cnrancher/autok3s:v0.6.0</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="访问">访问</h3>
+<p>存储在 /etc/rancher/k3s/k3s.yaml 的 kubeconfig 文件用于对 Kubernetes 集群的访问</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> KUBECONFIG=/etc/rancher/k3s/k3s.yaml</span><br><span class="line">kubectl get pods --all-namespaces</span><br><span class="line">helm <span class="built_in">ls</span> --all-namespaces</span><br></pre></td></tr></tbody></table></figure>
+<p>直接指定 kubeconfig</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">kubectl --kubeconfig /etc/rancher/k3s/k3s.yaml get pods --all-namespaces</span><br><span class="line">helm --kubeconfig /etc/rancher/k3s/k3s.yaml <span class="built_in">ls</span> --all-namespaces</span><br></pre></td></tr></tbody></table></figure>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://docs.rancher.cn/docs/k3s/cluster-access/_index">https://docs.rancher.cn/docs/k3s/cluster-access/_index</a></p>
+</li>
+</ul>
+<h3 id="gpu-2">gpu</h3>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://github.com/rancher/rke2/issues/3385#issuecomment-1640611574">https://github.com/rancher/rke2/issues/3385#issuecomment-1640611574</a></p>
+</li>
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://github.com/k3s-io/k3s/issues/4391#issuecomment-1233314825">https://github.com/k3s-io/k3s/issues/4391#issuecomment-1233314825</a></p>
+</li>
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://github.com/NVIDIA/k8s-device-plugin#enabling-gpu-support-in-kubernetes">https://github.com/NVIDIA/k8s-device-plugin#enabling-gpu-support-in-kubernetes</a></p>
+</li>
+</ul>
+<h2 id="istio">istio</h2>
 <p>解析微服务实践中网络稳定的痛点，实践中通常使用服务网格 <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=VAKotZT8SMI&amp;list=PLo0iJFLQIBEaqom6wvP9qsSJQalc2TkaQ">Service Mesh</a>。</p>
 <ul class="lvl-0">
 <li class="lvl-2">
@@ -974,7 +1094,7 @@ A service mesh is a dedicated <strong>infrastructure layer</strong> for handling
 <p>SMI，为用户提供统一的控制平面。</p>
 </li>
 </ul>
-<h3 id="istio">istio</h3>
+<h3 id="istio-2">istio</h3>
 <h4 id="istio-定义">istio 定义</h4>
 <ul class="lvl-0">
 <li class="lvl-2">
@@ -1135,7 +1255,7 @@ A service mesh is a dedicated <strong>infrastructure layer</strong> for handling
 <p>无需显示启用</p>
 </li>
 </ul>
-<h4 id="安装-5">安装</h4>
+<h4 id="安装-8">安装</h4>
 <p>配置安装 <a target="_blank" rel="noopener" href="https://istio.io/latest/docs/setup/getting-started/#download">istio</a>。</p>
 <ul class="lvl-0">
 <li class="lvl-2">
@@ -1147,7 +1267,7 @@ A service mesh is a dedicated <strong>infrastructure layer</strong> for handling
 istio 需要匹配 k8s 环境。</p>
 <p><code>curl -L https://istio.io/downloadIstio | sh -</code></p>
 </blockquote>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">istioctl version</span><br><span class="line"></span><br><span class="line"><span class="comment"># 需要测试环境demo的话可将 profile 从 default 到 demo</span></span><br><span class="line"><span class="comment"># default for production</span></span><br><span class="line">istioctl manifest apply</span><br><span class="line"><span class="comment"># demo mode for learning</span></span><br><span class="line">istioctl manifest apply --<span class="built_in">set</span> profile=demo</span><br><span class="line"><span class="comment"># custom 增加 default + grafana</span></span><br><span class="line">istioctl manifest apply --<span class="built_in">set</span> addonComponents.grafana.enable=<span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看 istio pod</span></span><br><span class="line">kubectl get ns</span><br><span class="line">kubectl get pod -n istio-system</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看 istio crd/api</span></span><br><span class="line">kubectl get crd | grep istio</span><br><span class="line">kubectl api-resources | grep istio</span><br><span class="line"></span><br><span class="line"><span class="comment"># 验证安装</span></span><br><span class="line">istioctl dashboard kiali</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加一个名称空间标签，以指示 Istio 在以后部署应用程序时自动注入特使边车代理</span></span><br><span class="line">kubectl label namespace default istio-injection=enabled</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">istioctl version</span><br><span class="line"></span><br><span class="line"><span class="comment"># 需要测试环境demo的话可将 profile 从 default 到 demo</span></span><br><span class="line"><span class="comment"># default for production</span></span><br><span class="line">istioctl manifest apply</span><br><span class="line"><span class="comment"># demo mode for learning</span></span><br><span class="line">istioctl manifest apply --<span class="built_in">set</span> profile=demo</span><br><span class="line"><span class="comment"># custom 增加 default + grafana</span></span><br><span class="line">istioctl manifest apply --<span class="built_in">set</span> addonComponents.grafana.enable=<span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看 istio pod</span></span><br><span class="line">kubectl get ns</span><br><span class="line">kubectl get pod -n istio-system</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看 istio crd/api</span></span><br><span class="line">kubectl get crd | grep istio</span><br><span class="line">kubectl api-resources | grep istio</span><br><span class="line"></span><br><span class="line"><span class="comment"># 验证安装</span></span><br><span class="line">istioctl dashboard kiali</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加一个名称空间标签，以指示 istio 在以后部署应用程序时自动注入特使边车代理</span></span><br><span class="line">kubectl label namespace default istio-injection=enabled</span><br></pre></td></tr></tbody></table></figure>
 <blockquote>
 <p>[!TIP]<br>
 可以部署 Bookinfo 应用，验证 istio。</p>
@@ -1176,13 +1296,13 @@ istio 需要匹配 k8s 环境。</p>
 <p>定义各种策略（负载均衡、连接池等）</p>
 </li>
 </ul>
-<h2 id="Knative">Knative</h2>
+<h2 id="knative">knative</h2>
 <blockquote>
 <p>[!NOTE]<br>
-Knative is an Open-Source Enterprise-level solution to build Serverless and Event Driven Applications.</p>
+knative is an Open-Source Enterprise-level solution to build Serverless and Event Driven Applications.</p>
 </blockquote>
 <p>Knative 是一个企业级的开源软件构建无服务器和事件驱动应用程序的解决方案。</p>
-<h3 id="Knative-文档">Knative 文档</h3>
+<h3 id="knative-文档">knative 文档</h3>
 <p>要了解如何在 Kubernetes 上使用 Knative，需要重点关注以下文档：</p>
 <ul class="lvl-0">
 <li class="lvl-2">
@@ -1198,16 +1318,16 @@ Knative is an Open-Source Enterprise-level solution to build Serverless and Even
 <p>Knative 官方文档中的以下章节对于了解 Knative 也非常重要：</p>
 <ul class="lvl-0">
 <li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://knative.dev/docs/serving/">Knative Serving</a></p>
+<p><a target="_blank" rel="noopener" href="https://knative.dev/docs/serving/">knative Serving</a></p>
 </li>
 <li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://knative.dev/docs/eventing/">Knative Eventing</a></p>
+<p><a target="_blank" rel="noopener" href="https://knative.dev/docs/eventing/">knative Eventing</a></p>
 </li>
 <li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://knative.dev/docs/build/">Knative Build</a></p>
+<p><a target="_blank" rel="noopener" href="https://knative.dev/docs/build/">knative Build</a></p>
 </li>
 </ul>
-<h2 id="Traefik">Traefik</h2>
+<h2 id="traefik">traefik</h2>
 <p>Traefik 是一种流行的反向代理和负载均衡器，可用于将流量路由到不同的后端服务。它支持多种后端服务，例如 Docker，Kubernetes 和 Consul 等。Traefik 还提供了许多有用的功能，例如自动发现和自动配置。</p>
 <p>参考:</p>
 <ul class="lvl-0">
@@ -1218,7 +1338,7 @@ Knative is an Open-Source Enterprise-level solution to build Serverless and Even
 <p><a target="_blank" rel="noopener" href="https://github.com/htpcBeginner/docker-traefik">https://github.com/htpcBeginner/docker-traefik</a></p>
 </li>
 </ul>
-<h3 id="Traefik-示例">Traefik 示例</h3>
+<h3 id="traefik-示例">traefik 示例</h3>
 <h4 id="docker-compose-示例">docker-compose 示例</h4>
 <p>如果正在使用 Docker，则可以使用 Traefik 作为反向代理和负载均衡器。Traefik 可以自动发现 Docker 容器，并将流量路由到正确的容器。以下是一个示例 docker-compose 文件，其中包含 Traefik 和一个 Web 服务：</p>
 <figure class="highlight yml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">'3'</span></span><br><span class="line"></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">traefik:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">traefik:v2.4</span></span><br><span class="line">    <span class="attr">command:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">"--api.insecure=true"</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">"--providers.docker=true"</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">"--providers.docker.exposedbydefault=false"</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">"--entrypoints.web.address=:80"</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">"80:80"</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">"8080:8080"</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">"/var/run/docker.sock:/var/run/docker.sock"</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">web:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">nginx:alpine</span></span><br><span class="line">    <span class="attr">labels:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">"traefik.enable=true"</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">"traefik.http.routers.web.rule=Host(`example.com`)"</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">"traefik.http.routers.web.entrypoints=web"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Add the lines to hosts and open example.com in browser</span></span><br><span class="line"><span class="comment"># 127.0.0.1 example.com</span></span><br></pre></td></tr></tbody></table></figure>
@@ -1233,7 +1353,7 @@ Knative is an Open-Source Enterprise-level solution to build Serverless and Even
 <p>在此示例中，Traefik 将监听端口 80 和 8080，并将流量路由到正确的后端服务。Traefik 还将启用 Traefik Dashboard，并监听端口 8080。</p>
 <p>要创建 Traefik 实例，请使用以下命令：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl apply -f traefik-crd.yaml</span><br></pre></td></tr></tbody></table></figure>
-<p>创建网关，网关可以使用 k8s 网关或 Traefik IngressRoute。</p>
+<p>创建网关，网关可以使用 k8s 网关或 traefik IngressRoute。</p>
 <ul class="lvl-0">
 <li class="lvl-2">
 <p>创建 Ingress 对象</p>
@@ -1261,8 +1381,8 @@ Traefik 和 Istio 是两个不同的工具，它们都可以用于在 Kubernetes
 <p>相比之下，Istio 是一个更全面的服务网格解决方案，它提供了更多的功能，例如流量管理、安全性和可观察性。Istio 使用 Envoy 作为其数据平面，Envoy 是一个高性能的代理，它可以在应用程序和服务之间进行流量路由和负载均衡。Istio 还提供了一些高级功能，例如流量控制、故障注入和跟踪。</p>
 <p>因此，如果只需要一个简单的反向代理和负载均衡器，Traefik 可能是更好的选择。但是，如果需要更全面的服务网格功能，例如流量管理和安全性，那么 Istio 可能更适合需求。</p>
 </blockquote>
-<h2 id="OpenTelemetry">OpenTelemetry</h2>
-<p><a target="_blank" rel="noopener" href="https://opentelemetry.io/">OpenTelemetry</a> 是一个 api、sdk 和工具的集合。使用它来检测、生成、收集和导出遥测数据 (度量、日志和跟踪)，以帮助分析软件的性能和行为。</p>
+<h2 id="opentelemetry">opentelemetry</h2>
+<p><a target="_blank" rel="noopener" href="https://opentelemetry.io/">opentelemetry</a> 是一个 api、sdk 和工具的集合。使用它来检测、生成、收集和导出遥测数据 (度量、日志和跟踪)，以帮助分析软件的性能和行为。</p>
 
     </div>
 
@@ -1334,14 +1454,14 @@ Traefik 和 Istio 是两个不同的工具，它们都可以用于在 Kubernetes
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">322k</span>
+    <span title="站点总字数">335k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">4:53</span>
+    <span title="站点阅读时长">5:05</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
