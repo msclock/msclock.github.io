@@ -4978,7 +4978,7 @@ https://www.savemyexams.co.uk/a-level/further-maths_core-pure/edexcel/17/revisio
   </entry>
   <entry>
     <title>Docker 疑难问题</title>
-    <url>/posts/3844734258/</url>
+    <url>/posts/7d9a968e/</url>
     <content><![CDATA[<h2 id="docker">docker</h2>
 <h3 id="安装">安装</h3>
 <p>开发测试环境</p>
@@ -9083,7 +9083,7 @@ gzip 在 ubuntu/debian 使用 -d 解压存在重定向问题，建议使用 -dc 
   </entry>
   <entry>
     <title>flutter env</title>
-    <url>/posts/3844734258/</url>
+    <url>/posts/e529fd32/</url>
     <content><![CDATA[<h1>flutter SDK</h1>
 <ul class="lvl-0">
 <li class="lvl-2">解压安装 <code>建议不要安装到权限过高的路径</code></li>
@@ -9556,7 +9556,7 @@ Step 6, 思考，反省</p>
   </entry>
   <entry>
     <title>dart env</title>
-    <url>/posts/4207732841/</url>
+    <url>/posts/facce869/</url>
     <content><![CDATA[<h1>dart SDK</h1>
 <ul class="lvl-0">
 <li class="lvl-2">下载 dart <a href="http://www.cndartlang.com/920.html">sdk</a></li>
