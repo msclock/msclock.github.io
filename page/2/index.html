@@ -242,7 +242,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-07-23 19:29:43" itemprop="dateModified" datetime="2023-07-23T19:29:43+08:00">2023-07-23</time>
+      <time title="修改时间：2023-07-24 07:51:58" itemprop="dateModified" datetime="2023-07-24T07:51:58+08:00">2023-07-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -375,7 +375,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-07-23 19:29:43" itemprop="dateModified" datetime="2023-07-23T19:29:43+08:00">2023-07-23</time>
+      <time title="修改时间：2023-07-24 07:51:58" itemprop="dateModified" datetime="2023-07-24T07:51:58+08:00">2023-07-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -491,7 +491,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-07-23 19:29:43" itemprop="dateModified" datetime="2023-07-23T19:29:43+08:00">2023-07-23</time>
+      <time title="修改时间：2023-07-24 07:51:58" itemprop="dateModified" datetime="2023-07-24T07:51:58+08:00">2023-07-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -605,7 +605,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-07-23 19:29:43" itemprop="dateModified" datetime="2023-07-23T19:29:43+08:00">2023-07-23</time>
+      <time title="修改时间：2023-07-24 07:51:58" itemprop="dateModified" datetime="2023-07-24T07:51:58+08:00">2023-07-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -730,7 +730,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-07-23 19:29:43" itemprop="dateModified" datetime="2023-07-23T19:29:43+08:00">2023-07-23</time>
+      <time title="修改时间：2023-07-24 07:51:58" itemprop="dateModified" datetime="2023-07-24T07:51:58+08:00">2023-07-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -839,7 +839,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-07-23 19:29:43" itemprop="dateModified" datetime="2023-07-23T19:29:43+08:00">2023-07-23</time>
+      <time title="修改时间：2023-07-24 07:51:58" itemprop="dateModified" datetime="2023-07-24T07:51:58+08:00">2023-07-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -989,7 +989,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-07-23 19:29:43" itemprop="dateModified" datetime="2023-07-23T19:29:43+08:00">2023-07-23</time>
+      <time title="修改时间：2023-07-24 07:51:58" itemprop="dateModified" datetime="2023-07-24T07:51:58+08:00">2023-07-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1008,14 +1008,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>9.8k</span>
+      <span>11k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>9 分钟</span>
+      <span>10 分钟</span>
     </span>
 </div>
 
@@ -1222,9 +1222,14 @@ Step 4. 安装 gitlab-runner 服务。</p>
 <p><a target="_blank" rel="noopener" href="https://docs.gitlab.com/ee/ci/yaml/#include">https://docs.gitlab.com/ee/ci/yaml/#include</a></p>
 </li>
 </ul>
-<h2 id="GitLab-AutoDeploy">GitLab AutoDeploy</h2>
+<h2 id="GitLab-Deploy">GitLab Deploy</h2>
 <!-- https://docs.gitlab.com/ee/topics/autodevops/ -->
 <!-- https://github.com/travis-ci/dpl#supported-providers -->
+<h3 id="native">native</h3>
+<p>使用 ssh 验证远程部署，主要使用 scp 及 ssh 等工具</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 传输文件到远程</span></span><br><span class="line">scp -P 5022 local_file_path username@remote_host:remote_file_path</span><br><span class="line"><span class="comment"># 执行远程命令</span></span><br><span class="line">ssh -p 5022 username@remote_host <span class="string">'command_to_execute'</span></span><br></pre></td></tr></tbody></table></figure>
+<p>示例脚本</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env bash</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># shellcheck disable=SC1091,SC2154</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> -ex</span><br><span class="line"></span><br><span class="line">docker_compose_file=<span class="string">"deploy/docker/docker-compose.yml"</span></span><br><span class="line">deploy_relative_path=<span class="string">"/tmp"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">local</span> ssh_port=<span class="variable">$SSH_PORT</span></span><br><span class="line"><span class="keyword">if</span> [[ -z <span class="string">"<span class="variable">${ssh_port}</span>"</span> ]]; <span class="keyword">then</span></span><br><span class="line">    ssh_port=22</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Define the commands for start, update, and delete</span></span><br><span class="line">start_command=<span class="string">"docker-compose -f <span class="variable">$docker_compose_file</span> up -d"</span></span><br><span class="line">update_command=<span class="string">"docker-compose -f <span class="variable">$docker_compose_file</span> pull &amp;&amp; <span class="variable">$start_command</span>"</span></span><br><span class="line">delete_command=<span class="string">"docker-compose -f <span class="variable">$docker_compose_file</span> down"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Define the function to transfer file to remote via ssh</span></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">transfer_file</span></span>() {</span><br><span class="line">    <span class="built_in">local</span> host=<span class="variable">$1</span></span><br><span class="line">    <span class="built_in">local</span> file=<span class="variable">$2</span></span><br><span class="line">    <span class="built_in">local</span> destination=<span class="variable">$3</span></span><br><span class="line"></span><br><span class="line">    scp -P22 <span class="string">"<span class="variable">$file</span>"</span> <span class="string">"<span class="variable">$host</span>"</span>:<span class="string">"<span class="variable">$destination</span>"</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment"># Define the function to execute commands remotely via ssh</span></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">remote_deploy</span></span>() {</span><br><span class="line">    <span class="built_in">local</span> host=<span class="variable">$1</span></span><br><span class="line">    <span class="built_in">local</span> <span class="built_in">command</span>=<span class="variable">$2</span></span><br><span class="line"></span><br><span class="line">    ssh -p22 <span class="string">"<span class="variable">$host</span>"</span> <span class="string">"<span class="variable">$command</span>"</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment"># Define the functions for start, update, and delete</span></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">start</span></span>() {</span><br><span class="line">    <span class="built_in">local</span> host=<span class="variable">$1</span></span><br><span class="line">    transfer_file <span class="string">"<span class="variable">$host</span>"</span> <span class="variable">$docker_compose_file</span> <span class="variable">$deploy_relative_path</span></span><br><span class="line">    remote_deploy <span class="string">"<span class="variable">$host</span>"</span> <span class="string">"<span class="variable">$start_command</span>"</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">update</span></span>() {</span><br><span class="line">    <span class="built_in">local</span> host=<span class="variable">$1</span></span><br><span class="line">    transfer_file <span class="string">"<span class="variable">$host</span>"</span> <span class="variable">$docker_compose_file</span> <span class="variable">$deploy_relative_path</span></span><br><span class="line">    remote_deploy <span class="string">"<span class="variable">$host</span>"</span> <span class="string">"<span class="variable">$update_command</span>"</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">delete</span></span>() {</span><br><span class="line">    <span class="built_in">local</span> host=<span class="variable">$1</span></span><br><span class="line">    remote_deploy <span class="string">"<span class="variable">$host</span>"</span> <span class="string">"<span class="variable">$delete_command</span>"</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="GitLab-API">GitLab API</h2>
 <h3 id="python-操作">python 操作</h3>
 <p>python 作为胶水语言及丰富的包源，很容易和其它工具配置集成。这里介绍通过 <a target="_blank" rel="noopener" href="https://python-gitlab.readthedocs.io/en/latest/">python-gitlab</a> 集成进 gitlab 中的一种方式。</p>
@@ -1319,7 +1324,7 @@ Step 4. 安装 gitlab-runner 服务。</p>
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-07-23 19:29:43" itemprop="dateModified" datetime="2023-07-23T19:29:43+08:00">2023-07-23</time>
+      <time title="修改时间：2023-07-24 07:51:58" itemprop="dateModified" datetime="2023-07-24T07:51:58+08:00">2023-07-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1448,7 +1453,7 @@ Step 4. 安装 gitlab-runner 服务。</p>
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-07-23 19:29:43" itemprop="dateModified" datetime="2023-07-23T19:29:43+08:00">2023-07-23</time>
+      <time title="修改时间：2023-07-24 07:51:58" itemprop="dateModified" datetime="2023-07-24T07:51:58+08:00">2023-07-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1467,14 +1472,14 @@ Step 4. 安装 gitlab-runner 服务。</p>
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>11k</span>
+      <span>13k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>10 分钟</span>
+      <span>12 分钟</span>
     </span>
 </div>
 
@@ -1497,13 +1502,22 @@ Step 4. 安装 gitlab-runner 服务。</p>
 </ul>
 <h3 id="color">color</h3>
 <p>颜色高亮输出，兼容 sh/bash.</p>
+<h4 id="转义输出">转义输出</h4>
 <blockquote>
 <p>[!TIP]<br>
 在 POSIX sh 中，可以使用 ANSI 转义序列来实现颜色高亮输出。ANSI 转义序列是一些特殊的字符序列，它们可以在输出中表示一些特殊的含义，如颜色、样式等等。具体来说，ANSI 转义序列以 "\033 [“开头，后面跟着一些数字和字符，用于指定要应用的颜色或样式。例如，”\033 [31m" 表示将文本颜色设置为红色，"\033 [1m" 表示将文本加粗等等。</p>
 </blockquote>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env bash</span></span><br><span class="line"><span class="comment">#-------------------------------------------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment"># Copyright (c) msclock. All rights reserved.</span></span><br><span class="line"><span class="comment"># Licensed under the MIT License.</span></span><br><span class="line"><span class="comment">#-------------------------------------------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># shellcheck disable=SC2034,SC2086</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Maintainer: msclock</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> -e</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">_colorize</span></span>() {</span><br><span class="line">    <span class="keyword">case</span> <span class="string">"<span class="variable">$1</span>"</span> <span class="keyword">in</span></span><br><span class="line">    <span class="string">"red"</span> | <span class="string">"r"</span>)</span><br><span class="line">        <span class="built_in">printf</span> <span class="string">'\033[31m'</span></span><br><span class="line">        ;;</span><br><span class="line">    <span class="string">"green"</span> | <span class="string">"g"</span>)</span><br><span class="line">        <span class="built_in">printf</span> <span class="string">'\033[32m'</span></span><br><span class="line">        ;;</span><br><span class="line">    <span class="string">"yellow"</span> | <span class="string">"y"</span>)</span><br><span class="line">        <span class="built_in">printf</span> <span class="string">'\033[33m'</span></span><br><span class="line">        ;;</span><br><span class="line">    <span class="string">"blue"</span> | <span class="string">"b"</span>)</span><br><span class="line">        <span class="built_in">printf</span> <span class="string">'\033[34m'</span></span><br><span class="line">        ;;</span><br><span class="line">    <span class="string">"clear"</span> | <span class="string">"c"</span>)</span><br><span class="line">        <span class="built_in">printf</span> <span class="string">'\033[0m'</span></span><br><span class="line">        ;;</span><br><span class="line">    <span class="keyword">esac</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">die</span></span>() {</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"<span class="subst">$(_colorize r)</span>FATAL: <span class="subst">$(_coloroze y)</span>$*<span class="subst">$(_colorize c)</span>"</span> 1&gt;&amp;2</span><br><span class="line">    <span class="built_in">exit</span> 10</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">info</span></span>() {</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"<span class="subst">$(_colorize b)</span>$*<span class="subst">$(_colorize c)</span>"</span> 1&gt;&amp;2</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">warning</span></span>() {</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"<span class="subst">$(_colorize y)</span>$*<span class="subst">$(_colorize c)</span>"</span> 1&gt;&amp;2</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">success</span></span>() {</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"<span class="subst">$(_colorize g)</span>$*<span class="subst">$(_colorize c)</span>"</span> 1&gt;&amp;2</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<h4 id="echo输出">echo 输出</h4>
+<blockquote>
+<p>[!TIP]<br>
+使用 echo 让 <code>[INFO]</code> 等被相应 shell 自行渲染.</p>
+</blockquote>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env bash</span></span><br><span class="line"><span class="comment">#-------------------------------------------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment"># Copyright (c) msclock. All rights reserved.</span></span><br><span class="line"><span class="comment"># Licensed under the MIT License.</span></span><br><span class="line"><span class="comment">#-------------------------------------------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># shellcheck disable=SC2034,SC2086</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Maintainer: msclock</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># info logs the given argument at info log level.</span></span><br><span class="line"><span class="function"><span class="title">info</span></span>() {</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"[INFO] "</span> <span class="string">"<span class="variable">$@</span>"</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment"># warn logs the given argument at warn log level.</span></span><br><span class="line"><span class="function"><span class="title">warn</span></span>() {</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"[WARN] "</span> <span class="string">"<span class="variable">$@</span>"</span> &gt;&amp;2</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment"># error logs the given argument at error log level.</span></span><br><span class="line"><span class="function"><span class="title">error</span></span>() {</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"[ERROR] "</span> <span class="string">"<span class="variable">$@</span>"</span> &gt;&amp;2</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment"># fatal logs the given argument at fatal log level.</span></span><br><span class="line"><span class="function"><span class="title">fatal</span></span>() {</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"[FATAL] "</span> <span class="string">"<span class="variable">$@</span>"</span> &gt;&amp;2</span><br><span class="line">    <span class="built_in">exit</span> 1</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <h3 id="info">info</h3>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"---------------- Env echo ----------------"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"it is <span class="subst">$(date)</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"current path: "</span><span class="string">"<span class="variable">$PWD</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"who is this: "</span><span class="string">"<span class="subst">$(whoami)</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"who is this : "</span><span class="string">"<span class="variable">$USER</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"pip3 version: "</span><span class="string">"<span class="subst">$(pip3 --version)</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"distribution:<span class="subst">$(. /etc/os-release;echo $ID$VERSION_ID)</span>"</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="arch">arch</h3>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env bash</span></span><br><span class="line"><span class="comment">#-------------------------------------------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment"># Copyright (c) msclock. All rights reserved.</span></span><br><span class="line"><span class="comment"># Licensed under the MIT License.</span></span><br><span class="line"><span class="comment">#-------------------------------------------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># shellcheck disable=SC2034,SC2086</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Maintainer: msclock</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># setup_arch set arch and suffix,</span></span><br><span class="line"><span class="comment"># fatal if architecture not supported.</span></span><br><span class="line"><span class="function"><span class="title">find_arch</span></span>() {</span><br><span class="line">    <span class="keyword">case</span> <span class="variable">${ARCH:=$(uname -m)}</span> <span class="keyword">in</span></span><br><span class="line">    amd64)</span><br><span class="line">        ARCH=amd64</span><br><span class="line">        SUFFIX=$(<span class="built_in">uname</span> -s | <span class="built_in">tr</span> <span class="string">'[:upper:]'</span> <span class="string">'[:lower:]'</span>)-<span class="variable">${ARCH}</span></span><br><span class="line">        ;;</span><br><span class="line">    x86_64)</span><br><span class="line">        ARCH=amd64</span><br><span class="line">        SUFFIX=$(<span class="built_in">uname</span> -s | <span class="built_in">tr</span> <span class="string">'[:upper:]'</span> <span class="string">'[:lower:]'</span>)-<span class="variable">${ARCH}</span></span><br><span class="line">        ;;</span><br><span class="line">    arm64)</span><br><span class="line">        ARCH=arm64</span><br><span class="line">        SUFFIX=-<span class="variable">${ARCH}</span></span><br><span class="line">        ;;</span><br><span class="line">    s390x)</span><br><span class="line">        ARCH=s390x</span><br><span class="line">        SUFFIX=-<span class="variable">${ARCH}</span></span><br><span class="line">        ;;</span><br><span class="line">    aarch64)</span><br><span class="line">        ARCH=arm64</span><br><span class="line">        SUFFIX=-<span class="variable">${ARCH}</span></span><br><span class="line">        ;;</span><br><span class="line">    arm*)</span><br><span class="line">        ARCH=arm</span><br><span class="line">        SUFFIX=-<span class="variable">${ARCH}</span>hf</span><br><span class="line">        ;;</span><br><span class="line">    *)</span><br><span class="line">        fatal <span class="string">"unsupported architecture <span class="variable">${ARCH}</span>"</span></span><br><span class="line">        ;;</span><br><span class="line">    <span class="keyword">esac</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <h3 id="if">if</h3>
 <p>变量匹配正则</p>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">branch=xxx_release_v2</span><br><span class="line"><span class="keyword">if</span> <span class="built_in">echo</span> <span class="string">"<span class="variable">$branch</span>"</span> | grep -q <span class="string">'release'</span>; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"This is a release version."</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></tbody></table></figure>
@@ -1738,7 +1752,7 @@ Step 4. 安装 gitlab-runner 服务。</p>
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-07-23 19:29:43" itemprop="dateModified" datetime="2023-07-23T19:29:43+08:00">2023-07-23</time>
+      <time title="修改时间：2023-07-24 07:51:58" itemprop="dateModified" datetime="2023-07-24T07:51:58+08:00">2023-07-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1946,14 +1960,14 @@ GITHUB_TOKEN 自动被 Github 创建.</p>
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">347k</span>
+    <span title="站点总字数">353k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:16</span>
+    <span title="站点阅读时长">5:21</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
