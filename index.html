@@ -235,7 +235,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2023-07-26 03:35:00" itemprop="dateCreated datePublished" datetime="2023-07-26T03:35:00+08:00">2023-07-26</time>
+      <time title="创建时间：2023-07-27 08:18:46" itemprop="dateCreated datePublished" datetime="2023-07-27T08:18:46+08:00">2023-07-27</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -348,7 +348,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2023-07-26 03:35:00" itemprop="dateCreated datePublished" datetime="2023-07-26T03:35:00+08:00">2023-07-26</time>
+      <time title="创建时间：2023-07-27 08:18:46" itemprop="dateCreated datePublished" datetime="2023-07-27T08:18:46+08:00">2023-07-27</time>
     </span>
 
   
@@ -377,7 +377,6 @@
     
     <div class="post-body" itemprop="articleBody">
           <h2 id="GitHub-CI">GitHub CI</h2>
-<!-- todo -->
 <h2 id="GitHub-Action-Local">GitHub Action Local</h2>
 <p><a target="_blank" rel="noopener" href="https://github.com/nektos/act">act</a> 用于本地测试 GitHub Action 管道，避免频繁推送到远程测试 CI 流程。</p>
 <p>手动安装需要各个平台安装工具</p>
@@ -388,24 +387,14 @@
 建议在 vscode devcontainer 配置 dind 进行测试。</p>
 </blockquote>
 <figure class="highlight json"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">"features"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"ghcr.io/devcontainers-contrib/features/act:1"</span><span class="punctuation">:</span> <span class="punctuation">{</span><span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="常用命令">常用命令</h3>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 列出 actions jobs/workflows</span></span><br><span class="line">act --list</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Actions">Actions</h2>
-<h3 id="dockerhub-ghcr">dockerhub/ghcr</h3>
-<p>Sync images from dockerhub to ghcr</p>
-<figure class="highlight yml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">steps:</span></span><br><span class="line">    <span class="comment"># ...</span></span><br><span class="line">  <span class="bullet">-</span> <span class="comment"># ghcr logins for pushing image after testing</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">Login</span> <span class="string">to</span> <span class="string">GitHub</span> <span class="string">Container</span> <span class="string">Registry</span></span><br><span class="line">    <span class="attr">uses:</span> <span class="string">docker/login-action@v2</span></span><br><span class="line">    <span class="attr">with:</span></span><br><span class="line">      <span class="attr">registry:</span> <span class="string">ghcr.io</span></span><br><span class="line">      <span class="attr">username:</span> <span class="string">${{</span> <span class="string">github.repository_owner</span> <span class="string">}}</span></span><br><span class="line">      <span class="attr">password:</span> <span class="string">${{</span> <span class="string">secrets.GITHUB_TOKEN</span> <span class="string">}}</span></span><br><span class="line">  <span class="bullet">-</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">Login</span> <span class="string">to</span> <span class="string">DockerHub</span></span><br><span class="line">    <span class="attr">uses:</span> <span class="string">docker/login-action@v2</span></span><br><span class="line">    <span class="attr">with:</span></span><br><span class="line">      <span class="attr">username:</span> <span class="string">${{</span> <span class="string">secrets.DOCKER_REGISTRY_ID</span> <span class="string">}}</span></span><br><span class="line">      <span class="attr">password:</span> <span class="string">${{</span> <span class="string">secrets.DOCKER_REGISTRY_PASS</span> <span class="string">}}</span></span><br><span class="line">  <span class="bullet">-</span> <span class="comment"># copy 3rd party zookeeper image from dockerhub to ghcr</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">Push</span> <span class="string">Image</span> <span class="string">(zookeeper)</span> <span class="string">to</span> <span class="string">target</span> <span class="string">registries</span></span><br><span class="line">    <span class="attr">uses:</span> <span class="string">akhilerm/tag-push-action@v2.0.0</span></span><br><span class="line">    <span class="attr">with:</span></span><br><span class="line">      <span class="attr">src:</span> <span class="string">wurstmeister/zookeeper:latest</span></span><br><span class="line">      <span class="attr">dst:</span> <span class="string">|</span></span><br><span class="line"><span class="string">        ghcr.io/${{ github.repository_owner }}/3rdparty/zookeeper:latest</span></span><br><span class="line"><span class="string"></span>  <span class="bullet">-</span> <span class="comment"># copy 3rd party kafka image from dockerhub to ghcr</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">Push</span> <span class="string">Image</span> <span class="string">(kafka)</span> <span class="string">to</span> <span class="string">target</span> <span class="string">registries</span></span><br><span class="line">    <span class="attr">uses:</span> <span class="string">akhilerm/tag-push-action@v2.0.0</span></span><br><span class="line">    <span class="attr">with:</span></span><br><span class="line">      <span class="attr">src:</span> <span class="string">wurstmeister/kafka:latest</span></span><br><span class="line">      <span class="attr">dst:</span> <span class="string">|</span></span><br><span class="line">        <span class="string">ghcr.io/${{</span> <span class="string">github.repository_owner</span> <span class="string">}}/3rdparty/kafka:latest</span></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="TOKEN">TOKEN</h3>
-<p>Actions 的 TOKEN 认证有 GITHUB_TOKEN, PERSONAL_TOKEN</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>GITHUB_TOKEN: 是 GitHub 提供的一种特殊类型的令牌，用于对 GitHub API 进行身份验证和授权。它主要用于执行与 GitHub 相关的操作，例如创建和管理存储库、发布问题和拉取请求等。</p>
-</li>
-<li class="lvl-2">
-<p>PERSONAL_TOKEN: 是用户自己生成的令牌，用于对 GitHub 进行身份验证和授权。它可以用于执行与 GitHub API 相关的操作，但权限范围可能会受到限制，取决于用户在生成令牌时所选择的权限。</p>
-</li>
-</ul>
-<p>总结来说，GITHUB_TOKEN 是由 GitHub 提供的特殊令牌，用于对 GitHub API 进行身份验证和授权，而 PERSONAL_TOKEN 是用户自己生成的令牌，也用于对 GitHub 进行身份验证和授权，但权限可能会受到限制。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/5c9de83f/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -460,7 +449,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2023-07-26 03:35:00" itemprop="dateCreated datePublished" datetime="2023-07-26T03:35:00+08:00">2023-07-26</time>
+      <time title="创建时间：2023-07-27 08:18:46" itemprop="dateCreated datePublished" datetime="2023-07-27T08:18:46+08:00">2023-07-27</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -571,7 +560,7 @@ mamba 自带的 conda 环境中的 python 在 windows 上编译需要附带设�
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2023-07-26 03:35:00" itemprop="dateCreated datePublished" datetime="2023-07-26T03:35:00+08:00">2023-07-26</time>
+      <time title="创建时间：2023-07-27 08:18:46" itemprop="dateCreated datePublished" datetime="2023-07-27T08:18:46+08:00">2023-07-27</time>
     </span>
 
   
@@ -695,7 +684,7 @@ mamba 自带的 conda 环境中的 python 在 windows 上编译需要附带设�
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2023-07-26 03:35:00" itemprop="dateCreated datePublished" datetime="2023-07-26T03:35:00+08:00">2023-07-26</time>
+      <time title="创建时间：2023-07-27 08:18:46" itemprop="dateCreated datePublished" datetime="2023-07-27T08:18:46+08:00">2023-07-27</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -795,7 +784,7 @@ Scoop 源比较多，多是开源。建议使用 choco。</p>
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2023-07-26 03:35:00" itemprop="dateCreated datePublished" datetime="2023-07-26T03:35:00+08:00">2023-07-26</time>
+      <time title="创建时间：2023-07-27 08:18:46" itemprop="dateCreated datePublished" datetime="2023-07-27T08:18:46+08:00">2023-07-27</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -898,7 +887,7 @@ Scoop 源比较多，多是开源。建议使用 choco。</p>
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2023-07-26 03:35:00" itemprop="dateCreated datePublished" datetime="2023-07-26T03:35:00+08:00">2023-07-26</time>
+      <time title="创建时间：2023-07-27 08:18:46" itemprop="dateCreated datePublished" datetime="2023-07-27T08:18:46+08:00">2023-07-27</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1027,7 +1016,7 @@ Scoop 源比较多，多是开源。建议使用 choco。</p>
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2023-07-26 03:35:00" itemprop="dateCreated datePublished" datetime="2023-07-26T03:35:00+08:00">2023-07-26</time>
+      <time title="创建时间：2023-07-27 08:18:46" itemprop="dateCreated datePublished" datetime="2023-07-27T08:18:46+08:00">2023-07-27</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1204,7 +1193,7 @@ Scoop 源比较多，多是开源。建议使用 choco。</p>
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-07-26 03:35:00" itemprop="dateModified" datetime="2023-07-26T03:35:00+08:00">2023-07-26</time>
+      <time title="修改时间：2023-07-27 08:18:46" itemprop="dateModified" datetime="2023-07-27T08:18:46+08:00">2023-07-27</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1337,7 +1326,7 @@ Scoop 源比较多，多是开源。建议使用 choco。</p>
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-07-26 03:35:00" itemprop="dateModified" datetime="2023-07-26T03:35:00+08:00">2023-07-26</time>
+      <time title="修改时间：2023-07-27 08:18:46" itemprop="dateModified" datetime="2023-07-27T08:18:46+08:00">2023-07-27</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1428,14 +1417,14 @@ Scoop 源比较多，多是开源。建议使用 choco。</p>
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">354k</span>
+    <span title="站点总字数">356k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:22</span>
+    <span title="站点阅读时长">5:24</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
