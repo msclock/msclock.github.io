@@ -2433,8 +2433,9 @@ MVP (Minimum viable Product) 以最小的代价提供一个可测试交付的版
 <p>方法二，增加添加订阅地址预处理 profiles</p>
 <figure class="highlight yml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">parsers:</span> <span class="comment"># array</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">reg:</span> <span class="string">^.*$</span> <span class="comment"># 正则匹配订阅</span></span><br><span class="line">    <span class="attr">yaml:</span></span><br><span class="line">      <span class="attr">prepend-rules:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">DOMAIN-SUFFIX,xxx.company.com.cn,DIRECT</span></span><br></pre></td></tr></tbody></table></figure>
 <h2 id="稳定节点">稳定节点</h2>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># encode url</span></span><br><span class="line">python3 -c <span class="string">"from urllib.parse import quote;print('encode:\n',quote(''))"</span></span><br><span class="line"><span class="comment"># decode url</span></span><br><span class="line">python3 -c <span class="string">"from urllib.parse import unquote;print('decode:\n',unquote(''))"</span></span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight txt"><table><tbody><tr><td class="code"><pre><span class="line">ssr://cmNnbS5sYWJ0ZWNocy54eXo6NTYwOmF1dGhfYWVzMTI4X21kNTpjaGFjaGEyMC1pZXRmOnBsYWluOmJXSnNZVzVyTVhCdmNuUS8_Z3JvdXA9VTFOU1VISnZkbWxrWlhJJnJlbWFya3M9S09XM3N1V3RtT2EwdXpIbHBLa3A1TGl0NkwyczZJcUM1NEs1TFRFM0xqWXhUVUl2Y3loWmIzVjBkV0psT3VTNGplaUpyLWFlbHlrJm9iZnNwYXJhbT0mcHJvdG9wYXJhbT1Oams0TmpveE5UbHVhWFZ3YVE</span><br><span class="line"></span><br><span class="line">ssr://c2ctYW0zLmVxc3Vuc2hpbmUuY29tOjMyMDAxOm9yaWdpbjphZXMtMjU2LWNmYjp0bHMxLjJfdGlja2V0X2F1dGg6TTJjd1pFaHNTMDFGLz9ncm91cD1VMU5TVUhKdmRtbGtaWEkmcmVtYXJrcz01cGF3NVlxZzVaMmhMVEV1T0RsTlFpOXpLRmx2ZFhSMVltVTY1TGlONkltdjVwNlhLUSZvYmZzcGFyYW09JnByb3RvcGFyYW09</span><br><span class="line"></span><br><span class="line">ssr://aGt0LWltc2Jpei0wMi54bTFzLnRvcDo0NTg6YXV0aF9jaGFpbl9iOm5vbmU6cGxhaW46VFV0aFVXaGsvP2dyb3VwPVUxTlNVSEp2ZG1sa1pYSSZyZW1hcmtzPTVMaXQ2TDJzNklxQzU0SzVMVEV3TGprMlRVSXZjeWhaYjNWMGRXSmxPdVM0amVpSnItYWVseWsmb2Jmc3BhcmFtPWQyNXpMbmRwYm1SdmQzTXVZMjl0JnByb3RvcGFyYW09TWpZMU16cFdVR1IxV1hv</span><br><span class="line"></span><br><span class="line">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo5ZTQ0ZTlmZmU1YzI@103.177.33.180:443/?plugin=v2ray-plugin%3Bmode%3Dwebsocket%3Btls%3Bmux%3D4%3Bhost%3Dwtw1000mline004.chilines.club%3Bpath%3D%2Fisaifqaagpi%3Bmux%3Dmux%3D4%3B%3B#%E5%8F%B0%E6%B9%BE-8.26MB%2Fs%28Youtube%3A%E4%B8%8D%E8%89%AF%E6%9E%97%29</span><br><span class="line"></span><br><span class="line">trojan://36e7d02b-9e7e-360d-9a7d-85b00e43f660@bbbb.aaaa.gay:40007?allowInsecure=1&amp;sni=ccc3.doubledou.icu#%E7%BE%8E%E5%9B%BD-13.29MB%2Fs%28Youtube%3A%E4%B8%8D%E8%89%AF%E6%9E%97%29</span><br><span class="line"></span><br><span class="line">ss://YWVzLTI1Ni1jZmI6SmRtUks5Z01FcUZnczhuUA@185.135.86.173:9003#%E6%8B%89%E8%84%B1%E7%BB%B4%E4%BA%9A-1.65MB%2Fs%28Youtube%3A%E4%B8%8D%E8%89%AF%E6%9E%97%29</span><br><span class="line"></span><br><span class="line">vmess://eyJ2IjoiMiIsInBzIjoi5L+E572X5pav6IGU6YKmLTQuMTdNQi9zKFlvdXR1YmU65LiN6Imv5p6XKSIsImFkZCI6IjQ1LjE0NC4xNzkuMTM4IiwicG9ydCI6IjQ0MyIsInR5cGUiOiJub25lIiwiaWQiOiI5NmNiZTRhNi01NzI4LTQyZGYtZGM3YS1jZWI5YjUxYTNkYjUiLCJhaWQiOiIwIiwibmV0IjoiaHR0cCIsInBhdGgiOiIvIiwiaG9zdCI6IiIsInRscyI6IiJ9</span><br><span class="line"></span><br><span class="line">vmess://eyJ2IjoiMiIsInBzIjoi5rOV5Zu9LTUuNDlNQi9zKFlvdXR1YmU65LiN6Imv5p6XKSIsImFkZCI6IjE3My4yNDUuNDkuMjM2IiwicG9ydCI6IjgwIiwidHlwZSI6Im5vbmUiLCJpZCI6IjVmNzUxYzZlLTUwYjEtNDc5Ny1iYThlLTZmZmUzMjRhMGJjZSIsImFpZCI6IjAiLCJuZXQiOiJ3cyIsInBhdGgiOiIvc2hpcmtlciIsImhvc3QiOiJjYS5pbG92ZXNjcC5jb20iLCJ0bHMiOiIifQ==</span><br><span class="line"></span><br><span class="line">vmess://eyJ2IjoiMiIsInBzIjoi5Yqg5ou/5aSnLTUuMTJNQi9zKFlvdXR1YmU65LiN6Imv5p6XKSIsImFkZCI6ImRvbmd0YWl3YW5nMi5jb20iLCJwb3J0IjoiNDQzIiwidHlwZSI6Im5vbmUiLCJpZCI6IjI1YTlmM2I5LTFlNmQtNDBiZC05NjhiLWUwODE4YzFiMTk2ZiIsImFpZCI6IjAiLCJuZXQiOiJ3cyIsInBhdGgiOiIvZG9uZ3RhaXdhbmcuY29tIiwiaG9zdCI6IjIuZnJlZWsxLnh5eiIsInRscyI6InRscyJ9</span><br><span class="line"></span><br><span class="line">trojan://a2cc8c63-3e75-44db-8230-08dbf5aeda17@103.173.255.21:443?allowInsecure=1#%E8%B6%8A%E5%8D%97-1.81MB%2Fs%28Youtube%3A%E4%B8%8D%E8%89%AF%E6%9E%97%29</span><br><span class="line"></span><br><span class="line">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp3TnVoM1dPNjE2TUNhVnBi@cm.chylink.xyz:11005#%E4%B8%AD%E8%BD%AC%E8%8A%82%E7%82%B9-5.05MB%2Fs%28Youtube%3A%E4%B8%8D%E8%89%AF%E6%9E%97%29</span><br><span class="line"></span><br><span class="line">ssr://c2ctMDEueG0xcy50b3A6NDU4OmF1dGhfY2hhaW5fYjpub25lOnBsYWluOlRVdGhVV2hrLz9ncm91cD1VMU5TVUhKdmRtbGtaWEkmcmVtYXJrcz1LT1czc3VXdG1PYTB1elRscEtrcDVMaXQ2TDJzNklxQzU0SzVMVEV3TGpReVRVSXZjeWhaYjNWMGRXSmxPdVM0amVpSnItYWVseWsmb2Jmc3BhcmFtPWQyNXpMbmRwYm1SdmQzTXVZMjl0JnByb3RvcGFyYW09TWpNM05qcFFjWGhGYVZB</span><br></pre></td></tr></tbody></table></figure>]]></content>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># encode url</span></span><br><span class="line">python3 -c <span class="string">"from urllib.parse import quote;print('encode:\n',quote(''))"</span></span><br><span class="line"><span class="comment"># decode url</span></span><br><span class="line">python3 -c <span class="string">"from urllib.parse import unquote;print('decode:\n\n',unquote('').replace('||','\n\n'))"</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> unquote</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'decode:\n\n'</span>, unquote(<span class="string">''</span>).replace(<span class="string">'||'</span>,<span class="string">'\n\n'</span>))</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight txt"><table><tbody><tr><td class="code"><pre><span class="line">ssr://cmNnbS5sYWJ0ZWNocy54eXo6NTYwOmF1dGhfYWVzMTI4X21kNTpjaGFjaGEyMC1pZXRmOnBsYWluOmJXSnNZVzVyTVhCdmNuUS8_Z3JvdXA9VTFOU1VISnZkbWxrWlhJJnJlbWFya3M9S09XM3N1V3RtT2EwdXpIbHBLa3A1TGl0NkwyczZJcUM1NEs1TFRFM0xqWXhUVUl2Y3loWmIzVjBkV0psT3VTNGplaUpyLWFlbHlrJm9iZnNwYXJhbT0mcHJvdG9wYXJhbT1Oams0TmpveE5UbHVhWFZ3YVE</span><br><span class="line"></span><br><span class="line">ssr://c2ctYW0zLmVxc3Vuc2hpbmUuY29tOjMyMDAxOm9yaWdpbjphZXMtMjU2LWNmYjp0bHMxLjJfdGlja2V0X2F1dGg6TTJjd1pFaHNTMDFGLz9ncm91cD1VMU5TVUhKdmRtbGtaWEkmcmVtYXJrcz01cGF3NVlxZzVaMmhMVEV1T0RsTlFpOXpLRmx2ZFhSMVltVTY1TGlONkltdjVwNlhLUSZvYmZzcGFyYW09JnByb3RvcGFyYW09</span><br><span class="line"></span><br><span class="line">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo5ZTQ0ZTlmZmU1YzI@103.177.33.180:443/?plugin=v2ray-plugin%3Bmode%3Dwebsocket%3Btls%3Bmux%3D4%3Bhost%3Dwtw1000mline004.chilines.club%3Bpath%3D%2Fisaifqaagpi%3Bmux%3Dmux%3D4%3B%3B#%E5%8F%B0%E6%B9%BE-8.26MB%2Fs%28Youtube%3A%E4%B8%8D%E8%89%AF%E6%9E%97%29</span><br><span class="line"></span><br><span class="line">trojan://36e7d02b-9e7e-360d-9a7d-85b00e43f660@bbbb.aaaa.gay:40007?allowInsecure=1&amp;sni=ccc3.doubledou.icu#%E7%BE%8E%E5%9B%BD-13.29MB%2Fs%28Youtube%3A%E4%B8%8D%E8%89%AF%E6%9E%97%29</span><br><span class="line"></span><br><span class="line">vmess://eyJ2IjoiMiIsInBzIjoi5L+E572X5pav6IGU6YKmLTQuMTdNQi9zKFlvdXR1YmU65LiN6Imv5p6XKSIsImFkZCI6IjQ1LjE0NC4xNzkuMTM4IiwicG9ydCI6IjQ0MyIsInR5cGUiOiJub25lIiwiaWQiOiI5NmNiZTRhNi01NzI4LTQyZGYtZGM3YS1jZWI5YjUxYTNkYjUiLCJhaWQiOiIwIiwibmV0IjoiaHR0cCIsInBhdGgiOiIvIiwiaG9zdCI6IiIsInRscyI6IiJ9</span><br><span class="line"></span><br><span class="line">vmess://eyJ2IjoiMiIsInBzIjoi5rOV5Zu9LTUuNDlNQi9zKFlvdXR1YmU65LiN6Imv5p6XKSIsImFkZCI6IjE3My4yNDUuNDkuMjM2IiwicG9ydCI6IjgwIiwidHlwZSI6Im5vbmUiLCJpZCI6IjVmNzUxYzZlLTUwYjEtNDc5Ny1iYThlLTZmZmUzMjRhMGJjZSIsImFpZCI6IjAiLCJuZXQiOiJ3cyIsInBhdGgiOiIvc2hpcmtlciIsImhvc3QiOiJjYS5pbG92ZXNjcC5jb20iLCJ0bHMiOiIifQ==</span><br><span class="line"></span><br><span class="line">ssr://aGt0LWltc2Jpei0wMS54bTFzLnRvcDo0NTg6YXV0aF9jaGFpbl9iOm5vbmU6cGxhaW46VFV0aFVXaGsvP2dyb3VwPVUxTlNVSEp2ZG1sa1pYSSZyZW1hcmtzPUtPVzNzdVd0bU9hMHV6TGxwS2twNUxpdDZMMnM2SXFDNTRLNUxUSXVPVEZOUWk5ektGbHZkWFIxWW1VNjVMaU42SW12NXA2WEtRJm9iZnNwYXJhbT1kMjV6TG5kcGJtUnZkM011WTI5dCZwcm90b3BhcmFtPU1qY3dNRHBPUVVjd1UySQ</span><br><span class="line"></span><br><span class="line">vmess://eyJ2IjoiMiIsInBzIjoi576O5Zu9LTMuNDNNQi9zKFlvdXR1YmU65LiN6Imv5p6XKSIsImFkZCI6IjE5OC4yLjE5Ny43MSIsInBvcnQiOiI0NDMiLCJ0eXBlIjoibm9uZSIsImlkIjoiNDE4MDQ4YWYtYTI5My00Yjk5LTliMGMtOThjYTM1ODBkZDI0IiwiYWlkIjoiNjQiLCJuZXQiOiJ3cyIsInBhdGgiOiIvcGF0aC8xNjg5NTg4NDk3NzY1IiwiaG9zdCI6IiIsInRscyI6InRscyJ9</span><br><span class="line"></span><br><span class="line">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo0YTU0NjU4ZS1kMGNmLTRjYjktOWUxNy0yMTc0MzZjZjIxYzE@foshan.chiguayun.cc:27112#%E5%8F%B0%E6%B9%BE%E9%AB%98%E9%80%9F%E5%85%A5%E5%8F%A3%28%E9%A2%91%E9%81%93%3A%E9%A9%AC%E5%85%8B%E5%90%90%E6%B8%A9%29</span><br><span class="line"></span><br><span class="line">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo0YTU0NjU4ZS1kMGNmLTRjYjktOWUxNy0yMTc0MzZjZjIxYzE@hefei.chiguayun.cc:27113#%E5%8D%B0%E5%B0%BC%E4%BC%98%E5%8C%96%E5%85%A5%E5%8F%A3%28%E9%A2%91%E9%81%93%3A%E9%A9%AC%E5%85%8B%E5%90%90%E6%B8%A9%29</span><br><span class="line"></span><br><span class="line">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo0YTU0NjU4ZS1kMGNmLTRjYjktOWUxNy0yMTc0MzZjZjIxYzE@hefei.chiguayun.cc:27112#%E5%8F%B0%E6%B9%BE%E4%BC%98%E5%8C%96%E5%85%A5%E5%8F%A3%28%E9%A2%91%E9%81%93%3A%E9%A9%AC%E5%85%8B%E5%90%90%E6%B8%A9%29</span><br></pre></td></tr></tbody></table></figure>]]></content>
       <categories>
         <category>develop</category>
       </categories>
@@ -5432,7 +5433,35 @@ buildkit 会使用 docker 构建缓存，也就是 Build Cache，需要定期清
 <p><a href="https://docs.docker.com/compose/">docker-compose</a> 是一个多容器编排工具，常用于开发配置.</p>
 <h3 id="GPU-support">GPU support</h3>
 <p><a href="https://docs.docker.com/compose/gpu-support/">docker-compose gpu support</a>.</p>
-<figure class="highlight yml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">'3'</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">test:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">nvidia/cuda:10.2-base</span></span><br><span class="line">    <span class="attr">command:</span> <span class="string">nvidia-smi</span></span><br><span class="line">    <span class="attr">deploy:</span></span><br><span class="line">      <span class="attr">resources:</span></span><br><span class="line">        <span class="attr">reservations:</span></span><br><span class="line">          <span class="attr">devices:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">driver:</span> <span class="string">nvidia</span></span><br><span class="line">              <span class="attr">count:</span> <span class="number">1</span></span><br><span class="line">              <span class="attr">capabilities:</span> [<span class="string">gpu</span>]</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight yml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">'3'</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">test:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">nvcr.io/nvidia/k8s/cuda-sample:vectoradd-cuda10.2</span></span><br><span class="line">    <span class="attr">deploy:</span></span><br><span class="line">      <span class="attr">resources:</span></span><br><span class="line">        <span class="attr">reservations:</span></span><br><span class="line">          <span class="attr">devices:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">driver:</span> <span class="string">nvidia</span></span><br><span class="line">              <span class="attr">count:</span> <span class="string">all</span></span><br><span class="line">              <span class="attr">capabilities:</span> [<span class="string">gpu</span>]</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="healthcheck">healthcheck</h3>
+<p>CMD 和 CMD-SHELL 是 Docker Compose 文件中用于定义容器健康检查的两种不同的命令类型。</p>
+<figure class="highlight yml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">"3.8"</span></span><br><span class="line"></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">minio:</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">unless-stopped</span></span><br><span class="line">    <span class="attr">healthcheck:</span></span><br><span class="line">      <span class="attr">test:</span> [<span class="string">"CMD"</span>, <span class="string">"curl"</span>, <span class="string">"-f"</span>, <span class="string">"http://minio:9000/minio/health/live"</span>]</span><br><span class="line">      <span class="attr">interval:</span> <span class="string">10s</span></span><br><span class="line">      <span class="attr">timeout:</span> <span class="string">10s</span></span><br><span class="line">      <span class="attr">retries:</span> <span class="number">3</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">tritonserver:</span></span><br><span class="line">    <span class="attr">depends_on:</span></span><br><span class="line">      <span class="attr">minio:</span></span><br><span class="line">        <span class="attr">condition:</span> <span class="string">service_healthy</span></span><br><span class="line">      <span class="attr">create_models_buckets:</span></span><br><span class="line">        <span class="attr">condition:</span> <span class="string">service_completed_successfully</span></span><br><span class="line">    <span class="attr">healthcheck:</span></span><br><span class="line">      <span class="attr">test:</span> [<span class="string">"CMD-SHELL"</span>, <span class="string">"curl -f http://tritonserver:8000/v2/health/ready"</span>]</span><br><span class="line">      <span class="attr">interval:</span> <span class="string">30s</span></span><br><span class="line">      <span class="attr">timeout:</span> <span class="string">10s</span></span><br><span class="line">      <span class="attr">retries:</span> <span class="number">3</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">unless-stopped</span></span><br><span class="line">    <span class="attr">shm_size:</span> <span class="string">256M</span></span><br><span class="line">    <span class="attr">deploy:</span></span><br><span class="line">      <span class="attr">resources:</span></span><br><span class="line">        <span class="attr">reservations:</span></span><br><span class="line">          <span class="attr">devices:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">driver:</span> <span class="string">nvidia</span></span><br><span class="line">              <span class="attr">count:</span> <span class="string">all</span></span><br><span class="line">              <span class="attr">capabilities:</span> [<span class="string">gpu</span>]</span><br></pre></td></tr></tbody></table></figure>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>CMD 命令类型用于执行指定的命令，它将命令及其参数作为一个数组传递。在给定的示例中，CMD 命令执行的是 <code>curl -f http://minio:9000/minio/health/live</code> 命令，用于检查 MinIO 服务的健康状态。</p>
+</li>
+<li class="lvl-2">
+<p>CMD-SHELL 命令类型用于执行指定的命令字符串。在给定的示例中，CMD-SHELL 命令执行的是 <code>curl -f http://tritonserver:8000/v2/health/ready</code> 命令，同样用于检查 Triton Server 服务的健康状态。</p>
+</li>
+</ul>
+<p>因此，CMD 和 CMD-SHELL 的区别在于命令的传递方式，CMD 使用数组形式传递命令及其参数，而 CMD-SHELL 使用字符串形式传递命令。</p>
+<h3 id="restart">restart</h3>
+<p>restart 策略用于控制容器在退出后的行为。</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>on-failure 是指在容器退出时，当其退出状态码不为 0（即失败）时，自动重启该容器。具体来说，它会重启那些在容器退出时返回非 0 状态码的容器。如果容器在退出时返回状态码 0，则不会自动重启该容器。</p>
+</li>
+<li class="lvl-2">
+<p>no：容器退出时不重启容器；</p>
+</li>
+<li class="lvl-2">
+<p>always：容器退出时总是重启容器；</p>
+</li>
+<li class="lvl-2">
+<p>unless-stopped：容器退出时重启容器，除非容器被手动停止。</p>
+</li>
+</ul>
 <h3 id="volume">volume</h3>
 <figure class="highlight yml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">'3'</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">your-service:</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">type:</span> <span class="string">volume</span></span><br><span class="line">        <span class="attr">source:</span> <span class="string">cppblueprint-src</span></span><br><span class="line">        <span class="attr">target:</span> <span class="string">/workspace</span></span><br><span class="line">        <span class="attr">consistency:</span> <span class="string">cached</span></span><br></pre></td></tr></tbody></table></figure>
 <h3 id="config">config</h3>
@@ -5526,6 +5555,11 @@ buildkit 会使用 docker 构建缓存，也就是 Build Cache，需要定期清
 <p><a href="https://github.com/mtzgroup/bigchem/blob/master/docs/swarm-gpus.md">https://github.com/mtzgroup/bigchem/blob/master/docs/swarm-gpus.md</a></p>
 </li>
 </ul>
+<h3 id="docker-compose-2">docker-compose</h3>
+<blockquote>
+<p>[!CAUTION]<br>
+docker-compose 中 depends_on,restart,deploy.resources.reservations 等资源不可用，需要单独配置.</p>
+</blockquote>
 <h3 id="UI">UI</h3>
 <p>Docker Swarm 的管理和部署可以通过各种 UI 工具进行，以下是一些常见的选项：</p>
 <ol>
@@ -5750,14 +5784,17 @@ base64：eJwr</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 推送所有本地tag到远程</span></span><br><span class="line">git push origin --tags</span><br><span class="line"><span class="comment"># 同步到远程 tag</span></span><br><span class="line">git push origin [tag name]</span><br><span class="line"><span class="comment"># 删除</span></span><br><span class="line">git tag -d [tag name]</span><br><span class="line"><span class="comment"># 删除本地所有 tag</span></span><br><span class="line">git tag -d $(git tag -l)</span><br><span class="line"><span class="comment"># 删除远程 tag</span></span><br><span class="line">git push origin :refs/tags/[tag name]</span><br><span class="line"><span class="comment"># 删除远程所有 tag</span></span><br><span class="line">git push origin --delete $(git tag -l)</span><br><span class="line"><span class="comment"># 拉取远程 tag</span></span><br><span class="line">git fetch origin [tag name]</span><br><span class="line">git pull origin --tags</span><br></pre></td></tr></tbody></table></figure>
 <h3 id="GitLab-API-tag">GitLab API tag</h3>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 删除 tag</span></span><br><span class="line">curl  --request DELETE --header <span class="string">"PRIVATE-TOKEN: TOKEN-ACCESS"</span> <span class="string">"https://gitlab.example.com/api/v4/projects/5/repository/tags/v1.0.0"</span></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="git-commit-empty">git commit empty</h2>
+<h2 id="git-commit">git commit</h2>
+<h3 id="git-commit-m">git commit -m</h3>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">git commit -m &lt;title&gt; -m &lt;content&gt;</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="git-commit-empty">git commit empty</h3>
 <p>git 空提交，用于在本地测试及保证源码不变动的情况下增加一个提交或删除相关的空提交。</p>
-<h3 id="增加一个空提交">增加一个空提交</h3>
+<h4 id="增加一个空提交">增加一个空提交</h4>
 <p><strong>Step 1.</strong> 创建一个新提交。</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">git commit --allow-empty -m <span class="string">"Trigger test deployment"</span></span><br></pre></td></tr></tbody></table></figure>
 <p><strong>Step 2.</strong> 推动空提交到远程。</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="删除空提交">删除空提交</h3>
+<h4 id="删除空提交">删除空提交</h4>
 <p><strong>Step 1.</strong> 查看空提交</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">git rev-list HEAD | <span class="keyword">while</span> <span class="built_in">read</span> commitHash; <span class="keyword">do</span></span><br><span class="line">    <span class="keyword">if</span> [ $(git diff-tree --name-status --no-commit-id <span class="variable">$commitHash</span> | <span class="built_in">wc</span> -l) -eq 0 ]; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="variable">$commitHash</span></span><br><span class="line">    <span class="keyword">fi</span>;</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></tbody></table></figure>
 <p><strong>Step 2.</strong> 删除空提交</p>
@@ -5777,7 +5814,7 @@ base64：eJwr</p>
 <p>-f: --force 缩写。</p>
 </li>
 </ul>
-<h3 id="reference-2">reference</h3>
+<p>links:</p>
 <ul class="lvl-0">
 <li class="lvl-2">
 <p><a href="https://devcoops.com/create-empty-commits-git/">https://devcoops.com/create-empty-commits-git/</a></p>
@@ -5789,7 +5826,7 @@ base64：eJwr</p>
 <h2 id="git-repo-clean">git repo clean</h2>
 <p>安装完后，可绑定到 git 使用：</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 扫描仓库当前分支的文件，文件最小为1G，类型为tar.gz，显示前1个结果</span></span><br><span class="line">git repo-clean --scan --<span class="built_in">limit</span>=1G --<span class="built_in">type</span>=tar.gz --number=1</span><br><span class="line"><span class="comment"># 在命令后添加--delete选项，则会批量删除当前分支扫描出的文件，并重写相关提交历史(包括HEAD)</span></span><br><span class="line">git repo-clean --scan --<span class="built_in">limit</span>=1G --<span class="built_in">type</span>=tar.gz --number=1 --delete</span><br><span class="line"><span class="comment"># 在命令后添加--branch选项，则会扫描所有分支的文件再执行删除，并重写相关提交历史</span></span><br><span class="line">git repo-clean --scan --<span class="built_in">limit</span>=1G --<span class="built_in">type</span>=tar.gz --number=1 --delete --branch=all</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="reference-3">reference</h3>
+<h3 id="reference-2">reference</h3>
 <ul class="lvl-0">
 <li class="lvl-2">
 <p><a href="https://gitee.com/oschina/git-repo-clean">https://gitee.com/oschina/git-repo-clean</a></p>
@@ -6119,13 +6156,12 @@ Step 4. 安装 gitlab-runner 服务。</p>
 <p>在 GitLab 项目配置中配置 access token, 可根据需要配置权限，使用方式</p>
 <ul class="lvl-0">
 <li class="lvl-2">
-<p>git push and api repository operation</p>
+<p>make a pr or oush with gitlab project token</p>
 </li>
 </ul>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">git remote set-url origin <span class="string">"https://gitlab-ci-token:<span class="variable">${ACCESS_TOKEN}</span>@<span class="variable">${CI_SERVER_HOST}</span>/<span class="variable">${CI_PROJECT_PATH}</span>.git"</span></span><br><span class="line">git config --global user.name <span class="string">"GitLab Bot"</span></span><br><span class="line">git config --global user.email <span class="string">"gitlab-bot@example.com"</span></span><br><span class="line">temp_branch=temp_black_<span class="variable">${CI_COMMIT_SHA:0:12}</span></span><br><span class="line">git checkout -b <span class="string">"<span class="variable">$temp_branch</span>"</span></span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">"Automated commit with reformatted changes by GitLab CI"</span></span><br><span class="line">git push origin <span class="string">"<span class="variable">$temp_branch</span>"</span></span><br><span class="line">curl --header <span class="string">"PRIVATE-TOKEN: <span class="variable">$ACCESS_TOKEN</span>"</span> \</span><br><span class="line">    --request POST <span class="string">"<span class="variable">$CI_SERVER_URL</span>/api/v4/projects/<span class="variable">$CI_PROJECT_ID</span>/merge_requests"</span> \</span><br><span class="line">    --form <span class="string">"source_branch=<span class="variable">$temp_branch</span>"</span> \</span><br><span class="line">    --form <span class="string">"target_branch=<span class="variable">$CI_COMMIT_REF_NAME</span>"</span> \</span><br><span class="line">    --form <span class="string">"title=PR from <span class="variable">$temp_branch</span>"</span></span><br></pre></td></tr></tbody></table></figure>
-<p>将这段逻辑封装到一个 .gitlab-ci.yml 文件中，然后在其他项目中通过 extends 关键字来扩展这个模板。以下是如何做的示例：</p>
+<p>将代码更改推送逻辑封装到一个 .yml 文件中，然后在其他项目中通过 extends 关键字来扩展这个模板。以下是如何做的示例：</p>
 <p>首先，创建一个 template.yml 文件，将这段逻辑封装：</p>
-<figure class="highlight yml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="string">.make_pr_template:</span></span><br><span class="line">  <span class="comment"># 将 pull request 逻辑封装在after_script</span></span><br><span class="line">  <span class="attr">before_script:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">echo</span> <span class="string">"This will run before the job's script."</span></span><br><span class="line">  <span class="attr">after_script:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">git</span> <span class="string">remote</span> <span class="string">set-url</span> <span class="string">origin</span> <span class="string">"https://gitlab-ci-token:${ACCESS_TOKEN}@${CI_SERVER_HOST}/${CI_PROJECT_PATH}.git"</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">git</span> <span class="string">config</span> <span class="string">--global</span> <span class="string">user.name</span> <span class="string">"GitLab Bot"</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">git</span> <span class="string">config</span> <span class="string">--global</span> <span class="string">user.email</span> <span class="string">"gitlab-bot@example.com"</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">temp_branch=temp_black_${CI_COMMIT_SHA:0:12}</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">git</span> <span class="string">checkout</span> <span class="string">-b</span> <span class="string">"$temp_branch"</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">git</span> <span class="string">add</span> <span class="string">.</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">git</span> <span class="string">commit</span> <span class="string">-m</span> <span class="string">"Automated commit with reformatted changes by GitLab CI"</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">git</span> <span class="string">push</span> <span class="string">origin</span> <span class="string">"$temp_branch"</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">curl</span> <span class="string">--header</span> <span class="string">"PRIVATE-TOKEN: $ACCESS_TOKEN"</span> <span class="string">\</span></span><br><span class="line">        <span class="string">--request</span> <span class="string">POST</span> <span class="string">"$CI_SERVER_URL/api/v4/projects/$CI_PROJECT_ID/merge_requests"</span> <span class="string">\</span></span><br><span class="line">        <span class="string">--form</span> <span class="string">"source_branch=$temp_branch"</span> <span class="string">\</span></span><br><span class="line">        <span class="string">--form</span> <span class="string">"target_branch=$CI_COMMIT_REF_NAME"</span> <span class="string">\</span></span><br><span class="line">        <span class="string">--form</span> <span class="string">"title=PR from $temp_branch"</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight yml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="string">.make_pr_template:</span></span><br><span class="line">  <span class="attr">after_script:</span> <span class="string">|</span></span><br><span class="line"><span class="string">    if [[ -z "$ACCESS_TOKEN" ]]; then</span></span><br><span class="line"><span class="string">        echo "The job has no access token found." &gt;&gt;/dev/stderr</span></span><br><span class="line"><span class="string">        echo "To enable automatic to commit changes, please create a project access token with repository write scope and set the ACCESS_TOKEN variable" &gt;/dev/stderr</span></span><br><span class="line"><span class="string">        exit 1</span></span><br><span class="line"><span class="string">    fi</span></span><br><span class="line"><span class="string"></span></span><br><span class="line">    <span class="comment"># Prepare config for git</span></span><br><span class="line">    <span class="string">git</span> <span class="string">remote</span> <span class="string">set-url</span> <span class="string">origin</span> <span class="string">"https://gitlab-ci-token:${ACCESS_TOKEN}@${CI_SERVER_HOST}/${CI_PROJECT_PATH}.git"</span></span><br><span class="line">    <span class="string">git</span> <span class="string">config</span> <span class="string">--global</span> <span class="string">user.name</span> <span class="string">"GitLab Bot"</span></span><br><span class="line">    <span class="string">git</span> <span class="string">config</span> <span class="string">--global</span> <span class="string">user.email</span> <span class="string">"gitlab-bot@no-reply.com"</span></span><br><span class="line">    <span class="string">temp_branch=temp_black_${CI_COMMIT_SHA:0:12}</span></span><br><span class="line">    <span class="string">git</span> <span class="string">checkout</span> <span class="string">-b</span> <span class="string">"$temp_branch"</span></span><br><span class="line">    <span class="string">git</span> <span class="string">add</span> <span class="string">.</span></span><br><span class="line">    <span class="string">git</span> <span class="string">commit</span> <span class="string">-m</span> <span class="string">"Automated commit with reformatted changes by GitLab CI"</span></span><br><span class="line">    <span class="string">git</span> <span class="string">push</span> <span class="string">origin</span> <span class="string">"$temp_branch"</span></span><br><span class="line">    <span class="string">curl</span> <span class="string">--header</span> <span class="string">"PRIVATE-TOKEN: $ACCESS_TOKEN"</span> <span class="string">\</span></span><br><span class="line">        <span class="string">--request</span> <span class="string">POST</span> <span class="string">"$CI_SERVER_URL/api/v4/projects/$CI_PROJECT_ID/merge_requests"</span> <span class="string">\</span></span><br><span class="line">        <span class="string">--form</span> <span class="string">"source_branch=$temp_branch"</span> <span class="string">\</span></span><br><span class="line">        <span class="string">--form</span> <span class="string">"target_branch=$CI_COMMIT_REF_NAME"</span> <span class="string">\</span></span><br><span class="line">        <span class="string">--form</span> <span class="string">"title=PR from $temp_branch"</span></span><br><span class="line"></span><br><span class="line"><span class="string">.make_push_template:</span></span><br><span class="line">  <span class="attr">after_script:</span> <span class="string">|</span></span><br><span class="line"><span class="string">    if [[ -z "$ACCESS_TOKEN" ]]; then</span></span><br><span class="line"><span class="string">        echo "The job has no access token found." &gt;&gt;/dev/stderr</span></span><br><span class="line"><span class="string">        echo "To enable automatic to commit changes, please create a project access token with repository write scope and set the ACCESS_TOKEN variable" &gt;/dev/stderr</span></span><br><span class="line"><span class="string">        exit 1</span></span><br><span class="line"><span class="string">    fi</span></span><br><span class="line"><span class="string"></span></span><br><span class="line">    <span class="comment"># Prepare config for git</span></span><br><span class="line">    <span class="string">if</span> [[ <span class="string">-n</span> <span class="string">"$CI_COMMIT_BRANCH"</span> ]]<span class="string">;</span> <span class="string">then</span></span><br><span class="line">        <span class="string">git</span> <span class="string">remote</span> <span class="string">set-url</span> <span class="string">origin</span> <span class="string">"https://gitlab-ci-token:${ACCESS_TOKEN:-$CI_JOB_TOKEN}@${CI_SERVER_HOST}/${CI_PROJECT_PATH}.git"</span></span><br><span class="line">        <span class="string">git</span> <span class="string">fetch</span> <span class="string">origin</span></span><br><span class="line">        <span class="string">git</span> <span class="string">checkout</span> <span class="string">$CI_COMMIT_BRANCH</span></span><br><span class="line">    <span class="string">fi</span></span><br><span class="line">    <span class="string">if</span> [[ <span class="string">-n</span> <span class="string">"$CI_MERGE_REQUEST_IID"</span> ]]<span class="string">;</span> <span class="string">then</span></span><br><span class="line">        <span class="string">git</span> <span class="string">remote</span> <span class="string">set-url</span> <span class="string">origin</span> <span class="string">"https://gitlab-ci-token:${ACCESS_TOKEN:-$CI_JOB_TOKEN}@${CI_SERVER_HOST}/${CI_MERGE_REQUEST_SOURCE_PROJECT_PATH}.git"</span></span><br><span class="line">        <span class="string">git</span> <span class="string">fetch</span> <span class="string">origin</span></span><br><span class="line">    <span class="string">fi</span></span><br><span class="line"></span><br><span class="line">    <span class="string">git</span> <span class="string">config</span> <span class="string">--global</span> <span class="string">user.name</span> <span class="string">"GitLab Bot"</span></span><br><span class="line">    <span class="string">git</span> <span class="string">config</span> <span class="string">--global</span> <span class="string">user.email</span> <span class="string">"gitlab-bot@no-reply.com"</span></span><br><span class="line"></span><br><span class="line">    <span class="string">if</span> [[ <span class="string">-n</span> <span class="string">"$CI_COMMIT_BRANCH"</span> ]]<span class="string">;</span> <span class="string">then</span></span><br><span class="line">        <span class="string">git</span> <span class="string">add</span> <span class="string">-u</span> <span class="string">.</span></span><br><span class="line">        <span class="string">git</span> <span class="string">commit</span> <span class="string">-m</span> <span class="string">"style: auto changes from lint CI job"</span> <span class="string">-m</span> <span class="string">"job url:$CI_JOB_URL"</span></span><br><span class="line">        <span class="string">git</span> <span class="string">push</span></span><br><span class="line">        <span class="string">exit</span> <span class="number">1</span></span><br><span class="line">    <span class="string">elif</span> [[ <span class="string">-n</span> <span class="string">"$CI_MERGE_REQUEST_IID"</span> ]]<span class="string">;</span> <span class="string">then</span></span><br><span class="line">        <span class="string">git</span> <span class="string">add</span> <span class="string">-u</span> <span class="string">.</span></span><br><span class="line">        <span class="string">git</span> <span class="string">commit</span> <span class="string">-m</span> <span class="string">"style: auto changes from lint CI job"</span> <span class="string">-m</span> <span class="string">"job url:$CI_JOB_URL"</span></span><br><span class="line">        <span class="string">git</span> <span class="string">push</span> <span class="string">origin</span> <span class="string">HEAD:"$CI_MERGE_REQUEST_SOURCE_BRANCH_NAME"</span></span><br><span class="line">        <span class="string">exit</span> <span class="number">1</span></span><br><span class="line">    <span class="string">fi</span></span><br></pre></td></tr></tbody></table></figure>
 <p>使用模板</p>
 <figure class="highlight yml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">include:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">project:</span> <span class="string">'your-other-project-path'</span></span><br><span class="line">    <span class="attr">ref:</span> <span class="string">master</span></span><br><span class="line">    <span class="attr">file:</span> <span class="string">'/path/to/your/template.yml'</span></span><br><span class="line"></span><br><span class="line"><span class="attr">my_job:</span></span><br><span class="line">  <span class="attr">extends:</span> <span class="string">.code_black_template</span></span><br><span class="line">  <span class="attr">script:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">echo</span> <span class="string">"This is my job's script."</span></span><br></pre></td></tr></tbody></table></figure>
 <p>参考:</p>
@@ -6608,6 +6644,12 @@ K8s:
         https://developer.aliyun.com/article/742566
  -->
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 当部署单机k8s支持 GPU时，需要将control panel untaint，让master node 能调度</span></span><br><span class="line">kubectl taint nodes --all node-role.kubernetes.io/master-</span><br></pre></td></tr></tbody></table></figure>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://developer.nvidia.com/zh-cn/blog/improving-gpu-utilization-in-kubernetes/">https://developer.nvidia.com/zh-cn/blog/improving-gpu-utilization-in-kubernetes/</a></p>
+</li>
+</ul>
 <h3 id="reference">reference</h3>
 <ul class="lvl-0">
 <li class="lvl-2">
@@ -6793,7 +6835,7 @@ K8s:
 </ul>
 <figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><span class="line">choco install kustomize</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="helm">helm</h2>
-<h3 id="helm-概念">helm 概念</h3>
+<h3 id="概念">概念</h3>
 <p><a href="https://helm.sh/zh/">helm</a> 是 k8s 包管理 yaml 工具。</p>
 <p>helm charts</p>
 <ul class="lvl-0">
@@ -6815,8 +6857,17 @@ K8s:
 </ul>
 <p>helm char 结构<br>
 <img data-src="https://raw.githubusercontent.com/msclock/images/main/images/20221023/230523187.png" alt="image."></p>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://www.escapelife.site/posts/8ef3f56.html">helm 1 from escape</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://www.escapelife.site/posts/eb8ef4fd.html">helm 2 from escape</a></p>
+</li>
+</ul>
 <h3 id="安装-5">安装</h3>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 二进制下载安装</span></span><br><span class="line">wget -o helm.tar.gz https://storage.googleapis.com/kubernetes-helm/helm-v2.13.1-linux-amd64.tar.gz</span><br><span class="line">tar -zxvf helm.tar.gz</span><br><span class="line"><span class="comment"># 直接使用脚本安装</span></span><br><span class="line">curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash</span><br><span class="line"><span class="comment"># 国内安装 https://mirrors.huaweicloud.com/helm/</span></span><br><span class="line">wget -o helm.tar.gz https://mirrors.huaweicloud.com/helm/v3.12.2/helm-v3.12.2-linux-amd64.tar.gz</span><br><span class="line">tar -zxvf helm.tar.gz</span><br><span class="line"><span class="built_in">cp</span> linux-amd64/helm /usr/local/bin/</span><br><span class="line"></span><br><span class="line">helm repo add bitnami https://charts.bitnami.com/bitnami</span><br><span class="line">helm repo add brigade https://brigadecore.github.io/charts</span><br><span class="line">helm repo update</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 二进制下载安装</span></span><br><span class="line">wget -o helm.tar.gz https://storage.googleapis.com/kubernetes-helm/helm-v2.13.1-linux-amd64.tar.gz</span><br><span class="line">tar -zxvf helm.tar.gz</span><br><span class="line"><span class="comment"># 直接使用脚本安装</span></span><br><span class="line">curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash</span><br><span class="line"><span class="comment"># 国内安装 https://mirrors.huaweicloud.com/helm/</span></span><br><span class="line">wget -o helm.tar.gz https://mirrors.huaweicloud.com/helm/v3.12.2/helm-v3.12.2-linux-amd64.tar.gz</span><br><span class="line">tar -zxvf helm.tar.gz</span><br><span class="line"><span class="built_in">cp</span> linux-amd64/helm /usr/local/bin/</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
 <p>links:</p>
 <ul class="lvl-0">
 <li class="lvl-2">
@@ -6824,7 +6875,7 @@ K8s:
 </li>
 </ul>
 <h3 id="基本使用-3">基本使用</h3>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 使用 my-values.yaml 值覆盖模板值安装</span></span><br><span class="line">helm install --values=my-values.yaml &lt;charname&gt;</span><br><span class="line"><span class="comment"># 直接指定值覆盖安装</span></span><br><span class="line">helm install --<span class="built_in">set</span> version=2.0.0</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># helm repo add [NAME] [URL] [flags]</span></span><br><span class="line">helm repo add bitnami https://charts.bitnami.com/bitnami</span><br><span class="line">helm repo add brigade https://brigadecore.github.io/charts</span><br><span class="line">helm repo update</span><br><span class="line"></span><br><span class="line"><span class="comment"># helm install [NAME] [CHART] [flags]</span></span><br><span class="line"><span class="comment"># 使用 my-values.yaml 值覆盖模板值安装</span></span><br><span class="line">helm install --values=my-values.yaml &lt;charname&gt;</span><br><span class="line"><span class="comment"># 直接指定值覆盖安装,多个值用逗号隔开</span></span><br><span class="line">helm install --<span class="built_in">set</span> version=v2.0.0</span><br><span class="line"></span><br><span class="line"><span class="comment">#  helm upgrade [RELEASE] [CHART] [flags]</span></span><br><span class="line">helm upgrade -i nvdp nvdp/nvidia-device-plugin \</span><br><span class="line">    --namespace nvdp \</span><br><span class="line">    --create-namespace \</span><br><span class="line">    --<span class="built_in">set</span>=runtimeClassName=nvidia \</span><br><span class="line">    --<span class="built_in">set</span>=image.repository=registry.gitlab.com/nvidia/kubernetes/device-plugin/staging/k8s-device-plugin \</span><br><span class="line">    --<span class="built_in">set</span>=image.tag=8b416016</span><br><span class="line"></span><br><span class="line"><span class="comment"># helm uninstall &lt;release_name&gt;</span></span><br><span class="line">helm uninstall nvdp</span><br></pre></td></tr></tbody></table></figure>
 <p><img data-src="https://raw.githubusercontent.com/msclock/images/main/images/20221023/230750437.png" alt="image."></p>
 <h3 id="打包">打包</h3>
 <ul class="lvl-0">
@@ -6841,15 +6892,6 @@ K8s:
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">helm create my-chart --generate-from-existing my-app</span><br></pre></td></tr></tbody></table></figure>
 <p>这将会在当前目录下生成一个名为 <code>my-chart</code> 的 Helm 包模板，其中包括 <code>Chart.yaml</code>、<code>values.yaml</code> 和 <code>templates</code> 目录等文件，所有的 Kubernetes 资源都会被转换为 Helm 模板语法。</p>
 <p>需要注意的是，该命令只能生成基本的 Helm 包模板，仍然需要手动编辑以适应特定的需求。此外，该命令仅适用于 Kubernetes 资源，不适用于其他类型的资源。</p>
-<h3 id="参考">参考</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://www.escapelife.site/posts/8ef3f56.html">helm 1 from escape</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://www.escapelife.site/posts/eb8ef4fd.html">helm 2 from escape</a></p>
-</li>
-</ul>
 <h2 id="rancher">rancher</h2>
 <p>rancher 是一个 全栈式 的 Kubernetes 容器管理平台，为提供在任何地方都能成功运行 Kubernetes 的工具。</p>
 <p>links:</p>
@@ -6918,7 +6960,7 @@ https://blog.csdn.net/qq_43792385/article/details/104692634
 </li>
 </ul>
 <h3 id="安装-7">安装</h3>
-<h4 id="快速部署">快速部署</h4>
+<h4 id="Quickstart">Quickstart</h4>
 <p>使用脚本部署<a href="https://docs.rancher.cn/docs/k3s/quick-start/_index/">快速部署</a></p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">curl -sfL https://get.k3s.io | sh -</span><br><span class="line"><span class="comment"># 国内加速</span></span><br><span class="line">curl -sfL https://rancher-mirror.rancher.cn/k3s/k3s-install.sh | INSTALL_K3S_MIRROR=cn sh -</span><br></pre></td></tr></tbody></table></figure>
 <p>运行此安装后，详情<a href="https://docs.rancher.cn/docs/k3s/quick-start/_index/">参考</a>：</p>
@@ -6933,10 +6975,10 @@ https://blog.csdn.net/qq_43792385/article/details/104692634
 <p>将 kubeconfig 文件写入到 /etc/rancher/k3s/k3s.yaml，由 K3s 安装的 kubectl 将自动使用该文件.</p>
 </li>
 </ul>
-<h4 id="autok3s">autok3s</h4>
+<h4 id="Run-with-autok3s">Run with autok3s</h4>
 <p><a href="https://docs.rancher.cn/docs/k3s/autok3s/_index">AutoK3s</a> 是用于简化 K3s 集群管理的轻量级工具，您可以使用 AutoK3s 在任何地方运行 K3s 服务。</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">docker run -itd  --name autok3s \</span><br><span class="line">  --restart=unless-stopped \</span><br><span class="line">  -p 8080:8080 \</span><br><span class="line">  cnrancher/autok3s:v0.6.0</span><br></pre></td></tr></tbody></table></figure>
-<h4 id="run-k3s-in-docker">run k3s in docker</h4>
+<h4 id="Run-k3s-in-docker">Run k3s in docker</h4>
 <p>在容器中运行 k3s 集群，镜像由 rancher 社区提供</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">docker run \</span><br><span class="line">  --privileged \</span><br><span class="line">  --name k3s-server-1 \</span><br><span class="line">  --hostname k3s-server-1 \</span><br><span class="line">  -p 6443:6443 \</span><br><span class="line">  -d rancher/k3s:v1.24.10-k3s1 \</span><br><span class="line">  server</span><br></pre></td></tr></tbody></table></figure>
 <p>运行起来后，通过 kubeconfig 进行访问</p>
@@ -6951,18 +6993,7 @@ https://blog.csdn.net/qq_43792385/article/details/104692634
 <p><a href="https://docs.k3s.io/advanced#running-k3s-in-docker">https://docs.k3s.io/advanced#running-k3s-in-docker</a></p>
 </li>
 </ul>
-<h3 id="访问">访问</h3>
-<p>存储在 /etc/rancher/k3s/k3s.yaml 的 kubeconfig 文件用于对 Kubernetes 集群的访问</p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> KUBECONFIG=/etc/rancher/k3s/k3s.yaml</span><br><span class="line">kubectl get pods --all-namespaces</span><br><span class="line">helm <span class="built_in">ls</span> --all-namespaces</span><br></pre></td></tr></tbody></table></figure>
-<p>直接指定 kubeconfig</p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">kubectl --kubeconfig /etc/rancher/k3s/k3s.yaml get pods --all-namespaces</span><br><span class="line">helm --kubeconfig /etc/rancher/k3s/k3s.yaml <span class="built_in">ls</span> --all-namespaces</span><br></pre></td></tr></tbody></table></figure>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://docs.rancher.cn/docs/k3s/cluster-access/_index">https://docs.rancher.cn/docs/k3s/cluster-access/_index</a></p>
-</li>
-</ul>
-<h3 id="基于docker">基于 docker</h3>
+<h4 id="Run-k3s-Based-on-docker">Run k3s Based on docker</h4>
 <p>k3s 默认使用自己维护的 <code>/var/lib/rancher/rke2/bin/containerd</code> 作为运行时。以 docker 作为运行时需要指定参数: <code>-s - --docker</code>.</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">curl -sfL https://get.k3s.io | sh -s - --docker</span><br><span class="line"><span class="comment">#  国内</span></span><br><span class="line">curl -sfL https://rancher-mirror.rancher.cn/k3s/k3s-install.sh | INSTALL_RKE2_MIRROR=cn sh -s - --docker</span><br></pre></td></tr></tbody></table></figure>
 <blockquote>
@@ -6975,9 +7006,9 @@ https://blog.csdn.net/qq_43792385/article/details/104692634
 <p><a href="https://docs.k3s.io/advanced#using-docker-as-the-container-runtime">https://docs.k3s.io/advanced#using-docker-as-the-container-runtime</a></p>
 </li>
 </ul>
-<h3 id="基于containerd">基于 containerd</h3>
+<h4 id="Run-k3s-Based-on-containerd">Run k3s Based on containerd</h4>
 <p>k3s 默认使用自己维护的 <code>/var/lib/rancher/rke2/bin/containerd</code> 作为运行时，如果先用自定义的 containerd 时，需指定参数 <code>-s - --container-runtime-endpoint /run/containerd/containerd.sock</code></p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">curl -sfL https://get.k3s.io | sh -s - --container-runtime-endpoint /run/containerd/containerd.sock</span><br><span class="line"><span class="comment">#  国内</span></span><br><span class="line">curl -sfL https://rancher-mirror.rancher.cn/k3s/k3s-install.sh | INSTALL_RKE2_MIRROR=cn sh -s - --container-runtime-endpoint /run/containerd/containerd.sock</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 使用默认的containerd</span></span><br><span class="line">curl -sfL https://get.k3s.io | sh -</span><br><span class="line"><span class="comment"># 使用自定义的containerd</span></span><br><span class="line">curl -sfL https://get.k3s.io | sh -s - --container-runtime-endpoint /run/containerd/containerd.sock</span><br><span class="line"><span class="comment">#  国内</span></span><br><span class="line">curl -sfL https://rancher-mirror.rancher.cn/k3s/k3s-install.sh | INSTALL_RKE2_MIRROR=cn sh -s - --container-runtime-endpoint /run/containerd/containerd.sock</span><br></pre></td></tr></tbody></table></figure>
 <blockquote>
 <p>[!TIP]<br>
 同时也可以将 docker 配置为自定义的 containerd, 方便资源管理</p>
@@ -6985,17 +7016,28 @@ https://blog.csdn.net/qq_43792385/article/details/104692634
 <p>编辑 Docker 的 daemon.json 文件（通常位于 /etc/docker/daemon.json），添加以下内容，然后重启 docker 服务 <code>systemctl restart docker</code>：</p>
 <figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"exec-opts"</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">"native.cgroupdriver=systemd"</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"log-driver"</span><span class="punctuation">:</span> <span class="string">"json-file"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"log-opts"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"max-size"</span><span class="punctuation">:</span> <span class="string">"100m"</span></span><br><span class="line">  <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"storage-driver"</span><span class="punctuation">:</span> <span class="string">"overlay2"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"containerd"</span><span class="punctuation">:</span> <span class="string">"/run/containerd/containerd.sock"</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
 <p>这样，k3s 和 Docker 就会使用同一个 containerd 实例作为其容器运行时，在不考虑 docker 时优先使用 containerd。</p>
-<h3 id="gpu-调度">gpu 调度</h3>
+<h3 id="访问集群">访问集群</h3>
+<p>存储在 /etc/rancher/k3s/k3s.yaml 的 kubeconfig 文件用于对 Kubernetes 集群的访问</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> KUBECONFIG=/etc/rancher/k3s/k3s.yaml</span><br><span class="line">kubectl get pods --all-namespaces</span><br><span class="line">helm <span class="built_in">ls</span> --all-namespaces</span><br></pre></td></tr></tbody></table></figure>
+<p>直接指定 kubeconfig</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">kubectl --kubeconfig /etc/rancher/k3s/k3s.yaml get pods --all-namespaces</span><br><span class="line">helm --kubeconfig /etc/rancher/k3s/k3s.yaml <span class="built_in">ls</span> --all-namespaces</span><br></pre></td></tr></tbody></table></figure>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://docs.rancher.cn/docs/k3s/cluster-access/_index">https://docs.rancher.cn/docs/k3s/cluster-access/_index</a></p>
+</li>
+</ul>
+<h3 id="gpu-on-k3s">gpu on k3s</h3>
 <p>Step 1, 准备节点 (驱动等)<br>
 Step 2, 安装 k8s nvidia plugins<br>
 Step 3, benchmark 测试</p>
 <p>links:</p>
 <ul class="lvl-0">
 <li class="lvl-2">
-<p><a href="https://github.com/NVIDIA/k8s-device-plugin#preparing-your-gpu-nodes">https://github.com/NVIDIA/k8s-device-plugin#preparing-your-gpu-nodes</a></p>
+<p><a href="https://github.com/NVIDIA/k8s-device-plugin">https://github.com/NVIDIA/k8s-device-plugin</a></p>
 </li>
 </ul>
-<h4 id="基于docker-2">基于 docker</h4>
+<h4 id="Based-on-docker">Based on docker</h4>
 <p>根据 k3s <a href="https://docs.k3s.io/advanced#nvidia-container-runtime-support">文档</a> , 注册 RuntimeClass 及 nvidia 设备发现及调度插件.</p>
 <figure class="highlight yml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">node.k8s.io/v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">RuntimeClass</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">nvidia</span></span><br><span class="line"><span class="attr">handler:</span> <span class="string">docker</span> <span class="comment"># change to `docker` for dockerd</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="comment"># the following is same as k3s based on containerd</span></span><br><span class="line"><span class="comment"># ...</span></span><br></pre></td></tr></tbody></table></figure>
 <p>links:</p>
@@ -7006,19 +7048,19 @@ Step 3, benchmark 测试</p>
 </ul>
 </li>
 </ul>
-<h4 id="基于containerd-2">基于 containerd</h4>
+<h4 id="Based-on-containerd">Based on containerd</h4>
 <p>根据 k3s <a href="https://docs.k3s.io/advanced#nvidia-container-runtime-support">文档</a> , 注册 RuntimeClass 及 nvidia 设备发现及调度插件.</p>
 <figure class="highlight yml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">node.k8s.io/v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">RuntimeClass</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">nvidia</span></span><br><span class="line"><span class="attr">handler:</span> <span class="string">nvidia</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="comment"># From https://github.com/NVIDIA/gpu-feature-discovery/blob/main/deployments/static/nfd.yaml</span></span><br><span class="line"><span class="comment"># Modified to set `runtimeClassName: nvidia`, as k3s does not replace the default container runtime</span></span><br><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Namespace</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">node-feature-discovery</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">ServiceAccount</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">nfd-master</span></span><br><span class="line">  <span class="attr">namespace:</span> <span class="string">node-feature-discovery</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">apiVersion:</span> <span class="string">rbac.authorization.k8s.io/v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">ClusterRole</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">nfd-master</span></span><br><span class="line"><span class="attr">rules:</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">apiGroups:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">""</span></span><br><span class="line">  <span class="attr">resources:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">nodes</span></span><br><span class="line">  <span class="attr">verbs:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">get</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">patch</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">update</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">apiVersion:</span> <span class="string">rbac.authorization.k8s.io/v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">ClusterRoleBinding</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">nfd-master</span></span><br><span class="line"><span class="attr">roleRef:</span></span><br><span class="line">  <span class="attr">apiGroup:</span> <span class="string">rbac.authorization.k8s.io</span></span><br><span class="line">  <span class="attr">kind:</span> <span class="string">ClusterRole</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">nfd-master</span></span><br><span class="line"><span class="attr">subjects:</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">kind:</span> <span class="string">ServiceAccount</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">nfd-master</span></span><br><span class="line">  <span class="attr">namespace:</span> <span class="string">node-feature-discovery</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">apiVersion:</span> <span class="string">apps/v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">DaemonSet</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">labels:</span></span><br><span class="line">    <span class="attr">app:</span> <span class="string">nfd</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">nfd</span></span><br><span class="line">  <span class="attr">namespace:</span> <span class="string">node-feature-discovery</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">selector:</span></span><br><span class="line">    <span class="attr">matchLabels:</span></span><br><span class="line">      <span class="attr">app:</span> <span class="string">nfd</span></span><br><span class="line">  <span class="attr">template:</span></span><br><span class="line">    <span class="attr">metadata:</span></span><br><span class="line">      <span class="attr">labels:</span></span><br><span class="line">        <span class="attr">app:</span> <span class="string">nfd</span></span><br><span class="line">    <span class="attr">spec:</span></span><br><span class="line">      <span class="attr">serviceAccount:</span> <span class="string">nfd-master</span></span><br><span class="line">      <span class="attr">runtimeClassName:</span> <span class="string">nvidia</span></span><br><span class="line">      <span class="attr">containers:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">env:</span></span><br><span class="line">          <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">NODE_NAME</span></span><br><span class="line">            <span class="attr">valueFrom:</span></span><br><span class="line">              <span class="attr">fieldRef:</span></span><br><span class="line">                <span class="attr">fieldPath:</span> <span class="string">spec.nodeName</span></span><br><span class="line">          <span class="attr">image:</span> <span class="string">quay.io/kubernetes_incubator/node-feature-discovery:v0.6.0</span></span><br><span class="line">          <span class="attr">name:</span> <span class="string">nfd-master</span></span><br><span class="line">          <span class="attr">command:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">"nfd-master"</span></span><br><span class="line">          <span class="attr">args:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">"--extra-label-ns=nvidia.com"</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">env:</span></span><br><span class="line">          <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">NODE_NAME</span></span><br><span class="line">            <span class="attr">valueFrom:</span></span><br><span class="line">              <span class="attr">fieldRef:</span></span><br><span class="line">                <span class="attr">fieldPath:</span> <span class="string">spec.nodeName</span></span><br><span class="line">          <span class="attr">image:</span> <span class="string">quay.io/kubernetes_incubator/node-feature-discovery:v0.6.0</span></span><br><span class="line">          <span class="attr">name:</span> <span class="string">nfd-worker</span></span><br><span class="line">          <span class="attr">command:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">"nfd-worker"</span></span><br><span class="line">          <span class="attr">args:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">"--sleep-interval=60s"</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">"--options={\"sources\": {\"pci\": { \"deviceLabelFields\": [\"vendor\"] }}}"</span></span><br><span class="line">          <span class="attr">volumeMounts:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">host-boot</span></span><br><span class="line">              <span class="attr">mountPath:</span> <span class="string">"/host-boot"</span></span><br><span class="line">              <span class="attr">readOnly:</span> <span class="literal">true</span></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">host-os-release</span></span><br><span class="line">              <span class="attr">mountPath:</span> <span class="string">"/host-etc/os-release"</span></span><br><span class="line">              <span class="attr">readOnly:</span> <span class="literal">true</span></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">host-sys</span></span><br><span class="line">              <span class="attr">mountPath:</span> <span class="string">"/host-sys"</span></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">source-d</span></span><br><span class="line">              <span class="attr">mountPath:</span> <span class="string">"/etc/kubernetes/node-feature-discovery/source.d/"</span></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">features-d</span></span><br><span class="line">              <span class="attr">mountPath:</span> <span class="string">"/etc/kubernetes/node-feature-discovery/features.d/"</span></span><br><span class="line">      <span class="attr">volumes:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">host-boot</span></span><br><span class="line">          <span class="attr">hostPath:</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">"/boot"</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">host-os-release</span></span><br><span class="line">          <span class="attr">hostPath:</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">"/etc/os-release"</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">host-sys</span></span><br><span class="line">          <span class="attr">hostPath:</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">"/sys"</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">source-d</span></span><br><span class="line">          <span class="attr">hostPath:</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">"/etc/kubernetes/node-feature-discovery/source.d/"</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">features-d</span></span><br><span class="line">          <span class="attr">hostPath:</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">"/etc/kubernetes/node-feature-discovery/features.d/"</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="comment"># From https://github.com/NVIDIA/gpu-feature-discovery/blob/main/deployments/static/gpu-feature-discovery-daemonset.yaml</span></span><br><span class="line"><span class="comment"># Modified to set `runtimeClassName: nvidia`, as k3s does not replace the default container runtime</span></span><br><span class="line"><span class="attr">apiVersion:</span> <span class="string">apps/v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">DaemonSet</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">gpu-feature-discovery</span></span><br><span class="line">  <span class="attr">namespace:</span> <span class="string">node-feature-discovery</span></span><br><span class="line">  <span class="attr">labels:</span></span><br><span class="line">    <span class="attr">app.kubernetes.io/name:</span> <span class="string">gpu-feature-discovery</span></span><br><span class="line">    <span class="attr">app.kubernetes.io/version:</span> <span class="number">0.6</span><span class="number">.1</span></span><br><span class="line">    <span class="attr">app.kubernetes.io/part-of:</span> <span class="string">nvidia-gpu</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">selector:</span></span><br><span class="line">    <span class="attr">matchLabels:</span></span><br><span class="line">      <span class="attr">app.kubernetes.io/name:</span> <span class="string">gpu-feature-discovery</span></span><br><span class="line">      <span class="attr">app.kubernetes.io/part-of:</span> <span class="string">nvidia-gpu</span></span><br><span class="line">  <span class="attr">template:</span></span><br><span class="line">    <span class="attr">metadata:</span></span><br><span class="line">      <span class="attr">labels:</span></span><br><span class="line">        <span class="attr">app.kubernetes.io/name:</span> <span class="string">gpu-feature-discovery</span></span><br><span class="line">        <span class="attr">app.kubernetes.io/version:</span> <span class="number">0.6</span><span class="number">.1</span></span><br><span class="line">        <span class="attr">app.kubernetes.io/part-of:</span> <span class="string">nvidia-gpu</span></span><br><span class="line">    <span class="attr">spec:</span></span><br><span class="line">      <span class="attr">runtimeClassName:</span> <span class="string">nvidia</span></span><br><span class="line">      <span class="attr">containers:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">image:</span> <span class="string">nvcr.io/nvidia/gpu-feature-discovery:v0.6.1</span></span><br><span class="line">          <span class="attr">name:</span> <span class="string">gpu-feature-discovery</span></span><br><span class="line">          <span class="attr">volumeMounts:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">output-dir</span></span><br><span class="line">              <span class="attr">mountPath:</span> <span class="string">"/etc/kubernetes/node-feature-discovery/features.d"</span></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">dmi-product-name</span></span><br><span class="line">              <span class="attr">mountPath:</span> <span class="string">"/sys/class/dmi/id/product_name"</span></span><br><span class="line">          <span class="attr">securityContext:</span></span><br><span class="line">            <span class="attr">privileged:</span> <span class="literal">true</span></span><br><span class="line">          <span class="attr">env:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">MIG_STRATEGY</span></span><br><span class="line">              <span class="attr">value:</span> <span class="string">none</span></span><br><span class="line">      <span class="attr">nodeSelector:</span></span><br><span class="line">        <span class="attr">feature.node.kubernetes.io/pci-10de.present:</span> <span class="string">"true"</span> <span class="comment"># NVIDIA vendor ID</span></span><br><span class="line">      <span class="attr">volumes:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">output-dir</span></span><br><span class="line">          <span class="attr">hostPath:</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">"/etc/kubernetes/node-feature-discovery/features.d"</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">dmi-product-name</span></span><br><span class="line">          <span class="attr">hostPath:</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">"/sys/class/dmi/id/product_name"</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="comment"># From https://github.com/NVIDIA/k8s-device-plugin/blob/master/nvidia-device-plugin.yml</span></span><br><span class="line"><span class="comment"># Modified to set `runtimeClassName: nvidia`, as k3s does not replace the default container runtime</span></span><br><span class="line"><span class="attr">apiVersion:</span> <span class="string">apps/v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">DaemonSet</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">nvidia-device-plugin-daemonset</span></span><br><span class="line">  <span class="attr">namespace:</span> <span class="string">kube-system</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">selector:</span></span><br><span class="line">    <span class="attr">matchLabels:</span></span><br><span class="line">      <span class="attr">name:</span> <span class="string">nvidia-device-plugin-ds</span></span><br><span class="line">  <span class="attr">updateStrategy:</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">RollingUpdate</span></span><br><span class="line">  <span class="attr">template:</span></span><br><span class="line">    <span class="attr">metadata:</span></span><br><span class="line">      <span class="attr">labels:</span></span><br><span class="line">        <span class="attr">name:</span> <span class="string">nvidia-device-plugin-ds</span></span><br><span class="line">    <span class="attr">spec:</span></span><br><span class="line">      <span class="attr">tolerations:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">key:</span> <span class="string">nvidia.com/gpu</span></span><br><span class="line">        <span class="attr">operator:</span> <span class="string">Exists</span></span><br><span class="line">        <span class="attr">effect:</span> <span class="string">NoSchedule</span></span><br><span class="line">      <span class="comment"># Mark this pod as a critical add-on; when enabled, the critical add-on</span></span><br><span class="line">      <span class="comment"># scheduler reserves resources for critical add-on pods so that they can</span></span><br><span class="line">      <span class="comment"># be rescheduled after a failure.</span></span><br><span class="line">      <span class="comment"># See https://kubernetes.io/docs/tasks/administer-cluster/guaranteed-scheduling-critical-addon-pods/</span></span><br><span class="line">      <span class="attr">priorityClassName:</span> <span class="string">"system-node-critical"</span></span><br><span class="line">      <span class="attr">runtimeClassName:</span> <span class="string">"nvidia"</span></span><br><span class="line">      <span class="attr">containers:</span></span><br><span class="line">      <span class="comment"># The below image from gitlab works on the wsl2 from 2023/7/26, see </span></span><br><span class="line">      <span class="comment">#     - https://github.com/NVIDIA/k8s-device-plugin/issues/332#issuecomment-1650894074</span></span><br><span class="line">      <span class="comment">#     - https://gitlab.com/nvidia/kubernetes/device-plugin/container_registry</span></span><br><span class="line">      <span class="comment"># - image: registry.gitlab.com/nvidia/kubernetes/device-plugin/staging/k8s-device-plugin:8b416016</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">image:</span> <span class="string">nvcr.io/nvidia/k8s-device-plugin:v0.14.1</span></span><br><span class="line">        <span class="attr">name:</span> <span class="string">nvidia-device-plugin-ctr</span></span><br><span class="line">        <span class="attr">env:</span></span><br><span class="line">          <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">FAIL_ON_INIT_ERROR</span></span><br><span class="line">            <span class="attr">value:</span> <span class="string">"false"</span></span><br><span class="line">        <span class="attr">securityContext:</span></span><br><span class="line">          <span class="attr">allowPrivilegeEscalation:</span> <span class="literal">false</span></span><br><span class="line">          <span class="attr">capabilities:</span></span><br><span class="line">            <span class="attr">drop:</span> [<span class="string">"ALL"</span>]</span><br><span class="line">        <span class="attr">volumeMounts:</span></span><br><span class="line">          <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">device-plugin</span></span><br><span class="line">            <span class="attr">mountPath:</span> <span class="string">/var/lib/kubelet/device-plugins</span></span><br><span class="line">      <span class="attr">volumes:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">device-plugin</span></span><br><span class="line">          <span class="attr">hostPath:</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">/var/lib/kubelet/device-plugins</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="comment"># https://catalog.ngc.nvidia.com/orgs/nvidia/teams/k8s/containers/cuda-sample</span></span><br><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Pod</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">cuda-sample-vectoradd</span></span><br><span class="line">  <span class="attr">namespace:</span> <span class="string">default</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">restartPolicy:</span> <span class="string">OnFailure</span></span><br><span class="line">  <span class="attr">runtimeClassName:</span> <span class="string">nvidia</span></span><br><span class="line">  <span class="attr">containers:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">cuda-container</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">nvcr.io/nvidia/k8s/cuda-sample:vectoradd-cuda10.2</span></span><br><span class="line">    <span class="attr">resources:</span></span><br><span class="line">      <span class="attr">limits:</span></span><br><span class="line">        <span class="attr">nvidia.com/gpu:</span> <span class="number">1</span></span><br><span class="line">    <span class="attr">env:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">NVIDIA_VISIBLE_DEVICES</span></span><br><span class="line">      <span class="attr">value:</span> <span class="string">all</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">NVIDIA_DRIVER_CAPABILITIES</span></span><br><span class="line">      <span class="attr">value:</span> <span class="string">all</span></span><br></pre></td></tr></tbody></table></figure>
-<h4 id="使用-helm">使用 helm</h4>
+<h4 id="Enable-with-helm">Enable with helm</h4>
 <p>根据上面两种方式，设置 runtimeClassName, 在使用 helm 安装 k8s-device-plugin 需要注意:</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">cat &lt;&lt;EOF | kubectl apply -f -</span><br><span class="line">apiVersion: node.k8s.io/v1</span><br><span class="line">kind: RuntimeClass</span><br><span class="line">metadata:</span><br><span class="line">  name: nvidia</span><br><span class="line">handler: nvidia # 创建基于containerd的RuntimeClass, 使用dockerd时改为docker</span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line">helm repo add nvdp https://nvidia.github.io/k8s-device-plugin</span><br><span class="line">helm upgrade -i nvdp nvdp/nvidia-device-plugin \</span><br><span class="line">    --namespace nvdp \</span><br><span class="line">    --create-namespace \</span><br><span class="line">    --version 0.14.1 \</span><br><span class="line">    --set=runtimeClassName=nvidia</span><br><span class="line">    --set=image.repository=registry.gitlab.com/nvidia/kubernetes/device-plugin/staging/k8s-device-plugin:8b416016</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">cat</span> &lt;&lt;<span class="string">EOF | kubectl apply -f -</span></span><br><span class="line"><span class="string">apiVersion: node.k8s.io/v1</span></span><br><span class="line"><span class="string">kind: RuntimeClass</span></span><br><span class="line"><span class="string">metadata:</span></span><br><span class="line"><span class="string">  name: nvidia</span></span><br><span class="line"><span class="string">handler: nvidia # 创建基于containerd的RuntimeClass, 使用dockerd时改为docker</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"></span><br><span class="line">helm repo add nvdp https://nvidia.github.io/k8s-device-plugin</span><br><span class="line"><span class="comment"># 参考镜像:https://gitlab.com/nvidia/kubernetes/device-plugin/container_registry</span></span><br><span class="line">helm upgrade -i nvdp nvdp/nvidia-device-plugin \</span><br><span class="line">    --namespace nvdp \</span><br><span class="line">    --create-namespace \</span><br><span class="line">    --<span class="built_in">set</span>=runtimeClassName=nvidia \</span><br><span class="line">    --<span class="built_in">set</span>=image.repository=registry.gitlab.com/nvidia/kubernetes/device-plugin/staging/k8s-device-plugin \</span><br><span class="line">    --<span class="built_in">set</span>=image.tag=8b416016</span><br><span class="line"></span><br><span class="line">helm upgrade -i nvdp nvdp/nvidia-device-plugin \</span><br><span class="line">    --namespace nvdp \</span><br><span class="line">    --create-namespace \</span><br><span class="line">    --version v0.14.1 \</span><br><span class="line">    --<span class="built_in">set</span>=runtimeClassName=nvidia \</span><br><span class="line">    --<span class="built_in">set</span>=image.repository=nvcr.io/nvidia/k8s-device-plugin</span><br></pre></td></tr></tbody></table></figure>
 <p>links:</p>
 <ul class="lvl-0">
 <li class="lvl-2">
 <p><a href="https://github.com/k3s-io/k3s/issues/4391#issuecomment-1320992062">https://github.com/k3s-io/k3s/issues/4391#issuecomment-1320992062</a></p>
 </li>
 </ul>
-<h4 id="测试">测试</h4>
+<h4 id="Test">Test</h4>
 <p>测试 cuda sample.</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># https://github.com/NVIDIA/k8s-device-plugin/tree/master#running-gpu-jobs</span></span><br><span class="line"><span class="comment"># Add runtimeClassName to request gpu scheduled.</span></span><br><span class="line"><span class="built_in">cat</span> &lt;&lt;<span class="string">EOF | kubectl apply -f -</span></span><br><span class="line"><span class="string">apiVersion: v1</span></span><br><span class="line"><span class="string">kind: Pod</span></span><br><span class="line"><span class="string">metadata:</span></span><br><span class="line"><span class="string">  name: gpu-pod</span></span><br><span class="line"><span class="string">spec:</span></span><br><span class="line"><span class="string">  restartPolicy: Never</span></span><br><span class="line"><span class="string">  runtimeClassName: nvidia</span></span><br><span class="line"><span class="string">  containers:</span></span><br><span class="line"><span class="string">    - name: cuda-container</span></span><br><span class="line"><span class="string">      image: nvcr.io/nvidia/k8s/cuda-sample:vectoradd-cuda10.2</span></span><br><span class="line"><span class="string">      resources:</span></span><br><span class="line"><span class="string">        limits:</span></span><br><span class="line"><span class="string">          nvidia.com/gpu: 1 # requesting 1 GPU</span></span><br><span class="line"><span class="string">  tolerations:</span></span><br><span class="line"><span class="string">  - key: nvidia.com/gpu</span></span><br><span class="line"><span class="string">    operator: Exists</span></span><br><span class="line"><span class="string">    effect: NoSchedule</span></span><br><span class="line"><span class="string">EOF</span></span><br></pre></td></tr></tbody></table></figure>
 <p>links:</p>
@@ -7036,7 +7078,7 @@ Step 3, benchmark 测试</p>
 <p><a href="https://github.com/NVIDIA/k8s-device-plugin#enabling-gpu-support-in-kubernetes">https://github.com/NVIDIA/k8s-device-plugin#enabling-gpu-support-in-kubernetes</a></p>
 </li>
 </ul>
-<h3 id="配置国内镜像">配置国内镜像</h3>
+<h3 id="registry-mirror">registry mirror</h3>
 <p>如果从国内环境安装 K3s 可能会遇到安装速度特别缓慢或者 time out 的情况，从以上的安装过程可以分析出主要由以下几个原因导致：</p>
 <ul class="lvl-0">
 <li class="lvl-2">
@@ -7049,6 +7091,9 @@ Step 3, benchmark 测试</p>
 <p>当通过 channel 解析出对应 K3s 的版本为：v1.25.3+k3s1，此时需要到 github 上拉取对应的 K3s 二进制文件。虽然这个二进制文件才几十兆，但国内环境访问 github 经常会出现无法访问的情况。</p>
 </li>
 </ul>
+<p>配置国内镜像</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">cat</span> &gt;&gt; /etc/rancher/k3s/registries.yaml &lt;&lt;<span class="string">EOF</span></span><br><span class="line"><span class="string">mirrors:</span></span><br><span class="line"><span class="string">  "docker.io":</span></span><br><span class="line"><span class="string">    endpoint:</span></span><br><span class="line"><span class="string">      - "https://docker.mirrors.ustc.edu.cn" # 可根据需求替换 mirror 站点</span></span><br><span class="line"><span class="string">      - "https://registry-1.docker.io"</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line">systemctl restart k3s</span><br><span class="line"><span class="comment"># 核查registry字段验证是否生效</span></span><br><span class="line">crictl info</span><br></pre></td></tr></tbody></table></figure>
+<p>经过以上配置后，通过 K3s 拉取的镜像如果在配置的 mirror 站点中存在，那么将会从该站点拉取镜像。如果不存在，将会从默认的 <a href="http://docker.io">docker.io</a> 1 中拉取镜像。</p>
 <p>links:</p>
 <ul class="lvl-0">
 <li class="lvl-2">
@@ -7066,6 +7111,9 @@ Step 3, benchmark 测试</p>
 <p><a href="https://forums.rancher.cn/t/k3s-traefik-dashborad/699">如何在 K3s 中启用 traefik dashborad</a></p>
 </li>
 </ul>
+<h3 id="crictl">crictl</h3>
+<p>crictl: contaird cli 工具</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 显示容器运行时信息</span></span><br><span class="line">crictl info</span><br><span class="line"><span class="comment"># 查看镜像</span></span><br><span class="line">crictl images</span><br><span class="line"><span class="comment"># 查看pods</span></span><br><span class="line">crictl pods</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="rke2">rke2</h2>
 <p><a href="https://docs.rke2.io/zh/">rke2</a>，也被称为 RKE Government，是 Rancher 的下一代 Kubernetes 发行版</p>
 <p>links:</p>
@@ -8482,8 +8530,10 @@ GITHUB_TOKEN 自动被 Github 创建.</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">branch=xxx_release_v2</span><br><span class="line"><span class="keyword">if</span> <span class="built_in">echo</span> <span class="string">"<span class="variable">$branch</span>"</span> | grep -q <span class="string">'release'</span>; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"This is a release version."</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></tbody></table></figure>
 <p>命令执行正确</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> curl -m 3 github.com ; <span class="keyword">then</span></span><br><span class="line">    docker_hub=github.com ;</span><br><span class="line"><span class="keyword">elif</span> curl -m3 ghproxy.com/https://github.com ; <span class="keyword">then</span></span><br><span class="line">    docker_hub=ghproxy.com/https://github.com ;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"no docker registry"</span> ;</span><br><span class="line">    <span class="built_in">exit</span> -1 ;</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></tbody></table></figure>
-<p>也可以使用逻辑运算符 &amp;&amp;（和）和 ||（或）来组合多个条件</p>
+<p>使用逻辑运算符 &amp;&amp;（和）和 ||（或）来组合多个条件</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> [ <span class="variable">$var</span> -gt 10 ] &amp;&amp; [ <span class="variable">$var</span> -lt 20 ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">   <span class="built_in">echo</span> <span class="string">"Variable is between 10 and 20"</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></tbody></table></figure>
+<p>-n 用于判断字符串是否非空，如果字符串的长度大于 0，则返回 true，否则返回 false。</p>
+<p>-z 用于判断字符串是否为空，如果字符串的长度等于 0，则返回 true，否则返回 false。</p>
 <h3 id="function">function</h3>
 <ul class="lvl-0">
 <li class="lvl-2">
@@ -8547,6 +8597,9 @@ GITHUB_TOKEN 自动被 Github 创建.</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">filesystem=$(<span class="built_in">df</span> -T . | awk <span class="string">'NR==2 {print $2}'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [[ <span class="variable">$filesystem</span> == <span class="string">"ext4"</span> ]]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"The file system is ext4."</span></span><br><span class="line"><span class="keyword">elif</span> [[ <span class="variable">$filesystem</span> == <span class="string">"xfs"</span> ]]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"The file system is xfs."</span></span><br><span class="line"><span class="keyword">elif</span> [[ <span class="variable">$filesystem</span> == <span class="string">"btrfs"</span> ]]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"The file system is btrfs."</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"Unknown file system and skip the code check because of the performance."</span></span><br><span class="line">    <span class="built_in">exit</span> 0</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></tbody></table></figure>
 <h3 id="for">for</h3>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 查看当前文件属性</span></span><br><span class="line"><span class="keyword">for</span> f <span class="keyword">in</span> *; <span class="keyword">do</span> file <span class="variable">$f</span>;<span class="keyword">done</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="command-and-check">command and check</h3>
+<p>执行命令并检查是否执行成功</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 执行失败设置错误退出码</span></span><br><span class="line">status=0</span><br><span class="line">pre-commit run --all-files || status=$?</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行命令</span></span><br><span class="line"><span class="built_in">ls</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 判断命令执行结果</span></span><br><span class="line"><span class="keyword">if</span> [ $? -eq 0 ]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"命令执行成功"</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"命令执行失败"</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></tbody></table></figure>
 <h2 id="envsubst">envsubst</h2>
 <p>envsubst 用于文件变量替换</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">apt install gettext-base</span><br></pre></td></tr></tbody></table></figure>
@@ -8641,7 +8694,7 @@ GITHUB_TOKEN 自动被 Github 创建.</p>
 <p>c\ 把选定的行改为新的文本。</p>
 </li>
 </ul>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 删除#开头的行</span></span><br><span class="line">sed -i <span class="string">'/^#/ d'</span> path/to/file</span><br><span class="line"><span class="comment"># 在第二行后插入一行 "default-runtime": "nvidia",</span></span><br><span class="line">sed -i <span class="string">'2i\    "default-runtime": "nvidia",'</span> /etc/docker/daemon.json</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 删除#开头的行</span></span><br><span class="line">sed -i <span class="string">'/^#/ d'</span> path/to/file</span><br><span class="line"><span class="comment"># 在第二行后插入一行 "default-runtime": "nvidia",</span></span><br><span class="line">sed -i <span class="string">'2i\    "default-runtime": "nvidia",'</span> /etc/docker/daemon.json</span><br><span class="line"><span class="comment"># bash\r: No such file or directory</span></span><br><span class="line">sed $<span class="string">'s/\r$//'</span> ./install.sh &gt; ./install.Unix.sh</span><br></pre></td></tr></tbody></table></figure>
 <span id="more"></span>
 <p><img data-src="https://raw.githubusercontent.com/msclock/images/main/images/20221024/122455475.png" alt="image."><br>
 <img data-src="https://raw.githubusercontent.com/msclock/images/main/images/20221024/122540157.png" alt="image."></p>
@@ -8785,7 +8838,7 @@ gzip 在 ubuntu/debian 使用 -d 解压存在重定向问题，建议使用 -dc 
 <p>删除服务，服务文件通常位于 /etc/systemd/system/ 或 /usr/lib/systemd/system/ 目录下</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">sudo <span class="built_in">rm</span> /etc/systemd/system/[service-name]</span><br><span class="line">sudo <span class="built_in">rm</span> /usr/lib/systemd/system/[service-name]</span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line"><span class="comment"># 重置失败的单元</span></span><br><span class="line">sudo systemctl reset-failed</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="mktemp">mktemp</h2>
-<p>mktemp -d -t 是一个在 Unix 或类 Unix 系统（如 Linux 或 MacOS）中使用的命令，用于创建一个临时目录。</p>
+<p>mktemp 是一个在 Unix 或类 Unix 系统（如 Linux 或 MacOS）中使用的命令，用于创建一个临时目录。</p>
 <ul class="lvl-0">
 <li class="lvl-2">
 <p>mktemp 是一个命令行工具，用于创建一个临时文件或目录。</p>
@@ -8797,7 +8850,67 @@ gzip 在 ubuntu/debian 使用 -d 解压存在重定向问题，建议使用 -dc 
 <p>-t 选项用于指定临时文件或目录的模板字符串。</p>
 </li>
 </ul>
-<p>例如，mktemp -d -t example 将创建一个名为 example.XXXXXX 的临时目录，其中 XXXXXX 是自动生成的随机字符。</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 创建一个名为 example.XXXXXX 的临时目录，其中 XXXXXX 是自动生成的随机字符。</span></span><br><span class="line"><span class="built_in">mktemp</span> -d -t example  </span><br></pre></td></tr></tbody></table></figure>
+<h2 id="tmux">tmux</h2>
+<p><a href="http://tmux.github.io/">tmux</a> 是一个终端复用工具，它允许在一个终端窗口中同时运行多个终端会话。以下是 tmux 的一些常用命令和用法：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">apt-get install tmux</span><br><span class="line">yum install -y tmux</span><br><span class="line"><span class="comment"># 启动tmux会话</span></span><br><span class="line">tmux</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="创建新窗口">创建新窗口</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>使用快捷键 Ctrl + b，然后按下 c 创建一个新窗口。</p>
+</li>
+<li class="lvl-2">
+<p>或者使用命令：<code>tmux new-window</code></p>
+</li>
+</ul>
+<h3 id="切换窗口">切换窗口</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>使用快捷键 Ctrl + b，然后按下数字键 0 到 9 切换到对应的窗口。</p>
+</li>
+<li class="lvl-2">
+<p>或者使用命令：<code>tmux select-window -t &lt;window-index&gt;</code></p>
+</li>
+</ul>
+<h3 id="滚动窗口">滚动窗口</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>使用快捷键 Ctrl + b，然后按下 <code>[</code>进入复制模式。</p>
+</li>
+<li class="lvl-2">
+<p>使用上下箭头或 Page Up/Page Down 键滚动。</p>
+</li>
+<li class="lvl-2">
+<p>按下 q 退出复制模式。</p>
+</li>
+</ul>
+<h3 id="分割窗格">分割窗格</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>使用快捷键 Ctrl + b，然后按下 <code>%</code> 垂直分割当前窗格。</p>
+</li>
+<li class="lvl-2">
+<p>使用快捷键 Ctrl + b，然后按下 ` 水平分割当前窗格。</p>
+</li>
+</ul>
+<h3 id="切换窗格">切换窗格</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>使用快捷键 Ctrl + b，然后按下方向键切换到相邻的窗格。</p>
+</li>
+<li class="lvl-2">
+<p>或者使用命令：<code>tmux select-pane -[UDLR]</code>, 其中，[UDLR] 表示上下左右方向。</p>
+</li>
+</ul>
+<h3 id="退出tmux会话">退出 tmux 会话</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>使用快捷键 Ctrl + b，然后按下 d 将会话放入后台。</p>
+</li>
+<li class="lvl-2">
+<p>或者使用命令：<code>tmux detach-client</code></p>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>develop</category>
@@ -9150,44 +9263,18 @@ gzip 在 ubuntu/debian 使用 -d 解压存在重定向问题，建议使用 -dc 
       </categories>
   </entry>
   <entry>
-    <title>flutter env</title>
-    <url>/posts/e529fd32/</url>
-    <content><![CDATA[<h1>flutter SDK</h1>
-<ul class="lvl-0">
-<li class="lvl-2">解压安装 <code>建议不要安装到权限过高的路径</code></li>
-<li class="lvl-2">设置 <code>bin</code> 环境变量</li>
-<li class="lvl-2">设置 flutter <a href="https://mirrors.tuna.tsinghua.edu.cn/help/flutter/">镜像</a></li>
-</ul>
-<span id="more"></span>
-<ul class="lvl-0">
+    <title>态度</title>
+    <url>/posts/459958868/</url>
+    <content><![CDATA[<ul class="lvl-0">
 <li class="lvl-2">
-<p>设置 pub 镜像</p>
-</li>
-</ul>
-<h1>plugins</h1>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>VsCode</p>
-<ul class="lvl-2">
-<li class="lvl-4">dart</li>
-<li class="lvl-4">flutter</li>
-</ul>
-</li>
-</ul>
-<h1>模拟器</h1>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>推荐雷电模拟器</p>
+<p>凡事敢想就成功了一半，只要努力去做，就一定能成功，除非我停止尝试，否则就永远不会是失败者。比如今天的生活，就是三年前选择决定的，而今天的选择将决定三年后的生活。</p>
 </li>
 </ul>
 ]]></content>
       <categories>
-        <category>develop</category>
-        <category>flutter</category>
+        <category>young</category>
+        <category>态度</category>
       </categories>
-      <tags>
-        <tag>flutter</tag>
-      </tags>
   </entry>
   <entry>
     <title>Python Attach Debug</title>
@@ -9524,18 +9611,44 @@ Debugging commands with Gdb</p>
       </categories>
   </entry>
   <entry>
-    <title>态度</title>
-    <url>/posts/459958868/</url>
-    <content><![CDATA[<ul class="lvl-0">
+    <title>flutter env</title>
+    <url>/posts/e529fd32/</url>
+    <content><![CDATA[<h1>flutter SDK</h1>
+<ul class="lvl-0">
+<li class="lvl-2">解压安装 <code>建议不要安装到权限过高的路径</code></li>
+<li class="lvl-2">设置 <code>bin</code> 环境变量</li>
+<li class="lvl-2">设置 flutter <a href="https://mirrors.tuna.tsinghua.edu.cn/help/flutter/">镜像</a></li>
+</ul>
+<span id="more"></span>
+<ul class="lvl-0">
 <li class="lvl-2">
-<p>凡事敢想就成功了一半，只要努力去做，就一定能成功，除非我停止尝试，否则就永远不会是失败者。比如今天的生活，就是三年前选择决定的，而今天的选择将决定三年后的生活。</p>
+<p>设置 pub 镜像</p>
+</li>
+</ul>
+<h1>plugins</h1>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>VsCode</p>
+<ul class="lvl-2">
+<li class="lvl-4">dart</li>
+<li class="lvl-4">flutter</li>
+</ul>
+</li>
+</ul>
+<h1>模拟器</h1>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>推荐雷电模拟器</p>
 </li>
 </ul>
 ]]></content>
       <categories>
-        <category>young</category>
-        <category>态度</category>
+        <category>develop</category>
+        <category>flutter</category>
       </categories>
+      <tags>
+        <tag>flutter</tag>
+      </tags>
   </entry>
   <entry>
     <title>学习</title>
