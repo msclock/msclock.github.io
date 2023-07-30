@@ -2281,7 +2281,7 @@ MVP (Minimum viable Product) 以最小的代价提供一个可测试交付的版
   <entry>
     <title>clash</title>
     <url>/posts/3b768905/</url>
-    <content><![CDATA[<h2 id="Clash-Proxy">Clash Proxy</h2>
+    <content><![CDATA[<h2 id="Proxy">Proxy</h2>
 <table>
 <thead>
 <tr>
@@ -2347,8 +2347,21 @@ MVP (Minimum viable Product) 以最小的代价提供一个可测试交付的版
 <p><a href="https://clashdingyue.tk/2022/06/%E6%AD%A3%E7%A1%AE%E9%85%8D%E7%BD%AEClash-For-Windows/">代理模式</a></p>
 </li>
 </ul>
-<h2 id="Subs">Subs</h2>
-<p>从 GitHub 获取的免费订阅如下：</p>
+<span id="more"></span>
+<h2 id="Subscribe">Subscribe</h2>
+<h3 id="sub-convert">sub convert</h3>
+<p><a href="https://github.com/youshandefeiyang/sub-web-modify">sub web modify</a> 订阅转换工具，方便将订阅转换到 clash 支持解析的链接使用</p>
+<h4 id="docker-install">docker install</h4>
+<p>可以简单通过本地 docker 安装</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">    --restart unless-stopped \</span><br><span class="line">    --privileged=<span class="literal">true</span> \</span><br><span class="line">    -p 8090:80 \</span><br><span class="line">    --name sub-web-modify \</span><br><span class="line">    youshandefeiyang/sub-web-modify</span><br></pre></td></tr></tbody></table></figure>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://github.com/youshandefeiyang/sub-web-modify">https://github.com/youshandefeiyang/sub-web-modify</a></p>
+</li>
+</ul>
+<h3 id="搜集-clash-订阅">搜集 clash 订阅</h3>
+<p>从 GitHub 获取的免费订阅如下</p>
 <ul class="lvl-0">
 <li class="lvl-2">
 <p><a href="https://anaer.github.io/Sub/clash.yaml">https://anaer.github.io/Sub/clash.yaml</a></p>
@@ -2363,8 +2376,7 @@ MVP (Minimum viable Product) 以最小的代价提供一个可测试交付的版
 <p><a href="https://ghproxy.com/https://raw.githubusercontent.com/ripaojiedian/freenode/main/clash">https://ghproxy.com/https://raw.githubusercontent.com/ripaojiedian/freenode/main/clash</a></p>
 </li>
 </ul>
-<span id="more"></span>
-<h2 id="日更节点地址">日更节点地址</h2>
+<p>从博客或 github 收集的日更节点地址</p>
 <ul class="lvl-0">
 <li class="lvl-2">
 <p><a href="https://v2rayshare.com/wp-content/uploads/2023/03/20230320.yaml">https://v2rayshare.com/wp-content/uploads/2023/03/20230320.yaml</a></p>
@@ -2378,10 +2390,8 @@ MVP (Minimum viable Product) 以最小的代价提供一个可测试交付的版
 <li class="lvl-2">
 <p><a href="https://nodefree.org/dy/2023/03/20230325.yaml">https://nodefree.org/dy/2023/03/20230325.yaml</a></p>
 </li>
-<li class="lvl-2">
-</li>
 </ul>
-<h2 id="Stub-pools">Stub pools</h2>
+<h3 id="订阅采集节点池">订阅采集节点池</h3>
 <ul class="lvl-0">
 <li class="lvl-2">
 <p><a href="https://proxypool.neocities.org/">https://proxypool.neocities.org/</a></p>
@@ -2402,8 +2412,8 @@ MVP (Minimum viable Product) 以最小的代价提供一个可测试交付的版
 <p><a href="https://free.jingfu.cf/">https://free.jingfu.cf/</a></p>
 </li>
 </ul>
-<h2 id="节点筛选">节点筛选</h2>
-<p>节点搜索关键词：</p>
+<h3 id="节点筛选">节点筛选</h3>
+<p>浏览器搜索关键词，搜索节点池页面显示的文字</p>
 <ul class="lvl-0">
 <li class="lvl-2">
 <p><code>共有抓取源</code></p>
@@ -2418,7 +2428,8 @@ MVP (Minimum viable Product) 以最小的代价提供一个可测试交付的版
 <p><a href="https://free.jingfu.cf/">https://free.jingfu.cf/</a></p>
 </li>
 </ul>
-<h2 id="节点列表">节点列表</h2>
+<h3 id="原始节点列表">原始节点列表</h3>
+<p>原始节点池需要经过采集，验证，过滤，转换等步骤，才能用于 clash 订阅使用</p>
 <ul class="lvl-0">
 <li class="lvl-2">
 <p><a href="https://www.bestproxyreviews.com/free-proxy-list/">https://www.bestproxyreviews.com/free-proxy-list/</a></p>
