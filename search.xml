@@ -6000,20 +6000,20 @@ base64：eJwr</p>
     <title>GitHub</title>
     <url>/posts/5c9de83f/</url>
     <content><![CDATA[<h2 id="GitHub-CI">GitHub CI</h2>
-<h2 id="GitHub-Action-Local">GitHub Action Local</h2>
+<h2 id="act">act</h2>
 <p><a href="https://github.com/nektos/act">act</a> 用于本地测试 GitHub Action 管道，避免频繁推送到远程测试 CI 流程。</p>
 <p>手动安装需要各个平台安装工具</p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># choco</span></span><br><span class="line">choco install act-cli</span><br><span class="line"><span class="comment"># winget</span></span><br><span class="line">winget install nektos.act</span><br><span class="line"><span class="comment"># gh release</span></span><br><span class="line">gh extension install https://github.com/nektos/gh-act</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># bash</span></span><br><span class="line">curl -s https://raw.githubusercontent.com/nektos/act/master/install.sh | bash</span><br><span class="line"><span class="comment"># choco</span></span><br><span class="line">choco install act-cli</span><br><span class="line"><span class="comment"># winget</span></span><br><span class="line">winget install nektos.act</span><br><span class="line"><span class="comment"># gh release</span></span><br><span class="line">gh extension install https://github.com/nektos/gh-act</span><br></pre></td></tr></tbody></table></figure>
+<span id="more"></span>
 <p>通过 devcontainer feature 支持 <a href="https://github.com/devcontainers-contrib/features/tree/main/src/act">act</a></p>
 <blockquote>
 <p>[!TIP]<br>
 建议在 vscode devcontainer 配置 dind 进行测试。</p>
 </blockquote>
 <figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">"features"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"ghcr.io/devcontainers-contrib/features/act:1"</span><span class="punctuation">:</span> <span class="punctuation">{</span><span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
-<span id="more"></span>
 <h3 id="常用命令">常用命令</h3>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 列出 actions jobs/workflows</span></span><br><span class="line">act --list</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Actions">Actions</h2>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 列出 actions jobs/workflows</span></span><br><span class="line">act --list/-l</span><br><span class="line"><span class="comment"># Stage  Job ID  Job name  Workflow name  Workflow file     Events           </span></span><br><span class="line"><span class="comment"># 0      build   build     build          devcontainer.yml  pull_request,push</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行 actions job, -v --verbose</span></span><br><span class="line">act -j &lt;job ID&gt; -v</span><br><span class="line"></span><br><span class="line"><span class="comment"># 传递 secrets, 匹配actions yaml中引用方式 `${{ secrets.DOCKER_REGISTRY_PASS }}`</span></span><br><span class="line">act -s DOCKER_REGISTRY_ID=1234 -s DOCKER_REGISTRY_PASS=1234</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="actions">actions</h2>
 <p>links:</p>
 <ul class="lvl-0">
 <li class="lvl-2">
@@ -6036,8 +6036,10 @@ base64：eJwr</p>
 <p>总结来说，GITHUB_TOKEN 是由 GitHub 提供的特殊令牌，用于对 GitHub API 进行身份验证和授权，而 PERSONAL_TOKEN 是用户自己生成的令牌，也用于对 GitHub 进行身份验证和授权，但权限可能会受到限制。</p>
 <h3 id="actions-collection">actions collection</h3>
 <h4 id="dockerhub-ghcr">dockerhub/ghcr</h4>
-<p>Sync images from dockerhub to ghcr</p>
-<figure class="highlight yml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">steps:</span></span><br><span class="line">    <span class="comment"># ...</span></span><br><span class="line">  <span class="bullet">-</span> <span class="comment"># ghcr logins for pushing image after testing</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">Login</span> <span class="string">to</span> <span class="string">GitHub</span> <span class="string">Container</span> <span class="string">Registry</span></span><br><span class="line">    <span class="attr">uses:</span> <span class="string">docker/login-action@v2</span></span><br><span class="line">    <span class="attr">with:</span></span><br><span class="line">      <span class="attr">registry:</span> <span class="string">ghcr.io</span></span><br><span class="line">      <span class="attr">username:</span> <span class="string">${{</span> <span class="string">github.repository_owner</span> <span class="string">}}</span></span><br><span class="line">      <span class="attr">password:</span> <span class="string">${{</span> <span class="string">secrets.GITHUB_TOKEN</span> <span class="string">}}</span></span><br><span class="line">  <span class="bullet">-</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">Login</span> <span class="string">to</span> <span class="string">DockerHub</span></span><br><span class="line">    <span class="attr">uses:</span> <span class="string">docker/login-action@v2</span></span><br><span class="line">    <span class="attr">with:</span></span><br><span class="line">      <span class="attr">username:</span> <span class="string">${{</span> <span class="string">secrets.DOCKER_REGISTRY_ID</span> <span class="string">}}</span></span><br><span class="line">      <span class="attr">password:</span> <span class="string">${{</span> <span class="string">secrets.DOCKER_REGISTRY_PASS</span> <span class="string">}}</span></span><br><span class="line">  <span class="bullet">-</span> <span class="comment"># copy 3rd party zookeeper image from dockerhub to ghcr</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">Push</span> <span class="string">Image</span> <span class="string">(zookeeper)</span> <span class="string">to</span> <span class="string">target</span> <span class="string">registries</span></span><br><span class="line">    <span class="attr">uses:</span> <span class="string">akhilerm/tag-push-action@v2.0.0</span></span><br><span class="line">    <span class="attr">with:</span></span><br><span class="line">      <span class="attr">src:</span> <span class="string">wurstmeister/zookeeper:latest</span></span><br><span class="line">      <span class="attr">dst:</span> <span class="string">|</span></span><br><span class="line"><span class="string">        ghcr.io/${{ github.repository_owner }}/3rdparty/zookeeper:latest</span></span><br><span class="line"><span class="string"></span>  <span class="bullet">-</span> <span class="comment"># copy 3rd party kafka image from dockerhub to ghcr</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">Push</span> <span class="string">Image</span> <span class="string">(kafka)</span> <span class="string">to</span> <span class="string">target</span> <span class="string">registries</span></span><br><span class="line">    <span class="attr">uses:</span> <span class="string">akhilerm/tag-push-action@v2.0.0</span></span><br><span class="line">    <span class="attr">with:</span></span><br><span class="line">      <span class="attr">src:</span> <span class="string">wurstmeister/kafka:latest</span></span><br><span class="line">      <span class="attr">dst:</span> <span class="string">|</span></span><br><span class="line">        <span class="string">ghcr.io/${{</span> <span class="string">github.repository_owner</span> <span class="string">}}/3rdparty/kafka:latest</span></span><br></pre></td></tr></tbody></table></figure>
+<p><strong>docker/login-action@v2</strong></p>
+<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">steps:</span></span><br><span class="line">    <span class="comment"># ...</span></span><br><span class="line"></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Login</span> <span class="string">to</span> <span class="string">DockerHub</span></span><br><span class="line">    <span class="attr">uses:</span> <span class="string">docker/login-action@v2</span></span><br><span class="line">    <span class="attr">with:</span></span><br><span class="line">      <span class="attr">username:</span> <span class="string">${{</span> <span class="string">secrets.DOCKER_REGISTRY_ID</span> <span class="string">}}</span></span><br><span class="line">      <span class="attr">password:</span> <span class="string">${{</span> <span class="string">secrets.DOCKER_REGISTRY_PASS</span> <span class="string">}}</span></span><br><span class="line"></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Login</span> <span class="string">to</span> <span class="string">GitHub</span> <span class="string">Container</span> <span class="string">Registry</span></span><br><span class="line">    <span class="attr">uses:</span> <span class="string">docker/login-action@v2</span></span><br><span class="line">    <span class="attr">with:</span></span><br><span class="line">      <span class="attr">registry:</span> <span class="string">ghcr.io</span></span><br><span class="line">      <span class="attr">username:</span> <span class="string">${{</span> <span class="string">github.repository_owner</span> <span class="string">}}</span></span><br><span class="line">      <span class="attr">password:</span> <span class="string">${{</span> <span class="string">secrets.GITHUB_TOKEN</span> <span class="string">}}</span></span><br></pre></td></tr></tbody></table></figure>
+<p><strong>Sync images from dockerhub to ghcr</strong></p>
+<figure class="highlight yml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">steps:</span></span><br><span class="line">    <span class="comment"># ...</span></span><br><span class="line"></span><br><span class="line">  <span class="bullet">-</span> <span class="comment"># ghcr logins for pushing image after testing</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">Login</span> <span class="string">to</span> <span class="string">GitHub</span> <span class="string">Container</span> <span class="string">Registry</span></span><br><span class="line">    <span class="attr">uses:</span> <span class="string">docker/login-action@v2</span></span><br><span class="line">    <span class="attr">with:</span></span><br><span class="line">      <span class="attr">registry:</span> <span class="string">ghcr.io</span></span><br><span class="line">      <span class="attr">username:</span> <span class="string">${{</span> <span class="string">github.repository_owner</span> <span class="string">}}</span></span><br><span class="line">      <span class="attr">password:</span> <span class="string">${{</span> <span class="string">secrets.GITHUB_TOKEN</span> <span class="string">}}</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Login</span> <span class="string">to</span> <span class="string">DockerHub</span></span><br><span class="line">    <span class="attr">uses:</span> <span class="string">docker/login-action@v2</span></span><br><span class="line">    <span class="attr">with:</span></span><br><span class="line">      <span class="attr">username:</span> <span class="string">${{</span> <span class="string">secrets.DOCKER_REGISTRY_ID</span> <span class="string">}}</span></span><br><span class="line">      <span class="attr">password:</span> <span class="string">${{</span> <span class="string">secrets.DOCKER_REGISTRY_PASS</span> <span class="string">}}</span></span><br><span class="line">  <span class="bullet">-</span> <span class="comment"># copy 3rd party zookeeper image from dockerhub to ghcr</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">Push</span> <span class="string">Image</span> <span class="string">(zookeeper)</span> <span class="string">to</span> <span class="string">target</span> <span class="string">registries</span></span><br><span class="line">    <span class="attr">uses:</span> <span class="string">akhilerm/tag-push-action@v2.0.0</span></span><br><span class="line">    <span class="attr">with:</span></span><br><span class="line">      <span class="attr">src:</span> <span class="string">wurstmeister/zookeeper:latest</span></span><br><span class="line">      <span class="attr">dst:</span> <span class="string">|</span></span><br><span class="line"><span class="string">        ghcr.io/${{ github.repository_owner }}/3rdparty/zookeeper:latest</span></span><br><span class="line"><span class="string"></span>  <span class="bullet">-</span> <span class="comment"># copy 3rd party kafka image from dockerhub to ghcr</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">Push</span> <span class="string">Image</span> <span class="string">(kafka)</span> <span class="string">to</span> <span class="string">target</span> <span class="string">registries</span></span><br><span class="line">    <span class="attr">uses:</span> <span class="string">akhilerm/tag-push-action@v2.0.0</span></span><br><span class="line">    <span class="attr">with:</span></span><br><span class="line">      <span class="attr">src:</span> <span class="string">wurstmeister/kafka:latest</span></span><br><span class="line">      <span class="attr">dst:</span> <span class="string">|</span></span><br><span class="line">        <span class="string">ghcr.io/${{</span> <span class="string">github.repository_owner</span> <span class="string">}}/3rdparty/kafka:latest</span></span><br></pre></td></tr></tbody></table></figure>
 <h4 id="actions-checkout">actions/checkout</h4>
 <p>在 CI 中迁出代码</p>
 <figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">'build'</span> </span><br><span class="line"><span class="attr">on:</span> <span class="comment"># rebuild any PRs and main branch changes</span></span><br><span class="line">  <span class="attr">pull_request:</span></span><br><span class="line">  <span class="attr">push:</span></span><br><span class="line">    <span class="attr">branches:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">main</span></span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">build:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line"></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Checkout</span> <span class="string">(GitHub)</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/checkout@v3</span></span><br></pre></td></tr></tbody></table></figure>
@@ -6050,7 +6052,7 @@ base64：eJwr</p>
 <p><a href="https://github.com/actions/checkout/pkgs/container/checkout">https://github.com/actions/checkout/pkgs/container/checkout</a></p>
 </li>
 </ul>
-<h4 id="yesolutions-mirror-action-master">yesolutions/mirror-action@master</h4>
+<h4 id="yesolutions-mirror-action">yesolutions/mirror-action</h4>
 <p>仓库同步</p>
 <figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># A workflow run is made up of one or more jobs that can run sequentially or in parallel</span></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="comment"># This workflow contains a single job called "build"</span></span><br><span class="line">  <span class="attr">build:</span></span><br><span class="line">    <span class="comment"># The type of runner that the job will run on</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># ... pull codes</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">mirror-to-gitlab</span></span><br><span class="line">      <span class="attr">uses:</span> <span class="string">yesolutions/mirror-action@master</span></span><br><span class="line">      <span class="attr">with:</span></span><br><span class="line">        <span class="attr">REMOTE:</span> <span class="string">&lt;your</span> <span class="string">repository</span> <span class="string">address&gt;</span></span><br><span class="line">        <span class="attr">GIT_USERNAME:</span> <span class="string">${{</span> <span class="string">github.repository_owner</span> <span class="string">}}</span></span><br><span class="line">        <span class="attr">GIT_PASSWORD:</span> <span class="string">${{</span> <span class="string">secrets.GIT_PASSWORD</span> <span class="string">}}</span></span><br><span class="line">        <span class="attr">DEBUG:</span> <span class="string">"true"</span></span><br></pre></td></tr></tbody></table></figure>
 <p>links:</p>
@@ -6074,7 +6076,7 @@ base64：eJwr</p>
 </li>
 </ul>
 <figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Pre-build</span> <span class="string">image</span> <span class="string">and</span> <span class="string">run</span> <span class="string">make</span> <span class="string">ci-build</span> <span class="string">in</span> <span class="string">dev</span> <span class="string">container</span></span><br><span class="line">  <span class="attr">uses:</span> <span class="string">devcontainers/ci@v0.3</span></span><br><span class="line">  <span class="attr">with:</span></span><br><span class="line">    <span class="attr">imageName:</span> <span class="string">ghcr.io/example/example-devcontainer</span></span><br><span class="line">    <span class="attr">cacheFrom:</span> <span class="string">ghcr.io/example/example-devcontainer</span></span><br><span class="line">    <span class="attr">push:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">runCmd:</span> <span class="string">make</span> <span class="string">ci-build</span></span><br></pre></td></tr></tbody></table></figure>
-<p>linksL</p>
+<p>links:</p>
 <ul class="lvl-0">
 <li class="lvl-2">
 <p><a href="https://github.com/devcontainers/ci">https://github.com/devcontainers/ci</a></p>
@@ -6304,11 +6306,9 @@ Step 4. 安装 gitlab-runner 服务。</p>
 </li>
 </ul>
 <h3 id="gitlab-tempalte">gitlab tempalte</h3>
+<p>根据 gitlab ci 使用经验总结出来的 gitlab template 仓库 <a href="https://gitlab.com/gitlab-ci-utils/gitlab-ci-templates">gitlab-ci-template</a></p>
 <p>links:</p>
 <ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://gitlab.com/gitlab-ci-utils/gitlab-ci-templates">https://gitlab.com/gitlab-ci-utils/gitlab-ci-templates</a></p>
-</li>
 <li class="lvl-2">
 <p><a href="https://hodovi.cc/blog/creating-templates-for-gitlab-ci-jobs/">https://hodovi.cc/blog/creating-templates-for-gitlab-ci-jobs/</a></p>
 </li>
@@ -6433,12 +6433,35 @@ k8s:
 
 https://thenewstack.io/tutorial-deploy-the-nvidia-gpu-operator-on-kubernetes-based-on-containerd-runtime/
  -->
+<h2 id="resource">resource</h2>
+<table>
+<thead>
+<tr>
+<th>资源</th>
+<th>组织</th>
+<th>类型 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/bregman-arie/devops-exercises/blob/master/topics/kubernetes/README.md">devops-exercises</a></td>
+<td>bregman-arie</td>
+<td> 基础</td>
+</tr>
+</tbody>
+</table>
 <h2 id="k8s">k8s</h2>
 <p>什么是 <a href="https://kubernetes.io/zh-cn/docs/home/">k8s</a></p>
 <ul class="lvl-0">
-<li class="lvl-2"> 开源的容器编排工具</li>
-<li class="lvl-2">由 google 开发</li>
-<li class="lvl-2">帮助在不同的部署环境中管理容器应用</li>
+<li class="lvl-2">
+<p>开源的容器编排工具</p>
+</li>
+<li class="lvl-2">
+<p>由 google 开发</p>
+</li>
+<li class="lvl-2">
+<p>帮助在不同的部署环境中管理容器应用</p>
+</li>
 </ul>
 <p>k8s 解决的问题</p>
 <ul class="lvl-0">
@@ -6895,9 +6918,6 @@ K8s:
 <p>kind get nodes: 获取 kind 集群中的节点信息</p>
 </li>
 </ul>
-<h3 id="GPU-2">GPU</h3>
-<p>kind 目前还不支持 GPU，但有三方的补丁 <a href="https://jacobtomlinson.dev/posts/2022/running-kubeflow-inside-kind-with-gpu-support/">Support</a>。</p>
-<p>Nvidia 适配 <a href="https://docs.nvidia.com/datacenter/cloud-native/kubernetes/install-k8s.html#">k8s</a> 及 <a href="https://github.com/NVIDIA/k8s-device-plugin">github repos</a>。</p>
 <h2 id="kubectl">kubectl</h2>
 <p>kubectl 是 Kubernetes 的命令行工具，用于管理 Kubernetes 集群，C/S 架构。</p>
 <h3 id="安装-3">安装</h3>
@@ -7778,7 +7798,24 @@ mamba 自带的 conda 环境中的 python 在 windows 上编译需要附带设�
   <entry>
     <title>network</title>
     <url>/posts/996635634/</url>
-    <content><![CDATA[<h2 id="ipv4">ipv4</h2>
+    <content><![CDATA[<h2 id="resource">resource</h2>
+<table>
+<thead>
+<tr>
+<th>资源</th>
+<th>组织</th>
+<th>类型 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/bregman-arie/devops-exercises#network">devops-exercises</a></td>
+<td>bregman-arie</td>
+<td> 基础</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ipv4">ipv4</h2>
 <h3 id="格式表示">格式表示</h3>
 <p>IPv4 地址是 Internet Protocol Version 4 的缩写，它是一种在互联网上使用的网络地址。IPv4 地址由四个数字组成，每个数字在 0 到 255 之间，数字之间用点（.）分隔。例如，192.168.1.1 就是一个 IPv4 地址。</p>
 <p>IPv4 地址的二进制表示是将每个数字转换为 8 位二进制数。例如，192.168.1.1 的二进制表示为：<code>11000000.10101000.00000001.00000001</code></p>
