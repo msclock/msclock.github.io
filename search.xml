@@ -172,7 +172,7 @@ https://www.bilibili.com/video/BV16r4y1Y7jv
 <h3 id="Tip">Tip</h3>
 <h4 id="jpg-to-numpy">jpg to numpy</h4>
 <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">from</span> Pillow <span class="keyword">import</span> PIL  <span class="comment"># need install pillow</span></span><br><span class="line"></span><br><span class="line">raw_img_np = np.fromfile(file_path, dtype=<span class="string">"uint8"</span>)</span><br><span class="line"><span class="comment"># convert from Pillow.Image.open</span></span><br><span class="line">image_p = PIL.Image.<span class="built_in">open</span>(io.BytesIO(raw_img_np.tobytes()))</span><br><span class="line">tensor = np.array(image_p)</span><br><span class="line"><span class="comment"># convert from cv2.imdecode</span></span><br><span class="line">tensor = cv2.imdecode(raw_img_np, cv2.IMREAD_COLOR)</span><br><span class="line"><span class="comment"># read from cv2.imread</span></span><br><span class="line">tensor = cv2.imread(file_path)</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="ChatGPT">ChatGPT</h2>
+<h2 id="GPT">GPT</h2>
 <h3 id="资源">资源</h3>
 <table>
 <thead>
@@ -197,6 +197,11 @@ https://www.bilibili.com/video/BV16r4y1Y7jv
 <td><a href="https://github.com/ramonvc/freegpt-webui">freegpt-webui</a></td>
 <td>ramonvc</td>
 <td>freegpt web app</td>
+</tr>
+<tr>
+<td><a href="https://github.com/h2oai/h2ogpt">h2ogpt</a></td>
+<td>h2oai</td>
+<td>private gpt server</td>
 </tr>
 </tbody>
 </table>
@@ -1501,6 +1506,23 @@ Error: RuntimeError: <a href="https://github.com/THUDM/ChatGLM-6B/issues/839">Li
 <p><a href="https://github.com/facebookresearch/ImageBind">ImageBind</a> 多模态互转.</p>
 <h2 id="segment-anything">segment-anything</h2>
 <p><a href="https://github.com/facebookresearch/segment-anything">segment-anything</a> MetaAI 分割模型.</p>
+<h2 id="milvus">milvus</h2>
+<p><a href="https://github.com/milvus-io/milvus">milvus</a> 向量数据库</p>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://zhuanlan.zhihu.com/p/139847892">以图搜视频 demo</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://github.com/milvus-io/pymilvus">milvus python sdk</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://github.com/zilliztech/cloud-vectordb-examples">milvus/zilliz example</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://github.com/qism/milvus_performance">milvus_performance</a></p>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>develop</category>
@@ -6054,7 +6076,7 @@ base64：eJwr</p>
 <figure class="highlight yml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">steps:</span></span><br><span class="line">    <span class="comment"># ...</span></span><br><span class="line"></span><br><span class="line">  <span class="bullet">-</span> <span class="comment"># ghcr logins for pushing image after testing</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">Login</span> <span class="string">to</span> <span class="string">GitHub</span> <span class="string">Container</span> <span class="string">Registry</span></span><br><span class="line">    <span class="attr">uses:</span> <span class="string">docker/login-action@v2</span></span><br><span class="line">    <span class="attr">with:</span></span><br><span class="line">      <span class="attr">registry:</span> <span class="string">ghcr.io</span></span><br><span class="line">      <span class="attr">username:</span> <span class="string">${{</span> <span class="string">github.repository_owner</span> <span class="string">}}</span></span><br><span class="line">      <span class="attr">password:</span> <span class="string">${{</span> <span class="string">secrets.GITHUB_TOKEN</span> <span class="string">}}</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Login</span> <span class="string">to</span> <span class="string">DockerHub</span></span><br><span class="line">    <span class="attr">uses:</span> <span class="string">docker/login-action@v2</span></span><br><span class="line">    <span class="attr">with:</span></span><br><span class="line">      <span class="attr">username:</span> <span class="string">${{</span> <span class="string">secrets.DOCKER_REGISTRY_ID</span> <span class="string">}}</span></span><br><span class="line">      <span class="attr">password:</span> <span class="string">${{</span> <span class="string">secrets.DOCKER_REGISTRY_PASS</span> <span class="string">}}</span></span><br><span class="line">  <span class="bullet">-</span> <span class="comment"># copy 3rd party zookeeper image from dockerhub to ghcr</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">Push</span> <span class="string">Image</span> <span class="string">(zookeeper)</span> <span class="string">to</span> <span class="string">target</span> <span class="string">registries</span></span><br><span class="line">    <span class="attr">uses:</span> <span class="string">akhilerm/tag-push-action@v2.0.0</span></span><br><span class="line">    <span class="attr">with:</span></span><br><span class="line">      <span class="attr">src:</span> <span class="string">wurstmeister/zookeeper:latest</span></span><br><span class="line">      <span class="attr">dst:</span> <span class="string">|</span></span><br><span class="line"><span class="string">        ghcr.io/${{ github.repository_owner }}/3rdparty/zookeeper:latest</span></span><br><span class="line"><span class="string"></span>  <span class="bullet">-</span> <span class="comment"># copy 3rd party kafka image from dockerhub to ghcr</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">Push</span> <span class="string">Image</span> <span class="string">(kafka)</span> <span class="string">to</span> <span class="string">target</span> <span class="string">registries</span></span><br><span class="line">    <span class="attr">uses:</span> <span class="string">akhilerm/tag-push-action@v2.0.0</span></span><br><span class="line">    <span class="attr">with:</span></span><br><span class="line">      <span class="attr">src:</span> <span class="string">wurstmeister/kafka:latest</span></span><br><span class="line">      <span class="attr">dst:</span> <span class="string">|</span></span><br><span class="line">        <span class="string">ghcr.io/${{</span> <span class="string">github.repository_owner</span> <span class="string">}}/3rdparty/kafka:latest</span></span><br></pre></td></tr></tbody></table></figure>
 <h4 id="actions-checkout">actions/checkout</h4>
 <p>在 CI 中迁出代码</p>
-<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">'build'</span></span><br><span class="line"><span class="attr">on:</span> <span class="comment"># rebuild any PRs and main branch changes</span></span><br><span class="line">  <span class="attr">pull_request:</span></span><br><span class="line">  <span class="attr">push:</span></span><br><span class="line">    <span class="attr">branches:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">main</span></span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">build:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line"></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Checkout</span> <span class="string">(GitHub)</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/checkout@v3</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">build</span></span><br><span class="line"><span class="attr">on:</span> <span class="comment"># rebuild any PRs and main branch changes</span></span><br><span class="line">  <span class="attr">pull_request:</span></span><br><span class="line">  <span class="attr">push:</span></span><br><span class="line">    <span class="attr">branches:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">main</span></span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">build:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line"></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Checkout</span> <span class="string">(GitHub)</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/checkout@v3</span></span><br></pre></td></tr></tbody></table></figure>
 <p>links:</p>
 <ul class="lvl-0">
 <li class="lvl-2">
@@ -8772,6 +8794,9 @@ GITHUB_TOKEN 自动被 Github 创建.</p>
     <title>shell area</title>
     <url>/posts/8575ff4e/</url>
     <content><![CDATA[<h2 id="Tips">Tips</h2>
+<h3 id="sh-bash">sh/bash</h3>
+<p>-s: 类 unix 操作系统中用于运行带参数的 shell 脚本的命令。-s 选项用于指定脚本应该从标准输入而不是文件中读取其输入。</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">wget -O - https://raw.githubusercontent.com/nektos/act/master/install.sh | sh -s - -b /usr/local/bin</span><br></pre></td></tr></tbody></table></figure>
 <h3 id="set">set</h3>
 <ul class="lvl-0">
 <li class="lvl-2">
