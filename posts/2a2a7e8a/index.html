@@ -22,28 +22,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"msclock.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.15.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"github-dark"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"livere","storage":true,"lazyload":false,"nav":null,"activeClass":"livere"},"stickytabs":true,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.15.1/source/js/config.min.js"></script>
 
-    <meta name="description" content="本文介绍了 python 的适用于各个场景的序列化包 marshmallow。  验证输入数据。 反序列化输入数据为应用程序级对象。 序列化应用程序级对象为原始 Python 类型。然后，可以将序列化对象呈现为标准格式，例如 JSON ，以便在 HTTP API 中使用。">
+    <meta name="description" content="flutter development links:   bilibili   dart SDK   下载 dart sdk">
 <meta property="og:type" content="article">
-<meta property="og:title" content="marshmallow 序列化包">
-<meta property="og:url" content="https://msclock.github.io/posts/507c12c6/index.html">
+<meta property="og:title" content="flutter">
+<meta property="og:url" content="https://msclock.github.io/posts/2a2a7e8a/index.html">
 <meta property="og:site_name" content="Live in the present">
-<meta property="og:description" content="本文介绍了 python 的适用于各个场景的序列化包 marshmallow。  验证输入数据。 反序列化输入数据为应用程序级对象。 序列化应用程序级对象为原始 Python 类型。然后，可以将序列化对象呈现为标准格式，例如 JSON ，以便在 HTTP API 中使用。">
+<meta property="og:description" content="flutter development links:   bilibili   dart SDK   下载 dart sdk">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-10-24T04:27:29.000Z">
-<meta property="article:modified_time" content="2023-08-04T18:47:47.384Z">
+<meta property="article:published_time" content="2020-01-03T07:25:06.000Z">
+<meta property="article:modified_time" content="2023-09-01T00:37:23.177Z">
 <meta property="article:author" content="Msclock">
-<meta property="article:tag" content="cpp,hexo,blog">
+<meta property="article:tag" content="flutter">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://msclock.github.io/posts/507c12c6/">
+<link rel="canonical" href="https://msclock.github.io/posts/2a2a7e8a/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://msclock.github.io/posts/507c12c6/","path":"posts/507c12c6/","title":"marshmallow 序列化包"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://msclock.github.io/posts/2a2a7e8a/","path":"posts/2a2a7e8a/","title":"flutter"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>marshmallow 序列化包 | Live in the present</title>
+<title>flutter | Live in the present</title>
   
 
 
@@ -92,7 +92,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">28</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">10</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">45</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">30</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">8</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">41</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -143,7 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%8F%E5%88%97%E5%8C%96-%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96"><span class="nav-number">1.</span> <span class="nav-text">序列化 &amp; 反序列化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#post-load"><span class="nav-number">1.1.</span> <span class="nav-text">post_load</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fields-Method"><span class="nav-number">1.2.</span> <span class="nav-text">fields.Method</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reference"><span class="nav-number">2.</span> <span class="nav-text">reference</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#flutter"><span class="nav-number">1.</span> <span class="nav-text">flutter</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#development"><span class="nav-number">1.1.</span> <span class="nav-text">development</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dart-SDK"><span class="nav-number">1.2.</span> <span class="nav-text">dart SDK</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flutter-SDK"><span class="nav-number">1.3.</span> <span class="nav-text">flutter SDK</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#plugins"><span class="nav-number">1.4.</span> <span class="nav-text">plugins</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E6%8B%9F%E5%99%A8"><span class="nav-number">1.5.</span> <span class="nav-text">模拟器</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -158,18 +158,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-count">41</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">28</span>
+        <span class="site-state-item-count">30</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -210,7 +210,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://msclock.github.io/posts/507c12c6/">
+    <link itemprop="mainEntityOfPage" href="https://msclock.github.io/posts/2a2a7e8a/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -223,12 +223,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="marshmallow 序列化包 | Live in the present">
+      <meta itemprop="name" content="flutter | Live in the present">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          marshmallow 序列化包
+          flutter
         </h1>
 
         <div class="post-meta-container">
@@ -239,14 +239,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2022-10-24 12:27:29" itemprop="dateCreated datePublished" datetime="2022-10-24T12:27:29+08:00">2022-10-24</time>
+      <time title="创建时间：2020-01-03 15:25:06" itemprop="dateCreated datePublished" datetime="2020-01-03T15:25:06+08:00">2020-01-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-08-05 02:47:47" itemprop="dateModified" datetime="2023-08-05T02:47:47+08:00">2023-08-05</time>
+      <time title="修改时间：2023-09-01 08:37:23" itemprop="dateModified" datetime="2023-09-01T08:37:23+08:00">2023-09-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -258,7 +258,7 @@
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/develop/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
+          <a href="/categories/develop/flutter/" itemprop="url" rel="index"><span itemprop="name">flutter</span></a>
         </span>
     </span>
 
@@ -269,14 +269,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>2.9k</span>
+      <span>236</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>3 分钟</span>
+      <span>1 分钟</span>
     </span>
 </div>
 
@@ -287,28 +287,59 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>本文介绍了 python 的适用于各个场景的序列化包 marshmallow。</p>
+        <h2 id="flutter">flutter</h2>
+<h3 id="development">development</h3>
+<p>links:</p>
 <ul class="lvl-0">
-<li class="lvl-2"><strong>验证</strong>输入数据。</li>
-<li class="lvl-2"><strong>反序列化</strong>输入数据为应用程序级对象。</li>
-<li class="lvl-2"><strong>序列化</strong>应用程序级对象为原始 Python 类型。然后，可以将序列化对象呈现为标准格式，例如 JSON ，以便在 HTTP API 中使用。</li>
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/av52490605/?p=4">bilibili</a></p>
+</li>
+</ul>
+<h3 id="dart-SDK">dart SDK</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>下载 dart <a target="_blank" rel="noopener" href="http://www.cndartlang.com/920.html">sdk</a></p>
+</li>
 </ul>
 <span id="more"></span>
-<h2 id="序列化-反序列化">序列化 &amp; 反序列化</h2>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@dataclass</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Item</span>:</span><br><span class="line">    name: <span class="built_in">str</span></span><br><span class="line">    price: Decimal</span><br><span class="line">    date: datetime.date</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 对于其他的所有类型 fields, 可以参考文档</span></span><br><span class="line"><span class="comment"># https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#api-fields</span></span><br><span class="line"><span class="keyword">from</span> marshmallow <span class="keyword">import</span> Schema, fields</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ItemSchema</span>(<span class="title class_ inherited__">Schema</span>):</span><br><span class="line">    name = fields.String()</span><br><span class="line">    price = fields.Decimal()</span><br><span class="line">    date = fields.Date()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">item = Item(<span class="string">"abc"</span>, Decimal(<span class="string">"1.23456"</span>), datetime.date(<span class="number">2021</span>, <span class="number">6</span>, <span class="number">26</span>))</span><br><span class="line">schema = ItemSchema()</span><br><span class="line">result_obj = schema.dump(item)</span><br><span class="line"><span class="built_in">print</span>(result_obj)</span><br><span class="line"><span class="comment"># 会输出 {'price': Decimal('1.23456'), 'name': 'abc', 'date': '2021-06-26'}</span></span><br><span class="line"></span><br><span class="line">input_data = {<span class="string">"name"</span>: <span class="string">"abc"</span>, <span class="string">"price"</span>: Decimal(<span class="string">"1.23456"</span>), <span class="string">"date"</span>: <span class="string">"2021-06-26"</span>}</span><br><span class="line">load_result = schema.load(input_data)</span><br><span class="line"><span class="built_in">print</span>(load_result)  <span class="comment"># dict</span></span><br><span class="line"><span class="comment"># 输出 {'name': 'abc', 'date': datetime.date(2021, 6, 26), 'price': Decimal('1.23456')}</span></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="post-load">post_load</h3>
-<p>控制反序列化，构造对象</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> dataclasses <span class="keyword">import</span> dataclass</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">from</span> decimal <span class="keyword">import</span> Decimal</span><br><span class="line"><span class="keyword">import</span> decimal</span><br><span class="line"><span class="keyword">from</span> marshmallow <span class="keyword">import</span> Schema, fields, post_load</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ItemSchema</span>(<span class="title class_ inherited__">Schema</span>):</span><br><span class="line">    name = fields.String()</span><br><span class="line">    price = fields.Decimal()</span><br><span class="line">    date = fields.Date()</span><br><span class="line"></span><br><span class="line"><span class="meta">    @post_load</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">make_item</span>(<span class="params">self, data, **kwargs</span>):</span><br><span class="line">        <span class="keyword">return</span> Item(**data)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">result_obj = schema.dump(item)</span><br><span class="line"><span class="built_in">print</span>(result_obj)</span><br><span class="line"><span class="comment"># 返回 Item(name='abc', price=Decimal('1.23456'), date=datetime.date(2021, 6, 26))</span></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="fields-Method">fields.Method</h3>
-<p>自定义字段序列化需求</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> marshmallow <span class="keyword">import</span> Schema, fields, post_load</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ItemSchema</span>(<span class="title class_ inherited__">Schema</span>):</span><br><span class="line">    <span class="string">"""Define serialization protocol for class Item</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">        name: str to be registered by the schema</span></span><br><span class="line"><span class="string">        price: custom way to be registered</span></span><br><span class="line"><span class="string">        date: date to be registered</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line"></span><br><span class="line">    name = fields.String()</span><br><span class="line">    price = fields.Method(<span class="string">"price_decimal_2_float"</span>, deserialize=<span class="string">"float_2_decimal"</span>)</span><br><span class="line">    date = fields.Date()</span><br><span class="line"></span><br><span class="line"><span class="meta">    @post_load  </span><span class="comment"># post_load to make the schema deserialized as object-like</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">make_item</span>(<span class="params">self, data, **kwargs</span>):</span><br><span class="line">        <span class="keyword">return</span> Item(**data)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">price_decimal_2_float</span>(<span class="params">self, item: Item</span>):</span><br><span class="line">        <span class="string">"""price attr to save"""</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">float</span>(item.price)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">float_2_decimal</span>(<span class="params">self, <span class="built_in">float</span></span>):</span><br><span class="line">        <span class="string">"""price attr to load"""</span></span><br><span class="line">        <span class="keyword">return</span> decimal.Decimal(<span class="built_in">str</span>(<span class="built_in">float</span>))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">item = Item(<span class="string">"abc"</span>, Decimal(<span class="string">"1.23456"</span>), datetime.date(<span class="number">2021</span>, <span class="number">6</span>, <span class="number">26</span>))</span><br><span class="line">schema = ItemSchema()</span><br><span class="line">result_str = schema.dumps(item)</span><br><span class="line"><span class="built_in">print</span>(result_str)</span><br><span class="line"><span class="comment"># {"date": "2021-06-26", "name": "abc", "price": 1.23456}</span></span><br><span class="line">input_str = <span class="string">'{"date": "2021-06-26", "name": "abc", "price": 1.23456}'</span></span><br><span class="line">load_result = schema.loads(input_str)</span><br><span class="line"><span class="built_in">print</span>(load_result)</span><br><span class="line"><span class="comment"># Item(name='abc', price=Decimal('1.23456'), date=datetime.date(2021, 6, 26))</span></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="reference">reference</h2>
 <ul class="lvl-0">
 <li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://marshmallow.readthedocs.io/en/stable/">https://marshmallow.readthedocs.io/en/stable/</a></p>
+<p>解压到任意文件夹下</p>
 </li>
 <li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://www.7forz.com/3694/">https://www.7forz.com/3694/</a></p>
+<p>添加 bin 路径到环境变量</p>
+</li>
+<li class="lvl-2">
+<p>检查</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PS C:\Users\MSClock&gt; dart --version</span><br><span class="line">Dart VM version: 2.4.0 (Wed Jun 19 11:53:45 2019 +0200)</span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ul>
+<h3 id="flutter-SDK">flutter SDK</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>解压安装 <code>建议不要安装到权限过高的路径</code></p>
+</li>
+<li class="lvl-2">
+<p>设置 <code>bin</code> 环境变量</p>
+</li>
+<li class="lvl-2">
+<p>设置 flutter <a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/help/flutter/">镜像</a></p>
+</li>
+</ul>
+<h3 id="plugins">plugins</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>VsCode</p>
+<ul class="lvl-2">
+<li class="lvl-4">dart</li>
+<li class="lvl-4">flutter</li>
+</ul>
+</li>
+</ul>
+<h3 id="模拟器">模拟器</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>推荐雷电模拟器</p>
 </li>
 </ul>
 
@@ -328,7 +359,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://msclock.github.io/posts/507c12c6/" title="marshmallow 序列化包">https://msclock.github.io/posts/507c12c6/</a>
+      <a href="https://msclock.github.io/posts/2a2a7e8a/" title="flutter">https://msclock.github.io/posts/2a2a7e8a/</a>
   </li>
   <li class="post-copyright-license">
       <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -336,18 +367,21 @@
 </ul>
 </div>
 
+          <div class="post-tags">
+              <a href="/tags/flutter/" rel="tag"><i class="fa fa-tag"></i> flutter</a>
+          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/af15a2a7/" rel="prev" title="yaml 实践">
-                  <i class="fa fa-chevron-left"></i> yaml 实践
+                <a href="/posts/996635634/" rel="prev" title="network">
+                  <i class="fa fa-chevron-left"></i> network
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/d5fbb003/" rel="next" title="DB 数据库实践">
-                  DB 数据库实践 <i class="fa fa-chevron-right"></i>
+                <a href="/posts/7d9a968e/" rel="next" title="Docker 疑难问题">
+                  Docker 疑难问题 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -382,14 +416,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">366k</span>
+    <span title="站点总字数">382k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:32</span>
+    <span title="站点阅读时长">5:47</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
@@ -438,7 +472,7 @@
 
 
   <script src="https://cdn.jsdelivr.net/npm/quicklink@2.3.0/dist/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://msclock.github.io/posts/507c12c6/"}</script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://msclock.github.io/posts/2a2a7e8a/"}</script>
   <script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.15.1/source/js/third-party/quicklink.min.js"></script>
 <script src="https://unpkg.com/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
 

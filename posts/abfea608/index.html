@@ -30,7 +30,7 @@
 <meta property="og:description" content="Dev Container Configuration Dev Container 配置步骤如下：   安装 vscode 插件，dev container。   ctrl+shift+p 使用 dev container 命令添加配置文件。   选择 dev container 配置模板（原则上选择基础 debian&#x2F;ubuntu 即可，其它环境均可通过或许选择 features 进行动态构建）">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-04-17T02:12:36.000Z">
-<meta property="article:modified_time" content="2023-08-04T18:47:47.380Z">
+<meta property="article:modified_time" content="2023-09-01T00:37:23.177Z">
 <meta property="article:author" content="Msclock">
 <meta property="article:tag" content="devcontainer">
 <meta name="twitter:card" content="summary">
@@ -92,7 +92,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">28</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">10</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">45</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">30</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">8</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">41</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -143,7 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Dev-Container"><span class="nav-number">1.</span> <span class="nav-text">Dev Container</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Configuration"><span class="nav-number">1.1.</span> <span class="nav-text">Configuration</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Runtime-Permission"><span class="nav-number">1.2.</span> <span class="nav-text">Runtime Permission</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GPU-Support"><span class="nav-number">1.3.</span> <span class="nav-text">GPU Support</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E6%A1%88%E4%B8%80"><span class="nav-number">1.3.1.</span> <span class="nav-text">方案一</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E6%A1%88%E4%BA%8C"><span class="nav-number">1.3.2.</span> <span class="nav-text">方案二</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Features"><span class="nav-number">2.</span> <span class="nav-text">Features</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Desktop-lite"><span class="nav-number">2.1.</span> <span class="nav-text">Desktop lite</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Common-utils"><span class="nav-number">2.2.</span> <span class="nav-text">Common utils</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#features-%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B"><span class="nav-number">2.3.</span> <span class="nav-text">features 开发流程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Performance"><span class="nav-number">3.</span> <span class="nav-text">Performance</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E8%BF%87-wsl-%E6%8C%82%E8%BD%BD"><span class="nav-number">3.1.</span> <span class="nav-text">通过 wsl 挂载</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Devcontainer-in-CI"><span class="nav-number">4.</span> <span class="nav-text">Devcontainer in CI</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Dev-Container"><span class="nav-number">1.</span> <span class="nav-text">Dev Container</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Configuration"><span class="nav-number">1.1.</span> <span class="nav-text">Configuration</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Runtime-Permission"><span class="nav-number">1.2.</span> <span class="nav-text">Runtime Permission</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GPU-Support"><span class="nav-number">1.3.</span> <span class="nav-text">GPU Support</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E6%A1%88%E4%B8%80"><span class="nav-number">1.3.1.</span> <span class="nav-text">方案一</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E6%A1%88%E4%BA%8C"><span class="nav-number">1.3.2.</span> <span class="nav-text">方案二</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E6%A1%88%E4%B8%89"><span class="nav-number">1.3.3.</span> <span class="nav-text">方案三</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Features"><span class="nav-number">2.</span> <span class="nav-text">Features</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#common-features"><span class="nav-number">2.1.</span> <span class="nav-text">common features</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Common-utils"><span class="nav-number">2.1.1.</span> <span class="nav-text">Common utils</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Desktop-lite"><span class="nav-number">2.1.2.</span> <span class="nav-text">Desktop lite</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DinD"><span class="nav-number">2.1.3.</span> <span class="nav-text">DinD</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#features-development"><span class="nav-number">2.2.</span> <span class="nav-text">features development</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Performance"><span class="nav-number">3.</span> <span class="nav-text">Performance</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E8%BF%87-wsl-%E6%8C%82%E8%BD%BD"><span class="nav-number">3.1.</span> <span class="nav-text">通过 wsl 挂载</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Devcontainer-in-CI"><span class="nav-number">4.</span> <span class="nav-text">Devcontainer in CI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#devpod"><span class="nav-number">5.</span> <span class="nav-text">devpod</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -158,18 +158,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-count">41</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">28</span>
+        <span class="site-state-item-count">30</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -246,7 +246,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-08-05 02:47:47" itemprop="dateModified" datetime="2023-08-05T02:47:47+08:00">2023-08-05</time>
+      <time title="修改时间：2023-09-01 08:37:23" itemprop="dateModified" datetime="2023-09-01T08:37:23+08:00">2023-09-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -265,14 +265,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>5.8k</span>
+      <span>7.8k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>5 分钟</span>
+      <span>7 分钟</span>
     </span>
 </div>
 
@@ -304,76 +304,103 @@
 <figure class="highlight yml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Uncomment the next lines if you will use a ptrace-based debuggers like C++, Go, and Rust.</span></span><br><span class="line"><span class="attr">cap_add:</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">SYS_PTRACE</span></span><br><span class="line"><span class="attr">security_opt:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">seccomp:unconfined</span></span><br><span class="line"><span class="attr">privileged:</span> <span class="literal">true</span></span><br></pre></td></tr></tbody></table></figure>
 <p>在 devcontainer.json 中配置</p>
 <figure class="highlight json"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">"runArgs"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="comment">// Enable ptrace-based</span></span><br><span class="line">    <span class="comment">// ptrace syscall permission</span></span><br><span class="line">    <span class="string">"--cap-add=SYS_PTRACE"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="comment">// Net Configuration</span></span><br><span class="line">    <span class="string">"--cap-add=NET_ADMIN"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="comment">// Open all syscall permission</span></span><br><span class="line">    <span class="string">"--security-opt"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">"seccomp=unconfined"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="comment">// Enable GPUs</span></span><br><span class="line">    <span class="string">"--gpus=all"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="comment">// Possess all permission of the host</span></span><br><span class="line">    <span class="string">"--privileged"</span></span><br><span class="line"><span class="punctuation">]</span><span class="punctuation">,</span></span><br></pre></td></tr></tbody></table></figure>
+<p>上面的配置可以使用 devcontainer 字段配置</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">{</span><br><span class="line">    "capAdd": [</span><br><span class="line">        // Enable ptrace-based</span><br><span class="line">        "SYS_PTRACE",</span><br><span class="line">        // Net Configuration</span><br><span class="line">        "NET_ADMIN"</span><br><span class="line">    ],</span><br><span class="line">    "securityOpt": [</span><br><span class="line">        "seccomp=unconfined"</span><br><span class="line">    ],</span><br><span class="line">    "privileged": true,</span><br><span class="line">    "runArgs": [</span><br><span class="line">        "--gpus=all"</span><br><span class="line">    ],</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <h3 id="GPU-Support">GPU Support</h3>
 <p>配置在 Dev DinD 的开发环境中支持 Nvidia Cuda GPU。</p>
 <p>在容器启动前，安装 <a target="_blank" rel="noopener" href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker">nvidia-container-toolkit</a></p>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#setting-up-nvidia-container-toolkit">nvidia container-toolkit source</a></p>
+</li>
+</ul>
 <h4 id="方案一">方案一</h4>
 <p>使用 devcontainer 提供的官方镜像，需要配置安装 nvidia 源.</p>
-<figure class="highlight dockerfile"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Dockerfile.gpu</span></span><br><span class="line"><span class="keyword">FROM</span> mcr.microsoft.com/devcontainers/base:bullseye</span><br><span class="line"><span class="comment"># Installing nvidia-container-toolkit and Configure</span></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> <span class="built_in">set</span> -ex \</span></span><br><span class="line"><span class="language-bash">    &amp;&amp; distribution=$(. /etc/os-release;<span class="built_in">echo</span> $ID<span class="variable">$VERSION_ID</span>) \</span></span><br><span class="line"><span class="language-bash">    &amp;&amp; curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \</span></span><br><span class="line"><span class="language-bash">    &amp;&amp; curl -s -L https://nvidia.github.io/libnvidia-container/<span class="variable">$distribution</span>/libnvidia-container.list | \</span></span><br><span class="line"><span class="language-bash">            sed <span class="string">'s#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g'</span> | \</span></span><br><span class="line"><span class="language-bash">            <span class="built_in">tee</span> /etc/apt/sources.list.d/nvidia-container-toolkit.list \</span></span><br><span class="line"><span class="language-bash">    &amp;&amp; apt update &amp;&amp; apt-get install -y nvidia-docker2 &amp;&amp; nvidia-ctk runtime configure \</span></span><br><span class="line"><span class="language-bash">    <span class="comment"># set nvidia as default runtime</span></span></span><br><span class="line">    &amp;&amp; echo {\<span class="string">"default-runtime\":\"nvidia\"} $(cat /etc/docker/daemon.json) | jq -s '.[0] + .[1]' | tee /etc/docker/daemon.json \</span></span><br><span class="line"><span class="string">    &amp;&amp; rm -rf /var/lib/apt/lists/* /var/cache/* /var/log/* /tmp/* ~/.cache -rf</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight dockerfile"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Dockerfile.gpu</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># bullseye or jammy</span></span><br><span class="line"><span class="keyword">FROM</span> mcr.microsoft.com/devcontainers/base:{VARIANT}</span><br><span class="line"><span class="comment"># FROM nvcr.io/nvidia/pytorch:22.12-py3</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Installing nvidia-container-toolkit and Configure</span></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> &lt;&lt;-<span class="string">EOF</span></span></span><br><span class="line">    distribution=$(. /etc/os-release;echo $ID$VERSION_ID)</span><br><span class="line">    curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg</span><br><span class="line">    curl -s -L https://nvidia.github.io/libnvidia-container/$distribution/libnvidia-container.list | \</span><br><span class="line">        sed <span class="string">'s#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g'</span> | \</span><br><span class="line">        tee /etc/apt/sources.list.d/nvidia-container-toolkit.list</span><br><span class="line">    <span class="comment"># output</span></span><br><span class="line">    apt update &amp;&amp; apt-get install -y nvidia-container-toolkit &amp;&amp; nvidia-ctk runtime configure</span><br><span class="line">    <span class="comment"># set nvidia as default runtime</span></span><br><span class="line">    echo <span class="string">'{"default-runtime":"nvidia"}'</span> $(cat /etc/docker/daemon.json) | jq -s <span class="string">'.[0] + .[1]'</span> | tee /etc/docker/daemon.json</span><br><span class="line">    rm -rf /var/lib/apt/lists/* /var/cache/* /var/log/* /tmp/* ~/.cache -rf</span><br><span class="line">EOF</span><br></pre></td></tr></tbody></table></figure>
 <p>在 devcontainer.json 中配置</p>
-<figure class="highlight json"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">"build"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"dockerfile"</span><span class="punctuation">:</span> <span class="string">"Dockerfile.gpu"</span></span><br><span class="line"><span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">"runArgs"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="string">"--cap-add=SYS_PTRACE"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">"--security-opt"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">"seccomp=unconfined"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">"--gpus=all"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">"--privileged"</span></span><br><span class="line"><span class="punctuation">]</span><span class="punctuation">,</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight json"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">"build"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"dockerfile"</span><span class="punctuation">:</span> <span class="string">"Dockerfile.gpu"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"args"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">        <span class="attr">"VARIANT"</span><span class="punctuation">:</span><span class="string">"jammy"</span></span><br><span class="line">    <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">"capAdd"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="comment">// Enable ptrace-based debugging for C++</span></span><br><span class="line">    <span class="string">"SYS_PTRACE"</span></span><br><span class="line"><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">"securityOpt"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="string">"seccomp=unconfined"</span></span><br><span class="line"><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">"privileged"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">"runArgs"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="comment">// Loading libnvidia* in devcontainer, verifying by the command `ldconfig -p | grep libnvidia`</span></span><br><span class="line">    <span class="string">"--gpus=all"</span></span><br><span class="line"><span class="punctuation">]</span><span class="punctuation">,</span></span><br></pre></td></tr></tbody></table></figure>
 <h4 id="方案二">方案二</h4>
 <p>使用 nvidia 提供的官方 cuda 开发容器为基础，作为 GPU 开发容器配置.</p>
-<figure class="highlight dockerfile"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Dockerfile.gpu</span></span><br><span class="line"><span class="keyword">FROM</span> nvidia/cuda:<span class="number">12.1</span>.<span class="number">1</span>-cudnn8-devel-ubuntu20.<span class="number">04</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> <span class="built_in">set</span> ex \</span></span><br><span class="line"><span class="language-bash">    &amp;&amp; apt update &amp;&amp; apt install -y nvidia-docker2 &amp;&amp; nvidia-ctk runtime configure \</span></span><br><span class="line"><span class="language-bash">    &amp;&amp; <span class="built_in">echo</span> {\"default-runtime\":\"nvidia\"} $(<span class="built_in">cat</span> /etc/docker/daemon.json) | jq -s <span class="string">'.[0] + .[1]'</span> | <span class="built_in">tee</span> /etc/docker/daemon.json \</span></span><br><span class="line"><span class="language-bash">    &amp;&amp; <span class="built_in">rm</span> -rf /var/lib/apt/lists/* /var/cache/* /var/log/* /tmp/* ~/.cache -rf</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight dockerfile"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Dockerfile.gpu</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 以下镜像已经内置 nvidia container toolkit源</span></span><br><span class="line"><span class="keyword">FROM</span> nvidia/cuda:<span class="number">12.1</span>.<span class="number">1</span>-cudnn8-devel-ubuntu20.<span class="number">04</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> &lt;&lt;-<span class="string">EOF</span></span></span><br><span class="line">    apt update &amp;&amp; apt install -y nvidia-docker2 &amp;&amp; nvidia-ctk runtime configure</span><br><span class="line">    <span class="comment"># 和方案一相同, 配置nvidia 容器运行时到 /etc/docker/daemon.json</span></span><br><span class="line">    rm rf /var/lib/apt/lists/* /var/cache/* /var/log/* /tmp/* ~/.cache -rf</span><br><span class="line">EOF</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="方案三">方案三</h4>
+<p>方案一，二都需要手动配置源或者使用已经配置好的基础镜像，第三种方法是使用 devcontainer 提供的 cuda feature 来构建.</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// https://github.com/devcontainers/features</span><br><span class="line">"features": {</span><br><span class="line">    "ghcr.io/devcontainers/features/common-utils:2": {</span><br><span class="line">        "upgradePackages": false,</span><br><span class="line">        "username": "vscode",</span><br><span class="line">        "configureZshAsDefaultShell": true</span><br><span class="line">    },</span><br><span class="line">    "ghcr.io/devcontainers/features/docker-in-docker:2": {},</span><br><span class="line">    // 使用 cuda feature 构建环境</span><br><span class="line">    "ghcr.io/devcontainers/features/nvidia-cuda:1": {}</span><br><span class="line">},</span><br></pre></td></tr></tbody></table></figure>
+<p>以上方式需要手动安装 docker-container-toolkit</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装 docker nvidia runtime(nvidia-docker2/nvidia-container-toolkit)</span></span><br><span class="line">apt update &amp;&amp; apt install -y nvidia-container-toolkit &amp;&amp; nvidia-ctk runtime configure</span><br><span class="line"><span class="comment"># 重启 docker</span></span><br><span class="line">ps -ef | grep -E <span class="string">'(dockerd|docker-init.sh)'</span>  | <span class="built_in">head</span> -1 | awk <span class="string">'{print $2}'</span> | xargs sudo <span class="built_in">kill</span> -9</span><br><span class="line">/usr/local/share/docker-init.sh</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="Features">Features</h2>
+<h3 id="common-features">common features</h3>
 <p>这里列出了常用 Dev Container 的 <a target="_blank" rel="noopener" href="https://github.com/devcontainers/features">features</a> 使用总结。</p>
-<h3 id="Desktop-lite">Desktop lite</h3>
+<h4 id="Common-utils">Common utils</h4>
+<p>配置容器开发环境用户，方面管理权限。实现参考通过 Dockerfile 创建非 <a target="_blank" rel="noopener" href="https://code.visualstudio.com/remote/advancedcontainers/add-nonroot-user">root user</a>。</p>
+<p>devcontainer 有提供专门的 common 帮助用户创建非 root 用户。</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">"features": {</span><br><span class="line">    "ghcr.io/devcontainers/features/common-utils:2": {</span><br><span class="line">        "username": "vscode" // or others</span><br><span class="line">    }</span><br><span class="line">},</span><br><span class="line">"postCreateCommand": {</span><br><span class="line">    "git-completions": "echo 'source /usr/share/bash-completion/completions/git' &gt;&gt; ~/.bashrc"</span><br><span class="line">},</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="Desktop-lite">Desktop lite</h4>
 <p>在 devcontainer.json 中配置 <a target="_blank" rel="noopener" href="https://github.com/devcontainers/features/tree/main">desktop-lite</a></p>
 <figure class="highlight json"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">"features"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"ghcr.io/devcontainers/features/desktop-lite:1"</span><span class="punctuation">:</span> <span class="punctuation">{</span><span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
 <p>导出端口 nVNC 的 vscode 配置 forward port 为 6080 （默认 nVNC 端口）</p>
 <p>支持 nVNC 浏览器推荐 Firefox 和 Chrome，这里给出自动集成 Dockerfile 的指令。</p>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Firefox ESR</span></span><br><span class="line">apt-get update &amp;&amp; <span class="built_in">export</span> DEBIAN_FRONTEND=noninteractive &amp;&amp; apt-get install -y firefox-esr</span><br><span class="line"><span class="comment"># Chrome</span></span><br><span class="line">apt-get update &amp;&amp; <span class="built_in">export</span> DEBIAN_FRONTEND=noninteractive \</span><br><span class="line">    &amp;&amp; curl -sSL https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -o /tmp/chrome.deb \</span><br><span class="line">    &amp;&amp; apt-get -y install /tmp/chrome.deb</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="Common-utils">Common utils</h3>
-<p>配置容器开发环境用户，方面管理权限。实现参考通过 Dockerfile 创建非 <a target="_blank" rel="noopener" href="https://code.visualstudio.com/remote/advancedcontainers/add-nonroot-user">root user</a>。</p>
-<p>devcontainer 有提供专门的 common 帮助用户创建非 root 用户。</p>
-<figure class="highlight json"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">"features"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"ghcr.io/devcontainers/features/common-utils:2"</span><span class="punctuation">:</span> <span class="punctuation">{</span><span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="features-开发流程">features 开发流程</h3>
+<h4 id="DinD">DinD</h4>
+<p>在容器内创建子容器，独立于主机的 docker 实例。在容器中安装 Docker 扩展以及所需的 CLI。</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">"features": {</span><br><span class="line">    "ghcr.io/devcontainers/features/docker-in-docker:2": {}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<blockquote>
+<p>[!TIP]<br>
+当容器 daemon 挂掉或者更新 <code>daemon.json</code> 时，可通过 <code>/usr/local/share/docker-init.sh</code> 重启 docker 服务.</p>
+</blockquote>
+<h3 id="features-development">features development</h3>
 <p>devcontainer features 提供了可插拔式得开发工具集成方式。这里简单介绍自定义 features 开发流程。主要参考官方 feature <a target="_blank" rel="noopener" href="https://github.com/devcontainers/feature-starter">模板</a>.</p>
 <p>Step 1, feature 开发</p>
-<ol>
-<li class="lvl-3">
+<ul class="lvl-0">
+<li class="lvl-2">
 <p>clone 官方提供的模板。示例<a target="_blank" rel="noopener" href="https://github.com/msclock/features">参考</a></p>
 </li>
-<li class="lvl-3">
+<li class="lvl-2">
 <p>使用官方模板打开 feature 的 devcontainer 开发环境</p>
 </li>
-<li class="lvl-3">
+<li class="lvl-2">
 <p>在 src 下创建 feature, 每个 feature 以子目录构建布局</p>
 </li>
-<li class="lvl-3">
+<li class="lvl-2">
 <p>在 feature 目录下，书写脚本，必须包含有 install.sh 及 devcontainer-feature.json 配置及脚本。详情参考模板</p>
 </li>
-</ol>
+</ul>
 <p>Step 2, feature 测试</p>
-<ol>
-<li class="lvl-3">
+<ul class="lvl-0">
+<li class="lvl-2">
 <p>在根目录下有 test 目录，某人有全局 _global 测试及各个 feature 测试</p>
 </li>
-<li class="lvl-3">
+<li class="lvl-2">
 <p>在 _global 下可配置测试所有 feature, 具体在 scenarios.json 中注册 feature id, 然后在对应的注册的 id 的脚本 all_tools.sh 中添加 feature 验证命令即可</p>
 </li>
-<li class="lvl-3">
+<li class="lvl-2">
 <p>在 test 目录下可创建单个 feature 的测试脚本，详情参考模板</p>
 </li>
-<li class="lvl-3">
+<li class="lvl-2">
 <p>验证 feature, 使用命令 <code>devcontainer features test -f &lt;feature id&gt; -i &lt;image-name&gt;</code> 在 image-name 的镜像中验证 feature 是否安装成功.</p>
 </li>
-</ol>
+</ul>
 <p>Step 3, feature CI in github action</p>
-<ol>
-<li class="lvl-3">
+<ul class="lvl-0">
+<li class="lvl-2">
 <p>直接使用模板提供的 CI test.yaml 中配置</p>
 </li>
-<li class="lvl-3">
+<li class="lvl-2">
 <p>在 baseImage 中配置要测试的 image</p>
 </li>
-<li class="lvl-3">
+<li class="lvl-2">
 <p>在 features 中添加要验证的 feature</p>
 </li>
-<li class="lvl-3">
+<li class="lvl-2">
 <p>最后，test 执行成功后，可手动执行 release workflow 发布 feature.</p>
 </li>
-</ol>
+</ul>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://github.com/msclock/features">https://github.com/msclock/features</a></p>
+</li>
+</ul>
 <h2 id="Performance">Performance</h2>
 <p>在 Windows/MacOS 上存在性能的 I/O binding 的损失，官方给出了几种<a target="_blank" rel="noopener" href="https://code.visualstudio.com/remote/advancedcontainers/improve-performance">解决方案</a>。</p>
 <h3 id="通过-wsl-挂载">通过 wsl 挂载</h3>
@@ -408,7 +435,14 @@
 目前构建镜像，需要配置为 ‘build’ 字段，默认的’image’使用存在 <a target="_blank" rel="noopener" href="https://github.com/devcontainers/cli/issues/370">bug</a>.</p>
 </blockquote>
 <p>目前 devcontainer cli 没有 stop 命令，可以通过 docker 查找过滤.</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 方法一</span></span><br><span class="line">docker stop $(docker ps -q -f ancestor=image-name)</span><br><span class="line">docker <span class="built_in">rm</span> -f $(docker ps -q -f ancestor=image-name)</span><br><span class="line"><span class="comment"># 方法二</span></span><br><span class="line">devcontainer up --workspace-folder . --id-label id_name=xxxx</span><br><span class="line">docker ps -q --filter <span class="string">"label=id_name=xxxx"</span> | xargs docker fm -f</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 方法一</span></span><br><span class="line">docker stop $(docker ps -q -f ancestor=image-name)</span><br><span class="line">docker <span class="built_in">rm</span> -f $(docker ps -q -f ancestor=image-name)</span><br><span class="line"><span class="comment"># 方法二</span></span><br><span class="line">devcontainer up --workspace-folder . --id-label id_name=&lt;identity name&gt;</span><br><span class="line">docker ps -q --filter <span class="string">"label=id_name=&lt;identity name&gt;"</span> | xargs docker <span class="built_in">rm</span> -f</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="devpod">devpod</h2>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://github.com/loft-sh/devpod">https://github.com/loft-sh/devpod</a></p>
+</li>
+</ul>
 
     </div>
 
@@ -483,14 +517,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">366k</span>
+    <span title="站点总字数">382k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:32</span>
+    <span title="站点阅读时长">5:47</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
