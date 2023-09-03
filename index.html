@@ -242,7 +242,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-09-03 11:24:20" itemprop="dateModified" datetime="2023-09-03T11:24:20+08:00">2023-09-03</time>
+      <time title="修改时间：2023-09-04 00:40:43" itemprop="dateModified" datetime="2023-09-04T00:40:43+08:00">2023-09-04</time>
     </span>
 
   
@@ -346,7 +346,7 @@ renovate documentation is here: <a target="_blank" rel="noopener" href="https://
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-09-03 11:24:20" itemprop="dateModified" datetime="2023-09-03T11:24:20+08:00">2023-09-03</time>
+      <time title="修改时间：2023-09-04 00:40:43" itemprop="dateModified" datetime="2023-09-04T00:40:43+08:00">2023-09-04</time>
     </span>
 
   
@@ -397,199 +397,14 @@ renovate documentation is here: <a target="_blank" rel="noopener" href="https://
 <p><a target="_blank" rel="noopener" href="https://lyz-code.github.io/blue-book/linux/mkdocs/">blue book docs on mkdocs</a></p>
 </li>
 </ul>
-<h3 id="quickstart">quickstart</h3>
-<p>以下是一些快速开始的步骤:</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装依赖</span></span><br><span class="line">pip install mkdocs</span><br><span class="line"><span class="comment"># 在本地创建文档配置</span></span><br><span class="line">mkdocs new .</span><br><span class="line"><span class="comment"># 预览 serve 在mkdocs.yml中的文档</span></span><br><span class="line">mkdocs serve</span><br><span class="line"><span class="comment"># 构建 public 静态文件,可用于CI部署</span></span><br><span class="line">mkdocs build --site-dir public</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="page-navigation">page navigation</h3>
-<p>在 MkDocs 中，可以使用 mkdocs.yml 配置文件来定义导航栏的结构和顺序。以下是一些常用的导航栏配置选项：</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>nav：nav 是一个列表，用于定义导航栏的各个部分。每个部分都表示为一个字典，包含 title 和 url 字段。例如：</p>
-</li>
-</ul>
-<figure class="highlight yaml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">nav:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">Home:</span> <span class="string">index.md</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">About:</span> <span class="string">about.md</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">Contact:</span> <span class="string">contact.md</span></span><br></pre></td></tr></tbody></table></figure>
-<p>在上面的示例中，导航栏将包含 "Home"、"About" 和 "Contact" 三个部分，<a target="_blank" rel="noopener" href="http://xn--index-zh6htimby602aoe0h.md">分别链接到 index.md</a>、about.md 和 contact.md 文件。</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>pages：如果文档结构比较复杂，可以使用 pages 字段来定义更详细的导航栏结构。pages 是一个列表，每个列表项表示一个页面，可以是一个 Markdown 文件或一个包含 title 和 url 字段的字典。例如：</p>
-</li>
-</ul>
-<figure class="highlight yaml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">pages:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">Home:</span> <span class="string">index.md</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">About:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">Introduction:</span> <span class="string">about/intro.md</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">Team:</span> <span class="string">about/team.md</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">Contact:</span> <span class="string">contact.md</span></span><br></pre></td></tr></tbody></table></figure>
-<p>在上面的示例中，导航栏将包含 "Home"、"About" 和 "Contact" 三个部分。"About" 部分下面有两个子页面：“Introduction"和"Team”，分别链接到 about/intro.md 和 about/team.md 文件。</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>theme.nav：如果正在使用特定主题（如 Material 主题），某些主题可能提供了额外的导航栏配置选项。可以在 mkdocs.yml 中的 theme 部分下找到这些选项。例如，在 Material 主题中，可以使用 theme.nav 字段来定义导航栏。例如：</p>
-</li>
-</ul>
-<figure class="highlight yaml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">material</span></span><br><span class="line">  <span class="attr">nav:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">Home:</span> <span class="string">index.md</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">About:</span> <span class="string">about.md</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">Contact:</span> <span class="string">contact.md</span></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="material-theme">material theme</h3>
-<p>MkDocs Material 主题基于 Google 的 Material Design 风格，提供了现代化和响应式的用户界面。它的设计简洁、易于阅读，并且提供了一些有用的功能，如侧边栏导航、搜索功能、代码高亮等。</p>
-<p>以下是一些 MkDocs Material 主题的特点：</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>响应式布局：MkDocs Material 主题会自动适应不同的屏幕大小和设备类型，使文档在桌面、平板和手机上都能良好地显示。</p>
-</li>
-<li class="lvl-2">
-<p>侧边栏导航：MkDocs Material 主题提供了一个侧边栏导航菜单，方便用户浏览和导航文档的不同部分。</p>
-</li>
-<li class="lvl-2">
-<p>搜索功能：MkDocs Material 主题集成了强大的搜索功能，使用户能够快速找到所需的文档内容。</p>
-</li>
-<li class="lvl-2">
-<p>代码高亮：MkDocs Material 主题使用了 Prism.js 库来实现代码高亮，支持多种编程语言和主题。</p>
-</li>
-<li class="lvl-2">
-<p>自定义配置：可以通过修改 MkDocs 的配置文件来自定义 MkDocs Material 主题的外观和行为，包括颜色、字体、导航栏等。</p>
-</li>
-</ul>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://squidfunk.github.io/mkdocs-material/">https://squidfunk.github.io/mkdocs-material/</a></p>
-</li>
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://pypi.org/project/mkdocs-material/">https://pypi.org/project/mkdocs-material/</a></p>
-</li>
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://squidfunk.github.io/mkdocs-material/creating-your-site/#advanced-configuration">Advanced Configuration</a></p>
-</li>
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://squidfunk.github.io/mkdocs-material/setup/">Configure Setup</a></p>
-</li>
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://squidfunk.github.io/mkdocs-material/reference/">Configuration Reference</a></p>
-</li>
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/383582472">zhihu 教程</a></p>
-</li>
-</ul>
-<h4 id="color">color</h4>
-<p>作为任何恰当的 Material Design 实现，Material for MkDocs 支持 Google 的原始调色板，可以通过 MkDocs.yml 轻松配置。此外，通过使用 CSS 变量，可以通过几行 CSS 来定制颜色，以适应品牌标识。</p>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/">https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/</a></p>
-</li>
-</ul>
-<h4 id="language">language</h4>
-<p>MkDocs 的 Material 支持国际化 (i18n) ，并提供 60 多种语言的模板变量和标签的翻译。此外，如果可用的话，可以将站点搜索配置为使用特定于语言的词干分析器。</p>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://squidfunk.github.io/mkdocs-material/setup/changing-the-language//">https://squidfunk.github.io/mkdocs-material/setup/changing-the-language//</a></p>
-</li>
-</ul>
-<h4 id="versions-with-mike">versions with mike</h4>
-<p>通过与外部实用程序集成，将这些功能添加到 MkDocs，即 Mike，MkDocs 的 Material 使得部署项目文档的多个版本变得非常容易。在部署新版本时，文档的旧版本保持不变。</p>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://squidfunk.github.io/mkdocs-material/setup/setting-up-versioning/">https://squidfunk.github.io/mkdocs-material/setup/setting-up-versioning/</a></p>
-</li>
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://github.com/squidfunk/mkdocs-material-example-versioning">https://github.com/squidfunk/mkdocs-material-example-versioning</a></p>
-</li>
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/72467521/auto-deploy-mkdocs-with-versionning-using-mike-on-gitlab-pages">使用 mike 多版本部署在 gitlab 中</a></p>
-</li>
-</ul>
-<h4 id="footer">footer</h4>
-<p>项目文档的页脚是一个很好的地方，可以添加链接到或公司正在使用的网站或平台作为额外的营销渠道，例如，或者，可以通过 mkdocs.yml 轻松配置。</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>禁用显示文档生成脚标，即不再<a target="_blank" rel="noopener" href="https://squidfunk.github.io/mkdocs-material/setup/setting-up-the-footer/#generator-notice">显示</a> <code>Made with Material for MkDocs</code></p>
-</li>
-</ul>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://squidfunk.github.io/mkdocs-material/setup/setting-up-the-footer/">https://squidfunk.github.io/mkdocs-material/setup/setting-up-the-footer/</a></p>
-</li>
-</ul>
-<h4 id="markdown-extensions">markdown extensions</h4>
-<p>MkDocs 的 Material 支持大量的 Python Markdown 扩展，这是它对于技术写作如此有吸引力的部分原因。下面是所有支持的扩展的列表，链接到引用的相关部分，这些部分需要启用这些特性。</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#abbreviations">Abbreviations</a>: 渲染提示词及缩写集成</p>
-</li>
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#admonition">Admonition</a>: 渲染警告提示</p>
-</li>
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://squidfunk.github.io/mkdocs-material/reference/lists/#using-task-lists">Lists</a>: 渲染任务列表</p>
-</li>
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://squidfunk.github.io/mkdocs-material/reference/code-blocks">Code Blocks</a>: 渲染代码块</p>
-</li>
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://facelessuser.github.io/pymdown-extensions/extensions/arithmatex/">PyMdown Extension Documentation</a>: PyMdown 方便文档写作扩展文档</p>
-<ul class="lvl-2">
-<li class="lvl-4"><a target="_blank" rel="noopener" href="https://squidfunk.github.io/mkdocs-material/reference/content-tabs/">content tabs</a>: 将备选内容分组到不同的选项卡下</li>
-</ul>
-</li>
-</ul>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown">https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown</a></p>
-</li>
-</ul>
-<h3 id="plugins">plugins</h3>
-<h4 id="mkdocs-jupyter">mkdocs-jupyter</h4>
-<p>安装依赖</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install mkdocs-jupyter</span><br></pre></td></tr></tbody></table></figure>
-<p>配置 plugin</p>
-<figure class="highlight yaml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">nav:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">Home:</span> <span class="string">index.md</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">Notebook page:</span> <span class="string">notebook.ipynb</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">Python file:</span> <span class="string">python_script.py</span></span><br><span class="line"></span><br><span class="line"><span class="attr">plugins:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">mkdocs-jupyter</span></span><br></pre></td></tr></tbody></table></figure>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://pypi.org/project/mkdocs-jupyter/">https://pypi.org/project/mkdocs-jupyter/</a></p>
-</li>
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://github.com/danielfrg/mkdocs-jupyter/">https://github.com/danielfrg/mkdocs-jupyter/</a></p>
-</li>
-</ul>
-<h4 id="mkdocstrings">mkdocstrings</h4>
-<p>Python 处理程序使用 Griffe 从 Python 源代码中收集文档。在法语中，“Griffe” 这个词有时可以用来代替 “签名”。Griffe 可以访问源代码的抽象语法树 (AST) 来提取有用的信息。当源代码不可用时，它还可以执行代码 (通过导入) 和内省内存中的对象。最后，它可以按照不同的样式解析文档字符串。</p>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://mkdocstrings.github.io/python/">https://mkdocstrings.github.io/python/</a></p>
-</li>
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://github.com/triton-inference-server/model_navigator/">https://github.com/triton-inference-server/model_navigator/</a></p>
-</li>
-</ul>
-<h4 id="mkdoxy">mkdoxy</h4>
-<p>MkDocs 的 MkDoxy 插件根据 Doxygen 注释和 markdown 文件中的代码片段生成 API 文档。</p>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://github.com/JakubAndrysek/MkDoxy">https://github.com/JakubAndrysek/MkDoxy</a></p>
-</li>
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://mkdoxy.kubaandrysek.cz/">https://mkdoxy.kubaandrysek.cz/</a></p>
-</li>
-</ul>
-<h3 id="integrate-CI">integrate CI</h3>
-<p>发布到远程仓库，并自动部署依赖于代码管理平台，通常使用命令生成静态站点文件到 public 目录，然后由代码管理平台部署。如果使用 mike 发布，请参考 mike 相关<a href="#versions-with-mike">内容</a></p>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://squidfunk.github.io/mkdocs-material/publishing-your-site/#publishing-your-site">Publish with CI</a></p>
-</li>
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://gitlab.com/msclock/gitlab-ci-templates">Publish mkdocs in Gitlab with templates</a></p>
-</li>
-</ul>
-<h2 id="sphinx">sphinx</h2>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://github.com/triton-inference-server/server/tree/main/docs">https://github.com/triton-inference-server/server/tree/main/docs</a></p>
-</li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/51572bb7/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -651,7 +466,7 @@ renovate documentation is here: <a target="_blank" rel="noopener" href="https://
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-09-03 11:24:20" itemprop="dateModified" datetime="2023-09-03T11:24:20+08:00">2023-09-03</time>
+      <time title="修改时间：2023-09-04 00:40:43" itemprop="dateModified" datetime="2023-09-04T00:40:43+08:00">2023-09-04</time>
     </span>
 
   
@@ -766,7 +581,7 @@ renovate documentation is here: <a target="_blank" rel="noopener" href="https://
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-09-03 11:24:20" itemprop="dateModified" datetime="2023-09-03T11:24:20+08:00">2023-09-03</time>
+      <time title="修改时间：2023-09-04 00:40:43" itemprop="dateModified" datetime="2023-09-04T00:40:43+08:00">2023-09-04</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -904,7 +719,7 @@ renovate documentation is here: <a target="_blank" rel="noopener" href="https://
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-09-03 11:24:20" itemprop="dateModified" datetime="2023-09-03T11:24:20+08:00">2023-09-03</time>
+      <time title="修改时间：2023-09-04 00:40:43" itemprop="dateModified" datetime="2023-09-04T00:40:43+08:00">2023-09-04</time>
     </span>
 
   
@@ -942,28 +757,6 @@ renovate documentation is here: <a target="_blank" rel="noopener" href="https://
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/164744104">Github Action 精华指南</a></p>
 </li>
 </ul>
-<h3 id="continue-on-error">continue on error</h3>
-<p>在上一个 step 失败后继续执行下一步 step</p>
-<figure class="highlight yaml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">my-job:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Step</span> <span class="number">1</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">echo</span> <span class="string">"This step will fail"</span> <span class="string">&amp;&amp;</span> <span class="string">exit</span> <span class="number">1</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Step</span> <span class="number">2</span></span><br><span class="line">        <span class="attr">continue-on-error:</span> <span class="literal">true</span> <span class="comment"># 或者使用 if: ${{ failure() }}</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">echo</span> <span class="string">"This step will run even if Step 1 fails"</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Step</span> <span class="number">3</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">echo</span> <span class="string">"This step will not run if Step 1 or Step 2 fails"</span></span><br></pre></td></tr></tbody></table></figure>
-<p>在此示例中，步骤 1 将失败，因为它使用 exit 1 退出时带有错误代码。但是，步骤 2 具有 continue-on-error: true 属性，这意味着即使步骤 1 失败，它也将继续运行。如果步骤 1 或步骤 2 失败，步骤 3 将不会运行。</p>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://stacktuts.com/how-to-run-a-github-actions-step-even-if-the-previous-step-fails-while-still-failing-the-job">https://stacktuts.com/how-to-run-a-github-actions-step-even-if-the-previous-step-fails-while-still-failing-the-job</a></p>
-</li>
-</ul>
-<h3 id="call-workflow">call workflow</h3>
-<p>workflow_call 是 GitHub Actions 中的一个关键字，它允许在一个工作流中调用另一个工作流。这个功能在 GitHub Actions 中是相对较新的，它可以帮助更好地组织和复用 CI/CD 代码。</p>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://github.com/devcontainers-contrib/features/blob/main/.github/workflows/release.yaml">https://github.com/devcontainers-contrib/features/blob/main/.github/workflows/release.yaml</a></p>
-</li>
-</ul>
-<h2 id="act">act</h2>
-<p><a target="_blank" rel="noopener" href="https://github.com/nektos/act">act</a> 用于本地测试 GitHub Action 管道，避免频繁推送到远程测试 CI 流程。</p>
-<p>手动安装需要各个平台安装工具</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># bash</span></span><br><span class="line">curl -s https://raw.githubusercontent.com/nektos/act/master/install.sh | bash</span><br><span class="line"><span class="comment"># choco</span></span><br><span class="line">choco install act-cli</span><br><span class="line"><span class="comment"># winget</span></span><br><span class="line">winget install nektos.act</span><br><span class="line"><span class="comment"># gh release</span></span><br><span class="line">gh extension install https://github.com/nektos/gh-act</span><br></pre></td></tr></tbody></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/5c9de83f/#more" rel="contents">
@@ -1033,7 +826,7 @@ renovate documentation is here: <a target="_blank" rel="noopener" href="https://
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-09-03 11:24:20" itemprop="dateModified" datetime="2023-09-03T11:24:20+08:00">2023-09-03</time>
+      <time title="修改时间：2023-09-04 00:40:43" itemprop="dateModified" datetime="2023-09-04T00:40:43+08:00">2023-09-04</time>
     </span>
 
   
@@ -1071,33 +864,14 @@ renovate documentation is here: <a target="_blank" rel="noopener" href="https://
 <p>console-address: MinIO web 管理页面的地址 + 端口，其中地址同上</p>
 </li>
 </ul>
-<h3 id="binary-deploy">binary deploy</h3>
-<p>使用二进制部署</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget -O /usr/local/bin/minio https://dl.min.io/server/minio/release/linux-amd64/minio</span><br><span class="line"><span class="built_in">chmod</span> +x /usr/local/bin/minio</span><br><span class="line">minio server /data</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="docker-deploy">docker deploy</h3>
-<p>使用 docker 命令部署</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> MINIO_ROOT_USER=minio</span><br><span class="line"><span class="built_in">export</span> MINIO_ROOT_PASSWORD=minio123</span><br><span class="line"><span class="built_in">export</span> MINIO_ADDRESS_PORT=9000</span><br><span class="line"><span class="built_in">export</span> MINIO_CONSOLE_PORT=9001</span><br><span class="line"><span class="built_in">export</span> MINIO_DOCKER_NAME=minio</span><br><span class="line"><span class="built_in">export</span> MINIO_BUCKET=bucket_name</span><br><span class="line">docker run -p <span class="variable">$MINIO_ADDRESS_PORT</span>:9000 -p <span class="variable">$MINIO_CONSOLE_PORT</span>:9001 --name <span class="variable">$MINIO_DOCKER_NAME</span> \</span><br><span class="line">    -d --restart=always \</span><br><span class="line">    -e MINIO_ROOT_USER=<span class="variable">$MINIO_ROOT_USER</span> \</span><br><span class="line">    -e MINIO_ROOT_PASSWORD=<span class="variable">$MINIO_ROOT_PASSWORD</span> \</span><br><span class="line">    -v .data:/data \</span><br><span class="line">    -v .minio:/root/.minio \</span><br><span class="line">    minio/minio server /data --address <span class="string">":9000"</span> --console-address <span class="string">":9001"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># mc 通过 link 操作使用 `容器名:内部port` 对api port访问</span></span><br><span class="line">docker run --<span class="built_in">rm</span> --<span class="built_in">link</span> <span class="variable">$MINIO_DOCKER_NAME</span> -e MINIO_BUCKET=<span class="variable">$MINIO_BUCKET</span> --entrypoint sh minio/mc -c <span class="string">"\</span></span><br><span class="line"><span class="string">  while ! nc -z minio 9000; do echo 'Wait minio to startup...' &amp;&amp; sleep 0.1; done; \</span></span><br><span class="line"><span class="string">  sleep 5 &amp;&amp; \</span></span><br><span class="line"><span class="string">  mc config host add myminio http://minio:9000 <span class="variable">$MINIO_ROOT_USER</span> <span class="variable">$MINIO_ROOT_PASSWORD</span> &amp;&amp; \</span></span><br><span class="line"><span class="string">  if ! mc ls myminio | grep --quiet <span class="variable">$MINIO_BUCKET</span>; then mc mb myminio/<span class="variable">$MINIO_BUCKET</span>; else echo 'bucket <span class="variable">$MINIO_BUCKET</span> already exists'; fi &amp;&amp; \</span></span><br><span class="line"><span class="string">  mc mb myminio/<span class="variable">$MINIO_BUCKET</span> &amp;&amp; \</span></span><br><span class="line"><span class="string">  mc policy download myminio/<span class="variable">$MINIO_BUCKET</span> \</span></span><br><span class="line"><span class="string">"</span></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="docker-compose-deploy">docker-compose deploy</h3>
-<p>使用 docker-compose 部署，参考如下:</p>
-<figure class="highlight yml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># docker-compose.yml</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">minio:</span></span><br><span class="line">    <span class="comment"># 该镜像默认创建匿名卷 /data 用于持久化 minio 数据</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">minio/minio:RELEASE.2023-06-02T23-17-26Z</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">${MINIO_ADDRESS_PORT:-9000}:9000</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">${MINIO_CONSOLE_PORT:-9001}:9001</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="attr">MINIO_ROOT_USER:</span> <span class="string">${MINIO_ROOT_USER:-minio}</span></span><br><span class="line">      <span class="attr">MINIO_ROOT_PASSWORD:</span> <span class="string">${MINIO_ROOT_PASSWORD:-minio123}</span></span><br><span class="line">    <span class="attr">command:</span> <span class="string">server</span> <span class="string">/data</span> <span class="string">--address</span> <span class="string">":9000"</span> <span class="string">--console-address</span> <span class="string">":9001"</span></span><br><span class="line">    <span class="attr">healthcheck:</span></span><br><span class="line">      <span class="attr">test:</span></span><br><span class="line">        [</span><br><span class="line">          <span class="string">"CMD"</span>,</span><br><span class="line">          <span class="string">"curl"</span>,</span><br><span class="line">          <span class="string">"-f"</span>,</span><br><span class="line">          <span class="comment"># 测试命令通过 localhost:external-port 访问</span></span><br><span class="line">          <span class="comment"># "http://localhost:${MINIO_ADDRESS_PORT:-9000}/minio/health/live"</span></span><br><span class="line">          <span class="comment"># 测试命令通过 service-name:internal-port 访问</span></span><br><span class="line">          <span class="string">"http://minio:9000/minio/health/live"</span></span><br><span class="line">        ]</span><br><span class="line">      <span class="attr">interval:</span> <span class="string">10s</span></span><br><span class="line">      <span class="attr">timeout:</span> <span class="string">10s</span></span><br><span class="line">      <span class="attr">retries:</span> <span class="number">3</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">create_models_buckets:</span></span><br><span class="line">    <span class="comment"># 使用 mc 工具创建桶 models</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">minio/mc:RELEASE.2023-05-30T22-41-38Z</span></span><br><span class="line">    <span class="attr">depends_on:</span></span><br><span class="line">      <span class="attr">minio:</span></span><br><span class="line">        <span class="attr">condition:</span> <span class="string">service_healthy</span></span><br><span class="line">    <span class="attr">entrypoint:</span> <span class="string">&gt;</span></span><br><span class="line"><span class="string">      bash -c 'mc config host add myminio http://minio:9000 ${MINIO_ROOT_USER:-minio} ${MINIO_ROOT_PASSWORD:-minio123};</span></span><br><span class="line"><span class="string">      if ! mc ls myminio | grep --quiet models; then</span></span><br><span class="line"><span class="string">        mc mb myminio/models;</span></span><br><span class="line"><span class="string">      else</span></span><br><span class="line"><span class="string">        echo "bucket models already exists in host myminio";</span></span><br><span class="line"><span class="string">      fi;</span></span><br><span class="line"><span class="string">      mc anonymous set public myminio/models;</span></span><br><span class="line"><span class="string">      exit 0;'</span></span><br></pre></td></tr></tbody></table></figure>
-<p>使用环境变量配置启动端口</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MINIO_ADDRESS_PORT=9999 docker-compose up --remove-orphans -V</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="mc">mc</h2>
-<p>1，连接服务（hellominio）</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mc config host add hellominio http://minio:9001 minio minio123</span><br><span class="line"></span><br><span class="line"><span class="comment">#msg：Added `hellominio` successfully.</span></span><br></pre></td></tr></tbody></table></figure>
-<p>2，创建策略 （readwrite）</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mc admin policy add hellominio readwrite readwrite.json</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置文件如下(readwrite.json )</span></span><br><span class="line"><span class="comment"># Added policy `readwrite` successfully.</span></span><br></pre></td></tr></tbody></table></figure>
-<p>3, 创建用户 密码必须为 8 位以上 （用户名 hello 密码 hello123123）</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mc admin user add hellominio hello hello123123</span><br><span class="line"></span><br><span class="line"><span class="comment"># Added user `hello` successfully.</span></span><br></pre></td></tr></tbody></table></figure>
-<p>4，成功创建用户后， 为该用户应用策略（readwrite）。</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mc admin policy <span class="built_in">set</span> hellominio readwrite user=hello</span><br><span class="line"></span><br><span class="line"><span class="comment"># Policy readwrite is set on user `hello`</span></span><br><span class="line"><span class="comment"># 到此登录后就可以正常使用了，继续分组管理用户</span></span><br></pre></td></tr></tbody></table></figure>
-<p>5， 创建分组 (hellominiogroup)</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mc admin group add hellominio hellominiogroup hello</span><br><span class="line"></span><br><span class="line"><span class="comment"># Added members {hello} to group hellominiogroup successfully.</span></span><br></pre></td></tr></tbody></table></figure>
-<p>6, 成功创建组后，对该组应用策略。</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mc admin policy <span class="built_in">set</span> hellominio readwrite group=newgroup</span><br><span class="line"></span><br><span class="line"><span class="comment"># Policy readwrite is set on group `newgroup`</span></span><br></pre></td></tr></tbody></table></figure>
-<p>7，更改权限后 需重新导入</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mc admin policy add hellominio readwrite readwrite.json</span><br><span class="line"></span><br><span class="line"><span class="comment"># Added policy `readwrite` successfully.</span></span><br></pre></td></tr></tbody></table></figure>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/7c5648b6/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1159,7 +933,7 @@ renovate documentation is here: <a target="_blank" rel="noopener" href="https://
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-09-03 11:24:20" itemprop="dateModified" datetime="2023-09-03T11:24:20+08:00">2023-09-03</time>
+      <time title="修改时间：2023-09-04 00:40:43" itemprop="dateModified" datetime="2023-09-04T00:40:43+08:00">2023-09-04</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1279,7 +1053,7 @@ renovate documentation is here: <a target="_blank" rel="noopener" href="https://
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-09-03 11:24:20" itemprop="dateModified" datetime="2023-09-03T11:24:20+08:00">2023-09-03</time>
+      <time title="修改时间：2023-09-04 00:40:43" itemprop="dateModified" datetime="2023-09-04T00:40:43+08:00">2023-09-04</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1481,7 +1255,7 @@ renovate documentation is here: <a target="_blank" rel="noopener" href="https://
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-09-03 11:24:20" itemprop="dateModified" datetime="2023-09-03T11:24:20+08:00">2023-09-03</time>
+      <time title="修改时间：2023-09-04 00:40:43" itemprop="dateModified" datetime="2023-09-04T00:40:43+08:00">2023-09-04</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1599,7 +1373,7 @@ mamba 自带的 conda 环境中的 python 在 windows 上编译需要附带设�
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-09-03 11:24:20" itemprop="dateModified" datetime="2023-09-03T11:24:20+08:00">2023-09-03</time>
+      <time title="修改时间：2023-09-04 00:40:43" itemprop="dateModified" datetime="2023-09-04T00:40:43+08:00">2023-09-04</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">

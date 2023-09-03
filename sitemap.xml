@@ -2,124 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://msclock.github.io/about/index.html</loc>
-    
-    <lastmod>2023-09-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://msclock.github.io/categories/index.html</loc>
-    
-    <lastmod>2023-09-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://msclock.github.io/tags/index.html</loc>
-    
-    <lastmod>2023-09-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://msclock.github.io/posts/7d9a968e/</loc>
-    
-    <lastmod>2023-09-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://msclock.github.io/posts/51572bb7/</loc>
-    
-    <lastmod>2023-09-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://msclock.github.io/posts/bce07864/</loc>
-    
-    <lastmod>2023-09-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://msclock.github.io/posts/ae671705/</loc>
-    
-    <lastmod>2023-09-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://msclock.github.io/posts/d215ead/</loc>
-    
-    <lastmod>2023-09-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://msclock.github.io/posts/2a2a7e8a/</loc>
-    
-    <lastmod>2023-09-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://msclock.github.io/posts/c6b360c1/</loc>
-    
-    <lastmod>2023-09-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://msclock.github.io/posts/5c9de83f/</loc>
-    
-    <lastmod>2023-09-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://msclock.github.io/posts/5f127ddd/</loc>
-    
-    <lastmod>2023-09-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://msclock.github.io/posts/51646408/</loc>
-    
-    <lastmod>2023-09-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://msclock.github.io/posts/655061ae/</loc>
     
     <lastmod>2023-09-03</lastmod>
     
@@ -317,7 +200,7 @@
   </url>
   
   <url>
-    <loc>https://msclock.github.io/posts/c21efe28/</loc>
+    <loc>https://msclock.github.io/about/index.html</loc>
     
     <lastmod>2023-09-03</lastmod>
     
@@ -326,7 +209,7 @@
   </url>
   
   <url>
-    <loc>https://msclock.github.io/posts/a1fb79d2/</loc>
+    <loc>https://msclock.github.io/categories/index.html</loc>
     
     <lastmod>2023-09-03</lastmod>
     
@@ -399,6 +282,123 @@
   
   <url>
     <loc>https://msclock.github.io/posts/abfea608/</loc>
+    
+    <lastmod>2023-09-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://msclock.github.io/posts/7d9a968e/</loc>
+    
+    <lastmod>2023-09-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://msclock.github.io/posts/51572bb7/</loc>
+    
+    <lastmod>2023-09-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://msclock.github.io/posts/bce07864/</loc>
+    
+    <lastmod>2023-09-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://msclock.github.io/posts/ae671705/</loc>
+    
+    <lastmod>2023-09-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://msclock.github.io/posts/d215ead/</loc>
+    
+    <lastmod>2023-09-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://msclock.github.io/posts/2a2a7e8a/</loc>
+    
+    <lastmod>2023-09-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://msclock.github.io/posts/c6b360c1/</loc>
+    
+    <lastmod>2023-09-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://msclock.github.io/posts/5c9de83f/</loc>
+    
+    <lastmod>2023-09-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://msclock.github.io/posts/5f127ddd/</loc>
+    
+    <lastmod>2023-09-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://msclock.github.io/posts/51646408/</loc>
+    
+    <lastmod>2023-09-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://msclock.github.io/posts/655061ae/</loc>
+    
+    <lastmod>2023-09-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://msclock.github.io/posts/c21efe28/</loc>
+    
+    <lastmod>2023-09-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://msclock.github.io/posts/a1fb79d2/</loc>
     
     <lastmod>2023-09-03</lastmod>
     
