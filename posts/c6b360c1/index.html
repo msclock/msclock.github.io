@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-center-circle.css">
   <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"msclock.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"github-dark"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"livere","storage":true,"lazyload":false,"nav":null,"activeClass":"livere"},"stickytabs":true,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.18.0/source/js/config.min.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"msclock.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.18.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"github-dark"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"livere","storage":true,"lazyload":false,"nav":null,"activeClass":"livere"},"stickytabs":true,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.18.1/source/js/config.min.js"></script>
 
     <meta name="description" content="本文主要收集有关 git 相关的优化及使用技巧。 git git 是使用最广的分布式代码版本控制系统. 参考文档:   what is git   scm doc   working 在 Git 中，working directory（工作目录）是指当前正在进行编辑和修改的文件的目录。它是与 Git 仓库中的版本控制系统相对应的文件系统中的一个目录。 当在工作目录中进行修改时，Git 会跟踪这些更">
 <meta property="og:type" content="article">
@@ -30,7 +30,7 @@
 <meta property="og:description" content="本文主要收集有关 git 相关的优化及使用技巧。 git git 是使用最广的分布式代码版本控制系统. 参考文档:   what is git   scm doc   working 在 Git 中，working directory（工作目录）是指当前正在进行编辑和修改的文件的目录。它是与 Git 仓库中的版本控制系统相对应的文件系统中的一个目录。 当在工作目录中进行修改时，Git 会跟踪这些更">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-08-08T00:12:32.000Z">
-<meta property="article:modified_time" content="2023-09-04T07:15:07.309Z">
+<meta property="article:modified_time" content="2023-10-01T00:40:44.644Z">
 <meta property="article:author" content="Msclock">
 <meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
@@ -92,7 +92,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">30</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">8</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">42</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">30</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">5</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">44</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -143,7 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#git"><span class="nav-number">1.</span> <span class="nav-text">git</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#working"><span class="nav-number">1.1.</span> <span class="nav-text">working</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#index"><span class="nav-number">1.2.</span> <span class="nav-text">index</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HEAD"><span class="nav-number">1.3.</span> <span class="nav-text">HEAD</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-auto-complete"><span class="nav-number">2.</span> <span class="nav-text">git auto-complete</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bash-auto-complete"><span class="nav-number">2.1.</span> <span class="nav-text">bash auto-complete</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#powershell-auto-complete"><span class="nav-number">2.2.</span> <span class="nav-text">powershell auto-complete</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reference"><span class="nav-number">2.3.</span> <span class="nav-text">reference</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-EOL"><span class="nav-number">3.</span> <span class="nav-text">git EOL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-LFS"><span class="nav-number">4.</span> <span class="nav-text">git LFS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-rebase"><span class="nav-number">5.</span> <span class="nav-text">git rebase</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#modify-history"><span class="nav-number">5.1.</span> <span class="nav-text">modify history</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Squash-in-git"><span class="nav-number">5.2.</span> <span class="nav-text">Squash in git</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-reset"><span class="nav-number">6.</span> <span class="nav-text">git reset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-store"><span class="nav-number">7.</span> <span class="nav-text">git store</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-with-depth"><span class="nav-number">8.</span> <span class="nav-text">git with --depth</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-config"><span class="nav-number">9.</span> <span class="nav-text">git config</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#config"><span class="nav-number">9.1.</span> <span class="nav-text">config</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#credential"><span class="nav-number">9.2.</span> <span class="nav-text">credential</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-log"><span class="nav-number">10.</span> <span class="nav-text">git log</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%8E%86%E5%8F%B2"><span class="nav-number">10.1.</span> <span class="nav-text">查看历史</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-filter-branch"><span class="nav-number">11.</span> <span class="nav-text">git filter-branch</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%80%93index-filer"><span class="nav-number">11.1.</span> <span class="nav-text">–index-filer</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-tag"><span class="nav-number">12.</span> <span class="nav-text">git tag</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B"><span class="nav-number">12.1.</span> <span class="nav-text">查看</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA"><span class="nav-number">12.2.</span> <span class="nav-text">创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5"><span class="nav-number">12.3.</span> <span class="nav-text">同步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GitLab-API-tag"><span class="nav-number">12.4.</span> <span class="nav-text">GitLab API tag</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-commit"><span class="nav-number">13.</span> <span class="nav-text">git commit</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#git-commit-m"><span class="nav-number">13.1.</span> <span class="nav-text">git commit -m</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-commit-empty"><span class="nav-number">13.2.</span> <span class="nav-text">git commit empty</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A2%9E%E5%8A%A0%E4%B8%80%E4%B8%AA%E7%A9%BA%E6%8F%90%E4%BA%A4"><span class="nav-number">13.2.1.</span> <span class="nav-text">增加一个空提交</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E7%A9%BA%E6%8F%90%E4%BA%A4"><span class="nav-number">13.2.2.</span> <span class="nav-text">删除空提交</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-revert"><span class="nav-number">14.</span> <span class="nav-text">git revert</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-repo-clean"><span class="nav-number">15.</span> <span class="nav-text">git repo clean</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#reference-2"><span class="nav-number">15.1.</span> <span class="nav-text">reference</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-submodule"><span class="nav-number">16.</span> <span class="nav-text">git submodule</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#add"><span class="nav-number">16.1.</span> <span class="nav-text">add</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#delete"><span class="nav-number">16.2.</span> <span class="nav-text">delete</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#update"><span class="nav-number">16.3.</span> <span class="nav-text">update</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#move"><span class="nav-number">16.4.</span> <span class="nav-text">move</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-diff"><span class="nav-number">17.</span> <span class="nav-text">git diff</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-commit-convention"><span class="nav-number">18.</span> <span class="nav-text">git commit convention</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-commit-amend"><span class="nav-number">19.</span> <span class="nav-text">git commit --amend</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#git"><span class="nav-number">1.</span> <span class="nav-text">git</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#working"><span class="nav-number">1.1.</span> <span class="nav-text">working</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#index"><span class="nav-number">1.2.</span> <span class="nav-text">index</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HEAD"><span class="nav-number">1.3.</span> <span class="nav-text">HEAD</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-auto-complete"><span class="nav-number">2.</span> <span class="nav-text">git auto-complete</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bash-auto-complete"><span class="nav-number">2.1.</span> <span class="nav-text">bash auto-complete</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#powershell-auto-complete"><span class="nav-number">2.2.</span> <span class="nav-text">powershell auto-complete</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reference"><span class="nav-number">2.3.</span> <span class="nav-text">reference</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-EOL"><span class="nav-number">3.</span> <span class="nav-text">git EOL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-LFS"><span class="nav-number">4.</span> <span class="nav-text">git LFS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-rebase"><span class="nav-number">5.</span> <span class="nav-text">git rebase</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#modify-history"><span class="nav-number">5.1.</span> <span class="nav-text">modify history</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Squash-in-git"><span class="nav-number">5.2.</span> <span class="nav-text">Squash in git</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-reset"><span class="nav-number">6.</span> <span class="nav-text">git reset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-restore"><span class="nav-number">7.</span> <span class="nav-text">git restore</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-remote"><span class="nav-number">8.</span> <span class="nav-text">git remote</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-with-depth"><span class="nav-number">9.</span> <span class="nav-text">git with --depth</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-config"><span class="nav-number">10.</span> <span class="nav-text">git config</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#config"><span class="nav-number">10.1.</span> <span class="nav-text">config</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#credential"><span class="nav-number">10.2.</span> <span class="nav-text">credential</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#http"><span class="nav-number">10.3.</span> <span class="nav-text">http</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#proxy"><span class="nav-number">10.4.</span> <span class="nav-text">proxy</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-log"><span class="nav-number">11.</span> <span class="nav-text">git log</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%8E%86%E5%8F%B2"><span class="nav-number">11.1.</span> <span class="nav-text">查看历史</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-filter-branch"><span class="nav-number">12.</span> <span class="nav-text">git filter-branch</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%80%93index-filer"><span class="nav-number">12.1.</span> <span class="nav-text">–index-filer</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-tag"><span class="nav-number">13.</span> <span class="nav-text">git tag</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B"><span class="nav-number">13.1.</span> <span class="nav-text">查看</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA"><span class="nav-number">13.2.</span> <span class="nav-text">创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5"><span class="nav-number">13.3.</span> <span class="nav-text">同步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GitLab-API-tag"><span class="nav-number">13.4.</span> <span class="nav-text">GitLab API tag</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-commit"><span class="nav-number">14.</span> <span class="nav-text">git commit</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#git-commit-m"><span class="nav-number">14.1.</span> <span class="nav-text">git commit -m</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-commit-empty"><span class="nav-number">14.2.</span> <span class="nav-text">git commit empty</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A2%9E%E5%8A%A0%E4%B8%80%E4%B8%AA%E7%A9%BA%E6%8F%90%E4%BA%A4"><span class="nav-number">14.2.1.</span> <span class="nav-text">增加一个空提交</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E7%A9%BA%E6%8F%90%E4%BA%A4"><span class="nav-number">14.2.2.</span> <span class="nav-text">删除空提交</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-revert"><span class="nav-number">15.</span> <span class="nav-text">git revert</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-repo-clean"><span class="nav-number">16.</span> <span class="nav-text">git repo clean</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#reference-2"><span class="nav-number">16.1.</span> <span class="nav-text">reference</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-submodule"><span class="nav-number">17.</span> <span class="nav-text">git submodule</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#add"><span class="nav-number">17.1.</span> <span class="nav-text">add</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#delete"><span class="nav-number">17.2.</span> <span class="nav-text">delete</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#update"><span class="nav-number">17.3.</span> <span class="nav-text">update</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#move"><span class="nav-number">17.4.</span> <span class="nav-text">move</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-diff"><span class="nav-number">18.</span> <span class="nav-text">git diff</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-commit-convention"><span class="nav-number">19.</span> <span class="nav-text">git commit convention</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-commit-amend"><span class="nav-number">20.</span> <span class="nav-text">git commit --amend</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -158,13 +158,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-count">44</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -246,7 +246,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-09-04 15:15:07" itemprop="dateModified" datetime="2023-09-04T15:15:07+08:00">2023-09-04</time>
+      <time title="修改时间：2023-10-01 08:40:44" itemprop="dateModified" datetime="2023-10-01T08:40:44+08:00">2023-10-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -265,7 +265,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>7.7k</span>
+      <span>7.9k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -390,7 +390,7 @@
 </li>
 </ul>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将文件从staged转为unstaged</span></span><br><span class="line">git reset &lt;file&gt;</span><br><span class="line">git restore --staged &lt;file&gt;</span><br><span class="line"><span class="comment"># 将所有的文件转为unstaged</span></span><br><span class="line">git reset HEAD</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="git-store">git store</h2>
+<h2 id="git-restore">git restore</h2>
 <p>参考文档:</p>
 <ul class="lvl-0">
 <li class="lvl-2">
@@ -398,6 +398,8 @@
 </li>
 </ul>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># discard the unstaged changed file</span></span><br><span class="line">git restore &lt;file&gt;</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="git-remote">git remote</h2>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加远程</span></span><br><span class="line">git remote add &lt;remote-name&gt; &lt;url&gt;</span><br><span class="line"><span class="comment"># 查看本地注册的远程</span></span><br><span class="line">git remove -v</span><br><span class="line"><span class="comment"># 删除关联的远程</span></span><br><span class="line">git remote remove &lt;remote-name&gt;</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="git-with-depth">git with --depth</h2>
 <p>仓库过大时，使用 depth 可加快拉取代码。</p>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># --depth 1</span></span><br><span class="line">git <span class="built_in">clone</span> --depth 1 url-to-repos</span><br><span class="line"><span class="comment"># 后续再把未同步的远程历史同步到本地</span></span><br><span class="line">git fetch --unshallow</span><br><span class="line"><span class="comment"># 拉取远程分支branch到本地分支local-branch(通常等于branch)</span></span><br><span class="line">git fetch &lt;remote&gt; &lt;branch&gt;[:&lt;local-barnch&gt;=&lt;branch&gt;] --depth 1</span><br></pre></td></tr></tbody></table></figure>
@@ -407,6 +409,10 @@
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看配置及配置所属位置</span></span><br><span class="line">git config --list --show-origin</span><br><span class="line">git config --global user.name <span class="string">"Your Username"</span></span><br><span class="line">git config --global user.email <span class="string">"your.email@example.com"</span></span><br></pre></td></tr></tbody></table></figure>
 <h3 id="credential">credential</h3>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global credential.helper store</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="http">http</h3>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.sslVerify <span class="literal">false</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="proxy">proxy</h3>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global url.https://ghproxy.com/https://github.com.insteadOf https://github.com</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="git-log">git log</h2>
 <h3 id="查看历史">查看历史</h3>
 <p>查看文件夹的历史提交记录</p>
@@ -542,29 +548,29 @@
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 输出差异</span></span><br><span class="line">git diff | out-file -enc ascii &lt;out file&gt;</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="git-commit-convention">git commit convention</h2>
 <p>一个好的提交 message <a target="_blank" rel="noopener" href="https://cbea.ms/git-commit/">规则</a></p>
-<ol>
-<li class="lvl-3">
+<ul class="lvl-0">
+<li class="lvl-2">
 <p>从主体中分离出标题并用空行隔开</p>
 </li>
-<li class="lvl-3">
+<li class="lvl-2">
 <p>限制标题字符 50 以内</p>
 </li>
-<li class="lvl-3">
+<li class="lvl-2">
 <p>大写标题行</p>
 </li>
-<li class="lvl-3">
+<li class="lvl-2">
 <p>不需要结束标题行</p>
 </li>
-<li class="lvl-3">
+<li class="lvl-2">
 <p>在主题行中使用祈使语气</p>
 </li>
-<li class="lvl-3">
+<li class="lvl-2">
 <p>主体使用 72 字符换行包装</p>
 </li>
-<li class="lvl-3">
+<li class="lvl-2">
 <p>使用主体解释 what、why、how</p>
 </li>
-</ol>
+</ul>
 <blockquote>
 <p>[!NOTE]<br>
 另加 Github Gist <a target="_blank" rel="noopener" href="https://gist.github.com/robertpainsi/b632364184e70900af4ab688decf6f53">Commit Message Guidelines</a> 及示例 <a target="_blank" rel="noopener" href="https://wiki.openstack.org/wiki/GitCommitMessages">wiki</a></p>
@@ -664,14 +670,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">387k</span>
+    <span title="站点总字数">395k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:52</span>
+    <span title="站点阅读时长">5:59</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
@@ -700,20 +706,20 @@
   <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.8/dist/medium-zoom.min.js" integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.18.0/source/js/comments.min.js"></script><script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.18.0/source/js/utils.min.js"></script><script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.18.0/source/js/motion.min.js"></script><script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.18.0/source/js/next-boot.min.js"></script><script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.18.0/source/js/pjax.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.18.1/source/js/comments.min.js"></script><script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.18.1/source/js/utils.min.js"></script><script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.18.1/source/js/motion.min.js"></script><script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.18.1/source/js/next-boot.min.js"></script><script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.18.1/source/js/pjax.min.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.1/dist/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.18.0/source/js/third-party/search/local-search.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.18.1/source/js/third-party/search/local-search.min.js"></script>
 
   <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdn.jsdelivr.net/npm/pdfobject@2.2.12/pdfobject.min.js","integrity":"sha256-g2xji1rlE3KsGVClvuxTbcR0Kn2+wtQADSff2Tbb4zA="},"url":"/lib/pdf/web/viewer.html"}</script>
-  <script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.18.0/source/js/third-party/tags/pdf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.18.1/source/js/third-party/tags/pdf.min.js"></script>
 
   <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"neutral","dark":"neutral"},"js":{"url":"https://cdn.jsdelivr.net/npm/mermaid@10.3.0/dist/mermaid.min.js","integrity":"sha256-9y71g5Lz/KLsHjB8uXwnkuWDtAMDSzD/HdIbqhJfTAI="}}</script>
-  <script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.18.0/source/js/third-party/tags/mermaid.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.18.1/source/js/third-party/tags/mermaid.min.js"></script>
 
 
 
-  <script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.18.0/source/js/third-party/pace.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.18.1/source/js/third-party/pace.min.js"></script>
 
 
   
@@ -723,7 +729,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/quicklink@2.3.0/dist/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
   <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://msclock.github.io/posts/c6b360c1/"}</script>
-  <script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.18.0/source/js/third-party/quicklink.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.18.1/source/js/third-party/quicklink.min.js"></script>
 <script src="https://unpkg.com/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
 
 <script>
@@ -744,7 +750,7 @@ const darkmode = new Darkmode(options);
 window.darkmode = darkmode;
 darkmode.showWidget();
 </script>
-<script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.18.0/source/js/third-party/comments/livere.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.18.1/source/js/third-party/comments/livere.min.js"></script>
 
 <script>
             window.imageLazyLoadSetting = {
