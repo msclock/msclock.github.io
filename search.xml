@@ -2671,6 +2671,11 @@ MVP (Minimum viable Product) 以最小的代价提供一个可测试交付的版
 <td> 工具 </td>
 </tr>
 <tr>
+<td><a href="https://cpulator.01xz.net/">Computer simulator</a></td>
+<td>cpulator</td>
+<td> 工具 </td>
+</tr>
+<tr>
 <td><a href="https://wandbox.org/">sandbox</a></td>
 <td>melpon</td>
 <td> 工具 </td>
@@ -3039,7 +3044,13 @@ https://github.com/hugorbarbosa/cpp-project-template
 </li>
 </ul>
 <h4 id="打包库">打包库</h4>
-<p>配置安装规则 (Installing Rules)。安装规则包括安装运行库、头文件、文档等等</p>
+<p>配置安装规则 (Installing Rules)。安装规则包括安装运行库、头文件、文档等等，以下是不断对安装规则不断改进的过程。</p>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://cmake.org/cmake/help/latest/guide/importing-exporting/index.html">https://cmake.org/cmake/help/latest/guide/importing-exporting/index.html</a></p>
+</li>
+</ul>
 <figure class="highlight cmake"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Version 1: 只是安装对应工件</span></span><br><span class="line"><span class="keyword">include</span>(GNUInstallDis) <span class="comment"># GNU dir-installed layout</span></span><br><span class="line"><span class="keyword">install</span>(TARGETS Example</span><br><span class="line">    RUNTIME DESTINATION <span class="variable">${CMAKE_INSTALL_BINDIR}</span></span><br><span class="line">    LIBRARY DESTINATION <span class="variable">${CMAKE_INSTALL_LIBDIR}</span></span><br><span class="line">    ARCHIVE DESTINATION <span class="variable">${CMAKE_INSTALL_LIBDIR}</span></span><br><span class="line">)</span><br><span class="line"><span class="comment"># CMake &gt;=3.14 same as [[install(TARGETS Example)]] as the above</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Version 2:通常安装包会区分运行库（Runtime）和开发库（Development）</span></span><br><span class="line"><span class="keyword">install</span>(TARGETS Example</span><br><span class="line">    RUNTIME DESTINATION <span class="variable">${CMAKE_INSTALL_BINDIR}</span></span><br><span class="line">        COMPONENT Runtime</span><br><span class="line">    LIBRARY DESTINATION <span class="variable">${CMAKE_INSTALL_LIBDIR}</span></span><br><span class="line">        COMPONENT Runtime</span><br><span class="line">        NAMELINK_COMPONENT Development <span class="comment"># CMake &gt;= 3.12</span></span><br><span class="line">    ARCHIVE DESTINATION <span class="variable">${CMAKE_INSTALL_LIBDIR}</span></span><br><span class="line">        COMPONENT Development</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Version 3: 通常加上 SomeProj_ 前缀避免安装规则被其它项目通过 add_subdirctory 的集成的安装规则干扰</span></span><br><span class="line"><span class="keyword">install</span>(TARGETS Example</span><br><span class="line">    RUNTIME DESTINATION <span class="variable">${CMAKE_INSTALL_BINDIR}</span></span><br><span class="line">        COMPONENT SomeProj_Runtime</span><br><span class="line">    LIBRARY DESTINATION <span class="variable">${CMAKE_INSTALL_LIBDIR}</span></span><br><span class="line">        COMPONENT SomeProj_Runtime</span><br><span class="line">        NAMELINK_COMPONENT SomeProj_Development</span><br><span class="line">    ARCHIVE DESTINATION <span class="variable">${CMAKE_INSTALL_LIBDIR}</span></span><br><span class="line">        COMPONENT SomeProj_Development</span><br><span class="line">)</span><br></pre></td></tr></tbody></table></figure>
 <p>构建库及依赖的 RPATH，通常需要小心设置。</p>
 <ul class="lvl-0">
@@ -3111,6 +3122,46 @@ https://github.com/hugorbarbosa/cpp-project-template
 <p><a href="https://devblogs.microsoft.com/cppblog/introducing-cmake-debugger-in-vs-code-debug-your-cmake-scripts-using-open-source-cmake-debugger/">https://devblogs.microsoft.com/cppblog/introducing-cmake-debugger-in-vs-code-debug-your-cmake-scripts-using-open-source-cmake-debugger/</a></p>
 </li>
 </ul>
+<h4 id="include-gurad">include_gurad</h4>
+<p>提供一个 include_guard 避免重复引入</p>
+<figure class="highlight cmake"><table><tbody><tr><td class="code"><pre><span class="line">include_gurad(GLOBAL)</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="第三方资源">第三方资源</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://github.com/msclock/cmake-registry">cmake-registry</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://aminya.github.io/project_options/html/index.html">project_options: 较全面的项目配置</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://gitlab.kitware.com/cmake/community/-/wikis/FAQ">cmake community faq</a></p>
+</li>
+</ul>
+<h4 id="static-check">static check</h4>
+<p>在 cmake 中集成静态检查工具.</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>iwyu: CMAKE_CXX_INCLUDE_WHAT_YOU_USE</p>
+</li>
+<li class="lvl-2">
+<p>lwyu: CMAKE_LINK_WHAT_YOU_USE</p>
+</li>
+<li class="lvl-2">
+<p>cpplint: CMAKE_CXX_CPPCHECK</p>
+</li>
+<li class="lvl-2">
+<p>cppcheck: CMAKE_CXX_CPPCHECK</p>
+</li>
+<li class="lvl-2">
+<p>clang tidy: CMAKE_CXX_CLANG_TIDY</p>
+</li>
+</ul>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://www.kitware.com/static-checks-with-cmake-cdash-iwyu-clang-tidy-lwyu-cpplint-and-cppcheck/">https://www.kitware.com/static-checks-with-cmake-cdash-iwyu-clang-tidy-lwyu-cpplint-and-cppcheck/</a></p>
+</li>
+</ul>
 <h3 id="CMake-ctest">CMake ctest</h3>
 <p>ctest 可执行文件是 CMake 测试驱动程序。CMake 生成的构建树是为使用 enable_testing () 和 add_test () 命令的项目创建的，它具有测试支持。该程序将运行测试并报告结果。</p>
 <p>links:</p>
@@ -3128,19 +3179,6 @@ https://github.com/hugorbarbosa/cpp-project-template
 <ul class="lvl-0">
 <li class="lvl-2">
 <p><a href="https://cmake.org/cmake/help/latest/manual/ctest.1.html#id23">https://cmake.org/cmake/help/latest/manual/ctest.1.html#id23</a></p>
-</li>
-</ul>
-<h3 id="CMake-Modules">CMake Modules</h3>
-<h4 id="Builtin">Builtin</h4>
-<p>提供一个 include_guard 避免重复引入</p>
-<figure class="highlight cmake"><table><tbody><tr><td class="code"><pre><span class="line">include_gurad(GLOBAL)</span><br></pre></td></tr></tbody></table></figure>
-<h4 id="第三方模块">第三方模块</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://github.com/msclock/cmake-registry">cmake-registry</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://aminya.github.io/project_options/html/index.html">project_options: 较全面的项目配置</a></p>
 </li>
 </ul>
 <h2 id="vcpkg">vcpkg</h2>
@@ -4149,6 +4187,13 @@ The instruction <code>mov rax, QWORD PTR [rbp-8]</code> is a move instruction in
 <figure class="highlight armasm"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">; Here is an example program that uses the MOV instruction to move the value 5 into the EAX register, adds the value in the EBX register to the value in the EAX register using the ADD instruction, and then returns the result:</span></span><br><span class="line"><span class="symbol">global</span> _start</span><br><span class="line"></span><br><span class="line"><span class="symbol">section</span> <span class="meta">.text</span></span><br><span class="line"></span><br><span class="line"><span class="symbol">_start:</span></span><br><span class="line">    <span class="comment">; Move 5 into EAX</span></span><br><span class="line">    <span class="keyword">MOV</span> EAX, <span class="number">5</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">; Add EBX to EAX</span></span><br><span class="line">    <span class="keyword">ADD</span> EAX, EBX</span><br><span class="line"></span><br><span class="line">    <span class="comment">; Exit program with EAX as return value</span></span><br><span class="line">    <span class="comment">; The reason we use the following code to exit a program in assembly language is because it is a convention that has been established for Linux systems. The INT instruction with the value 0x80 is used to make a system call to the kernel. The kernel then interprets the value in the EAX register as the system call number and performs the appropriate action. In this case, the system call number is 1, which corresponds to the exit system call. The value in the EBX register is used as the exit status of the program. By convention, a value of 0 indicates success, while any other value indicates an error. Therefore, the MOV EBX, 0 instruction is used to set the EBX register to 0 before exiting the program with a return value of 0 in the EAX register.</span></span><br><span class="line">    <span class="keyword">MOV</span> EBX, <span class="number">0</span></span><br><span class="line">    <span class="comment">; For notifying the kernel to end the system call</span></span><br><span class="line">    <span class="keyword">MOV</span> EAX, <span class="number">1</span></span><br><span class="line">    INT <span class="number">0x80</span></span><br></pre></td></tr></tbody></table></figure>
 <figure class="highlight armasm"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">; Here is another example program that uses the CMP instruction to compare the values in the EAX and EBX registers and then jumps to a different location in the code based on the result:</span></span><br><span class="line"><span class="symbol">global</span> _start</span><br><span class="line"></span><br><span class="line"><span class="symbol">section</span> <span class="meta">.text</span></span><br><span class="line"></span><br><span class="line"><span class="symbol">_start:</span></span><br><span class="line">    <span class="comment">; Compare EAX and EBX</span></span><br><span class="line">    <span class="keyword">CMP</span> EAX, EBX</span><br><span class="line"></span><br><span class="line">    <span class="comment">; Jump to label1 if EAX is greater than EBX</span></span><br><span class="line">    JG label1</span><br><span class="line"></span><br><span class="line">    <span class="comment">; Jump to label2 if EAX is less than EBX</span></span><br><span class="line">    JL label2</span><br><span class="line"></span><br><span class="line">    <span class="comment">; Jump to label3 if EAX is equal to EBX</span></span><br><span class="line">    JE label3</span><br><span class="line"></span><br><span class="line"><span class="symbol">label1:</span></span><br><span class="line">    <span class="comment">; Code to execute if EAX is greater than EBX</span></span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">    <span class="comment">; Jump to end of program</span></span><br><span class="line">    JMP <span class="meta">end</span></span><br><span class="line"></span><br><span class="line"><span class="symbol">label2:</span></span><br><span class="line">    <span class="comment">; Code to execute if EAX is less than EBX</span></span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">    <span class="comment">; Jump to end of program</span></span><br><span class="line">    JMP <span class="meta">end</span></span><br><span class="line"></span><br><span class="line"><span class="symbol">label3:</span></span><br><span class="line">    <span class="comment">; Code to execute if EAX is equal to EBX</span></span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">    <span class="comment">; Jump to end of program</span></span><br><span class="line">    JMP <span class="meta">end</span></span><br><span class="line"></span><br><span class="line"><span class="symbol">end:</span></span><br><span class="line">    <span class="comment">; Exit program with EAX as return value</span></span><br><span class="line">    <span class="keyword">MOV</span> EBX, <span class="number">0</span></span><br><span class="line">    <span class="keyword">MOV</span> EAX, <span class="number">1</span></span><br><span class="line">    INT <span class="number">0x80</span></span><br></pre></td></tr></tbody></table></figure>
 <figure class="highlight armasm"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">; To write an assembly program that adds two numbers, you can use the ADD instruction.</span></span><br><span class="line"><span class="symbol">section</span> <span class="meta">.data</span></span><br><span class="line">    <span class="comment">; define three variables in the .data section: num1, num2, and result. The dd directive is used to reserve space for each variable and initialize it to a specific value. num1 is initialized to 10, num2 is initialized to 20, and result is initialized to 0.</span></span><br><span class="line">    num1 dd <span class="number">10</span></span><br><span class="line">    num2 dd <span class="number">20</span></span><br><span class="line">    result dd <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="symbol">section</span> <span class="meta">.text</span></span><br><span class="line">    <span class="meta">global</span> _start</span><br><span class="line"></span><br><span class="line"><span class="symbol">_start:</span></span><br><span class="line">    <span class="comment">; Move num1 into EAX</span></span><br><span class="line">    <span class="keyword">mov</span> eax, [num1]</span><br><span class="line"></span><br><span class="line">    <span class="comment">; Add num2 to EAX</span></span><br><span class="line">    <span class="keyword">add</span> eax, [num2]</span><br><span class="line"></span><br><span class="line">    <span class="comment">; Move the result into result variable</span></span><br><span class="line">    <span class="keyword">mov</span> [result], eax</span><br><span class="line"></span><br><span class="line">    <span class="comment">; Exit the program with a return value of 0</span></span><br><span class="line">    <span class="keyword">mov</span> ebx, <span class="number">0</span></span><br><span class="line">    <span class="keyword">mov</span> eax, <span class="number">1</span></span><br><span class="line">    int <span class="number">0x80</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="arm-assembly">arm assembly</h3>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://www.youtube.com/watch?v=kKtWsuuJEDs&amp;list=PLn_It163He32Ujm-l_czgEBhbJjOUgFhg">https://www.youtube.com/watch?v=kKtWsuuJEDs&amp;list=PLn_It163He32Ujm-l_czgEBhbJjOUgFhg</a></p>
+</li>
+</ul>
 <h2 id="C">C</h2>
 <h3 id="C-内存管理">C 内存管理</h3>
 <h4 id="API">API</h4>
@@ -4601,7 +4646,7 @@ https://stackoverflow.com/questions/660083/derived-classes-in-c-what-is-your-fav
 <p><a href="https://toutiao.io/posts/hr3lc2m/preview">toutiao</a></p>
 </li>
 </ul>
-<h4 id="Require-Constraints-C-20">Require Constraints(C++20)</h4>
+<h4 id="require-C-20">require(C++20)</h4>
 <!--
 https://en.cppreference.com/w/cpp/language/constraints
  -->
@@ -4643,13 +4688,15 @@ https://en.cppreference.com/w/cpp/language/constraints
 <p><a href="https://zh.cppreference.com/w/cpp/thread">https://zh.cppreference.com/w/cpp/thread</a></p>
 </li>
 </ul>
+<h4 id="sharing-data">sharing data</h4>
+<p><strong>the Risk of mutexes</strong>: <a href="https://www.modernescpp.com/index.php/the-risk-of-mutexes/">https://www.modernescpp.com/index.php/the-risk-of-mutexes/</a></p>
+<p><strong>Prefer to mutex</strong>: <a href="https://www.modernescpp.com/index.php/prefer-locks-to-mutexes/">https://www.modernescpp.com/index.php/prefer-locks-to-mutexes/</a></p>
 <h3 id="API-Design">API Design</h3>
-<p>“Make interfaces easy to use correctly and hard to use incorrectly.—Scott Meyers”。这很容易达成一致，但很难遵循。让看看如何改进的 API，避免接口增长带来的陷阱。</p>
-<h4 id="设计原则">设计原则</h4>
-<h5 id="Better-naming">Better naming</h5>
+<p>“Make interfaces easy to use correctly and hard to use incorrectly.—Scott Meyers”。这很容易达成一致，但很难遵循。这里提供一些技巧来如何改进的 API，避免接口增长带来的陷阱。</p>
+<h4 id="Better-naming">Better naming</h4>
 <p>使用更表意的命名方式，命名非常困难，但能让事情变简单。</p>
 <figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">print_data</span><span class="params">(<span class="type">unsigned</span> value)</span> </span>{</span><br><span class="line">    fmt::<span class="built_in">print</span>(<span class="string">"Distance is {} meters\n"</span>, value);</span><br><span class="line">}</span><br><span class="line"><span class="keyword">auto</span> distance_mk=<span class="number">3</span>;</span><br><span class="line"><span class="built_in">print_data</span>(distance_km); <span class="comment">// 歧义调用，这里原意只让打印 meters</span></span><br><span class="line"><span class="built_in">print_data</span>(distance_km*<span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">print_distance</span><span class="params">(<span class="type">unsigned</span> distance_in_meters)</span></span>;</span><br></pre></td></tr></tbody></table></figure>
-<h5 id="Use-strong-types">Use strong types</h5>
+<h4 id="Use-strong-types">Use strong types</h4>
 <p>使用健壮的类型，尽量保证在编译或运行给出更多信息，健壮的类型不完全检测包括：</p>
 <ul class="lvl-0">
 <li class="lvl-2">
@@ -4663,14 +4710,16 @@ https://en.cppreference.com/w/cpp/language/constraints
 </li>
 </ul>
 <figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;NamedType/named_type.hpp&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> Meter= fluent::NamedType&lt;unsgined, <span class="keyword">struct</span> MeterTag&gt;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">print_distance</span><span class="params">(Meter distance)</span> </span>{</span><br><span class="line">    fmt::<span class="built_in">print</span>(<span class="string">"Distance is {} meters\n"</span>, distance.<span class="built_in">get</span>());</span><br><span class="line">}</span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">auto</span> <span class="keyword">auto</span> distance_meters=<span class="number">3000</span>;</span><br><span class="line"><span class="built_in">print_distance</span>(<span class="built_in">Meter</span>(distance_meters)); <span class="comment">//  ok</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print_distance</span>(<span class="number">3000</span>); <span class="comment">// won't compile</span></span><br></pre></td></tr></tbody></table></figure>
-<h5 id="Avoid-easily-swappable-params">Avoid easily swappable params</h5>
+<h4 id="Avoid-easily-swappable-params">Avoid easily swappable params</h4>
 <p>避免两个类型相等的参数很容易错用，注释不如实际类型使用安全。</p>
-<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// good 每个参数都能清楚表达应有的含义</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">visitor</span> {<span class="comment">/**/</span>}</span><br><span class="line"></span><br><span class="line"><span class="keyword">enum class</span> <span class="title class_">Direction</span> {Forward,Backward };</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Config</span>{</span><br><span class="line">    <span class="type">bool</span> ignore_x {<span class="literal">false</span>};</span><br><span class="line">    <span class="type">bool</span> ignore_y {<span class="literal">false</span>};</span><br><span class="line">};</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Graph</span>{</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">walk</span><span class="params">(visitora v,Direction direction,Configconfig)</span></span>{}</span><br><span class="line">}</span><br><span class="line">visitor my_visitor;</span><br><span class="line">Config config;</span><br><span class="line">config.ignore_y = <span class="literal">true</span>;</span><br><span class="line"><span class="built_in">Graph</span>().<span class="built_in">walk</span>(my_visitor, Direction::Backward, config);</span><br><span class="line"></span><br><span class="line"><span class="comment">// bad 存在 3 个 bool 参数，可能造成调用错误且造成 api 不容易使用</span></span><br><span class="line"><span class="comment">// void walk(visitora v,bool is_backward, bool ignore_x, bool ignore_y){}</span></span><br><span class="line"><span class="comment">// Graph().walk(my_visitor, false, true, false);</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// good 每个参数都能清楚表达应有的含义</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">visitor</span> {<span class="comment">/**/</span>}</span><br><span class="line"></span><br><span class="line"><span class="keyword">enum class</span> <span class="title class_">Direction</span> {Forward,Backward };</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Config</span>{</span><br><span class="line">    <span class="type">bool</span> ignore_x {<span class="literal">false</span>};</span><br><span class="line">    <span class="type">bool</span> ignore_y {<span class="literal">false</span>};</span><br><span class="line">};</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Graph</span>{</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">walk</span><span class="params">(visitor v, Direction direction,Config config)</span></span>{}</span><br><span class="line">}</span><br><span class="line">visitor my_visitor;</span><br><span class="line">Config config;</span><br><span class="line">config.ignore_y = <span class="literal">true</span>;</span><br><span class="line"><span class="built_in">Graph</span>().<span class="built_in">walk</span>(my_visitor, Direction::Backward, config);</span><br><span class="line"></span><br><span class="line"><span class="comment">// bad 存在 3 个 bool 参数，可能造成调用错误且造成 api 不容易使用</span></span><br><span class="line"><span class="comment">// void walk(visitora v,bool is_backward, bool ignore_x, bool ignore_y){}</span></span><br><span class="line"><span class="comment">// Graph().walk(my_visitor, false, true, false);</span></span><br></pre></td></tr></tbody></table></figure>
+<p>避免相同类型设置为函数签名的参数，除了惯用表达外。更健全的类型能在让编译器更易报错</p>
+<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// Enum class to the rescue</span></span><br><span class="line"><span class="keyword">enum class</span> <span class="title class_">truncate</span> {off,on};</span><br><span class="line"><span class="keyword">enum class</span> <span class="title class_">pad</span> {off,on};</span><br><span class="line"><span class="keyword">enum class</span> <span class="title class_">fill</span> {off,on};</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">(std::string_view str, truncate truncate_, pad pad_, fill fill_)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">main</span>(){</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"hello"</span>, truncate::on, pad::on, fill::on);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <p><a href="https://godbolt.org/z/rb7TvhGc9">fopen API 合理重写</a></p>
-<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">using</span> FilePtr=std:unique_ptr&lt;FILE,<span class="keyword">decltype</span>([](FILE *f){<span class="built_in">fclose</span>(f);})&gt;</span><br><span class="line"></span><br><span class="line">[[nodiscard]] FilePtr <span class="built_in">fopen</span>(<span class="type">const</span> std:filesystem:path &amp;path,</span><br><span class="line">                            std:string view mode);</span><br></pre></td></tr></tbody></table></figure>
-<h5 id="Carefully-think-about-intent">Carefully think about intent</h5>
+<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">using</span> FilePtr = std:unique_ptr&lt;FILE,<span class="keyword">decltype</span>([](FILE *f){<span class="built_in">fclose</span>(f);})&gt;</span><br><span class="line"></span><br><span class="line">[[nodiscard]] FilePtr <span class="built_in">fopen</span>(<span class="type">const</span> std:filesystem:path &amp;path,</span><br><span class="line">                            std:string view mode);</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="Carefully-think-about-intent">Carefully think about intent</h4>
 <p>接口设计要紧贴真实用户意图，关注调用 api 方的可能的行为。</p>
-<h5 id="nodiscard"><code>[[nodiscard]]</code></h5>
+<h4 id="nodiscard"><code>[[nodiscard]]</code></h4>
 <ul class="lvl-0">
 <li class="lvl-2">
 <p><a href="https://godbolt.org/z/xvrjhjGdK">Functions</a></p>
@@ -4706,9 +4755,9 @@ https://en.cppreference.com/w/cpp/language/constraints
 <p>Can be checked enforced with static analysis</p>
 </li>
 </ul>
-<h5 id="noexcept"><code>noexcept</code></h5>
+<h4 id="noexcept"><code>noexcept</code></h4>
 <p><code>noexcept</code> notifies the user (and compiler)that a function may not throw an exception.If an exception is thrown from that function, <a href="https://godbolt.org/z/P1EjKbMsc"><code>terminate</code> MUST be called</a>.</p>
-<h5 id="Never-Return-a-Raw-Pointer">Never Return a Raw Pointer</h5>
+<h4 id="Never-Return-a-Raw-Pointer">Never Return a Raw Pointer</h4>
 <ul class="lvl-0">
 <li class="lvl-2">
 <p>It simply raises too many questions.Who owns it?Who deletes it?Is it a singleton global?</p>
@@ -4717,7 +4766,7 @@ https://en.cppreference.com/w/cpp/language/constraints
 <p>Consider owning_ptr, non_owning_ptror some kind of wrapper to document intent,if you must.</p>
 </li>
 </ul>
-<h5 id="Consistent-Error-Handling">Consistent Error Handling</h5>
+<h4 id="Consistent-Error-Handling">Consistent Error Handling</h4>
 <ul class="lvl-0">
 <li class="lvl-2">
 <p>Use one consistent method of reporting errors in your library</p>
@@ -4735,7 +4784,7 @@ https://en.cppreference.com/w/cpp/language/constraints
 <p>Consider std::expected&lt;&gt;(C++23) or similar.</p>
 </li>
 </ul>
-<h5 id="Avoid-Implicit-Conversions">Avoid Implicit Conversions</h5>
+<h4 id="Avoid-Implicit-Conversions">Avoid Implicit Conversions</h4>
 <ul class="lvl-0">
 <li class="lvl-2">
 <p>std::filesystem::path and std::string-view appear to be strongly typed but are not</p>
@@ -4747,7 +4796,7 @@ https://en.cppreference.com/w/cpp/language/constraints
 <p>Conversion operators and single parameter constructors (including variadic and ones with default parameters)should beexplicit</p>
 </li>
 </ul>
-<h5 id="delete-Problematic-Overloads">=delete Problematic Overloads</h5>
+<h4 id="delete-Problematic-Overloads">=delete Problematic Overloads</h4>
 <ul class="lvl-0">
 <li class="lvl-2">
 <p>Any function can be =deleted</p>
@@ -4756,7 +4805,7 @@ https://en.cppreference.com/w/cpp/language/constraints
 <p>If you =delete a template, it will become the match for any non-exact parameter, and prevent implicit conversions.</p>
 </li>
 </ul>
-<h5 id="Guideline-for-Design-Classes-easy-change-and-extensions">Guideline for Design Classes: easy change and extensions</h5>
+<h4 id="Guideline-for-Design-Classes-easy-change-and-extensions">Guideline for Design Classes: easy change and extensions</h4>
 <p>Design class fundamental principles</p>
 <ul class="lvl-0">
 <li class="lvl-2">
@@ -4826,7 +4875,7 @@ If you use OO programming, use it properly.</p>
 </li>
 </ul>
 <figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;</span><br><span class="line"> <span class="keyword">class</span> <span class="title class_">T</span>,</span><br><span class="line"> <span class="keyword">class</span> <span class="title class_">Allocator</span> = std::allocator&lt;T&gt;</span><br><span class="line">&gt; <span class="keyword">class</span> vector;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt; <span class="keyword">class</span> ForwardIt &gt;</span></span><br><span class="line"><span class="function"><span class="keyword">constexpr</span> <span class="type">void</span> <span class="title">destroy</span><span class="params">( ForwardIt first, ForwardIt last )</span></span>; <span class="comment">// isolated scopes</span></span><br></pre></td></tr></tbody></table></figure>
-<h5 id="Resource-Management">Resource Management</h5>
+<h4 id="Resource-Management">Resource Management</h4>
 <ul class="lvl-0">
 <li class="lvl-2">
 <p>If you can avoid defining default operations, do <a href="https://en.cppreference.com/w/cpp/language/rule_of_three">The Rule of 0</a>.</p>
@@ -4852,9 +4901,9 @@ define or =delete them all. Manager resources can be possessed by samrt pointers
 </ul>
 </li>
 </ul>
-<h5 id="Data-Member-Initialization">Data Member Initialization</h5>
+<h4 id="Data-Member-Initialization">Data Member Initialization</h4>
 <p>Obeying to <a href="https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rc-ctor">Cpp Core Guideline</a></p>
-<h5 id="Prefer-Free-Function">Prefer Free Function</h5>
+<h4 id="Prefer-Free-Function">Prefer Free Function</h4>
 <p>设计功能接口在大多数时候应该使用非成员函数（<a href="https://www.youtube.com/watch?v=WLDT1lDOsb4">free function</a>）</p>
 <p>接口设计基本规则遵循：</p>
 <figure class="highlight txt"><table><tbody><tr><td class="code"><pre><span class="line">if(f needs to be virtual)</span><br><span class="line">    make f a member function of C;</span><br><span class="line">else if (f is operator &gt;&gt; or operator&lt;&lt; or</span><br><span class="line">        f needs type conversion on its left-most argument)</span><br><span class="line">{</span><br><span class="line">    make f a non-member function;</span><br><span class="line">    if(f needs access to non-public members of C)</span><br><span class="line">        make f a friend of C;</span><br><span class="line">}</span><br><span class="line">else if(f can be-implemented via C's public interface)</span><br><span class="line">    make f a non-member function;</span><br><span class="line">else</span><br><span class="line">    make f a member function of C;</span><br></pre></td></tr></tbody></table></figure>
@@ -4867,6 +4916,40 @@ define or =delete them all. Manager resources can be possessed by samrt pointers
 <p><a href="https://www.youtube.com/watch?v=motLOioLJfg&amp;t=64s">klaus lglberger</a></p>
 </li>
 </ul>
+<h4 id="Encapsulate-in-namespace">Encapsulate in namespace</h4>
+<p>使用 Namespace 封装隔离，避免命名冲突</p>
+<h4 id="Use-std-string-view">Use std::string_view</h4>
+<p>使用 std::string_view 提供了一种更安全、更灵活的方式来处理字符串文字，它允许编译时评估，避免潜在的缓冲区溢出，并提供一个方便的接口来处理字符串</p>
+<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">constexpr</span> std::string_view cnt = <span class="string">"abc"</span>; <span class="comment">// instead of inline const std::string or inline const char*</span></span><br></pre></td></tr></tbody></table></figure>
+<h4 id="Make-constants-in-configuration">Make constants in configuration</h4>
+<p>将常量配置配置为读取配置解析获取，避免重复编译.</p>
+<h4 id="Comment-the-purpose-and-usage">Comment the purpose and usage</h4>
+<p>对代码补充目的性的注释和用法示例，增加可读性.</p>
+<h4 id="Use-byte-array-or-data-structure">Use byte array or data structure</h4>
+<p>使用字节数组或数据结构表达十六进制流.</p>
+<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><span class="line">std::array&lt;<span class="type">uint8_t</span>,4&gt; bytes{<span class="number">0x1</span>,<span class="number">0x2</span>,<span class="number">0x3</span>,<span class="number">0x4</span>};</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="Seal-coupled-parameters">Seal coupled parameters</h4>
+<p>但传递的参数时描述一个东西时，考虑将其封装为一个结构。常见的用法是将 buffer 和长度作为参数，此时可考虑将其封装为一个结构或使用 std::span.</p>
+<h4 id="Seal-too-many-defaults">Seal too many defaults</h4>
+<p>将过多的参数封装为结构体，增加可读性.</p>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://www.youtube.com/watch?v=gV7jhTMYkKc">https://www.youtube.com/watch?v=gV7jhTMYkKc</a></p>
+</li>
+</ul>
+<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">server</span>{</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">config</span>{</span><br><span class="line">        <span class="type">uint16_t</span> port;</span><br><span class="line">        <span class="type">bool</span> tcp = <span class="literal">true</span>;</span><br><span class="line">        std::string_view address = <span class="string">"0.0.0.0"</span>;</span><br><span class="line">        std::optional&lt;std::string_view&gt; multicast = std::<span class="literal">nullopt</span>;</span><br><span class="line">        <span class="type">bool</span> nonblocking = <span class="literal">true</span></span><br><span class="line">    };</span><br><span class="line">    <span class="built_in">server</span>(config);</span><br><span class="line">};</span><br><span class="line"></span><br><span class="line"><span class="built_in">main</span>(){</span><br><span class="line">    <span class="comment">// require c++20</span></span><br><span class="line">    <span class="function">server <span class="title">s</span><span class="params">({.port = <span class="number">1666</span>,</span></span></span><br><span class="line"><span class="params"><span class="function">            .tcp = <span class="literal">false</span>,</span></span></span><br><span class="line"><span class="params"><span class="function">            .address = <span class="string">"127.0.0.1"</span>,</span></span></span><br><span class="line"><span class="params"><span class="function">            .nonblocking = <span class="literal">false</span>})</span></span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="Must-be-initialized">Must be initialized</h4>
+<p>C++20 提供了结构体命名委托初始化器，若没有传参数，gcc -Wextra 给出警告，clang/msvc 不做检查，所以有必要对类型设置必须初始化约束.</p>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://www.youtube.com/watch?v=gV7jhTMYkKc">https://www.youtube.com/watch?v=gV7jhTMYkKc</a></p>
+</li>
+</ul>
+<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">must_init</span>{</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">// no default constructor</span></span><br><span class="line">    <span class="built_in">must_init</span>(T t): <span class="built_in">value</span>(std::<span class="built_in">move</span>(t)){}</span><br><span class="line">    <span class="keyword">operator</span> T&amp;() {<span class="keyword">return</span> value;}</span><br><span class="line">    <span class="keyword">operator</span> <span class="type">const</span> T&amp;() <span class="type">const</span> {<span class="keyword">return</span> value;}</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    T value;</span><br><span class="line">};</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">server</span>{</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">config</span>{</span><br><span class="line">        must_init&lt;<span class="type">uint16_t</span>&gt; port; <span class="comment">// failure to init is now a compiler error</span></span><br><span class="line">        <span class="type">bool</span> tcp = <span class="literal">true</span>;</span><br><span class="line">        std::string_view address = <span class="string">"0.0.0.0"</span>;</span><br><span class="line">        std::optional&lt;std::string_view&gt; multicast = std::<span class="literal">nullopt</span>;</span><br><span class="line">        <span class="type">bool</span> nonblocking = <span class="literal">true</span></span><br><span class="line">    };</span><br><span class="line">    <span class="built_in">server</span>(config);</span><br><span class="line">};</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="Create-Unique-type-with-enum-for-Integer-types">Create Unique type with enum for Integer types</h4>
+<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">enum class</span> <span class="title class_">server_id</span>: <span class="type">int</span> {};</span><br><span class="line"><span class="keyword">enum class</span> <span class="title class_">client_id</span>: <span class="type">int</span> {};</span><br></pre></td></tr></tbody></table></figure>
 <h3 id="Design-Pattern">Design Pattern</h3>
 <p>links:</p>
 <ul class="lvl-0">
@@ -4882,7 +4965,7 @@ define or =delete them all. Manager resources can be possessed by samrt pointers
 <p>links:</p>
 <ul class="lvl-0">
 <li class="lvl-2">
-<p><a href="https://zhuanlan.zhihu.com/p/459417765">C++ Idioms（惯用设计方法）</a></p>
+<p><a href="https://www.modernescpp.com/index.php/table-of-content/#top">mordernescpp.com</a></p>
 </li>
 <li class="lvl-2">
 <p><a href="https://zh.wikipedia.org/wiki/%E5%9F%BA%E6%96%BC%E5%8E%9F%E5%89%87%E8%A8%AD%E8%A8%88">基於原則設計</a></p>
@@ -4898,7 +4981,20 @@ define or =delete them all. Manager resources can be possessed by samrt pointers
 <p><a href="https://en.wikipedia.org/wiki/X_Macro">X macro</a> 是一种可靠地维护并行代码和 / 或数据列表的技术，其对应的项必须以相同的顺序声明或执行，例如，列表元素的定义在 <code>.inl</code> 文件中 <a href="https://godbolt.org/z/G19vMWTPe">示例</a>。</p>
 <h4 id="RAII-Resource-Acquisition-Is-Initialization">RAII-Resource Acquisition Is Initialization</h4>
 <p>资源获取即初始化 （简称 <a href="https://en.wikibooks.org/wiki/More_C%2B%2B_Idioms/Resource_Acquisition_Is_Initialization">RAII</a> ）是 C++ 防止内存泄露一个很好解决方案，它结合构造函数和析构函数，把资源生命周期和对象生命周期绑定起来，在构造函数中获取资源（这些错误会引发异常），然后将其释放到析构函数中（永不抛出），并且不需要显式清理，从而防止忘记释放资源；<a href="https://godbolt.org/z/46nrYGhsc">参考示例</a>。</p>
+<h4 id="Thread-safe-singleton">Thread-safe singleton</h4>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://www.modernescpp.com/index.php/thread-safe-initialization-of-a-singleton/">https://www.modernescpp.com/index.php/thread-safe-initialization-of-a-singleton/</a></p>
+</li>
+</ul>
 <h4 id="Policy-based-class-Design">Policy-based class Design</h4>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="http://www.modernescpp.com/index.php/policy-and-traits">mordernescpp policy-and-traits</a>。</p>
+</li>
+</ul>
 <p>基于策略设计又名 policy-based class design 是一种基于 C<ins> 计算机程序设计模式，以策略（Policy）为基础，并结合 C</ins> 的模板元编程。就是将原本复杂的系统，拆解成多个独立运作的 “策略类别”，每一组 policy class 都只负责单纯如行为或结构的某一方面。多重继承由于继承自多组 Base Class，故缺乏型别消息，而 Templetes 基于型别，拥有丰富的型别消息。多重继承容易扩张，而 Templetes 的特化不容易扩张。Policy-Based Class Design 同时使用了 Template 以及 Multiple Inheritance 两项技术，结合两者的优点，看下面例子：</p>
 <figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">Policy1</span>, <span class="keyword">class</span> <span class="title class_">Policy2</span>, <span class="keyword">class</span> <span class="title class_">Policy3</span>&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">PolicyBasedClass</span> : <span class="keyword">public</span> Policy1, <span class="keyword">public</span> Policy2 {</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">PolicyBasedClass</span>(){};</span><br><span class="line">};</span><br></pre></td></tr></tbody></table></figure>
 <p>PolicyBasedClass 则称为宿主类别（host class），只需要切换不同 Policy Class，就可以得到不同的需求。Policy 不一定要被宿主（host）继承，只需要用委托（delegation）完成这一工作。但 policies 必须遵守一个隐含的 constraint，接口（interface）必须一样，故参数不能有巨大改变。</p>
@@ -4907,7 +5003,7 @@ define or =delete them all. Manager resources can be possessed by samrt pointers
 <h5 id="Template-Template-Parameter">Template Template Parameter</h5>
 <p>在 C++ 的 Policy-Based Design 中，用来建构 Template 的类别参数（也就是 policy class），本身亦可以是一个 Template 化的类别，形成所谓的 Template Template Parameter。</p>
 <p>如果 Read ()、Write () 有各种不同类型的参数时，可以利用 template 的不完全具现化 (Incomplement Instantiation) 特征检实现各个参数不同的成员函数（member function）。在 host class 中，可以撰写不同参数版本的 Read (…) 函数，这有赖于 c++ compiler 的协助。</p>
-<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">template</span></span><br><span class="line">&lt;</span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">T</span>,</span><br><span class="line">    <span class="keyword">template</span>&lt; <span class="keyword">class</span> &gt; <span class="keyword">class</span> <span class="title class_">ReadPolicy</span>,</span><br><span class="line">    <span class="keyword">template</span>&lt; <span class="keyword">class</span> &gt; <span class="keyword">class</span> <span class="title class_">WritePolicy</span></span><br><span class="line">&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ResourceManager</span></span><br><span class="line">    :</span><br><span class="line">    <span class="keyword">public</span> ReadingPolicy&lt; T &gt;,</span><br><span class="line">    <span class="keyword">public</span> WritingPolicy&lt; T &gt;</span><br><span class="line">{</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">   <span class="function"><span class="type">void</span> <span class="title">Read</span><span class="params">()</span></span>;</span><br><span class="line">   <span class="function"><span class="type">void</span> <span class="title">Write</span><span class="params">(XmlElement*)</span></span>;</span><br><span class="line">   <span class="function"><span class="type">void</span> <span class="title">Write</span><span class="params">(DataSource*)</span></span>;</span><br><span class="line">};</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">  ResourceManager&lt; AnimationEntity, BinaryReader, BinaryWriter &gt; ResMgr1;</span><br><span class="line">  ResourceManager&lt; ScriptEntity, TextReader, TextWriter &gt; ResMgr2;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">template</span></span><br><span class="line">&lt;</span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">T</span>,</span><br><span class="line">    <span class="keyword">template</span>&lt; <span class="keyword">class</span> &gt; <span class="keyword">class</span> <span class="title class_">ReadPolicy</span>,</span><br><span class="line">    <span class="keyword">template</span>&lt; <span class="keyword">class</span> &gt; <span class="keyword">class</span> <span class="title class_">WritePolicy</span></span><br><span class="line">&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ResourceManager</span></span><br><span class="line">    :</span><br><span class="line">    <span class="keyword">public</span> ReadPolicy&lt; T &gt;,</span><br><span class="line">    <span class="keyword">public</span> WritePolicy&lt; T &gt;</span><br><span class="line">{</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">   <span class="function"><span class="type">void</span> <span class="title">Read</span><span class="params">()</span></span>;</span><br><span class="line">   <span class="function"><span class="type">void</span> <span class="title">Write</span><span class="params">(XmlElement*)</span></span>;</span><br><span class="line">   <span class="function"><span class="type">void</span> <span class="title">Write</span><span class="params">(DataSource*)</span></span>;</span><br><span class="line">};</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">  ResourceManager&lt; AnimationEntity, BinaryReader, BinaryWriter &gt; ResMgr1;</span><br><span class="line">  ResourceManager&lt; ScriptEntity, TextReader, TextWriter &gt; ResMgr2;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <p>上述的 class T 即是一个 Template Template Parameter，这使得 Policy Class 更具扩展性与弹性，能够处理各种类型的实体（instance）。</p>
 <ul class="lvl-0">
 <li class="lvl-2">
@@ -4916,12 +5012,6 @@ define or =delete them all. Manager resources can be possessed by samrt pointers
 </ul>
 <figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;</span><br><span class="line">    <span class="keyword">typename</span> output_policy,</span><br><span class="line">    <span class="keyword">typename</span> language_policy</span><br><span class="line">&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">HelloWorld</span></span><br><span class="line">  : <span class="keyword">public</span> output_policy,</span><br><span class="line">    <span class="keyword">public</span> language_policy</span><br><span class="line">{</span><br><span class="line">    <span class="keyword">using</span> output_policy::Print;</span><br><span class="line">    <span class="keyword">using</span> language_policy::Message;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"></span><br><span class="line">    <span class="comment">//behaviour method</span></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">Run</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>{</span><br><span class="line">        <span class="comment">//two policy methods</span></span><br><span class="line">        <span class="built_in">Print</span>( <span class="built_in">Message</span>() );</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">};</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">HelloWorld_OutputPolicy_WriteToCout</span></span><br><span class="line">{</span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">template</span>&lt; <span class="keyword">typename</span> message_type &gt;</span></span><br><span class="line"><span class="function">    <span class="type">void</span> <span class="title">Print</span><span class="params">( message_type message )</span></span></span><br><span class="line"><span class="function">    </span>{</span><br><span class="line">        std::cout &lt;&lt; message &lt;&lt; std::endl;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">};</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">HelloWorld_LanguagePolicy_English</span></span><br><span class="line">{</span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line"></span><br><span class="line">    <span class="function">std::string <span class="title">Message</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>{</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Hello, World!"</span>;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">};</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">HelloWorld_LanguagePolicy_German</span>{</span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line"></span><br><span class="line">    <span class="function">std::string <span class="title">Message</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>{</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Hallo Welt!"</span>;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">};</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line"></span><br><span class="line"><span class="comment">/* example 1 */</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">typedef</span></span><br><span class="line">        HelloWorld&lt;</span><br><span class="line">            HelloWorld_OutputPolicy_WriteToCout,</span><br><span class="line">            HelloWorld_LanguagePolicy_English</span><br><span class="line">        &gt;</span><br><span class="line">            my_hello_world_type;</span><br><span class="line"></span><br><span class="line">    my_hello_world_type hello_world;</span><br><span class="line">    hello_world.<span class="built_in">Run</span>(); <span class="comment">//returns Hello World!</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/* example 2</span></span><br><span class="line"><span class="comment"> * does the same but uses another policy, the language has changed</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">typedef</span></span><br><span class="line">        HelloWorld&lt;</span><br><span class="line">            HelloWorld_OutputPolicy_WriteToCout,</span><br><span class="line">            HelloWorld_LanguagePolicy_German</span><br><span class="line">        &gt;</span><br><span class="line">            my_other_hello_world_type;</span><br><span class="line"></span><br><span class="line">    my_other_hello_world_type hello_world2;</span><br><span class="line">    hello_world2.<span class="built_in">Run</span>(); <span class="comment">//returns Hallo Welt!</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <p>后续可以更容易的撰写其他的 Output policy, 单靠创造更新的 Policy class 并实现 print 于其中。</p>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="http://www.modernescpp.com/index.php/policy-and-traits">morderncpp</a>。</p>
-</li>
-</ul>
 <h4 id="Pimpl-Pointer-to-implementation">Pimpl - Pointer to implementation</h4>
 <p><a href="https://zh.cppreference.com/w/cpp/language/pimpl">Pimpl</a> 是一种广泛使用的削减编译依赖项的技术，具体讨论<a href="https://herbsutter.com/gotw/_100/">参考</a>，看下面例子可能就明白了：</p>
 <figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// cppreference 官方示例</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;memory&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;experimental/propagate_const&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ---------------</span></span><br><span class="line"><span class="comment">// 接口（widget.h）</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">widget</span></span><br><span class="line">{</span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">impl</span>; <span class="comment">// 实现类的前置声明</span></span><br><span class="line">    std::experimental::propagate_const&lt; <span class="comment">// 转发 const 的指针包装器</span></span><br><span class="line">        std::unique_ptr&lt; <span class="comment">// 唯一所有权的不透明指针</span></span><br><span class="line">            impl&gt;&gt; pImpl; <span class="comment">// 指向前置声明的实现类</span></span><br><span class="line"><span class="keyword">public</span>: <span class="comment">// 公开成员</span></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">draw</span><span class="params">()</span> <span class="type">const</span></span>; <span class="comment">// 公开 API，将被转发给实现</span></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">draw</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">shown</span><span class="params">()</span> <span class="type">const</span> </span>{ <span class="keyword">return</span> <span class="literal">true</span>; } <span class="comment">// 公开 API，实现必须调用它</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">widget</span>(<span class="type">int</span>);</span><br><span class="line">    ~<span class="built_in">widget</span>(); <span class="comment">// 在实现文件中定义，其中 impl 是完整类型</span></span><br><span class="line">    <span class="built_in">widget</span>(widget&amp;&amp;); <span class="comment">// 在实现文件中定义</span></span><br><span class="line">                      <span class="comment">// 注意：在被移动的对象上调用 draw() 是未定义行为</span></span><br><span class="line">    <span class="built_in">widget</span>(<span class="type">const</span> widget&amp;) = <span class="keyword">delete</span>;</span><br><span class="line">    widget&amp; <span class="keyword">operator</span>=(widget&amp;&amp;); <span class="comment">// 在实现文件中定义</span></span><br><span class="line">    widget&amp; <span class="keyword">operator</span>=(<span class="type">const</span> widget&amp;) = <span class="keyword">delete</span>;</span><br><span class="line">};</span><br><span class="line"></span><br><span class="line"><span class="comment">// -----------------</span></span><br><span class="line"><span class="comment">// 实现（widget.cpp）</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">widget</span>::impl</span><br><span class="line">{</span><br><span class="line">    <span class="type">int</span> n; <span class="comment">// 私有数据</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">draw</span><span class="params">(<span class="type">const</span> widget&amp; w)</span> <span class="type">const</span></span></span><br><span class="line"><span class="function">    </span>{</span><br><span class="line">        <span class="keyword">if</span>(w.<span class="built_in">shown</span>()) <span class="comment">// 对公开成员函数的此调用要求回溯引用</span></span><br><span class="line">            std::cout &lt;&lt; <span class="string">"正在绘制 const 组件 "</span> &lt;&lt; n &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">draw</span><span class="params">(<span class="type">const</span> widget&amp; w)</span></span></span><br><span class="line"><span class="function">    </span>{</span><br><span class="line">        <span class="keyword">if</span>(w.<span class="built_in">shown</span>())</span><br><span class="line">            std::cout &lt;&lt; <span class="string">"正在绘制非 const 组件 "</span> &lt;&lt; n &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="built_in">impl</span>(<span class="type">int</span> n) : <span class="built_in">n</span>(n) {}</span><br><span class="line">};</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">widget::draw</span><span class="params">()</span> <span class="type">const</span> </span>{ pImpl-&gt;<span class="built_in">draw</span>(*<span class="keyword">this</span>); }</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">widget::draw</span><span class="params">()</span> </span>{ pImpl-&gt;<span class="built_in">draw</span>(*<span class="keyword">this</span>); }</span><br><span class="line">widget::<span class="built_in">widget</span>(<span class="type">int</span> n) : pImpl{std::<span class="built_in">make_unique</span>&lt;impl&gt;(n)} {}</span><br><span class="line">widget::<span class="built_in">widget</span>(widget&amp;&amp;) = <span class="keyword">default</span>;</span><br><span class="line">widget::~<span class="built_in">widget</span>() = <span class="keyword">default</span>;</span><br><span class="line">widget&amp; widget::<span class="keyword">operator</span>=(widget&amp;&amp;) = <span class="keyword">default</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ---------------</span></span><br><span class="line"><span class="comment">// 用户（main.cpp）</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="function">widget <span class="title">w</span><span class="params">(<span class="number">7</span>)</span></span>;</span><br><span class="line">    <span class="function"><span class="type">const</span> widget <span class="title">w2</span><span class="params">(<span class="number">8</span>)</span></span>;</span><br><span class="line">    w.<span class="built_in">draw</span>();</span><br><span class="line">    w2.<span class="built_in">draw</span>();</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
@@ -4964,7 +5054,7 @@ define or =delete them all. Manager resources can be possessed by samrt pointers
 <p>仅暴露非虚方法接口，避免调用歧义.</p>
 <figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">HandlerBase</span> {</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">handle</span><span class="params">(std::span&lt;Element&gt; elements)</span> </span>{</span><br><span class="line">        <span class="keyword">for</span>(Element e : elements) {<span class="built_in">handle</span>(std::<span class="built_in">move</span>(e)); }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">handle</span><span class="params">(Element element)</span> </span>= <span class="number">0</span>;</span><br><span class="line">};</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Handler</span> : <span class="keyword">public</span> HandlerBase {</span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">handle</span><span class="params">(Element element)</span> <span class="keyword">override</span></span>{}</span><br><span class="line">};</span><br></pre></td></tr></tbody></table></figure>
 <h4 id="MutextProtected">MutextProtected</h4>
-<p>这里提供了一种 C++ 方式的并行访问数据加锁模式，主要是通过 RAII 实现。</p>
+<p>这里提供了一种 C++ 方式的并行访问数据加锁模式，通常通过 RAII 实现。</p>
 <p>另见，<a href="https://awesomekling.github.io/MutexProtected-A-C++-Pattern-for-Easier-Concurrency/">Andreas Kling - MutextProtected</a>、<a href="https://github.com/facebook/folly/blob/main/folly/docs/Synchronized.md">Synchronized - folly</a>、<a href="https://www.reddit.com/r/cpp/comments/12def1f/mutexprotected_a_c_pattern_for_easier_concurrency/">MutextProtected - reddit</a>。</p>
 <h4 id="TEBI-Type-erease-better-than-inheritance">TEBI - Type erease better than inheritance</h4>
 <p>在解耦，类型擦除更优于继承，避免了多重继承，导致依赖过多。</p>
@@ -5038,6 +5128,41 @@ https://herbsutter.com/2017/07/26/metaclasses-thoughts-on-generative-c/
 <p>Stack unwinding 可以分成两类：</p>
 <p>synchronous: 程序自身触发的，C++ throw、获取自身 stack trace 等。这类 stack unwinding 只发生在函数调用处 (在 function body 内，不会出现在 prologue/epilogue)<br>
 asynchronous: 由 signal 或外部程序触发，这类 stack unwinding 可以发生在函数 prologue/epilogue</p>
+<h3 id="Native-API">Native API</h3>
+<h4 id="jni">jni</h4>
+<p>java 提供 <a href="https://docs.oracle.com/javase/1.5.0/docs/guide/jni/spec/invocation.html#wp16334">invocation api</a> 供三方调用 jvm native api</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://docs.oracle.com/javase/8/docs/technotes/guides/jni/spec/jniTOC.html">jni TOC</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://docs.oracle.com/javase/8/docs/technotes/guides/jni/spec/functions.html">jni function</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://docs.oracle.com/javase/8/docs/technotes/guides/jni/spec/types.html#type_signatures">jni type signature</a></p>
+</li>
+</ul>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://www.codeproject.com/articles/993067/calling-java-from-cplusplus-with-jni">call java from cpp with jni</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://blog.csdn.net/qq_27061049/article/details/115700096">cmake jvm 结合供 java 和 cpp 互调</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://stackoverflow.com/questions/8850202/use-jar-file-in-c-c">cpp call java using jar</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://www.baeldung.com/jni">baeldung jni</a></p>
+<ul class="lvl-2">
+<li class="lvl-4"><a href="https://github.com/eugenp/tutorials/tree/master/java-native">github code</a></li>
+</ul>
+</li>
+<li class="lvl-2">
+<p><a href="https://www.youtube.com/watch?v=87uMi7L-3Hc">Java JNI</a></p>
+</li>
+</ul>
 <h3 id="weekly-practice">weekly practice</h3>
 <h4 id="Void-Pointer-Arithmetic">Void Pointer Arithmetic</h4>
 <p>避免指针运算有利于提高安全及代码通用性</p>
@@ -5640,27 +5765,19 @@ renovate documentation is here: <a href="https://docs.renovatebot.com/">https://
 <p><a href="https://dev.to/kauppfbi_96/5-1-tips-to-reduce-the-noise-of-renovate-bot-3c9d">5 tips to avoid annoying renovate</a></p>
 </li>
 </ul>
-<h4 id="common-configuration">common configuration</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
+<h4 id="timezone">timezone</h4>
 <p><a href="https://docs.renovatebot.com/configuration-options/#timezone">timezone</a>: 时区</p>
-  <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">{</span><br><span class="line">  "timezone": "Asia/Shanghai",</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-</li>
-<li class="lvl-2">
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">{</span><br><span class="line">  "timezone": "Asia/Shanghai",</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="automerge">automerge</h4>
 <p><a href="https://docs.renovatebot.com/configuration-options/#automerge">automerge</a>: 自动合并配置</p>
-  <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">// https://gitlab.com/msclock/renovate/-/blob/master/.gitlab/renovate.json</span><br><span class="line">{</span><br><span class="line">  // https://docs.renovatebot.com/configuration-options/#platformautomerge</span><br><span class="line">  "platformAutomerge": true,</span><br><span class="line">  "packageRules": [</span><br><span class="line">    {</span><br><span class="line">      "matchPackagePatterns": [</span><br><span class="line">        "renovate-bot/renovate-runner"</span><br><span class="line">      ],</span><br><span class="line">      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],</span><br><span class="line">      "automerge": true,</span><br><span class="line">      "semanticCommitType": "perf"</span><br><span class="line">    }</span><br><span class="line">  ]</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-</li>
-<li class="lvl-2">
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">// https://gitlab.com/msclock/renovate/-/blob/master/.gitlab/renovate.json</span><br><span class="line">{</span><br><span class="line">  // https://docs.renovatebot.com/configuration-options/#platformautomerge</span><br><span class="line">  "platformAutomerge": true,</span><br><span class="line">  "packageRules": [</span><br><span class="line">    {</span><br><span class="line">      "matchPackagePatterns": [</span><br><span class="line">        "renovate-bot/renovate-runner"</span><br><span class="line">      ],</span><br><span class="line">      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],</span><br><span class="line">      "automerge": true,</span><br><span class="line">      "semanticCommitType": "perf"</span><br><span class="line">    }</span><br><span class="line">  ]</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="extends">extends</h4>
 <p><a href="https://docs.renovatebot.com/configuration-options/#extends">extends</a>: 要使用或扩展的配置预设</p>
-</li>
-<li class="lvl-2">
+<h4 id="regexManager">regexManager</h4>
 <p><a href="https://docs.renovatebot.com/configuration-options/#regexmanagers">regexManager</a>: 使用正则表达式匹配的自定义管理器 (用于筛选出需要更新的依赖规则管理器)</p>
-  <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">// https://gitlab.com/gitlab-ci-utils/gitlab-ci-templates/-/blob/master/.gitlab/renovate.json</span><br><span class="line">// https://gitlab.com/gitlab-ci-utils/gitlab-ci-templates/-/merge_requests/461</span><br><span class="line">// https://gitlab.com/gitlab-ci-utils/gitlab-ci-templates/-/commit/7e5570740a1b705df57d8073be0a41dc31cfaca3</span><br><span class="line">{</span><br><span class="line">  "regexManagers": [</span><br><span class="line">    {</span><br><span class="line">      "description": "Update https template URL for .gitlab-ci.yml from a GitLab project release",</span><br><span class="line">      "fileMatch": [</span><br><span class="line">        "\\.gitlab-ci\\.yml$"</span><br><span class="line">      ],</span><br><span class="line">      // 匹配使用 include:remote语法的 gitlab ci 使用位置</span><br><span class="line">      "matchStrings": [</span><br><span class="line">        "\\s+- remote: [\"']*?https:\\/\\/gitlab.com\\/(?&lt;depName&gt;.*?)\\/-\\/raw\\/(?&lt;currentValue&gt;.*?)\\/\\w+"</span><br><span class="line">      ],</span><br><span class="line">      "datasourceTemplate": "gitlab-releases"</span><br><span class="line">    }</span><br><span class="line">  ],</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-</li>
-<li class="lvl-2">
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">// https://gitlab.com/gitlab-ci-utils/gitlab-ci-templates/-/blob/master/.gitlab/renovate.json</span><br><span class="line">// https://gitlab.com/gitlab-ci-utils/gitlab-ci-templates/-/merge_requests/461</span><br><span class="line">// https://gitlab.com/gitlab-ci-utils/gitlab-ci-templates/-/commit/7e5570740a1b705df57d8073be0a41dc31cfaca3</span><br><span class="line">{</span><br><span class="line">  "regexManagers": [</span><br><span class="line">    {</span><br><span class="line">      "description": "Update https template URL for .gitlab-ci.yml from a GitLab project release",</span><br><span class="line">      "fileMatch": [</span><br><span class="line">        "\\.gitlab-ci\\.yml$"</span><br><span class="line">      ],</span><br><span class="line">      // 匹配使用 include:remote语法的 gitlab ci 使用位置</span><br><span class="line">      "matchStrings": [</span><br><span class="line">        "\\s+- remote: [\"']*?https:\\/\\/gitlab.com\\/(?&lt;depName&gt;.*?)\\/-\\/raw\\/(?&lt;currentValue&gt;.*?)\\/\\w+"</span><br><span class="line">      ],</span><br><span class="line">      "datasourceTemplate": "gitlab-releases"</span><br><span class="line">    }</span><br><span class="line">  ],</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="prCreation">prCreation</h4>
 <p><a href="https://docs.renovatebot.com/configuration-options/#prcreation">prCreation</a>: 何时为分支创建 PR。</p>
-</li>
-</ul>
 <h3 id="datasource">datasource</h3>
 <p>Renovate 的管理器扫描文件并提取依赖项之后，会为每个提取的包文件或依赖项分配一个数据源。数据源告诉 Renovate 如何搜索新版本.</p>
 <p>links:</p>
@@ -8286,6 +8403,9 @@ https://docs.gitlab.com/runner/install/kubernetes.html
 </li>
 </ul>
 ]]></content>
+      <categories>
+        <category>develop</category>
+      </categories>
   </entry>
   <entry>
     <title>Welcome to Hexo</title>
@@ -10509,6 +10629,9 @@ mamba 自带的 conda 环境中的 python 在 windows 上编译需要附带设�
 <ul class="lvl-0">
 <li class="lvl-2">
 <p><a href="https://github.com/serious-scaffold/serious-scaffold-python">serious scaffold python project</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://github.com/scientific-python/cookie">scientific python cookie</a></p>
 </li>
 </ul>
 <h3 id="pyproject-tmol">pyproject.tmol</h3>
