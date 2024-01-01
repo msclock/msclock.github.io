@@ -7000,6 +7000,9 @@ docker-compose 中 depends_on,restart,deploy.resources.reservations 等资源不
 <li class="lvl-4"><a href="https://github.com/samuelcolvin/dirty-equals">https://github.com/samuelcolvin/dirty-equals</a></li>
 </ul>
 </li>
+<li class="lvl-2">
+<p><a href="https://squidfunk.github.io/mkdocs-material/setup/setting-up-versioning/">old versioning banner warning</a></p>
+</li>
 </ul>
 <h4 id="footer">footer</h4>
 <p>项目文档的页脚是一个很好的地方，可以添加链接到或公司正在使用的网站或平台作为额外的营销渠道，例如，或者，可以通过 mkdocs.yml 轻松配置。</p>
@@ -7050,7 +7053,7 @@ docker-compose 中 depends_on,restart,deploy.resources.reservations 等资源不
 <p>links:</p>
 <ul class="lvl-0">
 <li class="lvl-2">
-<p><a href="https://github.com/mkdocs/catalog">https://github.com/mkdocs/catalog</a></p>
+<p><a href="https://github.com/mkdocs/catalog">A list of awesome MkDocs projects and plugins.</a></p>
 </li>
 <li class="lvl-2">
 <p><a href="https://chrieke.medium.com/the-best-mkdocs-plugins-and-customizations-fc820eb19759">https://chrieke.medium.com/the-best-mkdocs-plugins-and-customizations-fc820eb19759</a></p>
@@ -7152,7 +7155,25 @@ docker-compose 中 depends_on,restart,deploy.resources.reservations 等资源不
 <p><a href="https://www.sphinx-doc.org/">https://www.sphinx-doc.org/</a></p>
 </li>
 <li class="lvl-2">
-<p><a href="https://www.sphinx-doc.org/en/master/tutorial/deploying.html">tutorial deploying</a></p>
+<p><a href="https://www.sphinx-doc.org/en/master/tutorial/">Tutorial</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://www.sphinx-doc.org/en/master/usage/index.html">Sphinx Usage</a></p>
+<ul class="lvl-2">
+<li class="lvl-4"><a href="https://www.sphinx-doc.org/en/master/usage/extensions/index.html">Sphinx Extensions</a></li>
+</ul>
+</li>
+<li class="lvl-2">
+<p><a href="https://www.sphinx-doc.org/en/master/usage/theming.html">Sphinx Theme</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://www.sphinx-doc.org/zh-tw/latest/usage/extensions/index.html">Extensions</a></p>
+<ul class="lvl-2">
+<li class="lvl-4"><a href="https://www.sphinx-doc.org/en/master/development/index.html">Writing Extensions</a></li>
+</ul>
+</li>
+<li class="lvl-2">
+<p><a href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html">Directives</a></p>
 </li>
 </ul>
 <p>who use sphinx:</p>
@@ -7564,6 +7585,9 @@ base64：eJwr</p>
 <p><a href="https://docs.github.com/zh/authentication/managing-commit-signature-verification/about-commit-signature-verification">在 github 中使用 commit signature verification</a></p>
 </li>
 </ul>
+<h4 id="ssh-签名">ssh 签名</h4>
+<p>使用 ssh 配置对提交进行签名，前提是已存在 ssh 签名密钥，并注册到远程版本控制。</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">git config --global commit.gpgsign <span class="literal">true</span></span><br><span class="line">git config --global gpg.format ssh</span><br><span class="line">git config --global user.signingKey ~/.ssh/id_rsa.pub</span><br></pre></td></tr></tbody></table></figure>
 <h3 id="–cleanup">–cleanup</h3>
 <p>对提交消息进行清理</p>
 <p>links:</p>
@@ -7767,6 +7791,29 @@ base64：eJwr</p>
 </li>
 <li class="lvl-2">
 <p><a href="https://docs.github.com/en/actions/learn-github-actions/variables">https://docs.github.com/en/actions/learn-github-actions/variables</a></p>
+</li>
+</ul>
+<h4 id="常用变量">常用变量</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://docs.github.com/en/actions/learn-github-actions/contexts#github-context">github context</a></p>
+<ul class="lvl-2">
+<li class="lvl-4">github.ref_name
+<ul class="lvl-4">
+<li class="lvl-6"><code>if: ${{ github.ref_name == 'main' }}</code></li>
+</ul>
+</li>
+<li class="lvl-4">github.ref
+<ul class="lvl-4">
+<li class="lvl-6"><code>if: startsWith(github.ref, 'refs/tags')</code></li>
+</ul>
+</li>
+<li class="lvl-4">github.event.repository.default_branch
+<ul class="lvl-4">
+<li class="lvl-6"><code>if: ${{ github.ref_name == github.event.repository.default_branch }}</code></li>
+</ul>
+</li>
+</ul>
 </li>
 </ul>
 <h3 id="continue-on-error">continue on error</h3>
@@ -10410,7 +10457,7 @@ mamba 自带的 conda 环境中的 python 在 windows 上编译需要附带设�
 <h4 id="稳定节点">稳定节点</h4>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># encode url</span></span><br><span class="line">python3 -c <span class="string">"from urllib.parse import quote;print('encode:\n',quote(''))"</span></span><br><span class="line"><span class="comment"># decode url</span></span><br><span class="line">python3 -c <span class="string">"from urllib.parse import unquote;print('decode:\n\n',unquote('').replace('||','\n\n'))"</span></span><br></pre></td></tr></tbody></table></figure>
 <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> unquote</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'decode:\n\n'</span>, unquote(<span class="string">''</span>).replace(<span class="string">'||'</span>,<span class="string">'\n\n'</span>))</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight txt"><table><tbody><tr><td class="code"><pre><span class="line">ss://YWVzLTI1Ni1nY206YWFkODA3NzJiYWU4@fnmk003tw600lines.testnewline.xyz:443/?plugin=v2ray-plugin%3Bmode%3Dwebsocket%3Btls%3Bmux%3D4%3Bhost%3Dfnmk003tw600lines.testnewline.xyz%3Bpath%3D%2Fdyqslhnnfuex%3Bmux%3Dmux%3D4%3B%3B#%E5%8F%B0%E6%B9%BE-20.34MB%2Fs</span><br><span class="line"></span><br><span class="line">ssr://cmNnbS5sYWJ0ZWNocy54eXo6NTYwOmF1dGhfYWVzMTI4X21kNTpjaGFjaGEyMC1pZXRmOnBsYWluOmJXSnNZVzVyTVhCdmNuUS8_Z3JvdXA9VTFOU1VISnZkbWxrWlhJJnJlbWFya3M9S09XM3N1V3RtT2EwdXpIbHBLa3A1TGl0NkwyczZJcUM1NEs1TFRFM0xqWXhUVUl2Y3loWmIzVjBkV0psT3VTNGplaUpyLWFlbHlrJm9iZnNwYXJhbT0mcHJvdG9wYXJhbT1Oams0TmpveE5UbHVhWFZ3YVE</span><br><span class="line"></span><br><span class="line">ssr://Y20wMS5uZXdjb21lLnh5ejo3NzAzOmF1dGhfYWVzMTI4X3NoYTE6Y2hhY2hhMjAtaWV0ZjpwbGFpbjpha1poTkVZeC8_Z3JvdXA9VTFOU1VISnZkbWxrWlhJJnJlbWFya3M9NUxpdDZMMnM2SXFDNTRLNUxUTXVNVGROUWk5ektGbHZkWFIxWW1VNjVMaU42SW12NXA2WEtRJm9iZnNwYXJhbT1ZemMxWW1VNE5ESTJNeTV0YVdOeWIzTnZablF1WTI5dCZwcm90b3BhcmFtPU9EUXlOak02TTJkcU4yRkM</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ssr://MTIwLjI0MC44OC4xMTE6NzcwNjphdXRoX2FlczEyOF9zaGExOmNoYWNoYTIwLWlldGY6cGxhaW46YWtaaE5FWXgvP2dyb3VwPVUxTlNVSEp2ZG1sa1pYSSZyZW1hcmtzPTVMaXQ2TDJzNklxQzU0SzVMVEV6T1M0NVMwSXZjdyZvYmZzcGFyYW09VkVkQWQyRnVaMk5oYVY4eCZwcm90b3BhcmFtPU9EUXlOak02TTJkcU4yRkM</span><br><span class="line"></span><br><span class="line">ssr://Y20wMS5uZXdjb21lLnh5ejo1NzA0OmF1dGhfYWVzMTI4X3NoYTE6Y2hhY2hhMjAtaWV0ZjpwbGFpbjpha1poTkVZeC8_Z3JvdXA9VTFOU1VISnZkbWxrWlhJJnJlbWFya3M9NUxpdDZMMnM2SXFDNTRLNUxURTRNaTQyUzBJdmN3Jm9iZnNwYXJhbT1WRWRBZDJGdVoyTmhhVjh4JnByb3RvcGFyYW09T0RReU5qTTZNMmRxTjJGQw</span><br><span class="line"></span><br><span class="line">ssr://Y20wMy5uZXdjb21lLnh5ejo2NzA3OmF1dGhfYWVzMTI4X3NoYTE6Y2hhY2hhMjAtaWV0ZjpwbGFpbjpha1poTkVZeC8_Z3JvdXA9VTFOU1VISnZkbWxrWlhJJnJlbWFya3M9NUxpdDZMMnM2SXFDNTRLNUxUTTFOaTQyUzBJdmN3Jm9iZnNwYXJhbT1WRWRBZDJGdVoyTmhhVjh4JnByb3RvcGFyYW09T0RReU5qTTZNMmRxTjJGQw</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight txt"><table><tbody><tr><td class="code"><pre><span class="line">ssr://Y20wMy5uZXdjb21lLnh5ejo2NzAyOmF1dGhfYWVzMTI4X3NoYTE6Y2hhY2hhMjAtaWV0ZjpwbGFpbjpha1poTkVZeC8_Z3JvdXA9VTFOU1VISnZkbWxrWlhJJnJlbWFya3M9NUxpdDZMMnM2SXFDNTRLNUxUVXVNVFZOUWk5eiZvYmZzcGFyYW09VkVkQWNtbHdZVzlxYVdWa2FXRnUmcHJvdG9wYXJhbT1PRFF5TmpNNk0yZHFOMkZD</span><br><span class="line"></span><br><span class="line">ssr://cmNnbS5sYWJ0ZWNocy54eXo6NTYwOmF1dGhfYWVzMTI4X21kNTpjaGFjaGEyMC1pZXRmOnBsYWluOmJXSnNZVzVyTVhCdmNuUS8_Z3JvdXA9VTFOU1VISnZkbWxrWlhJJnJlbWFya3M9S09XM3N1V3RtT2EwdXpIbHBLa3A1TGl0NkwyczZJcUM1NEs1TFRFM0xqWXhUVUl2Y3loWmIzVjBkV0psT3VTNGplaUpyLWFlbHlrJm9iZnNwYXJhbT0mcHJvdG9wYXJhbT1Oams0TmpveE5UbHVhWFZ3YVE</span><br><span class="line"></span><br><span class="line">ssr://Y20wMS5uZXdjb21lLnh5ejo3NzAzOmF1dGhfYWVzMTI4X3NoYTE6Y2hhY2hhMjAtaWV0ZjpwbGFpbjpha1poTkVZeC8_Z3JvdXA9VTFOU1VISnZkbWxrWlhJJnJlbWFya3M9NUxpdDZMMnM2SXFDNTRLNUxUTXVNVGROUWk5ektGbHZkWFIxWW1VNjVMaU42SW12NXA2WEtRJm9iZnNwYXJhbT1ZemMxWW1VNE5ESTJNeTV0YVdOeWIzTnZablF1WTI5dCZwcm90b3BhcmFtPU9EUXlOak02TTJkcU4yRkM</span><br><span class="line"></span><br><span class="line">ssr://Y20wMS5uZXdjb21lLnh5ejo1NzA0OmF1dGhfYWVzMTI4X3NoYTE6Y2hhY2hhMjAtaWV0ZjpwbGFpbjpha1poTkVZeC8_Z3JvdXA9VTFOU1VISnZkbWxrWlhJJnJlbWFya3M9NUxpdDZMMnM2SXFDNTRLNUxURTRNaTQyUzBJdmN3Jm9iZnNwYXJhbT1WRWRBZDJGdVoyTmhhVjh4JnByb3RvcGFyYW09T0RReU5qTTZNMmRxTjJGQw</span><br><span class="line"></span><br><span class="line">ssr://Y20wMy5uZXdjb21lLnh5ejo2NzA3OmF1dGhfYWVzMTI4X3NoYTE6Y2hhY2hhMjAtaWV0ZjpwbGFpbjpha1poTkVZeC8_Z3JvdXA9VTFOU1VISnZkbWxrWlhJJnJlbWFya3M9NUxpdDZMMnM2SXFDNTRLNUxUTTFOaTQyUzBJdmN3Jm9iZnNwYXJhbT1WRWRBZDJGdVoyTmhhVjh4JnByb3RvcGFyYW09T0RReU5qTTZNMmRxTjJGQw</span><br></pre></td></tr></tbody></table></figure>
 <h4 id="订阅转换">订阅转换</h4>
 <p><a href="https://github.com/youshandefeiyang/sub-web-modify">sub web modify</a> 订阅转换工具，方便将订阅转换到 clash 支持解析的链接使用</p>
 <p>可以简单通过本地 docker 安装</p>
@@ -11884,6 +11931,9 @@ Scoop 源比较多，多是开源。建议使用 choco。</p>
 <li class="lvl-2">
 <p><a href="https://github.com/open-turo/actions-python/blob/main/release/action.yaml">https://github.com/open-turo/actions-python/blob/main/release/action.yaml</a></p>
 </li>
+<li class="lvl-2">
+<p><a href="https://github.com/spaceship-prompt/spaceship-prompt/blob/master/.github/workflows/release.yml">https://github.com/spaceship-prompt/spaceship-prompt/blob/master/.github/workflows/release.yml</a></p>
+</li>
 </ul>
 <h2 id="Semantic-Release-Plugin">Semantic Release Plugin</h2>
 <p>links:</p>
@@ -12574,10 +12624,10 @@ gzip 在 ubuntu/debian 使用 -d 解压存在重定向问题，建议使用 -dc 
 <h3 id="disk">disk</h3>
 <p>检验磁盘扇区</p>
 <figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><span class="line">chkdsk</span><br><span class="line"><span class="comment"># 进行修复</span></span><br><span class="line">chkdsk /<span class="built_in">r</span></span><br></pre></td></tr></tbody></table></figure>
-<p>性能监控</p>
+<p>打开性能监控</p>
 <figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><span class="line">perform.msc</span><br></pre></td></tr></tbody></table></figure>
 <h3 id="net-2">net</h3>
-<figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><span class="line">net user</span><br><span class="line">net user [<span class="type">user</span>-<span class="type">name</span>] /<span class="built_in">del</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># list all user</span></span><br><span class="line">net user</span><br><span class="line"><span class="comment"># del user</span></span><br><span class="line">net user [<span class="type">user</span>-<span class="type">name</span>] /<span class="built_in">del</span></span><br></pre></td></tr></tbody></table></figure>
 <h3 id="sfc">sfc</h3>
 <figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><span class="line">sfc /scannow</span><br></pre></td></tr></tbody></table></figure>
 <h3 id="服务">服务</h3>
@@ -12612,6 +12662,16 @@ gzip 在 ubuntu/debian 使用 -d 解压存在重定向问题，建议使用 -dc 
 <h3 id="zsh-2">zsh</h3>
 <p>通过 devcontainer 插件安装 zsh</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --depth 1 https://github.com/devcontainers/features.git &amp;&amp; CONFIGURE_ZSH_AS_DEFAULT_SHELL=<span class="literal">true</span> USERNAME=<span class="variable">$USER</span> ./features/src/common-utils/install.sh</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="fzf">fzf</h2>
+<h3 id="Usage">Usage</h3>
+<h4 id="Install">Install</h4>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --depth 1 https://github.com/junegunn/fzf.git ~/.fzf</span><br></pre></td></tr></tbody></table></figure>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://www.linode.com/docs/guides/how-to-use-fzf/">how to use fzf</a></p>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>develop</category>
