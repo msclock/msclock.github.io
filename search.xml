@@ -1721,6 +1721,9 @@ IVF（Inverted File）是一种用于加速近似最近邻搜索的索引结构�
 <li class="lvl-2">
 <p><a href="https://gitlab.com/msclock/milvus_solution">milvus evaluation solution</a></p>
 </li>
+<li class="lvl-2">
+<p><a href="https://osschat.io/">milvus official osschat</a></p>
+</li>
 </ul>
 <h2 id="Service-Encoding">Service Encoding</h2>
 <p>处于安全考虑，通常需要将代码进行加密，以防止源码泄露。在 AI 服务中常见的加密方式有:</p>
@@ -2066,6 +2069,9 @@ helm: 多集群服务脚本部署工具</p>
 </li>
 </ul>
 ]]></content>
+      <categories>
+        <category>develop</category>
+      </categories>
   </entry>
   <entry>
     <title>应用架构</title>
@@ -2564,6 +2570,9 @@ MVP (Minimum viable Product) 以最小的代价提供一个可测试交付的版
 </li>
 </ul>
 ]]></content>
+      <categories>
+        <category>develop</category>
+      </categories>
   </entry>
   <entry>
     <title>choco 包管理器</title>
@@ -3339,6 +3348,13 @@ https://github.com/MangaD/cpp-project-template/tree/main
 <p><a href="https://gitlab.kitware.com/cmake/community/-/wikis/doc/cmake/RPATH-handling">https://gitlab.kitware.com/cmake/community/-/wikis/doc/cmake/RPATH-handling</a></p>
 </li>
 </ul>
+<h4 id="CMake-install-imported-lib">CMake install imported lib</h4>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://stackoverflow.com/questions/41175354/can-i-install-shared-imported-library">https://stackoverflow.com/questions/41175354/can-i-install-shared-imported-library</a></p>
+</li>
+</ul>
 <h3 id="CMake-ctest">CMake ctest</h3>
 <p>ctest 可执行文件是 CMake 测试驱动程序。CMake 生成的构建树是为使用 enable_testing () 和 add_test () 命令的项目创建的，它具有测试支持。该程序将运行测试并报告结果。</p>
 <p>links:</p>
@@ -3391,6 +3407,15 @@ https://github.com/MangaD/cpp-project-template/tree/main
 </li>
 <li class="lvl-2">
 <p><a href="https://learn.microsoft.com/en-us/vcpkg/reference/vcpkg-configuration-json">vcpkg-configuration reference</a></p>
+</li>
+</ul>
+<h3 id="dependencies">dependencies</h3>
+<h4 id="overrides-version">overrides version</h4>
+<p>使用 overrides 固化版本。</p>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://github.com/microsoft/vcpkg/discussions/25622">https://github.com/microsoft/vcpkg/discussions/25622</a></p>
 </li>
 </ul>
 <h3 id="triplet">triplet</h3>
@@ -4833,15 +4858,15 @@ https://stackoverflow.com/questions/660083/derived-classes-in-c-what-is-your-fav
 </thead>
 <tbody>
 <tr>
-<td>&amp;&amp;</td>
+<td><code>&amp;&amp;</code></td>
 <td><code>true</code></td>
 </tr>
 <tr>
-<td></td>
-<td></td>
+<td><code>||</code></td>
+<td><code>false</code></td>
 </tr>
 <tr>
-<td>,</td>
+<td><code>,</code></td>
 <td><code>void()</code></td>
 </tr>
 </tbody>
@@ -6165,6 +6190,9 @@ renovate documentation is here: <a href="https://docs.renovatebot.com/">https://
 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">// https://github.com/devcontainers/features</span><br><span class="line">"features": {</span><br><span class="line">    "ghcr.io/devcontainers/features/common-utils:2": {</span><br><span class="line">        "upgradePackages": false,</span><br><span class="line">        "username": "vscode",</span><br><span class="line">        "configureZshAsDefaultShell": true</span><br><span class="line">    },</span><br><span class="line">    "ghcr.io/devcontainers/features/docker-in-docker:2": {},</span><br><span class="line">    // 使用 cuda feature 构建环境</span><br><span class="line">    "ghcr.io/devcontainers/features/nvidia-cuda:1": {}</span><br><span class="line">},</span><br></pre></td></tr></tbody></table></figure>
 <p>以上方式需要手动安装 docker-container-toolkit</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 安装 docker nvidia runtime(nvidia-docker2/nvidia-container-toolkit)</span></span><br><span class="line">apt update &amp;&amp; apt install -y nvidia-container-toolkit &amp;&amp; nvidia-ctk runtime configure</span><br><span class="line"><span class="comment"># 重启 docker</span></span><br><span class="line">ps -ef | grep -E <span class="string">'(dockerd|docker-init.sh)'</span>  | <span class="built_in">head</span> -1 | awk <span class="string">'{print $2}'</span> | xargs sudo <span class="built_in">kill</span> -9</span><br><span class="line">/usr/local/share/docker-init.sh</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="QA">QA</h3>
+<h4 id="sudo-apt-update-error-“Release-file-is-not-yet-valid”">sudo apt update error: “Release file is not yet valid”</h4>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># https://askubuntu.com/questions/1096930/sudo-apt-update-error-release-file-is-not-yet-valid</span></span><br><span class="line">sudo hwclock -s</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="Features">Features</h2>
 <h3 id="common-features">common features</h3>
 <p>这里列出了常用 Dev Container 的 <a href="https://github.com/devcontainers/features">features</a> 使用总结。</p>
@@ -8851,6 +8879,7 @@ https://docs.gitlab.com/runner/install/kubernetes.html
 <p><a href="https://www.youtube.com/watch?v=qyM8Pi1KiiM">go Concurrency Patterns</a></p>
 </li>
 </ul>
+<span id="more"></span>
 <h3 id="mod">mod</h3>
 <p>links:</p>
 <ul class="lvl-0">
@@ -8931,6 +8960,9 @@ https://docs.gitlab.com/runner/install/kubernetes.html
 </li>
 </ul>
 ]]></content>
+      <categories>
+        <category>develop</category>
+      </categories>
   </entry>
   <entry>
     <title>gpg</title>
@@ -10360,7 +10392,7 @@ mamba 自带的 conda 环境中的 python 在 windows 上编译需要附带设�
 <h2 id="设置国内源">设置国内源</h2>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 添加清华源</span></span><br><span class="line">conda config --add channel https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge</span><br><span class="line">conda config --add channel https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line">conda config --add channel https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="conda环境">conda 环境</h2>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 指定python版本创建版本</span></span><br><span class="line">conda create --name &lt;env_name&gt; python=&lt;python_version&gt;</span><br><span class="line"><span class="comment"># 激活</span></span><br><span class="line">conda activate &lt;env_name&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看可用环境</span></span><br><span class="line">conda info --envs</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除环境</span></span><br><span class="line">conda remove --name &lt;env_name&gt; --all</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 指定python版本创建版本</span></span><br><span class="line">conda create --name &lt;env_name&gt; python=3.7</span><br><span class="line"><span class="comment"># 重命名环境</span></span><br><span class="line">conda rename -n &lt;old_env_name&gt; &lt;new_env_name&gt;</span><br><span class="line"><span class="comment"># 删除环境</span></span><br><span class="line">conda remove --name &lt;env_name&gt; --all</span><br><span class="line"><span class="comment"># 激活</span></span><br><span class="line">conda activate &lt;env_name&gt;</span><br><span class="line"><span class="comment"># 查看可用环境</span></span><br><span class="line">conda info --envs</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="Auto-Integration">Auto Integration</h2>
 <p>自动激活 conda 环境</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 集成 powershell, -d == --dry-run</span></span><br><span class="line">conda init powershell [-d]</span><br></pre></td></tr></tbody></table></figure>
@@ -10808,7 +10840,7 @@ mamba 自带的 conda 环境中的 python 在 windows 上编译需要附带设�
 <h4 id="稳定节点">稳定节点</h4>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># encode url</span></span><br><span class="line">python3 -c <span class="string">"from urllib.parse import quote;print('encode:\n',quote(''))"</span></span><br><span class="line"><span class="comment"># decode url</span></span><br><span class="line">python3 -c <span class="string">"from urllib.parse import unquote;print('decode:\n\n',unquote('').replace('||','\n\n'))"</span></span><br></pre></td></tr></tbody></table></figure>
 <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> unquote</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'decode:\n\n'</span>, unquote(<span class="string">''</span>).replace(<span class="string">'||'</span>,<span class="string">'\n\n'</span>))</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight txt"><table><tbody><tr><td class="code"><pre><span class="line">ss://YWVzLTEyOC1nY206YS13eW00b3ZZNFl3@1.65.139.54:443/?plugin=v2ray-plugin%3Bmode%3Dwebsocket%3Bmux%3D4%3Bmux%3Dmux%3D4%3B%3B#%E9%A6%99%E6%B8%AF-119.7KB%2Fs</span><br><span class="line"></span><br><span class="line">ss://YWVzLTEyOC1nY206YS13eW00b3ZZNFl3@1.65.139.54:443/?plugin=v2ray-plugin%3Bmode%3Dwebsocket%3Bmux%3D4%3Bmux%3Dmux%3D4%3B%3B#%E9%A6%99%E6%B8%AF-317.3KB%2Fs</span><br><span class="line"></span><br><span class="line">vmess://eyJ2IjoiMiIsInBzIjoi576O5Zu9LTMuMjZNQi9zIiwiYWRkIjoid3d3LmNyaXNweXJhaW5ib3cuYml6IiwicG9ydCI6IjgwODAiLCJ0eXBlIjoibm9uZSIsImlkIjoiMjI4MjZiNDQtNWMxYS00YjRiLWRiYWEtODNhMmU4YmQ5NWYwIiwiYWlkIjoiMCIsIm5ldCI6IndzIiwicGF0aCI6Ii8iLCJob3N0Ijoid3d3LmNyaXNweXJhaW5ib3cuYml6IiwidGxzIjoiIn0=</span><br><span class="line"></span><br><span class="line">ss://YWVzLTI1Ni1jZmI6YW1hem9uc2tyMDU@13.213.1.132:443#%E6%96%B0%E5%8A%A0%E5%9D%A1-861.5KB%2Fs</span><br><span class="line"></span><br><span class="line">vmess://eyJ2IjoiMiIsInBzIjoi576O5Zu9LTQuMTFNQi9zIiwiYWRkIjoid3d3LmNvbGRzdG9uZS5jbHViIiwicG9ydCI6IjgwODAiLCJ0eXBlIjoibm9uZSIsImlkIjoiMjI4MjZiNDQtNWMxYS00YjRiLWRiYWEtODNhMmU4YmQ5NWYwIiwiYWlkIjoiMCIsIm5ldCI6IndzIiwicGF0aCI6Ii8iLCJob3N0Ijoid3d3LmNvbGRzdG9uZS5jbHViIiwidGxzIjoiIn0=</span><br><span class="line"></span><br><span class="line">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp1ZzRGdTc5U0VSRWRGR2x0MnNVeVQ0@95.164.9.144:2927#%E5%A5%A5%E5%9C%B0%E5%88%A9-1.59MB%2Fs</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight txt"><table><tbody><tr><td class="code"><pre><span class="line">ss://YWVzLTI1Ni1jZmI6OVh3WXlac0s4U056UUR0WQ@103.172.116.103:9059#%E6%96%B0%E5%8A%A0%E5%9D%A1-1.20MB%2Fs</span><br><span class="line"></span><br><span class="line">vmess://eyJ2IjoiMiIsInBzIjoi5pyq55+l5Zu95a62LTYuMzNNQi9zIiwiYWRkIjoiMTA0LjIxLjMwLjI0OSIsInBvcnQiOiIyMDUyIiwidHlwZSI6Im5vbmUiLCJpZCI6IjI4NGQ3NGQ4LTQ3NzUtNDE0NC1iZDdiLWUyN2YzMTBjOTllNSIsImFpZCI6IjAiLCJuZXQiOiJ3cyIsInBhdGgiOiIvIiwiaG9zdCI6IjIzN2YxYzExZTNlOWUzNzMuVGlkZXJhY2UuZ2F0ZWx5LmluZm8iLCJ0bHMiOiIifQ==</span><br><span class="line"></span><br><span class="line">vmess://eyJ2IjoiMiIsInBzIjoi5pyq55+l5Zu95a62LTMuOTJNQi9zIiwiYWRkIjoid3d3LnZlbHZldG1vdW50YWluLnh5eiIsInBvcnQiOiI4MDgwIiwidHlwZSI6Im5vbmUiLCJpZCI6IjIyODI2YjQ0LTVjMWEtNGI0Yi1kYmFhLTgzYTJlOGJkOTVmMCIsImFpZCI6IjAiLCJuZXQiOiJ3cyIsInBhdGgiOiIvIiwiaG9zdCI6Ind3dy52ZWx2ZXRtb3VudGFpbi54eXoiLCJ0bHMiOiIifQ==</span><br><span class="line"></span><br><span class="line">vmess://eyJ2IjoiMiIsInBzIjoi5Lit6L2s6IqC54K5LTMuNjJNQi9zIiwiYWRkIjoieWVzLmNubWpjbi5uZXQiLCJwb3J0IjoiMTY2MjYiLCJ0eXBlIjoibm9uZSIsImlkIjoiYmM5MGZiNzItMGIyYy00NWI0LWE4ZDgtYzliYWE0ZWFhZWYzIiwiYWlkIjoiMCIsIm5ldCI6IndzIiwicGF0aCI6Ii8iLCJob3N0IjoiZDI2ZWQyNmM2M2VhNGEyYTdlMTdjNjhkMTAwNzkxZTYubW9iZ3NsYi50YmNhY2hlLmNvbSIsInRscyI6IiJ9</span><br></pre></td></tr></tbody></table></figure>
 <h4 id="订阅转换">订阅转换</h4>
 <p><a href="https://github.com/youshandefeiyang/sub-web-modify">sub web modify</a> 订阅转换工具，方便将订阅转换到 clash 支持解析的链接使用</p>
 <p>可以简单通过本地 docker 安装</p>
@@ -11185,6 +11217,9 @@ Debugging commands with Gdb</p>
 <ul class="lvl-0">
 <li class="lvl-2">
 <p><a href="https://www.youtube.com/watch?v=vBH6GRJ1REM">https://www.youtube.com/watch?v=vBH6GRJ1REM</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://github.com/lidatong/dataclasses-json">dataclass 通常和 dataclass-json 一起使用</a></p>
 </li>
 </ul>
 <p>下面是一个使用 dataclass 的示例：</p>
@@ -13272,20 +13307,6 @@ gzip 在 ubuntu/debian 使用 -d 解压存在重定向问题，建议使用 -dc 
       </categories>
   </entry>
   <entry>
-    <title>态度</title>
-    <url>/posts/459958868/</url>
-    <content><![CDATA[<ul class="lvl-0">
-<li class="lvl-2">
-<p>凡事敢想就成功了一半，只要努力去做，就一定能成功，除非我停止尝试，否则就永远不会是失败者。比如今天的生活，就是三年前选择决定的，而今天的选择将决定三年后的生活。</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>young</category>
-        <category>态度</category>
-      </categories>
-  </entry>
-  <entry>
     <title>学习</title>
     <url>/posts/19161441/</url>
     <content><![CDATA[<h2 id="5w2h"><code>5w2h</code></h2>
@@ -13368,6 +13389,23 @@ Step 6, 思考，反省</p>
       <categories>
         <category>young</category>
         <category>技巧</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>态度</title>
+    <url>/posts/459958868/</url>
+    <content><![CDATA[<ul class="lvl-0">
+<li class="lvl-2">
+<p>凡事敢想就成功了一半，只要努力去做，就一定能成功，除非我停止尝试，否则就永远不会是失败者。比如今天的生活，就是三年前选择决定的，而今天的选择将决定三年后的生活。</p>
+</li>
+<li class="lvl-2">
+<p>假话全不说，真话说不全。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>young</category>
+        <category>态度</category>
       </categories>
   </entry>
   <entry>

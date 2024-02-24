@@ -30,7 +30,7 @@
 <meta property="og:description" content="Mamba Mamba 是一个快速、健壮、跨平台的包管理器。 它在 Windows、OS X 和 Linux（包括 ARM64 和 PPC64LE）上运行，与 conda 软件包完全兼容，并支持大多数 conda 命令。 12# upgrade all packagesmamba update --all -y  [!CAUTION] mamba 自带的 conda 环境中的 python 在 w">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-02-14T04:13:57.000Z">
-<meta property="article:modified_time" content="2024-02-01T00:38:12.506Z">
+<meta property="article:modified_time" content="2024-02-24T04:00:53.972Z">
 <meta property="article:author" content="Msclock">
 <meta property="article:tag" content="cpp,hexo,blog">
 <meta name="twitter:card" content="summary">
@@ -246,7 +246,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-02-01 08:38:12" itemprop="dateModified" datetime="2024-02-01T08:38:12+08:00">2024-02-01</time>
+      <time title="修改时间：2024-02-24 12:00:53" itemprop="dateModified" datetime="2024-02-24T12:00:53+08:00">2024-02-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -265,7 +265,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>911</span>
+      <span>951</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -311,7 +311,7 @@ mamba 自带的 conda 环境中的 python 在 windows 上编译需要附带设�
 <h2 id="设置国内源">设置国内源</h2>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加清华源</span></span><br><span class="line">conda config --add channel https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge</span><br><span class="line">conda config --add channel https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line">conda config --add channel https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="conda环境">conda 环境</h2>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 指定python版本创建版本</span></span><br><span class="line">conda create --name &lt;env_name&gt; python=&lt;python_version&gt;</span><br><span class="line"><span class="comment"># 激活</span></span><br><span class="line">conda activate &lt;env_name&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看可用环境</span></span><br><span class="line">conda info --envs</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除环境</span></span><br><span class="line">conda remove --name &lt;env_name&gt; --all</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 指定python版本创建版本</span></span><br><span class="line">conda create --name &lt;env_name&gt; python=3.7</span><br><span class="line"><span class="comment"># 重命名环境</span></span><br><span class="line">conda rename -n &lt;old_env_name&gt; &lt;new_env_name&gt;</span><br><span class="line"><span class="comment"># 删除环境</span></span><br><span class="line">conda remove --name &lt;env_name&gt; --all</span><br><span class="line"><span class="comment"># 激活</span></span><br><span class="line">conda activate &lt;env_name&gt;</span><br><span class="line"><span class="comment"># 查看可用环境</span></span><br><span class="line">conda info --envs</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="Auto-Integration">Auto Integration</h2>
 <p>自动激活 conda 环境</p>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 集成 powershell, -d == --dry-run</span></span><br><span class="line">conda init powershell [-d]</span><br></pre></td></tr></tbody></table></figure>
@@ -402,14 +402,14 @@ mamba 自带的 conda 环境中的 python 在 windows 上编译需要附带设�
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">418k</span>
+    <span title="站点总字数">419k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:20</span>
+    <span title="站点阅读时长">6:21</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
