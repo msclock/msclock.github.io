@@ -1,943 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Vim 实践</title>
-    <url>/posts/a1fb79d2/</url>
-    <content><![CDATA[<h2 id="Vim">Vim</h2>
-<h3 id="查找">查找</h3>
-<p>要在 Vim 中查找文本，可以使用以下命令：</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>/pattern - 向前查找包含 “pattern” 的文本</p>
-</li>
-<li class="lvl-2">
-<p>?pattern - 向后查找包含 “pattern” 的文本</p>
-</li>
-<li class="lvl-2">
-<p>n - 跳转到下一个匹配项</p>
-</li>
-<li class="lvl-2">
-<p>N - 跳转到上一个匹配项</p>
-</li>
-</ul>
-<h3 id="跳转">跳转</h3>
-<p>要在 Vim 中跳转到特定的行，可以使用以下命令：</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><code>:n</code> - 跳转到第 n 行</p>
-</li>
-<li class="lvl-2">
-<p><code>:0</code> - 跳转到文件的开头</p>
-</li>
-<li class="lvl-2">
-<p><code>:$</code> - 跳转到文件的结尾</p>
-</li>
-</ul>
-<span id="more"></span>
-<p>要在 Vim 中跳转到另一个文件，可以使用以下命令：</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>:e path/to/file - 打开另一个文件</p>
-</li>
-<li class="lvl-2">
-<p>:bnext - 跳转到下一个缓冲区</p>
-</li>
-<li class="lvl-2">
-<p>:bprev - 跳转到上一个缓冲区</p>
-</li>
-<li class="lvl-2">
-<p>:ls - 列出所有缓冲区</p>
-</li>
-<li class="lvl-2">
-<p>:bdelete - 删除当前缓冲区</p>
-</li>
-</ul>
-<h3 id="多选">多选</h3>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># enter visual mode</span></span><br><span class="line">ctrl+v</span><br><span class="line"><span class="comment"># move cursor</span></span><br><span class="line">hgjk</span><br><span class="line"><span class="comment"># copy with yank</span></span><br><span class="line">y</span><br><span class="line"><span class="comment"># paste</span></span><br><span class="line">p</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="替换">替换</h3>
-<p>要替换文本，可以使用以下命令：</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><code>:%s/old/new/g</code>: 替换所有出现的 “old” 文本为 “new” 文本</p>
-</li>
-<li class="lvl-2">
-<p><code>:s/old/new/g</code>: 替换当前行中出现的 “old” 文本为 “new” 文本</p>
-</li>
-<li class="lvl-2">
-<p><code>:s/old/new/gc</code>: 替换当前行中出现的 “old” 文本为 “new” 文本，并提示是否要进行替换</p>
-</li>
-</ul>
-<h2 id="AstroNVim"><a href="https://astronvim.com/">AstroNVim</a></h2>
-]]></content>
-      <categories>
-        <category>develop</category>
-      </categories>
-      <tags>
-        <tag>vim</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>airflow 框架使用经验</title>
-    <url>/posts/986b0e9c/</url>
-    <content><![CDATA[<p>主要总结 airflow 框架使用经验。</p>
-<h2 id="Beginner">Beginner</h2>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>Airflow Introduction</p>
-</li>
-<li class="lvl-2">
-<p>Run Airflow in Python Env</p>
-</li>
-</ul>
-<span id="more"></span>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>Run Airflow in Docker</p>
-</li>
-<li class="lvl-2">
-<p>Airflow Basics and Core Concepts</p>
-</li>
-<li class="lvl-2">
-<p>Airflow Task Lifecycle</p>
-</li>
-<li class="lvl-2">
-<p>Airflow Basic Architecture</p>
-</li>
-<li class="lvl-2">
-<p>Airflow DAG with Bash Operator</p>
-</li>
-<li class="lvl-2">
-<p>Airflow DAG with Python Operator</p>
-</li>
-<li class="lvl-2">
-<p>Data Sharing via Airflow XComs</p>
-</li>
-<li class="lvl-2">
-<p>Airflow Task Flow API</p>
-</li>
-<li class="lvl-2">
-<p>Airflow Catch Up and Backfill</p>
-</li>
-<li class="lvl-2">
-<p>Airflow Scheduler with Cron Expression</p>
-</li>
-<li class="lvl-2">
-<p>Airflow Connection to Postgres</p>
-</li>
-<li class="lvl-2">
-<p>Airflow Postgres Operator</p>
-</li>
-<li class="lvl-2">
-<p>Airflow Docker Install Python Package 2 ways</p>
-</li>
-<li class="lvl-2">
-<p>Airflow AWS S3 Sensor Operator</p>
-</li>
-<li class="lvl-2">
-<p>Airflow Hooks S3 PostgreSQL</p>
-</li>
-</ul>
-<h3 id="reference">reference</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://www.youtube.com/watch?v=K9AnJ9_ZAXE">https://www.youtube.com/watch?v=K9AnJ9_ZAXE</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://www.youtube.com/watch?v=IH1-0hwFZRQ">https://www.youtube.com/watch?v=IH1-0hwFZRQ</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://marclamberti.com/blog/airflow-xcom/">https://marclamberti.com/blog/airflow-xcom/</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://github.com/marclamberti/docker-airflow">https://github.com/marclamberti/docker-airflow</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://www.youtube.com/c/ApacheAirflow">https://www.youtube.com/c/ApacheAirflow</a></p>
-</li>
-</ul>
-<h2 id="Operator">Operator</h2>
-<h3 id="TriggerDagRunOperator">TriggerDagRunOperator</h3>
-<p>使用新的 TriggerDagRunOperator，可以等待触发的 DAG 完成。不再需要创建自己的自定义运算符。这与将参数 wait_for_completion 设置为 true 一样简单。此外，参数 reset_dag_run 还允许回填触发的 DAGRuns，这是绝对关键的。</p>
-<h4 id="reference-2">reference</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://www.youtube.com/watch?v=8uKW0mPWmCk">https://www.youtube.com/watch?v=8uKW0mPWmCk</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://www.notion.so/The-TriggerDagRunOperator-699b5483f34a42e495183fd028b68267">https://www.notion.so/The-TriggerDagRunOperator-699b5483f34a42e495183fd028b68267</a></p>
-</li>
-</ul>
-<h3 id="DockerOperator">DockerOperator</h3>
-<p>Airflow DockerOperator 是一个非常强大的操作员。</p>
-<p>它在 docker 容器中执行任务。使用 DockerOperator 有多种优势，例如：</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>测试任务的更简单方法</p>
-</li>
-<li class="lvl-2">
-<p>控制任务所需的资源</p>
-</li>
-<li class="lvl-2">
-<p>避免依赖关系冲突</p>
-</li>
-</ul>
-<p>以及更多。</p>
-<h4 id="reference-3">reference</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://www.youtube.com/watch?v=MdW2ZHHJWeo">https://www.youtube.com/watch?v=MdW2ZHHJWeo</a></p>
-</li>
-</ul>
-<h2 id="Test-on-Airflow">Test on Airflow</h2>
-<p>通过使用 airflow scheduler cli 可以方便的测试 dag 和 task.</p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># in airflow scheduler</span></span><br><span class="line">airflow task <span class="built_in">test</span> [dag_id] [task_id] [execution <span class="built_in">date</span>,如-1表示当前时间]</span><br><span class="line"><span class="comment"># 如果在容器外部</span></span><br><span class="line">docker <span class="built_in">exec</span> [container_id] airflow tasks <span class="built_in">test</span> [dag_id] [task_id] -1</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="reference-4">reference</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://www.youtube.com/watch?v=ANJnYbLwLjE">https://www.youtube.com/watch?v=ANJnYbLwLjE</a></p>
-</li>
-</ul>
-<h2 id="Airflow-Observability">Airflow Observability</h2>
-<h3 id="reference-5">reference</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://www.youtube.com/watch?v=Hc4pYAUL6Qs">https://www.youtube.com/watch?v=Hc4pYAUL6Qs</a></p>
-</li>
-</ul>
-<h2 id="Airflow-on-k8s">Airflow on k8s</h2>
-<h3 id="KubernetesExecutor">KubernetesExecutor</h3>
-<p>在本地多节点 Kubernetes 集群上使用 KubernetesExecutor 运行 Apache Airflow.</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>相比其它 executor, KubernetesExecutor 动态创建工作节点，避免资源浪费</p>
-</li>
-<li class="lvl-2">
-<p>任务间在 pod 间是隔离容错的</p>
-</li>
-<li class="lvl-2">
-<p>减小 scheduler 由于边缘驱动触发压力</p>
-</li>
-</ul>
-<h4 id="deploy-airflow-with-helm">deploy airflow with helm</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>non prod 和 prod 区分于 database 是否部署.</p>
-</li>
-<li class="lvl-2">
-<p>由统一的管理多配置部署管理.</p>
-</li>
-<li class="lvl-2">
-<p>配置参数化配置.</p>
-</li>
-<li class="lvl-2">
-<p>scheduler,web server,database 单 pod 部署.</p>
-<p><img data-src="https://raw.githubusercontent.com/msclock/images/main/images/20221022/212959434.png?token=AKLDRN26UI5VKZDJKCOOJL3DKPYJM" alt="image."></p>
-</li>
-</ul>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">passing = KubernetesPodOperator(</span><br><span class="line">    namespace=<span class="string">"default"</span>,</span><br><span class="line">    image=<span class="string">"python:3.8-bullseye-slim"</span>,</span><br><span class="line">    cmds=[<span class="string">"python"</span>, <span class="string">"-c"</span>],</span><br><span class="line">    arguments=[<span class="string">"print('hello word')"</span>],</span><br><span class="line">    labels={<span class="string">"foo"</span>: <span class="string">"bar"</span>},</span><br><span class="line">    name=<span class="string">"passing-test"</span>,</span><br><span class="line">    task_id=<span class="string">"passing-task"</span>,</span><br><span class="line">    get_logs=<span class="literal">True</span>,</span><br><span class="line">    dag=dag,</span><br><span class="line">)</span><br></pre></td></tr></tbody></table></figure>
-<h4 id="k8s-pod-operator">k8s pod operator</h4>
-<p>由 scheduler 调度 worker 创建工作容器.</p>
-<p><img data-src="https://raw.githubusercontent.com/msclock/images/main/images/20221022/213549478.png?token=AKLDRN3BUF33SEOODYTJCULDKPY7C" alt="image."></p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>通常在 executor_config 配置 KubernetesExecutor.</p>
-</li>
-</ul>
-<h4 id="install-kind-helm-airflow">install kind &amp; helm &amp; airflow</h4>
-<p>kind 本地多集群管理工具<br>
-helm: 多集群服务脚本部署工具</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>使用 kind 创建本地集群</p>
-</li>
-<li class="lvl-2">
-<p>helm 添加 airflow repos</p>
-</li>
-</ul>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 添加 airflow helm 仓库</span></span><br><span class="line">helm repo add airflow https://marclamberti.github.io/airflow-eks-helm-char</span><br><span class="line">helm repo update</span><br><span class="line">helm repo list</span><br><span class="line">helm search airflow</span><br><span class="line"><span class="comment"># 打印到本地配置 values.yaml</span></span><br><span class="line">helm show values airflow/airflow &gt; value.yaml</span><br><span class="line"><span class="comment"># helm 部署 airflow</span></span><br><span class="line">helm install -f values.yaml --kube-context kind-airflow-cluster airflow airflow/airflow</span><br><span class="line"><span class="comment"># 查看 airflow 部署</span></span><br><span class="line">kubectl get pods --context kind-airflow-cluster</span><br><span class="line"><span class="comment"># 导出本地访问端口</span></span><br><span class="line">kubectl port-forward svc/airflow-webserver 8080:8080 --context kind-airflow-cluster</span><br><span class="line"></span><br><span class="line"><span class="comment"># 构建镜像 在values.yaml指定镜像重新部署</span></span><br><span class="line"><span class="comment"># FROM apache/airflow:1.10.10.1-alpha2-python3.7</span></span><br><span class="line"><span class="comment"># COPY dags $AIRFLOW_HOME/dags</span></span><br><span class="line">docker build -t airflow-image:v1.0.0</span><br><span class="line"><span class="comment"># 删除本地集群</span></span><br><span class="line"><span class="comment"># kind delete cluster --name=airflow-cluster</span></span><br><span class="line">helm upgrade -f values.yaml --kube-context kind-airflow-cluster airflow airflow/airflow</span><br></pre></td></tr></tbody></table></figure>
-<h4 id="reference-6">reference</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://www.youtube.com/watch?v=AjBADrVQJv0">https://www.youtube.com/watch?v=AjBADrVQJv0</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://www.youtube.com/watch?v=3VDeKmxHWYA">https://www.youtube.com/watch?v=3VDeKmxHWYA</a></p>
-</li>
-</ul>
-<h3 id="reference-7">reference</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://marclamberti.com/blog/airflow-on-kubernetes-get-started-in-10-mins/">https://marclamberti.com/blog/airflow-on-kubernetes-get-started-in-10-mins/</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://varunbpatil.github.io/2020/10/01/airflow-on-kubernetes.html">https://varunbpatil.github.io/2020/10/01/airflow-on-kubernetes.html</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://docs.netapp.com/zh-cn/netapp-solutions/ai/aicp_example_apache_airflow_workflows_overview.html">https://docs.netapp.com/zh-cn/netapp-solutions/ai/aicp_example_apache_airflow_workflows_overview.html</a></p>
-</li>
-</ul>
-<h3 id="reference-8">reference</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://marclamberti.com/blog/category/apache-airflow/">https://marclamberti.com/blog/category/apache-airflow/</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://maxcotec.com/blog/apache-airflow-architecture/">https://maxcotec.com/blog/apache-airflow-architecture/</a></p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>develop</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Apifox</title>
-    <url>/posts/3adb19d8/</url>
-    <content><![CDATA[<h2 id="apifox">apifox</h2>
-<p>一站式 api 设计测试及文档生成管理工具。</p>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://apifox.com/">https://apifox.com/</a></p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>develop</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>应用架构</title>
-    <url>/posts/8f889db4/</url>
-    <content><![CDATA[<p>本文总结了架构设计的基本理念。</p>
-<span id="more"></span>
-<h2 id="服务设计理念">服务设计理念</h2>
-<h3 id="软件即服务">软件即服务</h3>
-<h4 id="应用设计-12-基本准则">应用设计 12 基本准则</h4>
-<p>比较流程的应用设计 <a href="https://12factor.net/">12</a> 基本准则</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>使用标准化流程自动配置，从而使新的开发者花费最少的学习成本加入这个项目。</p>
-</li>
-<li class="lvl-2">
-<p>和操作系统之间尽可能的划清界限，在各个系统中提供最大的可移植性。</p>
-</li>
-<li class="lvl-2">
-<p>适合部署在现代的云计算平台，从而在服务器和系统管理方面节省资源。</p>
-</li>
-<li class="lvl-2">
-<p>将开发环境和生产环境的差异降至最低，并使用持续交付实施敏捷开发。</p>
-</li>
-<li class="lvl-2">
-<p>可以在工具、架构和开发流程不发生明显变化的前提下实现扩展。</p>
-</li>
-</ul>
-<h4 id="基准代码">基准代码</h4>
-<p>一份基准代码，多份部署</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>一个应用不是分布式系统，仅需一个代码版本控制即可。</p>
-</li>
-<li class="lvl-2">
-<p>所有部署（测试、生产等）对应一份基准代码。</p>
-</li>
-</ul>
-<h4 id="依赖声明">依赖声明</h4>
-<p>显示声明依赖关系</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>应用不应该隐式依赖于系统级类库，而是通过类库打包工具显示声明依赖。</p>
-</li>
-<li class="lvl-2">
-<p>同样不应该依赖于系统级工具，而是以类库打包的方式打包进应用。</p>
-</li>
-</ul>
-<h4 id="配置">配置</h4>
-<p>在环境中存储配置</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>用于当基准代码能立刻开源，而不暴露任何敏感信息。</p>
-</li>
-<li class="lvl-2">
-<p>环境变量有利于不同的部署，且颗粒度要相对小和独立。</p>
-</li>
-</ul>
-<h4 id="后端服务">后端服务</h4>
-<p>将后端服务当作附加资源</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>这里后端服务为程序运行所需要的通过网络调用的各种服务，将类似的数据库（MySQL、CouchDB），消息 / 队列系统（RabbitMQ），SMTP（邮件发送服务），以及缓存系统（Redis）等配置成可本地及第三方可配置的附加部署资源，使松耦合资源和应用部署，达到最小代码修改的目的。</p>
-</li>
-</ul>
-<p><img data-src="https://s2.loli.net/2022/09/12/4NDMFhVLxbk3ARJ.png" alt="attached-resources.png."></p>
-<h4 id="构建，发布，运行">构建，发布，运行</h4>
-<p>严格分离构建和运行</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>基准代码的部署，严格分为构建（仓库代码转为可执行包过程）、发布（将构建结果和发布部署配置结合确定发布版本，并能立即投入运行环境中使用）、运行（指定对应的发布版本，在执行环境中启动一系列应用程序）。</p>
-</li>
-<li class="lvl-2">
-<p>严格区分有利于回退部署，更容易发现问题。</p>
-</li>
-</ul>
-<h4 id="进程">进程</h4>
-<p>以一个或多个无状态进程运行应用</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>应用进程必须无状态且<a href="https://en.wikipedia.org/wiki/Shared-nothing_architecture">无共享</a>，任何需要持久化的数据都要存储在 <strong>后端服务</strong> 内。</p>
-</li>
-<li class="lvl-2">
-<p>内存区域或磁盘空间可以作为进程在做某种事务型操作时的缓存。</p>
-</li>
-<li class="lvl-2">
-<p>用户数据缓存中的数据应该保存在诸如 Memcached 或 Redis 这样的带有过期时间的缓存中。</p>
-</li>
-</ul>
-<h4 id="端口绑定">端口绑定</h4>
-<p>通过端口绑定提供服务</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>互联网应用 <strong>通过端口绑定来提供服务</strong> ，并监听发送至该端口的请求。</p>
-</li>
-<li class="lvl-2">
-<p>通常的实现思路是，将网络服务器类库通过 <strong><a href="#%E4%BE%9D%E8%B5%96%E5%A3%B0%E6%98%8E">依赖声明</a></strong> 载入应用。例如，Python 的 <a href="https://www.tornadoweb.org/en/stable/">Tornado</a>。几乎所有服务器软件都可以通过进程绑定端口来等待请求。</p>
-</li>
-</ul>
-<h4 id="并发">并发</h4>
-<p>通过进程模型进程扩展，任何计算机程序，一旦启动，就会生成一个或多个进程。</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>进程是一等公民，基于 <strong><a href="https://adam.herokuapp.com/past/2011/5/9/applying_the_unix_process_model_to_web_apps/">unix 守护进程模型</a></strong>。</p>
-</li>
-<li class="lvl-2">
-<p>将不同的任务分配不同的进程类型调度并发进程模型。</p>
-</li>
-<li class="lvl-2">
-<p>所有应用程序必须可以在多台物理机器间跨进程工作。</p>
-</li>
-<li class="lvl-2">
-<p>基于 <a href="#%E8%BF%9B%E7%A8%8B">进程设计</a> 在系统急需扩展时变得简单及稳妥。</p>
-</li>
-<li class="lvl-2">
-<p>建议使用操作系统进程管理（systemd，分布式进程管理云平台，foreman 等工具），管理输出流，崩溃，重启等请求。</p>
-</li>
-</ul>
-<h4 id="易处理">易处理</h4>
-<p>快速启动和优雅终止可最大化健壮性</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>应用进程应该时可以瞬间开启或停止，有利于迅速部署变化的 <a href="#%E5%9F%BA%E5%87%86%E4%BB%A3%E7%A0%81">基准代码</a> 或 <a href="#%E9%85%8D%E7%BD%AE">配置</a> 。</p>
-</li>
-<li class="lvl-2">
-<p>进程应当最求最小启动时间，提供更敏捷的 <a href="#%E6%9E%84%E5%BB%BA%E5%8F%91%E5%B8%83%E8%BF%90%E8%A1%8C">发布</a> 及扩展过程。</p>
-</li>
-<li class="lvl-2">
-<p>进程应该在接受到 <strong>SIGTERM</strong> 优雅的终止。优雅终止是指停止监听服务的端口，即拒绝所有新的请求，并继续执行当前已接收的请求，然后退出。</p>
-</li>
-<li class="lvl-2">
-<p>对于 worker 进程来说，优雅终止是指将当前任务退回队列。例如，<a href="http://www.rabbitmq.com/">RabbitMQ</a> 中，worker 可以发送一个 <a href="http://www.rabbitmq.com/amqp-0-9-1-quickref.html#basic.nack">NACK</a> 信号。此类型的进程所隐含的要求是，任务都应该 <a href="http://en.wikipedia.org/wiki/Reentrant_%28subroutine%29">可重复执行</a> ， 这主要由将结果包装进事务或是使重复操作 <a href="https://en.wikipedia.org/wiki/Idempotence">幂等</a> 来实现。</p>
-</li>
-<li class="lvl-2">
-<p>进程还应当在面对突然死亡时保持健壮，例如底层硬件故障。<a href="https://lwn.net/Articles/191059/">Crash-only design</a> 将这种概念转化为 <a href="https://docs.couchdb.org/en/3.2.2-docs/">合乎逻辑的理论</a>。</p>
-</li>
-</ul>
-<h4 id="开发环境与线上环境等价">开发环境与线上环境等价</h4>
-<p>尽可能的保持开发，预发布，线上环境相同</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>差异体现在，时间差异（编写代码和上线的时间）、人员差异（开发人员、部署运维人员的间代码）、工具差异（本地部署开发环境及线上环境）</p>
-</li>
-<li class="lvl-2">
-<p>做到<a href="http://avc.com/2011/02/continuous-deployment/">持续部署</a>，就需要做到本地和线上最小化差异</p>
-</li>
-<li class="lvl-2">
-<p>方法，缩小时间差异：开发人员可以几小时，甚至几分钟就部署代码；缩小人员差异：开发人员不只要编写代码，更应该密切参与部署过程以及代码在线上的表现；缩小工具差异：尽量保证开发环境以及线上环境的一致性。</p>
-</li>
-<li class="lvl-2">
-<p><a href="#%E5%90%8E%E7%AB%AF%E6%9C%8D%E5%8A%A1">后端服务</a> 是保持开发与线上等价的重要部分，例如数据库，队列系统，以及缓存。许多语言都提供了简化获取后端服务的类库。如，队列（Python/Django，Celery，RabbitMQ, Beanstalkd, Redis）。</p>
-</li>
-<li class="lvl-2">
-<p>开发人员应该反对在不同环境间使用不同的后端服务，是因为，不同的后端服务意味着会突然出现的不兼容，造成的错误导致持续部署问题的解决需要非常大的代价。</p>
-</li>
-<li class="lvl-2">
-<p>使用类似 <a href="https://www.chef.io/products/chef-infra">Chef</a> 和 <a href="http://docs.puppetlabs.com/">Puppet</a> 的声明式配置工具，结合像 <a href="https://www.vagrantup.com/intro">Vagrant</a> 这样轻量的虚拟环境就可以使得开发人员的本地环境与线上环境无限接近。</p>
-</li>
-</ul>
-<h4 id="日志">日志</h4>
-<p>把日志当作事件流，日志使得应用程序运行的动作变得透明。</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>日志应该是 <a href="https://adam.herokuapp.com/past/2011/4/1/logs_are_streams_not_files/">事件流</a> 的汇总。</p>
-</li>
-<li class="lvl-2">
-<p>应用本身<strong>从不考虑存储自己的输出流</strong>。每一个运行的进程都会直接的标准输出（stdout）事件流。</p>
-</li>
-<li class="lvl-2">
-<p>在预发布或线上部署中，每个进程的输出流由运行环境截获，并将其他输出流整理在一起，然后一并发送给一个或多个最终的处理程序，用于查看或是长期存档。这些存档路径对于应用来说不可见也不可配置，而是完全交给程序的运行环境管理。类似 <a href="https://github.com/heroku/logplex">Logplex</a> 和 <a href="https://github.com/fluent/fluentd">Fluentd</a> 的开源工具可以达到这个目的。</p>
-</li>
-<li class="lvl-2">
-<p>输出流可以发送到 <a href="https://www.splunk.com/">Splunk</a> 这样的日志索引及分析系统，或 <a href="http://hive.apache.org/">Hadoop/Hive</a> 这样的通用数据存储系统。这些系统为查看应用的历史活动提供了强大而灵活的功能。</p>
-</li>
-</ul>
-<h4 id="管理进程">管理进程</h4>
-<p>后台管理任务当作一次性进程运行，区别于处理应用的常规业务任务进程。</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>一次性管理进程应该和正常的 <a href="#%E8%BF%9B%E7%A8%8B">常驻进程</a> 使用同样的环境。</p>
-</li>
-<li class="lvl-2">
-<p>随基准代码使用相同的配置、发布，避免同步问题。</p>
-</li>
-<li class="lvl-2">
-<p>所有进程类型应该使用同样的 <a href="#%E4%BE%9D%E8%B5%96%E5%A3%B0%E6%98%8E">依赖隔离</a> 技术。</p>
-</li>
-</ul>
-<h2 id="微服务">微服务</h2>
-<h3 id="架构考虑">架构考虑</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>业务需求，系统实现功能。</p>
-</li>
-<li class="lvl-2">
-<p>技术栈，公司员工擅长的技术栈。</p>
-</li>
-<li class="lvl-2">
-<p>成本，人力财力支持。</p>
-</li>
-<li class="lvl-2">
-<p>组织架构，部分小组支持。</p>
-</li>
-<li class="lvl-2">
-<p>可扩展性，软件设计需求变化，业务变更。</p>
-</li>
-<li class="lvl-2">
-<p>可维护性，系统学习成本，bug 修复成本。</p>
-</li>
-</ul>
-<h3 id="架构">架构</h3>
-<h4 id="单体架构">单体架构</h4>
-<p>功能、业务集成在发布中，部署运行在同一个进程中。</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>一层架构：业务逻辑、数据库混合等。</p>
-</li>
-<li class="lvl-2">
-<p>MVC 模式：Model、View、Controller，简单来说分层设计。</p>
-</li>
-<li class="lvl-2">
-<p>前后端：单体架构分离。</p>
-</li>
-</ul>
-<p>单体架构特征及难易：</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>易于开发，开发工具等</p>
-</li>
-<li class="lvl-2">
-<p>易于测试，测试框架等</p>
-</li>
-<li class="lvl-2">
-<p>易于部署，一份代码发布部署</p>
-</li>
-<li class="lvl-2">
-<p>易于水平伸缩，代码的 copy。</p>
-</li>
-<li class="lvl-2">
-<p>难于维护，代码膨胀。</p>
-</li>
-<li class="lvl-2">
-<p>难于构建、测试、部署成本大。</p>
-</li>
-<li class="lvl-2">
-<p>难于上手，接手困难。</p>
-</li>
-<li class="lvl-2">
-<p>难于创新，框架固定，升级风险。</p>
-</li>
-<li class="lvl-2">
-<p>难于扩展，水平（需求逻辑）、垂直（物理硬件）扩展。</p>
-</li>
-</ul>
-<h4 id="微服务架构">微服务架构</h4>
-<p>使用一套小服务开发单个应用，每个服务运行在<strong>单独的进程</strong>中，采取<strong>轻量级的通信</strong>机制互联，并且每个服务都可以<strong>自动化部署</strong>。</p>
-<p>微服务架构特征：</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>单一职责，紧密相关业务放在一起。</p>
-</li>
-<li class="lvl-2">
-<p>轻量级通信，<strong>http/grpc</strong> 平台无关，语言无关。</p>
-</li>
-<li class="lvl-2">
-<p>隔离性，单独进程隔离。</p>
-</li>
-<li class="lvl-2">
-<p>数据隔离，降低实现复杂性，方便微服务间实现无状态通信及不断添加微服务。</p>
-</li>
-<li class="lvl-2">
-<p>技术多样性，技术栈多样性。</p>
-</li>
-</ul>
-<p>第二代微服务：k8s, service mesh, serverless。</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>k8s: 云平台。</p>
-</li>
-<li class="lvl-2">
-<p>service mesh：服务同行。</p>
-</li>
-<li class="lvl-2">
-<p>serverless：无服务无需关注底层。</p>
-</li>
-</ul>
-<h3 id="微服务优势">微服务优势</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>围绕业务构建团队，根据康威定律，团队决定成果。</p>
-</li>
-<li class="lvl-2">
-<p>去中心化数据管理，以业务区分将数据存储</p>
-<ul class="lvl-2">
-<li class="lvl-4">团队，内聚，独立开发业务，没有依赖，沟通成本低。</li>
-<li class="lvl-4">产品，服务彼此独立部署，没有依赖，充分利用资源（频繁使用的服务可以部署多份）。</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>[!IMPORTANT]<br>
-微服务不是银弹，没有任何一种技术和管理上的进步，可以极大的提升生产效率。在微服务实践中需要做相应的取舍。</p>
-</blockquote>
-<h3 id="微服务劣势">微服务劣势</h3>
-<p>网络通信需要做极大的优化，基本上等于分布式痛点，现有的比较流行的开源解决方式是使用 istio。</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>服务注册 / 发现</p>
-</li>
-<li class="lvl-2">
-<p>路由，流量转移</p>
-</li>
-<li class="lvl-2">
-<p>弹性，熔断，超时，重试</p>
-</li>
-<li class="lvl-2">
-<p>安全</p>
-</li>
-<li class="lvl-2">
-<p>可观测性</p>
-</li>
-</ul>
-<h2 id="分布式">分布式</h2>
-<h3 id="分布式八大难点">分布式八大难点</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>网络，需要做数据消息缓存。</p>
-</li>
-<li class="lvl-2">
-<p>延时，单个调用从单体调用 ns 到 ms。</p>
-</li>
-<li class="lvl-2">
-<p>带宽，考虑同一时间的负载，主要和延时相关。</p>
-</li>
-<li class="lvl-2">
-<p>安全，通信必须考虑安全加密、类库漏洞等。</p>
-</li>
-<li class="lvl-2">
-<p>网络拓扑，k8s、服务网格处理单点故障、自动伸缩、服务迁移影响。</p>
-</li>
-<li class="lvl-2">
-<p>服务器管理，资源管理配置及依赖。</p>
-</li>
-<li class="lvl-2">
-<p>监控和可观测性（新增），系统存在问题需能告警及跟踪。</p>
-</li>
-<li class="lvl-2">
-<p>消息传输成本，grpc/json 通信协议。</p>
-</li>
-<li class="lvl-2">
-<p>网络同质，不同客户端及环境使用的网络不同质需要做针对化处理。</p>
-</li>
-</ul>
-<h2 id="系统设计">系统设计</h2>
-<p>系统设计尽量遵循 MVP 原则.</p>
-<blockquote>
-<p>[!IMPORTANT]<br>
-MVP (Minimum viable Product) 以最小的代价提供一个可测试交付的版本，然后再后续开发中直到一个稳定的状态。</p>
-</blockquote>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://github.com/ByteByteGoHq/system-design-101">https://github.com/ByteByteGoHq/system-design-101</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md">系统设计入门</a></p>
-</li>
-</ul>
-<h2 id="TDD">TDD</h2>
-<p><a href="http://wiki.c2.com/?TestDrivenDevelopment">Test Driven Development</a></p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="http://wiki.c2.com/?DoSimpleThings">DoSompleThings</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="http://wiki.c2.com/?CodeUnitTestFirst">CodeUnitTestFirst</a></p>
-</li>
-</ul>
-<p>以下是对 TDD (Test Driven Development) 的归纳总结</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>TDD 是一种开发方法论，它要求在编写实际代码之前先编写测试代码。</p>
-</li>
-<li class="lvl-2">
-<p>TDD 的基本原则是：先写一个失败的测试，然后编写足够的代码使其通过，最后进行重构。</p>
-</li>
-<li class="lvl-2">
-<p>TDD 的好处包括：提高代码质量、减少 bug、提高代码可维护性、加快开发速度等。</p>
-</li>
-<li class="lvl-2">
-<p>TDD 的核心是测试驱动，通过编写测试用例来驱动代码的开发。</p>
-</li>
-<li class="lvl-2">
-<p>TDD 的流程包括：编写测试、运行测试、编写代码、运行测试、重构代码。</p>
-</li>
-<li class="lvl-2">
-<p>TDD 的关键是编写简单、清晰、可测试的代码。</p>
-</li>
-<li class="lvl-2">
-<p>TDD 适用于各种编程语言和项目类型。</p>
-</li>
-</ul>
-<h2 id="简历">简历</h2>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>项目</p>
-<ul class="lvl-2">
-<li class="lvl-4">规模</li>
-<li class="lvl-4">背景</li>
-<li class="lvl-4">价值</li>
-<li class="lvl-4">困难</li>
-<li class="lvl-4">成果</li>
-<li class="lvl-4">技术栈</li>
-</ul>
-</li>
-<li class="lvl-2">
-<p>教育</p>
-<ul class="lvl-2">
-<li class="lvl-4">专业</li>
-<li class="lvl-4">学历</li>
-<li class="lvl-4">竞赛</li>
-<li class="lvl-4">证书</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>develop</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Badge</title>
-    <url>/posts/3f316719/</url>
-    <content><![CDATA[<h2 id="Badge">Badge</h2>
-<p>代码仓库中的 Badge（徽章）是一种用于展示项目状态或元数据的小型图标。它们通常以图像或文本的形式显示在项目的 README 文件、文档页面或社区平台上。</p>
-<p>以下是一些常见的 Badge 类型及其作用：</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>构建状态：徽章可以显示项目的构建状态，例如是否通过了持续集成（CI）流程，或者最新的构建结果。这样的徽章可以让用户快速了解项目的构建情况，并确定代码的稳定性。</p>
-</li>
-<li class="lvl-2">
-<p>测试覆盖率：徽章可以显示项目的测试覆盖率。这可以帮助开发人员评估项目的测试质量和代码覆盖范围，并鼓励团队保持良好的测试习惯。</p>
-</li>
-<li class="lvl-2">
-<p>版本号：徽章可以显示项目的当前版本号。这对于用户和开发人员来说是一个有用的参考，可以让他们知道他们使用的是哪个版本，或者是否需要升级到最新版本。</p>
-</li>
-<li class="lvl-2">
-<p>文档状态：徽章可以显示项目文档的状态，例如是否更新、是否有详细的文档覆盖等。这对于用户来说是一个重要的指标，可以帮助他们评估项目的可用性和易用性。</p>
-</li>
-<li class="lvl-2">
-<p>许可证信息：徽章可以显示项目所使用的开源许可证类型和版本信息。这对于其他开发人员来说是一个重要的元数据，可以帮助他们了解项目的许可证限制和使用条件。</p>
-</li>
-</ul>
-<p>徽章通常以 Markdown 或 HTML 代码的形式嵌入到项目文档中，并链接到相关的状态或元数据页面。它们可以提供有用的信息和指导，使用户和开发人员更好地了解和使用项目。同时，徽章也为项目增添了一些可视化的元素，使其更具吸引力和专业性。</p>
-<span id="more"></span>
-<h2 id="Resource">Resource</h2>
-<table>
-<thead>
-<tr>
-<th>资源</th>
-<th>组织</th>
-<th>类型 </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://badge.fury.io/">version badge</a></td>
-<td><a href="http://fury.io">fury.io</a></td>
-<td>badge 工具 </td>
-</tr>
-<tr>
-<td><a href="https://shields.io/">shields badge</a></td>
-<td>shields</td>
-<td>badge 工具</td>
-</tr>
-</tbody>
-</table>
-<h2 id="Shields-Badge">Shields Badge</h2>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://shields.io/badges">https://shields.io/badges</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://medium.com/@therafamartins/make-your-customized-badges-in-a-few-minutes-18e75475e271">https://medium.com/@therafamartins/make-your-customized-badges-in-a-few-minutes-18e75475e271</a></p>
-</li>
-</ul>
-<h3 id="分类">分类</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>pypi: <code>https://img.shields.io/pypi/v/:packageName</code></p>
-</li>
-<li class="lvl-2">
-<p>github license: <code>https://img.shields.io/github/license/:user/:repo</code></p>
-</li>
-<li class="lvl-2">
-<p>github release: <code>https://img.shields.io/github/v/release/:user/:repo</code></p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>develop</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>choco 包管理器</title>
-    <url>/posts/78ce69fa/</url>
-    <content><![CDATA[<p>本文总结了 windows 包管理工具常用命令</p>
-<h2 id="install">install</h2>
-<p>通过 powershell 安装</p>
-<figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Set your PowerShell execution policy</span></span><br><span class="line"><span class="built_in">Set-ExecutionPolicy</span> <span class="literal">-ExecutionPolicy</span> RemoteSigned <span class="literal">-Force</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Install Chocolatey</span></span><br><span class="line"><span class="built_in">iwr</span> https://chocolatey.org/install.ps1 <span class="literal">-UseBasicParsing</span> | <span class="built_in">iex</span></span><br><span class="line"></span><br><span class="line">choco <span class="literal">-v</span></span><br><span class="line"></span><br><span class="line">choco upgrade chocolatey</span><br></pre></td></tr></tbody></table></figure>
-<span id="more"></span>
-<h2 id="常用命令">常用命令</h2>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>choco list -li 查看本地安装的软件</p>
-</li>
-<li class="lvl-2">
-<p>choco search nodejs 查找安装包</p>
-</li>
-<li class="lvl-2">
-<p>choco install sed 下载</p>
-</li>
-<li class="lvl-2">
-<p>choco uninstall sed 卸载</p>
-</li>
-<li class="lvl-2">
-<p>choco upgrade sed 更新（update）</p>
-</li>
-</ul>
-<h2 id="常用开发工具">常用开发工具</h2>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>docker-desktop/kubernetes-helm/kind</p>
-</li>
-<li class="lvl-2">
-<p>dapr</p>
-</li>
-<li class="lvl-2">
-<p>fzf/tree/sed/grep/rsync</p>
-</li>
-<li class="lvl-2">
-<p>git</p>
-</li>
-<li class="lvl-2">
-<p>JetBrainsNF</p>
-</li>
-<li class="lvl-2">
-<p>neovim</p>
-</li>
-<li class="lvl-2">
-<p>nvm</p>
-</li>
-<li class="lvl-2">
-<p>kubectl</p>
-</li>
-</ul>
-<figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 指定版本安装</span></span><br><span class="line">choco install kubectl <span class="literal">--version</span>=<span class="number">1.22</span>.<span class="number">1</span></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="reference">reference</h2>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://docs.chocolatey.org/en-us/choco/commands/">https://docs.chocolatey.org/en-us/choco/commands/</a></p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>develop</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>copier</title>
-    <url>/posts/ae78e30a/</url>
-    <content><![CDATA[<h2 id="Resource">Resource</h2>
-<table>
-<thead>
-<tr>
-<th>资源</th>
-<th>组织</th>
-<th>类型 </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://github.com/copier-org/copier/">copier</a></td>
-<td>copier-org</td>
-<td> 模板生成器</td>
-</tr>
-</tbody>
-</table>
-<h2 id="copier">copier</h2>
-<p>copier 是一个模板生成器，可以生成任意类型的模板.</p>
-<span id="more"></span>
-<h3 id="使用">使用</h3>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">pipx install copier</span><br><span class="line"></span><br><span class="line">copier copy &lt;template&gt; &lt;output&gt;</span><br><span class="line">copier update</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="jinja">jinja</h3>
-<h4 id="和"><code>-%]</code> 和 <code>%]</code></h4>
-<p><code>%]</code> 和 <code>[%</code> 确保保留这些前后额外的空白字符，<code>-%]</code> 和 <code>[%-</code> 确保在渲染结果中不会出现额外的空白字符。</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>[%- endif %] 表示在 endif 标记之前删除任何尾随的空格和换行符。</p>
-</li>
-<li class="lvl-2">
-<p>[% endif -%] 表示在 endif 标记之后删除任何尾随的空格和换行符。</p>
-</li>
-<li class="lvl-2">
-<p>[% endif %] 不会删除尾随的空格和换行符。</p>
-</li>
-</ul>
-<h4 id="include">include</h4>
-<p>在 jinja 中使用 include 拆分成多个模板，方便复用替换</p>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://github.com/serious-scaffold/serious-scaffold-python/pull/187">https://github.com/serious-scaffold/serious-scaffold-python/pull/187</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://copier.readthedocs.io/en/stable/configuring/#importing-jinja-templates-and-macros">https://copier.readthedocs.io/en/stable/configuring/#importing-jinja-templates-and-macros</a></p>
-</li>
-</ul>
-<h2 id="收集的模板">收集的模板</h2>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://github.com/serious-scaffold/serious-scaffold-python">https://github.com/serious-scaffold/serious-scaffold-python</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://github.com/lincc-frameworks/python-project-template">https://github.com/lincc-frameworks/python-project-template</a></p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>develop</category>
-      </categories>
-  </entry>
-  <entry>
     <title>AI 实践</title>
     <url>/posts/c21efe28/</url>
     <content><![CDATA[<!--
@@ -2703,6 +1766,943 @@ IVF（Inverted File）是一种用于加速近似最近邻搜索的索引结构�
         <tag>Triton Serving</tag>
         <tag>AI Serving</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Vim 实践</title>
+    <url>/posts/a1fb79d2/</url>
+    <content><![CDATA[<h2 id="Vim">Vim</h2>
+<h3 id="查找">查找</h3>
+<p>要在 Vim 中查找文本，可以使用以下命令：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>/pattern - 向前查找包含 “pattern” 的文本</p>
+</li>
+<li class="lvl-2">
+<p>?pattern - 向后查找包含 “pattern” 的文本</p>
+</li>
+<li class="lvl-2">
+<p>n - 跳转到下一个匹配项</p>
+</li>
+<li class="lvl-2">
+<p>N - 跳转到上一个匹配项</p>
+</li>
+</ul>
+<h3 id="跳转">跳转</h3>
+<p>要在 Vim 中跳转到特定的行，可以使用以下命令：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><code>:n</code> - 跳转到第 n 行</p>
+</li>
+<li class="lvl-2">
+<p><code>:0</code> - 跳转到文件的开头</p>
+</li>
+<li class="lvl-2">
+<p><code>:$</code> - 跳转到文件的结尾</p>
+</li>
+</ul>
+<span id="more"></span>
+<p>要在 Vim 中跳转到另一个文件，可以使用以下命令：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>:e path/to/file - 打开另一个文件</p>
+</li>
+<li class="lvl-2">
+<p>:bnext - 跳转到下一个缓冲区</p>
+</li>
+<li class="lvl-2">
+<p>:bprev - 跳转到上一个缓冲区</p>
+</li>
+<li class="lvl-2">
+<p>:ls - 列出所有缓冲区</p>
+</li>
+<li class="lvl-2">
+<p>:bdelete - 删除当前缓冲区</p>
+</li>
+</ul>
+<h3 id="多选">多选</h3>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># enter visual mode</span></span><br><span class="line">ctrl+v</span><br><span class="line"><span class="comment"># move cursor</span></span><br><span class="line">hgjk</span><br><span class="line"><span class="comment"># copy with yank</span></span><br><span class="line">y</span><br><span class="line"><span class="comment"># paste</span></span><br><span class="line">p</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="替换">替换</h3>
+<p>要替换文本，可以使用以下命令：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><code>:%s/old/new/g</code>: 替换所有出现的 “old” 文本为 “new” 文本</p>
+</li>
+<li class="lvl-2">
+<p><code>:s/old/new/g</code>: 替换当前行中出现的 “old” 文本为 “new” 文本</p>
+</li>
+<li class="lvl-2">
+<p><code>:s/old/new/gc</code>: 替换当前行中出现的 “old” 文本为 “new” 文本，并提示是否要进行替换</p>
+</li>
+</ul>
+<h2 id="AstroNVim"><a href="https://astronvim.com/">AstroNVim</a></h2>
+]]></content>
+      <categories>
+        <category>develop</category>
+      </categories>
+      <tags>
+        <tag>vim</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>airflow 框架使用经验</title>
+    <url>/posts/986b0e9c/</url>
+    <content><![CDATA[<p>主要总结 airflow 框架使用经验。</p>
+<h2 id="Beginner">Beginner</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>Airflow Introduction</p>
+</li>
+<li class="lvl-2">
+<p>Run Airflow in Python Env</p>
+</li>
+</ul>
+<span id="more"></span>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>Run Airflow in Docker</p>
+</li>
+<li class="lvl-2">
+<p>Airflow Basics and Core Concepts</p>
+</li>
+<li class="lvl-2">
+<p>Airflow Task Lifecycle</p>
+</li>
+<li class="lvl-2">
+<p>Airflow Basic Architecture</p>
+</li>
+<li class="lvl-2">
+<p>Airflow DAG with Bash Operator</p>
+</li>
+<li class="lvl-2">
+<p>Airflow DAG with Python Operator</p>
+</li>
+<li class="lvl-2">
+<p>Data Sharing via Airflow XComs</p>
+</li>
+<li class="lvl-2">
+<p>Airflow Task Flow API</p>
+</li>
+<li class="lvl-2">
+<p>Airflow Catch Up and Backfill</p>
+</li>
+<li class="lvl-2">
+<p>Airflow Scheduler with Cron Expression</p>
+</li>
+<li class="lvl-2">
+<p>Airflow Connection to Postgres</p>
+</li>
+<li class="lvl-2">
+<p>Airflow Postgres Operator</p>
+</li>
+<li class="lvl-2">
+<p>Airflow Docker Install Python Package 2 ways</p>
+</li>
+<li class="lvl-2">
+<p>Airflow AWS S3 Sensor Operator</p>
+</li>
+<li class="lvl-2">
+<p>Airflow Hooks S3 PostgreSQL</p>
+</li>
+</ul>
+<h3 id="reference">reference</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://www.youtube.com/watch?v=K9AnJ9_ZAXE">https://www.youtube.com/watch?v=K9AnJ9_ZAXE</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://www.youtube.com/watch?v=IH1-0hwFZRQ">https://www.youtube.com/watch?v=IH1-0hwFZRQ</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://marclamberti.com/blog/airflow-xcom/">https://marclamberti.com/blog/airflow-xcom/</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://github.com/marclamberti/docker-airflow">https://github.com/marclamberti/docker-airflow</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://www.youtube.com/c/ApacheAirflow">https://www.youtube.com/c/ApacheAirflow</a></p>
+</li>
+</ul>
+<h2 id="Operator">Operator</h2>
+<h3 id="TriggerDagRunOperator">TriggerDagRunOperator</h3>
+<p>使用新的 TriggerDagRunOperator，可以等待触发的 DAG 完成。不再需要创建自己的自定义运算符。这与将参数 wait_for_completion 设置为 true 一样简单。此外，参数 reset_dag_run 还允许回填触发的 DAGRuns，这是绝对关键的。</p>
+<h4 id="reference-2">reference</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://www.youtube.com/watch?v=8uKW0mPWmCk">https://www.youtube.com/watch?v=8uKW0mPWmCk</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://www.notion.so/The-TriggerDagRunOperator-699b5483f34a42e495183fd028b68267">https://www.notion.so/The-TriggerDagRunOperator-699b5483f34a42e495183fd028b68267</a></p>
+</li>
+</ul>
+<h3 id="DockerOperator">DockerOperator</h3>
+<p>Airflow DockerOperator 是一个非常强大的操作员。</p>
+<p>它在 docker 容器中执行任务。使用 DockerOperator 有多种优势，例如：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>测试任务的更简单方法</p>
+</li>
+<li class="lvl-2">
+<p>控制任务所需的资源</p>
+</li>
+<li class="lvl-2">
+<p>避免依赖关系冲突</p>
+</li>
+</ul>
+<p>以及更多。</p>
+<h4 id="reference-3">reference</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://www.youtube.com/watch?v=MdW2ZHHJWeo">https://www.youtube.com/watch?v=MdW2ZHHJWeo</a></p>
+</li>
+</ul>
+<h2 id="Test-on-Airflow">Test on Airflow</h2>
+<p>通过使用 airflow scheduler cli 可以方便的测试 dag 和 task.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># in airflow scheduler</span></span><br><span class="line">airflow task <span class="built_in">test</span> [dag_id] [task_id] [execution <span class="built_in">date</span>,如-1表示当前时间]</span><br><span class="line"><span class="comment"># 如果在容器外部</span></span><br><span class="line">docker <span class="built_in">exec</span> [container_id] airflow tasks <span class="built_in">test</span> [dag_id] [task_id] -1</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="reference-4">reference</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://www.youtube.com/watch?v=ANJnYbLwLjE">https://www.youtube.com/watch?v=ANJnYbLwLjE</a></p>
+</li>
+</ul>
+<h2 id="Airflow-Observability">Airflow Observability</h2>
+<h3 id="reference-5">reference</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://www.youtube.com/watch?v=Hc4pYAUL6Qs">https://www.youtube.com/watch?v=Hc4pYAUL6Qs</a></p>
+</li>
+</ul>
+<h2 id="Airflow-on-k8s">Airflow on k8s</h2>
+<h3 id="KubernetesExecutor">KubernetesExecutor</h3>
+<p>在本地多节点 Kubernetes 集群上使用 KubernetesExecutor 运行 Apache Airflow.</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>相比其它 executor, KubernetesExecutor 动态创建工作节点，避免资源浪费</p>
+</li>
+<li class="lvl-2">
+<p>任务间在 pod 间是隔离容错的</p>
+</li>
+<li class="lvl-2">
+<p>减小 scheduler 由于边缘驱动触发压力</p>
+</li>
+</ul>
+<h4 id="deploy-airflow-with-helm">deploy airflow with helm</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>non prod 和 prod 区分于 database 是否部署.</p>
+</li>
+<li class="lvl-2">
+<p>由统一的管理多配置部署管理.</p>
+</li>
+<li class="lvl-2">
+<p>配置参数化配置.</p>
+</li>
+<li class="lvl-2">
+<p>scheduler,web server,database 单 pod 部署.</p>
+<p><img data-src="https://raw.githubusercontent.com/msclock/images/main/images/20221022/212959434.png?token=AKLDRN26UI5VKZDJKCOOJL3DKPYJM" alt="image."></p>
+</li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">passing = KubernetesPodOperator(</span><br><span class="line">    namespace=<span class="string">"default"</span>,</span><br><span class="line">    image=<span class="string">"python:3.8-bullseye-slim"</span>,</span><br><span class="line">    cmds=[<span class="string">"python"</span>, <span class="string">"-c"</span>],</span><br><span class="line">    arguments=[<span class="string">"print('hello word')"</span>],</span><br><span class="line">    labels={<span class="string">"foo"</span>: <span class="string">"bar"</span>},</span><br><span class="line">    name=<span class="string">"passing-test"</span>,</span><br><span class="line">    task_id=<span class="string">"passing-task"</span>,</span><br><span class="line">    get_logs=<span class="literal">True</span>,</span><br><span class="line">    dag=dag,</span><br><span class="line">)</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="k8s-pod-operator">k8s pod operator</h4>
+<p>由 scheduler 调度 worker 创建工作容器.</p>
+<p><img data-src="https://raw.githubusercontent.com/msclock/images/main/images/20221022/213549478.png?token=AKLDRN3BUF33SEOODYTJCULDKPY7C" alt="image."></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>通常在 executor_config 配置 KubernetesExecutor.</p>
+</li>
+</ul>
+<h4 id="install-kind-helm-airflow">install kind &amp; helm &amp; airflow</h4>
+<p>kind 本地多集群管理工具<br>
+helm: 多集群服务脚本部署工具</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>使用 kind 创建本地集群</p>
+</li>
+<li class="lvl-2">
+<p>helm 添加 airflow repos</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 添加 airflow helm 仓库</span></span><br><span class="line">helm repo add airflow https://marclamberti.github.io/airflow-eks-helm-char</span><br><span class="line">helm repo update</span><br><span class="line">helm repo list</span><br><span class="line">helm search airflow</span><br><span class="line"><span class="comment"># 打印到本地配置 values.yaml</span></span><br><span class="line">helm show values airflow/airflow &gt; value.yaml</span><br><span class="line"><span class="comment"># helm 部署 airflow</span></span><br><span class="line">helm install -f values.yaml --kube-context kind-airflow-cluster airflow airflow/airflow</span><br><span class="line"><span class="comment"># 查看 airflow 部署</span></span><br><span class="line">kubectl get pods --context kind-airflow-cluster</span><br><span class="line"><span class="comment"># 导出本地访问端口</span></span><br><span class="line">kubectl port-forward svc/airflow-webserver 8080:8080 --context kind-airflow-cluster</span><br><span class="line"></span><br><span class="line"><span class="comment"># 构建镜像 在values.yaml指定镜像重新部署</span></span><br><span class="line"><span class="comment"># FROM apache/airflow:1.10.10.1-alpha2-python3.7</span></span><br><span class="line"><span class="comment"># COPY dags $AIRFLOW_HOME/dags</span></span><br><span class="line">docker build -t airflow-image:v1.0.0</span><br><span class="line"><span class="comment"># 删除本地集群</span></span><br><span class="line"><span class="comment"># kind delete cluster --name=airflow-cluster</span></span><br><span class="line">helm upgrade -f values.yaml --kube-context kind-airflow-cluster airflow airflow/airflow</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="reference-6">reference</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://www.youtube.com/watch?v=AjBADrVQJv0">https://www.youtube.com/watch?v=AjBADrVQJv0</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://www.youtube.com/watch?v=3VDeKmxHWYA">https://www.youtube.com/watch?v=3VDeKmxHWYA</a></p>
+</li>
+</ul>
+<h3 id="reference-7">reference</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://marclamberti.com/blog/airflow-on-kubernetes-get-started-in-10-mins/">https://marclamberti.com/blog/airflow-on-kubernetes-get-started-in-10-mins/</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://varunbpatil.github.io/2020/10/01/airflow-on-kubernetes.html">https://varunbpatil.github.io/2020/10/01/airflow-on-kubernetes.html</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://docs.netapp.com/zh-cn/netapp-solutions/ai/aicp_example_apache_airflow_workflows_overview.html">https://docs.netapp.com/zh-cn/netapp-solutions/ai/aicp_example_apache_airflow_workflows_overview.html</a></p>
+</li>
+</ul>
+<h3 id="reference-8">reference</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://marclamberti.com/blog/category/apache-airflow/">https://marclamberti.com/blog/category/apache-airflow/</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://maxcotec.com/blog/apache-airflow-architecture/">https://maxcotec.com/blog/apache-airflow-architecture/</a></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>develop</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Apifox</title>
+    <url>/posts/3adb19d8/</url>
+    <content><![CDATA[<h2 id="apifox">apifox</h2>
+<p>一站式 api 设计测试及文档生成管理工具。</p>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://apifox.com/">https://apifox.com/</a></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>develop</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>应用架构</title>
+    <url>/posts/8f889db4/</url>
+    <content><![CDATA[<p>本文总结了架构设计的基本理念。</p>
+<span id="more"></span>
+<h2 id="服务设计理念">服务设计理念</h2>
+<h3 id="软件即服务">软件即服务</h3>
+<h4 id="应用设计-12-基本准则">应用设计 12 基本准则</h4>
+<p>比较流程的应用设计 <a href="https://12factor.net/">12</a> 基本准则</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>使用标准化流程自动配置，从而使新的开发者花费最少的学习成本加入这个项目。</p>
+</li>
+<li class="lvl-2">
+<p>和操作系统之间尽可能的划清界限，在各个系统中提供最大的可移植性。</p>
+</li>
+<li class="lvl-2">
+<p>适合部署在现代的云计算平台，从而在服务器和系统管理方面节省资源。</p>
+</li>
+<li class="lvl-2">
+<p>将开发环境和生产环境的差异降至最低，并使用持续交付实施敏捷开发。</p>
+</li>
+<li class="lvl-2">
+<p>可以在工具、架构和开发流程不发生明显变化的前提下实现扩展。</p>
+</li>
+</ul>
+<h4 id="基准代码">基准代码</h4>
+<p>一份基准代码，多份部署</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>一个应用不是分布式系统，仅需一个代码版本控制即可。</p>
+</li>
+<li class="lvl-2">
+<p>所有部署（测试、生产等）对应一份基准代码。</p>
+</li>
+</ul>
+<h4 id="依赖声明">依赖声明</h4>
+<p>显示声明依赖关系</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>应用不应该隐式依赖于系统级类库，而是通过类库打包工具显示声明依赖。</p>
+</li>
+<li class="lvl-2">
+<p>同样不应该依赖于系统级工具，而是以类库打包的方式打包进应用。</p>
+</li>
+</ul>
+<h4 id="配置">配置</h4>
+<p>在环境中存储配置</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>用于当基准代码能立刻开源，而不暴露任何敏感信息。</p>
+</li>
+<li class="lvl-2">
+<p>环境变量有利于不同的部署，且颗粒度要相对小和独立。</p>
+</li>
+</ul>
+<h4 id="后端服务">后端服务</h4>
+<p>将后端服务当作附加资源</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>这里后端服务为程序运行所需要的通过网络调用的各种服务，将类似的数据库（MySQL、CouchDB），消息 / 队列系统（RabbitMQ），SMTP（邮件发送服务），以及缓存系统（Redis）等配置成可本地及第三方可配置的附加部署资源，使松耦合资源和应用部署，达到最小代码修改的目的。</p>
+</li>
+</ul>
+<p><img data-src="https://s2.loli.net/2022/09/12/4NDMFhVLxbk3ARJ.png" alt="attached-resources.png."></p>
+<h4 id="构建，发布，运行">构建，发布，运行</h4>
+<p>严格分离构建和运行</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>基准代码的部署，严格分为构建（仓库代码转为可执行包过程）、发布（将构建结果和发布部署配置结合确定发布版本，并能立即投入运行环境中使用）、运行（指定对应的发布版本，在执行环境中启动一系列应用程序）。</p>
+</li>
+<li class="lvl-2">
+<p>严格区分有利于回退部署，更容易发现问题。</p>
+</li>
+</ul>
+<h4 id="进程">进程</h4>
+<p>以一个或多个无状态进程运行应用</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>应用进程必须无状态且<a href="https://en.wikipedia.org/wiki/Shared-nothing_architecture">无共享</a>，任何需要持久化的数据都要存储在 <strong>后端服务</strong> 内。</p>
+</li>
+<li class="lvl-2">
+<p>内存区域或磁盘空间可以作为进程在做某种事务型操作时的缓存。</p>
+</li>
+<li class="lvl-2">
+<p>用户数据缓存中的数据应该保存在诸如 Memcached 或 Redis 这样的带有过期时间的缓存中。</p>
+</li>
+</ul>
+<h4 id="端口绑定">端口绑定</h4>
+<p>通过端口绑定提供服务</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>互联网应用 <strong>通过端口绑定来提供服务</strong> ，并监听发送至该端口的请求。</p>
+</li>
+<li class="lvl-2">
+<p>通常的实现思路是，将网络服务器类库通过 <strong><a href="#%E4%BE%9D%E8%B5%96%E5%A3%B0%E6%98%8E">依赖声明</a></strong> 载入应用。例如，Python 的 <a href="https://www.tornadoweb.org/en/stable/">Tornado</a>。几乎所有服务器软件都可以通过进程绑定端口来等待请求。</p>
+</li>
+</ul>
+<h4 id="并发">并发</h4>
+<p>通过进程模型进程扩展，任何计算机程序，一旦启动，就会生成一个或多个进程。</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>进程是一等公民，基于 <strong><a href="https://adam.herokuapp.com/past/2011/5/9/applying_the_unix_process_model_to_web_apps/">unix 守护进程模型</a></strong>。</p>
+</li>
+<li class="lvl-2">
+<p>将不同的任务分配不同的进程类型调度并发进程模型。</p>
+</li>
+<li class="lvl-2">
+<p>所有应用程序必须可以在多台物理机器间跨进程工作。</p>
+</li>
+<li class="lvl-2">
+<p>基于 <a href="#%E8%BF%9B%E7%A8%8B">进程设计</a> 在系统急需扩展时变得简单及稳妥。</p>
+</li>
+<li class="lvl-2">
+<p>建议使用操作系统进程管理（systemd，分布式进程管理云平台，foreman 等工具），管理输出流，崩溃，重启等请求。</p>
+</li>
+</ul>
+<h4 id="易处理">易处理</h4>
+<p>快速启动和优雅终止可最大化健壮性</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>应用进程应该时可以瞬间开启或停止，有利于迅速部署变化的 <a href="#%E5%9F%BA%E5%87%86%E4%BB%A3%E7%A0%81">基准代码</a> 或 <a href="#%E9%85%8D%E7%BD%AE">配置</a> 。</p>
+</li>
+<li class="lvl-2">
+<p>进程应当最求最小启动时间，提供更敏捷的 <a href="#%E6%9E%84%E5%BB%BA%E5%8F%91%E5%B8%83%E8%BF%90%E8%A1%8C">发布</a> 及扩展过程。</p>
+</li>
+<li class="lvl-2">
+<p>进程应该在接受到 <strong>SIGTERM</strong> 优雅的终止。优雅终止是指停止监听服务的端口，即拒绝所有新的请求，并继续执行当前已接收的请求，然后退出。</p>
+</li>
+<li class="lvl-2">
+<p>对于 worker 进程来说，优雅终止是指将当前任务退回队列。例如，<a href="http://www.rabbitmq.com/">RabbitMQ</a> 中，worker 可以发送一个 <a href="http://www.rabbitmq.com/amqp-0-9-1-quickref.html#basic.nack">NACK</a> 信号。此类型的进程所隐含的要求是，任务都应该 <a href="http://en.wikipedia.org/wiki/Reentrant_%28subroutine%29">可重复执行</a> ， 这主要由将结果包装进事务或是使重复操作 <a href="https://en.wikipedia.org/wiki/Idempotence">幂等</a> 来实现。</p>
+</li>
+<li class="lvl-2">
+<p>进程还应当在面对突然死亡时保持健壮，例如底层硬件故障。<a href="https://lwn.net/Articles/191059/">Crash-only design</a> 将这种概念转化为 <a href="https://docs.couchdb.org/en/3.2.2-docs/">合乎逻辑的理论</a>。</p>
+</li>
+</ul>
+<h4 id="开发环境与线上环境等价">开发环境与线上环境等价</h4>
+<p>尽可能的保持开发，预发布，线上环境相同</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>差异体现在，时间差异（编写代码和上线的时间）、人员差异（开发人员、部署运维人员的间代码）、工具差异（本地部署开发环境及线上环境）</p>
+</li>
+<li class="lvl-2">
+<p>做到<a href="http://avc.com/2011/02/continuous-deployment/">持续部署</a>，就需要做到本地和线上最小化差异</p>
+</li>
+<li class="lvl-2">
+<p>方法，缩小时间差异：开发人员可以几小时，甚至几分钟就部署代码；缩小人员差异：开发人员不只要编写代码，更应该密切参与部署过程以及代码在线上的表现；缩小工具差异：尽量保证开发环境以及线上环境的一致性。</p>
+</li>
+<li class="lvl-2">
+<p><a href="#%E5%90%8E%E7%AB%AF%E6%9C%8D%E5%8A%A1">后端服务</a> 是保持开发与线上等价的重要部分，例如数据库，队列系统，以及缓存。许多语言都提供了简化获取后端服务的类库。如，队列（Python/Django，Celery，RabbitMQ, Beanstalkd, Redis）。</p>
+</li>
+<li class="lvl-2">
+<p>开发人员应该反对在不同环境间使用不同的后端服务，是因为，不同的后端服务意味着会突然出现的不兼容，造成的错误导致持续部署问题的解决需要非常大的代价。</p>
+</li>
+<li class="lvl-2">
+<p>使用类似 <a href="https://www.chef.io/products/chef-infra">Chef</a> 和 <a href="http://docs.puppetlabs.com/">Puppet</a> 的声明式配置工具，结合像 <a href="https://www.vagrantup.com/intro">Vagrant</a> 这样轻量的虚拟环境就可以使得开发人员的本地环境与线上环境无限接近。</p>
+</li>
+</ul>
+<h4 id="日志">日志</h4>
+<p>把日志当作事件流，日志使得应用程序运行的动作变得透明。</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>日志应该是 <a href="https://adam.herokuapp.com/past/2011/4/1/logs_are_streams_not_files/">事件流</a> 的汇总。</p>
+</li>
+<li class="lvl-2">
+<p>应用本身<strong>从不考虑存储自己的输出流</strong>。每一个运行的进程都会直接的标准输出（stdout）事件流。</p>
+</li>
+<li class="lvl-2">
+<p>在预发布或线上部署中，每个进程的输出流由运行环境截获，并将其他输出流整理在一起，然后一并发送给一个或多个最终的处理程序，用于查看或是长期存档。这些存档路径对于应用来说不可见也不可配置，而是完全交给程序的运行环境管理。类似 <a href="https://github.com/heroku/logplex">Logplex</a> 和 <a href="https://github.com/fluent/fluentd">Fluentd</a> 的开源工具可以达到这个目的。</p>
+</li>
+<li class="lvl-2">
+<p>输出流可以发送到 <a href="https://www.splunk.com/">Splunk</a> 这样的日志索引及分析系统，或 <a href="http://hive.apache.org/">Hadoop/Hive</a> 这样的通用数据存储系统。这些系统为查看应用的历史活动提供了强大而灵活的功能。</p>
+</li>
+</ul>
+<h4 id="管理进程">管理进程</h4>
+<p>后台管理任务当作一次性进程运行，区别于处理应用的常规业务任务进程。</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>一次性管理进程应该和正常的 <a href="#%E8%BF%9B%E7%A8%8B">常驻进程</a> 使用同样的环境。</p>
+</li>
+<li class="lvl-2">
+<p>随基准代码使用相同的配置、发布，避免同步问题。</p>
+</li>
+<li class="lvl-2">
+<p>所有进程类型应该使用同样的 <a href="#%E4%BE%9D%E8%B5%96%E5%A3%B0%E6%98%8E">依赖隔离</a> 技术。</p>
+</li>
+</ul>
+<h2 id="微服务">微服务</h2>
+<h3 id="架构考虑">架构考虑</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>业务需求，系统实现功能。</p>
+</li>
+<li class="lvl-2">
+<p>技术栈，公司员工擅长的技术栈。</p>
+</li>
+<li class="lvl-2">
+<p>成本，人力财力支持。</p>
+</li>
+<li class="lvl-2">
+<p>组织架构，部分小组支持。</p>
+</li>
+<li class="lvl-2">
+<p>可扩展性，软件设计需求变化，业务变更。</p>
+</li>
+<li class="lvl-2">
+<p>可维护性，系统学习成本，bug 修复成本。</p>
+</li>
+</ul>
+<h3 id="架构">架构</h3>
+<h4 id="单体架构">单体架构</h4>
+<p>功能、业务集成在发布中，部署运行在同一个进程中。</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>一层架构：业务逻辑、数据库混合等。</p>
+</li>
+<li class="lvl-2">
+<p>MVC 模式：Model、View、Controller，简单来说分层设计。</p>
+</li>
+<li class="lvl-2">
+<p>前后端：单体架构分离。</p>
+</li>
+</ul>
+<p>单体架构特征及难易：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>易于开发，开发工具等</p>
+</li>
+<li class="lvl-2">
+<p>易于测试，测试框架等</p>
+</li>
+<li class="lvl-2">
+<p>易于部署，一份代码发布部署</p>
+</li>
+<li class="lvl-2">
+<p>易于水平伸缩，代码的 copy。</p>
+</li>
+<li class="lvl-2">
+<p>难于维护，代码膨胀。</p>
+</li>
+<li class="lvl-2">
+<p>难于构建、测试、部署成本大。</p>
+</li>
+<li class="lvl-2">
+<p>难于上手，接手困难。</p>
+</li>
+<li class="lvl-2">
+<p>难于创新，框架固定，升级风险。</p>
+</li>
+<li class="lvl-2">
+<p>难于扩展，水平（需求逻辑）、垂直（物理硬件）扩展。</p>
+</li>
+</ul>
+<h4 id="微服务架构">微服务架构</h4>
+<p>使用一套小服务开发单个应用，每个服务运行在<strong>单独的进程</strong>中，采取<strong>轻量级的通信</strong>机制互联，并且每个服务都可以<strong>自动化部署</strong>。</p>
+<p>微服务架构特征：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>单一职责，紧密相关业务放在一起。</p>
+</li>
+<li class="lvl-2">
+<p>轻量级通信，<strong>http/grpc</strong> 平台无关，语言无关。</p>
+</li>
+<li class="lvl-2">
+<p>隔离性，单独进程隔离。</p>
+</li>
+<li class="lvl-2">
+<p>数据隔离，降低实现复杂性，方便微服务间实现无状态通信及不断添加微服务。</p>
+</li>
+<li class="lvl-2">
+<p>技术多样性，技术栈多样性。</p>
+</li>
+</ul>
+<p>第二代微服务：k8s, service mesh, serverless。</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>k8s: 云平台。</p>
+</li>
+<li class="lvl-2">
+<p>service mesh：服务同行。</p>
+</li>
+<li class="lvl-2">
+<p>serverless：无服务无需关注底层。</p>
+</li>
+</ul>
+<h3 id="微服务优势">微服务优势</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>围绕业务构建团队，根据康威定律，团队决定成果。</p>
+</li>
+<li class="lvl-2">
+<p>去中心化数据管理，以业务区分将数据存储</p>
+<ul class="lvl-2">
+<li class="lvl-4">团队，内聚，独立开发业务，没有依赖，沟通成本低。</li>
+<li class="lvl-4">产品，服务彼此独立部署，没有依赖，充分利用资源（频繁使用的服务可以部署多份）。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>[!IMPORTANT]<br>
+微服务不是银弹，没有任何一种技术和管理上的进步，可以极大的提升生产效率。在微服务实践中需要做相应的取舍。</p>
+</blockquote>
+<h3 id="微服务劣势">微服务劣势</h3>
+<p>网络通信需要做极大的优化，基本上等于分布式痛点，现有的比较流行的开源解决方式是使用 istio。</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>服务注册 / 发现</p>
+</li>
+<li class="lvl-2">
+<p>路由，流量转移</p>
+</li>
+<li class="lvl-2">
+<p>弹性，熔断，超时，重试</p>
+</li>
+<li class="lvl-2">
+<p>安全</p>
+</li>
+<li class="lvl-2">
+<p>可观测性</p>
+</li>
+</ul>
+<h2 id="分布式">分布式</h2>
+<h3 id="分布式八大难点">分布式八大难点</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>网络，需要做数据消息缓存。</p>
+</li>
+<li class="lvl-2">
+<p>延时，单个调用从单体调用 ns 到 ms。</p>
+</li>
+<li class="lvl-2">
+<p>带宽，考虑同一时间的负载，主要和延时相关。</p>
+</li>
+<li class="lvl-2">
+<p>安全，通信必须考虑安全加密、类库漏洞等。</p>
+</li>
+<li class="lvl-2">
+<p>网络拓扑，k8s、服务网格处理单点故障、自动伸缩、服务迁移影响。</p>
+</li>
+<li class="lvl-2">
+<p>服务器管理，资源管理配置及依赖。</p>
+</li>
+<li class="lvl-2">
+<p>监控和可观测性（新增），系统存在问题需能告警及跟踪。</p>
+</li>
+<li class="lvl-2">
+<p>消息传输成本，grpc/json 通信协议。</p>
+</li>
+<li class="lvl-2">
+<p>网络同质，不同客户端及环境使用的网络不同质需要做针对化处理。</p>
+</li>
+</ul>
+<h2 id="系统设计">系统设计</h2>
+<p>系统设计尽量遵循 MVP 原则.</p>
+<blockquote>
+<p>[!IMPORTANT]<br>
+MVP (Minimum viable Product) 以最小的代价提供一个可测试交付的版本，然后再后续开发中直到一个稳定的状态。</p>
+</blockquote>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://github.com/ByteByteGoHq/system-design-101">https://github.com/ByteByteGoHq/system-design-101</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md">系统设计入门</a></p>
+</li>
+</ul>
+<h2 id="TDD">TDD</h2>
+<p><a href="http://wiki.c2.com/?TestDrivenDevelopment">Test Driven Development</a></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="http://wiki.c2.com/?DoSimpleThings">DoSompleThings</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="http://wiki.c2.com/?CodeUnitTestFirst">CodeUnitTestFirst</a></p>
+</li>
+</ul>
+<p>以下是对 TDD (Test Driven Development) 的归纳总结</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>TDD 是一种开发方法论，它要求在编写实际代码之前先编写测试代码。</p>
+</li>
+<li class="lvl-2">
+<p>TDD 的基本原则是：先写一个失败的测试，然后编写足够的代码使其通过，最后进行重构。</p>
+</li>
+<li class="lvl-2">
+<p>TDD 的好处包括：提高代码质量、减少 bug、提高代码可维护性、加快开发速度等。</p>
+</li>
+<li class="lvl-2">
+<p>TDD 的核心是测试驱动，通过编写测试用例来驱动代码的开发。</p>
+</li>
+<li class="lvl-2">
+<p>TDD 的流程包括：编写测试、运行测试、编写代码、运行测试、重构代码。</p>
+</li>
+<li class="lvl-2">
+<p>TDD 的关键是编写简单、清晰、可测试的代码。</p>
+</li>
+<li class="lvl-2">
+<p>TDD 适用于各种编程语言和项目类型。</p>
+</li>
+</ul>
+<h2 id="简历">简历</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>项目</p>
+<ul class="lvl-2">
+<li class="lvl-4">规模</li>
+<li class="lvl-4">背景</li>
+<li class="lvl-4">价值</li>
+<li class="lvl-4">困难</li>
+<li class="lvl-4">成果</li>
+<li class="lvl-4">技术栈</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>教育</p>
+<ul class="lvl-2">
+<li class="lvl-4">专业</li>
+<li class="lvl-4">学历</li>
+<li class="lvl-4">竞赛</li>
+<li class="lvl-4">证书</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>develop</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Badge</title>
+    <url>/posts/3f316719/</url>
+    <content><![CDATA[<h2 id="Badge">Badge</h2>
+<p>代码仓库中的 Badge（徽章）是一种用于展示项目状态或元数据的小型图标。它们通常以图像或文本的形式显示在项目的 README 文件、文档页面或社区平台上。</p>
+<p>以下是一些常见的 Badge 类型及其作用：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>构建状态：徽章可以显示项目的构建状态，例如是否通过了持续集成（CI）流程，或者最新的构建结果。这样的徽章可以让用户快速了解项目的构建情况，并确定代码的稳定性。</p>
+</li>
+<li class="lvl-2">
+<p>测试覆盖率：徽章可以显示项目的测试覆盖率。这可以帮助开发人员评估项目的测试质量和代码覆盖范围，并鼓励团队保持良好的测试习惯。</p>
+</li>
+<li class="lvl-2">
+<p>版本号：徽章可以显示项目的当前版本号。这对于用户和开发人员来说是一个有用的参考，可以让他们知道他们使用的是哪个版本，或者是否需要升级到最新版本。</p>
+</li>
+<li class="lvl-2">
+<p>文档状态：徽章可以显示项目文档的状态，例如是否更新、是否有详细的文档覆盖等。这对于用户来说是一个重要的指标，可以帮助他们评估项目的可用性和易用性。</p>
+</li>
+<li class="lvl-2">
+<p>许可证信息：徽章可以显示项目所使用的开源许可证类型和版本信息。这对于其他开发人员来说是一个重要的元数据，可以帮助他们了解项目的许可证限制和使用条件。</p>
+</li>
+</ul>
+<p>徽章通常以 Markdown 或 HTML 代码的形式嵌入到项目文档中，并链接到相关的状态或元数据页面。它们可以提供有用的信息和指导，使用户和开发人员更好地了解和使用项目。同时，徽章也为项目增添了一些可视化的元素，使其更具吸引力和专业性。</p>
+<span id="more"></span>
+<h2 id="Resource">Resource</h2>
+<table>
+<thead>
+<tr>
+<th>资源</th>
+<th>组织</th>
+<th>类型 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://badge.fury.io/">version badge</a></td>
+<td><a href="http://fury.io">fury.io</a></td>
+<td>badge 工具 </td>
+</tr>
+<tr>
+<td><a href="https://shields.io/">shields badge</a></td>
+<td>shields</td>
+<td>badge 工具</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Shields-Badge">Shields Badge</h2>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://shields.io/badges">https://shields.io/badges</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://medium.com/@therafamartins/make-your-customized-badges-in-a-few-minutes-18e75475e271">https://medium.com/@therafamartins/make-your-customized-badges-in-a-few-minutes-18e75475e271</a></p>
+</li>
+</ul>
+<h3 id="分类">分类</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>pypi: <code>https://img.shields.io/pypi/v/:packageName</code></p>
+</li>
+<li class="lvl-2">
+<p>github license: <code>https://img.shields.io/github/license/:user/:repo</code></p>
+</li>
+<li class="lvl-2">
+<p>github release: <code>https://img.shields.io/github/v/release/:user/:repo</code></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>develop</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>choco 包管理器</title>
+    <url>/posts/78ce69fa/</url>
+    <content><![CDATA[<p>本文总结了 windows 包管理工具常用命令</p>
+<h2 id="install">install</h2>
+<p>通过 powershell 安装</p>
+<figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Set your PowerShell execution policy</span></span><br><span class="line"><span class="built_in">Set-ExecutionPolicy</span> <span class="literal">-ExecutionPolicy</span> RemoteSigned <span class="literal">-Force</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Install Chocolatey</span></span><br><span class="line"><span class="built_in">iwr</span> https://chocolatey.org/install.ps1 <span class="literal">-UseBasicParsing</span> | <span class="built_in">iex</span></span><br><span class="line"></span><br><span class="line">choco <span class="literal">-v</span></span><br><span class="line"></span><br><span class="line">choco upgrade chocolatey</span><br></pre></td></tr></tbody></table></figure>
+<span id="more"></span>
+<h2 id="常用命令">常用命令</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>choco list -li 查看本地安装的软件</p>
+</li>
+<li class="lvl-2">
+<p>choco search nodejs 查找安装包</p>
+</li>
+<li class="lvl-2">
+<p>choco install sed 下载</p>
+</li>
+<li class="lvl-2">
+<p>choco uninstall sed 卸载</p>
+</li>
+<li class="lvl-2">
+<p>choco upgrade sed 更新（update）</p>
+</li>
+</ul>
+<h2 id="常用开发工具">常用开发工具</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>docker-desktop/kubernetes-helm/kind</p>
+</li>
+<li class="lvl-2">
+<p>dapr</p>
+</li>
+<li class="lvl-2">
+<p>fzf/tree/sed/grep/rsync</p>
+</li>
+<li class="lvl-2">
+<p>git</p>
+</li>
+<li class="lvl-2">
+<p>JetBrainsNF</p>
+</li>
+<li class="lvl-2">
+<p>neovim</p>
+</li>
+<li class="lvl-2">
+<p>nvm</p>
+</li>
+<li class="lvl-2">
+<p>kubectl</p>
+</li>
+</ul>
+<figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 指定版本安装</span></span><br><span class="line">choco install kubectl <span class="literal">--version</span>=<span class="number">1.22</span>.<span class="number">1</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="reference">reference</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://docs.chocolatey.org/en-us/choco/commands/">https://docs.chocolatey.org/en-us/choco/commands/</a></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>develop</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>copier</title>
+    <url>/posts/ae78e30a/</url>
+    <content><![CDATA[<h2 id="Resource">Resource</h2>
+<table>
+<thead>
+<tr>
+<th>资源</th>
+<th>组织</th>
+<th>类型 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/copier-org/copier/">copier</a></td>
+<td>copier-org</td>
+<td> 模板生成器</td>
+</tr>
+</tbody>
+</table>
+<h2 id="copier">copier</h2>
+<p>copier 是一个模板生成器，可以生成任意类型的模板.</p>
+<span id="more"></span>
+<h3 id="使用">使用</h3>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">pipx install copier</span><br><span class="line"></span><br><span class="line">copier copy &lt;template&gt; &lt;output&gt;</span><br><span class="line">copier update</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="jinja">jinja</h3>
+<h4 id="和"><code>-%]</code> 和 <code>%]</code></h4>
+<p><code>%]</code> 和 <code>[%</code> 确保保留这些前后额外的空白字符，<code>-%]</code> 和 <code>[%-</code> 确保在渲染结果中不会出现额外的空白字符。</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>[%- endif %] 表示在 endif 标记之前删除任何尾随的空格和换行符。</p>
+</li>
+<li class="lvl-2">
+<p>[% endif -%] 表示在 endif 标记之后删除任何尾随的空格和换行符。</p>
+</li>
+<li class="lvl-2">
+<p>[% endif %] 不会删除尾随的空格和换行符。</p>
+</li>
+</ul>
+<h4 id="include">include</h4>
+<p>在 jinja 中使用 include 拆分成多个模板，方便复用替换</p>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://github.com/serious-scaffold/serious-scaffold-python/pull/187">https://github.com/serious-scaffold/serious-scaffold-python/pull/187</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://copier.readthedocs.io/en/stable/configuring/#importing-jinja-templates-and-macros">https://copier.readthedocs.io/en/stable/configuring/#importing-jinja-templates-and-macros</a></p>
+</li>
+</ul>
+<h2 id="收集的模板">收集的模板</h2>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://github.com/serious-scaffold/serious-scaffold-python">https://github.com/serious-scaffold/serious-scaffold-python</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://github.com/lincc-frameworks/python-project-template">https://github.com/lincc-frameworks/python-project-template</a></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>develop</category>
+      </categories>
   </entry>
   <entry>
     <title>cpp 实践</title>
@@ -5074,7 +5074,7 @@ https://en.cppreference.com/w/cpp/language/constraints
 <p>Make errors impossible to ignore(no returning an error code!)</p>
 </li>
 <li class="lvl-2">
-<p>Never usestd:optional&lt;&gt;to indicate an error condition.(it does not convey a reason,and the reason becomes out of bound).</p>
+<p>Never use std:optional&lt;&gt;to indicate an error condition.(it does not convey a reason, and the reason becomes out of bound).</p>
 </li>
 <li class="lvl-2">
 <p>Consider std::expected&lt;&gt;(C++23) or similar.</p>
@@ -5517,6 +5517,9 @@ asynchronous: 由 signal 或外部程序触发，这类 stack unwinding 可以�
 </li>
 <li class="lvl-2">
 <p><a href="http://www.ashermancinelli.com/std-expected">http://www.ashermancinelli.com/std-expected</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://github.com/jimmiebergmann">expected 使用示例</a></p>
 </li>
 </ul>
 <h3 id="core-guideline">core guideline</h3>
@@ -8318,6 +8321,14 @@ personal token is on the edge
 <p><a href="https://github.com/rossjrw/pr-preview-action">https://github.com/rossjrw/pr-preview-action</a></p>
 </li>
 </ul>
+<h4 id="hmarr-auto-approve-action">hmarr/auto-approve-action</h4>
+<p>自动批准 pr</p>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://github.com/hmarr/auto-approve-action">https://github.com/hmarr/auto-approve-action</a></p>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>develop</category>
@@ -10944,16 +10955,10 @@ mamba 自带的 conda 环境中的 python 在 windows 上编译需要附带设�
 <p>从 GitHub 获取的免费订阅如下</p>
 <ul class="lvl-0">
 <li class="lvl-2">
-<p><a href="https://anaer.github.io/Sub/clash.yaml">https://anaer.github.io/Sub/clash.yaml</a></p>
-</li>
-<li class="lvl-2">
 <p><a href="https://github.com/Pawdroid/Free-servers">https://github.com/Pawdroid/Free-servers</a></p>
 </li>
 <li class="lvl-2">
-<p><a href="https://ghproxy.com/https://raw.githubusercontent.com/ripaojiedian/freenode/main/clash">https://ghproxy.com/https://raw.githubusercontent.com/ripaojiedian/freenode/main/clash</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://ghproxy.com/https://raw.githubusercontent.com/free18/v2ray/main/Clash.yaml">https://ghproxy.com/https://raw.githubusercontent.com/free18/v2ray/main/Clash.yaml</a></p>
+<p><a href="https://raw.githubusercontent.com/ripaojiedian/freenode/main/clash">https://raw.githubusercontent.com/ripaojiedian/freenode/main/clash</a></p>
 </li>
 <li class="lvl-2">
 <p><a href="https://github.com/peasoft/NoMoreWalls">https://github.com/peasoft/NoMoreWalls</a></p>
@@ -10968,13 +10973,13 @@ mamba 自带的 conda 环境中的 python 在 windows 上编译需要附带设�
 <p><a href="https://v2rayshare.com/wp-content/uploads/2023/03/20230320.yaml">https://v2rayshare.com/wp-content/uploads/2023/03/20230320.yaml</a></p>
 </li>
 <li class="lvl-2">
-<p><a href="https://clashnode.com/wp-content/uploads/2023/03/20230320.yaml">https://clashnode.com/wp-content/uploads/2023/03/20230320.yaml</a></p>
+<p><a href="https://nodefree.org/dy/2024/06/20240607.yaml">https://nodefree.org/dy/2024/06/20240607.yaml</a></p>
 </li>
+</ul>
+<!-- https://github.com/OpenRunner/clash-freenode -->
+<ul class="lvl-0">
 <li class="lvl-2">
-<p><a href="https://oss.v2rayse.com/proxies/data/2023-03-25/VAAlRUn.yaml">https://oss.v2rayse.com/proxies/data/2023-03-25/VAAlRUn.yaml</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://nodefree.org/dy/2023/03/20230325.yaml">https://nodefree.org/dy/2023/03/20230325.yaml</a></p>
+<p><a href="https://freenode.openrunner.net/uploads/20240607-clash.yaml">https://freenode.openrunner.net/uploads/20240607-clash.yaml</a></p>
 </li>
 </ul>
 <h4 id="订阅采集节点池">订阅采集节点池</h4>
@@ -11031,6 +11036,38 @@ mamba 自带的 conda 环境中的 python 在 windows 上编译需要附带设�
 </li>
 <li class="lvl-2">
 <p><a href="https://stock.hostmonit.com/CloudFlareYes">https://stock.hostmonit.com/CloudFlareYes</a></p>
+</li>
+</ul>
+<h3 id="可用订阅">可用订阅</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://mirror.ghproxy.com/https://raw.githubusercontent.com/ripaojiedian/freenode/main/clash">https://mirror.ghproxy.com/https://raw.githubusercontent.com/ripaojiedian/freenode/main/clash</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://mirror.ghproxy.com/https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list.yml">https://mirror.ghproxy.com/https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list.yml</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://mirror.ghproxy.com/https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list.meta.yml">https://mirror.ghproxy.com/https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list.meta.yml</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://mirror.ghproxy.com/https://raw.githubusercontent.com/chengaopan/AutoMergePublicNodes/master/list.yml">https://mirror.ghproxy.com/https://raw.githubusercontent.com/chengaopan/AutoMergePublicNodes/master/list.yml</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://mirror.ghproxy.com/https://raw.githubusercontent.com/msclock/ftw/master/list.meta.yml">https://mirror.ghproxy.com/https://raw.githubusercontent.com/msclock/ftw/master/list.meta.yml</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://nodefree.org/dy/2024/06/20240609.yaml">https://nodefree.org/dy/2024/06/20240609.yaml</a></p>
+</li>
+</ul>
+<h3 id="wireguard">wireguard</h3>
+<p>wireguard 客户端： <a href="https://www.wireguard.com/install/">https://www.wireguard.com/install/</a></p>
+<h4 id="lingdu配置">lingdu 配置</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://www.freedidi.com/12653.html">https://www.freedidi.com/12653.html</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://www.freedidi.com/12659.html">https://www.freedidi.com/12659.html</a></p>
 </li>
 </ul>
 <h3 id="cloudflare">cloudflare</h3>
@@ -11139,6 +11176,11 @@ mamba 自带的 conda 环境中的 python 在 windows 上编译需要附带设�
 <td><a href="https://pythonguidecn.readthedocs.io/zh/latest/">pythonguide</a></td>
 <td>pythonguide</td>
 <td>docs</td>
+</tr>
+<tr>
+<td><a href="https://superfastpython.com/">superfastpython</a></td>
+<td>superfastpython</td>
+<td>blog</td>
 </tr>
 </tbody>
 </table>
@@ -11758,10 +11800,25 @@ pypi-key is on the edge
 <p><a href="https://runebook.dev/zh-CN/docs/python/library/multiprocessing?page=7#multiprocessing.managers.SyncManager">参考文档 runebook</a></p>
 </li>
 </ul>
-<h3 id="疑难问题">疑难问题</h3>
-<h3 id="RuntimeError-Queue-objects-should-only-be-shared-between-processes-through-inheritance">RuntimeError: Queue objects should only be shared between processes through inheritance</h3>
+<h3 id="QA">QA</h3>
+<h4 id="RuntimeError-Queue-objects-should-only-be-shared-between-processes-through-inheritance">RuntimeError: Queue objects should only be shared between processes through inheritance</h4>
 <p>使用 multiprocessing.Queue 通常会报以上错误。因为 multiprocessing.Queue 只能在父子进程间进行队列同步通信。对于使用进程池，需要使用 multiprocessing.Manager.Queue 创建共享的通信队列。示例:</p>
 <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process, Queue, Pool</span><br><span class="line"><span class="keyword">import</span> os, time, random</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 写数据进程执行的代码:</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">write</span>(<span class="params">q, lock</span>):</span><br><span class="line">    lock.acquire()  <span class="comment"># 加上锁</span></span><br><span class="line">    <span class="keyword">for</span> value <span class="keyword">in</span> [<span class="string">"A"</span>, <span class="string">"B"</span>, <span class="string">"C"</span>]:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f"Put <span class="subst">{value}</span> to queue..."</span>)</span><br><span class="line">        q.put(value)</span><br><span class="line">    lock.release()  <span class="comment"># 释放锁</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 读数据进程执行的代码:</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">read</span>(<span class="params">q</span>):</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> q.empty():</span><br><span class="line">            value = q.get(<span class="literal">False</span>)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f"Get <span class="subst">{value}</span> from queue."</span>)</span><br><span class="line">            time.sleep(random.random())</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    manager = multiprocessing.Manager()</span><br><span class="line">    <span class="comment"># 父进程创建Queue，并传给各个子进程：</span></span><br><span class="line">    q = manager.Queue()</span><br><span class="line">    lock = manager.Lock()  <span class="comment"># 初始化一把锁</span></span><br><span class="line">    p = Pool()</span><br><span class="line">    pw = p.apply_async(write, args=(q, lock))</span><br><span class="line">    pr = p.apply_async(read, args=(q,))</span><br><span class="line">    p.close()</span><br><span class="line">    p.join()</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="concurrency">concurrency</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://superfastpython.com/learning-paths/">https://superfastpython.com/learning-paths/</a></p>
+</li>
+</ul>
+<h3 id="paths">paths</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>threading in python: <a href="https://superfastpython.com/threading-in-python/">https://superfastpython.com/threading-in-python/</a></p>
+</li>
+<li class="lvl-2">
+<p>threadpoolexecutor: <a href="https://superfastpython.com/threadpoolexecutor-in-python/">https://superfastpython.com/threadpoolexecutor-in-python/</a></p>
+</li>
+</ul>
 <h2 id="加密和解密">加密和解密</h2>
 <p>links:</p>
 <ul class="lvl-0">
