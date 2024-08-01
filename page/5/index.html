@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.2.0">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
@@ -242,7 +242,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-07-01 08:47:13" itemprop="dateModified" datetime="2024-07-01T08:47:13+08:00">2024-07-01</time>
+      <time title="修改时间：2024-08-01 08:47:04" itemprop="dateModified" datetime="2024-08-01T08:47:04+08:00">2024-08-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -390,7 +390,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-07-01 08:47:13" itemprop="dateModified" datetime="2024-07-01T08:47:13+08:00">2024-07-01</time>
+      <time title="修改时间：2024-08-01 08:47:04" itemprop="dateModified" datetime="2024-08-01T08:47:04+08:00">2024-08-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -502,7 +502,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-07-01 08:47:13" itemprop="dateModified" datetime="2024-07-01T08:47:13+08:00">2024-07-01</time>
+      <time title="修改时间：2024-08-01 08:47:04" itemprop="dateModified" datetime="2024-08-01T08:47:04+08:00">2024-08-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -648,7 +648,7 @@
 </ul>
 <h2 id="docker-daemon-配置">docker daemon 配置</h2>
 <p>docker 运行配置主要通过文件 daemon.json 配置。所在路径在 <code>/etc/docker/daemon.json</code>。</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">{</span><br><span class="line">    // 配置docker运行数据储存路径</span><br><span class="line">    "data-root": "/home/docker",</span><br><span class="line">    // 配置docker仓库源</span><br><span class="line">    "insecure-registries": [</span><br><span class="line">      // 私有源</span><br><span class="line">      "harbor.xxx.com"</span><br><span class="line">    ],</span><br><span class="line">    // 公开源</span><br><span class="line">    "registry-mirrors": [</span><br><span class="line">      "https://docker.mirrors.sjtug.sjtu.edu.cn"</span><br><span class="line">    ]</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight jsonc"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">    <span class="comment">// 配置docker运行数据储存路径</span></span><br><span class="line">    <span class="attr">"data-root"</span><span class="punctuation">:</span> <span class="string">"/home/docker"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="comment">// 配置docker仓库源</span></span><br><span class="line">    <span class="attr">"insecure-registries"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">      <span class="comment">// 私有源</span></span><br><span class="line">      <span class="string">"harbor.xxx.com"</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="comment">// 公开源</span></span><br><span class="line">    <span class="attr">"registry-mirrors"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">      <span class="string">"https://docker.mirrors.sjtug.sjtu.edu.cn"</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
 <p>links:</p>
 <ul class="lvl-0">
 <li class="lvl-2">
@@ -935,7 +935,7 @@ buildkit 会使用 docker 构建缓存，也就是 Build Cache，需要定期清
 <h3 id="容器互联">容器互联</h3>
 <p>容器互联通过 --link 配置链接实现单独隔离容器的互联。</p>
 <p>以下以 nginx + php-fpm 示例：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这里分别有一个 php-fpm 和 nginx 镜像。</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1、先启动php-fpm 容器， 并使用 --name 参数指定容器名</span></span><br><span class="line">[root@localhost ~] docker run -d --name php-fpm php:5.6.32-fpm</span><br><span class="line">3e4b04174da9a91f77d9560113d3021f90a9638165968ccff44fede6c7961871</span><br><span class="line"><span class="comment"># 每一个运行中的Docker容器都有一块虚拟网卡和一个内网ip，可以进到上面的容器来查看：</span></span><br><span class="line"><span class="comment"># 先安装ifconfig命令，然后使用ifconfig查看ip地址信息</span></span><br><span class="line">[root@localhost ~] docker <span class="built_in">exec</span> -it php-fpm /bin/bash</span><br><span class="line">root@3e4b04174da9:/var/www/html<span class="comment"># apt-get update</span></span><br><span class="line">root@3e4b04174da9:/var/www/html<span class="comment"># apt-get install net-tools</span></span><br><span class="line">root@3e4b04174da9:/var/www/html<span class="comment"># ifconfig</span></span><br><span class="line"><span class="comment"># 可以看到php-fpm容器有一块 eth0 网卡， 其ip地址为 172.17.0.54，还可以查看hosts信息</span></span><br><span class="line">root@3e4b04174da9:/var/www/html<span class="comment"># cat /etc/hosts</span></span><br><span class="line"><span class="comment"># 容器ID解析到了该容器局域网IP</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2、再启动nginx容器，同样指定一个名字，并使用 --link 连接到之前的php-fpm容器。</span></span><br><span class="line">[root@localhost ~] docker run -d -p 8080:80 --name nginx --<span class="built_in">link</span> php-fpm nginx:latest</span><br><span class="line">03fe0d3fbd43b5db157992703f70dd6eff4555c4e49c3620e7a212c81824778f</span><br><span class="line"><span class="comment"># 此时 nginx 容器就连接到 php-fpm 容器上了，可以进入nginx容器查看相关环境变量和hosts信息</span></span><br><span class="line">[root@localhost ~] docker <span class="built_in">exec</span> -it nginx /bin/bash</span><br><span class="line">root@03fe0d3fbd43:/ <span class="built_in">env</span></span><br><span class="line"><span class="comment"># 能够看到 nginx 容器中有很多 PHP_FPM 相关的环境变量，而hosts中除了有本身容器ID与自身IP地址的解析关系外，</span></span><br><span class="line"><span class="comment"># 还包含了php-fpm 容器的解析，我们可以使用 ping 或 telnet 命令查看两个容器之间的网络是否畅通。</span></span><br><span class="line"><span class="comment"># 先安装 ping 和 telnet ：</span></span><br><span class="line">root@03fe0d3fbd43:/ apt-get install iputils-ping</span><br><span class="line">root@03fe0d3fbd43:/ apt-get install telnet</span><br><span class="line">root@03fe0d3fbd43:/ ping php-fpm</span><br><span class="line"><span class="comment"># 看到连接了容器之后可以直接用容器名来访问,非常方便</span></span><br><span class="line"><span class="comment"># 现在我们可以配置 nginx 的 fastcgi， 转发php请求到 php-fpm 容器</span></span><br><span class="line"><span class="comment"># 先安装VI：</span></span><br><span class="line">root@03fe0d3fbd43:/ apt-get install vim-tiny</span><br><span class="line"><span class="comment"># 然后修改 /etc/nginx/conf.d/default.nginx</span></span><br><span class="line"><span class="comment"># 记得修改好后 reload 一下nginx</span></span><br><span class="line">root@03fe0d3fbd43:/ /etc/init.d/nginx reload</span><br><span class="line"><span class="comment"># 在php-fpm容器的 /php 目录下创建一个 test.php，并添加相应的权限</span></span><br><span class="line">[root@localhost ~] docker <span class="built_in">exec</span> -it php-fpm /bin/bash</span><br><span class="line">root@0805ea04f2c8:/var/www/html<span class="comment"># mkdir /php</span></span><br><span class="line">root@0805ea04f2c8:/var/www/html<span class="comment"># echo '&lt;?php echo time() . "\n";' &gt; /php/test.php</span></span><br><span class="line">root@0805ea04f2c8:/var/www/html<span class="comment"># chmod 777 /php/test.php</span></span><br><span class="line"><span class="comment"># 然后在宿主机下访问该php文件：</span></span><br><span class="line">[root@localhost ~] curl <span class="string">'127.0.0.1:8080/test.php'</span></span><br><span class="line">1509695115</span><br><span class="line">[root@localhost ~] curl <span class="string">'127.0.0.1:8080/test.php'</span></span><br><span class="line">1509695138</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这里分别有一个 php-fpm 和 nginx 镜像。</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1、先启动php-fpm 容器， 并使用 --name 参数指定容器名</span></span><br><span class="line">[root@localhost ~] docker run -d --name php-fpm php:5.6.32-fpm</span><br><span class="line">3e4b04174da9a91f77d9560113d3021f90a9638165968ccff44fede6c7961871</span><br><span class="line"><span class="comment"># 每一个运行中的Docker容器都有一块虚拟网卡和一个内网ip，可以进到上面的容器来查看：</span></span><br><span class="line"><span class="comment"># 先安装ifconfig命令，然后使用ifconfig查看ip地址信息</span></span><br><span class="line">[root@localhost ~] docker <span class="built_in">exec</span> -it php-fpm /bin/bash</span><br><span class="line">root@3e4b04174da9:/var/www/html# apt-get update</span><br><span class="line">root@3e4b04174da9:/var/www/html# apt-get install net-tools</span><br><span class="line">root@3e4b04174da9:/var/www/html# ifconfig</span><br><span class="line"><span class="comment"># 可以看到php-fpm容器有一块 eth0 网卡， 其ip地址为 172.17.0.54，还可以查看hosts信息</span></span><br><span class="line">root@3e4b04174da9:/var/www/html# <span class="built_in">cat</span> /etc/hosts</span><br><span class="line"><span class="comment"># 容器ID解析到了该容器局域网IP</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2、再启动nginx容器，同样指定一个名字，并使用 --link 连接到之前的php-fpm容器。</span></span><br><span class="line">[root@localhost ~] docker run -d -p 8080:80 --name nginx --<span class="built_in">link</span> php-fpm nginx:latest</span><br><span class="line">03fe0d3fbd43b5db157992703f70dd6eff4555c4e49c3620e7a212c81824778f</span><br><span class="line"><span class="comment"># 此时 nginx 容器就连接到 php-fpm 容器上了，可以进入nginx容器查看相关环境变量和hosts信息</span></span><br><span class="line">[root@localhost ~] docker <span class="built_in">exec</span> -it nginx /bin/bash</span><br><span class="line">root@03fe0d3fbd43:/ <span class="built_in">env</span></span><br><span class="line"><span class="comment"># 能够看到 nginx 容器中有很多 PHP_FPM 相关的环境变量，而hosts中除了有本身容器ID与自身IP地址的解析关系外，</span></span><br><span class="line"><span class="comment"># 还包含了php-fpm 容器的解析，我们可以使用 ping 或 telnet 命令查看两个容器之间的网络是否畅通。</span></span><br><span class="line"><span class="comment"># 先安装 ping 和 telnet ：</span></span><br><span class="line">root@03fe0d3fbd43:/ apt-get install iputils-ping</span><br><span class="line">root@03fe0d3fbd43:/ apt-get install telnet</span><br><span class="line">root@03fe0d3fbd43:/ ping php-fpm</span><br><span class="line"><span class="comment"># 看到连接了容器之后可以直接用容器名来访问,非常方便</span></span><br><span class="line"><span class="comment"># 现在我们可以配置 nginx 的 fastcgi， 转发php请求到 php-fpm 容器</span></span><br><span class="line"><span class="comment"># 先安装VI：</span></span><br><span class="line">root@03fe0d3fbd43:/ apt-get install vim-tiny</span><br><span class="line"><span class="comment"># 然后修改 /etc/nginx/conf.d/default.nginx</span></span><br><span class="line"><span class="comment"># 记得修改好后 reload 一下nginx</span></span><br><span class="line">root@03fe0d3fbd43:/ /etc/init.d/nginx reload</span><br><span class="line"><span class="comment"># 在php-fpm容器的 /php 目录下创建一个 test.php，并添加相应的权限</span></span><br><span class="line">[root@localhost ~] docker <span class="built_in">exec</span> -it php-fpm /bin/bash</span><br><span class="line">root@0805ea04f2c8:/var/www/html# <span class="built_in">mkdir</span> /php</span><br><span class="line">root@0805ea04f2c8:/var/www/html# <span class="built_in">echo</span> <span class="string">'&lt;?php echo time() . "\n";'</span> &gt; /php/test.php</span><br><span class="line">root@0805ea04f2c8:/var/www/html# <span class="built_in">chmod</span> 777 /php/test.php</span><br><span class="line"><span class="comment"># 然后在宿主机下访问该php文件：</span></span><br><span class="line">[root@localhost ~] curl <span class="string">'127.0.0.1:8080/test.php'</span></span><br><span class="line">1509695115</span><br><span class="line">[root@localhost ~] curl <span class="string">'127.0.0.1:8080/test.php'</span></span><br><span class="line">1509695138</span><br></pre></td></tr></tbody></table></figure>
 <h3 id="参考">参考</h3>
 <ul class="lvl-0">
 <li class="lvl-2">
@@ -1022,7 +1022,7 @@ buildkit 会使用 docker 构建缓存，也就是 Build Cache，需要定期清
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-07-01 08:47:13" itemprop="dateModified" datetime="2024-07-01T08:47:13+08:00">2024-07-01</time>
+      <time title="修改时间：2024-08-01 08:47:04" itemprop="dateModified" datetime="2024-08-01T08:47:04+08:00">2024-08-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1142,7 +1142,7 @@ buildkit 会使用 docker 构建缓存，也就是 Build Cache，需要定期清
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-07-01 08:47:13" itemprop="dateModified" datetime="2024-07-01T08:47:13+08:00">2024-07-01</time>
+      <time title="修改时间：2024-08-01 08:47:04" itemprop="dateModified" datetime="2024-08-01T08:47:04+08:00">2024-08-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1269,7 +1269,7 @@ buildkit 会使用 docker 构建缓存，也就是 Build Cache，需要定期清
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-07-01 08:47:13" itemprop="dateModified" datetime="2024-07-01T08:47:13+08:00">2024-07-01</time>
+      <time title="修改时间：2024-08-01 08:47:04" itemprop="dateModified" datetime="2024-08-01T08:47:04+08:00">2024-08-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1376,7 +1376,7 @@ buildkit 会使用 docker 构建缓存，也就是 Build Cache，需要定期清
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-07-01 08:47:13" itemprop="dateModified" datetime="2024-07-01T08:47:13+08:00">2024-07-01</time>
+      <time title="修改时间：2024-08-01 08:47:04" itemprop="dateModified" datetime="2024-08-01T08:47:04+08:00">2024-08-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1637,7 +1637,7 @@ buildkit 会使用 docker 构建缓存，也就是 Build Cache，需要定期清
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-07-01 08:47:13" itemprop="dateModified" datetime="2024-07-01T08:47:13+08:00">2024-07-01</time>
+      <time title="修改时间：2024-08-01 08:47:04" itemprop="dateModified" datetime="2024-08-01T08:47:04+08:00">2024-08-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
