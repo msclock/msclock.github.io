@@ -10696,6 +10696,63 @@ mamba 自带的 conda 环境中的 python 在 windows 上编译需要附带设�
       </categories>
   </entry>
   <entry>
+    <title>network</title>
+    <url>/posts/996635634/</url>
+    <content><![CDATA[<h2 id="resource">resource</h2>
+<table>
+<thead>
+<tr>
+<th>资源</th>
+<th>组织</th>
+<th>类型 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/bregman-arie/devops-exercises#network">devops-exercises</a></td>
+<td>bregman-arie</td>
+<td> 基础</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ipv4">ipv4</h2>
+<h3 id="格式表示">格式表示</h3>
+<p>IPv4 地址是 Internet Protocol Version 4 的缩写，它是一种在互联网上使用的网络地址。IPv4 地址由四个数字组成，每个数字在 0 到 255 之间，数字之间用点（.）分隔。例如，192.168.1.1 就是一个 IPv4 地址。</p>
+<p>IPv4 地址的二进制表示是将每个数字转换为 8 位二进制数。例如，192.168.1.1 的二进制表示为：<code>11000000.10101000.00000001.00000001</code></p>
+<span id="more"></span>
+<h3 id="子网掩码">子网掩码</h3>
+<p>子网掩码是用来判断任意一个 IP 地址是否属于某个子网的。子网掩码同样是由四个数字组成，每个数字在 0 到 255 之间，数字之间用点（.）分隔。例如，255.255.255.0 就是一个子网掩码。</p>
+<p>子网掩码的二进制表示是将每个数字转换为 8 位二进制数。例如，255.255.255.0 的二进制表示为：<code>11111111.11111111.11111111.00000000</code></p>
+<p>当将一个 IP 地址和子网掩码进行 AND 运算时，如果结果和网络地址相同，那么这个 IP 地址就属于这个子网。</p>
+<h3 id="内网地址">内网地址</h3>
+<p>内网 IP 地址的范围主要包括以下三个：</p>
+<ol>
+<li class="lvl-3">
+<p>A 类：10.0.0.0 - 10.255.255.255</p>
+</li>
+<li class="lvl-3">
+<p>B 类：172.16.0.0 - 172.31.255.255</p>
+</li>
+<li class="lvl-3">
+<p>C 类：192.168.0.0 - 192.168.255.255</p>
+</li>
+</ol>
+<p>这些范围的 IP 地址被保留用于私有网络，不会在公共互联网上使用。</p>
+<h2 id="169-254-0-0-16">169.254.0.0/16</h2>
+<p>在 <a href="http://tools.ietf.org/html/rfc5735">rfc5735</a> 里面有对所有特殊网络地址说明</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">169.254.0.0/16 - This is the "link local" block.  As described in</span><br><span class="line">   [RFC3927], it is allocated for communication between hosts on a</span><br><span class="line">   single link.  Hosts obtain these addresses by auto-configuration,</span><br><span class="line">   such as when a DHCP server cannot be found.</span><br></pre></td></tr></tbody></table></figure>
+<p>该部分指出 <code>169.254.0.0/16</code> 是一个本地链接地址段；定义在 <code>rfc3927</code> ,</p>
+<p><code>3927</code> 指出，在 <code>IP</code> 网络里，每台主机都需要一个 <code>IP</code> 地址，通常情况下是通过 <code>DHCP</code> 服务器自动分配，但某些特殊情况下，<code>DHCP</code> 分配失败或者没有 <code>DHCP</code> 服务器时，机器可以自己分配一个 <code>IP</code> 来完成这个工作。</p>
+<p>就好比定义一个指针，正常情况下这个指针会被赋予某个数据类型的地址信息，但如果赋值失败的时候，不能什么都不做，也得给它赋值，通常是赋为 <code>NULL</code>；这个 <code>NULL</code> 就好比 <code>169.254.0.0/16</code>；</p>
+]]></content>
+      <categories>
+        <category>develop</category>
+      </categories>
+      <tags>
+        <tag>网络</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>openvpn</title>
     <url>/posts/b4d2b7f5/</url>
     <content><![CDATA[<h2 id="OPENVPN">OPENVPN</h2>
@@ -10762,63 +10819,6 @@ mamba 自带的 conda 环境中的 python 在 windows 上编译需要附带设�
       <categories>
         <category>develop</category>
       </categories>
-  </entry>
-  <entry>
-    <title>network</title>
-    <url>/posts/996635634/</url>
-    <content><![CDATA[<h2 id="resource">resource</h2>
-<table>
-<thead>
-<tr>
-<th>资源</th>
-<th>组织</th>
-<th>类型 </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://github.com/bregman-arie/devops-exercises#network">devops-exercises</a></td>
-<td>bregman-arie</td>
-<td> 基础</td>
-</tr>
-</tbody>
-</table>
-<h2 id="ipv4">ipv4</h2>
-<h3 id="格式表示">格式表示</h3>
-<p>IPv4 地址是 Internet Protocol Version 4 的缩写，它是一种在互联网上使用的网络地址。IPv4 地址由四个数字组成，每个数字在 0 到 255 之间，数字之间用点（.）分隔。例如，192.168.1.1 就是一个 IPv4 地址。</p>
-<p>IPv4 地址的二进制表示是将每个数字转换为 8 位二进制数。例如，192.168.1.1 的二进制表示为：<code>11000000.10101000.00000001.00000001</code></p>
-<span id="more"></span>
-<h3 id="子网掩码">子网掩码</h3>
-<p>子网掩码是用来判断任意一个 IP 地址是否属于某个子网的。子网掩码同样是由四个数字组成，每个数字在 0 到 255 之间，数字之间用点（.）分隔。例如，255.255.255.0 就是一个子网掩码。</p>
-<p>子网掩码的二进制表示是将每个数字转换为 8 位二进制数。例如，255.255.255.0 的二进制表示为：<code>11111111.11111111.11111111.00000000</code></p>
-<p>当将一个 IP 地址和子网掩码进行 AND 运算时，如果结果和网络地址相同，那么这个 IP 地址就属于这个子网。</p>
-<h3 id="内网地址">内网地址</h3>
-<p>内网 IP 地址的范围主要包括以下三个：</p>
-<ol>
-<li class="lvl-3">
-<p>A 类：10.0.0.0 - 10.255.255.255</p>
-</li>
-<li class="lvl-3">
-<p>B 类：172.16.0.0 - 172.31.255.255</p>
-</li>
-<li class="lvl-3">
-<p>C 类：192.168.0.0 - 192.168.255.255</p>
-</li>
-</ol>
-<p>这些范围的 IP 地址被保留用于私有网络，不会在公共互联网上使用。</p>
-<h2 id="169-254-0-0-16">169.254.0.0/16</h2>
-<p>在 <a href="http://tools.ietf.org/html/rfc5735">rfc5735</a> 里面有对所有特殊网络地址说明</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">169.254.0.0/16 - This is the "link local" block.  As described in</span><br><span class="line">   [RFC3927], it is allocated for communication between hosts on a</span><br><span class="line">   single link.  Hosts obtain these addresses by auto-configuration,</span><br><span class="line">   such as when a DHCP server cannot be found.</span><br></pre></td></tr></tbody></table></figure>
-<p>该部分指出 <code>169.254.0.0/16</code> 是一个本地链接地址段；定义在 <code>rfc3927</code> ,</p>
-<p><code>3927</code> 指出，在 <code>IP</code> 网络里，每台主机都需要一个 <code>IP</code> 地址，通常情况下是通过 <code>DHCP</code> 服务器自动分配，但某些特殊情况下，<code>DHCP</code> 分配失败或者没有 <code>DHCP</code> 服务器时，机器可以自己分配一个 <code>IP</code> 来完成这个工作。</p>
-<p>就好比定义一个指针，正常情况下这个指针会被赋予某个数据类型的地址信息，但如果赋值失败的时候，不能什么都不做，也得给它赋值，通常是赋为 <code>NULL</code>；这个 <code>NULL</code> 就好比 <code>169.254.0.0/16</code>；</p>
-]]></content>
-      <categories>
-        <category>develop</category>
-      </categories>
-      <tags>
-        <tag>网络</tag>
-      </tags>
   </entry>
   <entry>
     <title>proxy</title>
@@ -13146,6 +13146,43 @@ gzip 在 ubuntu/debian 使用 -d 解压存在重定向问题，建议使用 -dc 
       </tags>
   </entry>
   <entry>
+    <title>ssh 实践</title>
+    <url>/posts/2985153235/</url>
+    <content><![CDATA[<h2 id="ssh">ssh</h2>
+<h3 id="安装">安装</h3>
+<p>ssh 服务需要安装 ssh 服务端</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">apt install openssh-server</span><br></pre></td></tr></tbody></table></figure>
+<p>查看当前 ssh 开启情况</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">ps -e | grep ssh</span><br></pre></td></tr></tbody></table></figure>
+<span id="more"></span>
+<p>手动开启 ssh 服务</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">/etc/init.d/ssh start</span><br><span class="line">/etc/init.d/ssh restart</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="qa">qa</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper</p>
+</li>
+</ul>
+<p>需要<a href="https://stackoverflow.com/questions/67534354/jenkins-ssh-pipeline-steps-a-terminal-is-required-to-read-the-password">配置</a>非 root 用户登录密码提示.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$USER</span> ALL=\(root\) NOPASSWD:ALL | <span class="built_in">tee</span> /etc/sudoers.d/<span class="variable">$USER</span> \</span><br><span class="line">    &amp;&amp; <span class="built_in">chmod</span> 0440 /etc/sudoers.d/<span class="variable">$USER</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="ssh-keygen">ssh-keygen</h2>
+<p>ssh-keygen 可用于生产 ssh 验证密钥，供 scp 及 ssh 等工具</p>
+<p>生产 ssh 密钥</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 4096 -C <span class="string">"your_email@example.com"</span></span><br></pre></td></tr></tbody></table></figure>
+<p>使用示例</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 传输文件到远程</span></span><br><span class="line">scp -P 22 local_file_path username@remote_host:remote_file_path</span><br><span class="line"><span class="comment"># 执行远程命令</span></span><br><span class="line">ssh -p 22 username@remote_host <span class="string">'command_to_execute'</span></span><br></pre></td></tr></tbody></table></figure>
+<p>将公钥添加到服务器。将 id_rsa.pub 文件的内容复制并粘贴到服务器的～/.ssh/authorized_keys 文件中。</p>
+<h2 id="ssh-copy-id">ssh-copy-id</h2>
+<p>使用该工具上传公钥到服务器，可实现免密登录</p>
+<p>安装 ssh-copy-id</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Windows</span></span><br><span class="line">choco install ssh-copy-id</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 将本地上传到远程</span></span><br><span class="line">ssh-copy-id root@192.168.145.128</span><br></pre></td></tr></tbody></table></figure>
+]]></content>
+      <categories>
+        <category>develop</category>
+      </categories>
+  </entry>
+  <entry>
     <title>terminal 实践</title>
     <url>/posts/bbf1bf81/</url>
     <content><![CDATA[<h2 id="常用字体">常用字体</h2>
@@ -13244,43 +13281,6 @@ gzip 在 ubuntu/debian 使用 -d 解压存在重定向问题，建议使用 -dc 
       <tags>
         <tag>powershell</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>ssh 实践</title>
-    <url>/posts/2985153235/</url>
-    <content><![CDATA[<h2 id="ssh">ssh</h2>
-<h3 id="安装">安装</h3>
-<p>ssh 服务需要安装 ssh 服务端</p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">apt install openssh-server</span><br></pre></td></tr></tbody></table></figure>
-<p>查看当前 ssh 开启情况</p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">ps -e | grep ssh</span><br></pre></td></tr></tbody></table></figure>
-<span id="more"></span>
-<p>手动开启 ssh 服务</p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">/etc/init.d/ssh start</span><br><span class="line">/etc/init.d/ssh restart</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="qa">qa</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper</p>
-</li>
-</ul>
-<p>需要<a href="https://stackoverflow.com/questions/67534354/jenkins-ssh-pipeline-steps-a-terminal-is-required-to-read-the-password">配置</a>非 root 用户登录密码提示.</p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$USER</span> ALL=\(root\) NOPASSWD:ALL | <span class="built_in">tee</span> /etc/sudoers.d/<span class="variable">$USER</span> \</span><br><span class="line">    &amp;&amp; <span class="built_in">chmod</span> 0440 /etc/sudoers.d/<span class="variable">$USER</span></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="ssh-keygen">ssh-keygen</h2>
-<p>ssh-keygen 可用于生产 ssh 验证密钥，供 scp 及 ssh 等工具</p>
-<p>生产 ssh 密钥</p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 4096 -C <span class="string">"your_email@example.com"</span></span><br></pre></td></tr></tbody></table></figure>
-<p>使用示例</p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 传输文件到远程</span></span><br><span class="line">scp -P 22 local_file_path username@remote_host:remote_file_path</span><br><span class="line"><span class="comment"># 执行远程命令</span></span><br><span class="line">ssh -p 22 username@remote_host <span class="string">'command_to_execute'</span></span><br></pre></td></tr></tbody></table></figure>
-<p>将公钥添加到服务器。将 id_rsa.pub 文件的内容复制并粘贴到服务器的～/.ssh/authorized_keys 文件中。</p>
-<h2 id="ssh-copy-id">ssh-copy-id</h2>
-<p>使用该工具上传公钥到服务器，可实现免密登录</p>
-<p>安装 ssh-copy-id</p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Windows</span></span><br><span class="line">choco install ssh-copy-id</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 将本地上传到远程</span></span><br><span class="line">ssh-copy-id root@192.168.145.128</span><br></pre></td></tr></tbody></table></figure>
-]]></content>
-      <categories>
-        <category>develop</category>
-      </categories>
   </entry>
   <entry>
     <title>tools</title>
