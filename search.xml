@@ -5225,7 +5225,7 @@ define or =delete them all. Manager resources can be possessed by samrt pointers
 <p>使用字节数组或数据结构表达十六进制流.</p>
 <figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><span class="line">std::array&lt;<span class="type">uint8_t</span>,4&gt; bytes{<span class="number">0x1</span>,<span class="number">0x2</span>,<span class="number">0x3</span>,<span class="number">0x4</span>};</span><br></pre></td></tr></tbody></table></figure>
 <h4 id="Seal-coupled-parameters">Seal coupled parameters</h4>
-<p>但传递的参数时描述一个东西时，考虑将其封装为一个结构。常见的用法是将 buffer 和长度作为参数，此时可考虑将其封装为一个结构或使用 std::span.</p>
+<p>但传递的参数时描述一个东西时，考虑将其封装为一个结构。常见的用法是将 buffer 和长度作为参数，此时可考虑将其封装为一个结构或<a href="https://www.sandordargo.com/blog/2024/11/06/std-span">使用 std::span</a>.</p>
 <h4 id="Seal-too-many-defaults">Seal too many defaults</h4>
 <p>将过多的参数封装为结构体，增加可读性.</p>
 <p>links:</p>
@@ -5372,6 +5372,108 @@ define or =delete them all. Manager resources can be possessed by samrt pointers
 <p><a href="https://www.zhihu.com/question/37391884/answer/2740375441">https://www.zhihu.com/question/37391884/answer/2740375441</a></p>
 </li>
 </ul>
+<h3 id="Dependency-Injection">Dependency Injection</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>抽离实际系统的简单的系统或部分功能。</p>
+</li>
+<li class="lvl-2">
+<p>不适用于小项目</p>
+</li>
+<li class="lvl-2">
+<p>暂时不关注，用于之后追加</p>
+</li>
+<li class="lvl-2">
+<p>用于测试</p>
+</li>
+</ul>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://www.youtube.com/watch?v=_UTgOC6jW8o">https://www.youtube.com/watch?v=_UTgOC6jW8o</a></p>
+</li>
+</ul>
+<h4 id="基本流程">基本流程</h4>
+<figure class="highlight txt"><table><tbody><tr><td class="code"><pre><span class="line">Data in(Usage) -&gt; |Interface -&gt; Capture(Implementation) -&gt; Synthesize(Implementation) -&gt; |Interface -&gt; Results out(Usage)</span><br></pre></td></tr></tbody></table></figure>
+<p><img data-src="https://raw.githubusercontent.com/msclock/images/main/images/20241117/122237604.png" alt="image"></p>
+<h4 id="基本方法">基本方法</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>使用方法参数注入 Link-time（不建议使用）</p>
+</li>
+<li class="lvl-2">
+<p>使用虚方法和继承</p>
+</li>
+<li class="lvl-2">
+<p>使用模板</p>
+</li>
+<li class="lvl-2">
+<p>使用类型擦除</p>
+</li>
+</ul>
+<h5 id="方法参数">方法参数</h5>
+<p>需要实现两次，一侧用于实际生产的代码，另一侧实现用于测试</p>
+<p><img data-src="https://raw.githubusercontent.com/msclock/images/main/images/20241117/122321446.png" alt="image"></p>
+<p>pros:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>对实际代码不改变</p>
+</li>
+<li class="lvl-2">
+<p>允许一定范围的测试<br>
+cons:</p>
+</li>
+<li class="lvl-2">
+<p>难以管理，需要对测试的组件部分都写一遍</p>
+</li>
+<li class="lvl-2">
+<p>违反 ODR/UB</p>
+</li>
+<li class="lvl-2">
+<p>更像集成测试</p>
+</li>
+</ul>
+<h5 id="使用虚方法和继承">使用虚方法和继承</h5>
+<p>创建一个接口基类，或从存在的类继承</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>能处理很多接口</p>
+</li>
+<li class="lvl-2">
+<p>易于理解的重写机制</p>
+</li>
+<li class="lvl-2">
+<p>易于增加到原有的代码</p>
+</li>
+</ul>
+<p><img data-src="https://raw.githubusercontent.com/msclock/images/main/images/20241117/122423034.png" alt="image"></p>
+<p><img data-src="https://raw.githubusercontent.com/msclock/images/main/images/20241117/122133242.png" alt="image"></p>
+<p>google mock 示例：<br>
+<img data-src="https://raw.githubusercontent.com/msclock/images/main/images/20241117/122539805.png" alt="image"></p>
+<p><img data-src="https://raw.githubusercontent.com/msclock/images/main/images/20241117/122714872.png" alt="image"></p>
+<h5 id="使用模板">使用模板</h5>
+<p><img data-src="https://raw.githubusercontent.com/msclock/images/main/images/20241117/122943427.png" alt="image"></p>
+<p><img data-src="https://raw.githubusercontent.com/msclock/images/main/images/20241117/123058341.png" alt="image"></p>
+<p>gmock 示例：<br>
+<img data-src="https://raw.githubusercontent.com/msclock/images/main/images/20241117/123117721.png" alt="image"></p>
+<p>c++20 concept：<br>
+<img data-src="https://raw.githubusercontent.com/msclock/images/main/images/20241117/123153107.png" alt="image"></p>
+<p><img data-src="https://raw.githubusercontent.com/msclock/images/main/images/20241117/123351709.png" alt="image"></p>
+<h5 id="使用类型擦除">使用类型擦除</h5>
+<p><img data-src="https://raw.githubusercontent.com/msclock/images/main/images/20241117/123542806.png" alt="image"></p>
+<p><img data-src="https://raw.githubusercontent.com/msclock/images/main/images/20241117/124158424.png" alt="image"></p>
+<p><img data-src="https://raw.githubusercontent.com/msclock/images/main/images/20241117/124335397.png" alt="image"></p>
+<p><img data-src="https://raw.githubusercontent.com/msclock/images/main/images/20241117/124448163.png" alt="image"></p>
+<h4 id="Dependency-Injection-Basic">Dependency Injection Basic</h4>
+<h5 id="Setter-DI">Setter DI</h5>
+<p><img data-src="https://raw.githubusercontent.com/msclock/images/main/images/20241117/125543530.png" alt="image"></p>
+<p><img data-src="https://raw.githubusercontent.com/msclock/images/main/images/20241117/125638512.png" alt="image"></p>
+<h5 id="Method-DI">Method DI</h5>
+<p><img data-src="https://raw.githubusercontent.com/msclock/images/main/images/20241117/125724490.png" alt="image"></p>
+<p><img data-src="https://raw.githubusercontent.com/msclock/images/main/images/20241117/130002008.png" alt="image"></p>
+<h4 id="Constructor-DI">Constructor DI</h4>
+<p><img data-src="https://raw.githubusercontent.com/msclock/images/main/images/20241117/130050927.png" alt="image"></p>
+<p><img data-src="https://raw.githubusercontent.com/msclock/images/main/images/20241117/130127444.png" alt="image"></p>
 <h3 id="Reflection">Reflection</h3>
 <!--
 todo
@@ -12245,6 +12347,81 @@ pypi-key is on the edge
       <categories>
         <category>develop</category>
       </categories>
+  </entry>
+  <entry>
+    <title>VM</title>
+    <url>/posts/a555d500/</url>
+    <content><![CDATA[<h2 id="QEMU">QEMU</h2>
+<ul class="lvl-0">
+<li class="lvl-2">download: choco install qemu</li>
+<li class="lvl-2">EFI: <a href="https://releases.linaro.org/components/kernel/uefi-linaro/latest/release/qemu64/QEMU_EFI.fd">https://releases.linaro.org/components/kernel/uefi-linaro/latest/release/qemu64/QEMU_EFI.fd</a></li>
+</ul>
+<h3 id="aarch64-VM">aarch64 VM</h3>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://blog.csdn.net/s806903/article/details/127651807">https://blog.csdn.net/s806903/article/details/127651807</a></p>
+</li>
+</ul>
+<p>准备好 aarch64 镜像 test.img。</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 磁盘大小</span></span><br><span class="line">qemu-img.exe create -f qcow2 vm_disk.img 25G</span><br><span class="line"><span class="comment"># 创建</span></span><br><span class="line">qemu-system-aarch64.exe -m 4000 -cpu cortex-a72 -smp 4 -M virt -device nec-usb-xhci -device usb-kbd -device usb-mouse -device VGA -hda vm_disk.img -bios QEMU_EFI.fd -cdrom aarch64-dvd.iso</span><br></pre></td></tr></tbody></table></figure>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>-m 4000 表示分配给虚拟机的内存最大 4000MB</p>
+</li>
+<li class="lvl-2">
+<p>-cpu cortex-a72 指定 CPU 类型，还可以选择 cortex-a53、cortex-a57 等</p>
+</li>
+<li class="lvl-2">
+<p>-smp 4,cores=4,threads=1,sockets=1 指定虚拟机最大使用的 CPU 核心数等</p>
+</li>
+<li class="lvl-2">
+<p>-M virt 指定虚拟机类型为 virt，具体支持的类型可以使用 qemu-system-aarch64 -M help 查看</p>
+</li>
+<li class="lvl-2">
+<p>-bios QEMU_EFI.fd  指定 UEFI 固件文件</p>
+</li>
+<li class="lvl-2">
+<p>-net nic,model=pcnet 启用网络功能</p>
+</li>
+<li class="lvl-2">
+<p>-device nec-usb-xhci -device usb-kbd -device usb-mouse  启用 USB 鼠标等设备</p>
+</li>
+<li class="lvl-2">
+<p>-device VGA 启用 VGA 视图，对于图形化的 Linux 这条很重要！</p>
+</li>
+<li class="lvl-2">
+<p>-drive if=none,file=Z:\uos.iso,id=cdrom,media=cdrom 指定光驱使用镜像文件</p>
+</li>
+<li class="lvl-2">
+<p>-device virtio-scsi-device -device scsi-cd,drive=cdrom 指定光驱硬件类型</p>
+</li>
+</ul>
+<h3 id="snapshot">snapshot</h3>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://cloud.tencent.com/developer/techpedia/2000/14599">https://cloud.tencent.com/developer/techpedia/2000/14599</a></p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">qemu-img snapshot -c snapshot_name vm_disk.img</span><br><span class="line">qemu-img snapshot -a snapshot_name vm_disk.img</span><br><span class="line">qemu-img snapshot -l vm_disk.img</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="VMware-MacOS">VMware MacOS</h2>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://blog.csdn.net/u012039040/article/details/129666171">https://blog.csdn.net/u012039040/article/details/129666171</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://zhuanlan.zhihu.com/p/649809292">https://zhuanlan.zhihu.com/p/649809292</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://www.sysnettechsolutions.com/en/download-vmware-tools/">macos vmware tools</a></p>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>VM</tag>
+      </tags>
   </entry>
   <entry>
     <title>regex 正则</title>
