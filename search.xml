@@ -2575,71 +2575,6 @@ MVP (Minimum viable Product) 以最小的代价提供一个可测试交付的版
       </categories>
   </entry>
   <entry>
-    <title>choco 包管理器</title>
-    <url>/posts/78ce69fa/</url>
-    <content><![CDATA[<p>本文总结了 windows 包管理工具常用命令</p>
-<h2 id="install">install</h2>
-<p>通过 powershell 安装</p>
-<figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Set your PowerShell execution policy</span></span><br><span class="line"><span class="built_in">Set-ExecutionPolicy</span> <span class="literal">-ExecutionPolicy</span> RemoteSigned <span class="literal">-Force</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Install Chocolatey</span></span><br><span class="line"><span class="built_in">iwr</span> https://chocolatey.org/install.ps1 <span class="literal">-UseBasicParsing</span> | <span class="built_in">iex</span></span><br><span class="line"></span><br><span class="line">choco <span class="literal">-v</span></span><br><span class="line"></span><br><span class="line">choco upgrade chocolatey</span><br></pre></td></tr></tbody></table></figure>
-<span id="more"></span>
-<h2 id="常用命令">常用命令</h2>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>choco list -li 查看本地安装的软件</p>
-</li>
-<li class="lvl-2">
-<p>choco search nodejs 查找安装包</p>
-</li>
-<li class="lvl-2">
-<p>choco install sed 下载</p>
-</li>
-<li class="lvl-2">
-<p>choco uninstall sed 卸载</p>
-</li>
-<li class="lvl-2">
-<p>choco upgrade sed 更新（update）</p>
-</li>
-</ul>
-<h2 id="常用开发工具">常用开发工具</h2>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>docker-desktop/kubernetes-helm/kind</p>
-</li>
-<li class="lvl-2">
-<p>dapr</p>
-</li>
-<li class="lvl-2">
-<p>fzf/tree/sed/grep/rsync</p>
-</li>
-<li class="lvl-2">
-<p>git</p>
-</li>
-<li class="lvl-2">
-<p>JetBrainsNF</p>
-</li>
-<li class="lvl-2">
-<p>neovim</p>
-</li>
-<li class="lvl-2">
-<p>nvm</p>
-</li>
-<li class="lvl-2">
-<p>kubectl</p>
-</li>
-</ul>
-<figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 指定版本安装</span></span><br><span class="line">choco install kubectl <span class="literal">--version</span>=<span class="number">1.22</span>.<span class="number">1</span></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="reference">reference</h2>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://docs.chocolatey.org/en-us/choco/commands/">https://docs.chocolatey.org/en-us/choco/commands/</a></p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>develop</category>
-      </categories>
-  </entry>
-  <entry>
     <title>copier</title>
     <url>/posts/ae78e30a/</url>
     <content><![CDATA[<h2 id="Resource">Resource</h2>
@@ -2697,6 +2632,71 @@ MVP (Minimum viable Product) 以最小的代价提供一个可测试交付的版
 </li>
 <li class="lvl-2">
 <p><a href="https://github.com/lincc-frameworks/python-project-template">https://github.com/lincc-frameworks/python-project-template</a></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>develop</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>choco 包管理器</title>
+    <url>/posts/78ce69fa/</url>
+    <content><![CDATA[<p>本文总结了 windows 包管理工具常用命令</p>
+<h2 id="install">install</h2>
+<p>通过 powershell 安装</p>
+<figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Set your PowerShell execution policy</span></span><br><span class="line"><span class="built_in">Set-ExecutionPolicy</span> <span class="literal">-ExecutionPolicy</span> RemoteSigned <span class="literal">-Force</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Install Chocolatey</span></span><br><span class="line"><span class="built_in">iwr</span> https://chocolatey.org/install.ps1 <span class="literal">-UseBasicParsing</span> | <span class="built_in">iex</span></span><br><span class="line"></span><br><span class="line">choco <span class="literal">-v</span></span><br><span class="line"></span><br><span class="line">choco upgrade chocolatey</span><br></pre></td></tr></tbody></table></figure>
+<span id="more"></span>
+<h2 id="常用命令">常用命令</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>choco list -li 查看本地安装的软件</p>
+</li>
+<li class="lvl-2">
+<p>choco search nodejs 查找安装包</p>
+</li>
+<li class="lvl-2">
+<p>choco install sed 下载</p>
+</li>
+<li class="lvl-2">
+<p>choco uninstall sed 卸载</p>
+</li>
+<li class="lvl-2">
+<p>choco upgrade sed 更新（update）</p>
+</li>
+</ul>
+<h2 id="常用开发工具">常用开发工具</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>docker-desktop/kubernetes-helm/kind</p>
+</li>
+<li class="lvl-2">
+<p>dapr</p>
+</li>
+<li class="lvl-2">
+<p>fzf/tree/sed/grep/rsync</p>
+</li>
+<li class="lvl-2">
+<p>git</p>
+</li>
+<li class="lvl-2">
+<p>JetBrainsNF</p>
+</li>
+<li class="lvl-2">
+<p>neovim</p>
+</li>
+<li class="lvl-2">
+<p>nvm</p>
+</li>
+<li class="lvl-2">
+<p>kubectl</p>
+</li>
+</ul>
+<figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 指定版本安装</span></span><br><span class="line">choco install kubectl <span class="literal">--version</span>=<span class="number">1.22</span>.<span class="number">1</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="reference">reference</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://docs.chocolatey.org/en-us/choco/commands/">https://docs.chocolatey.org/en-us/choco/commands/</a></p>
 </li>
 </ul>
 ]]></content>
@@ -6333,186 +6333,6 @@ renovate documentation is here: <a href="https://docs.renovatebot.com/">https://
       </categories>
   </entry>
   <entry>
-    <title>devcontainer</title>
-    <url>/posts/abfea608/</url>
-    <content><![CDATA[<h2 id="Dev-Container">Dev Container</h2>
-<h3 id="Configuration">Configuration</h3>
-<p>Dev Container 配置步骤如下：</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>安装 vscode 插件，dev container。</p>
-</li>
-<li class="lvl-2">
-<p>ctrl+shift+p 使用 dev container 命令添加配置文件。</p>
-</li>
-<li class="lvl-2">
-<p>选择 dev container 配置模板（原则上选择基础 debian/ubuntu 即可，其它环境均可通过或许选择 features 进行动态构建）。</p>
-</li>
-</ul>
-<span id="more"></span>
-<h3 id="Runtime-Permission">Runtime Permission</h3>
-<p>添加 docker 运行权限，需要添加执行命令，或配置声明。</p>
-<p>在 docker-compose 中声明权限：</p>
-<figure class="highlight yml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Uncomment the next lines if you will use a ptrace-based debuggers like C++, Go, and Rust.</span></span><br><span class="line"><span class="attr">cap_add:</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">SYS_PTRACE</span></span><br><span class="line"><span class="attr">security_opt:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">seccomp:unconfined</span></span><br><span class="line"><span class="attr">privileged:</span> <span class="literal">true</span></span><br></pre></td></tr></tbody></table></figure>
-<p>在 devcontainer.json 中配置</p>
-<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">"runArgs"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="comment">// Enable ptrace-based</span></span><br><span class="line">    <span class="comment">// ptrace syscall permission</span></span><br><span class="line">    <span class="string">"--cap-add=SYS_PTRACE"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="comment">// Net Configuration</span></span><br><span class="line">    <span class="string">"--cap-add=NET_ADMIN"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="comment">// Open all syscall permission</span></span><br><span class="line">    <span class="string">"--security-opt"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">"seccomp=unconfined"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="comment">// Enable GPUs</span></span><br><span class="line">    <span class="string">"--gpus=all"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="comment">// Possess all permission of the host</span></span><br><span class="line">    <span class="string">"--privileged"</span></span><br><span class="line"><span class="punctuation">]</span><span class="punctuation">,</span></span><br></pre></td></tr></tbody></table></figure>
-<p>上面的配置可以使用 devcontainer 字段配置</p>
-<figure class="highlight jsonc"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"capAdd"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="comment">// Enable ptrace-based</span></span><br><span class="line">        <span class="string">"SYS_PTRACE"</span><span class="punctuation">,</span></span><br><span class="line">        <span class="comment">// Net Configuration</span></span><br><span class="line">        <span class="string">"NET_ADMIN"</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"securityOpt"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">"seccomp=unconfined"</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"privileged"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"runArgs"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">"--gpus=all"</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="GPU-Support">GPU Support</h3>
-<p>配置在 Dev DinD 的开发环境中支持 Nvidia Cuda GPU。</p>
-<p>在容器启动前，安装 <a href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker">nvidia-container-toolkit</a></p>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#setting-up-nvidia-container-toolkit">nvidia container-toolkit source</a></p>
-</li>
-</ul>
-<h4 id="方案一">方案一</h4>
-<p>使用 devcontainer 提供的官方镜像，需要配置安装 nvidia 源.</p>
-<figure class="highlight dockerfile"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Dockerfile.gpu</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># bullseye or jammy</span></span><br><span class="line"><span class="keyword">FROM</span> mcr.microsoft.com/devcontainers/base:{VARIANT}</span><br><span class="line"><span class="comment"># FROM nvcr.io/nvidia/pytorch:22.12-py3</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Installing nvidia-container-toolkit and Configure</span></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> &lt;&lt;-<span class="string">EOF</span></span></span><br><span class="line">    distribution=$(. /etc/os-release;echo $ID$VERSION_ID)</span><br><span class="line">    curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg</span><br><span class="line">    curl -s -L https://nvidia.github.io/libnvidia-container/$distribution/libnvidia-container.list | \</span><br><span class="line">        sed <span class="string">'s#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g'</span> | \</span><br><span class="line">        tee /etc/apt/sources.list.d/nvidia-container-toolkit.list</span><br><span class="line">    <span class="comment"># output</span></span><br><span class="line">    apt update &amp;&amp; apt-get install -y nvidia-container-toolkit &amp;&amp; nvidia-ctk runtime configure</span><br><span class="line">    <span class="comment"># set nvidia as default runtime</span></span><br><span class="line">    echo <span class="string">'{"default-runtime":"nvidia"}'</span> $(cat /etc/docker/daemon.json) | jq -s <span class="string">'.[0] + .[1]'</span> | tee /etc/docker/daemon.json</span><br><span class="line">    rm -rf /var/lib/apt/lists/* /var/cache/* /var/log/* /tmp/* ~/.cache -rf</span><br><span class="line">EOF</span><br></pre></td></tr></tbody></table></figure>
-<p>在 devcontainer.json 中配置</p>
-<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">"build"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"dockerfile"</span><span class="punctuation">:</span> <span class="string">"Dockerfile.gpu"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"args"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">        <span class="attr">"VARIANT"</span><span class="punctuation">:</span><span class="string">"jammy"</span></span><br><span class="line">    <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">"capAdd"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="comment">// Enable ptrace-based debugging for C++</span></span><br><span class="line">    <span class="string">"SYS_PTRACE"</span></span><br><span class="line"><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">"securityOpt"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="string">"seccomp=unconfined"</span></span><br><span class="line"><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">"privileged"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">"runArgs"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="comment">// Loading libnvidia* in devcontainer, verifying by the command `ldconfig -p | grep libnvidia`</span></span><br><span class="line">    <span class="string">"--gpus=all"</span></span><br><span class="line"><span class="punctuation">]</span><span class="punctuation">,</span></span><br></pre></td></tr></tbody></table></figure>
-<h4 id="方案二">方案二</h4>
-<p>使用 nvidia 提供的官方 cuda 开发容器为基础，作为 GPU 开发容器配置.</p>
-<figure class="highlight dockerfile"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Dockerfile.gpu</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 以下镜像已经内置 nvidia container toolkit源</span></span><br><span class="line"><span class="keyword">FROM</span> nvidia/cuda:<span class="number">12.1</span>.<span class="number">1</span>-cudnn8-devel-ubuntu20.<span class="number">04</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> &lt;&lt;-<span class="string">EOF</span></span></span><br><span class="line">    apt update &amp;&amp; apt install -y nvidia-docker2 &amp;&amp; nvidia-ctk runtime configure</span><br><span class="line">    <span class="comment"># 和方案一相同, 配置nvidia 容器运行时到 /etc/docker/daemon.json</span></span><br><span class="line">    rm rf /var/lib/apt/lists/* /var/cache/* /var/log/* /tmp/* ~/.cache -rf</span><br><span class="line">EOF</span><br></pre></td></tr></tbody></table></figure>
-<h4 id="方案三">方案三</h4>
-<p>方案一，二都需要手动配置源或者使用已经配置好的基础镜像，第三种方法是使用 devcontainer 提供的 cuda feature 来构建.</p>
-<figure class="highlight jsonc"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// https://github.com/devcontainers/features</span></span><br><span class="line"><span class="attr">"features"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"ghcr.io/devcontainers/features/common-utils:2"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">        <span class="attr">"upgradePackages"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">"username"</span><span class="punctuation">:</span> <span class="string">"vscode"</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">"configureZshAsDefaultShell"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line">    <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"ghcr.io/devcontainers/features/docker-in-docker:2"</span><span class="punctuation">:</span> <span class="punctuation">{</span><span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">    <span class="comment">// 使用 cuda feature 构建环境</span></span><br><span class="line">    <span class="attr">"ghcr.io/devcontainers/features/nvidia-cuda:1"</span><span class="punctuation">:</span> <span class="punctuation">{</span><span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span><span class="punctuation">,</span></span><br></pre></td></tr></tbody></table></figure>
-<p>以上方式需要手动安装 docker-container-toolkit</p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 安装 docker nvidia runtime(nvidia-docker2/nvidia-container-toolkit)</span></span><br><span class="line">apt update &amp;&amp; apt install -y nvidia-container-toolkit &amp;&amp; nvidia-ctk runtime configure</span><br><span class="line"><span class="comment"># 重启 docker</span></span><br><span class="line">ps -ef | grep -E <span class="string">'(dockerd|docker-init.sh)'</span>  | <span class="built_in">head</span> -1 | awk <span class="string">'{print $2}'</span> | xargs <span class="built_in">sudo</span> <span class="built_in">kill</span> -9</span><br><span class="line">/usr/local/share/docker-init.sh</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="QA">QA</h3>
-<h4 id="sudo-apt-update-error-“Release-file-is-not-yet-valid”">sudo apt update error: “Release file is not yet valid”</h4>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># https://askubuntu.com/questions/1096930/sudo-apt-update-error-release-file-is-not-yet-valid</span></span><br><span class="line"><span class="built_in">sudo</span> hwclock -s</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Features">Features</h2>
-<h3 id="common-features">common features</h3>
-<p>这里列出了常用 Dev Container 的 <a href="https://github.com/devcontainers/features">features</a> 使用总结。</p>
-<h4 id="Common-utils">Common utils</h4>
-<p>配置容器开发环境用户，方面管理权限。实现参考通过 Dockerfile 创建非 <a href="https://code.visualstudio.com/remote/advancedcontainers/add-nonroot-user">root user</a>。</p>
-<p>devcontainer 有提供专门的 common 帮助用户创建非 root 用户。</p>
-<figure class="highlight jsonc"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">"features"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"ghcr.io/devcontainers/features/common-utils:2"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">        <span class="attr">"username"</span><span class="punctuation">:</span> <span class="string">"vscode"</span> <span class="comment">// or others</span></span><br><span class="line">    <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">"postCreateCommand"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"git-completions"</span><span class="punctuation">:</span> <span class="string">"echo 'source /usr/share/bash-completion/completions/git' &gt;&gt; ~/.bashrc"</span></span><br><span class="line"><span class="punctuation">}</span><span class="punctuation">,</span></span><br></pre></td></tr></tbody></table></figure>
-<h4 id="Desktop-lite">Desktop lite</h4>
-<p>在 devcontainer.json 中配置 <a href="https://github.com/devcontainers/features/tree/main">desktop-lite</a></p>
-<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">"features"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"ghcr.io/devcontainers/features/desktop-lite:1"</span><span class="punctuation">:</span> <span class="punctuation">{</span><span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
-<p>导出端口 nVNC 的 vscode 配置 forward port 为 6080 （默认 nVNC 端口）</p>
-<p>支持 nVNC 浏览器推荐 Firefox 和 Chrome，这里给出自动集成 Dockerfile 的指令。</p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Firefox ESR</span></span><br><span class="line">apt-get update &amp;&amp; <span class="built_in">export</span> DEBIAN_FRONTEND=noninteractive &amp;&amp; apt-get install -y firefox-esr</span><br><span class="line"><span class="comment"># Chrome</span></span><br><span class="line">apt-get update &amp;&amp; <span class="built_in">export</span> DEBIAN_FRONTEND=noninteractive \</span><br><span class="line">    &amp;&amp; curl -sSL https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -o /tmp/chrome.deb \</span><br><span class="line">    &amp;&amp; apt-get -y install /tmp/chrome.deb</span><br></pre></td></tr></tbody></table></figure>
-<h4 id="DinD">DinD</h4>
-<p>在容器内创建子容器，独立于主机的 docker 实例。在容器中安装 Docker 扩展以及所需的 CLI。</p>
-<figure class="highlight jsonc"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">"features"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"ghcr.io/devcontainers/features/docker-in-docker:2"</span><span class="punctuation">:</span> <span class="punctuation">{</span><span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
-<blockquote>
-<p>[!TIP]<br>
-当容器 daemon 挂掉或者更新 <code>daemon.json</code> 时，可通过 <code>/usr/local/share/docker-init.sh</code> 重启 docker 服务.</p>
-</blockquote>
-<h3 id="features-development">features development</h3>
-<p>devcontainer features 提供了可插拔式得开发工具集成方式。这里简单介绍自定义 features 开发流程。主要参考官方 feature <a href="https://github.com/devcontainers/feature-starter">模板</a>.</p>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://github.com/msclock/features">https://github.com/msclock/features</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://containers.dev/guide/feature-authoring-best-practices">https://containers.dev/guide/feature-authoring-best-practices</a></p>
-</li>
-</ul>
-<p>Step 1, feature 开发</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>clone 官方提供的模板。示例<a href="https://github.com/msclock/features">参考</a></p>
-</li>
-<li class="lvl-2">
-<p>使用官方模板打开 feature 的 devcontainer 开发环境</p>
-</li>
-<li class="lvl-2">
-<p>在 src 下创建 feature, 每个 feature 以子目录构建布局</p>
-</li>
-<li class="lvl-2">
-<p>在 feature 目录下，书写脚本，必须包含有 install.sh 及 devcontainer-feature.json 配置及脚本。详情参考模板</p>
-</li>
-</ul>
-<p>Step 2, feature 测试</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>在根目录下有 test 目录，某人有全局 _global 测试及各个 feature 测试</p>
-</li>
-<li class="lvl-2">
-<p>在 _global 下可配置测试所有 feature, 具体在 scenarios.json 中注册 feature id, 然后在对应的注册的 id 的脚本 all_tools.sh 中添加 feature 验证命令即可</p>
-</li>
-<li class="lvl-2">
-<p>在 test 目录下可创建单个 feature 的测试脚本，详情参考模板</p>
-</li>
-<li class="lvl-2">
-<p>验证 feature, 使用命令 <code>devcontainer features test -f &lt;feature id&gt; -i &lt;image-name&gt;</code> 在 image-name 的镜像中验证 feature 是否安装成功.</p>
-</li>
-</ul>
-<p>Step 3, feature CI in github action</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>直接使用模板提供的 CI test.yaml 中配置</p>
-</li>
-<li class="lvl-2">
-<p>在 baseImage 中配置要测试的 image</p>
-</li>
-<li class="lvl-2">
-<p>在 features 中添加要验证的 feature</p>
-</li>
-<li class="lvl-2">
-<p>最后，test 执行成功后，可手动执行 release workflow 发布 feature.</p>
-</li>
-</ul>
-<h2 id="Performance">Performance</h2>
-<p>在 Windows/MacOS 上存在性能的 I/O binding 的损失，官方给出了几种<a href="https://code.visualstudio.com/remote/advancedcontainers/improve-performance">解决方案</a>。</p>
-<h3 id="通过-wsl-挂载">通过 wsl 挂载</h3>
-<p>通常在 wsl 磁盘挂载效率较高</p>
-<p>参考文档:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://learn.microsoft.com/en-us/windows/wsl/filesystems">wsl filesystem</a></p>
-</li>
-</ul>
-<figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># in powershell</span></span><br><span class="line">docker run <span class="literal">--rm</span> <span class="literal">-it</span> <span class="literal">-v</span> <span class="string">"<span class="variable">$</span>(pwd):/pwd:delegated"</span> <span class="literal">-w</span> /<span class="built_in">pwd</span> alpine time dd <span class="keyword">if</span>=/dev/zero of=speedtest bs=<span class="number">1024</span> count=<span class="number">100000</span></span><br><span class="line"><span class="number">100000</span>+<span class="number">0</span> records <span class="keyword">in</span></span><br><span class="line"><span class="number">100000</span>+<span class="number">0</span> records out</span><br><span class="line">real    <span class="number">0</span>m <span class="number">25.51</span>s</span><br><span class="line">user    <span class="number">0</span>m <span class="number">0.11</span>s</span><br><span class="line">sys     <span class="number">0</span>m <span class="number">3.19</span>s</span><br><span class="line">docker run <span class="literal">--rm</span> <span class="literal">-it</span> <span class="literal">-v</span> <span class="string">"<span class="variable">$</span>(pwd):/pwd:cached"</span> <span class="literal">-w</span> /<span class="built_in">pwd</span> alpine time dd <span class="keyword">if</span>=/dev/zero of=speedtest bs=<span class="number">1024</span> count=<span class="number">100000</span></span><br><span class="line"><span class="number">100000</span>+<span class="number">0</span> records <span class="keyword">in</span></span><br><span class="line"><span class="number">100000</span>+<span class="number">0</span> records out</span><br><span class="line">real    <span class="number">0</span>m <span class="number">28.28</span>s</span><br><span class="line">user    <span class="number">0</span>m <span class="number">0.11</span>s</span><br><span class="line">sys     <span class="number">0</span>m <span class="number">3.23</span>s</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># in wsl</span></span><br><span class="line">docker run --<span class="built_in">rm</span> -it -v <span class="string">"<span class="subst">$(pwd)</span>:/pwd:delegated"</span> -w /pwd alpine time <span class="built_in">dd</span> <span class="keyword">if</span>=/dev/zero of=speedtest bs=1024 count=100000</span><br><span class="line">100000+0 records <span class="keyword">in</span></span><br><span class="line">100000+0 records out</span><br><span class="line">real    0m 0.22s</span><br><span class="line">user    0m 0.02s</span><br><span class="line">sys     0m 0.19s</span><br></pre></td></tr></tbody></table></figure>
-<p>通过测试在 wsl 上挂载不管是 <code>delegated</code> 还是 <code>cached</code> 的效率都是 windows 上得 10x 以上.</p>
-<h2 id="Devcontainer-in-CI">Devcontainer in CI</h2>
-<p>将 devcontainer 构建环境集成在 CI 中，方便开发使用预编译好的镜像，对 CI 流程得 Testing 等能做到同一环境下的统一配置构建方式.</p>
-<p>使用 devcontainer/cli 可以轻松的将 devcontainer 集成到 CI 环境中.</p>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://code.visualstudio.com/docs/devcontainers/devcontainer-cli">vscode docs devcontainer cli</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://github.com/devcontainers/cli">cli docs</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://containers.dev/guide/gitlab-ci">using in gitlab</a></p>
-</li>
-</ul>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">npm install -g @devcontainers/cli</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 cli 启动配置项目镜像容器</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/microsoft/vscode-remote-try-rust &amp;&amp; <span class="built_in">cd</span> vscode-remote-try-rust</span><br><span class="line">devcontainer up --workspace-folder .</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在容器中执行命令 ls</span></span><br><span class="line">devcontainer <span class="built_in">exec</span> --workspace-folder . <span class="built_in">ls</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用cli 构建预构建镜像</span></span><br><span class="line">devcontainer build --workspace-folder .</span><br></pre></td></tr></tbody></table></figure>
-<p>使用 devcontainer 配置构建镜像</p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">devcontainer build \</span><br><span class="line">    --workspace-folder . \</span><br><span class="line">    --image-name registry/namespace/image-name:image-tag \</span><br><span class="line">    --push <span class="literal">true</span> \</span><br><span class="line">    --config .devcontainer/build.json</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// build.json</span></span><br><span class="line"><span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"name"</span><span class="punctuation">:</span> <span class="string">"xxx-devcontainer"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"build"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">        <span class="attr">"dockerfile"</span><span class="punctuation">:</span> <span class="string">"Dockerfile"</span></span><br><span class="line">    <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
-<blockquote>
-<p>[!CAUTION]<br>
-目前构建镜像，需要配置为 ‘build’ 字段，默认的’image’使用存在 <a href="https://github.com/devcontainers/cli/issues/370">bug</a>.</p>
-</blockquote>
-<p>目前 devcontainer cli 没有 stop 命令，可以通过 docker 查找过滤.</p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 方法一</span></span><br><span class="line">docker stop $(docker ps -q -f ancestor=image-name)</span><br><span class="line">docker <span class="built_in">rm</span> -f $(docker ps -q -f ancestor=image-name)</span><br><span class="line"><span class="comment"># 方法二</span></span><br><span class="line">devcontainer up --workspace-folder . --id-label id_name=&lt;identity name&gt;</span><br><span class="line">docker ps -q --filter <span class="string">"label=id_name=&lt;identity name&gt;"</span> | xargs docker <span class="built_in">rm</span> -f</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="devpod">devpod</h2>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://github.com/loft-sh/devpod">https://github.com/loft-sh/devpod</a></p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>develop</category>
-      </categories>
-      <tags>
-        <tag>devcontainer</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Docker 疑难问题</title>
     <url>/posts/7d9a968e/</url>
     <content><![CDATA[<h2 id="docker">docker</h2>
@@ -7199,6 +7019,247 @@ docker-compose 中 depends_on,restart,deploy.resources.reservations 等资源不
       </tags>
   </entry>
   <entry>
+    <title>devcontainer</title>
+    <url>/posts/abfea608/</url>
+    <content><![CDATA[<h2 id="Dev-Container">Dev Container</h2>
+<h3 id="Configuration">Configuration</h3>
+<p>Dev Container 配置步骤如下：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>安装 vscode 插件，dev container。</p>
+</li>
+<li class="lvl-2">
+<p>ctrl+shift+p 使用 dev container 命令添加配置文件。</p>
+</li>
+<li class="lvl-2">
+<p>选择 dev container 配置模板（原则上选择基础 debian/ubuntu 即可，其它环境均可通过或许选择 features 进行动态构建）。</p>
+</li>
+</ul>
+<span id="more"></span>
+<h3 id="Runtime-Permission">Runtime Permission</h3>
+<p>添加 docker 运行权限，需要添加执行命令，或配置声明。</p>
+<p>在 docker-compose 中声明权限：</p>
+<figure class="highlight yml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Uncomment the next lines if you will use a ptrace-based debuggers like C++, Go, and Rust.</span></span><br><span class="line"><span class="attr">cap_add:</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">SYS_PTRACE</span></span><br><span class="line"><span class="attr">security_opt:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">seccomp:unconfined</span></span><br><span class="line"><span class="attr">privileged:</span> <span class="literal">true</span></span><br></pre></td></tr></tbody></table></figure>
+<p>在 devcontainer.json 中配置</p>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">"runArgs"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="comment">// Enable ptrace-based</span></span><br><span class="line">    <span class="comment">// ptrace syscall permission</span></span><br><span class="line">    <span class="string">"--cap-add=SYS_PTRACE"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="comment">// Net Configuration</span></span><br><span class="line">    <span class="string">"--cap-add=NET_ADMIN"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="comment">// Open all syscall permission</span></span><br><span class="line">    <span class="string">"--security-opt"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">"seccomp=unconfined"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="comment">// Enable GPUs</span></span><br><span class="line">    <span class="string">"--gpus=all"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="comment">// Possess all permission of the host</span></span><br><span class="line">    <span class="string">"--privileged"</span></span><br><span class="line"><span class="punctuation">]</span><span class="punctuation">,</span></span><br></pre></td></tr></tbody></table></figure>
+<p>上面的配置可以使用 devcontainer 字段配置</p>
+<figure class="highlight jsonc"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"capAdd"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="comment">// Enable ptrace-based</span></span><br><span class="line">        <span class="string">"SYS_PTRACE"</span><span class="punctuation">,</span></span><br><span class="line">        <span class="comment">// Net Configuration</span></span><br><span class="line">        <span class="string">"NET_ADMIN"</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"securityOpt"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">"seccomp=unconfined"</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"privileged"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"runArgs"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">"--gpus=all"</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="GPU-Support">GPU Support</h3>
+<p>配置在 Dev DinD 的开发环境中支持 Nvidia Cuda GPU。</p>
+<p>在容器启动前，安装 <a href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker">nvidia-container-toolkit</a></p>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#setting-up-nvidia-container-toolkit">nvidia container-toolkit source</a></p>
+</li>
+</ul>
+<h4 id="方案一">方案一</h4>
+<p>使用 devcontainer 提供的官方镜像，需要配置安装 nvidia 源.</p>
+<figure class="highlight dockerfile"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Dockerfile.gpu</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># bullseye or jammy</span></span><br><span class="line"><span class="keyword">FROM</span> mcr.microsoft.com/devcontainers/base:{VARIANT}</span><br><span class="line"><span class="comment"># FROM nvcr.io/nvidia/pytorch:22.12-py3</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Installing nvidia-container-toolkit and Configure</span></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> &lt;&lt;-<span class="string">EOF</span></span></span><br><span class="line">    distribution=$(. /etc/os-release;echo $ID$VERSION_ID)</span><br><span class="line">    curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg</span><br><span class="line">    curl -s -L https://nvidia.github.io/libnvidia-container/$distribution/libnvidia-container.list | \</span><br><span class="line">        sed <span class="string">'s#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g'</span> | \</span><br><span class="line">        tee /etc/apt/sources.list.d/nvidia-container-toolkit.list</span><br><span class="line">    <span class="comment"># output</span></span><br><span class="line">    apt update &amp;&amp; apt-get install -y nvidia-container-toolkit &amp;&amp; nvidia-ctk runtime configure</span><br><span class="line">    <span class="comment"># set nvidia as default runtime</span></span><br><span class="line">    echo <span class="string">'{"default-runtime":"nvidia"}'</span> $(cat /etc/docker/daemon.json) | jq -s <span class="string">'.[0] + .[1]'</span> | tee /etc/docker/daemon.json</span><br><span class="line">    rm -rf /var/lib/apt/lists/* /var/cache/* /var/log/* /tmp/* ~/.cache -rf</span><br><span class="line">EOF</span><br></pre></td></tr></tbody></table></figure>
+<p>在 devcontainer.json 中配置</p>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">"build"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"dockerfile"</span><span class="punctuation">:</span> <span class="string">"Dockerfile.gpu"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"args"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">        <span class="attr">"VARIANT"</span><span class="punctuation">:</span><span class="string">"jammy"</span></span><br><span class="line">    <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">"capAdd"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="comment">// Enable ptrace-based debugging for C++</span></span><br><span class="line">    <span class="string">"SYS_PTRACE"</span></span><br><span class="line"><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">"securityOpt"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="string">"seccomp=unconfined"</span></span><br><span class="line"><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">"privileged"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">"runArgs"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="comment">// Loading libnvidia* in devcontainer, verifying by the command `ldconfig -p | grep libnvidia`</span></span><br><span class="line">    <span class="string">"--gpus=all"</span></span><br><span class="line"><span class="punctuation">]</span><span class="punctuation">,</span></span><br></pre></td></tr></tbody></table></figure>
+<h4 id="方案二">方案二</h4>
+<p>使用 nvidia 提供的官方 cuda 开发容器为基础，作为 GPU 开发容器配置.</p>
+<figure class="highlight dockerfile"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Dockerfile.gpu</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 以下镜像已经内置 nvidia container toolkit源</span></span><br><span class="line"><span class="keyword">FROM</span> nvidia/cuda:<span class="number">12.1</span>.<span class="number">1</span>-cudnn8-devel-ubuntu20.<span class="number">04</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> &lt;&lt;-<span class="string">EOF</span></span></span><br><span class="line">    apt update &amp;&amp; apt install -y nvidia-docker2 &amp;&amp; nvidia-ctk runtime configure</span><br><span class="line">    <span class="comment"># 和方案一相同, 配置nvidia 容器运行时到 /etc/docker/daemon.json</span></span><br><span class="line">    rm rf /var/lib/apt/lists/* /var/cache/* /var/log/* /tmp/* ~/.cache -rf</span><br><span class="line">EOF</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="方案三">方案三</h4>
+<p>方案一，二都需要手动配置源或者使用已经配置好的基础镜像，第三种方法是使用 devcontainer 提供的 cuda feature 来构建.</p>
+<figure class="highlight jsonc"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// https://github.com/devcontainers/features</span></span><br><span class="line"><span class="attr">"features"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"ghcr.io/devcontainers/features/common-utils:2"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">        <span class="attr">"upgradePackages"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">"username"</span><span class="punctuation">:</span> <span class="string">"vscode"</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">"configureZshAsDefaultShell"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line">    <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"ghcr.io/devcontainers/features/docker-in-docker:2"</span><span class="punctuation">:</span> <span class="punctuation">{</span><span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">    <span class="comment">// 使用 cuda feature 构建环境</span></span><br><span class="line">    <span class="attr">"ghcr.io/devcontainers/features/nvidia-cuda:1"</span><span class="punctuation">:</span> <span class="punctuation">{</span><span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span><span class="punctuation">,</span></span><br></pre></td></tr></tbody></table></figure>
+<p>以上方式需要手动安装 docker-container-toolkit</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 安装 docker nvidia runtime(nvidia-docker2/nvidia-container-toolkit)</span></span><br><span class="line">apt update &amp;&amp; apt install -y nvidia-container-toolkit &amp;&amp; nvidia-ctk runtime configure</span><br><span class="line"><span class="comment"># 重启 docker</span></span><br><span class="line">ps -ef | grep -E <span class="string">'(dockerd|docker-init.sh)'</span>  | <span class="built_in">head</span> -1 | awk <span class="string">'{print $2}'</span> | xargs <span class="built_in">sudo</span> <span class="built_in">kill</span> -9</span><br><span class="line">/usr/local/share/docker-init.sh</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="QA">QA</h3>
+<h4 id="sudo-apt-update-error-“Release-file-is-not-yet-valid”">sudo apt update error: “Release file is not yet valid”</h4>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># https://askubuntu.com/questions/1096930/sudo-apt-update-error-release-file-is-not-yet-valid</span></span><br><span class="line"><span class="built_in">sudo</span> hwclock -s</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Features">Features</h2>
+<h3 id="common-features">common features</h3>
+<p>这里列出了常用 Dev Container 的 <a href="https://github.com/devcontainers/features">features</a> 使用总结。</p>
+<h4 id="Common-utils">Common utils</h4>
+<p>配置容器开发环境用户，方面管理权限。实现参考通过 Dockerfile 创建非 <a href="https://code.visualstudio.com/remote/advancedcontainers/add-nonroot-user">root user</a>。</p>
+<p>devcontainer 有提供专门的 common 帮助用户创建非 root 用户。</p>
+<figure class="highlight jsonc"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">"features"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"ghcr.io/devcontainers/features/common-utils:2"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">        <span class="attr">"username"</span><span class="punctuation">:</span> <span class="string">"vscode"</span> <span class="comment">// or others</span></span><br><span class="line">    <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">"postCreateCommand"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"git-completions"</span><span class="punctuation">:</span> <span class="string">"echo 'source /usr/share/bash-completion/completions/git' &gt;&gt; ~/.bashrc"</span></span><br><span class="line"><span class="punctuation">}</span><span class="punctuation">,</span></span><br></pre></td></tr></tbody></table></figure>
+<h4 id="Desktop-lite">Desktop lite</h4>
+<p>在 devcontainer.json 中配置 <a href="https://github.com/devcontainers/features/tree/main">desktop-lite</a></p>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">"features"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"ghcr.io/devcontainers/features/desktop-lite:1"</span><span class="punctuation">:</span> <span class="punctuation">{</span><span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+<p>导出端口 nVNC 的 vscode 配置 forward port 为 6080 （默认 nVNC 端口）</p>
+<p>支持 nVNC 浏览器推荐 Firefox 和 Chrome，这里给出自动集成 Dockerfile 的指令。</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Firefox ESR</span></span><br><span class="line">apt-get update &amp;&amp; <span class="built_in">export</span> DEBIAN_FRONTEND=noninteractive &amp;&amp; apt-get install -y firefox-esr</span><br><span class="line"><span class="comment"># Chrome</span></span><br><span class="line">apt-get update &amp;&amp; <span class="built_in">export</span> DEBIAN_FRONTEND=noninteractive \</span><br><span class="line">    &amp;&amp; curl -sSL https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -o /tmp/chrome.deb \</span><br><span class="line">    &amp;&amp; apt-get -y install /tmp/chrome.deb</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="DinD">DinD</h4>
+<p>在容器内创建子容器，独立于主机的 docker 实例。在容器中安装 Docker 扩展以及所需的 CLI。</p>
+<figure class="highlight jsonc"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">"features"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"ghcr.io/devcontainers/features/docker-in-docker:2"</span><span class="punctuation">:</span> <span class="punctuation">{</span><span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+<blockquote>
+<p>[!TIP]<br>
+当容器 daemon 挂掉或者更新 <code>daemon.json</code> 时，可通过 <code>/usr/local/share/docker-init.sh</code> 重启 docker 服务.</p>
+</blockquote>
+<h3 id="features-development">features development</h3>
+<p>devcontainer features 提供了可插拔式得开发工具集成方式。这里简单介绍自定义 features 开发流程。主要参考官方 feature <a href="https://github.com/devcontainers/feature-starter">模板</a>.</p>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://github.com/msclock/features">https://github.com/msclock/features</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://containers.dev/guide/feature-authoring-best-practices">https://containers.dev/guide/feature-authoring-best-practices</a></p>
+</li>
+</ul>
+<p>Step 1, feature 开发</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>clone 官方提供的模板。示例<a href="https://github.com/msclock/features">参考</a></p>
+</li>
+<li class="lvl-2">
+<p>使用官方模板打开 feature 的 devcontainer 开发环境</p>
+</li>
+<li class="lvl-2">
+<p>在 src 下创建 feature, 每个 feature 以子目录构建布局</p>
+</li>
+<li class="lvl-2">
+<p>在 feature 目录下，书写脚本，必须包含有 install.sh 及 devcontainer-feature.json 配置及脚本。详情参考模板</p>
+</li>
+</ul>
+<p>Step 2, feature 测试</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>在根目录下有 test 目录，某人有全局 _global 测试及各个 feature 测试</p>
+</li>
+<li class="lvl-2">
+<p>在 _global 下可配置测试所有 feature, 具体在 scenarios.json 中注册 feature id, 然后在对应的注册的 id 的脚本 all_tools.sh 中添加 feature 验证命令即可</p>
+</li>
+<li class="lvl-2">
+<p>在 test 目录下可创建单个 feature 的测试脚本，详情参考模板</p>
+</li>
+<li class="lvl-2">
+<p>验证 feature, 使用命令 <code>devcontainer features test -f &lt;feature id&gt; -i &lt;image-name&gt;</code> 在 image-name 的镜像中验证 feature 是否安装成功.</p>
+</li>
+</ul>
+<p>Step 3, feature CI in github action</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>直接使用模板提供的 CI test.yaml 中配置</p>
+</li>
+<li class="lvl-2">
+<p>在 baseImage 中配置要测试的 image</p>
+</li>
+<li class="lvl-2">
+<p>在 features 中添加要验证的 feature</p>
+</li>
+<li class="lvl-2">
+<p>最后，test 执行成功后，可手动执行 release workflow 发布 feature.</p>
+</li>
+</ul>
+<h2 id="Performance">Performance</h2>
+<p>在 Windows/MacOS 上存在性能的 I/O binding 的损失，官方给出了几种<a href="https://code.visualstudio.com/remote/advancedcontainers/improve-performance">解决方案</a>。</p>
+<h3 id="通过-wsl-挂载">通过 wsl 挂载</h3>
+<p>通常在 wsl 磁盘挂载效率较高</p>
+<p>参考文档:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://learn.microsoft.com/en-us/windows/wsl/filesystems">wsl filesystem</a></p>
+</li>
+</ul>
+<figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># in powershell</span></span><br><span class="line">docker run <span class="literal">--rm</span> <span class="literal">-it</span> <span class="literal">-v</span> <span class="string">"<span class="variable">$</span>(pwd):/pwd:delegated"</span> <span class="literal">-w</span> /<span class="built_in">pwd</span> alpine time dd <span class="keyword">if</span>=/dev/zero of=speedtest bs=<span class="number">1024</span> count=<span class="number">100000</span></span><br><span class="line"><span class="number">100000</span>+<span class="number">0</span> records <span class="keyword">in</span></span><br><span class="line"><span class="number">100000</span>+<span class="number">0</span> records out</span><br><span class="line">real    <span class="number">0</span>m <span class="number">25.51</span>s</span><br><span class="line">user    <span class="number">0</span>m <span class="number">0.11</span>s</span><br><span class="line">sys     <span class="number">0</span>m <span class="number">3.19</span>s</span><br><span class="line">docker run <span class="literal">--rm</span> <span class="literal">-it</span> <span class="literal">-v</span> <span class="string">"<span class="variable">$</span>(pwd):/pwd:cached"</span> <span class="literal">-w</span> /<span class="built_in">pwd</span> alpine time dd <span class="keyword">if</span>=/dev/zero of=speedtest bs=<span class="number">1024</span> count=<span class="number">100000</span></span><br><span class="line"><span class="number">100000</span>+<span class="number">0</span> records <span class="keyword">in</span></span><br><span class="line"><span class="number">100000</span>+<span class="number">0</span> records out</span><br><span class="line">real    <span class="number">0</span>m <span class="number">28.28</span>s</span><br><span class="line">user    <span class="number">0</span>m <span class="number">0.11</span>s</span><br><span class="line">sys     <span class="number">0</span>m <span class="number">3.23</span>s</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># in wsl</span></span><br><span class="line">docker run --<span class="built_in">rm</span> -it -v <span class="string">"<span class="subst">$(pwd)</span>:/pwd:delegated"</span> -w /pwd alpine time <span class="built_in">dd</span> <span class="keyword">if</span>=/dev/zero of=speedtest bs=1024 count=100000</span><br><span class="line">100000+0 records <span class="keyword">in</span></span><br><span class="line">100000+0 records out</span><br><span class="line">real    0m 0.22s</span><br><span class="line">user    0m 0.02s</span><br><span class="line">sys     0m 0.19s</span><br></pre></td></tr></tbody></table></figure>
+<p>通过测试在 wsl 上挂载不管是 <code>delegated</code> 还是 <code>cached</code> 的效率都是 windows 上得 10x 以上.</p>
+<h2 id="Devcontainer-in-CI">Devcontainer in CI</h2>
+<p>将 devcontainer 构建环境集成在 CI 中，方便开发使用预编译好的镜像，对 CI 流程得 Testing 等能做到同一环境下的统一配置构建方式.</p>
+<p>使用 devcontainer/cli 可以轻松的将 devcontainer 集成到 CI 环境中.</p>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://code.visualstudio.com/docs/devcontainers/devcontainer-cli">vscode docs devcontainer cli</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://github.com/devcontainers/cli">cli docs</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://containers.dev/guide/gitlab-ci">using in gitlab</a></p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">npm install -g @devcontainers/cli</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 cli 启动配置项目镜像容器</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/microsoft/vscode-remote-try-rust &amp;&amp; <span class="built_in">cd</span> vscode-remote-try-rust</span><br><span class="line">devcontainer up --workspace-folder .</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在容器中执行命令 ls</span></span><br><span class="line">devcontainer <span class="built_in">exec</span> --workspace-folder . <span class="built_in">ls</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用cli 构建预构建镜像</span></span><br><span class="line">devcontainer build --workspace-folder .</span><br></pre></td></tr></tbody></table></figure>
+<p>使用 devcontainer 配置构建镜像</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">devcontainer build \</span><br><span class="line">    --workspace-folder . \</span><br><span class="line">    --image-name registry/namespace/image-name:image-tag \</span><br><span class="line">    --push <span class="literal">true</span> \</span><br><span class="line">    --config .devcontainer/build.json</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// build.json</span></span><br><span class="line"><span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"name"</span><span class="punctuation">:</span> <span class="string">"xxx-devcontainer"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"build"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">        <span class="attr">"dockerfile"</span><span class="punctuation">:</span> <span class="string">"Dockerfile"</span></span><br><span class="line">    <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+<blockquote>
+<p>[!CAUTION]<br>
+目前构建镜像，需要配置为 ‘build’ 字段，默认的’image’使用存在 <a href="https://github.com/devcontainers/cli/issues/370">bug</a>.</p>
+</blockquote>
+<p>目前 devcontainer cli 没有 stop 命令，可以通过 docker 查找过滤.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 方法一</span></span><br><span class="line">docker stop $(docker ps -q -f ancestor=image-name)</span><br><span class="line">docker <span class="built_in">rm</span> -f $(docker ps -q -f ancestor=image-name)</span><br><span class="line"><span class="comment"># 方法二</span></span><br><span class="line">devcontainer up --workspace-folder . --id-label id_name=&lt;identity name&gt;</span><br><span class="line">docker ps -q --filter <span class="string">"label=id_name=&lt;identity name&gt;"</span> | xargs docker <span class="built_in">rm</span> -f</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="devpod">devpod</h2>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://github.com/loft-sh/devpod">https://github.com/loft-sh/devpod</a></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>develop</category>
+      </categories>
+      <tags>
+        <tag>devcontainer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>editorconfig</title>
+    <url>/posts/bce07864/</url>
+    <content><![CDATA[<p>EditorConfig 有助于跨不同编辑器和 IDE 为处理同一项目的多个开发人员维护一致的编码风格。EditorConfig 项目由用于定义编码样式的文件格式和一组文本编辑器插件组成，这些插件使编辑器能够读取文件格式并遵循已定义的样式。EditorConfig 文件易于阅读，并且可以很好地与版本控制系统一起工作。</p>
+<h2 id="Resource">Resource</h2>
+<table>
+<thead>
+<tr>
+<th>资源</th>
+<th>组织</th>
+<th>类型 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://editorconfig.org/">editorconfig</a></td>
+<td>editorconfig</td>
+<td> 文档</td>
+</tr>
+</tbody>
+</table>
+<span id="more"></span>
+<h2 id="常见配置项">常见配置项</h2>
+<h3 id="rules">rules</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>root: 这个字段表示当前的 EditorConfig 文件是最顶层的配置文件，编辑器在读取配置时会从当前目录开始，向上查找 .editorconfig 文件，当遇到 root=true 时停止查找</p>
+</li>
+<li class="lvl-2">
+<p>[*]：这个字段表示以下的规则应用于所有文件。</p>
+</li>
+<li class="lvl-2">
+<p>end_of_line = lf：这个字段表示所有文件的行尾应该使用 LF (Line Feed，换行符) 结束。这是 Unix 系统的行尾字符。</p>
+</li>
+<li class="lvl-2">
+<p>indent_style = space：这个字段表示缩进应该使用空格。</p>
+</li>
+<li class="lvl-2">
+<p>indent_size = 2：这个字段表示缩进的大小应该是 2 个空格。</p>
+</li>
+<li class="lvl-2">
+<p>insert_final_newline = true：这个字段表示在文件的最后插入一个新行。</p>
+</li>
+<li class="lvl-2">
+<p>trim_trailing_whitespace = true：这个字段表示删除每行末尾的空白字符。</p>
+</li>
+</ul>
+<h2 id="配置实例">配置实例</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://gitlab.com/msclock/gitlab-ci-templates">https://gitlab.com/msclock/gitlab-ci-templates</a></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>develop</category>
+      </categories>
+      <tags>
+        <tag>editorconfig</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>docs</title>
     <url>/posts/51572bb7/</url>
     <content><![CDATA[<h2 id="mkdocs">mkdocs</h2>
@@ -7538,67 +7599,6 @@ docker-compose 中 depends_on,restart,deploy.resources.reservations 等资源不
       <tags>
         <tag>mkdocs</tag>
         <tag>sphinx</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>editorconfig</title>
-    <url>/posts/bce07864/</url>
-    <content><![CDATA[<p>EditorConfig 有助于跨不同编辑器和 IDE 为处理同一项目的多个开发人员维护一致的编码风格。EditorConfig 项目由用于定义编码样式的文件格式和一组文本编辑器插件组成，这些插件使编辑器能够读取文件格式并遵循已定义的样式。EditorConfig 文件易于阅读，并且可以很好地与版本控制系统一起工作。</p>
-<h2 id="Resource">Resource</h2>
-<table>
-<thead>
-<tr>
-<th>资源</th>
-<th>组织</th>
-<th>类型 </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://editorconfig.org/">editorconfig</a></td>
-<td>editorconfig</td>
-<td> 文档</td>
-</tr>
-</tbody>
-</table>
-<span id="more"></span>
-<h2 id="常见配置项">常见配置项</h2>
-<h3 id="rules">rules</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>root: 这个字段表示当前的 EditorConfig 文件是最顶层的配置文件，编辑器在读取配置时会从当前目录开始，向上查找 .editorconfig 文件，当遇到 root=true 时停止查找</p>
-</li>
-<li class="lvl-2">
-<p>[*]：这个字段表示以下的规则应用于所有文件。</p>
-</li>
-<li class="lvl-2">
-<p>end_of_line = lf：这个字段表示所有文件的行尾应该使用 LF (Line Feed，换行符) 结束。这是 Unix 系统的行尾字符。</p>
-</li>
-<li class="lvl-2">
-<p>indent_style = space：这个字段表示缩进应该使用空格。</p>
-</li>
-<li class="lvl-2">
-<p>indent_size = 2：这个字段表示缩进的大小应该是 2 个空格。</p>
-</li>
-<li class="lvl-2">
-<p>insert_final_newline = true：这个字段表示在文件的最后插入一个新行。</p>
-</li>
-<li class="lvl-2">
-<p>trim_trailing_whitespace = true：这个字段表示删除每行末尾的空白字符。</p>
-</li>
-</ul>
-<h2 id="配置实例">配置实例</h2>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://gitlab.com/msclock/gitlab-ci-templates">https://gitlab.com/msclock/gitlab-ci-templates</a></p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>develop</category>
-      </categories>
-      <tags>
-        <tag>editorconfig</tag>
       </tags>
   </entry>
   <entry>
@@ -9427,7 +9427,7 @@ cri 是 Container Runtime Interface 的缩写，这是 Kubernetes 用来与容�
 <p>ConfigMap 提供了容器外部配置管理方式</p>
 </li>
 <li class="lvl-2">
-<p>Secert 提供加密数据的配置，可在 Deployment/Pod 中引用<br>
+<p>Secret 提供加密数据的配置，可在 Deployment/Pod 中引用<br>
 <img data-src="https://raw.githubusercontent.com/msclock/images/main/images/20221022/235526389.png" alt="image."></p>
 </li>
 </ul>
@@ -11248,6 +11248,84 @@ mamba 自带的 conda 环境中的 python 在 windows 上编译需要附带设�
       </tags>
   </entry>
   <entry>
+    <title>VM</title>
+    <url>/posts/a555d500/</url>
+    <content><![CDATA[<h2 id="QEMU">QEMU</h2>
+<ul class="lvl-0">
+<li class="lvl-2">download: choco install qemu</li>
+<li class="lvl-2">EFI: <a href="https://releases.linaro.org/components/kernel/uefi-linaro/latest/release/qemu64/QEMU_EFI.fd">https://releases.linaro.org/components/kernel/uefi-linaro/latest/release/qemu64/QEMU_EFI.fd</a></li>
+</ul>
+<h3 id="aarch64-VM">aarch64 VM</h3>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://blog.csdn.net/s806903/article/details/127651807">https://blog.csdn.net/s806903/article/details/127651807</a></p>
+</li>
+</ul>
+<p>准备好 aarch64 镜像 test.img。</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 磁盘大小</span></span><br><span class="line">qemu-img.exe create -f qcow2 vm_disk.img 25G</span><br><span class="line"><span class="comment"># 创建</span></span><br><span class="line">qemu-system-aarch64.exe -m 4000 -cpu cortex-a72 -smp 4 -M virt -device nec-usb-xhci -device usb-kbd -device usb-mouse -device VGA -hda vm_disk.img -bios QEMU_EFI.fd -cdrom aarch64-dvd.iso</span><br></pre></td></tr></tbody></table></figure>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>-m 4000 表示分配给虚拟机的内存最大 4000MB</p>
+</li>
+<li class="lvl-2">
+<p>-cpu cortex-a72 指定 CPU 类型，还可以选择 cortex-a53、cortex-a57 等</p>
+</li>
+<li class="lvl-2">
+<p>-smp 4,cores=4,threads=1,sockets=1 指定虚拟机最大使用的 CPU 核心数等</p>
+</li>
+<li class="lvl-2">
+<p>-M virt 指定虚拟机类型为 virt，具体支持的类型可以使用 qemu-system-aarch64 -M help 查看</p>
+</li>
+<li class="lvl-2">
+<p>-bios QEMU_EFI.fd  指定 UEFI 固件文件</p>
+</li>
+<li class="lvl-2">
+<p>-net nic,model=pcnet 启用网络功能</p>
+</li>
+<li class="lvl-2">
+<p>-device nec-usb-xhci -device usb-kbd -device usb-mouse  启用 USB 鼠标等设备</p>
+</li>
+<li class="lvl-2">
+<p>-device VGA 启用 VGA 视图，对于图形化的 Linux 这条很重要！</p>
+</li>
+<li class="lvl-2">
+<p>-drive if=none,file=Z:\uos.iso,id=cdrom,media=cdrom 指定光驱使用镜像文件</p>
+</li>
+<li class="lvl-2">
+<p>-device virtio-scsi-device -device scsi-cd,drive=cdrom 指定光驱硬件类型</p>
+</li>
+</ul>
+<h3 id="snapshot">snapshot</h3>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://cloud.tencent.com/developer/techpedia/2000/14599">https://cloud.tencent.com/developer/techpedia/2000/14599</a></p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">qemu-img snapshot -c snapshot_name vm_disk.img</span><br><span class="line">qemu-img snapshot -a snapshot_name vm_disk.img</span><br><span class="line">qemu-img snapshot -l vm_disk.img</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="VMware-MacOS">VMware MacOS</h2>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://blog.csdn.net/u012039040/article/details/129666171">https://blog.csdn.net/u012039040/article/details/129666171</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://zhuanlan.zhihu.com/p/649809292">https://zhuanlan.zhihu.com/p/649809292</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://www.sysnettechsolutions.com/en/download-vmware-tools/">macos vmware tools</a></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>develop</category>
+      </categories>
+      <tags>
+        <tag>VM</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>python</title>
     <url>/posts/afa93b42/</url>
     <content><![CDATA[<h2 id="资源">资源</h2>
@@ -12349,79 +12427,20 @@ pypi-key is on the edge
       </categories>
   </entry>
   <entry>
-    <title>VM</title>
-    <url>/posts/a555d500/</url>
-    <content><![CDATA[<h2 id="QEMU">QEMU</h2>
-<ul class="lvl-0">
-<li class="lvl-2">download: choco install qemu</li>
-<li class="lvl-2">EFI: <a href="https://releases.linaro.org/components/kernel/uefi-linaro/latest/release/qemu64/QEMU_EFI.fd">https://releases.linaro.org/components/kernel/uefi-linaro/latest/release/qemu64/QEMU_EFI.fd</a></li>
-</ul>
-<h3 id="aarch64-VM">aarch64 VM</h3>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://blog.csdn.net/s806903/article/details/127651807">https://blog.csdn.net/s806903/article/details/127651807</a></p>
-</li>
-</ul>
-<p>准备好 aarch64 镜像 test.img。</p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 磁盘大小</span></span><br><span class="line">qemu-img.exe create -f qcow2 vm_disk.img 25G</span><br><span class="line"><span class="comment"># 创建</span></span><br><span class="line">qemu-system-aarch64.exe -m 4000 -cpu cortex-a72 -smp 4 -M virt -device nec-usb-xhci -device usb-kbd -device usb-mouse -device VGA -hda vm_disk.img -bios QEMU_EFI.fd -cdrom aarch64-dvd.iso</span><br></pre></td></tr></tbody></table></figure>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>-m 4000 表示分配给虚拟机的内存最大 4000MB</p>
-</li>
-<li class="lvl-2">
-<p>-cpu cortex-a72 指定 CPU 类型，还可以选择 cortex-a53、cortex-a57 等</p>
-</li>
-<li class="lvl-2">
-<p>-smp 4,cores=4,threads=1,sockets=1 指定虚拟机最大使用的 CPU 核心数等</p>
-</li>
-<li class="lvl-2">
-<p>-M virt 指定虚拟机类型为 virt，具体支持的类型可以使用 qemu-system-aarch64 -M help 查看</p>
-</li>
-<li class="lvl-2">
-<p>-bios QEMU_EFI.fd  指定 UEFI 固件文件</p>
-</li>
-<li class="lvl-2">
-<p>-net nic,model=pcnet 启用网络功能</p>
-</li>
-<li class="lvl-2">
-<p>-device nec-usb-xhci -device usb-kbd -device usb-mouse  启用 USB 鼠标等设备</p>
-</li>
-<li class="lvl-2">
-<p>-device VGA 启用 VGA 视图，对于图形化的 Linux 这条很重要！</p>
-</li>
-<li class="lvl-2">
-<p>-drive if=none,file=Z:\uos.iso,id=cdrom,media=cdrom 指定光驱使用镜像文件</p>
-</li>
-<li class="lvl-2">
-<p>-device virtio-scsi-device -device scsi-cd,drive=cdrom 指定光驱硬件类型</p>
-</li>
-</ul>
-<h3 id="snapshot">snapshot</h3>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://cloud.tencent.com/developer/techpedia/2000/14599">https://cloud.tencent.com/developer/techpedia/2000/14599</a></p>
-</li>
-</ul>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">qemu-img snapshot -c snapshot_name vm_disk.img</span><br><span class="line">qemu-img snapshot -a snapshot_name vm_disk.img</span><br><span class="line">qemu-img snapshot -l vm_disk.img</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="VMware-MacOS">VMware MacOS</h2>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://blog.csdn.net/u012039040/article/details/129666171">https://blog.csdn.net/u012039040/article/details/129666171</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://zhuanlan.zhihu.com/p/649809292">https://zhuanlan.zhihu.com/p/649809292</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://www.sysnettechsolutions.com/en/download-vmware-tools/">macos vmware tools</a></p>
-</li>
-</ul>
+    <title>scoop 包管理器</title>
+    <url>/posts/f03ca1b6/</url>
+    <content><![CDATA[<h2 id="Scoop">Scoop</h2>
+<p>Windows 下的开源包管理器。</p>
+<h3 id="install">install</h3>
+<figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># https://github.com/ScoopInstaller/Install#readme</span></span><br><span class="line"><span class="comment"># 下载安装脚本</span></span><br><span class="line"><span class="built_in">irm</span> get.scoop.sh <span class="literal">-outfile</span> <span class="string">'install.ps1'</span></span><br><span class="line"><span class="comment"># 配置安装</span></span><br><span class="line">.\install.ps1 <span class="literal">-RunAsAdmin</span> <span class="literal">-ScoopDir</span> <span class="string">'C:\Opt\Scoop'</span> <span class="literal">-ScoopGlobalDir</span> <span class="string">'C:\Opt\Scoop\App'</span></span><br></pre></td></tr></tbody></table></figure>
+<blockquote>
+<p>[!NOTE]<br>
+Scoop 源比较多，多是开源。建议使用 choco。</p>
+</blockquote>
 ]]></content>
-      <tags>
-        <tag>VM</tag>
-      </tags>
+      <categories>
+        <category>develop</category>
+      </categories>
   </entry>
   <entry>
     <title>regex 正则</title>
@@ -12507,22 +12526,6 @@ pypi-key is on the edge
 <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">pattern = <span class="string">r'(?P&lt;year&gt;\d{4})-(?P&lt;month&gt;\d{2})-(?P&lt;day&gt;\d{2})'</span></span><br><span class="line"><span class="keyword">match</span> = re.<span class="keyword">match</span>(pattern, <span class="string">'2022-01-01'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">match</span>:</span><br><span class="line">    groups = <span class="keyword">match</span>.groupdict()</span><br><span class="line">    <span class="built_in">print</span>(groups[<span class="string">'year'</span>])  <span class="comment"># 输出: 2022</span></span><br><span class="line">    <span class="built_in">print</span>(groups[<span class="string">'month'</span>])  <span class="comment"># 输出: 01</span></span><br><span class="line">    <span class="built_in">print</span>(groups[<span class="string">'day'</span>])  <span class="comment"># 输出: 01</span></span><br></pre></td></tr></tbody></table></figure>
 <p>在 C<ins> 中，标准库的正则表达式库 <code>&lt;regex&gt;</code> 不直接支持命名捕获组的语法。但可以使用第三方库，如 <code>Boost.Regex</code>，来实现命名捕获组的功能。以下是使用 <code>Boost.Regex在</code> C</ins> 中实现命名捕获组的示例：</p>
 <figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;boost/regex.hpp&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>{</span><br><span class="line">    std::string input = <span class="string">"2022-01-01"</span>;</span><br><span class="line">    <span class="function">boost::regex <span class="title">pattern</span><span class="params">(<span class="string">"(?&lt;year&gt;\\d{4})-(?&lt;month&gt;\\d{2})-(?&lt;day&gt;\\d{2})"</span>)</span></span>;</span><br><span class="line">    boost::smatch match;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (boost::<span class="built_in">regex_match</span>(input, match, pattern)) {</span><br><span class="line">        std::cout &lt;&lt; match[<span class="string">"year"</span>] &lt;&lt; std::endl;   <span class="comment">// 输出: 2022</span></span><br><span class="line">        std::cout &lt;&lt; match[<span class="string">"month"</span>] &lt;&lt; std::endl;  <span class="comment">// 输出: 01</span></span><br><span class="line">        std::cout &lt;&lt; match[<span class="string">"day"</span>] &lt;&lt; std::endl;    <span class="comment">// 输出: 01</span></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-]]></content>
-      <categories>
-        <category>develop</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>scoop 包管理器</title>
-    <url>/posts/f03ca1b6/</url>
-    <content><![CDATA[<h2 id="Scoop">Scoop</h2>
-<p>Windows 下的开源包管理器。</p>
-<h3 id="install">install</h3>
-<figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># https://github.com/ScoopInstaller/Install#readme</span></span><br><span class="line"><span class="comment"># 下载安装脚本</span></span><br><span class="line"><span class="built_in">irm</span> get.scoop.sh <span class="literal">-outfile</span> <span class="string">'install.ps1'</span></span><br><span class="line"><span class="comment"># 配置安装</span></span><br><span class="line">.\install.ps1 <span class="literal">-RunAsAdmin</span> <span class="literal">-ScoopDir</span> <span class="string">'C:\Opt\Scoop'</span> <span class="literal">-ScoopGlobalDir</span> <span class="string">'C:\Opt\Scoop\App'</span></span><br></pre></td></tr></tbody></table></figure>
-<blockquote>
-<p>[!NOTE]<br>
-Scoop 源比较多，多是开源。建议使用 choco。</p>
-</blockquote>
 ]]></content>
       <categories>
         <category>develop</category>

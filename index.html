@@ -205,6 +205,165 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://msclock.github.io/posts/a555d500/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Msclock">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Live in the present">
+      <meta itemprop="description" content="That life is reality.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Live in the present">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/posts/a555d500/" class="post-title-link" itemprop="url">VM</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-01-01 09:14:27" itemprop="dateCreated datePublished" datetime="2025-01-01T09:14:27+08:00">2025-01-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/develop/" itemprop="url" rel="index"><span itemprop="name">develop</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="QEMU">QEMU</h2>
+<ul class="lvl-0">
+<li class="lvl-2">download: choco install qemu</li>
+<li class="lvl-2">EFI: <a target="_blank" rel="noopener" href="https://releases.linaro.org/components/kernel/uefi-linaro/latest/release/qemu64/QEMU_EFI.fd">https://releases.linaro.org/components/kernel/uefi-linaro/latest/release/qemu64/QEMU_EFI.fd</a></li>
+</ul>
+<h3 id="aarch64-VM">aarch64 VM</h3>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/s806903/article/details/127651807">https://blog.csdn.net/s806903/article/details/127651807</a></p>
+</li>
+</ul>
+<p>准备好 aarch64 镜像 test.img。</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 磁盘大小</span></span><br><span class="line">qemu-img.exe create -f qcow2 vm_disk.img 25G</span><br><span class="line"><span class="comment"># 创建</span></span><br><span class="line">qemu-system-aarch64.exe -m 4000 -cpu cortex-a72 -smp 4 -M virt -device nec-usb-xhci -device usb-kbd -device usb-mouse -device VGA -hda vm_disk.img -bios QEMU_EFI.fd -cdrom aarch64-dvd.iso</span><br></pre></td></tr></tbody></table></figure>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>-m 4000 表示分配给虚拟机的内存最大 4000MB</p>
+</li>
+<li class="lvl-2">
+<p>-cpu cortex-a72 指定 CPU 类型，还可以选择 cortex-a53、cortex-a57 等</p>
+</li>
+<li class="lvl-2">
+<p>-smp 4,cores=4,threads=1,sockets=1 指定虚拟机最大使用的 CPU 核心数等</p>
+</li>
+<li class="lvl-2">
+<p>-M virt 指定虚拟机类型为 virt，具体支持的类型可以使用 qemu-system-aarch64 -M help 查看</p>
+</li>
+<li class="lvl-2">
+<p>-bios QEMU_EFI.fd  指定 UEFI 固件文件</p>
+</li>
+<li class="lvl-2">
+<p>-net nic,model=pcnet 启用网络功能</p>
+</li>
+<li class="lvl-2">
+<p>-device nec-usb-xhci -device usb-kbd -device usb-mouse  启用 USB 鼠标等设备</p>
+</li>
+<li class="lvl-2">
+<p>-device VGA 启用 VGA 视图，对于图形化的 Linux 这条很重要！</p>
+</li>
+<li class="lvl-2">
+<p>-drive if=none,file=Z:\uos.iso,id=cdrom,media=cdrom 指定光驱使用镜像文件</p>
+</li>
+<li class="lvl-2">
+<p>-device virtio-scsi-device -device scsi-cd,drive=cdrom 指定光驱硬件类型</p>
+</li>
+</ul>
+<h3 id="snapshot">snapshot</h3>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/techpedia/2000/14599">https://cloud.tencent.com/developer/techpedia/2000/14599</a></p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">qemu-img snapshot -c snapshot_name vm_disk.img</span><br><span class="line">qemu-img snapshot -a snapshot_name vm_disk.img</span><br><span class="line">qemu-img snapshot -l vm_disk.img</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="VMware-MacOS">VMware MacOS</h2>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u012039040/article/details/129666171">https://blog.csdn.net/u012039040/article/details/129666171</a></p>
+</li>
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/649809292">https://zhuanlan.zhihu.com/p/649809292</a></p>
+</li>
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://www.sysnettechsolutions.com/en/download-vmware-tools/">macos vmware tools</a></p>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://msclock.github.io/posts/b6689356/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -234,7 +393,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2024-12-01 09:02:31" itemprop="dateCreated datePublished" datetime="2024-12-01T09:02:31+08:00">2024-12-01</time>
+      <time title="创建时间：2025-01-01 09:14:27" itemprop="dateCreated datePublished" datetime="2025-01-01T09:14:27+08:00">2025-01-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -362,156 +521,6 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://msclock.github.io/posts/a555d500/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Msclock">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Live in the present">
-      <meta itemprop="description" content="That life is reality.">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Live in the present">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/a555d500/" class="post-title-link" itemprop="url">VM</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2024-12-01 09:02:31" itemprop="dateCreated datePublished" datetime="2024-12-01T09:02:31+08:00">2024-12-01</time>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.2k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="QEMU">QEMU</h2>
-<ul class="lvl-0">
-<li class="lvl-2">download: choco install qemu</li>
-<li class="lvl-2">EFI: <a target="_blank" rel="noopener" href="https://releases.linaro.org/components/kernel/uefi-linaro/latest/release/qemu64/QEMU_EFI.fd">https://releases.linaro.org/components/kernel/uefi-linaro/latest/release/qemu64/QEMU_EFI.fd</a></li>
-</ul>
-<h3 id="aarch64-VM">aarch64 VM</h3>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/s806903/article/details/127651807">https://blog.csdn.net/s806903/article/details/127651807</a></p>
-</li>
-</ul>
-<p>准备好 aarch64 镜像 test.img。</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 磁盘大小</span></span><br><span class="line">qemu-img.exe create -f qcow2 vm_disk.img 25G</span><br><span class="line"><span class="comment"># 创建</span></span><br><span class="line">qemu-system-aarch64.exe -m 4000 -cpu cortex-a72 -smp 4 -M virt -device nec-usb-xhci -device usb-kbd -device usb-mouse -device VGA -hda vm_disk.img -bios QEMU_EFI.fd -cdrom aarch64-dvd.iso</span><br></pre></td></tr></tbody></table></figure>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>-m 4000 表示分配给虚拟机的内存最大 4000MB</p>
-</li>
-<li class="lvl-2">
-<p>-cpu cortex-a72 指定 CPU 类型，还可以选择 cortex-a53、cortex-a57 等</p>
-</li>
-<li class="lvl-2">
-<p>-smp 4,cores=4,threads=1,sockets=1 指定虚拟机最大使用的 CPU 核心数等</p>
-</li>
-<li class="lvl-2">
-<p>-M virt 指定虚拟机类型为 virt，具体支持的类型可以使用 qemu-system-aarch64 -M help 查看</p>
-</li>
-<li class="lvl-2">
-<p>-bios QEMU_EFI.fd  指定 UEFI 固件文件</p>
-</li>
-<li class="lvl-2">
-<p>-net nic,model=pcnet 启用网络功能</p>
-</li>
-<li class="lvl-2">
-<p>-device nec-usb-xhci -device usb-kbd -device usb-mouse  启用 USB 鼠标等设备</p>
-</li>
-<li class="lvl-2">
-<p>-device VGA 启用 VGA 视图，对于图形化的 Linux 这条很重要！</p>
-</li>
-<li class="lvl-2">
-<p>-drive if=none,file=Z:\uos.iso,id=cdrom,media=cdrom 指定光驱使用镜像文件</p>
-</li>
-<li class="lvl-2">
-<p>-device virtio-scsi-device -device scsi-cd,drive=cdrom 指定光驱硬件类型</p>
-</li>
-</ul>
-<h3 id="snapshot">snapshot</h3>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/techpedia/2000/14599">https://cloud.tencent.com/developer/techpedia/2000/14599</a></p>
-</li>
-</ul>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">qemu-img snapshot -c snapshot_name vm_disk.img</span><br><span class="line">qemu-img snapshot -a snapshot_name vm_disk.img</span><br><span class="line">qemu-img snapshot -l vm_disk.img</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="VMware-MacOS">VMware MacOS</h2>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u012039040/article/details/129666171">https://blog.csdn.net/u012039040/article/details/129666171</a></p>
-</li>
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/649809292">https://zhuanlan.zhihu.com/p/649809292</a></p>
-</li>
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://www.sysnettechsolutions.com/en/download-vmware-tools/">macos vmware tools</a></p>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://msclock.github.io/posts/3f316719/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -541,7 +550,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2024-12-01 09:02:31" itemprop="dateCreated datePublished" datetime="2024-12-01T09:02:31+08:00">2024-12-01</time>
+      <time title="创建时间：2025-01-01 09:14:27" itemprop="dateCreated datePublished" datetime="2025-01-01T09:14:27+08:00">2025-01-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -661,7 +670,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2024-12-01 09:02:31" itemprop="dateCreated datePublished" datetime="2024-12-01T09:02:31+08:00">2024-12-01</time>
+      <time title="创建时间：2025-01-01 09:14:27" itemprop="dateCreated datePublished" datetime="2025-01-01T09:14:27+08:00">2025-01-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -786,7 +795,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-12-01 09:02:31" itemprop="dateModified" datetime="2024-12-01T09:02:31+08:00">2024-12-01</time>
+      <time title="修改时间：2025-01-01 09:14:27" itemprop="dateModified" datetime="2025-01-01T09:14:27+08:00">2025-01-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -893,7 +902,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-12-01 09:02:31" itemprop="dateModified" datetime="2024-12-01T09:02:31+08:00">2024-12-01</time>
+      <time title="修改时间：2025-01-01 09:14:27" itemprop="dateModified" datetime="2025-01-01T09:14:27+08:00">2025-01-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1007,7 +1016,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-12-01 09:02:31" itemprop="dateModified" datetime="2024-12-01T09:02:31+08:00">2024-12-01</time>
+      <time title="修改时间：2025-01-01 09:14:27" itemprop="dateModified" datetime="2025-01-01T09:14:27+08:00">2025-01-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1145,7 +1154,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-12-01 09:02:31" itemprop="dateModified" datetime="2024-12-01T09:02:31+08:00">2024-12-01</time>
+      <time title="修改时间：2025-01-01 09:14:27" itemprop="dateModified" datetime="2025-01-01T09:14:27+08:00">2025-01-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1258,7 +1267,7 @@ renovate documentation is here: <a target="_blank" rel="noopener" href="https://
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-12-01 09:02:31" itemprop="dateModified" datetime="2024-12-01T09:02:31+08:00">2024-12-01</time>
+      <time title="修改时间：2025-01-01 09:14:27" itemprop="dateModified" datetime="2025-01-01T09:14:27+08:00">2025-01-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1387,7 +1396,7 @@ renovate documentation is here: <a target="_blank" rel="noopener" href="https://
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-12-01 09:02:31" itemprop="dateModified" datetime="2024-12-01T09:02:31+08:00">2024-12-01</time>
+      <time title="修改时间：2025-01-01 09:14:27" itemprop="dateModified" datetime="2025-01-01T09:14:27+08:00">2025-01-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1479,7 +1488,7 @@ renovate documentation is here: <a target="_blank" rel="noopener" href="https://
 
   <div class="copyright">
     &copy; 2019 – 
-    <span itemprop="copyrightYear">2024</span>
+    <span itemprop="copyrightYear">2025</span>
     <span class="with-love">
       <i class="fa fa-heart"></i>
     </span>
