@@ -9327,6 +9327,65 @@ https://docs.gitlab.com/runner/install/kubernetes.html
       </categories>
   </entry>
   <entry>
+    <title>Welcome to Hexo</title>
+    <url>/posts/51646408/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using <code>Hexo</code>, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+<h2 id="Quickstart">Quickstart</h2>
+<h3 id="Create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server">Run server</h3>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></tbody></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></tbody></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></tbody></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h2 id="next">next</h2>
+<p>主要记录一下 next 主题的一些简单的配置，以便后面更加轻松的使用 next 的一些配置。</p>
+<!-- more -->
+<h3 id="下载主题">下载主题</h3>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">cd hexo</span><br><span class="line">git clone https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="主题说明">主题说明</h3>
+<p>在项目文件中有多个<code>_config.yml</code> 文件，为方便区分。</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>hexo 根目录下的<code>_config.yml</code> 称为<code>站点配置文件</code>。</p>
+</li>
+<li class="lvl-2">
+<p>next 主题文件夹下的 <code>theme/next/_config.yml</code> 称为<code>主题配置文件</code>。</p>
+</li>
+</ul>
+<h3 id="设置语言">设置语言</h3>
+<p>在<code>主题配置文件</code>中设置简体中文</p>
+<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="设置Menu">设置 Menu</h3>
+<h4 id="新建页面">新建页面</h4>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">hexo new page categories</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="为文章指定分类">为文章指定分类</h4>
+<figure class="highlight yml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">Next主题配置</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2019-12-15 10:57:12</span></span><br><span class="line"><span class="attr">categories:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">hexo</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="更新主题">更新主题</h3>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">cd themes/next</span><br><span class="line">git pull</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="参考">参考</h3>
+<p><a href="https://theme-next.org">next 官方文档</a></p>
+<h2 id="markdown-嵌入-ipynb">markdown 嵌入 ipynb</h2>
+<p>登陆 <a href="https://nbviewer.jupyter.org/">nbviewer</a> ，然后输入相应的 ipynb 文件链接，即可在线显示。也可以在本地的 jupyter 中打开。</p>
+<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"https://nbviewer.jupyter.org/github/royalosyin/Python-Practical-Application-on-Climate-Variability-Studies/blob/master/ex12-Analysis%20of%20Monthly%20GPCP%20precipitation.ipynb"</span> <span class="attr">width</span>=<span class="string">"570"</span> <span class="attr">height</span>=<span class="string">"2000"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Github-CI-CD">Github CI/CD</h2>
+<p>配置 私有仓库存储 hexo 笔记，公有仓库存储生成的 静态页面.</p>
+<figure class="highlight yml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># .github/workflows/deploy.yml</span></span><br><span class="line"><span class="comment"># Deploy to pages</span></span><br><span class="line"><span class="attr">name:</span> <span class="string">Pages</span></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="attr">workflow_dispatch:</span></span><br><span class="line">  <span class="attr">push:</span></span><br><span class="line">    <span class="attr">branches:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">master</span></span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">pages:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">permissions:</span></span><br><span class="line">      <span class="attr">contents:</span> <span class="string">write</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Checkout</span> <span class="string">repository</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/checkout@v2</span></span><br><span class="line"></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Set</span> <span class="string">up</span> <span class="string">Node.js</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/setup-node@v2</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">node-version:</span> <span class="number">18</span></span><br><span class="line"></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Cache</span> <span class="string">NPM</span> <span class="string">dependencies</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/cache@v2</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">path:</span> <span class="string">node_modules</span></span><br><span class="line">          <span class="attr">key:</span> <span class="string">${{</span> <span class="string">runner.OS</span> <span class="string">}}-npm-cache</span></span><br><span class="line">          <span class="attr">restore-keys:</span> <span class="string">|</span></span><br><span class="line"><span class="string">            ${{ runner.OS }}-npm-cache</span></span><br><span class="line"><span class="string"></span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Install</span> <span class="string">dependencies</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">npm</span> <span class="string">install</span></span><br><span class="line"></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Build</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">npm</span> <span class="string">run</span> <span class="string">build</span></span><br><span class="line"></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Deploy</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">peaceiris/actions-gh-pages@v3</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="comment"># 使用 developer settings 生成的 personal token 部署</span></span><br><span class="line">          <span class="comment"># 参考 https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-set-personal-access-token-personal_token</span></span><br><span class="line">          <span class="attr">personal_token:</span> <span class="string">${{</span> <span class="string">secrets.PERSONAL_TOKEN</span> <span class="string">}}</span></span><br><span class="line">          <span class="attr">external_repository:</span> <span class="string">msclock/msclock.github.io</span></span><br><span class="line">          <span class="attr">publish_branch:</span> <span class="string">master</span></span><br><span class="line">          <span class="attr">user_name:</span> <span class="string">'github-actions[bot]'</span></span><br><span class="line">          <span class="attr">user_email:</span> <span class="string">'github-actions[bot]@users.noreply.github.com'</span></span><br></pre></td></tr></tbody></table></figure>
+]]></content>
+      <categories>
+        <category>develop</category>
+      </categories>
+      <tags>
+        <tag>next</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>k8s</title>
     <url>/posts/655061ae/</url>
     <content><![CDATA[<!--
@@ -10594,65 +10653,6 @@ Traefik 和 Istio 是两个不同的工具，它们都可以用于在 Kubernetes
       </categories>
   </entry>
   <entry>
-    <title>Welcome to Hexo</title>
-    <url>/posts/51646408/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using <code>Hexo</code>, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<span id="more"></span>
-<h2 id="Quickstart">Quickstart</h2>
-<h3 id="Create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server">Run server</h3>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></tbody></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></tbody></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></tbody></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<h2 id="next">next</h2>
-<p>主要记录一下 next 主题的一些简单的配置，以便后面更加轻松的使用 next 的一些配置。</p>
-<!-- more -->
-<h3 id="下载主题">下载主题</h3>
-<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">cd hexo</span><br><span class="line">git clone https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="主题说明">主题说明</h3>
-<p>在项目文件中有多个<code>_config.yml</code> 文件，为方便区分。</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>hexo 根目录下的<code>_config.yml</code> 称为<code>站点配置文件</code>。</p>
-</li>
-<li class="lvl-2">
-<p>next 主题文件夹下的 <code>theme/next/_config.yml</code> 称为<code>主题配置文件</code>。</p>
-</li>
-</ul>
-<h3 id="设置语言">设置语言</h3>
-<p>在<code>主题配置文件</code>中设置简体中文</p>
-<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="设置Menu">设置 Menu</h3>
-<h4 id="新建页面">新建页面</h4>
-<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">hexo new page categories</span><br></pre></td></tr></tbody></table></figure>
-<h4 id="为文章指定分类">为文章指定分类</h4>
-<figure class="highlight yml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">Next主题配置</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2019-12-15 10:57:12</span></span><br><span class="line"><span class="attr">categories:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">hexo</span></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="更新主题">更新主题</h3>
-<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">cd themes/next</span><br><span class="line">git pull</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="参考">参考</h3>
-<p><a href="https://theme-next.org">next 官方文档</a></p>
-<h2 id="markdown-嵌入-ipynb">markdown 嵌入 ipynb</h2>
-<p>登陆 <a href="https://nbviewer.jupyter.org/">nbviewer</a> ，然后输入相应的 ipynb 文件链接，即可在线显示。也可以在本地的 jupyter 中打开。</p>
-<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"https://nbviewer.jupyter.org/github/royalosyin/Python-Practical-Application-on-Climate-Variability-Studies/blob/master/ex12-Analysis%20of%20Monthly%20GPCP%20precipitation.ipynb"</span> <span class="attr">width</span>=<span class="string">"570"</span> <span class="attr">height</span>=<span class="string">"2000"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Github-CI-CD">Github CI/CD</h2>
-<p>配置 私有仓库存储 hexo 笔记，公有仓库存储生成的 静态页面.</p>
-<figure class="highlight yml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># .github/workflows/deploy.yml</span></span><br><span class="line"><span class="comment"># Deploy to pages</span></span><br><span class="line"><span class="attr">name:</span> <span class="string">Pages</span></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="attr">workflow_dispatch:</span></span><br><span class="line">  <span class="attr">push:</span></span><br><span class="line">    <span class="attr">branches:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">master</span></span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">pages:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">permissions:</span></span><br><span class="line">      <span class="attr">contents:</span> <span class="string">write</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Checkout</span> <span class="string">repository</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/checkout@v2</span></span><br><span class="line"></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Set</span> <span class="string">up</span> <span class="string">Node.js</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/setup-node@v2</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">node-version:</span> <span class="number">18</span></span><br><span class="line"></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Cache</span> <span class="string">NPM</span> <span class="string">dependencies</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/cache@v2</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">path:</span> <span class="string">node_modules</span></span><br><span class="line">          <span class="attr">key:</span> <span class="string">${{</span> <span class="string">runner.OS</span> <span class="string">}}-npm-cache</span></span><br><span class="line">          <span class="attr">restore-keys:</span> <span class="string">|</span></span><br><span class="line"><span class="string">            ${{ runner.OS }}-npm-cache</span></span><br><span class="line"><span class="string"></span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Install</span> <span class="string">dependencies</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">npm</span> <span class="string">install</span></span><br><span class="line"></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Build</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">npm</span> <span class="string">run</span> <span class="string">build</span></span><br><span class="line"></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Deploy</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">peaceiris/actions-gh-pages@v3</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="comment"># 使用 developer settings 生成的 personal token 部署</span></span><br><span class="line">          <span class="comment"># 参考 https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-set-personal-access-token-personal_token</span></span><br><span class="line">          <span class="attr">personal_token:</span> <span class="string">${{</span> <span class="string">secrets.PERSONAL_TOKEN</span> <span class="string">}}</span></span><br><span class="line">          <span class="attr">external_repository:</span> <span class="string">msclock/msclock.github.io</span></span><br><span class="line">          <span class="attr">publish_branch:</span> <span class="string">master</span></span><br><span class="line">          <span class="attr">user_name:</span> <span class="string">'github-actions[bot]'</span></span><br><span class="line">          <span class="attr">user_email:</span> <span class="string">'github-actions[bot]@users.noreply.github.com'</span></span><br></pre></td></tr></tbody></table></figure>
-]]></content>
-      <categories>
-        <category>develop</category>
-      </categories>
-      <tags>
-        <tag>next</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>license</title>
     <url>/posts/5768f419/</url>
     <content><![CDATA[<h2 id="Resource">Resource</h2>
@@ -10992,9 +10992,23 @@ mamba 自带的 conda 环境中的 python 在 windows 上编译需要附带设�
   <entry>
     <title>nvs</title>
     <url>/posts/d61c1ce/</url>
-    <content><![CDATA[<h2 id="NVS">NVS</h2>
-<p>跨平台的 node 版本管理工具</p>
-<h2 id="安装-nvs">安装 nvs</h2>
+    <content><![CDATA[<h2 id="NVS-简介">NVS 简介</h2>
+<p>NVS (Node Version Switcher) 是一个跨平台的 Node.js 版本管理工具，支持 Windows、macOS 和 Linux 系统。主要功能包括：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>多版本 Node.js 安装和管理</p>
+</li>
+<li class="lvl-2">
+<p>自动切换项目指定版本</p>
+</li>
+<li class="lvl-2">
+<p>轻量级且无依赖</p>
+</li>
+<li class="lvl-2">
+<p>支持所有主流 shell 环境</p>
+</li>
+</ul>
+<h2 id="安装-NVS">安装 NVS</h2>
 <h3 id="1-从-GitHub-下载-msi-安装包">1. 从 GitHub 下载 msi 安装包</h3>
 <ul class="lvl-0">
 <li class="lvl-2">
@@ -11006,11 +11020,11 @@ mamba 自带的 conda 环境中的 python 在 windows 上编译需要附带设�
 </ul>
 <h3 id="2-通过-winget-安装">2. 通过 winget 安装</h3>
 <p>在命令提示符或 PowerShell 中运行以下命令：</p>
-<figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><span class="line">winget install jasongin.nvs</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">winget install jasongin.nvs</span><br></pre></td></tr></tbody></table></figure>
 <span id="more"></span>
 <h3 id="3-通过-Chocolatey-安装">3. 通过 Chocolatey 安装</h3>
 <p>如果你已经安装了 Chocolatey 包管理器，可以运行以下命令：</p>
-<figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><span class="line">choco install nvs</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">choco install nvs</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="配置环境变量">配置环境变量</h2>
 <h3 id="1-Git-Bash">1. Git Bash</h3>
 <ul class="lvl-0">
@@ -11028,31 +11042,74 @@ mamba 自带的 conda 环境中的 python 在 windows 上编译需要附带设�
 <figure class="highlight cmd"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">set</span> NVS_HOME=<span class="variable">%LOCALAPPDATA%</span>\nvs</span><br><span class="line">"<span class="variable">%NVS_HOME%</span>\nvs.<span class="built_in">cmd</span>" install</span><br></pre></td></tr></tbody></table></figure>
 <h3 id="3-PowerShell">3. PowerShell</h3>
 <p>运行以下命令：</p>
-<figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="variable">$env:NVS_HOME</span>=<span class="string">"<span class="variable">$env:LOCALAPPDATA</span>\nvs"</span></span><br><span class="line">. <span class="string">"<span class="variable">$env:NVS_HOME</span>\nvs.ps1"</span> install</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="variable">$env</span>:NVS_HOME=<span class="string">"<span class="variable">$env</span>:LOCALAPPDATA\nvs"</span></span><br><span class="line">. <span class="string">"<span class="variable">$env</span>:NVS_HOME\nvs.ps1"</span> install</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="使用-nvs-管理-Node-js-版本">使用 nvs 管理 Node.js 版本</h2>
 <h3 id="1-安装特定版本的-Node-js">1. 安装特定版本的 Node.js</h3>
 <p>在命令行中运行以下命令：</p>
-<figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><span class="line">nvs add &lt;version&gt;</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">nvs add &lt;version&gt;</span><br></pre></td></tr></tbody></table></figure>
 <p>例如，安装 Node.js 22.11.0 版本：</p>
-<figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><span class="line">nvs add <span class="number">22.11</span>.<span class="number">0</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">nvs add 22.11.0</span><br></pre></td></tr></tbody></table></figure>
 <h3 id="2-切换到特定版本的-Node-js">2. 切换到特定版本的 Node.js</h3>
 <p>运行以下命令：</p>
-<figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><span class="line">nvs use &lt;version&gt;</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">nvs use &lt;version&gt;</span><br></pre></td></tr></tbody></table></figure>
 <h3 id="3-查看已安装的-Node-js-版本">3. 查看已安装的 Node.js 版本</h3>
 <p>运行以下命令：</p>
-<figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><span class="line">nvs <span class="built_in">ls</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">nvs <span class="built_in">ls</span></span><br></pre></td></tr></tbody></table></figure>
 <h3 id="4-设置默认-Node-js-版本">4. 设置默认 Node.js 版本</h3>
 <p>运行以下命令：</p>
-<figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><span class="line">nvs link &lt;version&gt;</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="四、进阶配置">四、进阶配置</h2>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">nvs <span class="built_in">link</span> &lt;version&gt;</span><br></pre></td></tr></tbody></table></figure>
+<p>每次打开终端时都会自动使用该版本。</p>
+<h2 id="进阶配置">进阶配置</h2>
 <h3 id="1-配置-npm-全局模块安装路径">1. 配置 npm 全局模块安装路径</h3>
 <p>为避免切换 Node.js 版本后重新安装全局模块，可以配置统一的全局模块安装路径：</p>
-<figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><span class="line">mkdir <span class="literal">-p</span> ~/.npm<span class="literal">-global</span></span><br><span class="line">npm config <span class="built_in">set</span> prefix ~/.npm<span class="literal">-global</span></span><br></pre></td></tr></tbody></table></figure>
-<p>然后将该路径添加到环境变量中：</p>
-<figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"export PATH=~/.npm-global/bin:<span class="variable">$PATH</span>"</span> &gt;&gt; ~/.zshrc</span><br><span class="line">source ~/.zshrc</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="2-设置默认-Node-js-版本">2. 设置默认 Node.js 版本</h3>
-<p>通过 <code>nvs link</code> 命令设置默认版本，这样每次打开终端时都会自动使用该版本。</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 创建全局模块目录</span></span><br><span class="line"><span class="built_in">mkdir</span> -p ~/.npm-global</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置npm使用该目录</span></span><br><span class="line">npm config <span class="built_in">set</span> prefix ~/.npm-global</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将该目录添加到PATH环境变量</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"export PATH=~/.npm-global/bin:<span class="variable">$PATH</span>"</span> &gt;&gt; ~/.zshrc</span><br><span class="line"><span class="built_in">source</span> ~/.zshrc</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="实用技巧">实用技巧</h2>
+<h3 id="1-自动切换项目Node版本">1. 自动切换项目 Node 版本</h3>
+<p>在项目根目录创建 <code>.node-version</code> 文件，写入需要的版本号：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"16.14.0"</span> &gt; .node-version</span><br></pre></td></tr></tbody></table></figure>
+<p>nvs 会自动检测并使用该版本。</p>
+<h3 id="2-查看远程可用版本">2. 查看远程可用版本</h3>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">nvs remote</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="3-删除指定版本">3. 删除指定版本</h3>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">nvs <span class="built_in">rm</span> 14.17.0</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="常见问题">常见问题</h2>
+<h3 id="1-安装失败怎么办？">1. 安装失败怎么办？</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>确保有管理员权限</p>
+</li>
+<li class="lvl-2">
+<p>检查网络连接</p>
+</li>
+<li class="lvl-2">
+<p>尝试使用 <code>--verbose</code> 参数查看详细日志</p>
+</li>
+</ul>
+<h3 id="2-版本切换不生效？">2. 版本切换不生效？</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>检查当前 shell 类型</p>
+</li>
+<li class="lvl-2">
+<p>确保已正确配置环境变量</p>
+</li>
+<li class="lvl-2">
+<p>重启终端尝试</p>
+</li>
+</ul>
+<h2 id="参考资源">参考资源</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://github.com/jasongin/nvs">NVS 官方文档</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://nodejs.org/en/download/releases/">Node.js 版本发布</a></p>
+</li>
+</ul>
 ]]></content>
+      <categories>
+        <category>develop</category>
+      </categories>
   </entry>
   <entry>
     <title>openvpn</title>
@@ -12558,84 +12615,6 @@ pypi-key is on the edge
       </categories>
   </entry>
   <entry>
-    <title>VM</title>
-    <url>/posts/a555d500/</url>
-    <content><![CDATA[<h2 id="QEMU">QEMU</h2>
-<ul class="lvl-0">
-<li class="lvl-2">download: choco install qemu</li>
-<li class="lvl-2">EFI: <a href="https://releases.linaro.org/components/kernel/uefi-linaro/latest/release/qemu64/QEMU_EFI.fd">https://releases.linaro.org/components/kernel/uefi-linaro/latest/release/qemu64/QEMU_EFI.fd</a></li>
-</ul>
-<h3 id="aarch64-VM">aarch64 VM</h3>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://blog.csdn.net/s806903/article/details/127651807">https://blog.csdn.net/s806903/article/details/127651807</a></p>
-</li>
-</ul>
-<p>准备好 aarch64 镜像 test.img。</p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 磁盘大小</span></span><br><span class="line">qemu-img.exe create -f qcow2 vm_disk.img 25G</span><br><span class="line"><span class="comment"># 创建</span></span><br><span class="line">qemu-system-aarch64.exe -m 4000 -cpu cortex-a72 -smp 4 -M virt -device nec-usb-xhci -device usb-kbd -device usb-mouse -device VGA -hda vm_disk.img -bios QEMU_EFI.fd -cdrom aarch64-dvd.iso</span><br></pre></td></tr></tbody></table></figure>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>-m 4000 表示分配给虚拟机的内存最大 4000MB</p>
-</li>
-<li class="lvl-2">
-<p>-cpu cortex-a72 指定 CPU 类型，还可以选择 cortex-a53、cortex-a57 等</p>
-</li>
-<li class="lvl-2">
-<p>-smp 4,cores=4,threads=1,sockets=1 指定虚拟机最大使用的 CPU 核心数等</p>
-</li>
-<li class="lvl-2">
-<p>-M virt 指定虚拟机类型为 virt，具体支持的类型可以使用 qemu-system-aarch64 -M help 查看</p>
-</li>
-<li class="lvl-2">
-<p>-bios QEMU_EFI.fd  指定 UEFI 固件文件</p>
-</li>
-<li class="lvl-2">
-<p>-net nic,model=pcnet 启用网络功能</p>
-</li>
-<li class="lvl-2">
-<p>-device nec-usb-xhci -device usb-kbd -device usb-mouse  启用 USB 鼠标等设备</p>
-</li>
-<li class="lvl-2">
-<p>-device VGA 启用 VGA 视图，对于图形化的 Linux 这条很重要！</p>
-</li>
-<li class="lvl-2">
-<p>-drive if=none,file=Z:\uos.iso,id=cdrom,media=cdrom 指定光驱使用镜像文件</p>
-</li>
-<li class="lvl-2">
-<p>-device virtio-scsi-device -device scsi-cd,drive=cdrom 指定光驱硬件类型</p>
-</li>
-</ul>
-<h3 id="snapshot">snapshot</h3>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://cloud.tencent.com/developer/techpedia/2000/14599">https://cloud.tencent.com/developer/techpedia/2000/14599</a></p>
-</li>
-</ul>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">qemu-img snapshot -c snapshot_name vm_disk.img</span><br><span class="line">qemu-img snapshot -a snapshot_name vm_disk.img</span><br><span class="line">qemu-img snapshot -l vm_disk.img</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="VMware-MacOS">VMware MacOS</h2>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://blog.csdn.net/u012039040/article/details/129666171">https://blog.csdn.net/u012039040/article/details/129666171</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://zhuanlan.zhihu.com/p/649809292">https://zhuanlan.zhihu.com/p/649809292</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://www.sysnettechsolutions.com/en/download-vmware-tools/">macos vmware tools</a></p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>develop</category>
-      </categories>
-      <tags>
-        <tag>VM</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>regex 正则</title>
     <url>/posts/c534b59e/</url>
     <content><![CDATA[<h2 id="resource">resource</h2>
@@ -13597,7 +13576,7 @@ gzip 在 ubuntu/debian 使用 -d 解压存在重定向问题，建议使用 -dc 
 <p>修改字体类 <a href="https://www.nerdfonts.com/">Nerd Font</a>，推荐 <a href="https://www.jetbrains.com/lp/mono/">JetBrain Mono</a>。</p>
 <span id="more"></span>
 <p>配置 PS 命令脚本</p>
-<figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><span class="line">choco install neovim grep</span><br><span class="line">choco install JetBrainsMonoNF</span><br><span class="line"><span class="comment"># 创建自定义脚本</span></span><br><span class="line">nvim .config/powershell/user_profile.ps1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加脚本</span></span><br><span class="line"><span class="built_in">PS</span> C:\Users\msclo&gt; <span class="built_in">cat</span> .\.config\powershell\user_profile.ps1</span><br><span class="line"><span class="comment"># Alias</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Set-Alias</span> vim nvim</span><br><span class="line"><span class="built_in">Set-Alias</span> ll <span class="built_in">ls</span></span><br><span class="line"><span class="built_in">Set-Alias</span> g git</span><br><span class="line"><span class="built_in">Set-Alias</span> less <span class="string">'C:\Program Files\Git\usr\bin\less.exe'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 生效 profile</span></span><br><span class="line">nvim <span class="variable">$PROFILE</span></span><br><span class="line"><span class="comment"># 添加 profile</span></span><br><span class="line">C:\Users\msclo&gt; <span class="built_in">cat</span> <span class="variable">$PROFILE</span></span><br><span class="line">. <span class="variable">$env:USERPROFILE</span>\.config\powershell\user_profile.ps1</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># posh-git</span></span><br><span class="line"><span class="built_in">Install-Module</span> posh<span class="literal">-git</span> <span class="literal">-Scope</span> CurrentUser <span class="literal">-Force</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># omp，参考 https://ohmyposh.dev/</span></span><br><span class="line">choco install/upgrade <span class="built_in">oh</span><span class="literal">-my-posh</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置 omp 到 user_profile.ps1</span></span><br><span class="line"><span class="built_in">Set-Alias</span> <span class="built_in">oh</span><span class="literal">-my-posh</span> <span class="string">'C:\Program Files (x86)\oh-my-posh\bin\oh-my-posh'</span></span><br><span class="line"><span class="built_in">oh</span><span class="literal">-my-posh</span> init pwsh <span class="literal">--config</span> <span class="string">"<span class="variable">$env:POSH_THEMES_PATH</span>/takuya.omp.json"</span> | <span class="built_in">Invoke-Expression</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># terminal icons，添加到 user_profile.ps1 中</span></span><br><span class="line"><span class="built_in">Install-Module</span> <span class="literal">-Name</span> Terminal<span class="literal">-Icons</span> <span class="literal">-Repository</span> PSGallery <span class="literal">-Force</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Z，跟踪常用目录自动跳转</span></span><br><span class="line"><span class="built_in">Install-Module</span> <span class="literal">-Name</span> Z <span class="literal">-Force</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># PSReadline，跟踪历史命令</span></span><br><span class="line"><span class="built_in">Install-Module</span> <span class="literal">-Name</span> PSReadline <span class="literal">-AllowPrerelease</span> <span class="literal">-Scope</span> CurrentUser <span class="literal">-Force</span> <span class="literal">-SkipPublisherCheck</span></span><br><span class="line"><span class="built_in">Set-PSReadlineOption</span> <span class="literal">-PredictionSource</span> <span class="built_in">History</span></span><br><span class="line"><span class="built_in">Set-PSReadlineOption</span> <span class="literal">-PredictionViewStyle</span> ListView</span><br><span class="line"></span><br><span class="line"><span class="comment"># fzf，历史命令查找</span></span><br><span class="line">choco install fzf</span><br><span class="line"><span class="built_in">Install-Module</span> <span class="literal">-Name</span> PSFzf <span class="literal">-Force</span></span><br><span class="line"><span class="built_in">Set-PsFzfOption</span> <span class="literal">-PSReadlineChordProvider</span> <span class="string">'Ctrl+f'</span> <span class="literal">-PSReadlineChordReversedHistory</span> <span class="string">'Ctrl+r'</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><span class="line">winget install Microsoft.Powershell</span><br><span class="line">choco install neovim grep</span><br><span class="line">winget install  DEVCOM.JetBrainsMonoNerdFont</span><br><span class="line"><span class="comment"># 创建自定义脚本</span></span><br><span class="line">nvim .config/powershell/user_profile.ps1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加脚本</span></span><br><span class="line"><span class="built_in">PS</span> C:\Users\msclo&gt; <span class="built_in">cat</span> .\.config\powershell\user_profile.ps1</span><br><span class="line"><span class="comment"># Alias</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Set-Alias</span> vim nvim</span><br><span class="line"><span class="built_in">Set-Alias</span> ll <span class="built_in">ls</span></span><br><span class="line"><span class="built_in">Set-Alias</span> g git</span><br><span class="line"><span class="built_in">Set-Alias</span> less <span class="string">'C:\Program Files\Git\usr\bin\less.exe'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 生效 profile</span></span><br><span class="line">nvim <span class="variable">$PROFILE</span></span><br><span class="line"><span class="comment"># 添加 profile</span></span><br><span class="line">C:\Users\msclo&gt; <span class="built_in">cat</span> <span class="variable">$PROFILE</span></span><br><span class="line">. <span class="variable">$env:USERPROFILE</span>\.config\powershell\user_profile.ps1</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># posh-git</span></span><br><span class="line"><span class="built_in">Install-Module</span> posh<span class="literal">-git</span> <span class="literal">-Scope</span> CurrentUser <span class="literal">-Force</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># omp，参考 https://ohmyposh.dev/</span></span><br><span class="line">choco install/upgrade <span class="built_in">oh</span><span class="literal">-my-posh</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置 omp 到 user_profile.ps1</span></span><br><span class="line"><span class="built_in">Set-Alias</span> <span class="built_in">oh</span><span class="literal">-my-posh</span> <span class="string">'C:\Program Files (x86)\oh-my-posh\bin\oh-my-posh'</span></span><br><span class="line"><span class="built_in">oh</span><span class="literal">-my-posh</span> init pwsh <span class="literal">--config</span> <span class="string">"<span class="variable">$env:POSH_THEMES_PATH</span>/takuya.omp.json"</span> | <span class="built_in">Invoke-Expression</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># terminal icons，添加到 user_profile.ps1 中</span></span><br><span class="line"><span class="built_in">Install-Module</span> <span class="literal">-Name</span> Terminal<span class="literal">-Icons</span> <span class="literal">-Repository</span> PSGallery <span class="literal">-Force</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Z，跟踪常用目录自动跳转</span></span><br><span class="line"><span class="built_in">Install-Module</span> <span class="literal">-Name</span> Z <span class="literal">-Force</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># PSReadline，跟踪历史命令</span></span><br><span class="line"><span class="built_in">Install-Module</span> <span class="literal">-Name</span> PSReadline <span class="literal">-AllowPrerelease</span> <span class="literal">-Scope</span> CurrentUser <span class="literal">-Force</span> <span class="literal">-SkipPublisherCheck</span></span><br><span class="line"><span class="built_in">Set-PSReadlineOption</span> <span class="literal">-PredictionSource</span> <span class="built_in">History</span></span><br><span class="line"><span class="built_in">Set-PSReadlineOption</span> <span class="literal">-PredictionViewStyle</span> ListView</span><br><span class="line"></span><br><span class="line"><span class="comment"># fzf，历史命令查找</span></span><br><span class="line">choco install fzf</span><br><span class="line"><span class="built_in">Install-Module</span> <span class="literal">-Name</span> PSFzf <span class="literal">-Force</span></span><br><span class="line"><span class="built_in">Set-PsFzfOption</span> <span class="literal">-PSReadlineChordProvider</span> <span class="string">'Ctrl+f'</span> <span class="literal">-PSReadlineChordReversedHistory</span> <span class="string">'Ctrl+r'</span></span><br></pre></td></tr></tbody></table></figure>
 <p>最终完整 user_profile.ps1</p>
 <figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Prompt</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># git</span></span><br><span class="line"><span class="built_in">Import-Module</span> posh<span class="literal">-git</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Icons</span></span><br><span class="line"><span class="built_in">Import-Module</span> Terminal<span class="literal">-Icons</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># oh-my-posh</span></span><br><span class="line"><span class="built_in">Set-Alias</span> <span class="built_in">oh</span><span class="literal">-my-posh</span> <span class="string">'C:\Program Files (x86)\oh-my-posh\bin\oh-my-posh'</span></span><br><span class="line"><span class="built_in">oh</span><span class="literal">-my-posh</span> init pwsh <span class="literal">--config</span> <span class="string">"<span class="variable">$env:POSH_THEMES_PATH</span>/takuya.omp.json"</span> | <span class="built_in">Invoke-Expression</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># PSReadline history</span></span><br><span class="line"><span class="built_in">Set-PSReadlineOption</span> <span class="literal">-BellStyle</span> None</span><br><span class="line"><span class="built_in">Set-PSReadlineKeyHandler</span> <span class="literal">-Chord</span> <span class="string">'Ctrl+d'</span> <span class="literal">-Function</span> DeleteChar</span><br><span class="line"><span class="built_in">Set-PSReadlineOption</span> <span class="literal">-PredictionSource</span> <span class="built_in">History</span></span><br><span class="line"><span class="built_in">Set-PSReadlineOption</span> <span class="literal">-PredictionViewStyle</span> ListView</span><br><span class="line"></span><br><span class="line"><span class="comment"># Fzf</span></span><br><span class="line"><span class="built_in">Set-PsFzfOption</span> <span class="literal">-PSReadlineChordProvider</span> <span class="string">'Ctrl+f'</span> <span class="literal">-PSReadlineChordReversedHistory</span> <span class="string">'Ctrl+r'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Alias</span></span><br><span class="line"><span class="built_in">Set-Alias</span> vim nvim</span><br><span class="line"><span class="built_in">Set-Alias</span> ll <span class="built_in">ls</span></span><br><span class="line"><span class="built_in">Set-Alias</span> g git</span><br><span class="line"><span class="built_in">Set-Alias</span> less <span class="string">'C:\Program Files\Git\usr\bin\less.exe'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Utilities</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">which</span> <span class="params">(<span class="variable">$command</span>)</span></span>{</span><br><span class="line">    <span class="built_in">Get-Command</span> <span class="literal">-Name</span> <span class="variable">$command</span> <span class="literal">-ErrorAction</span> SilentlyContinue |</span><br><span class="line">        <span class="built_in">Select-Object</span> <span class="literal">-ExpandProperty</span> Path <span class="literal">-ErrorAction</span> SilentlyContinue</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment"># Watch</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Watch-Command</span></span> {</span><br><span class="line">    <span class="function">[<span class="type">CmdletBinding</span>(<span class="type">SupportsShouldProcess</span>=<span class="variable">$True</span>,<span class="type">ConfirmImpact</span>=<span class="string">'High'</span>)]</span></span><br><span class="line">    <span class="keyword">param</span> (</span><br><span class="line">        [<span class="type">Parameter</span>(<span class="type">Mandatory</span>=<span class="variable">$True</span>,</span><br><span class="line">                   <span class="type">ValueFromPipeline</span>=<span class="variable">$True</span>,</span><br><span class="line">                   <span class="type">ValueFromPipelineByPropertyName</span>=<span class="variable">$True</span>)]</span><br><span class="line">        [<span class="built_in">string</span>]<span class="variable">$command</span>,</span><br><span class="line"></span><br><span class="line">        [<span class="type">Parameter</span>(<span class="type">Mandatory</span>=<span class="variable">$False</span>,</span><br><span class="line">                   <span class="type">ValueFromPipeline</span>=<span class="variable">$True</span>,</span><br><span class="line">                   <span class="type">ValueFromPipelineByPropertyName</span>=<span class="variable">$True</span>)]</span><br><span class="line">        [<span class="built_in">int</span>]<span class="variable">$interval</span> = <span class="number">2</span></span><br><span class="line">    )</span><br><span class="line">    <span class="keyword">process</span> {</span><br><span class="line">        <span class="variable">$cmd</span> = [<span class="type">scriptblock</span>]::Create(<span class="variable">$command</span>);</span><br><span class="line">        <span class="keyword">While</span>(<span class="variable">$True</span>) {</span><br><span class="line">            <span class="variable">$output</span> = <span class="variable">$cmd</span>.Invoke();</span><br><span class="line">            <span class="built_in">cls</span>;</span><br><span class="line">            <span class="built_in">Write-Host</span> <span class="string">"Command: "</span> <span class="variable">$command</span>;</span><br><span class="line">            <span class="built_in">Write-Host</span> (<span class="variable">$output</span> | <span class="built_in">Out-String</span>);</span><br><span class="line">            <span class="built_in">sleep</span> <span class="variable">$interval</span>;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <h3 id="iwr">iwr</h3>
@@ -13738,6 +13717,84 @@ gzip 在 ubuntu/debian 使用 -d 解压存在重定向问题，建议使用 -dc 
       <categories>
         <category>develop</category>
       </categories>
+  </entry>
+  <entry>
+    <title>VM</title>
+    <url>/posts/a555d500/</url>
+    <content><![CDATA[<h2 id="QEMU">QEMU</h2>
+<ul class="lvl-0">
+<li class="lvl-2">download: choco install qemu</li>
+<li class="lvl-2">EFI: <a href="https://releases.linaro.org/components/kernel/uefi-linaro/latest/release/qemu64/QEMU_EFI.fd">https://releases.linaro.org/components/kernel/uefi-linaro/latest/release/qemu64/QEMU_EFI.fd</a></li>
+</ul>
+<h3 id="aarch64-VM">aarch64 VM</h3>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://blog.csdn.net/s806903/article/details/127651807">https://blog.csdn.net/s806903/article/details/127651807</a></p>
+</li>
+</ul>
+<p>准备好 aarch64 镜像 test.img。</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 磁盘大小</span></span><br><span class="line">qemu-img.exe create -f qcow2 vm_disk.img 25G</span><br><span class="line"><span class="comment"># 创建</span></span><br><span class="line">qemu-system-aarch64.exe -m 4000 -cpu cortex-a72 -smp 4 -M virt -device nec-usb-xhci -device usb-kbd -device usb-mouse -device VGA -hda vm_disk.img -bios QEMU_EFI.fd -cdrom aarch64-dvd.iso</span><br></pre></td></tr></tbody></table></figure>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>-m 4000 表示分配给虚拟机的内存最大 4000MB</p>
+</li>
+<li class="lvl-2">
+<p>-cpu cortex-a72 指定 CPU 类型，还可以选择 cortex-a53、cortex-a57 等</p>
+</li>
+<li class="lvl-2">
+<p>-smp 4,cores=4,threads=1,sockets=1 指定虚拟机最大使用的 CPU 核心数等</p>
+</li>
+<li class="lvl-2">
+<p>-M virt 指定虚拟机类型为 virt，具体支持的类型可以使用 qemu-system-aarch64 -M help 查看</p>
+</li>
+<li class="lvl-2">
+<p>-bios QEMU_EFI.fd  指定 UEFI 固件文件</p>
+</li>
+<li class="lvl-2">
+<p>-net nic,model=pcnet 启用网络功能</p>
+</li>
+<li class="lvl-2">
+<p>-device nec-usb-xhci -device usb-kbd -device usb-mouse  启用 USB 鼠标等设备</p>
+</li>
+<li class="lvl-2">
+<p>-device VGA 启用 VGA 视图，对于图形化的 Linux 这条很重要！</p>
+</li>
+<li class="lvl-2">
+<p>-drive if=none,file=Z:\uos.iso,id=cdrom,media=cdrom 指定光驱使用镜像文件</p>
+</li>
+<li class="lvl-2">
+<p>-device virtio-scsi-device -device scsi-cd,drive=cdrom 指定光驱硬件类型</p>
+</li>
+</ul>
+<h3 id="snapshot">snapshot</h3>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://cloud.tencent.com/developer/techpedia/2000/14599">https://cloud.tencent.com/developer/techpedia/2000/14599</a></p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">qemu-img snapshot -c snapshot_name vm_disk.img</span><br><span class="line">qemu-img snapshot -a snapshot_name vm_disk.img</span><br><span class="line">qemu-img snapshot -l vm_disk.img</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="VMware-MacOS">VMware MacOS</h2>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://blog.csdn.net/u012039040/article/details/129666171">https://blog.csdn.net/u012039040/article/details/129666171</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://zhuanlan.zhihu.com/p/649809292">https://zhuanlan.zhihu.com/p/649809292</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://www.sysnettechsolutions.com/en/download-vmware-tools/">macos vmware tools</a></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>develop</category>
+      </categories>
+      <tags>
+        <tag>VM</tag>
+      </tags>
   </entry>
   <entry>
     <title>yaml 实践</title>
