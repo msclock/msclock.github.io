@@ -2501,6 +2501,71 @@ MVP (Minimum viable Product) 以最小的代价提供一个可测试交付的版
       </categories>
   </entry>
   <entry>
+    <title>choco 包管理器</title>
+    <url>/posts/78ce69fa/</url>
+    <content><![CDATA[<p>本文总结了 windows 包管理工具常用命令</p>
+<h2 id="install">install</h2>
+<p>通过 powershell 安装</p>
+<figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Set your PowerShell execution policy</span></span><br><span class="line"><span class="built_in">Set-ExecutionPolicy</span> <span class="literal">-ExecutionPolicy</span> RemoteSigned <span class="literal">-Force</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Install Chocolatey</span></span><br><span class="line"><span class="built_in">iwr</span> https://chocolatey.org/install.ps1 <span class="literal">-UseBasicParsing</span> | <span class="built_in">iex</span></span><br><span class="line"></span><br><span class="line">choco <span class="literal">-v</span></span><br><span class="line"></span><br><span class="line">choco upgrade chocolatey</span><br></pre></td></tr></tbody></table></figure>
+<span id="more"></span>
+<h2 id="常用命令">常用命令</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>choco list -li 查看本地安装的软件</p>
+</li>
+<li class="lvl-2">
+<p>choco search nodejs 查找安装包</p>
+</li>
+<li class="lvl-2">
+<p>choco install sed 下载</p>
+</li>
+<li class="lvl-2">
+<p>choco uninstall sed 卸载</p>
+</li>
+<li class="lvl-2">
+<p>choco upgrade sed 更新（update）</p>
+</li>
+</ul>
+<h2 id="常用开发工具">常用开发工具</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>docker-desktop/kubernetes-helm/kind</p>
+</li>
+<li class="lvl-2">
+<p>dapr</p>
+</li>
+<li class="lvl-2">
+<p>fzf/tree/sed/grep/rsync</p>
+</li>
+<li class="lvl-2">
+<p>git</p>
+</li>
+<li class="lvl-2">
+<p>JetBrainsNF</p>
+</li>
+<li class="lvl-2">
+<p>neovim</p>
+</li>
+<li class="lvl-2">
+<p>nvm</p>
+</li>
+<li class="lvl-2">
+<p>kubectl</p>
+</li>
+</ul>
+<figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 指定版本安装</span></span><br><span class="line">choco install kubectl <span class="literal">--version</span>=<span class="number">1.22</span>.<span class="number">1</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="reference">reference</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://docs.chocolatey.org/en-us/choco/commands/">https://docs.chocolatey.org/en-us/choco/commands/</a></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>develop</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Badge</title>
     <url>/posts/3f316719/</url>
     <content><![CDATA[<h2 id="Badge">Badge</h2>
@@ -2567,71 +2632,6 @@ MVP (Minimum viable Product) 以最小的代价提供一个可测试交付的版
 </li>
 <li class="lvl-2">
 <p>github release: <code>https://img.shields.io/github/v/release/:user/:repo</code></p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>develop</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>choco 包管理器</title>
-    <url>/posts/78ce69fa/</url>
-    <content><![CDATA[<p>本文总结了 windows 包管理工具常用命令</p>
-<h2 id="install">install</h2>
-<p>通过 powershell 安装</p>
-<figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Set your PowerShell execution policy</span></span><br><span class="line"><span class="built_in">Set-ExecutionPolicy</span> <span class="literal">-ExecutionPolicy</span> RemoteSigned <span class="literal">-Force</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Install Chocolatey</span></span><br><span class="line"><span class="built_in">iwr</span> https://chocolatey.org/install.ps1 <span class="literal">-UseBasicParsing</span> | <span class="built_in">iex</span></span><br><span class="line"></span><br><span class="line">choco <span class="literal">-v</span></span><br><span class="line"></span><br><span class="line">choco upgrade chocolatey</span><br></pre></td></tr></tbody></table></figure>
-<span id="more"></span>
-<h2 id="常用命令">常用命令</h2>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>choco list -li 查看本地安装的软件</p>
-</li>
-<li class="lvl-2">
-<p>choco search nodejs 查找安装包</p>
-</li>
-<li class="lvl-2">
-<p>choco install sed 下载</p>
-</li>
-<li class="lvl-2">
-<p>choco uninstall sed 卸载</p>
-</li>
-<li class="lvl-2">
-<p>choco upgrade sed 更新（update）</p>
-</li>
-</ul>
-<h2 id="常用开发工具">常用开发工具</h2>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>docker-desktop/kubernetes-helm/kind</p>
-</li>
-<li class="lvl-2">
-<p>dapr</p>
-</li>
-<li class="lvl-2">
-<p>fzf/tree/sed/grep/rsync</p>
-</li>
-<li class="lvl-2">
-<p>git</p>
-</li>
-<li class="lvl-2">
-<p>JetBrainsNF</p>
-</li>
-<li class="lvl-2">
-<p>neovim</p>
-</li>
-<li class="lvl-2">
-<p>nvm</p>
-</li>
-<li class="lvl-2">
-<p>kubectl</p>
-</li>
-</ul>
-<figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 指定版本安装</span></span><br><span class="line">choco install kubectl <span class="literal">--version</span>=<span class="number">1.22</span>.<span class="number">1</span></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="reference">reference</h2>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://docs.chocolatey.org/en-us/choco/commands/">https://docs.chocolatey.org/en-us/choco/commands/</a></p>
 </li>
 </ul>
 ]]></content>
@@ -9152,6 +9152,35 @@ https://docs.gitlab.com/runner/install/kubernetes.html
       </categories>
   </entry>
   <entry>
+    <title>gpg</title>
+    <url>/posts/4e3089ba/</url>
+    <content><![CDATA[<h2 id="GPG">GPG</h2>
+<p>GPG（GNU Privacy Guard）是一种开源的加密软件，它可以用于加密和签名数据。它使用公钥和私钥对来实现加密和签名。公钥和私钥对是由用户生成的，公钥可以公开分享，而私钥则应该保密。</p>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://docs.github.com/zh/authentication/managing-commit-signature-verification/about-commit-signature-verification">在 github 中使用 commit signature verification</a></p>
+</li>
+</ul>
+<span id="more"></span>
+<h3 id="导入导出-gpg">导入导出 gpg</h3>
+<p>导出 GPG 密钥：生成密钥后，您需要将其导出以便在其他机器上使用。使用以下命令导出密钥</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">gpg --export-secret-keys -a <span class="string">"您的邮箱地址"</span> &gt; 私钥文件名.asc</span><br></pre></td></tr></tbody></table></figure>
+<p>导入 GPG 密钥：在其他机器上，您需要导入之前导出的 GPG 密钥。将私钥文件传输到目标机器上，并使用以下命令导入密钥：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">gpg --import 私钥文件名.asc</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="在devcontainer中使用gpg">在 devcontainer 中使用 gpg</h3>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://code.visualstudio.com/remote/advancedcontainers/sharing-git-credentials#_sharing-gpg-keys">https://code.visualstudio.com/remote/advancedcontainers/sharing-git-credentials#_sharing-gpg-keys</a></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>develop</category>
+      </categories>
+  </entry>
+  <entry>
     <title>go</title>
     <url>/posts/b6689356/</url>
     <content><![CDATA[<h2 id="相关资源">相关资源</h2>
@@ -9298,35 +9327,6 @@ https://docs.gitlab.com/runner/install/kubernetes.html
       </categories>
   </entry>
   <entry>
-    <title>gpg</title>
-    <url>/posts/4e3089ba/</url>
-    <content><![CDATA[<h2 id="GPG">GPG</h2>
-<p>GPG（GNU Privacy Guard）是一种开源的加密软件，它可以用于加密和签名数据。它使用公钥和私钥对来实现加密和签名。公钥和私钥对是由用户生成的，公钥可以公开分享，而私钥则应该保密。</p>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://docs.github.com/zh/authentication/managing-commit-signature-verification/about-commit-signature-verification">在 github 中使用 commit signature verification</a></p>
-</li>
-</ul>
-<span id="more"></span>
-<h3 id="导入导出-gpg">导入导出 gpg</h3>
-<p>导出 GPG 密钥：生成密钥后，您需要将其导出以便在其他机器上使用。使用以下命令导出密钥</p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">gpg --export-secret-keys -a <span class="string">"您的邮箱地址"</span> &gt; 私钥文件名.asc</span><br></pre></td></tr></tbody></table></figure>
-<p>导入 GPG 密钥：在其他机器上，您需要导入之前导出的 GPG 密钥。将私钥文件传输到目标机器上，并使用以下命令导入密钥：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">gpg --import 私钥文件名.asc</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="在devcontainer中使用gpg">在 devcontainer 中使用 gpg</h3>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://code.visualstudio.com/remote/advancedcontainers/sharing-git-credentials#_sharing-gpg-keys">https://code.visualstudio.com/remote/advancedcontainers/sharing-git-credentials#_sharing-gpg-keys</a></p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>develop</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Welcome to Hexo</title>
     <url>/posts/51646408/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using <code>Hexo</code>, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -9384,6 +9384,88 @@ https://docs.gitlab.com/runner/install/kubernetes.html
       <tags>
         <tag>next</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>license</title>
+    <url>/posts/5768f419/</url>
+    <content><![CDATA[<h2 id="Resource">Resource</h2>
+<table>
+<thead>
+<tr>
+<th>资源</th>
+<th>组织</th>
+<th>类型 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://choosealicense.com/">choosealicense</a></td>
+<td>choosealicense</td>
+<td>license 说明 </td>
+</tr>
+<tr>
+<td><a href="https://opensource.guide/legal/#which-open-source-license-is-appropriate-for-my-project">opensource.guide</a></td>
+<td>opensource</td>
+<td>opensource guide</td>
+</tr>
+<tr>
+<td><a href="https://en.wikipedia.org/wiki/Free-software_license">Free Software License</a></td>
+<td>wikipedia</td>
+<td>wiki</td>
+</tr>
+<tr>
+<td><a href="https://spdx.org/licenses/">SPDX</a></td>
+<td>spdx</td>
+<td>SPDX License</td>
+</tr>
+</tbody>
+</table>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>develop</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>mamba 包管理器</title>
+    <url>/posts/96bd41f/</url>
+    <content><![CDATA[<h2 id="Mamba">Mamba</h2>
+<p><a href="https://mamba.readthedocs.io/en/latest/index.html">Mamba</a> 是一个快速、健壮、跨平台的包管理器。</p>
+<p>它在 Windows、OS X 和 Linux（包括 ARM64 和 PPC64LE）上运行，与 conda 软件包完全兼容，并支持大多数 conda 命令。</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># upgrade all packages</span></span><br><span class="line">mamba update --all -y</span><br></pre></td></tr></tbody></table></figure>
+<blockquote>
+<p>[!CAUTION]<br>
+mamba 自带的 conda 环境中的 python 在 windows 上编译需要附带设置 mamba 环境，否则运行会 <strong>crash</strong></p>
+<ul class="lvl-1">
+<li class="lvl-2"><code>PYTHONHOME=path-to-mambaforge-installation</code></li>
+<li class="lvl-2"><code>PYTHONPATH=path-to-mambaforge-installation</code></li>
+</ul>
+</blockquote>
+<span id="more"></span>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://github.com/conda-forge/miniforge">https://github.com/conda-forge/miniforge</a></p>
+</li>
+</ul>
+<h2 id="conda">conda</h2>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://anaconda.org/msclock/dashboard">https://anaconda.org/msclock/dashboard</a></p>
+</li>
+</ul>
+<h2 id="设置国内源">设置国内源</h2>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 添加清华源</span></span><br><span class="line">conda config --add channel https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge</span><br><span class="line">conda config --add channel https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line">conda config --add channel https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="conda环境">conda 环境</h2>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 指定python版本创建版本</span></span><br><span class="line">conda create --name &lt;env_name&gt; python=3.7</span><br><span class="line"><span class="comment"># 重命名环境</span></span><br><span class="line">conda rename -n &lt;old_env_name&gt; &lt;new_env_name&gt;</span><br><span class="line"><span class="comment"># 删除环境</span></span><br><span class="line">conda remove --name &lt;env_name&gt; --all</span><br><span class="line"><span class="comment"># 激活</span></span><br><span class="line">conda activate &lt;env_name&gt;</span><br><span class="line"><span class="comment"># 查看可用环境</span></span><br><span class="line">conda info --envs</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Auto-Integration">Auto Integration</h2>
+<p>自动激活 conda 环境</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 集成 powershell, -d == --dry-run</span></span><br><span class="line">conda init powershell [-d]</span><br><span class="line">conda init --all -d</span><br></pre></td></tr></tbody></table></figure>
+]]></content>
+      <categories>
+        <category>develop</category>
+      </categories>
   </entry>
   <entry>
     <title>k8s</title>
@@ -10647,88 +10729,6 @@ Traefik 和 Istio 是两个不同的工具，它们都可以用于在 Kubernetes
 </blockquote>
 <h2 id="opentelemetry">opentelemetry</h2>
 <p><a href="https://opentelemetry.io/">opentelemetry</a> 是一个 api、sdk 和工具的集合。使用它来检测、生成、收集和导出遥测数据 (度量、日志和跟踪)，以帮助分析软件的性能和行为。</p>
-]]></content>
-      <categories>
-        <category>develop</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>license</title>
-    <url>/posts/5768f419/</url>
-    <content><![CDATA[<h2 id="Resource">Resource</h2>
-<table>
-<thead>
-<tr>
-<th>资源</th>
-<th>组织</th>
-<th>类型 </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://choosealicense.com/">choosealicense</a></td>
-<td>choosealicense</td>
-<td>license 说明 </td>
-</tr>
-<tr>
-<td><a href="https://opensource.guide/legal/#which-open-source-license-is-appropriate-for-my-project">opensource.guide</a></td>
-<td>opensource</td>
-<td>opensource guide</td>
-</tr>
-<tr>
-<td><a href="https://en.wikipedia.org/wiki/Free-software_license">Free Software License</a></td>
-<td>wikipedia</td>
-<td>wiki</td>
-</tr>
-<tr>
-<td><a href="https://spdx.org/licenses/">SPDX</a></td>
-<td>spdx</td>
-<td>SPDX License</td>
-</tr>
-</tbody>
-</table>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>develop</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>mamba 包管理器</title>
-    <url>/posts/96bd41f/</url>
-    <content><![CDATA[<h2 id="Mamba">Mamba</h2>
-<p><a href="https://mamba.readthedocs.io/en/latest/index.html">Mamba</a> 是一个快速、健壮、跨平台的包管理器。</p>
-<p>它在 Windows、OS X 和 Linux（包括 ARM64 和 PPC64LE）上运行，与 conda 软件包完全兼容，并支持大多数 conda 命令。</p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># upgrade all packages</span></span><br><span class="line">mamba update --all -y</span><br></pre></td></tr></tbody></table></figure>
-<blockquote>
-<p>[!CAUTION]<br>
-mamba 自带的 conda 环境中的 python 在 windows 上编译需要附带设置 mamba 环境，否则运行会 <strong>crash</strong></p>
-<ul class="lvl-1">
-<li class="lvl-2"><code>PYTHONHOME=path-to-mambaforge-installation</code></li>
-<li class="lvl-2"><code>PYTHONPATH=path-to-mambaforge-installation</code></li>
-</ul>
-</blockquote>
-<span id="more"></span>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://github.com/conda-forge/miniforge">https://github.com/conda-forge/miniforge</a></p>
-</li>
-</ul>
-<h2 id="conda">conda</h2>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://anaconda.org/msclock/dashboard">https://anaconda.org/msclock/dashboard</a></p>
-</li>
-</ul>
-<h2 id="设置国内源">设置国内源</h2>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 添加清华源</span></span><br><span class="line">conda config --add channel https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge</span><br><span class="line">conda config --add channel https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line">conda config --add channel https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="conda环境">conda 环境</h2>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 指定python版本创建版本</span></span><br><span class="line">conda create --name &lt;env_name&gt; python=3.7</span><br><span class="line"><span class="comment"># 重命名环境</span></span><br><span class="line">conda rename -n &lt;old_env_name&gt; &lt;new_env_name&gt;</span><br><span class="line"><span class="comment"># 删除环境</span></span><br><span class="line">conda remove --name &lt;env_name&gt; --all</span><br><span class="line"><span class="comment"># 激活</span></span><br><span class="line">conda activate &lt;env_name&gt;</span><br><span class="line"><span class="comment"># 查看可用环境</span></span><br><span class="line">conda info --envs</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Auto-Integration">Auto Integration</h2>
-<p>自动激活 conda 环境</p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 集成 powershell, -d == --dry-run</span></span><br><span class="line">conda init powershell [-d]</span><br><span class="line">conda init --all -d</span><br></pre></td></tr></tbody></table></figure>
 ]]></content>
       <categories>
         <category>develop</category>
@@ -13979,32 +13979,6 @@ Step 6, 思考，反省</p>
       </categories>
   </entry>
   <entry>
-    <title>态度</title>
-    <url>/posts/459958868/</url>
-    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="3b3e34211883b2d22c80d2eaa8f2a8a082911051ec04491ebafdc88a7debd164">1f193f8f0f58fcc41d0a678093d3b4c5eeecdd1b7b5dbd55dc10a13897196ba76fc797bc2bb63abe1dc7ac3453b89dbe55d35309d50e909bd49a35edfab97c97539e5de4a9e6d93cb8920386c27cc9bd8eb40063b4f673ffea7ec0f3ccff6109067b57538c80970fe6fdc85dc3707a2c32582987131310805376a62f3ea695bd87d2e13b6b7c31cc091362320d9030ed98ff55cccf07be975eb6f94f77be89264f4627a3e606e93752d67a7015e874060220452fda27c528d74c0c9a18d9251d33531448bc45936c2b1a37dcff56a05d3d3edd2f09868b8b5daf7303ab3a244ecd06988255200a89cc8f151ee825e2b4bf3951c56f06ffbdec42fb32857f9b3ff1c7691e25581b8be3cbf9b0f746168c9053d5d725f990cf3a457f17fa9481c83805491ba0e25838b3e2dafd3b53fa151d16d923d336ec7e5d6f5801b3aa7af611561e9e28d481575ccdedd3b1288f315a27bcc281ac31290728123630d4053ff90b1d9a90da3e1671e9da06e4c3b795c952b04cebbeccaa84679183de0543630354309a7d229fdabf5c9dd5ba5f8b56</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-xray">
-      <input class="hbe hbe-input-field hbe-input-field-xray" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-xray" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-xray">您好, 这里需要密码.</span>
-      </label>
-      <svg class="hbe hbe-graphic hbe-graphic-xray" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"></path>
-        <path d="M0,2.5c0,0,298.666,0,399.333,0C448.336,2.5,513.994,13,597,13c77.327,0,135-10.5,200.999-10.5c95.996,0,402.001,0,402.001,0"></path>
-      </svg>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
-      <categories>
-        <category>secret</category>
-      </categories>
-      <tags>
-        <tag>secret</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>记忆和想象方法</title>
     <url>/posts/796530809/</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
@@ -14029,6 +14003,32 @@ Step 6, 思考，反省</p>
       <tags>
         <tag>secret</tag>
         <tag>记忆</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>态度</title>
+    <url>/posts/459958868/</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="3b3e34211883b2d22c80d2eaa8f2a8a082911051ec04491ebafdc88a7debd164">1f193f8f0f58fcc41d0a678093d3b4c5eeecdd1b7b5dbd55dc10a13897196ba76fc797bc2bb63abe1dc7ac3453b89dbe55d35309d50e909bd49a35edfab97c97539e5de4a9e6d93cb8920386c27cc9bd8eb40063b4f673ffea7ec0f3ccff6109067b57538c80970fe6fdc85dc3707a2c32582987131310805376a62f3ea695bd87d2e13b6b7c31cc091362320d9030ed98ff55cccf07be975eb6f94f77be89264f4627a3e606e93752d67a7015e874060220452fda27c528d74c0c9a18d9251d33531448bc45936c2b1a37dcff56a05d3d3edd2f09868b8b5daf7303ab3a244ecd06988255200a89cc8f151ee825e2b4bf3951c56f06ffbdec42fb32857f9b3ff1c7691e25581b8be3cbf9b0f746168c9053d5d725f990cf3a457f17fa9481c83805491ba0e25838b3e2dafd3b53fa151d16d923d336ec7e5d6f5801b3aa7af611561e9e28d481575ccdedd3b1288f315a27bcc281ac31290728123630d4053ff90b1d9a90da3e1671e9da06e4c3b795c952b04cebbeccaa84679183de0543630354309a7d229fdabf5c9dd5ba5f8b56</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-xray">
+      <input class="hbe hbe-input-field hbe-input-field-xray" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-xray" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-xray">您好, 这里需要密码.</span>
+      </label>
+      <svg class="hbe hbe-graphic hbe-graphic-xray" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"></path>
+        <path d="M0,2.5c0,0,298.666,0,399.333,0C448.336,2.5,513.994,13,597,13c77.327,0,135-10.5,200.999-10.5c95.996,0,402.001,0,402.001,0"></path>
+      </svg>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      <categories>
+        <category>secret</category>
+      </categories>
+      <tags>
+        <tag>secret</tag>
       </tags>
   </entry>
 </search>
