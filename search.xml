@@ -2501,6 +2501,71 @@ MVP (Minimum viable Product) 以最小的代价提供一个可测试交付的版
       </categories>
   </entry>
   <entry>
+    <title>choco 包管理器</title>
+    <url>/posts/78ce69fa/</url>
+    <content><![CDATA[<p>本文总结了 windows 包管理工具常用命令</p>
+<h2 id="install">install</h2>
+<p>通过 powershell 安装</p>
+<figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Set your PowerShell execution policy</span></span><br><span class="line"><span class="built_in">Set-ExecutionPolicy</span> <span class="literal">-ExecutionPolicy</span> RemoteSigned <span class="literal">-Force</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Install Chocolatey</span></span><br><span class="line"><span class="built_in">iwr</span> https://chocolatey.org/install.ps1 <span class="literal">-UseBasicParsing</span> | <span class="built_in">iex</span></span><br><span class="line"></span><br><span class="line">choco <span class="literal">-v</span></span><br><span class="line"></span><br><span class="line">choco upgrade chocolatey</span><br></pre></td></tr></tbody></table></figure>
+<span id="more"></span>
+<h2 id="常用命令">常用命令</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>choco list -li 查看本地安装的软件</p>
+</li>
+<li class="lvl-2">
+<p>choco search nodejs 查找安装包</p>
+</li>
+<li class="lvl-2">
+<p>choco install sed 下载</p>
+</li>
+<li class="lvl-2">
+<p>choco uninstall sed 卸载</p>
+</li>
+<li class="lvl-2">
+<p>choco upgrade sed 更新（update）</p>
+</li>
+</ul>
+<h2 id="常用开发工具">常用开发工具</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>docker-desktop/kubernetes-helm/kind</p>
+</li>
+<li class="lvl-2">
+<p>dapr</p>
+</li>
+<li class="lvl-2">
+<p>fzf/tree/sed/grep/rsync</p>
+</li>
+<li class="lvl-2">
+<p>git</p>
+</li>
+<li class="lvl-2">
+<p>JetBrainsNF</p>
+</li>
+<li class="lvl-2">
+<p>neovim</p>
+</li>
+<li class="lvl-2">
+<p>nvm</p>
+</li>
+<li class="lvl-2">
+<p>kubectl</p>
+</li>
+</ul>
+<figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 指定版本安装</span></span><br><span class="line">choco install kubectl <span class="literal">--version</span>=<span class="number">1.22</span>.<span class="number">1</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="reference">reference</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://docs.chocolatey.org/en-us/choco/commands/">https://docs.chocolatey.org/en-us/choco/commands/</a></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>develop</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Badge</title>
     <url>/posts/3f316719/</url>
     <content><![CDATA[<h2 id="Badge">Badge</h2>
@@ -2567,71 +2632,6 @@ MVP (Minimum viable Product) 以最小的代价提供一个可测试交付的版
 </li>
 <li class="lvl-2">
 <p>github release: <code>https://img.shields.io/github/v/release/:user/:repo</code></p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>develop</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>choco 包管理器</title>
-    <url>/posts/78ce69fa/</url>
-    <content><![CDATA[<p>本文总结了 windows 包管理工具常用命令</p>
-<h2 id="install">install</h2>
-<p>通过 powershell 安装</p>
-<figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Set your PowerShell execution policy</span></span><br><span class="line"><span class="built_in">Set-ExecutionPolicy</span> <span class="literal">-ExecutionPolicy</span> RemoteSigned <span class="literal">-Force</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Install Chocolatey</span></span><br><span class="line"><span class="built_in">iwr</span> https://chocolatey.org/install.ps1 <span class="literal">-UseBasicParsing</span> | <span class="built_in">iex</span></span><br><span class="line"></span><br><span class="line">choco <span class="literal">-v</span></span><br><span class="line"></span><br><span class="line">choco upgrade chocolatey</span><br></pre></td></tr></tbody></table></figure>
-<span id="more"></span>
-<h2 id="常用命令">常用命令</h2>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>choco list -li 查看本地安装的软件</p>
-</li>
-<li class="lvl-2">
-<p>choco search nodejs 查找安装包</p>
-</li>
-<li class="lvl-2">
-<p>choco install sed 下载</p>
-</li>
-<li class="lvl-2">
-<p>choco uninstall sed 卸载</p>
-</li>
-<li class="lvl-2">
-<p>choco upgrade sed 更新（update）</p>
-</li>
-</ul>
-<h2 id="常用开发工具">常用开发工具</h2>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>docker-desktop/kubernetes-helm/kind</p>
-</li>
-<li class="lvl-2">
-<p>dapr</p>
-</li>
-<li class="lvl-2">
-<p>fzf/tree/sed/grep/rsync</p>
-</li>
-<li class="lvl-2">
-<p>git</p>
-</li>
-<li class="lvl-2">
-<p>JetBrainsNF</p>
-</li>
-<li class="lvl-2">
-<p>neovim</p>
-</li>
-<li class="lvl-2">
-<p>nvm</p>
-</li>
-<li class="lvl-2">
-<p>kubectl</p>
-</li>
-</ul>
-<figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 指定版本安装</span></span><br><span class="line">choco install kubectl <span class="literal">--version</span>=<span class="number">1.22</span>.<span class="number">1</span></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="reference">reference</h2>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://docs.chocolatey.org/en-us/choco/commands/">https://docs.chocolatey.org/en-us/choco/commands/</a></p>
 </li>
 </ul>
 ]]></content>
@@ -2815,51 +2815,6 @@ MVP (Minimum viable Product) 以最小的代价提供一个可测试交付的版
       <tags>
         <tag>分布式</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>DB 数据库实践</title>
-    <url>/posts/d5fbb003/</url>
-    <content><![CDATA[<p>本文总结了数据库基本原理及其实现。</p>
-<h2 id="数据库如何工作？">数据库如何工作？</h2>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>数据保存的格式是什么？（在内存和磁盘上）</p>
-</li>
-<li class="lvl-2">
-<p>它什么时候从内存移动到磁盘？</p>
-</li>
-<li class="lvl-2">
-<p>为什么每个表只能有一个主键？</p>
-</li>
-<li class="lvl-2">
-<p>回滚事务如何工作？</p>
-</li>
-<li class="lvl-2">
-<p>索引是如何格式化的？</p>
-</li>
-<li class="lvl-2">
-<p>何时以及如何进行全表扫描？</p>
-</li>
-<li class="lvl-2">
-<p>准备好的语句以什么格式保存？</p>
-</li>
-</ul>
-<p>简而言之，数据库是如何工作的？</p>
-<p>为了理解，用 C 从头开始构建一个 sqlite 的克隆。</p>
-<span id="more"></span>
-<h3 id="reference">reference</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://github.com/cstack/db_tutorial">https://github.com/cstack/db_tutorial</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://cstack.github.io/db_tutorial/">https://cstack.github.io/db_tutorial/</a></p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>develop</category>
-      </categories>
   </entry>
   <entry>
     <title>cpp 实践</title>
@@ -6207,6 +6162,51 @@ https://zhuanlan.zhihu.com/p/357075167?utm_id=0
         <tag>doxygen</tag>
         <tag>coverage</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>DB 数据库实践</title>
+    <url>/posts/d5fbb003/</url>
+    <content><![CDATA[<p>本文总结了数据库基本原理及其实现。</p>
+<h2 id="数据库如何工作？">数据库如何工作？</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>数据保存的格式是什么？（在内存和磁盘上）</p>
+</li>
+<li class="lvl-2">
+<p>它什么时候从内存移动到磁盘？</p>
+</li>
+<li class="lvl-2">
+<p>为什么每个表只能有一个主键？</p>
+</li>
+<li class="lvl-2">
+<p>回滚事务如何工作？</p>
+</li>
+<li class="lvl-2">
+<p>索引是如何格式化的？</p>
+</li>
+<li class="lvl-2">
+<p>何时以及如何进行全表扫描？</p>
+</li>
+<li class="lvl-2">
+<p>准备好的语句以什么格式保存？</p>
+</li>
+</ul>
+<p>简而言之，数据库是如何工作的？</p>
+<p>为了理解，用 C 从头开始构建一个 sqlite 的克隆。</p>
+<span id="more"></span>
+<h3 id="reference">reference</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://github.com/cstack/db_tutorial">https://github.com/cstack/db_tutorial</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://cstack.github.io/db_tutorial/">https://cstack.github.io/db_tutorial/</a></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>develop</category>
+      </categories>
   </entry>
   <entry>
     <title>dependency</title>
