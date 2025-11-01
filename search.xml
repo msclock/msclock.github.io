@@ -1,6 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Vim 实践</title>
+    <url>/posts/a1fb79d2/</url>
+    <content><![CDATA[<h2 id="Vim">Vim</h2>
+<h3 id="查找">查找</h3>
+<p>要在 Vim 中查找文本，可以使用以下命令：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>/pattern - 向前查找包含 “pattern” 的文本</p>
+</li>
+<li class="lvl-2">
+<p>?pattern - 向后查找包含 “pattern” 的文本</p>
+</li>
+<li class="lvl-2">
+<p>n - 跳转到下一个匹配项</p>
+</li>
+<li class="lvl-2">
+<p>N - 跳转到上一个匹配项</p>
+</li>
+</ul>
+<h3 id="跳转">跳转</h3>
+<p>要在 Vim 中跳转到特定的行，可以使用以下命令：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><code>:n</code> - 跳转到第 n 行</p>
+</li>
+<li class="lvl-2">
+<p><code>:0</code> - 跳转到文件的开头</p>
+</li>
+<li class="lvl-2">
+<p><code>:$</code> - 跳转到文件的结尾</p>
+</li>
+</ul>
+<span id="more"></span>
+<p>要在 Vim 中跳转到另一个文件，可以使用以下命令：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>:e path/to/file - 打开另一个文件</p>
+</li>
+<li class="lvl-2">
+<p>:bnext - 跳转到下一个缓冲区</p>
+</li>
+<li class="lvl-2">
+<p>:bprev - 跳转到上一个缓冲区</p>
+</li>
+<li class="lvl-2">
+<p>:ls - 列出所有缓冲区</p>
+</li>
+<li class="lvl-2">
+<p>:bdelete - 删除当前缓冲区</p>
+</li>
+</ul>
+<h3 id="多选">多选</h3>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># enter visual mode</span></span><br><span class="line">ctrl+v</span><br><span class="line"><span class="comment"># move cursor</span></span><br><span class="line">hgjk</span><br><span class="line"><span class="comment"># copy with yank</span></span><br><span class="line">y</span><br><span class="line"><span class="comment"># paste</span></span><br><span class="line">p</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="替换">替换</h3>
+<p>要替换文本，可以使用以下命令：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><code>:%s/old/new/g</code>: 替换所有出现的 “old” 文本为 “new” 文本</p>
+</li>
+<li class="lvl-2">
+<p><code>:s/old/new/g</code>: 替换当前行中出现的 “old” 文本为 “new” 文本</p>
+</li>
+<li class="lvl-2">
+<p><code>:s/old/new/gc</code>: 替换当前行中出现的 “old” 文本为 “new” 文本，并提示是否要进行替换</p>
+</li>
+</ul>
+<h2 id="AstroNVim"><a href="https://astronvim.com/">AstroNVim</a></h2>
+]]></content>
+      <categories>
+        <category>develop</category>
+      </categories>
+      <tags>
+        <tag>vim</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>AI 实践</title>
     <url>/posts/c21efe28/</url>
     <content><![CDATA[<!--
@@ -1768,82 +1844,6 @@ IVF（Inverted File）是一种用于加速近似最近邻搜索的索引结构�
       </tags>
   </entry>
   <entry>
-    <title>Vim 实践</title>
-    <url>/posts/a1fb79d2/</url>
-    <content><![CDATA[<h2 id="Vim">Vim</h2>
-<h3 id="查找">查找</h3>
-<p>要在 Vim 中查找文本，可以使用以下命令：</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>/pattern - 向前查找包含 “pattern” 的文本</p>
-</li>
-<li class="lvl-2">
-<p>?pattern - 向后查找包含 “pattern” 的文本</p>
-</li>
-<li class="lvl-2">
-<p>n - 跳转到下一个匹配项</p>
-</li>
-<li class="lvl-2">
-<p>N - 跳转到上一个匹配项</p>
-</li>
-</ul>
-<h3 id="跳转">跳转</h3>
-<p>要在 Vim 中跳转到特定的行，可以使用以下命令：</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><code>:n</code> - 跳转到第 n 行</p>
-</li>
-<li class="lvl-2">
-<p><code>:0</code> - 跳转到文件的开头</p>
-</li>
-<li class="lvl-2">
-<p><code>:$</code> - 跳转到文件的结尾</p>
-</li>
-</ul>
-<span id="more"></span>
-<p>要在 Vim 中跳转到另一个文件，可以使用以下命令：</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>:e path/to/file - 打开另一个文件</p>
-</li>
-<li class="lvl-2">
-<p>:bnext - 跳转到下一个缓冲区</p>
-</li>
-<li class="lvl-2">
-<p>:bprev - 跳转到上一个缓冲区</p>
-</li>
-<li class="lvl-2">
-<p>:ls - 列出所有缓冲区</p>
-</li>
-<li class="lvl-2">
-<p>:bdelete - 删除当前缓冲区</p>
-</li>
-</ul>
-<h3 id="多选">多选</h3>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># enter visual mode</span></span><br><span class="line">ctrl+v</span><br><span class="line"><span class="comment"># move cursor</span></span><br><span class="line">hgjk</span><br><span class="line"><span class="comment"># copy with yank</span></span><br><span class="line">y</span><br><span class="line"><span class="comment"># paste</span></span><br><span class="line">p</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="替换">替换</h3>
-<p>要替换文本，可以使用以下命令：</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><code>:%s/old/new/g</code>: 替换所有出现的 “old” 文本为 “new” 文本</p>
-</li>
-<li class="lvl-2">
-<p><code>:s/old/new/g</code>: 替换当前行中出现的 “old” 文本为 “new” 文本</p>
-</li>
-<li class="lvl-2">
-<p><code>:s/old/new/gc</code>: 替换当前行中出现的 “old” 文本为 “new” 文本，并提示是否要进行替换</p>
-</li>
-</ul>
-<h2 id="AstroNVim"><a href="https://astronvim.com/">AstroNVim</a></h2>
-]]></content>
-      <categories>
-        <category>develop</category>
-      </categories>
-      <tags>
-        <tag>vim</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>airflow 框架使用经验</title>
     <url>/posts/986b0e9c/</url>
     <content><![CDATA[<p>主要总结 airflow 框架使用经验。</p>
@@ -2066,6 +2066,80 @@ helm: 多集群服务脚本部署工具</p>
 <ul class="lvl-0">
 <li class="lvl-2">
 <p><a href="https://apifox.com/">https://apifox.com/</a></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>develop</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Badge</title>
+    <url>/posts/3f316719/</url>
+    <content><![CDATA[<h2 id="Badge">Badge</h2>
+<p>代码仓库中的 Badge（徽章）是一种用于展示项目状态或元数据的小型图标。它们通常以图像或文本的形式显示在项目的 README 文件、文档页面或社区平台上。</p>
+<p>以下是一些常见的 Badge 类型及其作用：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>构建状态：徽章可以显示项目的构建状态，例如是否通过了持续集成（CI）流程，或者最新的构建结果。这样的徽章可以让用户快速了解项目的构建情况，并确定代码的稳定性。</p>
+</li>
+<li class="lvl-2">
+<p>测试覆盖率：徽章可以显示项目的测试覆盖率。这可以帮助开发人员评估项目的测试质量和代码覆盖范围，并鼓励团队保持良好的测试习惯。</p>
+</li>
+<li class="lvl-2">
+<p>版本号：徽章可以显示项目的当前版本号。这对于用户和开发人员来说是一个有用的参考，可以让他们知道他们使用的是哪个版本，或者是否需要升级到最新版本。</p>
+</li>
+<li class="lvl-2">
+<p>文档状态：徽章可以显示项目文档的状态，例如是否更新、是否有详细的文档覆盖等。这对于用户来说是一个重要的指标，可以帮助他们评估项目的可用性和易用性。</p>
+</li>
+<li class="lvl-2">
+<p>许可证信息：徽章可以显示项目所使用的开源许可证类型和版本信息。这对于其他开发人员来说是一个重要的元数据，可以帮助他们了解项目的许可证限制和使用条件。</p>
+</li>
+</ul>
+<p>徽章通常以 Markdown 或 HTML 代码的形式嵌入到项目文档中，并链接到相关的状态或元数据页面。它们可以提供有用的信息和指导，使用户和开发人员更好地了解和使用项目。同时，徽章也为项目增添了一些可视化的元素，使其更具吸引力和专业性。</p>
+<span id="more"></span>
+<h2 id="Resource">Resource</h2>
+<table>
+<thead>
+<tr>
+<th>资源</th>
+<th>组织</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://badge.fury.io/">version badge</a></td>
+<td><a href="http://fury.io">fury.io</a></td>
+<td>badge 工具</td>
+</tr>
+<tr>
+<td><a href="https://shields.io/">shields badge</a></td>
+<td>shields</td>
+<td>badge 工具</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Shields-Badge">Shields Badge</h2>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://shields.io/badges">https://shields.io/badges</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://medium.com/@therafamartins/make-your-customized-badges-in-a-few-minutes-18e75475e271">https://medium.com/@therafamartins/make-your-customized-badges-in-a-few-minutes-18e75475e271</a></p>
+</li>
+</ul>
+<h3 id="分类">分类</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>pypi: <code>https://img.shields.io/pypi/v/:packageName</code></p>
+</li>
+<li class="lvl-2">
+<p>github license: <code>https://img.shields.io/github/license/:user/:repo</code></p>
+</li>
+<li class="lvl-2">
+<p>github release: <code>https://img.shields.io/github/v/release/:user/:repo</code></p>
 </li>
 </ul>
 ]]></content>
@@ -2564,257 +2638,6 @@ MVP (Minimum viable Product) 以最小的代价提供一个可测试交付的版
       <categories>
         <category>develop</category>
       </categories>
-  </entry>
-  <entry>
-    <title>Badge</title>
-    <url>/posts/3f316719/</url>
-    <content><![CDATA[<h2 id="Badge">Badge</h2>
-<p>代码仓库中的 Badge（徽章）是一种用于展示项目状态或元数据的小型图标。它们通常以图像或文本的形式显示在项目的 README 文件、文档页面或社区平台上。</p>
-<p>以下是一些常见的 Badge 类型及其作用：</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>构建状态：徽章可以显示项目的构建状态，例如是否通过了持续集成（CI）流程，或者最新的构建结果。这样的徽章可以让用户快速了解项目的构建情况，并确定代码的稳定性。</p>
-</li>
-<li class="lvl-2">
-<p>测试覆盖率：徽章可以显示项目的测试覆盖率。这可以帮助开发人员评估项目的测试质量和代码覆盖范围，并鼓励团队保持良好的测试习惯。</p>
-</li>
-<li class="lvl-2">
-<p>版本号：徽章可以显示项目的当前版本号。这对于用户和开发人员来说是一个有用的参考，可以让他们知道他们使用的是哪个版本，或者是否需要升级到最新版本。</p>
-</li>
-<li class="lvl-2">
-<p>文档状态：徽章可以显示项目文档的状态，例如是否更新、是否有详细的文档覆盖等。这对于用户来说是一个重要的指标，可以帮助他们评估项目的可用性和易用性。</p>
-</li>
-<li class="lvl-2">
-<p>许可证信息：徽章可以显示项目所使用的开源许可证类型和版本信息。这对于其他开发人员来说是一个重要的元数据，可以帮助他们了解项目的许可证限制和使用条件。</p>
-</li>
-</ul>
-<p>徽章通常以 Markdown 或 HTML 代码的形式嵌入到项目文档中，并链接到相关的状态或元数据页面。它们可以提供有用的信息和指导，使用户和开发人员更好地了解和使用项目。同时，徽章也为项目增添了一些可视化的元素，使其更具吸引力和专业性。</p>
-<span id="more"></span>
-<h2 id="Resource">Resource</h2>
-<table>
-<thead>
-<tr>
-<th>资源</th>
-<th>组织</th>
-<th>类型</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://badge.fury.io/">version badge</a></td>
-<td><a href="http://fury.io">fury.io</a></td>
-<td>badge 工具</td>
-</tr>
-<tr>
-<td><a href="https://shields.io/">shields badge</a></td>
-<td>shields</td>
-<td>badge 工具</td>
-</tr>
-</tbody>
-</table>
-<h2 id="Shields-Badge">Shields Badge</h2>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://shields.io/badges">https://shields.io/badges</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://medium.com/@therafamartins/make-your-customized-badges-in-a-few-minutes-18e75475e271">https://medium.com/@therafamartins/make-your-customized-badges-in-a-few-minutes-18e75475e271</a></p>
-</li>
-</ul>
-<h3 id="分类">分类</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>pypi: <code>https://img.shields.io/pypi/v/:packageName</code></p>
-</li>
-<li class="lvl-2">
-<p>github license: <code>https://img.shields.io/github/license/:user/:repo</code></p>
-</li>
-<li class="lvl-2">
-<p>github release: <code>https://img.shields.io/github/v/release/:user/:repo</code></p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>develop</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>copier</title>
-    <url>/posts/ae78e30a/</url>
-    <content><![CDATA[<h2 id="Resource">Resource</h2>
-<table>
-<thead>
-<tr>
-<th>资源</th>
-<th>组织</th>
-<th>类型</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://github.com/copier-org/copier/">copier</a></td>
-<td>copier-org</td>
-<td>模板生成器</td>
-</tr>
-</tbody>
-</table>
-<h2 id="copier">copier</h2>
-<p>copier 是一个模板生成器，可以生成任意类型的模板.</p>
-<span id="more"></span>
-<h3 id="使用">使用</h3>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">pipx install copier</span><br><span class="line"></span><br><span class="line">copier copy &lt;template&gt; &lt;output&gt;</span><br><span class="line">copier update</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="jinja">jinja</h3>
-<h4 id="和"><code>-%]</code>和 <code>%]</code></h4>
-<p><code>%]</code>和<code>[%</code>确保保留这些前后额外的空白字符  ,<code>-%]</code>和<code>[%-</code>确保在渲染结果中不会出现额外的空白字符。</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>[%- endif %] 表示在 endif 标记之前删除任何尾随的空格和换行符。</p>
-</li>
-<li class="lvl-2">
-<p>[% endif -%] 表示在 endif 标记之后删除任何尾随的空格和换行符。</p>
-</li>
-<li class="lvl-2">
-<p>[% endif %] 不会删除尾随的空格和换行符。</p>
-</li>
-</ul>
-<h4 id="include">include</h4>
-<p>在 jinja 中使用 include 拆分成多个模板, 方便复用替换</p>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://github.com/serious-scaffold/serious-scaffold-python/pull/187">https://github.com/serious-scaffold/serious-scaffold-python/pull/187</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://copier.readthedocs.io/en/stable/configuring/#importing-jinja-templates-and-macros">https://copier.readthedocs.io/en/stable/configuring/#importing-jinja-templates-and-macros</a></p>
-</li>
-</ul>
-<h2 id="收集的模板">收集的模板</h2>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://github.com/serious-scaffold/serious-scaffold-python">https://github.com/serious-scaffold/serious-scaffold-python</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://github.com/lincc-frameworks/python-project-template">https://github.com/lincc-frameworks/python-project-template</a></p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>develop</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>dapr</title>
-    <url>/posts/4d2177b9/</url>
-    <content><![CDATA[<h2 id="Dapr">Dapr</h2>
-<blockquote>
-<p>Deploying Linux server application code was difficult because languages used for writing servers have a lot of dependencies, so Docker was created to simplify things. But getting Docker containers to run reliably across multiple servers was pretty difficult, so Kubernetes was created to simplify things. Deploying multiple services on Kubernetes was kinda complicated though, but now that Dapr has been created to simplify things, deploying our code is easy as pie.</p>
-</blockquote>
-<p><a href="https://docs.dapr.io/">dapr</a> 是一个分布式应用开发框架由微软开源。</p>
-<span id="more"></span>
-<h2 id="Getting-Started">Getting Started</h2>
-<p>vscode 配置 devcontainer 开发环境</p>
-<figure class="highlight jsonc"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">"features"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"ghcr.io/devcontainers/features/desktop-lite:1"</span><span class="punctuation">:</span> <span class="punctuation">{</span><span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"ghcr.io/devcontainers/features/kubectl-helm-minikube:1"</span><span class="punctuation">:</span> <span class="punctuation">{</span><span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"ghcr.io/devcontainers/features/python:1"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">        <span class="attr">"installTools"</span><span class="punctuation">:</span><span class="literal"><span class="keyword">false</span></span></span><br><span class="line">    <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"ghcr.io/devcontainers/features/docker-in-docker:2"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">        <span class="attr">"dockerDashComposeVersion"</span><span class="punctuation">:</span> <span class="string">"v2"</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">"moby"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span></span><br><span class="line">    <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"ghcr.io/dapr/cli/dapr-cli:0"</span><span class="punctuation">:</span> <span class="punctuation">{</span><span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
-<p>配置 desktop-lite 浏览器</p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">apt-get update &amp;&amp; <span class="built_in">export</span> DEBIAN_FRONTEND=noninteractive &amp;&amp; apt-get install -y firefox-esr</span><br></pre></td></tr></tbody></table></figure>
-<p>可将安装移动到 dockerfile 中，dockerfile 配置 dapr cli 运行 path。</p>
-<figure class="highlight dockerfile"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 需要添加预设路径，该路径可通过环境变量配置</span></span><br><span class="line"><span class="keyword">ENV</span> PATH=$PATH:/home/node/.dapr/bin</span><br></pre></td></tr></tbody></table></figure>
-<p>初始化 dapr，安装 <a href="https://docs.dapr.io/getting-started/install-dapr-cli/">dapr cli</a> 命令行工具。</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>使用 dev container 只需要在 features 中注册 <code>"ghcr.io/dapr/cli/dapr-cli:0": {}</code></p>
-</li>
-<li class="lvl-2">
-<p>使用命令行安装，使用 dapr 官方脚本 `wget -q <a href="https://raw.githubusercontent.com/dapr/cli/master/install/install.sh">https://raw.githubusercontent.com/dapr/cli/master/install/install.sh</a> -O - | /bin/bash</p>
-</li>
-</ul>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">dapr -h</span><br><span class="line">dapr --version</span><br><span class="line">dapr init</span><br><span class="line"><span class="built_in">ls</span> <span class="variable">$HOME</span>/.dapr</span><br></pre></td></tr></tbody></table></figure>
-<p>测试 API</p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 使用 app id (my-app) 启动一个 dapr app，并指定 app端口为 3500</span></span><br><span class="line">dapr run --app-id my-app --app-port 3500</span><br><span class="line"></span><br><span class="line"><span class="comment"># 存入状态， url 为 http://localhost:3500/v1.0/state/statestore</span></span><br><span class="line">curl -X POST -H <span class="string">"Content-Type: application/json"</span> -d <span class="string">'[{ "key": "name", "value": "Bruce Wayne"}]'</span> http://localhost:3500/v1.0/state/statestore</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取状态，url为 http://localhost:3500/v1.0/state/statestore/name</span></span><br><span class="line">curl http://localhost:3500/v1.0/state/statestore/name</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看redis 存储内容</span></span><br><span class="line">docker <span class="built_in">exec</span> -it dapr_redis redis_cli</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看 redis kyes 存储内容</span></span><br><span class="line">docker <span class="built_in">exec</span> -it dapr_redis redis-cli</span><br><span class="line">127.0.0.1:6379&gt; keys *</span><br><span class="line">1) <span class="string">"myapp||name"</span></span><br><span class="line">127.0.0.1:6379&gt; HGETALL <span class="string">"myapp||name"</span></span><br><span class="line">1) <span class="string">"data"</span></span><br><span class="line">2) <span class="string">"\"Bruce Wayne\""</span></span><br><span class="line">3) <span class="string">"version"</span></span><br><span class="line">4) <span class="string">"1"</span></span><br><span class="line">127.0.0.1:6379&gt; <span class="built_in">exit</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除状态</span></span><br><span class="line">curl -v -X DELETE -H <span class="string">"Content-Type: application/json"</span> http://localhost:3500/v1.0/state/statestore/name</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Quickstarts-Demos">Quickstarts Demos</h2>
-<p><a href="https://docs.dapr.io/getting-started/quickstarts/">Quickstarts</a> 主要列出了官方的示例，及应用，开始之前需要<a href="https://docs.dapr.io/getting-started/install-dapr-cli/">设置好 dapr 环境</a>。</p>
-<h2 id="Service-Invocation">Service Invocation</h2>
-<p><a href="https://docs.dapr.io/developing-applications/building-blocks/service-invocation/">Service Invocation</a> 实现使用 HTTP 或 gRPC 在两个服务之间进行同步通信。主要专注于解决：</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>服务发现。如何发现不同的服务。</p>
-</li>
-<li class="lvl-2">
-<p>标准化服务间调用 API 协议。如何确定服务间调用协议。</p>
-</li>
-<li class="lvl-2">
-<p>服务间通信安全。如何在服务间安全设置加密及访问控制。</p>
-</li>
-<li class="lvl-2">
-<p>减缓请求超时和失败处理。如何处理重试及临时错误。</p>
-</li>
-<li class="lvl-2">
-<p>实现可观测性和跟踪。如何跟踪及统计服务间通信。</p>
-</li>
-</ul>
-<p>通常使用两种协议 <a href="https://docs.dapr.io/developing-applications/building-blocks/service-invocation/howto-invoke-discover-services/">HTTP</a> 和 <a href="https://docs.dapr.io/developing-applications/building-blocks/service-invocation/howto-invoke-services-grpc/">gRPC</a> 作为通信方式。</p>
-<p>调用实现，可以有三种：</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>HTTP and gRPC：不改动原有代码，使用 dapr run 指定运行对应通信协议的服务。</p>
-<ul class="lvl-2">
-<li class="lvl-4">HTTP: <a href="https://docs.dapr.io/developing-applications/building-blocks/service-invocation/howto-invoke-discover-services/">HTTP Configuration</a></li>
-<li class="lvl-4">gRPC: <a href="https://docs.dapr.io/operations/configuration/grpc/">Configure</a> and <a href="https://docs.dapr.io/developing-applications/building-blocks/service-invocation/howto-invoke-services-grpc/">Invocation</a>。</li>
-</ul>
-</li>
-<li class="lvl-2">
-<p>Call to the dapr sidecar url API: 通过直接调用 <code>localhost:&lt;dapr-http-port&gt;/API</code>调用。</p>
-</li>
-<li class="lvl-2">
-<p>SDK: 官方提供了对应的 <a href="https://docs.dapr.io/developing-applications/sdks/">SDK</a> 方便服务集成。为了快速测试，dapr 提供了 <a href="https://docs.dapr.io/reference/cli/dapr-invoke/">cli</a> 工具方便测试。</p>
-</li>
-</ul>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Invoke a sample method on target app with POST Verb</span></span><br><span class="line">dapr invoke --app-id target --method sample --data <span class="string">'{"key":"value"}'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Invoke a sample method on target app with GET Verb</span></span><br><span class="line">dapr invoke --app-id target --method sample --verb GET</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="State-Management">State Management</h2>
-<p><a href="https://docs.dapr.io/developing-applications/building-blocks/state-management/">State Management</a> 即，数据持久化管理。</p>
-<h2 id="Hosting-options">Hosting options</h2>
-<h3 id="Kubernetes">Kubernetes</h3>
-<p>配置 dapr 到 <a href="https://docs.dapr.io/operations/hosting/kubernetes/">k8s</a>。</p>
-<h4 id="本地部署">本地部署</h4>
-<p>安装 minikube，并初始化 dapr，<a href="https://github.com/dapr/quickstarts/blob/master/tutorials/hello-kubernetes/README.md">官方示例</a>。</p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 开启本地 minikube 集群</span></span><br><span class="line">minikube start</span><br><span class="line"><span class="comment"># 初始化 dapr, dapr init --kubernetes --wait</span></span><br><span class="line">dapr init -k</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Zipkin">Zipkin</h2>
-<p>Dapr 支持使用 Zipkin 进行分布式跟踪，您可以通过以下步骤来实现：</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>安装 Zipkin</p>
-</li>
-</ul>
-<p>您可以通过以下命令安装 Zipkin：</p>
-<figure class="highlight yml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="string">docker</span> <span class="string">run</span> <span class="string">-d</span> <span class="string">-p</span> <span class="number">9411</span><span class="string">:9411</span> <span class="string">openzipkin/zipkin</span></span><br></pre></td></tr></tbody></table></figure>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>配置 Dapr</p>
-</li>
-</ul>
-<p>在 Dapr 应用程序中启用 Zipkin 跟踪，需要在 Dapr 配置文件中添加以下内容：</p>
-<figure class="highlight yml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">dapr.io/v1alpha1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Configuration</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">tracing</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">tracing:</span></span><br><span class="line">    <span class="attr">enabled:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">exporter:</span> <span class="string">zipkin</span></span><br><span class="line">    <span class="attr">zipkin:</span></span><br><span class="line">      <span class="attr">endpointAddress:</span> <span class="string">"http://localhost:9411/api/v2/spans"</span></span><br></pre></td></tr></tbody></table></figure>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>启动 Dapr 应用程序</p>
-</li>
-</ul>
-<p>在启动 Dapr 应用程序时，需要指定 Dapr 配置文件的位置。例如，如果您的 Dapr 配置文件名为 config.yaml，则可以使用以下命令启动 Dapr 应用程序：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">dapr run --app-id my-app --app-port 3500 --config config.yaml node app.js</span><br></pre></td></tr></tbody></table></figure>
-<ul class="lvl-0">
-<li class="lvl-3">
-<p>查看跟踪数据</p>
-</li>
-</ul>
-<p>在 Zipkin UI 中，您可以查看跟踪数据。您可以通过以下 URL 访问 Zipkin UI (<a href="http://localhost:9411/zipkin/">http://localhost:9411/zipkin/</a>)</p>
-]]></content>
-      <categories>
-        <category>develop</category>
-      </categories>
-      <tags>
-        <tag>分布式</tag>
-      </tags>
   </entry>
   <entry>
     <title>cpp 实践</title>
@@ -6164,6 +5987,118 @@ https://zhuanlan.zhihu.com/p/357075167?utm_id=0
       </tags>
   </entry>
   <entry>
+    <title>dapr</title>
+    <url>/posts/4d2177b9/</url>
+    <content><![CDATA[<h2 id="Dapr">Dapr</h2>
+<blockquote>
+<p>Deploying Linux server application code was difficult because languages used for writing servers have a lot of dependencies, so Docker was created to simplify things. But getting Docker containers to run reliably across multiple servers was pretty difficult, so Kubernetes was created to simplify things. Deploying multiple services on Kubernetes was kinda complicated though, but now that Dapr has been created to simplify things, deploying our code is easy as pie.</p>
+</blockquote>
+<p><a href="https://docs.dapr.io/">dapr</a> 是一个分布式应用开发框架由微软开源。</p>
+<span id="more"></span>
+<h2 id="Getting-Started">Getting Started</h2>
+<p>vscode 配置 devcontainer 开发环境</p>
+<figure class="highlight jsonc"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">"features"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"ghcr.io/devcontainers/features/desktop-lite:1"</span><span class="punctuation">:</span> <span class="punctuation">{</span><span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"ghcr.io/devcontainers/features/kubectl-helm-minikube:1"</span><span class="punctuation">:</span> <span class="punctuation">{</span><span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"ghcr.io/devcontainers/features/python:1"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">        <span class="attr">"installTools"</span><span class="punctuation">:</span><span class="literal"><span class="keyword">false</span></span></span><br><span class="line">    <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"ghcr.io/devcontainers/features/docker-in-docker:2"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">        <span class="attr">"dockerDashComposeVersion"</span><span class="punctuation">:</span> <span class="string">"v2"</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">"moby"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span></span><br><span class="line">    <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"ghcr.io/dapr/cli/dapr-cli:0"</span><span class="punctuation">:</span> <span class="punctuation">{</span><span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+<p>配置 desktop-lite 浏览器</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">apt-get update &amp;&amp; <span class="built_in">export</span> DEBIAN_FRONTEND=noninteractive &amp;&amp; apt-get install -y firefox-esr</span><br></pre></td></tr></tbody></table></figure>
+<p>可将安装移动到 dockerfile 中，dockerfile 配置 dapr cli 运行 path。</p>
+<figure class="highlight dockerfile"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 需要添加预设路径，该路径可通过环境变量配置</span></span><br><span class="line"><span class="keyword">ENV</span> PATH=$PATH:/home/node/.dapr/bin</span><br></pre></td></tr></tbody></table></figure>
+<p>初始化 dapr，安装 <a href="https://docs.dapr.io/getting-started/install-dapr-cli/">dapr cli</a> 命令行工具。</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>使用 dev container 只需要在 features 中注册 <code>"ghcr.io/dapr/cli/dapr-cli:0": {}</code></p>
+</li>
+<li class="lvl-2">
+<p>使用命令行安装，使用 dapr 官方脚本 `wget -q <a href="https://raw.githubusercontent.com/dapr/cli/master/install/install.sh">https://raw.githubusercontent.com/dapr/cli/master/install/install.sh</a> -O - | /bin/bash</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">dapr -h</span><br><span class="line">dapr --version</span><br><span class="line">dapr init</span><br><span class="line"><span class="built_in">ls</span> <span class="variable">$HOME</span>/.dapr</span><br></pre></td></tr></tbody></table></figure>
+<p>测试 API</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 使用 app id (my-app) 启动一个 dapr app，并指定 app端口为 3500</span></span><br><span class="line">dapr run --app-id my-app --app-port 3500</span><br><span class="line"></span><br><span class="line"><span class="comment"># 存入状态， url 为 http://localhost:3500/v1.0/state/statestore</span></span><br><span class="line">curl -X POST -H <span class="string">"Content-Type: application/json"</span> -d <span class="string">'[{ "key": "name", "value": "Bruce Wayne"}]'</span> http://localhost:3500/v1.0/state/statestore</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取状态，url为 http://localhost:3500/v1.0/state/statestore/name</span></span><br><span class="line">curl http://localhost:3500/v1.0/state/statestore/name</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看redis 存储内容</span></span><br><span class="line">docker <span class="built_in">exec</span> -it dapr_redis redis_cli</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看 redis kyes 存储内容</span></span><br><span class="line">docker <span class="built_in">exec</span> -it dapr_redis redis-cli</span><br><span class="line">127.0.0.1:6379&gt; keys *</span><br><span class="line">1) <span class="string">"myapp||name"</span></span><br><span class="line">127.0.0.1:6379&gt; HGETALL <span class="string">"myapp||name"</span></span><br><span class="line">1) <span class="string">"data"</span></span><br><span class="line">2) <span class="string">"\"Bruce Wayne\""</span></span><br><span class="line">3) <span class="string">"version"</span></span><br><span class="line">4) <span class="string">"1"</span></span><br><span class="line">127.0.0.1:6379&gt; <span class="built_in">exit</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除状态</span></span><br><span class="line">curl -v -X DELETE -H <span class="string">"Content-Type: application/json"</span> http://localhost:3500/v1.0/state/statestore/name</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Quickstarts-Demos">Quickstarts Demos</h2>
+<p><a href="https://docs.dapr.io/getting-started/quickstarts/">Quickstarts</a> 主要列出了官方的示例，及应用，开始之前需要<a href="https://docs.dapr.io/getting-started/install-dapr-cli/">设置好 dapr 环境</a>。</p>
+<h2 id="Service-Invocation">Service Invocation</h2>
+<p><a href="https://docs.dapr.io/developing-applications/building-blocks/service-invocation/">Service Invocation</a> 实现使用 HTTP 或 gRPC 在两个服务之间进行同步通信。主要专注于解决：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>服务发现。如何发现不同的服务。</p>
+</li>
+<li class="lvl-2">
+<p>标准化服务间调用 API 协议。如何确定服务间调用协议。</p>
+</li>
+<li class="lvl-2">
+<p>服务间通信安全。如何在服务间安全设置加密及访问控制。</p>
+</li>
+<li class="lvl-2">
+<p>减缓请求超时和失败处理。如何处理重试及临时错误。</p>
+</li>
+<li class="lvl-2">
+<p>实现可观测性和跟踪。如何跟踪及统计服务间通信。</p>
+</li>
+</ul>
+<p>通常使用两种协议 <a href="https://docs.dapr.io/developing-applications/building-blocks/service-invocation/howto-invoke-discover-services/">HTTP</a> 和 <a href="https://docs.dapr.io/developing-applications/building-blocks/service-invocation/howto-invoke-services-grpc/">gRPC</a> 作为通信方式。</p>
+<p>调用实现，可以有三种：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>HTTP and gRPC：不改动原有代码，使用 dapr run 指定运行对应通信协议的服务。</p>
+<ul class="lvl-2">
+<li class="lvl-4">HTTP: <a href="https://docs.dapr.io/developing-applications/building-blocks/service-invocation/howto-invoke-discover-services/">HTTP Configuration</a></li>
+<li class="lvl-4">gRPC: <a href="https://docs.dapr.io/operations/configuration/grpc/">Configure</a> and <a href="https://docs.dapr.io/developing-applications/building-blocks/service-invocation/howto-invoke-services-grpc/">Invocation</a>。</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>Call to the dapr sidecar url API: 通过直接调用 <code>localhost:&lt;dapr-http-port&gt;/API</code>调用。</p>
+</li>
+<li class="lvl-2">
+<p>SDK: 官方提供了对应的 <a href="https://docs.dapr.io/developing-applications/sdks/">SDK</a> 方便服务集成。为了快速测试，dapr 提供了 <a href="https://docs.dapr.io/reference/cli/dapr-invoke/">cli</a> 工具方便测试。</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Invoke a sample method on target app with POST Verb</span></span><br><span class="line">dapr invoke --app-id target --method sample --data <span class="string">'{"key":"value"}'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Invoke a sample method on target app with GET Verb</span></span><br><span class="line">dapr invoke --app-id target --method sample --verb GET</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="State-Management">State Management</h2>
+<p><a href="https://docs.dapr.io/developing-applications/building-blocks/state-management/">State Management</a> 即，数据持久化管理。</p>
+<h2 id="Hosting-options">Hosting options</h2>
+<h3 id="Kubernetes">Kubernetes</h3>
+<p>配置 dapr 到 <a href="https://docs.dapr.io/operations/hosting/kubernetes/">k8s</a>。</p>
+<h4 id="本地部署">本地部署</h4>
+<p>安装 minikube，并初始化 dapr，<a href="https://github.com/dapr/quickstarts/blob/master/tutorials/hello-kubernetes/README.md">官方示例</a>。</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 开启本地 minikube 集群</span></span><br><span class="line">minikube start</span><br><span class="line"><span class="comment"># 初始化 dapr, dapr init --kubernetes --wait</span></span><br><span class="line">dapr init -k</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Zipkin">Zipkin</h2>
+<p>Dapr 支持使用 Zipkin 进行分布式跟踪，您可以通过以下步骤来实现：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>安装 Zipkin</p>
+</li>
+</ul>
+<p>您可以通过以下命令安装 Zipkin：</p>
+<figure class="highlight yml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="string">docker</span> <span class="string">run</span> <span class="string">-d</span> <span class="string">-p</span> <span class="number">9411</span><span class="string">:9411</span> <span class="string">openzipkin/zipkin</span></span><br></pre></td></tr></tbody></table></figure>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>配置 Dapr</p>
+</li>
+</ul>
+<p>在 Dapr 应用程序中启用 Zipkin 跟踪，需要在 Dapr 配置文件中添加以下内容：</p>
+<figure class="highlight yml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">dapr.io/v1alpha1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Configuration</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">tracing</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">tracing:</span></span><br><span class="line">    <span class="attr">enabled:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">exporter:</span> <span class="string">zipkin</span></span><br><span class="line">    <span class="attr">zipkin:</span></span><br><span class="line">      <span class="attr">endpointAddress:</span> <span class="string">"http://localhost:9411/api/v2/spans"</span></span><br></pre></td></tr></tbody></table></figure>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>启动 Dapr 应用程序</p>
+</li>
+</ul>
+<p>在启动 Dapr 应用程序时，需要指定 Dapr 配置文件的位置。例如，如果您的 Dapr 配置文件名为 config.yaml，则可以使用以下命令启动 Dapr 应用程序：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">dapr run --app-id my-app --app-port 3500 --config config.yaml node app.js</span><br></pre></td></tr></tbody></table></figure>
+<ul class="lvl-0">
+<li class="lvl-3">
+<p>查看跟踪数据</p>
+</li>
+</ul>
+<p>在 Zipkin UI 中，您可以查看跟踪数据。您可以通过以下 URL 访问 Zipkin UI (<a href="http://localhost:9411/zipkin/">http://localhost:9411/zipkin/</a>)</p>
+]]></content>
+      <categories>
+        <category>develop</category>
+      </categories>
+      <tags>
+        <tag>分布式</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>DB 数据库实践</title>
     <url>/posts/d5fbb003/</url>
     <content><![CDATA[<p>本文总结了数据库基本原理及其实现。</p>
@@ -7213,6 +7148,71 @@ docker-compose 中 depends_on,restart,deploy.resources.reservations 等资源不
       <tags>
         <tag>docker</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>copier</title>
+    <url>/posts/ae78e30a/</url>
+    <content><![CDATA[<h2 id="Resource">Resource</h2>
+<table>
+<thead>
+<tr>
+<th>资源</th>
+<th>组织</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/copier-org/copier/">copier</a></td>
+<td>copier-org</td>
+<td>模板生成器</td>
+</tr>
+</tbody>
+</table>
+<h2 id="copier">copier</h2>
+<p>copier 是一个模板生成器，可以生成任意类型的模板.</p>
+<span id="more"></span>
+<h3 id="使用">使用</h3>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">pipx install copier</span><br><span class="line"></span><br><span class="line">copier copy &lt;template&gt; &lt;output&gt;</span><br><span class="line">copier update</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="jinja">jinja</h3>
+<h4 id="和"><code>-%]</code>和 <code>%]</code></h4>
+<p><code>%]</code>和<code>[%</code>确保保留这些前后额外的空白字符  ,<code>-%]</code>和<code>[%-</code>确保在渲染结果中不会出现额外的空白字符。</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>[%- endif %] 表示在 endif 标记之前删除任何尾随的空格和换行符。</p>
+</li>
+<li class="lvl-2">
+<p>[% endif -%] 表示在 endif 标记之后删除任何尾随的空格和换行符。</p>
+</li>
+<li class="lvl-2">
+<p>[% endif %] 不会删除尾随的空格和换行符。</p>
+</li>
+</ul>
+<h4 id="include">include</h4>
+<p>在 jinja 中使用 include 拆分成多个模板, 方便复用替换</p>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://github.com/serious-scaffold/serious-scaffold-python/pull/187">https://github.com/serious-scaffold/serious-scaffold-python/pull/187</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://copier.readthedocs.io/en/stable/configuring/#importing-jinja-templates-and-macros">https://copier.readthedocs.io/en/stable/configuring/#importing-jinja-templates-and-macros</a></p>
+</li>
+</ul>
+<h2 id="收集的模板">收集的模板</h2>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://github.com/serious-scaffold/serious-scaffold-python">https://github.com/serious-scaffold/serious-scaffold-python</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://github.com/lincc-frameworks/python-project-template">https://github.com/lincc-frameworks/python-project-template</a></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>develop</category>
+      </categories>
   </entry>
   <entry>
     <title>docs</title>
@@ -10852,6 +10852,63 @@ mamba 自带的 conda 环境中的 python 在 windows 上编译需要附带设�
       </categories>
   </entry>
   <entry>
+    <title>network</title>
+    <url>/posts/996635634/</url>
+    <content><![CDATA[<h2 id="resource">resource</h2>
+<table>
+<thead>
+<tr>
+<th>资源</th>
+<th>组织</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/bregman-arie/devops-exercises#network">devops-exercises</a></td>
+<td>bregman-arie</td>
+<td>基础</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ipv4">ipv4</h2>
+<h3 id="格式表示">格式表示</h3>
+<p>IPv4 地址是 Internet Protocol Version 4 的缩写，它是一种在互联网上使用的网络地址。IPv4 地址由四个数字组成，每个数字在 0 到 255 之间，数字之间用点（.）分隔。例如，192.168.1.1 就是一个 IPv4 地址。</p>
+<p>IPv4 地址的二进制表示是将每个数字转换为 8 位二进制数。例如，192.168.1.1 的二进制表示为：<code>11000000.10101000.00000001.00000001</code></p>
+<span id="more"></span>
+<h3 id="子网掩码">子网掩码</h3>
+<p>子网掩码是用来判断任意一个 IP 地址是否属于某个子网的。子网掩码同样是由四个数字组成，每个数字在 0 到 255 之间，数字之间用点（.）分隔。例如，255.255.255.0 就是一个子网掩码。</p>
+<p>子网掩码的二进制表示是将每个数字转换为 8 位二进制数。例如，255.255.255.0 的二进制表示为：<code>11111111.11111111.11111111.00000000</code></p>
+<p>当将一个 IP 地址和子网掩码进行 AND 运算时，如果结果和网络地址相同，那么这个 IP 地址就属于这个子网。</p>
+<h3 id="内网地址">内网地址</h3>
+<p>内网 IP 地址的范围主要包括以下三个：</p>
+<ol>
+<li class="lvl-3">
+<p>A 类：10.0.0.0 - 10.255.255.255</p>
+</li>
+<li class="lvl-3">
+<p>B 类：172.16.0.0 - 172.31.255.255</p>
+</li>
+<li class="lvl-3">
+<p>C 类：192.168.0.0 - 192.168.255.255</p>
+</li>
+</ol>
+<p>这些范围的 IP 地址被保留用于私有网络，不会在公共互联网上使用。</p>
+<h2 id="169-254-0-0-16">169.254.0.0/16</h2>
+<p>在 <a href="http://tools.ietf.org/html/rfc5735">rfc5735</a> 里面有对所有特殊网络地址说明</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">169.254.0.0/16 - This is the "link local" block.  As described in</span><br><span class="line">   [RFC3927], it is allocated for communication between hosts on a</span><br><span class="line">   single link.  Hosts obtain these addresses by auto-configuration,</span><br><span class="line">   such as when a DHCP server cannot be found.</span><br></pre></td></tr></tbody></table></figure>
+<p>该部分指出<code>169.254.0.0/16</code>是一个本地链接地址段；定义在 <code>rfc3927</code> ,</p>
+<p><code>3927</code>指出，在<code>IP</code>网络里，每台主机都需要一个<code>IP</code>地址，通常情况下是通过<code>DHCP</code>服务器自动分配，但某些特殊情况下，<code>DHCP</code>分配失败或者没有<code>DHCP</code>服务器时，机器可以自己分配一个<code>IP</code>来完成这个工作。</p>
+<p>就好比定义一个指针，正常情况下这个指针会被赋予某个数据类型的地址信息，但如果赋值失败的时候，不能什么都不做，也得给它赋值，通常是赋为<code>NULL</code>；这个<code>NULL</code>就好比<code>169.254.0.0/16</code>；</p>
+]]></content>
+      <categories>
+        <category>develop</category>
+      </categories>
+      <tags>
+        <tag>网络</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>各种镜像源及使用方式</title>
     <url>/posts/bb9a901f/</url>
     <content><![CDATA[<p>本文注重于记录各种软件开发领域中的源，包括 Debian/Ubuntu，Centos/Redhat 等。</p>
@@ -10940,63 +10997,6 @@ mamba 自带的 conda 环境中的 python 在 windows 上编译需要附带设�
       <categories>
         <category>develop</category>
       </categories>
-  </entry>
-  <entry>
-    <title>network</title>
-    <url>/posts/996635634/</url>
-    <content><![CDATA[<h2 id="resource">resource</h2>
-<table>
-<thead>
-<tr>
-<th>资源</th>
-<th>组织</th>
-<th>类型</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://github.com/bregman-arie/devops-exercises#network">devops-exercises</a></td>
-<td>bregman-arie</td>
-<td>基础</td>
-</tr>
-</tbody>
-</table>
-<h2 id="ipv4">ipv4</h2>
-<h3 id="格式表示">格式表示</h3>
-<p>IPv4 地址是 Internet Protocol Version 4 的缩写，它是一种在互联网上使用的网络地址。IPv4 地址由四个数字组成，每个数字在 0 到 255 之间，数字之间用点（.）分隔。例如，192.168.1.1 就是一个 IPv4 地址。</p>
-<p>IPv4 地址的二进制表示是将每个数字转换为 8 位二进制数。例如，192.168.1.1 的二进制表示为：<code>11000000.10101000.00000001.00000001</code></p>
-<span id="more"></span>
-<h3 id="子网掩码">子网掩码</h3>
-<p>子网掩码是用来判断任意一个 IP 地址是否属于某个子网的。子网掩码同样是由四个数字组成，每个数字在 0 到 255 之间，数字之间用点（.）分隔。例如，255.255.255.0 就是一个子网掩码。</p>
-<p>子网掩码的二进制表示是将每个数字转换为 8 位二进制数。例如，255.255.255.0 的二进制表示为：<code>11111111.11111111.11111111.00000000</code></p>
-<p>当将一个 IP 地址和子网掩码进行 AND 运算时，如果结果和网络地址相同，那么这个 IP 地址就属于这个子网。</p>
-<h3 id="内网地址">内网地址</h3>
-<p>内网 IP 地址的范围主要包括以下三个：</p>
-<ol>
-<li class="lvl-3">
-<p>A 类：10.0.0.0 - 10.255.255.255</p>
-</li>
-<li class="lvl-3">
-<p>B 类：172.16.0.0 - 172.31.255.255</p>
-</li>
-<li class="lvl-3">
-<p>C 类：192.168.0.0 - 192.168.255.255</p>
-</li>
-</ol>
-<p>这些范围的 IP 地址被保留用于私有网络，不会在公共互联网上使用。</p>
-<h2 id="169-254-0-0-16">169.254.0.0/16</h2>
-<p>在 <a href="http://tools.ietf.org/html/rfc5735">rfc5735</a> 里面有对所有特殊网络地址说明</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">169.254.0.0/16 - This is the "link local" block.  As described in</span><br><span class="line">   [RFC3927], it is allocated for communication between hosts on a</span><br><span class="line">   single link.  Hosts obtain these addresses by auto-configuration,</span><br><span class="line">   such as when a DHCP server cannot be found.</span><br></pre></td></tr></tbody></table></figure>
-<p>该部分指出<code>169.254.0.0/16</code>是一个本地链接地址段；定义在 <code>rfc3927</code> ,</p>
-<p><code>3927</code>指出，在<code>IP</code>网络里，每台主机都需要一个<code>IP</code>地址，通常情况下是通过<code>DHCP</code>服务器自动分配，但某些特殊情况下，<code>DHCP</code>分配失败或者没有<code>DHCP</code>服务器时，机器可以自己分配一个<code>IP</code>来完成这个工作。</p>
-<p>就好比定义一个指针，正常情况下这个指针会被赋予某个数据类型的地址信息，但如果赋值失败的时候，不能什么都不做，也得给它赋值，通常是赋为<code>NULL</code>；这个<code>NULL</code>就好比<code>169.254.0.0/16</code>；</p>
-]]></content>
-      <categories>
-        <category>develop</category>
-      </categories>
-      <tags>
-        <tag>网络</tag>
-      </tags>
   </entry>
   <entry>
     <title>nvs</title>
@@ -11512,6 +11512,358 @@ mamba 自带的 conda 环境中的 python 在 windows 上编译需要附带设�
         <tag>clash</tag>
         <tag>vpn</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>regex 正则</title>
+    <url>/posts/c534b59e/</url>
+    <content><![CDATA[<h2 id="resource">resource</h2>
+<ul class="lvl-0">
+<li class="lvl-2"><a href="https://regex101.com/">regex101</a>: build, test, and debug regular expressions.</li>
+</ul>
+<h2 id="及"><code>?&lt;=</code> 及 <code>?=</code></h2>
+<p><code>?&lt;=</code> : 匹配以字符串开始，捕获 (存储)</p>
+<p><code>?=</code>: 匹配以字符串结束，捕获 (存储)</p>
+<p>正则表达式：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><code>(?&lt;=(href=")).{1,200}(?=("&gt;))</code>: 捕获以<code>href="</code>开头的字符串最长达到 200 个字符且以<code>"&gt;</code>结尾的字符串</p>
+</li>
+</ul>
+<p>解释：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><code>(?&lt;=(href="))</code>: 匹配以<code>href="</code>开头的字符串，并且捕获 (存储) 到分组中</p>
+</li>
+<li class="lvl-2">
+<p><code>(?=("&gt;))</code> : 匹配以<code>"&gt;</code>结尾的字符串，并且捕获 (存储) 到分组中</p>
+</li>
+</ul>
+<span id="more"></span>
+<p>示例如下：</p>
+<p><img data-src="https://s2.loli.net/2022/09/30/V8kWG2NQwsSoPX4.png" alt="V8kWG2NQwsSoPX4."></p>
+<p><code>?&lt;=(?:)</code> : 匹配以字符串开始，<strong>不</strong> 捕获 (存储)</p>
+<p><code>?=(?:)</code>: 匹配以字符串结束，<strong>不</strong> 捕获 (存储)</p>
+<p>正则表达式：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><code>(?&lt;=(?:href=")).{1,200}(?=(?:"&gt;))</code></p>
+</li>
+</ul>
+<p>解释：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><code>(?&lt;=(?:href="))</code>: 匹配以<code>href="</code>开头的字符串，并且不捕获 (不存储) 到分组中</p>
+</li>
+<li class="lvl-2">
+<p><code>(?=(?:"&gt;))</code>: 匹配以<code>"&gt;</code>结尾的字符串，并且不捕获 (不存储) 到分组中</p>
+</li>
+</ul>
+<p>参考教程:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://www.cnblogs.com/whaozl/p/5462865.html">https://www.cnblogs.com/whaozl/p/5462865.html</a></p>
+</li>
+</ul>
+<h2 id="和"><code>^</code> 和 <code>$</code></h2>
+<p>在正则表达式中，<code>^</code>表示字符串的开头，<code>$</code>表示字符串的结尾。</p>
+<p>例如，要匹配以<code>hello</code>开头的字符串，可以使用正则表达式<code>^hello</code>。要匹配以<code>world</code>结尾的字符串，可以使用正则表达式<code>world$</code>。</p>
+<p>在使用正则表达式时，还需要注意转义字符的使用。例如，如果要匹配以<code>.</code>开头的字符串，可以使用正则表达式<code>\.</code>，其中<code>\</code>是转义字符，用于将<code>.</code>转义为普通字符。</p>
+<p>下面是一些示例正则表达式，用于匹配字符串的开头和结尾：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><code>^hello</code>：匹配以 hello 开头的字符串。</p>
+</li>
+<li class="lvl-2">
+<p><code>world$</code>：匹配以 world 结尾的字符串。</p>
+</li>
+<li class="lvl-2">
+<p><code>^\d+</code>：匹配以数字开头的字符串。</p>
+</li>
+<li class="lvl-2">
+<p><code>^[a-zA-Z]+</code>：匹配以字母开头的字符串。</p>
+</li>
+<li class="lvl-2">
+<p><code>\.txt$</code>：匹配以.txt 结尾的字符串。</p>
+</li>
+</ul>
+<h2 id="name-pattern"><code>(?&lt;name&gt;pattern)</code></h2>
+<p>命名捕获分组用于将捕获的内容存储到一个变量中, 具体访问遵循特定的语言标准。</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><code>(?&lt;year&gt;\\d{4})-(?&lt;month&gt;\\d{2})-(?&lt;day&gt;\\d{2})</code>: 将捕获的内容存储到变量<code>year</code>、<code>month</code>和<code>day</code>中</p>
+</li>
+</ul>
+<p>在 Python 中，可以使用 groupdict () 方法来获取一个字典，其中键是捕获组的名称，值是捕获组的值。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">pattern = <span class="string">r'(?P&lt;year&gt;\d{4})-(?P&lt;month&gt;\d{2})-(?P&lt;day&gt;\d{2})'</span></span><br><span class="line"><span class="keyword">match</span> = re.<span class="keyword">match</span>(pattern, <span class="string">'2022-01-01'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">match</span>:</span><br><span class="line">    groups = <span class="keyword">match</span>.groupdict()</span><br><span class="line">    <span class="built_in">print</span>(groups[<span class="string">'year'</span>])  <span class="comment"># 输出: 2022</span></span><br><span class="line">    <span class="built_in">print</span>(groups[<span class="string">'month'</span>])  <span class="comment"># 输出: 01</span></span><br><span class="line">    <span class="built_in">print</span>(groups[<span class="string">'day'</span>])  <span class="comment"># 输出: 01</span></span><br></pre></td></tr></tbody></table></figure>
+<p>在 C<ins> 中，标准库的正则表达式库<code>&lt;regex&gt;</code>不直接支持命名捕获组的语法。但可以使用第三方库，如<code>Boost.Regex</code>，来实现命名捕获组的功能。以下是使用<code>Boost.Regex在</code> C</ins> 中实现命名捕获组的示例：</p>
+<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;boost/regex.hpp&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>{</span><br><span class="line">    std::string input = <span class="string">"2022-01-01"</span>;</span><br><span class="line">    <span class="function">boost::regex <span class="title">pattern</span><span class="params">(<span class="string">"(?&lt;year&gt;\\d{4})-(?&lt;month&gt;\\d{2})-(?&lt;day&gt;\\d{2})"</span>)</span></span>;</span><br><span class="line">    boost::smatch match;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (boost::<span class="built_in">regex_match</span>(input, match, pattern)) {</span><br><span class="line">        std::cout &lt;&lt; match[<span class="string">"year"</span>] &lt;&lt; std::endl;   <span class="comment">// 输出: 2022</span></span><br><span class="line">        std::cout &lt;&lt; match[<span class="string">"month"</span>] &lt;&lt; std::endl;  <span class="comment">// 输出: 01</span></span><br><span class="line">        std::cout &lt;&lt; match[<span class="string">"day"</span>] &lt;&lt; std::endl;    <span class="comment">// 输出: 01</span></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+]]></content>
+      <categories>
+        <category>develop</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>scoop 包管理器</title>
+    <url>/posts/f03ca1b6/</url>
+    <content><![CDATA[<h2 id="Scoop">Scoop</h2>
+<p>Windows 下的开源包管理器。</p>
+<h3 id="install">install</h3>
+<figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># https://github.com/ScoopInstaller/Install#readme</span></span><br><span class="line"><span class="comment"># 下载安装脚本</span></span><br><span class="line"><span class="built_in">irm</span> get.scoop.sh <span class="literal">-outfile</span> <span class="string">'install.ps1'</span></span><br><span class="line"><span class="comment"># 配置安装</span></span><br><span class="line">.\install.ps1 <span class="literal">-RunAsAdmin</span> <span class="literal">-ScoopDir</span> <span class="string">'C:\Opt\Scoop'</span> <span class="literal">-ScoopGlobalDir</span> <span class="string">'C:\Opt\Scoop\App'</span></span><br></pre></td></tr></tbody></table></figure>
+<blockquote>
+<p>[!NOTE]<br>
+Scoop 源比较多，多是开源。建议使用 choco。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>develop</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>semantic release</title>
+    <url>/posts/be37f9f6/</url>
+    <content><![CDATA[<h2 id="资源">资源</h2>
+<table>
+<thead>
+<tr>
+<th>资源</th>
+<th>组织</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.conventionalcommits.org/en/v1.0.0/">语义化发布 (Semantic release)</a></td>
+<td>sentimentalversioning</td>
+<td>规范</td>
+</tr>
+<tr>
+<td><a href="https://github.com/semantic-release/semantic-release">semantic-release</a></td>
+<td>semantic-release</td>
+<td>工具</td>
+</tr>
+<tr>
+<td><a href="https://semver.org/">semantic version</a></td>
+<td>semver</td>
+<td>规范</td>
+</tr>
+<tr>
+<td><a href="https://semantic-release.gitbook.io">semantic release gitbook</a></td>
+<td>semantic-release</td>
+<td>文档</td>
+</tr>
+</tbody>
+</table>
+<span id="more"></span>
+<h2 id="Semantic-Release">Semantic Release</h2>
+<h3 id="Usage">Usage</h3>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 本地测试</span></span><br><span class="line">semantic-release -d --no-ci</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Angular-Standard-Commit">Angular Standard Commit</h3>
+<figure class="highlight txt"><table><tbody><tr><td class="code"><pre><span class="line">&lt;type&gt;(&lt;scope&gt;): &lt;short summary&gt;</span><br><span class="line">  │       │             │</span><br><span class="line">  │       │             └─⫸ Summary in present tense. Not capitalized. No period at the end.</span><br><span class="line">  │       │</span><br><span class="line">  │       └─⫸ Commit Scope: animations|bazel|benchpress|common|compiler|compiler-cli|core|</span><br><span class="line">  │                          elements|forms|http|language-service|localize|platform-browser|</span><br><span class="line">  │                          platform-browser-dynamic|platform-server|router|service-worker|</span><br><span class="line">  │                          upgrade|zone.js|packaging|changelog|docs-infra|migrations|ngcc|ve|</span><br><span class="line">  │                          devtools</span><br><span class="line">  │</span><br><span class="line">  └─⫸ Commit Type: build|ci|docs|feat|fix|perf|refactor|test</span><br><span class="line"></span><br><span class="line">Commit Message Body</span><br><span class="line"></span><br><span class="line">Commit Message Footer</span><br></pre></td></tr></tbody></table></figure>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://github.com/angular/angular/blob/main/CONTRIBUTING.md#-commit-message-format">https://github.com/angular/angular/blob/main/CONTRIBUTING.md#-commit-message-format</a></p>
+</li>
+</ul>
+<h3 id="Common-Conventional-Commit">Common Conventional Commit</h3>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">&lt;<span class="built_in">type</span>&gt;[optional scope]: &lt;description&gt;</span><br><span class="line"></span><br><span class="line">[optional body]</span><br><span class="line"></span><br><span class="line">[optional footer(s)]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Comment on https://www.conventionalcommits.org/en/v1.0.0/</span></span><br></pre></td></tr></tbody></table></figure>
+<p>提交说明包含了下面的结构化元素，以向类库使用者表明其意图：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>fix: 类型 为 fix 的提交表示在代码库中修复了一个 bug（这和语义化版本中的 <a href="https://semver.org/lang/zh-CN/#%E6%91%98%E8%A6%81">PATCH</a> 相对应）。</p>
+</li>
+<li class="lvl-2">
+<p>feat: 类型 为 feat 的提交表示在代码库中新增了一个功能（这和语义化版本中的 <a href="https://semver.org/lang/zh-CN/#%E6%91%98%E8%A6%81">MINOR</a> 相对应）。</p>
+</li>
+<li class="lvl-2">
+<p>BREAKING CHANGE: 在脚注中包含 BREAKING CHANGE: 或 &lt;类型&gt;(范围) 后面有一个 ! 的提交，表示引入了破坏性 API 变更（这和语义化版本中的 <a href="https://semver.org/lang/zh-CN/#%E6%91%98%E8%A6%81">MAJOR</a> 相对应）。 破坏性变更可以是任意 类型 提交的一部分。</p>
+</li>
+<li class="lvl-2">
+<p>除 fix: 和 feat: 之外，也可以使用其它提交 类型 ，例如 <a href="https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional">@commitlint/config-conventional</a>（基于 Angular 约定）中推荐的 build:、chore:、 ci:、docs:、style:、refactor:、perf:、test:，等等。</p>
+</li>
+<li class="lvl-2">
+<p>脚注中除了 BREAKING CHANGE: <description> ，其它条目应该采用类似 <a href="https://git-scm.com/docs/git-interpret-trailers">git trailer format</a> 这样的惯例。</description></p>
+</li>
+</ul>
+<p>其它提交类型在约定式提交规范中并没有强制限制，并且在语义化版本中没有隐式影响（除非它们包含 BREAKING CHANGE）。 可以为提交类型添加一个围在圆括号内的范围，以为其提供额外的上下文信息。例如 feat (parser): adds ability to parse arrays.。</p>
+<h3 id="Release-Workflow">Release Workflow</h3>
+<p>常用的 release workflow 方式有如下 3 种：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://semantic-release.gitbook.io/semantic-release/recipes/release-workflow/distribution-channels">Distribution channels</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://semantic-release.gitbook.io/semantic-release/recipes/release-workflow/maintenance-releases">Maintenance release</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://semantic-release.gitbook.io/semantic-release/recipes/release-workflow/pre-releases">Pre-release</a></p>
+</li>
+</ul>
+<h3 id="QA">QA</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://stackoverflow.com/questions/18506508/whats-the-difference-between-tag-and-release?noredirect=1&amp;lq=1">Difference between release and tag</a></p>
+</li>
+</ul>
+<h2 id="Integrate-with-CI">Integrate with CI</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://github.com/semantic-release/semantic-release">semantic-release</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://github.com/semantic-release/semantic-release/blob/master/docs/usage/configuration.md">semantic-release configuration</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://github.com/semantic-release/semantic-release/blob/master/docs/usage/ci-configuration.md#authentication">CI Authentication</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://github.com/semantic-release/semantic-release/tree/master/docs/recipes">semantic-release recipe</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://juejin.cn/post/7149727151464398885">在 CI / CD 中集成语义化发布介绍</a></p>
+</li>
+</ul>
+<h3 id="GitLab-CI">GitLab CI</h3>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://github.com/semantic-release/semantic-release/blob/master/docs/recipes/ci-configurations/gitlab-ci.md">GitLab CI recipe</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://github.com/gitlabhq/gitlabhq/blob/master/doc/ci/examples/semantic-release.md">gitlab official semantic release md</a></p>
+</li>
+</ul>
+<h4 id="GitLab-CI-Configuration">GitLab CI Configuration</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://github.com/semantic-release/semantic-release/blob/master/docs/usage/ci-configuration.md#authentication">GITLAB_TOKEN</a>: 权限<a href="https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html">认证</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://github.com/semantic-release/gitlab">gitlab plugin</a>: 用于 gitlab 发布 release 插件</p>
+</li>
+<li class="lvl-2">
+<p><a href="https://github.com/semantic-release/gitlab#assets">gitlab assets</a>: 用于附加到 release 的 assets</p>
+</li>
+</ul>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://gitlab.com/msclock/gitlab-ci-templates">gitlab semantic release template</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://github.com/philips-software/odin/blob/main/.releaserc.yml">semantic release yaml configuration example</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://github.com/DanySK/semantic-release-preconfigured-conventional-commits/blob/master/.releaserc.yml">more yaml sharedable yaml configuration example</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://github.com/DanySK/publish-on-central/blob/master/release.config.js">semantic release js configuration example</a></p>
+</li>
+</ul>
+<h3 id="Github-Action">Github Action</h3>
+<p>要使用 semantic-release 工具配置项目的 GitHub Action 以实现自动化版本发布，需要做以下几步：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>安装 semantic-release 和相关插件。在项目的根目录下创建一个 package.json 文件，然后添加以下内容：</p>
+</li>
+</ul>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"devDependencies"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"@semantic-release/changelog"</span><span class="punctuation">:</span> <span class="string">"^6.0.1"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"@semantic-release/git"</span><span class="punctuation">:</span> <span class="string">"^10.0.1"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"@semantic-release/commit-analyzer"</span><span class="punctuation">:</span> <span class="string">"^9.0.1"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"@semantic-release/release-notes-generator"</span><span class="punctuation">:</span> <span class="string">"^11.0.2"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"@semantic-release/github"</span><span class="punctuation">:</span> <span class="string">"^8.0.1"</span></span><br><span class="line">  <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+<p>然后运行 npm install 来安装这些依赖.</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>创建一个.releaserc 文件来配置 semantic-release。在项目的根目录下创建一个.releaserc 文件，然后添加以下内容：</p>
+</li>
+</ul>
+<figure class="highlight txt"><table><tbody><tr><td class="code"><pre><span class="line">{</span><br><span class="line">  "plugins": [</span><br><span class="line">    "@semantic-release/commit-analyzer",</span><br><span class="line">    "@semantic-release/release-notes-generator",</span><br><span class="line">    "@semantic-release/changelog",</span><br><span class="line">    "@semantic-release/github",</span><br><span class="line">    [</span><br><span class="line">      "@semantic-release/git",</span><br><span class="line">      {</span><br><span class="line">        "assets": ["CHANGELOG.md", "package.json"],</span><br><span class="line">        "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"</span><br><span class="line">      }</span><br><span class="line">    ]</span><br><span class="line">  ]</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>在 GitHub Actions 中配置 semantic-release。在.github / workflows 目录下创建一个新的 workflow 文件，例如 release.yml，然后添加以下内容：</p>
+</li>
+</ul>
+<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">Release</span></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="attr">push:</span></span><br><span class="line">    <span class="attr">branches:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">main</span></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">release:</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">Release</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Checkout</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/checkout@v2</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Setup</span> <span class="string">Node.js</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/setup-node@v2</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">node-version:</span> <span class="number">14</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Install</span> <span class="string">dependencies</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">npm</span> <span class="string">ci</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Release</span></span><br><span class="line">        <span class="attr">env:</span></span><br><span class="line">          <span class="attr">GITHUB_TOKEN:</span> <span class="string">${{</span> <span class="string">secrets.GITHUB_TOKEN</span> <span class="string">}}</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">npx</span> <span class="string">semantic-release</span></span><br></pre></td></tr></tbody></table></figure>
+<p>这个 workflow 会在每次 push 到 main 分支时运行，自动分析 commit messages 来决定新的版本号，然后创建一个新的 GitHub release。</p>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://github.com/open-turo/actions-python/blob/main/release/action.yaml">https://github.com/open-turo/actions-python/blob/main/release/action.yaml</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://github.com/spaceship-prompt/spaceship-prompt/blob/master/.github/workflows/release.yml">https://github.com/spaceship-prompt/spaceship-prompt/blob/master/.github/workflows/release.yml</a></p>
+</li>
+</ul>
+<h2 id="Semantic-Release-Plugin">Semantic Release Plugin</h2>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://github.com/semantic-release/semantic-release/blob/master/docs/extending/plugins-list.md">semantic-release plugins</a>.</p>
+</li>
+</ul>
+<h3 id="semantic-release-commit-analyzer">semantic-release/commit-analyzer</h3>
+<p>用于解析提交消息, 并判断是否需要执行发布 release</p>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://github.com/semantic-release/commit-analyzer#options">https://github.com/semantic-release/commit-analyzer#options</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://github.com/typegoose/typegoose/blob/master/.releaserc.js">custom config example</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://github.com/frender-rs/frender/blob/main/release.config.js">custom config example</a></p>
+</li>
+</ul>
+<h3 id="semantic-release-release-notes-generator">semantic-release/release-notes-generator</h3>
+<p>用于将<code>commit-analyzer</code>解析出的符合规范的提交消息筛选并根据规则 <a href="https://github.com/conventional-changelog/conventional-changelog-config-spec/blob/master/README.md">conventional changelog configuration spec</a> 生成发布信息说明</p>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://github.com/semantic-release/release-notes-generator#options">release-notes-generator options</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://github.com/typegoose/typegoose/blob/master/.releaserc.js">custom config example</a></p>
+</li>
+</ul>
+<h3 id="semantic-release-changelog">semantic-release/changelog</h3>
+<p>用于将<code>release-notes-generator</code>生成内容更新到 <code>CHANGELOG.md</code></p>
+<h3 id="google-semantic-release-replace-plugin">google/semantic-release-replace-plugin</h3>
+<p>用于在发布时替换内容.</p>
+<p>在发布 release 时替换版本.</p>
+<figure class="highlight jsonc"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">[</span></span><br><span class="line">  <span class="string">"@google/semantic-release-replace-plugin"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"replacements"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">      <span class="punctuation">{</span></span><br><span class="line">        <span class="attr">"files"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">            <span class="string">"pyproject.toml"</span></span><br><span class="line">        <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">"from"</span><span class="punctuation">:</span> <span class="string">"^version = \".*\""</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">"to"</span><span class="punctuation">:</span> <span class="string">"version = \"${nextRelease.version}\""</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">"countMatches"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line">      <span class="punctuation">}</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line">  <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">]</span></span><br></pre></td></tr></tbody></table></figure>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://github.com/jpoehnelt/semantic-release-replace-plugin">https://github.com/jpoehnelt/semantic-release-replace-plugin</a></p>
+</li>
+<li class="lvl-2">
+<p><a href="https://gitlab.com/msclock/gitlab-ci-templates/-/blob/master/.releaserc.js">https://gitlab.com/msclock/gitlab-ci-templates/-/blob/master/.releaserc.js</a></p>
+</li>
+</ul>
+<h3 id="semantic-release-git">semantic-release/git</h3>
+<p>用于在触发发布时的提交更改回仓库, tag 将会创建在当前提交上</p>
+<figure class="highlight jsonc"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">[</span></span><br><span class="line">    <span class="string">"@semantic-release/git"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">{</span></span><br><span class="line">        <span class="attr">"assets"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">            <span class="string">"CHANGELOG.md"</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">        <span class="comment">// disable ci run with [skip ci]</span></span><br><span class="line">        <span class="attr">"message"</span><span class="punctuation">:</span> <span class="string">"chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"</span></span><br><span class="line">    <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">]</span></span><br></pre></td></tr></tbody></table></figure>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://github.com/semantic-release/git/">https://github.com/semantic-release/git/</a></p>
+</li>
+</ul>
+<h3 id="semantic-release-exec">semantic-release/exec</h3>
+<p>语义发布插件执行自定义 shell 命令。</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://github.com/DanySK/publish-on-central">use publishCmd to create annotated tags</a></p>
+</li>
+</ul>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://github.com/semantic-release/exec">https://github.com/semantic-release/exec</a></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>develop</category>
+      </categories>
   </entry>
   <entry>
     <title>python</title>
@@ -12616,358 +12968,6 @@ pypi-key is on the edge
 <ul class="lvl-0">
 <li class="lvl-2">
 <p><a href="https://github.com/pyenv/pyenv">https://github.com/pyenv/pyenv</a></p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>develop</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>regex 正则</title>
-    <url>/posts/c534b59e/</url>
-    <content><![CDATA[<h2 id="resource">resource</h2>
-<ul class="lvl-0">
-<li class="lvl-2"><a href="https://regex101.com/">regex101</a>: build, test, and debug regular expressions.</li>
-</ul>
-<h2 id="及"><code>?&lt;=</code> 及 <code>?=</code></h2>
-<p><code>?&lt;=</code> : 匹配以字符串开始，捕获 (存储)</p>
-<p><code>?=</code>: 匹配以字符串结束，捕获 (存储)</p>
-<p>正则表达式：</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><code>(?&lt;=(href=")).{1,200}(?=("&gt;))</code>: 捕获以<code>href="</code>开头的字符串最长达到 200 个字符且以<code>"&gt;</code>结尾的字符串</p>
-</li>
-</ul>
-<p>解释：</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><code>(?&lt;=(href="))</code>: 匹配以<code>href="</code>开头的字符串，并且捕获 (存储) 到分组中</p>
-</li>
-<li class="lvl-2">
-<p><code>(?=("&gt;))</code> : 匹配以<code>"&gt;</code>结尾的字符串，并且捕获 (存储) 到分组中</p>
-</li>
-</ul>
-<span id="more"></span>
-<p>示例如下：</p>
-<p><img data-src="https://s2.loli.net/2022/09/30/V8kWG2NQwsSoPX4.png" alt="V8kWG2NQwsSoPX4."></p>
-<p><code>?&lt;=(?:)</code> : 匹配以字符串开始，<strong>不</strong> 捕获 (存储)</p>
-<p><code>?=(?:)</code>: 匹配以字符串结束，<strong>不</strong> 捕获 (存储)</p>
-<p>正则表达式：</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><code>(?&lt;=(?:href=")).{1,200}(?=(?:"&gt;))</code></p>
-</li>
-</ul>
-<p>解释：</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><code>(?&lt;=(?:href="))</code>: 匹配以<code>href="</code>开头的字符串，并且不捕获 (不存储) 到分组中</p>
-</li>
-<li class="lvl-2">
-<p><code>(?=(?:"&gt;))</code>: 匹配以<code>"&gt;</code>结尾的字符串，并且不捕获 (不存储) 到分组中</p>
-</li>
-</ul>
-<p>参考教程:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://www.cnblogs.com/whaozl/p/5462865.html">https://www.cnblogs.com/whaozl/p/5462865.html</a></p>
-</li>
-</ul>
-<h2 id="和"><code>^</code> 和 <code>$</code></h2>
-<p>在正则表达式中，<code>^</code>表示字符串的开头，<code>$</code>表示字符串的结尾。</p>
-<p>例如，要匹配以<code>hello</code>开头的字符串，可以使用正则表达式<code>^hello</code>。要匹配以<code>world</code>结尾的字符串，可以使用正则表达式<code>world$</code>。</p>
-<p>在使用正则表达式时，还需要注意转义字符的使用。例如，如果要匹配以<code>.</code>开头的字符串，可以使用正则表达式<code>\.</code>，其中<code>\</code>是转义字符，用于将<code>.</code>转义为普通字符。</p>
-<p>下面是一些示例正则表达式，用于匹配字符串的开头和结尾：</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><code>^hello</code>：匹配以 hello 开头的字符串。</p>
-</li>
-<li class="lvl-2">
-<p><code>world$</code>：匹配以 world 结尾的字符串。</p>
-</li>
-<li class="lvl-2">
-<p><code>^\d+</code>：匹配以数字开头的字符串。</p>
-</li>
-<li class="lvl-2">
-<p><code>^[a-zA-Z]+</code>：匹配以字母开头的字符串。</p>
-</li>
-<li class="lvl-2">
-<p><code>\.txt$</code>：匹配以.txt 结尾的字符串。</p>
-</li>
-</ul>
-<h2 id="name-pattern"><code>(?&lt;name&gt;pattern)</code></h2>
-<p>命名捕获分组用于将捕获的内容存储到一个变量中, 具体访问遵循特定的语言标准。</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><code>(?&lt;year&gt;\\d{4})-(?&lt;month&gt;\\d{2})-(?&lt;day&gt;\\d{2})</code>: 将捕获的内容存储到变量<code>year</code>、<code>month</code>和<code>day</code>中</p>
-</li>
-</ul>
-<p>在 Python 中，可以使用 groupdict () 方法来获取一个字典，其中键是捕获组的名称，值是捕获组的值。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">pattern = <span class="string">r'(?P&lt;year&gt;\d{4})-(?P&lt;month&gt;\d{2})-(?P&lt;day&gt;\d{2})'</span></span><br><span class="line"><span class="keyword">match</span> = re.<span class="keyword">match</span>(pattern, <span class="string">'2022-01-01'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">match</span>:</span><br><span class="line">    groups = <span class="keyword">match</span>.groupdict()</span><br><span class="line">    <span class="built_in">print</span>(groups[<span class="string">'year'</span>])  <span class="comment"># 输出: 2022</span></span><br><span class="line">    <span class="built_in">print</span>(groups[<span class="string">'month'</span>])  <span class="comment"># 输出: 01</span></span><br><span class="line">    <span class="built_in">print</span>(groups[<span class="string">'day'</span>])  <span class="comment"># 输出: 01</span></span><br></pre></td></tr></tbody></table></figure>
-<p>在 C<ins> 中，标准库的正则表达式库<code>&lt;regex&gt;</code>不直接支持命名捕获组的语法。但可以使用第三方库，如<code>Boost.Regex</code>，来实现命名捕获组的功能。以下是使用<code>Boost.Regex在</code> C</ins> 中实现命名捕获组的示例：</p>
-<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;boost/regex.hpp&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>{</span><br><span class="line">    std::string input = <span class="string">"2022-01-01"</span>;</span><br><span class="line">    <span class="function">boost::regex <span class="title">pattern</span><span class="params">(<span class="string">"(?&lt;year&gt;\\d{4})-(?&lt;month&gt;\\d{2})-(?&lt;day&gt;\\d{2})"</span>)</span></span>;</span><br><span class="line">    boost::smatch match;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (boost::<span class="built_in">regex_match</span>(input, match, pattern)) {</span><br><span class="line">        std::cout &lt;&lt; match[<span class="string">"year"</span>] &lt;&lt; std::endl;   <span class="comment">// 输出: 2022</span></span><br><span class="line">        std::cout &lt;&lt; match[<span class="string">"month"</span>] &lt;&lt; std::endl;  <span class="comment">// 输出: 01</span></span><br><span class="line">        std::cout &lt;&lt; match[<span class="string">"day"</span>] &lt;&lt; std::endl;    <span class="comment">// 输出: 01</span></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-]]></content>
-      <categories>
-        <category>develop</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>scoop 包管理器</title>
-    <url>/posts/f03ca1b6/</url>
-    <content><![CDATA[<h2 id="Scoop">Scoop</h2>
-<p>Windows 下的开源包管理器。</p>
-<h3 id="install">install</h3>
-<figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># https://github.com/ScoopInstaller/Install#readme</span></span><br><span class="line"><span class="comment"># 下载安装脚本</span></span><br><span class="line"><span class="built_in">irm</span> get.scoop.sh <span class="literal">-outfile</span> <span class="string">'install.ps1'</span></span><br><span class="line"><span class="comment"># 配置安装</span></span><br><span class="line">.\install.ps1 <span class="literal">-RunAsAdmin</span> <span class="literal">-ScoopDir</span> <span class="string">'C:\Opt\Scoop'</span> <span class="literal">-ScoopGlobalDir</span> <span class="string">'C:\Opt\Scoop\App'</span></span><br></pre></td></tr></tbody></table></figure>
-<blockquote>
-<p>[!NOTE]<br>
-Scoop 源比较多，多是开源。建议使用 choco。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>develop</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>semantic release</title>
-    <url>/posts/be37f9f6/</url>
-    <content><![CDATA[<h2 id="资源">资源</h2>
-<table>
-<thead>
-<tr>
-<th>资源</th>
-<th>组织</th>
-<th>类型</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://www.conventionalcommits.org/en/v1.0.0/">语义化发布 (Semantic release)</a></td>
-<td>sentimentalversioning</td>
-<td>规范</td>
-</tr>
-<tr>
-<td><a href="https://github.com/semantic-release/semantic-release">semantic-release</a></td>
-<td>semantic-release</td>
-<td>工具</td>
-</tr>
-<tr>
-<td><a href="https://semver.org/">semantic version</a></td>
-<td>semver</td>
-<td>规范</td>
-</tr>
-<tr>
-<td><a href="https://semantic-release.gitbook.io">semantic release gitbook</a></td>
-<td>semantic-release</td>
-<td>文档</td>
-</tr>
-</tbody>
-</table>
-<span id="more"></span>
-<h2 id="Semantic-Release">Semantic Release</h2>
-<h3 id="Usage">Usage</h3>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 本地测试</span></span><br><span class="line">semantic-release -d --no-ci</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="Angular-Standard-Commit">Angular Standard Commit</h3>
-<figure class="highlight txt"><table><tbody><tr><td class="code"><pre><span class="line">&lt;type&gt;(&lt;scope&gt;): &lt;short summary&gt;</span><br><span class="line">  │       │             │</span><br><span class="line">  │       │             └─⫸ Summary in present tense. Not capitalized. No period at the end.</span><br><span class="line">  │       │</span><br><span class="line">  │       └─⫸ Commit Scope: animations|bazel|benchpress|common|compiler|compiler-cli|core|</span><br><span class="line">  │                          elements|forms|http|language-service|localize|platform-browser|</span><br><span class="line">  │                          platform-browser-dynamic|platform-server|router|service-worker|</span><br><span class="line">  │                          upgrade|zone.js|packaging|changelog|docs-infra|migrations|ngcc|ve|</span><br><span class="line">  │                          devtools</span><br><span class="line">  │</span><br><span class="line">  └─⫸ Commit Type: build|ci|docs|feat|fix|perf|refactor|test</span><br><span class="line"></span><br><span class="line">Commit Message Body</span><br><span class="line"></span><br><span class="line">Commit Message Footer</span><br></pre></td></tr></tbody></table></figure>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://github.com/angular/angular/blob/main/CONTRIBUTING.md#-commit-message-format">https://github.com/angular/angular/blob/main/CONTRIBUTING.md#-commit-message-format</a></p>
-</li>
-</ul>
-<h3 id="Common-Conventional-Commit">Common Conventional Commit</h3>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">&lt;<span class="built_in">type</span>&gt;[optional scope]: &lt;description&gt;</span><br><span class="line"></span><br><span class="line">[optional body]</span><br><span class="line"></span><br><span class="line">[optional footer(s)]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Comment on https://www.conventionalcommits.org/en/v1.0.0/</span></span><br></pre></td></tr></tbody></table></figure>
-<p>提交说明包含了下面的结构化元素，以向类库使用者表明其意图：</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>fix: 类型 为 fix 的提交表示在代码库中修复了一个 bug（这和语义化版本中的 <a href="https://semver.org/lang/zh-CN/#%E6%91%98%E8%A6%81">PATCH</a> 相对应）。</p>
-</li>
-<li class="lvl-2">
-<p>feat: 类型 为 feat 的提交表示在代码库中新增了一个功能（这和语义化版本中的 <a href="https://semver.org/lang/zh-CN/#%E6%91%98%E8%A6%81">MINOR</a> 相对应）。</p>
-</li>
-<li class="lvl-2">
-<p>BREAKING CHANGE: 在脚注中包含 BREAKING CHANGE: 或 &lt;类型&gt;(范围) 后面有一个 ! 的提交，表示引入了破坏性 API 变更（这和语义化版本中的 <a href="https://semver.org/lang/zh-CN/#%E6%91%98%E8%A6%81">MAJOR</a> 相对应）。 破坏性变更可以是任意 类型 提交的一部分。</p>
-</li>
-<li class="lvl-2">
-<p>除 fix: 和 feat: 之外，也可以使用其它提交 类型 ，例如 <a href="https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional">@commitlint/config-conventional</a>（基于 Angular 约定）中推荐的 build:、chore:、 ci:、docs:、style:、refactor:、perf:、test:，等等。</p>
-</li>
-<li class="lvl-2">
-<p>脚注中除了 BREAKING CHANGE: <description> ，其它条目应该采用类似 <a href="https://git-scm.com/docs/git-interpret-trailers">git trailer format</a> 这样的惯例。</description></p>
-</li>
-</ul>
-<p>其它提交类型在约定式提交规范中并没有强制限制，并且在语义化版本中没有隐式影响（除非它们包含 BREAKING CHANGE）。 可以为提交类型添加一个围在圆括号内的范围，以为其提供额外的上下文信息。例如 feat (parser): adds ability to parse arrays.。</p>
-<h3 id="Release-Workflow">Release Workflow</h3>
-<p>常用的 release workflow 方式有如下 3 种：</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://semantic-release.gitbook.io/semantic-release/recipes/release-workflow/distribution-channels">Distribution channels</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://semantic-release.gitbook.io/semantic-release/recipes/release-workflow/maintenance-releases">Maintenance release</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://semantic-release.gitbook.io/semantic-release/recipes/release-workflow/pre-releases">Pre-release</a></p>
-</li>
-</ul>
-<h3 id="QA">QA</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://stackoverflow.com/questions/18506508/whats-the-difference-between-tag-and-release?noredirect=1&amp;lq=1">Difference between release and tag</a></p>
-</li>
-</ul>
-<h2 id="Integrate-with-CI">Integrate with CI</h2>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://github.com/semantic-release/semantic-release">semantic-release</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://github.com/semantic-release/semantic-release/blob/master/docs/usage/configuration.md">semantic-release configuration</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://github.com/semantic-release/semantic-release/blob/master/docs/usage/ci-configuration.md#authentication">CI Authentication</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://github.com/semantic-release/semantic-release/tree/master/docs/recipes">semantic-release recipe</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://juejin.cn/post/7149727151464398885">在 CI / CD 中集成语义化发布介绍</a></p>
-</li>
-</ul>
-<h3 id="GitLab-CI">GitLab CI</h3>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://github.com/semantic-release/semantic-release/blob/master/docs/recipes/ci-configurations/gitlab-ci.md">GitLab CI recipe</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://github.com/gitlabhq/gitlabhq/blob/master/doc/ci/examples/semantic-release.md">gitlab official semantic release md</a></p>
-</li>
-</ul>
-<h4 id="GitLab-CI-Configuration">GitLab CI Configuration</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://github.com/semantic-release/semantic-release/blob/master/docs/usage/ci-configuration.md#authentication">GITLAB_TOKEN</a>: 权限<a href="https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html">认证</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://github.com/semantic-release/gitlab">gitlab plugin</a>: 用于 gitlab 发布 release 插件</p>
-</li>
-<li class="lvl-2">
-<p><a href="https://github.com/semantic-release/gitlab#assets">gitlab assets</a>: 用于附加到 release 的 assets</p>
-</li>
-</ul>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://gitlab.com/msclock/gitlab-ci-templates">gitlab semantic release template</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://github.com/philips-software/odin/blob/main/.releaserc.yml">semantic release yaml configuration example</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://github.com/DanySK/semantic-release-preconfigured-conventional-commits/blob/master/.releaserc.yml">more yaml sharedable yaml configuration example</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://github.com/DanySK/publish-on-central/blob/master/release.config.js">semantic release js configuration example</a></p>
-</li>
-</ul>
-<h3 id="Github-Action">Github Action</h3>
-<p>要使用 semantic-release 工具配置项目的 GitHub Action 以实现自动化版本发布，需要做以下几步：</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>安装 semantic-release 和相关插件。在项目的根目录下创建一个 package.json 文件，然后添加以下内容：</p>
-</li>
-</ul>
-<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"devDependencies"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"@semantic-release/changelog"</span><span class="punctuation">:</span> <span class="string">"^6.0.1"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"@semantic-release/git"</span><span class="punctuation">:</span> <span class="string">"^10.0.1"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"@semantic-release/commit-analyzer"</span><span class="punctuation">:</span> <span class="string">"^9.0.1"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"@semantic-release/release-notes-generator"</span><span class="punctuation">:</span> <span class="string">"^11.0.2"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"@semantic-release/github"</span><span class="punctuation">:</span> <span class="string">"^8.0.1"</span></span><br><span class="line">  <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
-<p>然后运行 npm install 来安装这些依赖.</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>创建一个.releaserc 文件来配置 semantic-release。在项目的根目录下创建一个.releaserc 文件，然后添加以下内容：</p>
-</li>
-</ul>
-<figure class="highlight txt"><table><tbody><tr><td class="code"><pre><span class="line">{</span><br><span class="line">  "plugins": [</span><br><span class="line">    "@semantic-release/commit-analyzer",</span><br><span class="line">    "@semantic-release/release-notes-generator",</span><br><span class="line">    "@semantic-release/changelog",</span><br><span class="line">    "@semantic-release/github",</span><br><span class="line">    [</span><br><span class="line">      "@semantic-release/git",</span><br><span class="line">      {</span><br><span class="line">        "assets": ["CHANGELOG.md", "package.json"],</span><br><span class="line">        "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"</span><br><span class="line">      }</span><br><span class="line">    ]</span><br><span class="line">  ]</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>在 GitHub Actions 中配置 semantic-release。在.github / workflows 目录下创建一个新的 workflow 文件，例如 release.yml，然后添加以下内容：</p>
-</li>
-</ul>
-<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">Release</span></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="attr">push:</span></span><br><span class="line">    <span class="attr">branches:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">main</span></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">release:</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">Release</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Checkout</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/checkout@v2</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Setup</span> <span class="string">Node.js</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/setup-node@v2</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">node-version:</span> <span class="number">14</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Install</span> <span class="string">dependencies</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">npm</span> <span class="string">ci</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Release</span></span><br><span class="line">        <span class="attr">env:</span></span><br><span class="line">          <span class="attr">GITHUB_TOKEN:</span> <span class="string">${{</span> <span class="string">secrets.GITHUB_TOKEN</span> <span class="string">}}</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">npx</span> <span class="string">semantic-release</span></span><br></pre></td></tr></tbody></table></figure>
-<p>这个 workflow 会在每次 push 到 main 分支时运行，自动分析 commit messages 来决定新的版本号，然后创建一个新的 GitHub release。</p>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://github.com/open-turo/actions-python/blob/main/release/action.yaml">https://github.com/open-turo/actions-python/blob/main/release/action.yaml</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://github.com/spaceship-prompt/spaceship-prompt/blob/master/.github/workflows/release.yml">https://github.com/spaceship-prompt/spaceship-prompt/blob/master/.github/workflows/release.yml</a></p>
-</li>
-</ul>
-<h2 id="Semantic-Release-Plugin">Semantic Release Plugin</h2>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://github.com/semantic-release/semantic-release/blob/master/docs/extending/plugins-list.md">semantic-release plugins</a>.</p>
-</li>
-</ul>
-<h3 id="semantic-release-commit-analyzer">semantic-release/commit-analyzer</h3>
-<p>用于解析提交消息, 并判断是否需要执行发布 release</p>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://github.com/semantic-release/commit-analyzer#options">https://github.com/semantic-release/commit-analyzer#options</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://github.com/typegoose/typegoose/blob/master/.releaserc.js">custom config example</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://github.com/frender-rs/frender/blob/main/release.config.js">custom config example</a></p>
-</li>
-</ul>
-<h3 id="semantic-release-release-notes-generator">semantic-release/release-notes-generator</h3>
-<p>用于将<code>commit-analyzer</code>解析出的符合规范的提交消息筛选并根据规则 <a href="https://github.com/conventional-changelog/conventional-changelog-config-spec/blob/master/README.md">conventional changelog configuration spec</a> 生成发布信息说明</p>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://github.com/semantic-release/release-notes-generator#options">release-notes-generator options</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://github.com/typegoose/typegoose/blob/master/.releaserc.js">custom config example</a></p>
-</li>
-</ul>
-<h3 id="semantic-release-changelog">semantic-release/changelog</h3>
-<p>用于将<code>release-notes-generator</code>生成内容更新到 <code>CHANGELOG.md</code></p>
-<h3 id="google-semantic-release-replace-plugin">google/semantic-release-replace-plugin</h3>
-<p>用于在发布时替换内容.</p>
-<p>在发布 release 时替换版本.</p>
-<figure class="highlight jsonc"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">[</span></span><br><span class="line">  <span class="string">"@google/semantic-release-replace-plugin"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"replacements"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">      <span class="punctuation">{</span></span><br><span class="line">        <span class="attr">"files"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">            <span class="string">"pyproject.toml"</span></span><br><span class="line">        <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">"from"</span><span class="punctuation">:</span> <span class="string">"^version = \".*\""</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">"to"</span><span class="punctuation">:</span> <span class="string">"version = \"${nextRelease.version}\""</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">"countMatches"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line">      <span class="punctuation">}</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line">  <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">]</span></span><br></pre></td></tr></tbody></table></figure>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://github.com/jpoehnelt/semantic-release-replace-plugin">https://github.com/jpoehnelt/semantic-release-replace-plugin</a></p>
-</li>
-<li class="lvl-2">
-<p><a href="https://gitlab.com/msclock/gitlab-ci-templates/-/blob/master/.releaserc.js">https://gitlab.com/msclock/gitlab-ci-templates/-/blob/master/.releaserc.js</a></p>
-</li>
-</ul>
-<h3 id="semantic-release-git">semantic-release/git</h3>
-<p>用于在触发发布时的提交更改回仓库, tag 将会创建在当前提交上</p>
-<figure class="highlight jsonc"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">[</span></span><br><span class="line">    <span class="string">"@semantic-release/git"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">{</span></span><br><span class="line">        <span class="attr">"assets"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">            <span class="string">"CHANGELOG.md"</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">        <span class="comment">// disable ci run with [skip ci]</span></span><br><span class="line">        <span class="attr">"message"</span><span class="punctuation">:</span> <span class="string">"chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"</span></span><br><span class="line">    <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">]</span></span><br></pre></td></tr></tbody></table></figure>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://github.com/semantic-release/git/">https://github.com/semantic-release/git/</a></p>
-</li>
-</ul>
-<h3 id="semantic-release-exec">semantic-release/exec</h3>
-<p>语义发布插件执行自定义 shell 命令。</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://github.com/DanySK/publish-on-central">use publishCmd to create annotated tags</a></p>
-</li>
-</ul>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://github.com/semantic-release/exec">https://github.com/semantic-release/exec</a></p>
 </li>
 </ul>
 ]]></content>
