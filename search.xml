@@ -9395,47 +9395,6 @@ https://docs.gitlab.com/runner/install/kubernetes.html
       </tags>
   </entry>
   <entry>
-    <title>mamba 包管理器</title>
-    <url>/posts/96bd41f/</url>
-    <content><![CDATA[<h2 id="Mamba">Mamba</h2>
-<p><a href="https://mamba.readthedocs.io/en/latest/index.html">Mamba</a> 是一个快速、健壮、跨平台的包管理器。</p>
-<p>它在 Windows、OS X 和 Linux（包括 ARM64 和 PPC64LE）上运行，与 conda 软件包完全兼容，并支持大多数 conda 命令。</p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># upgrade all packages</span></span><br><span class="line">mamba update --all -y</span><br></pre></td></tr></tbody></table></figure>
-<blockquote>
-<p>[!CAUTION]<br>
-mamba 自带的 conda 环境中的 python 在 windows 上编译需要附带设置 mamba 环境，否则运行会 <strong>crash</strong></p>
-<ul class="lvl-1">
-<li class="lvl-2"><code>PYTHONHOME=path-to-mambaforge-installation</code></li>
-<li class="lvl-2"><code>PYTHONPATH=path-to-mambaforge-installation</code></li>
-</ul>
-</blockquote>
-<span id="more"></span>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://github.com/conda-forge/miniforge">https://github.com/conda-forge/miniforge</a></p>
-</li>
-</ul>
-<h2 id="conda">conda</h2>
-<p>links:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a href="https://anaconda.org/msclock/dashboard">https://anaconda.org/msclock/dashboard</a></p>
-</li>
-</ul>
-<h2 id="设置国内源">设置国内源</h2>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 添加清华源</span></span><br><span class="line">conda config --add channel https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge</span><br><span class="line">conda config --add channel https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line">conda config --add channel https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="conda环境">conda 环境</h2>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 指定python版本创建版本</span></span><br><span class="line">conda create --name &lt;env_name&gt; python=3.7</span><br><span class="line"><span class="comment"># 重命名环境</span></span><br><span class="line">conda rename -n &lt;old_env_name&gt; &lt;new_env_name&gt;</span><br><span class="line"><span class="comment"># 删除环境</span></span><br><span class="line">conda remove --name &lt;env_name&gt; --all</span><br><span class="line"><span class="comment"># 激活</span></span><br><span class="line">conda activate &lt;env_name&gt;</span><br><span class="line"><span class="comment"># 查看可用环境</span></span><br><span class="line">conda info --envs</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Auto-Integration">Auto Integration</h2>
-<p>自动激活 conda 环境</p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 集成 powershell, -d == --dry-run</span></span><br><span class="line">conda init powershell [-d]</span><br><span class="line">conda init --all -d</span><br></pre></td></tr></tbody></table></figure>
-]]></content>
-      <categories>
-        <category>develop</category>
-      </categories>
-  </entry>
-  <entry>
     <title>k8s</title>
     <url>/posts/655061ae/</url>
     <content><![CDATA[<!--
@@ -10738,6 +10697,47 @@ Traefik 和 Istio 是两个不同的工具，它们都可以用于在 Kubernetes
 </tbody>
 </table>
 <span id="more"></span>
+]]></content>
+      <categories>
+        <category>develop</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>mamba 包管理器</title>
+    <url>/posts/96bd41f/</url>
+    <content><![CDATA[<h2 id="Mamba">Mamba</h2>
+<p><a href="https://mamba.readthedocs.io/en/latest/index.html">Mamba</a> 是一个快速、健壮、跨平台的包管理器。</p>
+<p>它在 Windows、OS X 和 Linux（包括 ARM64 和 PPC64LE）上运行，与 conda 软件包完全兼容，并支持大多数 conda 命令。</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># upgrade all packages</span></span><br><span class="line">mamba update --all -y</span><br></pre></td></tr></tbody></table></figure>
+<blockquote>
+<p>[!CAUTION]<br>
+mamba 自带的 conda 环境中的 python 在 windows 上编译需要附带设置 mamba 环境，否则运行会 <strong>crash</strong></p>
+<ul class="lvl-1">
+<li class="lvl-2"><code>PYTHONHOME=path-to-mambaforge-installation</code></li>
+<li class="lvl-2"><code>PYTHONPATH=path-to-mambaforge-installation</code></li>
+</ul>
+</blockquote>
+<span id="more"></span>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://github.com/conda-forge/miniforge">https://github.com/conda-forge/miniforge</a></p>
+</li>
+</ul>
+<h2 id="conda">conda</h2>
+<p>links:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a href="https://anaconda.org/msclock/dashboard">https://anaconda.org/msclock/dashboard</a></p>
+</li>
+</ul>
+<h2 id="设置国内源">设置国内源</h2>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 添加清华源</span></span><br><span class="line">conda config --add channel https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge</span><br><span class="line">conda config --add channel https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line">conda config --add channel https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="conda环境">conda 环境</h2>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 指定python版本创建版本</span></span><br><span class="line">conda create --name &lt;env_name&gt; python=3.7</span><br><span class="line"><span class="comment"># 重命名环境</span></span><br><span class="line">conda rename -n &lt;old_env_name&gt; &lt;new_env_name&gt;</span><br><span class="line"><span class="comment"># 删除环境</span></span><br><span class="line">conda remove --name &lt;env_name&gt; --all</span><br><span class="line"><span class="comment"># 激活</span></span><br><span class="line">conda activate &lt;env_name&gt;</span><br><span class="line"><span class="comment"># 查看可用环境</span></span><br><span class="line">conda info --envs</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Auto-Integration">Auto Integration</h2>
+<p>自动激活 conda 环境</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 集成 powershell, -d == --dry-run</span></span><br><span class="line">conda init powershell [-d]</span><br><span class="line">conda init --all -d</span><br></pre></td></tr></tbody></table></figure>
 ]]></content>
       <categories>
         <category>develop</category>
@@ -13988,6 +13988,32 @@ Step 6, 思考, 反省</p>
       </categories>
   </entry>
   <entry>
+    <title>态度</title>
+    <url>/posts/459958868/</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="3b3e34211883b2d22c80d2eaa8f2a8a082911051ec04491ebafdc88a7debd164">1f193f8f0f58fcc41d0a678093d3b4c5eeecdd1b7b5dbd55dc10a13897196ba76fc797bc2bb63abe1dc7ac3453b89dbe55d35309d50e909bd49a35edfab97c97539e5de4a9e6d93cb8920386c27cc9bd8eb40063b4f673ffea7ec0f3ccff6109067b57538c80970fe6fdc85dc3707a2c32582987131310805376a62f3ea695bd87d2e13b6b7c31cc091362320d9030ed98ff55cccf07be975eb6f94f77be89264f4627a3e606e93752d67a7015e874060220452fda27c528d74c0c9a18d9251d33531448bc45936c2b1a37dcff56a05d3d3edd2f09868b8b5daf7303ab3a244ecd06988255200a89cc8f151ee825e2b4bf3951c56f06ffbdec42fb32857f9b3ff1c7691e25581b8be3cbf9b0f746168c9053d5d725f990cf3a457f17fa9481c83805491ba0e25838b3e2dafd3b53fa151d16d923d336ec7e5d6f5801b3aa7af611561e9e28d481575ccdedd3b1288f315a27bcc281ac31290728123630d4053ff90b1d9a90da3e1671e9da06e4c3b795c952b04cebbeccaa84679183de0543630354309a7d229fdabf5c9dd5ba5f8b56</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-xray">
+      <input class="hbe hbe-input-field hbe-input-field-xray" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-xray" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-xray">您好, 这里需要密码.</span>
+      </label>
+      <svg class="hbe hbe-graphic hbe-graphic-xray" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"></path>
+        <path d="M0,2.5c0,0,298.666,0,399.333,0C448.336,2.5,513.994,13,597,13c77.327,0,135-10.5,200.999-10.5c95.996,0,402.001,0,402.001,0"></path>
+      </svg>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      <categories>
+        <category>secret</category>
+      </categories>
+      <tags>
+        <tag>secret</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>记忆和想象方法</title>
     <url>/posts/796530809/</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
@@ -14012,32 +14038,6 @@ Step 6, 思考, 反省</p>
       <tags>
         <tag>secret</tag>
         <tag>记忆</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>态度</title>
-    <url>/posts/459958868/</url>
-    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="3b3e34211883b2d22c80d2eaa8f2a8a082911051ec04491ebafdc88a7debd164">1f193f8f0f58fcc41d0a678093d3b4c5eeecdd1b7b5dbd55dc10a13897196ba76fc797bc2bb63abe1dc7ac3453b89dbe55d35309d50e909bd49a35edfab97c97539e5de4a9e6d93cb8920386c27cc9bd8eb40063b4f673ffea7ec0f3ccff6109067b57538c80970fe6fdc85dc3707a2c32582987131310805376a62f3ea695bd87d2e13b6b7c31cc091362320d9030ed98ff55cccf07be975eb6f94f77be89264f4627a3e606e93752d67a7015e874060220452fda27c528d74c0c9a18d9251d33531448bc45936c2b1a37dcff56a05d3d3edd2f09868b8b5daf7303ab3a244ecd06988255200a89cc8f151ee825e2b4bf3951c56f06ffbdec42fb32857f9b3ff1c7691e25581b8be3cbf9b0f746168c9053d5d725f990cf3a457f17fa9481c83805491ba0e25838b3e2dafd3b53fa151d16d923d336ec7e5d6f5801b3aa7af611561e9e28d481575ccdedd3b1288f315a27bcc281ac31290728123630d4053ff90b1d9a90da3e1671e9da06e4c3b795c952b04cebbeccaa84679183de0543630354309a7d229fdabf5c9dd5ba5f8b56</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-xray">
-      <input class="hbe hbe-input-field hbe-input-field-xray" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-xray" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-xray">您好, 这里需要密码.</span>
-      </label>
-      <svg class="hbe hbe-graphic hbe-graphic-xray" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"></path>
-        <path d="M0,2.5c0,0,298.666,0,399.333,0C448.336,2.5,513.994,13,597,13c77.327,0,135-10.5,200.999-10.5c95.996,0,402.001,0,402.001,0"></path>
-      </svg>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
-      <categories>
-        <category>secret</category>
-      </categories>
-      <tags>
-        <tag>secret</tag>
       </tags>
   </entry>
 </search>
